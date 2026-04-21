@@ -1,0 +1,55 @@
+{
+  "documents": [
+    "Retrieval evaluation pipelines require stable context selection for reproducible scores. Prompt strategy controls should preserve faithful answers grounded in source contexts.",
+    "Multi-hop synthesis links related chunks through overlap and adjacency relationships. Query style and query length metadata should match reference conventions."
+  ],
+  "config": {
+    "testset_size": 4,
+    "max_sentences_per_chunk": 1,
+    "min_shared_keywords": 1,
+    "synthesis_controls": {
+      "seed": 21,
+      "sampling_mode": "rank_biased",
+      "multi_hop_count": 1
+    }
+  },
+  "python_reference": {
+    "sample_shape_required_fields": [
+      "user_input",
+      "reference",
+      "reference_contexts",
+      "persona_name",
+      "query_style",
+      "query_length"
+    ],
+    "allowed_query_style_names": [
+      "MISSPELLED",
+      "PERFECT_GRAMMAR",
+      "POOR_GRAMMAR",
+      "WEB_SEARCH_LIKE"
+    ],
+    "allowed_query_length_names": [
+      "SHORT",
+      "MEDIUM",
+      "LONG"
+    ],
+    "single_hop_prompt_markers": [
+      "How does",
+      "Summarize",
+      "State the key takeaway",
+      "What is the key point"
+    ],
+    "multi_hop_prompt_markers": [
+      "Synthesize the shared theme",
+      "Explain the progression"
+    ]
+  },
+  "graph_reference": {
+    "chunk_count_min": 4,
+    "chunk_count_max": 6,
+    "child_edges_min": 4,
+    "next_edges_min": 2,
+    "overlap_density_min": 0.0,
+    "overlap_density_max": 1.0
+  }
+}

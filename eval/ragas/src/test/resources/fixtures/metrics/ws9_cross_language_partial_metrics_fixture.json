@@ -1,0 +1,193 @@
+{
+  "single_turn_metric_cases": [
+    {
+      "case_id": "context_recall_exact_reference_coverage",
+      "metric": "context_recall",
+      "sample": {
+        "retrieved_contexts": [
+          "Paris is the capital of France and a major European city."
+        ],
+        "reference_contexts": [
+          "Paris is the capital of France and a major European city."
+        ]
+      },
+      "expected_band": "perfect"
+    },
+    {
+      "case_id": "answer_accuracy_reference_match",
+      "metric": "answer_accuracy",
+      "sample": {
+        "user_input": "What is the capital of France",
+        "response": "Paris is the capital of France.",
+        "reference": "Paris is the capital of France."
+      },
+      "expected_band": "perfect"
+    },
+    {
+      "case_id": "answer_correctness_reference_match",
+      "metric": "answer_correctness",
+      "sample": {
+        "user_input": "What is the capital of France",
+        "response": "Paris is the capital of France.",
+        "reference": "Paris is the capital of France."
+      },
+      "expected_band": "perfect"
+    },
+    {
+      "case_id": "factual_correctness_reference_match",
+      "metric": "factual_correctness",
+      "sample": {
+        "response": "Paris is the capital of France.",
+        "reference": "Paris is the capital of France."
+      },
+      "expected_band": "perfect"
+    },
+    {
+      "case_id": "noise_sensitivity_clean_answer",
+      "metric": "noise_sensitivity",
+      "sample": {
+        "user_input": "What is the capital of France",
+        "response": "Paris is the capital of France.",
+        "reference": "Paris is the capital of France.",
+        "retrieved_contexts": [
+          "Paris is the capital of France.",
+          "France is in Europe."
+        ]
+      },
+      "expected_band": "low"
+    },
+    {
+      "case_id": "summary_score_long_non_summary",
+      "metric": "summary_score",
+      "sample": {
+        "response": "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "reference_contexts": [
+          "Paris is the capital of France and is known for landmarks including the Eiffel Tower.",
+          "France is in Europe and Paris is its largest city by population."
+        ]
+      },
+      "expected_band": "low"
+    },
+    {
+      "case_id": "quoted_spans_alignment_source_contains_quote",
+      "metric": "quoted_spans_alignment",
+      "sample": {
+        "response": "The report states \"Paris is the capital of France\" and highlights tourism.",
+        "retrieved_contexts": [
+          "Paris is the capital of France and attracts many tourists each year."
+        ]
+      },
+      "expected_band": "perfect"
+    },
+    {
+      "case_id": "chrf_identical_text",
+      "metric": "chrf_score",
+      "sample": {
+        "response": "Paris is the capital of France.",
+        "reference": "Paris is the capital of France."
+      },
+      "expected_band": "perfect"
+    },
+    {
+      "case_id": "bleu_identical_text",
+      "metric": "bleu_score",
+      "sample": {
+        "response": "Paris is the capital of France.",
+        "reference": "Paris is the capital of France."
+      },
+      "expected_band": "perfect"
+    },
+    {
+      "case_id": "rouge_identical_text",
+      "metric": "rouge_score",
+      "sample": {
+        "response": "Paris is the capital of France.",
+        "reference": "Paris is the capital of France."
+      },
+      "expected_band": "perfect"
+    },
+    {
+      "case_id": "semantic_similarity_identical_text",
+      "metric": "semantic_similarity",
+      "sample": {
+        "response": "Paris is the capital of France.",
+        "reference": "Paris is the capital of France."
+      },
+      "expected_band": "perfect"
+    }
+  ],
+  "multi_turn_metric_cases": [
+    {
+      "case_id": "agent_goal_accuracy_with_reference_success",
+      "metric": "agent_goal_accuracy_with_reference",
+      "sample": {
+        "reference": "Added parity checklist with deferred scope review and doc freeze gates",
+        "messages": [
+          {
+            "type": "human",
+            "content": "Please add a parity checklist with deferred scope review and doc freeze gates"
+          },
+          {
+            "type": "ai",
+            "content": "Added parity checklist with deferred scope review and doc freeze gates."
+          }
+        ]
+      },
+      "expected_band": "perfect"
+    },
+    {
+      "case_id": "agent_goal_accuracy_without_reference_success",
+      "metric": "agent_goal_accuracy_without_reference",
+      "sample": {
+        "messages": [
+          {
+            "type": "human",
+            "content": "Add a parity checklist with deferred scope review and doc freeze gates"
+          },
+          {
+            "type": "ai",
+            "content": "Added parity checklist with deferred scope review and doc freeze gates."
+          }
+        ]
+      },
+      "expected_band": "perfect"
+    },
+    {
+      "case_id": "agent_workflow_completion_refusal",
+      "metric": "agent_workflow_completion",
+      "sample": {
+        "messages": [
+          {
+            "type": "human",
+            "content": "Can you finish this task"
+          },
+          {
+            "type": "ai",
+            "content": "Sorry, I cannot complete this request."
+          }
+        ]
+      },
+      "expected_band": "low"
+    },
+    {
+      "case_id": "topic_adherence_single_topic_addressed",
+      "metric": "topic_adherence",
+      "sample": {
+        "reference_topics": [
+          "parity checklist"
+        ],
+        "messages": [
+          {
+            "type": "human",
+            "content": "Please provide a parity checklist for this release"
+          },
+          {
+            "type": "ai",
+            "content": "Here is a parity checklist for this release."
+          }
+        ]
+      },
+      "expected_band": "perfect"
+    }
+  ]
+}

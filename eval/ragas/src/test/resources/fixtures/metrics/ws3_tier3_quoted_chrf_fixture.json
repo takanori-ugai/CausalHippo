@@ -1,0 +1,73 @@
+{
+  "quoted_spans_cases": [
+    {
+      "id": "quoted_all_matched",
+      "response": "The report states \"machine learning models improve accuracy\" and \"calibration reduces error\".",
+      "retrieved_contexts": [
+        "Recent evidence shows machine learning models improve accuracy in many tasks.",
+        "Careful calibration reduces error in production systems."
+      ],
+      "expected_score": 1.0,
+      "expected_band": "perfect"
+    },
+    {
+      "id": "quoted_partial_match",
+      "response": "The paper says \"climate change affects rainfall patterns\" and \"ocean acidity declined rapidly\".",
+      "retrieved_contexts": [
+        "Studies confirm climate change affects rainfall patterns across regions.",
+        "Ocean acidity has increased in recent decades."
+      ],
+      "expected_score": 0.5,
+      "expected_band": "partial"
+    },
+    {
+      "id": "quoted_none_match",
+      "response": "He claimed \"the moon is made of cheese\" during the interview.",
+      "retrieved_contexts": [
+        "The moon is Earth's natural satellite composed of rock.",
+        "Lunar regolith contains silicates and metal oxides."
+      ],
+      "expected_score": 0.0,
+      "expected_band": "low"
+    },
+    {
+      "id": "quoted_none_present",
+      "response": "No direct quotations were included in this response.",
+      "retrieved_contexts": [
+        "Any context text can be here."
+      ],
+      "expected_score": 1.0,
+      "expected_band": "perfect"
+    }
+  ],
+  "chrf_score_cases": [
+    {
+      "id": "chrf_exact",
+      "reference": "Paris is the capital of France.",
+      "response": "Paris is the capital of France.",
+      "expected_score": 1.0,
+      "expected_band": "perfect"
+    },
+    {
+      "id": "chrf_reordered",
+      "reference": "The capital of France is Paris.",
+      "response": "Paris is the capital of France.",
+      "expected_score": 0.7932729148246388,
+      "expected_band": "high"
+    },
+    {
+      "id": "chrf_partial",
+      "reference": "Photosynthesis converts sunlight into chemical energy and oxygen.",
+      "response": "Photosynthesis converts sunlight into energy.",
+      "expected_score": 0.6826372398429558,
+      "expected_band": "high"
+    },
+    {
+      "id": "chrf_unrelated",
+      "reference": "Albert Einstein developed the theory of relativity.",
+      "response": "Bananas are yellow fruits sold in markets.",
+      "expected_score": 0.13620714087090233,
+      "expected_band": "low"
+    }
+  ]
+}

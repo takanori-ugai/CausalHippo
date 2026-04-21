@@ -1,0 +1,111 @@
+{
+  "sql_semantic_equivalence_cases": [
+    {
+      "id": "boolean_literal_equivalent",
+      "response": "SELECT id, name FROM users WHERE active = true;",
+      "reference": "SELECT id, name FROM users WHERE active = 1;",
+      "expected_score": 1.0
+    },
+    {
+      "id": "aggregate_not_equivalent",
+      "response": "SELECT product_name, COUNT(quantity) AS total FROM orders GROUP BY product_name;",
+      "reference": "SELECT product_name, SUM(quantity) AS total FROM orders GROUP BY product_name;",
+      "expected_score": 0.0
+    },
+    {
+      "id": "different_table_not_equivalent",
+      "response": "SELECT id FROM customers;",
+      "reference": "SELECT id FROM users;",
+      "expected_score": 0.0
+    }
+  ],
+  "datacompy_cases": [
+    {
+      "id": "rows_f1_partial",
+      "mode": "rows",
+      "metric": "f1",
+      "reference": "id,name\n1,Alice\n2,Bob",
+      "response": "id,name\n1,Alice\n3,Charlie",
+      "expected_score": 0.5
+    },
+    {
+      "id": "rows_precision",
+      "mode": "rows",
+      "metric": "precision",
+      "reference": "id,name\n1,Alice\n2,Bob",
+      "response": "id,name\n1,Alice\n2,Bob\n3,Charlie",
+      "expected_score": 0.6666666666666666
+    },
+    {
+      "id": "columns_recall",
+      "mode": "columns",
+      "metric": "recall",
+      "reference": "id,name,age\n1,Alice,30\n2,Bob,40",
+      "response": "id,name\n1,Alice\n2,Bob",
+      "expected_score": 0.6666666666666666
+    },
+    {
+      "id": "csv_parse_error_nan",
+      "mode": "rows",
+      "metric": "f1",
+      "reference": "id,name\n\"1,Alice",
+      "response": "id,name\n1,Alice",
+      "expected_score": "NaN"
+    }
+  ],
+  "multi_modal_relevance_cases": [
+    {
+      "id": "relevant_text_context",
+      "user_input": "What powers the sun?",
+      "response": "The sun is powered by nuclear fusion.",
+      "retrieved_contexts": [
+        "The sun is powered by nuclear fusion where hydrogen atoms combine into helium."
+      ],
+      "expected_score": 1.0
+    },
+    {
+      "id": "irrelevant_response",
+      "user_input": "What powers the sun?",
+      "response": "Paris is the capital of France.",
+      "retrieved_contexts": [
+        "The sun is powered by nuclear fusion where hydrogen atoms combine into helium."
+      ],
+      "expected_score": 0.0
+    },
+    {
+      "id": "image_context_relevant",
+      "user_input": "What is shown in the image?",
+      "response": "The image appears to show a red car.",
+      "retrieved_contexts": [
+        "https://example.com/red-car.jpg"
+      ],
+      "expected_score": 1.0
+    }
+  ],
+  "multi_modal_faithfulness_cases": [
+    {
+      "id": "faithful_text",
+      "response": "The Eiffel Tower is in Paris.",
+      "retrieved_contexts": [
+        "The Eiffel Tower is located in Paris, France."
+      ],
+      "expected_score": 1.0
+    },
+    {
+      "id": "not_faithful_hallucination",
+      "response": "The Eiffel Tower is in London.",
+      "retrieved_contexts": [
+        "The Eiffel Tower is located in Paris, France."
+      ],
+      "expected_score": 0.0
+    },
+    {
+      "id": "image_visible_description",
+      "response": "The image shows a blue backpack.",
+      "retrieved_contexts": [
+        "https://example.com/backpack.png"
+      ],
+      "expected_score": 1.0
+    }
+  ]
+}

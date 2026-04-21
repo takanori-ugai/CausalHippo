@@ -1,0 +1,88 @@
+{
+  "cases": [
+    {
+      "id": "exact_match",
+      "user_input": "When was Einstein born?",
+      "response": "Albert Einstein was born in 1879.",
+      "reference": "Albert Einstein was born in 1879.",
+      "expected_scores": {
+        "answer_accuracy": 1.0,
+        "answer_correctness": 1.0
+      },
+      "expected_bands": {
+        "answer_accuracy": "perfect",
+        "answer_correctness": "perfect"
+      }
+    },
+    {
+      "id": "partial_more_detail",
+      "user_input": "When was Einstein born?",
+      "response": "Albert Einstein was born on March 14, 1879.",
+      "reference": "Albert Einstein was born in 1879.",
+      "expected_scores": {
+        "answer_accuracy": 0.8652777777777778,
+        "answer_correctness": 0.965
+      },
+      "expected_bands": {
+        "answer_accuracy": "high",
+        "answer_correctness": "high"
+      }
+    },
+    {
+      "id": "wrong_fact",
+      "user_input": "When was Einstein born?",
+      "response": "Albert Einstein was born in 1885.",
+      "reference": "Albert Einstein was born in 1879.",
+      "expected_scores": {
+        "answer_accuracy": 0.11750000000000001,
+        "answer_correctness": 0.16125
+      },
+      "expected_bands": {
+        "answer_accuracy": "low",
+        "answer_correctness": "low"
+      }
+    },
+    {
+      "id": "incomplete_summary",
+      "user_input": "What is photosynthesis?",
+      "response": "Photosynthesis is how plants make energy.",
+      "reference": "Photosynthesis is the process by which plants convert sunlight into chemical energy using chlorophyll.",
+      "expected_scores": {
+        "answer_accuracy": 0.65,
+        "answer_correctness": 0.0775
+      },
+      "expected_bands": {
+        "answer_accuracy": "partial",
+        "answer_correctness": "low"
+      }
+    },
+    {
+      "id": "capital_exactish",
+      "user_input": "What is the capital of France?",
+      "response": "The capital of France is Paris.",
+      "reference": "Paris is the capital of France.",
+      "expected_scores": {
+        "answer_accuracy": 1.0,
+        "answer_correctness": 1.0
+      },
+      "expected_bands": {
+        "answer_accuracy": "perfect",
+        "answer_correctness": "perfect"
+      }
+    },
+    {
+      "id": "factual_error",
+      "user_input": "What powers the sun?",
+      "response": "The sun is powered by nuclear fission reactions.",
+      "reference": "The sun is powered by nuclear fusion reactions where hydrogen atoms combine to form helium.",
+      "expected_scores": {
+        "answer_accuracy": 0.6466666666666667,
+        "answer_correctness": 0.09363636363636363
+      },
+      "expected_bands": {
+        "answer_accuracy": "partial",
+        "answer_correctness": "low"
+      }
+    }
+  ]
+}

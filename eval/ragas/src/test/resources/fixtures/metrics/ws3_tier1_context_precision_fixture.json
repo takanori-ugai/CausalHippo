@@ -1,0 +1,51 @@
+{
+  "source_tests": [
+    "tests/e2e/metrics_migration/test_context_precision_migration.py"
+  ],
+  "cases": [
+    {
+      "user_input": "What is the capital of France?",
+      "response": "Paris is the capital of France.",
+      "reference": "The capital of France is Paris.",
+      "retrieved_contexts": [
+        "Paris is the capital and largest city of France, with a population of over 2 million people.",
+        "Berlin is the capital of Germany and has a rich historical background."
+      ],
+      "expected_band": "partial",
+      "expected_scores": {
+        "context_precision_with_reference": 1.0,
+        "context_precision_without_reference": 1.0
+      }
+    },
+    {
+      "user_input": "Who developed the theory of relativity?",
+      "response": "Albert Einstein developed the theory of relativity.",
+      "reference": "Einstein developed the theory of relativity in the early 1900s.",
+      "retrieved_contexts": [
+        "Albert Einstein was a German-born theoretical physicist who developed the theory of relativity.",
+        "Einstein published his special theory of relativity in 1905 and general relativity in 1915.",
+        "Isaac Newton developed the laws of motion and universal gravitation."
+      ],
+      "expected_band": "partial",
+      "expected_scores": {
+        "context_precision_with_reference": 1.0,
+        "context_precision_without_reference": 1.0
+      }
+    },
+    {
+      "user_input": "What is photosynthesis?",
+      "response": "Photosynthesis is the process by which plants make energy from sunlight.",
+      "reference": "Photosynthesis is how plants convert sunlight into energy using chlorophyll.",
+      "retrieved_contexts": [
+        "Photosynthesis is the process by which plants use sunlight, carbon dioxide, and water to produce glucose.",
+        "During photosynthesis, chlorophyll in plant leaves absorbs light energy to drive the reaction.",
+        "Plants also undergo cellular respiration to break down glucose for energy."
+      ],
+      "expected_band": "high",
+      "expected_scores": {
+        "context_precision_with_reference": 1.0,
+        "context_precision_without_reference": 1.0
+      }
+    }
+  ]
+}

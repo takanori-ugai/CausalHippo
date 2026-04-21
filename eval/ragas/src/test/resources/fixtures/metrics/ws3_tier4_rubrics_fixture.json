@@ -1,0 +1,114 @@
+{
+  "domain_without_reference_cases": [
+    {
+      "id": "without_ref_relevant_and_supported",
+      "user_input": "What is photosynthesis?",
+      "response": "Photosynthesis is how plants convert sunlight, water, and carbon dioxide into sugar and oxygen.",
+      "retrieved_contexts": [
+        "Photosynthesis uses sunlight to convert water and carbon dioxide into glucose and oxygen.",
+        "Mitochondria are involved in cellular respiration."
+      ],
+      "expected_score": 2.0
+    },
+    {
+      "id": "without_ref_off_topic",
+      "user_input": "What is photosynthesis?",
+      "response": "The Eiffel Tower is located in Paris.",
+      "retrieved_contexts": [
+        "Photosynthesis uses sunlight to convert water and carbon dioxide into glucose and oxygen."
+      ],
+      "expected_score": 1.0
+    },
+    {
+      "id": "without_ref_partially_relevant",
+      "user_input": "What causes rain?",
+      "response": "Rain happens when water in clouds gets heavy and falls.",
+      "retrieved_contexts": [
+        "Rain forms after evaporation, condensation, and precipitation.",
+        "Cloud droplets merge and fall due to gravity."
+      ],
+      "expected_score": 1.0
+    }
+  ],
+  "domain_with_reference_cases": [
+    {
+      "id": "with_ref_exact",
+      "user_input": "What is the capital of France?",
+      "response": "Paris is the capital of France.",
+      "reference": "Paris is the capital of France.",
+      "expected_score": 5.0
+    },
+    {
+      "id": "with_ref_wrong_fact",
+      "user_input": "When was Einstein born?",
+      "response": "Albert Einstein was born in 1885.",
+      "reference": "Albert Einstein was born in 1879.",
+      "expected_score": 3.0
+    },
+    {
+      "id": "with_ref_partial_alignment",
+      "user_input": "Explain photosynthesis.",
+      "response": "Photosynthesis is when plants use sunlight to make food.",
+      "reference": "Photosynthesis is the process where plants use sunlight to convert water and carbon dioxide into glucose and oxygen.",
+      "expected_score": 3.0
+    }
+  ],
+  "convenience_metric_cases": [
+    {
+      "id": "convenience_without_reference",
+      "metric": "rubrics_score_without_reference",
+      "user_input": "What is machine learning?",
+      "response": "Machine learning is a way for computers to learn patterns from data.",
+      "retrieved_contexts": [
+        "Machine learning allows systems to learn from examples without explicit programming."
+      ],
+      "expected_score": 2.0
+    },
+    {
+      "id": "convenience_with_reference",
+      "metric": "rubrics_score_with_reference",
+      "user_input": "What powers the sun?",
+      "response": "The sun is powered by nuclear fusion.",
+      "reference": "The sun is powered by nuclear fusion where hydrogen atoms combine into helium.",
+      "expected_score": 3.0
+    }
+  ],
+  "instance_specific_cases": [
+    {
+      "id": "instance_three_level_high",
+      "user_input": "Summarize why regular exercise matters.",
+      "response": "Regular exercise improves heart health, helps mood, and supports long-term fitness.",
+      "rubrics": {
+        "score1_description": "Response is irrelevant or incorrect.",
+        "score3_description": "Response is partially correct but misses important benefits.",
+        "score5_description": "Response is accurate, clear, and covers multiple key benefits."
+      },
+      "expected_score": 3.0
+    },
+    {
+      "id": "instance_four_level_mid",
+      "user_input": "Why do we wear seat belts?",
+      "response": "Seat belts keep people safe in crashes.",
+      "reference": "Seat belts reduce injury risk by restraining occupants and preventing severe impact with vehicle interiors.",
+      "rubrics": {
+        "score1_description": "Incorrect answer.",
+        "score2_description": "Partially correct but vague.",
+        "score3_description": "Mostly correct with limited detail.",
+        "score4_description": "Accurate and sufficiently detailed."
+      },
+      "expected_score": 2.0
+    },
+    {
+      "id": "instance_off_topic",
+      "user_input": "What is photosynthesis?",
+      "response": "I like to travel in summer.",
+      "rubrics": {
+        "score1_description": "Off-topic or wrong.",
+        "score2_description": "Some relevance but largely incorrect.",
+        "score3_description": "Mostly correct.",
+        "score4_description": "Highly accurate and complete."
+      },
+      "expected_score": 1.0
+    }
+  ]
+}

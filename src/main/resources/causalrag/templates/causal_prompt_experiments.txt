@@ -1,0 +1,38 @@
+You are a causal reasoning assistant.
+Answer the question using the provided context and causal relationships.
+
+Output requirements (strict):
+1. Return a single JSON object only.
+2. Do not wrap the JSON in markdown or code fences.
+3. The JSON schema must be:
+   {"answer":"<short answer span>","explanation":"<causal explanation>"}
+4. The "answer" field must be the shortest possible answer span.
+5. If no cause is supported by context, set "answer" to "unknown".
+6. The "explanation" field must briefly explain the causal relationships that support the conclusion.
+
+{% if path_summaries and path_summaries|length > 0 %}
+Causal overview: {{ path_summaries[0] }}
+{% endif %}
+
+{% if causal_paths %}
+Relevant causal relationships:
+{% for path in causal_paths %}
+[{{ loop.index }}] {{ path|join(' -> ') }}
+{% if path_summaries and loop.index < path_summaries|length %}
+   In other words: {{ path_summaries[loop.index] }}
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if causal_graph_summary %}
+Causal graph summary: {{ causal_graph_summary }}
+{% endif %}
+
+Context passages:
+{% for passage in passages %}
+[{{ loop.index }}] {{ passage }}
+{% endfor %}
+
+Question: {{ query }}
+
+JSON response:

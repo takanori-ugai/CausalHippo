@@ -1,0 +1,22 @@
+{
+  "documents": [
+    "Kotlin teams use evaluation pipelines to monitor retrieval quality. Structured concurrency keeps evaluation jobs predictable.",
+    "Ragas provides evaluation metrics for retrieval quality. Parity fixtures keep Kotlin evaluation behavior reproducible."
+  ],
+  "config": {
+    "testset_size": 4,
+    "max_sentences_per_chunk": 1,
+    "min_shared_keywords": 1
+  },
+  "expected": {
+    "min_chunk_nodes": 4,
+    "min_child_relationships": 4,
+    "min_next_relationships": 2,
+    "min_overlap_relationships": 1,
+    "required_synthesizer_prefixes": [
+      "single_hop_",
+      "multi_hop_"
+    ],
+    "min_response_characters": 30
+  }
+}

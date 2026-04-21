@@ -1,0 +1,23 @@
+{
+  "dataset": [
+    {
+      "user_input": "What is Kotlin language",
+      "response": "Kotlin is language.",
+      "retrieved_contexts": [
+        "Kotlin language on JVM",
+        "Python language"
+      ],
+      "reference_contexts": [
+        "Kotlin language",
+        "JVM runtime"
+      ],
+      "reference": "Kotlin language"
+    }
+  ],
+  "expected_scores": {
+    "answer_relevancy": 0.75,
+    "context_precision": 1.0,
+    "faithfulness": 1.0,
+    "context_recall": 0.75
+  }
+}

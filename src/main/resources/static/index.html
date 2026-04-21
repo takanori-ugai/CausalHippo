@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LightRAG Console</title>
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --panel: #121623;
+      --accent: #5dd8ff;
+      --muted: #a6b0c3;
+      --text: #e7ecf6;
+      --danger: #ff6b6b;
+      --success: #6ddc7f;
+      --radius: 14px;
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      font-family: "Manrope", "Segoe UI", "Helvetica Neue", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 20% 20%, #132141 0, transparent 30%),
+                  radial-gradient(circle at 80% 0%, #1f2d4d 0, transparent 35%),
+                  var(--bg);
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 0.4px;
+    }
+    .pill {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(93, 216, 255, 0.12);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 12px;
+    }
+    main {
+      padding: 0 22px 22px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+    .card {
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: 0.3px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.02);
+      color: var(--text);
+      font-size: 14px;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      outline: none;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--accent);
+      background: rgba(93, 216, 255, 0.05);
+    }
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+      font-family: "Menlo", "SFMono-Regular", monospace;
+    }
+    .row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .row > div {
+      flex: 1;
+      min-width: 120px;
+    }
+    button {
+      border: none;
+      border-radius: 12px;
+      padding: 11px 14px;
+      background: linear-gradient(135deg, #5dd8ff, #709bff);
+      color: #0b1020;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(93, 216, 255, 0.25);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(93, 216, 255, 0.35);
+    }
+    .btn-danger {
+      background: linear-gradient(135deg, #ff6b6b, #ff9c6b);
+      color: #140b0b;
+      box-shadow: 0 10px 25px rgba(255, 107, 107, 0.25);
+    }
+    .btn-danger:hover {
+      box-shadow: 0 12px 28px rgba(255, 107, 107, 0.35);
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .status {
+      margin-top: 10px;
+      font-size: 13px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.03);
+      min-height: 48px;
+      white-space: pre-wrap;
+      line-height: 1.4;
+    }
+    .status.ok { border: 1px solid rgba(109, 220, 127, 0.45); color: var(--success); }
+    .status.err { border: 1px solid rgba(255, 107, 107, 0.5); color: var(--danger); }
+    pre {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 13px;
+      overflow-x: auto;
+      line-height: 1.4;
+    }
+    .caps {
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    @media (max-width: 720px) {
+      main { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="pill">LightRAG API UI</div>
+    <h1>Interactive Console</h1>
+    <a href="/swagger" style="color: var(--accent); font-weight: 600; text-decoration: none;">Swagger</a>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Insert Text</h2>
+      <p class="muted">Send text to <code>/documents/text</code> with an optional file source.</p>
+      <label for="text-input">Text</label>
+      <textarea id="text-input" placeholder="Paste or type your content here"></textarea>
+
+      <div style="height:8px"></div>
+      <div class="row">
+        <div>
+          <label for="file-source">file_source (optional)</label>
+          <input id="file-source" placeholder="book.txt">
+        </div>
+      </div>
+
+      <div style="height:10px"></div>
+      <button id="btn-insert">Send to API</button>
+      <div id="insert-status" class="status"></div>
+    </section>
+
+    <section class="card">
+      <h2>Query</h2>
+      <p class="muted">Call <code>/query</code> to retrieve answers or raw context.</p>
+
+      <label for="query-input">Query text</label>
+      <input id="query-input" placeholder="e.g., Who sits on the throne of England?">
+
+      <div class="row" style="margin-top:10px;">
+        <div>
+          <label for="mode-select">Mode</label>
+          <select id="mode-select">
+            <option value="local">local</option>
+            <option value="global" selected>global</option>
+            <option value="hybrid">hybrid</option>
+            <option value="mix">mix</option>
+            <option value="naive">naive</option>
+          </select>
+        </div>
+        <div>
+          <label for="topk-input">top_k</label>
+          <input id="topk-input" type="number" min="1" max="50" value="4">
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:10px;">
+        <div>
+          <label for="resp-type">response_type</label>
+          <select id="resp-type">
+            <option>string</option>
+            <option>Multiple Paragraphs</option>
+            <option>Bullet Points</option>
+          </select>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; padding-top:20px;">
+          <label><input type="checkbox" id="ctx-only" checked> only_need_context</label>
+        </div>
+      </div>
+
+      <div style="height:10px"></div>
+      <button id="btn-query">Run Query</button>
+      <div id="query-status" class="status"></div>
+      <div style="height:10px"></div>
+      <div>
+        <div class="caps">Response</div>
+        <pre id="query-response">Waiting for a query...</pre>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Admin</h2>
+      <p class="muted">Danger zone: drop all persisted data across KV, vectors, and graph stores.</p>
+      <button id="btn-drop" class="btn-danger">Drop All Data</button>
+      <div id="drop-status" class="status"></div>
+    </section>
+  </main>
+
+  <script>
+    const insertBtn = document.getElementById("btn-insert");
+    const queryBtn = document.getElementById("btn-query");
+    const dropBtn = document.getElementById("btn-drop");
+    const insertStatus = document.getElementById("insert-status");
+    const queryStatus = document.getElementById("query-status");
+    const dropStatus = document.getElementById("drop-status");
+    const queryResponse = document.getElementById("query-response");
+
+    function setStatus(el, message, kind) {
+      el.textContent = message;
+      el.classList.remove("ok", "err");
+      if (kind) el.classList.add(kind);
+    }
+
+    async function postJSON(path, body) {
+      const res = await fetch(path, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      const text = await res.text();
+      let data;
+      try { data = JSON.parse(text); } catch (_) { data = text; }
+      if (!res.ok) {
+        const message = data?.message || res.statusText || "Request failed";
+        throw new Error(message + " (" + res.status + ")");
+      }
+      return data;
+    }
+
+    function formatResponse(raw) {
+      if (raw == null) return "No content";
+      if (typeof raw !== "string") {
+        try { return JSON.stringify(raw, null, 2); } catch (_) { return String(raw); }
+      }
+      let txt = raw.trim();
+      // strip fenced code blocks if present
+      if (txt.startsWith("```")) {
+        const firstNewline = txt.indexOf("\n");
+        const lastFence = txt.lastIndexOf("```");
+        if (firstNewline !== -1 && lastFence !== -1 && lastFence > firstNewline) {
+          txt = txt.slice(firstNewline + 1, lastFence).trim();
+        }
+      }
+      // try to pretty-print JSON payloads
+      if (txt.startsWith("{") || txt.startsWith("[")) {
+        try { return JSON.stringify(JSON.parse(txt), null, 2); } catch (_) { /* fall through */ }
+      }
+      return txt;
+    }
+
+    insertBtn.addEventListener("click", async () => {
+      const text = document.getElementById("text-input").value.trim();
+      const fileSource = document.getElementById("file-source").value.trim();
+      if (!text) {
+        setStatus(insertStatus, "Please provide text to insert.", "err");
+        return;
+      }
+      insertBtn.disabled = true;
+      setStatus(insertStatus, "Sending...", null);
+      try {
+        const payload = { text };
+        if (fileSource) payload.file_source = fileSource;
+        const data = await postJSON("/documents/text", payload);
+        setStatus(insertStatus, `Track ID: ${data.track_id} | ${data.message || "OK"}`, "ok");
+      } catch (e) {
+        setStatus(insertStatus, e.message, "err");
+      } finally {
+        insertBtn.disabled = false;
+      }
+    });
+
+    queryBtn.addEventListener("click", async () => {
+      const query = document.getElementById("query-input").value.trim();
+      const mode = document.getElementById("mode-select").value;
+      const topK = Number(document.getElementById("topk-input").value) || 4;
+      const respType = document.getElementById("resp-type").value;
+      const onlyCtx = document.getElementById("ctx-only").checked;
+
+      if (!query) {
+        setStatus(queryStatus, "Please enter a query.", "err");
+        return;
+      }
+
+      queryBtn.disabled = true;
+      setStatus(queryStatus, "Querying...", null);
+      queryResponse.textContent = "Waiting for response...";
+      try {
+        const payload = {
+          query,
+          mode,
+          top_k: topK,
+          response_type: respType,
+          only_need_context: onlyCtx,
+          max_token_for_text_unit: 1200
+        };
+        const data = await postJSON("/query", payload);
+        const respText = typeof data === "object" && data !== null && "response" in data ? data.response : data;
+        setStatus(queryStatus, "Success", "ok");
+        queryResponse.textContent = formatResponse(respText);
+      } catch (e) {
+        setStatus(queryStatus, e.message, "err");
+        queryResponse.textContent = "Error";
+      } finally {
+        queryBtn.disabled = false;
+      }
+    });
+
+    dropBtn.addEventListener("click", async () => {
+      if (!confirm("This will delete all persisted data. Continue?")) return;
+      dropBtn.disabled = true;
+      setStatus(dropStatus, "Dropping data...", null);
+      try {
+        const data = await postJSON("/admin/drop", {});
+        setStatus(dropStatus, formatResponse(data), "ok");
+      } catch (e) {
+        setStatus(dropStatus, e.message, "err");
+      } finally {
+        dropBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

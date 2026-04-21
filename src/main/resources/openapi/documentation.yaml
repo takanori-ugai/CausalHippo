@@ -1,0 +1,746 @@
+openapi: 3.0.1
+info:
+  title: LightRAG Kotlin API
+  version: "1.0.0"
+servers:
+  - url: http://localhost:8080
+tags:
+  - name: Documents
+    description: Document ingestion and management
+  - name: Query
+    description: Retrieval and answering endpoints
+  - name: Graph
+    description: Knowledge graph endpoints
+  - name: API
+    description: Ollama-compatible mock endpoints
+paths:
+  /documents/text:
+    post:
+      summary: Insert a single text document
+      tags:
+        - Documents
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InsertTextRequest'
+      responses:
+        '200':
+          description: Accepted for processing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InsertResponse'
+  /documents/texts:
+    post:
+      summary: Insert multiple text documents
+      tags:
+        - Documents
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InsertTextsRequest'
+      responses:
+        '200':
+          description: Accepted for processing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InsertResponse'
+  /documents/status_counts:
+    get:
+      summary: Get document processing status counts
+      tags:
+        - Documents
+      responses:
+        '200':
+          description: Counts by status
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: integer
+  /documents/delete_document:
+    delete:
+      summary: Delete documents by id
+      tags:
+        - Documents
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteDocRequest'
+      responses:
+        '200':
+          description: Deletion result
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DeleteDocResult'
+  /documents/drop:
+    delete:
+      summary: Drop all persisted storage
+      tags:
+        - Documents
+      responses:
+        '200':
+          description: Drop result by storage component
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropStorageResponse'
+  /query:
+    post:
+      summary: Query LightRAG
+      tags:
+        - Query
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QueryRequest'
+      responses:
+        '200':
+          description: Generated answer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueryResponse'
+  /query/stream:
+    post:
+      summary: Stream a query response
+      tags:
+        - Query
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QueryRequest'
+      responses:
+        '200':
+          description: Streamed tokens
+          content:
+            text/plain:
+              schema:
+                type: string
+  /graph/label/list:
+    get:
+      summary: List graph labels
+      tags:
+        - Graph
+      responses:
+        '200':
+          description: Available labels
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+  /graph/label/popular:
+    get:
+      summary: List popular graph labels
+      tags:
+        - Graph
+      parameters:
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 1000
+            default: 300
+      responses:
+        '200':
+          description: Popular labels
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+  /graph/label/search:
+    get:
+      summary: Search graph labels
+      tags:
+        - Graph
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 50
+      responses:
+        '200':
+          description: Matching labels
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '400':
+          description: Missing query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /graph/entity/exists:
+    get:
+      summary: Check if an entity exists
+      tags:
+        - Graph
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Entity existence result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  exists:
+                    type: boolean
+                required:
+                  - exists
+        '400':
+          description: Missing name
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /graph/graphs:
+    get:
+      summary: Get a graph by label
+      tags:
+        - Graph
+      parameters:
+        - name: label
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: max_depth
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 3
+        - name: max_nodes
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 1000
+      responses:
+        '200':
+          description: Graph content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KnowledgeGraphResponse'
+        '400':
+          description: Missing label
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /graph/entity/edit:
+    post:
+      summary: Update an entity
+      tags:
+        - Graph
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntityUpdateRequest'
+      responses:
+        '200':
+          description: Update result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphMutationResponse'
+  /graph/relation/edit:
+    post:
+      summary: Update a relation
+      tags:
+        - Graph
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RelationUpdateRequest'
+      responses:
+        '200':
+          description: Update result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphMutationResponse'
+  /graph/entity/create:
+    post:
+      summary: Create an entity
+      tags:
+        - Graph
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntityCreateRequest'
+      responses:
+        '200':
+          description: Create result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphMutationResponse'
+  /graph/relation/create:
+    post:
+      summary: Create a relation
+      tags:
+        - Graph
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RelationCreateRequest'
+      responses:
+        '200':
+          description: Create result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphMutationResponse'
+  /graph/entities/merge:
+    post:
+      summary: Merge entities
+      tags:
+        - Graph
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntityMergeRequest'
+      responses:
+        '200':
+          description: Merge result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphMutationResponse'
+  /api/version:
+    get:
+      summary: Ollama-compatible version endpoint
+      tags:
+        - API
+      responses:
+        '200':
+          description: Version info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OllamaVersionResponse'
+  /api/tags:
+    get:
+      summary: List available Ollama models (mock)
+      tags:
+        - API
+      responses:
+        '200':
+          description: Tag list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OllamaTagResponse'
+  /api/generate:
+    post:
+      summary: Generate via Ollama-compatible endpoint
+      tags:
+        - API
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OllamaGenerateRequest'
+      responses:
+        '200':
+          description: Generated text
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+  /api/chat:
+    post:
+      summary: Chat via Ollama-compatible endpoint
+      tags:
+        - API
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OllamaChatRequest'
+      responses:
+        '200':
+          description: Chat response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+components:
+  schemas:
+    InsertTextRequest:
+      type: object
+      properties:
+        text:
+          type: string
+        file_source:
+          type: string
+      required:
+        - text
+    InsertTextsRequest:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+        file_sources:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    InsertResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+        track_id:
+          type: string
+      required:
+        - status
+        - message
+        - track_id
+    DeleteDocRequest:
+      type: object
+      properties:
+        doc_ids:
+          type: array
+          items:
+            type: string
+      required:
+        - doc_ids
+    DeleteDocResult:
+      type: object
+      properties:
+        status:
+          type: string
+        doc_id:
+          type: string
+      required:
+        - status
+        - doc_id
+    DropStorageResponse:
+      type: object
+      additionalProperties:
+        type: object
+        additionalProperties:
+          type: string
+    QueryRequest:
+      type: object
+      properties:
+        query:
+          type: string
+        mode:
+          type: string
+          enum: [mix, naive, local, global, hybrid, bypass]
+          default: hybrid
+        only_need_context:
+          type: boolean
+        response_type:
+          type: string
+          default: "String"
+        top_k:
+          type: integer
+          default: 5
+        high_level_keywords:
+          type: array
+          items:
+            type: string
+          default: []
+        low_level_keywords:
+          type: array
+          items:
+            type: string
+          default: []
+        max_token_for_text_unit:
+          type: integer
+      required:
+        - query
+    QueryResponse:
+      type: object
+      properties:
+        response:
+          type: string
+      required:
+        - response
+    GraphLabelsResponse:
+      type: array
+      items:
+        type: string
+    KnowledgeGraphResponse:
+      type: object
+      properties:
+        nodes:
+          type: array
+          items:
+            type: object
+            additionalProperties: {}
+        edges:
+          type: array
+          items:
+            type: object
+            additionalProperties: {}
+        isTruncated:
+          type: boolean
+      required:
+        - nodes
+        - edges
+        - isTruncated
+    EntityUpdateRequest:
+      type: object
+      properties:
+        entity_name:
+          type: string
+        updated_data:
+          type: object
+          additionalProperties:
+            type: string
+        allow_rename:
+          type: boolean
+        allow_merge:
+          type: boolean
+      required:
+        - entity_name
+        - updated_data
+    EntityCreateRequest:
+      type: object
+      properties:
+        entity_name:
+          type: string
+        entity_data:
+          type: object
+          additionalProperties:
+            type: string
+      required:
+        - entity_name
+        - entity_data
+    RelationCreateRequest:
+      type: object
+      properties:
+        source_entity:
+          type: string
+        target_entity:
+          type: string
+        relation_data:
+          type: object
+          additionalProperties:
+            type: string
+      required:
+        - source_entity
+        - target_entity
+        - relation_data
+    RelationUpdateRequest:
+      type: object
+      properties:
+        source_id:
+          type: string
+        target_id:
+          type: string
+        updated_data:
+          type: object
+          additionalProperties:
+            type: string
+      required:
+        - source_id
+        - target_id
+        - updated_data
+    EntityMergeRequest:
+      type: object
+      properties:
+        entities_to_change:
+          type: array
+          items:
+            type: string
+        entity_to_change_into:
+          type: string
+      required:
+        - entities_to_change
+        - entity_to_change_into
+    GraphMutationResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: {}
+        operation_summary:
+          type: object
+          additionalProperties: {}
+      required:
+        - status
+        - message
+    ErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      required:
+        - status
+        - message
+    OllamaVersionResponse:
+      type: object
+      properties:
+        version:
+          type: string
+      required:
+        - version
+    OllamaTagResponse:
+      type: object
+      properties:
+        models:
+          type: array
+          items:
+            $ref: '#/components/schemas/OllamaModel'
+      required:
+        - models
+    OllamaModel:
+      type: object
+      properties:
+        name:
+          type: string
+        model:
+          type: string
+        modified_at:
+          type: string
+        size:
+          type: integer
+          format: int64
+        digest:
+          type: string
+        details:
+          $ref: '#/components/schemas/OllamaModelDetails'
+      required:
+        - name
+        - model
+        - modified_at
+        - size
+        - digest
+        - details
+    OllamaModelDetails:
+      type: object
+      properties:
+        parent_model:
+          type: string
+        format:
+          type: string
+        family:
+          type: string
+        families:
+          type: array
+          items:
+            type: string
+        parameter_size:
+          type: string
+        quantization_level:
+          type: string
+      required:
+        - parent_model
+        - format
+        - family
+        - families
+        - parameter_size
+        - quantization_level
+    OllamaGenerateRequest:
+      type: object
+      properties:
+        model:
+          type: string
+        prompt:
+          type: string
+        stream:
+          type: boolean
+          default: false
+      required:
+        - model
+        - prompt
+    OllamaChatRequest:
+      type: object
+      properties:
+        model:
+          type: string
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/OllamaMessage'
+        stream:
+          type: boolean
+          default: false
+      required:
+        - model
+        - messages
+    OllamaMessage:
+      type: object
+      properties:
+        role:
+          type: string
+        content:
+          type: string
+      required:
+        - role
+        - content

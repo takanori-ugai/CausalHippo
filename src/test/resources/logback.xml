@@ -1,0 +1,49 @@
+<configuration scan="true" scanPeriod="30 seconds">
+    <property name="ROOT_LOG_LEVEL" value="${ROOT_LOG_LEVEL:-INFO}" />
+    <property name="LIGHTRAG_LOG_LEVEL" value="${LIGHTRAG_LOG_LEVEL:-DEBUG}" />
+    <property name="NEO4J_LOG_LEVEL" value="${NEO4J_LOG_LEVEL:-DEBUG}" />
+    <property name="LANGCHAIN4J_LOG_LEVEL" value="${LANGCHAIN4J_LOG_LEVEL:-DEBUG}" />
+    <property name="LANGCHAIN4J_HTTP_LOG_LEVEL" value="${LANGCHAIN4J_HTTP_LOG_LEVEL:-DEBUG}" />
+    <property name="OPENAI4J_LOG_LEVEL" value="${OPENAI4J_LOG_LEVEL:-TRACE}" />
+    <property name="VECTOR_MEMORY_LOG_LEVEL" value="${VECTOR_MEMORY_LOG_LEVEL:-DEBUG}" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="lightrag" level="${LIGHTRAG_LOG_LEVEL}" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <logger name="lightrag.kg.neo4j" level="${NEO4J_LOG_LEVEL}" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <logger name="lightrag.kg.memory" level="${VECTOR_MEMORY_LOG_LEVEL}" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <logger name="dev.langchain4j" level="${LANGCHAIN4J_LOG_LEVEL}" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <!-- LangChain4j HTTP client logs (logRequests/logResponses) -->
+    <logger name="dev.langchain4j.internal.client.okhttp" level="${LANGCHAIN4J_HTTP_LOG_LEVEL}" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="dev.langchain4j.internal.client.openai" level="${LANGCHAIN4J_HTTP_LOG_LEVEL}" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="okhttp3" level="${LANGCHAIN4J_HTTP_LOG_LEVEL}" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="dev.ai4j.openai4j" level="${OPENAI4J_LOG_LEVEL}" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <root level="${ROOT_LOG_LEVEL}">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

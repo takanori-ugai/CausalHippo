@@ -1,0 +1,26 @@
+{
+  "documents": [
+    "Axiomelon brintava quorsel plynite. Zirconal wembrite haldorin tusqen.",
+    "Maventor claision pruvate xeldrin. Noverix talphine gumbric yordane."
+  ],
+  "config": {
+    "testset_size": 3,
+    "max_sentences_per_chunk": 1,
+    "min_shared_keywords": 2,
+    "synthesis_controls": {
+      "seed": 5,
+      "sampling_mode": "top_k",
+      "multi_hop_count": 1
+    }
+  },
+  "expected": {
+    "min_chunk_nodes": 4,
+    "max_overlap_relationships": 0,
+    "min_next_relationships": 2,
+    "required_synthesizer_prefixes": [
+      "single_hop_",
+      "multi_hop_"
+    ],
+    "min_response_characters": 20
+  }
+}

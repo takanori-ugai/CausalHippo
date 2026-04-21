@@ -1,0 +1,108 @@
+{
+  "noise_sensitivity_cases": [
+    {
+      "id": "noise_relevant_wrong_claim",
+      "user_input": "What powers the sun?",
+      "response": "The sun is powered by nuclear fission.",
+      "reference": "The sun is powered by nuclear fusion.",
+      "retrieved_contexts": [
+        "The sun is powered by nuclear fusion reactions.",
+        "Fusion in the sun combines hydrogen into helium."
+      ],
+      "expected_scores": {
+        "noise_sensitivity_relevant": 0.0,
+        "noise_sensitivity_irrelevant": 0.0
+      },
+      "expected_bands": {
+        "noise_sensitivity_relevant": "low",
+        "noise_sensitivity_irrelevant": "low"
+      }
+    },
+    {
+      "id": "noise_irrelevant_induced_error",
+      "user_input": "What is the capital of France?",
+      "response": "The capital of France is Lyon.",
+      "reference": "The capital of France is Paris.",
+      "retrieved_contexts": [
+        "France has many rivers and varied geography.",
+        "Lyon is a major city in France."
+      ],
+      "expected_scores": {
+        "noise_sensitivity_relevant": 0.0,
+        "noise_sensitivity_irrelevant": 0.0
+      },
+      "expected_bands": {
+        "noise_sensitivity_relevant": "low",
+        "noise_sensitivity_irrelevant": "low"
+      }
+    },
+    {
+      "id": "noise_clean_answer",
+      "user_input": "Who developed relativity?",
+      "response": "Albert Einstein developed relativity.",
+      "reference": "Albert Einstein developed the theory of relativity.",
+      "retrieved_contexts": [
+        "Albert Einstein is known for developing relativity.",
+        "Relativity changed modern physics."
+      ],
+      "expected_scores": {
+        "noise_sensitivity_relevant": 0.0,
+        "noise_sensitivity_irrelevant": 0.0
+      },
+      "expected_bands": {
+        "noise_sensitivity_relevant": "low",
+        "noise_sensitivity_irrelevant": "low"
+      }
+    }
+  ],
+  "summary_score_cases": [
+    {
+      "id": "summary_high_coverage",
+      "reference_contexts": [
+        "Apple Inc. is a technology company based in Cupertino, California.",
+        "It was founded by Steve Jobs in 1976 and reached a $3 trillion market cap in 2023."
+      ],
+      "response": "Apple is a technology company in Cupertino, founded by Steve Jobs in 1976, and it reached a $3 trillion valuation in 2023.",
+      "expected_scores": {
+        "summary_score_default": 0.44354520331650055,
+        "summary_score_no_penalty": 0.7058823529411765
+      },
+      "expected_bands": {
+        "summary_score_default": "partial",
+        "summary_score_no_penalty": "high"
+      }
+    },
+    {
+      "id": "summary_partial",
+      "reference_contexts": [
+        "The First AFL-NFL World Championship Game was played on January 15, 1967.",
+        "It later became known as the Super Bowl."
+      ],
+      "response": "The first Super Bowl was played in 1967.",
+      "expected_scores": {
+        "summary_score_default": 0.5168690958166181,
+        "summary_score_no_penalty": 0.38461538461538464
+      },
+      "expected_bands": {
+        "summary_score_default": "partial",
+        "summary_score_no_penalty": "partial"
+      }
+    },
+    {
+      "id": "summary_low",
+      "reference_contexts": [
+        "Photosynthesis converts sunlight into chemical energy using chlorophyll.",
+        "It consumes carbon dioxide and water, producing glucose and oxygen."
+      ],
+      "response": "Plants are important for ecosystems.",
+      "expected_scores": {
+        "summary_score_default": 0.37142857142866326,
+        "summary_score_no_penalty": 0.0
+      },
+      "expected_bands": {
+        "summary_score_default": "partial",
+        "summary_score_no_penalty": "low"
+      }
+    }
+  ]
+}

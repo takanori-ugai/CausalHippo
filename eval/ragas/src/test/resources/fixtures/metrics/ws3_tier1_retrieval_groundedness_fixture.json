@@ -1,0 +1,85 @@
+{
+  "source_tests": [
+    "tests/e2e/metrics_migration/test_context_relevance_migration.py",
+    "tests/e2e/metrics_migration/test_response_groundedness_migration.py"
+  ],
+  "context_relevance_cases": [
+    {
+      "user_input": "When and where was Albert Einstein born?",
+      "retrieved_contexts": [
+        "Albert Einstein was born March 14, 1879.",
+        "Albert Einstein was born at Ulm, in Wurttemberg, Germany."
+      ],
+      "expected_band": "high",
+      "expected_score": 0.5714285714285714
+    },
+    {
+      "user_input": "What is photosynthesis?",
+      "retrieved_contexts": [
+        "Photosynthesis is the process by which plants convert sunlight into energy.",
+        "Albert Einstein developed the theory of relativity."
+      ],
+      "expected_band": "partial",
+      "expected_score": 0.5833333333333334
+    },
+    {
+      "user_input": "How do computers work?",
+      "retrieved_contexts": [
+        "Albert Einstein was a theoretical physicist.",
+        "The weather today is sunny and warm."
+      ],
+      "expected_band": "low",
+      "expected_score": 0.0
+    },
+    {
+      "user_input": "What is machine learning?",
+      "retrieved_contexts": [
+        "Machine learning is a subset of artificial intelligence that enables computers to learn and improve automatically."
+      ],
+      "expected_band": "high",
+      "expected_score": 0.75
+    }
+  ],
+  "response_groundedness_cases": [
+    {
+      "response": "Einstein was born in Germany on March 14, 1879.",
+      "retrieved_contexts": [
+        "Albert Einstein was born in Ulm, Germany on March 14, 1879."
+      ],
+      "expected_band": "high",
+      "expected_score": 1.0
+    },
+    {
+      "response": "Einstein was born in France on March 14, 1879.",
+      "retrieved_contexts": [
+        "Albert Einstein was born in Ulm, Germany on March 14, 1879."
+      ],
+      "expected_band": "low",
+      "expected_score": 0.44000000000000006
+    },
+    {
+      "response": "Einstein was a physicist.",
+      "retrieved_contexts": [
+        "Albert Einstein was a German-born theoretical physicist, widely held to be one of the greatest scientists of all time."
+      ],
+      "expected_band": "high",
+      "expected_score": 1.0
+    },
+    {
+      "response": "The capital of France is Paris, and it has a population of over 2 million.",
+      "retrieved_contexts": [
+        "Paris is the capital and most populous city of France."
+      ],
+      "expected_band": "partial",
+      "expected_score": 0.4
+    },
+    {
+      "response": "Photosynthesis is the process by which plants convert sunlight into energy.",
+      "retrieved_contexts": [
+        "Photosynthesis is a biological process where plants use sunlight to create glucose and oxygen."
+      ],
+      "expected_band": "high",
+      "expected_score": 0.5
+    }
+  ]
+}

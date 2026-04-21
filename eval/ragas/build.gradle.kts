@@ -1,0 +1,84 @@
+import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+
+plugins {
+    kotlin("jvm") version "2.3.10"
+    application
+    id("com.gradleup.shadow") version "9.3.1"
+    kotlin("plugin.serialization") version "2.3.10"
+    id("org.jlleitschuh.gradle.ktlint") version "14.0.1"
+    id("io.gitlab.arturbosch.detekt") version "1.23.8"
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    config.setFrom(files("config/detekt.yml"))
+}
+
+group = "io.ragas"
+version = "0.0.1"
+
+application {
+    val requestedMain =
+        if (project.hasProperty("mainClass")) {
+            project.property("mainClass") as String
+        } else {
+            null
+        }
+    mainClass.set(requestedMain ?: "ragas.cli.MainKt")
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("ch.qos.logback:logback-classic:1.5.32")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+    implementation("io.github.oshai:kotlin-logging-jvm:8.0.01")
+    implementation("com.github.haifengl:smile-core:4.4.2")
+    implementation("gg.jte:jte-kotlin:3.2.3")
+
+    // LangChain4j dependencies
+    implementation("dev.langchain4j:langchain4j:1.12.2")
+    implementation("dev.langchain4j:langchain4j-open-ai:1.12.2")
+    implementation("dev.langchain4j:langchain4j-azure-open-ai:1.12.2")
+    implementation("dev.langchain4j:langchain4j-ollama:1.12.2")
+    implementation("dev.langchain4j:langchain4j-community-neo4j:1.12.1-beta21")
+
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:2.3.10")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2")
+    testImplementation("io.mockk:mockk:1.14.9")
+}
+
+tasks {
+    withType<Test> {
+        jvmArgs("-XX:+EnableDynamicAgentLoading")
+        testLogging {
+            events("passed", "skipped", "failed", "standardOut", "standardError")
+            showStandardStreams = true
+        }
+    }
+
+    // Separate task for scriptable/CLI runs; keeps `run` intact for IDE defaults.
+    val execute by registering(JavaExec::class) {
+        group = "application"
+        mainClass.set(application.mainClass)
+        classpath = sourceSets.main.get().runtimeClasspath
+    }
+}
+
+ktlint {
+    version.set("1.8.0")
+    verbose.set(true)
+    outputToConsole.set(true)
+    coloredOutput.set(true)
+    reporters {
+        reporter(ReporterType.CHECKSTYLE)
+        reporter(ReporterType.JSON)
+        reporter(ReporterType.HTML)
+    }
+    filter {
+        exclude("**/style-violations.kt")
+    }
+}

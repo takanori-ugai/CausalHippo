@@ -1,0 +1,94 @@
+{
+  "bleu_score_cases": [
+    {
+      "id": "bleu_exact",
+      "reference": "Paris is the capital of France.",
+      "response": "Paris is the capital of France.",
+      "expected_score": 1.0,
+      "expected_band": "perfect"
+    },
+    {
+      "id": "bleu_reordered",
+      "reference": "The capital of France is Paris.",
+      "response": "Paris is the capital of France.",
+      "expected_score": 0.668740304976422,
+      "expected_band": "high"
+    },
+    {
+      "id": "bleu_partial",
+      "reference": "Photosynthesis converts sunlight into chemical energy and oxygen.",
+      "response": "Photosynthesis converts sunlight into energy.",
+      "expected_score": 0.43645382979233377,
+      "expected_band": "partial"
+    },
+    {
+      "id": "bleu_unrelated",
+      "reference": "Albert Einstein developed the theory of relativity.",
+      "response": "Bananas are yellow fruits sold in markets.",
+      "expected_score": 0.1561969968460128,
+      "expected_band": "low"
+    }
+  ],
+  "rouge_score_cases": [
+    {
+      "id": "rouge_exact",
+      "reference": "Paris is the capital of France.",
+      "response": "Paris is the capital of France.",
+      "expected_scores": {
+        "rouge_fmeasure": 1.0,
+        "rouge_precision": 1.0,
+        "rouge_recall": 1.0
+      },
+      "expected_bands": {
+        "rouge_fmeasure": "perfect",
+        "rouge_precision": "perfect",
+        "rouge_recall": "perfect"
+      }
+    },
+    {
+      "id": "rouge_reordered",
+      "reference": "The capital of France is Paris.",
+      "response": "Paris is the capital of France.",
+      "expected_scores": {
+        "rouge_fmeasure": 0.6666666666666666,
+        "rouge_precision": 0.6666666666666666,
+        "rouge_recall": 0.6666666666666666
+      },
+      "expected_bands": {
+        "rouge_fmeasure": "high",
+        "rouge_precision": "high",
+        "rouge_recall": "high"
+      }
+    },
+    {
+      "id": "rouge_partial",
+      "reference": "Photosynthesis converts sunlight into chemical energy and oxygen.",
+      "response": "Photosynthesis converts sunlight into energy.",
+      "expected_scores": {
+        "rouge_fmeasure": 0.7692307692307693,
+        "rouge_precision": 1.0,
+        "rouge_recall": 0.625
+      },
+      "expected_bands": {
+        "rouge_fmeasure": "high",
+        "rouge_precision": "perfect",
+        "rouge_recall": "partial"
+      }
+    },
+    {
+      "id": "rouge_unrelated",
+      "reference": "Albert Einstein developed the theory of relativity.",
+      "response": "Bananas are yellow fruits sold in markets.",
+      "expected_scores": {
+        "rouge_fmeasure": 0.0,
+        "rouge_precision": 0.0,
+        "rouge_recall": 0.0
+      },
+      "expected_bands": {
+        "rouge_fmeasure": "low",
+        "rouge_precision": "low",
+        "rouge_recall": "low"
+      }
+    }
+  ]
+}

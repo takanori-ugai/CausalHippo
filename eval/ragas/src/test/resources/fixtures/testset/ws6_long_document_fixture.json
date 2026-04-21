@@ -1,0 +1,25 @@
+{
+  "documents": [
+    "Kotlin evaluation pipelines require deterministic orchestration for reproducible benchmark outputs. Long-form test documents should split into stable chunk boundaries for downstream synthesis. Retrieval diagnostics benefit from explicit context segmentation before metric calculation. Structured prompts reduce ambiguity when generating synthetic questions from dense sources. Relationship builders provide navigable graph edges between neighboring chunks. Ranking controls determine which chunk candidates become final testset samples. Sampling modes must preserve deterministic behavior under fixed seeds. Coverage fixtures prevent regressions when splitter logic changes over time."
+  ],
+  "config": {
+    "testset_size": 5,
+    "max_sentences_per_chunk": 1,
+    "min_shared_keywords": 3,
+    "synthesis_controls": {
+      "seed": 9,
+      "sampling_mode": "top_k",
+      "multi_hop_count": 0,
+      "single_hop_count": 5,
+      "enforce_document_diversity": false
+    }
+  },
+  "expected": {
+    "min_chunk_nodes": 8,
+    "max_chunk_nodes": 10,
+    "min_child_relationships": 8,
+    "min_next_relationships": 7,
+    "max_multi_hop_samples": 0,
+    "min_avg_chunk_characters": 70
+  }
+}

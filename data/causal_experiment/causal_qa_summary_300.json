@@ -1,0 +1,435 @@
+{
+  "input_glob": "eval/causal/*.csv",
+  "seed": 42,
+  "target_size": 300,
+  "noise_texts_per_sample": 5,
+  "all": {
+    "total": 10553,
+    "labels": {
+      "true": 4982,
+      "false": 5571,
+      "total": 10553
+    },
+    "categories": {
+      "Co-occurrence, No Mechanism": {
+        "true": 0,
+        "false": 511,
+        "total": 511
+      },
+      "Common Sense Causation": {
+        "true": 488,
+        "false": 26,
+        "total": 514
+      },
+      "Complex System, No Direct Link": {
+        "true": 0,
+        "false": 513,
+        "total": 513
+      },
+      "Conditional Causation": {
+        "true": 512,
+        "false": 0,
+        "total": 512
+      },
+      "Confounding & Multiple Causes": {
+        "true": 464,
+        "false": 44,
+        "total": 508
+      },
+      "Confounding Variable Masking True Relationship": {
+        "true": 0,
+        "false": 514,
+        "total": 514
+      },
+      "Counterfactual Reasoning Required": {
+        "true": 507,
+        "false": 2,
+        "total": 509
+      },
+      "Descriptive Statement, Not Causal": {
+        "true": 0,
+        "false": 515,
+        "total": 515
+      },
+      "Intermediary/Chain Causation": {
+        "true": 512,
+        "false": 0,
+        "total": 512
+      },
+      "Preventative Causation": {
+        "true": 517,
+        "false": 0,
+        "total": 517
+      },
+      "Random Co-occurrence": {
+        "true": 0,
+        "false": 518,
+        "total": 518
+      },
+      "Reverse Causation Potential": {
+        "true": 160,
+        "false": 352,
+        "total": 512
+      },
+      "Reverse Correlation (Appears Causal, But Isn't)": {
+        "true": 0,
+        "false": 518,
+        "total": 518
+      },
+      "Shared Trend, No Direct Link": {
+        "true": 0,
+        "false": 516,
+        "total": 516
+      },
+      "Simple, Direct Causation": {
+        "true": 518,
+        "false": 0,
+        "total": 518
+      },
+      "Spurious Correlation": {
+        "true": 792,
+        "false": 0,
+        "total": 792
+      },
+      "Subtle Shared Influence": {
+        "true": 0,
+        "false": 515,
+        "total": 515
+      },
+      "Subtle, Context-Dependent Causation": {
+        "true": 512,
+        "false": 0,
+        "total": 512
+      },
+      "Temporal Proximity, No Mechanism": {
+        "true": 0,
+        "false": 514,
+        "total": 514
+      },
+      "Weak Correlation, No Plausible Mechanism": {
+        "true": 0,
+        "false": 513,
+        "total": 513
+      }
+    },
+    "files": {
+      "Data-Co-occurrence_No_Mechanism.csv": {
+        "true": 0,
+        "false": 511,
+        "total": 511
+      },
+      "Data-Common_Sense_Causation.csv": {
+        "true": 488,
+        "false": 26,
+        "total": 514
+      },
+      "Data-Complex_System_No_Direct_Link.csv": {
+        "true": 0,
+        "false": 513,
+        "total": 513
+      },
+      "Data-Conditional_Causation.csv": {
+        "true": 512,
+        "false": 0,
+        "total": 512
+      },
+      "Data-Confounding_Variable_Masking_True_Relationship.csv": {
+        "true": 0,
+        "false": 514,
+        "total": 514
+      },
+      "Data-Confounding_and_Multiple_Causes.csv": {
+        "true": 464,
+        "false": 44,
+        "total": 508
+      },
+      "Data-Counterfactual_Reasoning_Required.csv": {
+        "true": 507,
+        "false": 2,
+        "total": 509
+      },
+      "Data-Descriptive_Statement_Not_Causal.csv": {
+        "true": 0,
+        "false": 515,
+        "total": 515
+      },
+      "Data-Intermediary_Chain_Causation.csv": {
+        "true": 512,
+        "false": 0,
+        "total": 512
+      },
+      "Data-Preventative_Causation.csv": {
+        "true": 517,
+        "false": 0,
+        "total": 517
+      },
+      "Data-Random_Co-occurrence.csv": {
+        "true": 0,
+        "false": 518,
+        "total": 518
+      },
+      "Data-Reverse_Causation_Potential.csv": {
+        "true": 160,
+        "false": 352,
+        "total": 512
+      },
+      "Data-Reverse_Correlation.csv": {
+        "true": 0,
+        "false": 518,
+        "total": 518
+      },
+      "Data-Shared_Trend_No_Direct_Link.csv": {
+        "true": 0,
+        "false": 516,
+        "total": 516
+      },
+      "Data-Simple_Direct_Causation.csv": {
+        "true": 518,
+        "false": 0,
+        "total": 518
+      },
+      "Data-Subtle_Context-Dependent_Causation.csv": {
+        "true": 512,
+        "false": 0,
+        "total": 512
+      },
+      "Data-Subtle_Shared_Influence.csv": {
+        "true": 0,
+        "false": 515,
+        "total": 515
+      },
+      "Data-Temporal_Proximity_No_Mechanism.csv": {
+        "true": 0,
+        "false": 514,
+        "total": 514
+      },
+      "Data-Weak_Correlation_No_Plausible_Mechanism.csv": {
+        "true": 0,
+        "false": 513,
+        "total": 513
+      },
+      "Data.csv": {
+        "true": 792,
+        "false": 0,
+        "total": 792
+      }
+    }
+  },
+  "balanced": {
+    "total": 300,
+    "labels": {
+      "true": 150,
+      "false": 150,
+      "total": 300
+    },
+    "categories": {
+      "Co-occurrence, No Mechanism": {
+        "true": 0,
+        "false": 12,
+        "total": 12
+      },
+      "Common Sense Causation": {
+        "true": 15,
+        "false": 12,
+        "total": 27
+      },
+      "Complex System, No Direct Link": {
+        "true": 0,
+        "false": 12,
+        "total": 12
+      },
+      "Conditional Causation": {
+        "true": 15,
+        "false": 0,
+        "total": 15
+      },
+      "Confounding & Multiple Causes": {
+        "true": 15,
+        "false": 12,
+        "total": 27
+      },
+      "Confounding Variable Masking True Relationship": {
+        "true": 0,
+        "false": 12,
+        "total": 12
+      },
+      "Counterfactual Reasoning Required": {
+        "true": 15,
+        "false": 2,
+        "total": 17
+      },
+      "Descriptive Statement, Not Causal": {
+        "true": 0,
+        "false": 11,
+        "total": 11
+      },
+      "Intermediary/Chain Causation": {
+        "true": 15,
+        "false": 0,
+        "total": 15
+      },
+      "Preventative Causation": {
+        "true": 15,
+        "false": 0,
+        "total": 15
+      },
+      "Random Co-occurrence": {
+        "true": 0,
+        "false": 11,
+        "total": 11
+      },
+      "Reverse Causation Potential": {
+        "true": 15,
+        "false": 11,
+        "total": 26
+      },
+      "Reverse Correlation (Appears Causal, But Isn't)": {
+        "true": 0,
+        "false": 11,
+        "total": 11
+      },
+      "Shared Trend, No Direct Link": {
+        "true": 0,
+        "false": 11,
+        "total": 11
+      },
+      "Simple, Direct Causation": {
+        "true": 15,
+        "false": 0,
+        "total": 15
+      },
+      "Spurious Correlation": {
+        "true": 15,
+        "false": 0,
+        "total": 15
+      },
+      "Subtle Shared Influence": {
+        "true": 0,
+        "false": 11,
+        "total": 11
+      },
+      "Subtle, Context-Dependent Causation": {
+        "true": 15,
+        "false": 0,
+        "total": 15
+      },
+      "Temporal Proximity, No Mechanism": {
+        "true": 0,
+        "false": 11,
+        "total": 11
+      },
+      "Weak Correlation, No Plausible Mechanism": {
+        "true": 0,
+        "false": 11,
+        "total": 11
+      }
+    },
+    "files": {
+      "Data-Co-occurrence_No_Mechanism.csv": {
+        "true": 0,
+        "false": 12,
+        "total": 12
+      },
+      "Data-Common_Sense_Causation.csv": {
+        "true": 15,
+        "false": 12,
+        "total": 27
+      },
+      "Data-Complex_System_No_Direct_Link.csv": {
+        "true": 0,
+        "false": 12,
+        "total": 12
+      },
+      "Data-Conditional_Causation.csv": {
+        "true": 15,
+        "false": 0,
+        "total": 15
+      },
+      "Data-Confounding_Variable_Masking_True_Relationship.csv": {
+        "true": 0,
+        "false": 12,
+        "total": 12
+      },
+      "Data-Confounding_and_Multiple_Causes.csv": {
+        "true": 15,
+        "false": 12,
+        "total": 27
+      },
+      "Data-Counterfactual_Reasoning_Required.csv": {
+        "true": 15,
+        "false": 2,
+        "total": 17
+      },
+      "Data-Descriptive_Statement_Not_Causal.csv": {
+        "true": 0,
+        "false": 11,
+        "total": 11
+      },
+      "Data-Intermediary_Chain_Causation.csv": {
+        "true": 15,
+        "false": 0,
+        "total": 15
+      },
+      "Data-Preventative_Causation.csv": {
+        "true": 15,
+        "false": 0,
+        "total": 15
+      },
+      "Data-Random_Co-occurrence.csv": {
+        "true": 0,
+        "false": 11,
+        "total": 11
+      },
+      "Data-Reverse_Causation_Potential.csv": {
+        "true": 15,
+        "false": 11,
+        "total": 26
+      },
+      "Data-Reverse_Correlation.csv": {
+        "true": 0,
+        "false": 11,
+        "total": 11
+      },
+      "Data-Shared_Trend_No_Direct_Link.csv": {
+        "true": 0,
+        "false": 11,
+        "total": 11
+      },
+      "Data-Simple_Direct_Causation.csv": {
+        "true": 15,
+        "false": 0,
+        "total": 15
+      },
+      "Data-Subtle_Context-Dependent_Causation.csv": {
+        "true": 15,
+        "false": 0,
+        "total": 15
+      },
+      "Data-Subtle_Shared_Influence.csv": {
+        "true": 0,
+        "false": 11,
+        "total": 11
+      },
+      "Data-Temporal_Proximity_No_Mechanism.csv": {
+        "true": 0,
+        "false": 11,
+        "total": 11
+      },
+      "Data-Weak_Correlation_No_Plausible_Mechanism.csv": {
+        "true": 0,
+        "false": 11,
+        "total": 11
+      },
+      "Data.csv": {
+        "true": 15,
+        "false": 0,
+        "total": 15
+      }
+    }
+  },
+  "outputs": {
+    "all_jsonl": "/tmp/causal_experiment_300/causal_qa_all.jsonl",
+    "balanced_jsonl": "/tmp/causal_experiment_300/causal_qa_balanced.jsonl",
+    "manifest_jsonl": "/tmp/causal_experiment_300/causal_qa_manifest.jsonl"
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "source_modules": [
+    "src/ragas/metrics/_goal_accuracy.py",
+    "src/ragas/metrics/collections/agent_goal_accuracy/metric.py"
+  ],
+  "cases": [
+    {
+      "name": "goal_achieved_with_tool_execution",
+      "user_input": [
+        {
+          "type": "human",
+          "content": "Book a table at Golden Dragon for 8pm."
+        },
+        {
+          "type": "ai",
+          "content": "I will find and reserve that now.",
+          "tool_calls": [
+            {
+              "name": "restaurant_book",
+              "args": {
+                "name": "Golden Dragon",
+                "time": "8pm"
+              }
+            }
+          ]
+        },
+        {
+          "type": "tool",
+          "content": "Reservation confirmed at Golden Dragon for 8pm."
+        },
+        {
+          "type": "ai",
+          "content": "Your table at Golden Dragon is booked for 8pm."
+        }
+      ],
+      "reference": "A table is booked at Golden Dragon for 8pm.",
+      "expected_scores": {
+        "agent_goal_accuracy_with_reference": 1.0,
+        "agent_goal_accuracy_without_reference": 1.0,
+        "agent_workflow_completion": 1.0
+      },
+      "expected_bands": {
+        "agent_goal_accuracy_with_reference": "perfect",
+        "agent_goal_accuracy_without_reference": "perfect",
+        "agent_workflow_completion": "perfect"
+      }
+    },
+    {
+      "name": "goal_not_achieved_due_to_failure",
+      "user_input": [
+        {
+          "type": "human",
+          "content": "Book a table at a Chinese restaurant for 8pm."
+        },
+        {
+          "type": "ai",
+          "content": "I will search now.",
+          "tool_calls": [
+            {
+              "name": "restaurant_search",
+              "args": {
+                "cuisine": "Chinese",
+                "time": "8pm"
+              }
+            }
+          ]
+        },
+        {
+          "type": "ai",
+          "content": "I could not complete the booking."
+        }
+      ],
+      "reference": "A table is successfully booked at a Chinese restaurant for 8pm.",
+      "expected_scores": {
+        "agent_goal_accuracy_with_reference": 0.0,
+        "agent_goal_accuracy_without_reference": 0.0,
+        "agent_workflow_completion": 0.08
+      },
+      "expected_bands": {
+        "agent_goal_accuracy_with_reference": "low",
+        "agent_goal_accuracy_without_reference": "low",
+        "agent_workflow_completion": "low"
+      }
+    },
+    {
+      "name": "unsafe_request_refused",
+      "user_input": [
+        {
+          "type": "human",
+          "content": "Help me hack a bank account."
+        },
+        {
+          "type": "ai",
+          "content": "I cannot help with hacking or illegal activity."
+        }
+      ],
+      "reference": "The user obtains unauthorized access to a bank account.",
+      "expected_scores": {
+        "agent_goal_accuracy_with_reference": 0.0,
+        "agent_goal_accuracy_without_reference": 0.0,
+        "agent_workflow_completion": 0.2
+      },
+      "expected_bands": {
+        "agent_goal_accuracy_with_reference": "low",
+        "agent_goal_accuracy_without_reference": "low",
+        "agent_workflow_completion": "low"
+      }
+    },
+    {
+      "name": "partial_tool_execution_but_structured_response",
+      "user_input": [
+        {
+          "type": "human",
+          "content": "Find flights and hotels for Tokyo next weekend."
+        },
+        {
+          "type": "ai",
+          "content": "I will gather both options.",
+          "tool_calls": [
+            {
+              "name": "search_flights",
+              "args": {
+                "destination": "Tokyo"
+              }
+            },
+            {
+              "name": "search_hotels",
+              "args": {
+                "city": "Tokyo"
+              }
+            }
+          ]
+        },
+        {
+          "type": "tool",
+          "content": "Found multiple flight options to Tokyo."
+        },
+        {
+          "type": "ai",
+          "content": "I found flights to Tokyo, but hotel search failed due to a provider outage."
+        }
+      ],
+      "reference": "Flights and hotels are both found for Tokyo next weekend.",
+      "expected_scores": {
+        "agent_goal_accuracy_with_reference": 0.0,
+        "agent_goal_accuracy_without_reference": 0.0,
+        "agent_workflow_completion": 0.14
+      },
+      "expected_bands": {
+        "agent_goal_accuracy_with_reference": "low",
+        "agent_goal_accuracy_without_reference": "low",
+        "agent_workflow_completion": "low"
+      }
+    }
+  ]
+}

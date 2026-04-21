@@ -1,0 +1,55 @@
+{
+  "cases": [
+    {
+      "id": "semantic_reordered",
+      "reference": "Paris is the capital of France.",
+      "response": "The capital of France is Paris.",
+      "expected_score": 1.0,
+      "expected_band": "perfect"
+    },
+    {
+      "id": "semantic_paraphrase",
+      "reference": "Python is a high-level programming language known for readability.",
+      "response": "Python is a programming language that emphasizes code readability.",
+      "expected_score": 0.5892556509887895,
+      "expected_band": "partial"
+    },
+    {
+      "id": "semantic_related_diff",
+      "reference": "Machine learning is a subset of artificial intelligence.",
+      "response": "Deep learning uses neural networks with multiple layers.",
+      "expected_score": 0.13363062095621217,
+      "expected_band": "low"
+    },
+    {
+      "id": "semantic_unrelated",
+      "reference": "The quick brown fox jumps over the lazy dog.",
+      "response": "A slow red cat walks under the active mouse.",
+      "expected_score": 0.21320071635561041,
+      "expected_band": "low"
+    },
+    {
+      "id": "semantic_empty_reference",
+      "reference": "",
+      "response": "Some response text",
+      "expected_score": 0.0,
+      "expected_band": "low"
+    }
+  ],
+  "threshold_cases": [
+    {
+      "id": "threshold_high_similarity",
+      "reference": "Paris is the capital of France.",
+      "response": "The capital of France is Paris.",
+      "threshold": 0.9,
+      "expected_binary": 1.0
+    },
+    {
+      "id": "threshold_medium_similarity",
+      "reference": "Machine learning is a subset of artificial intelligence.",
+      "response": "Deep learning uses neural networks.",
+      "threshold": 0.5,
+      "expected_binary": 0.0
+    }
+  ]
+}

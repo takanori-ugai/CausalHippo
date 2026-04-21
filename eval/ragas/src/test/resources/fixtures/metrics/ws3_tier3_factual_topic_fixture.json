@@ -1,0 +1,88 @@
+{
+  "factual_correctness_cases": [
+    {
+      "id": "fact_exact",
+      "response": "Einstein was born in Germany on March 14, 1879.",
+      "reference": "Albert Einstein was born in Ulm, Germany on March 14, 1879.",
+      "expected_score": 0.0,
+      "expected_band": "low"
+    },
+    {
+      "id": "fact_wrong_country",
+      "response": "Einstein was born in France on March 14, 1879.",
+      "reference": "Albert Einstein was born in Ulm, Germany on March 14, 1879.",
+      "expected_score": 0.0,
+      "expected_band": "low"
+    },
+    {
+      "id": "fact_partial",
+      "response": "Photosynthesis converts sunlight into energy and produces oxygen.",
+      "reference": "Photosynthesis is the process by which plants convert sunlight into energy and produce oxygen as a byproduct.",
+      "expected_score": 0.0,
+      "expected_band": "low"
+    },
+    {
+      "id": "fact_unrelated",
+      "response": "The Eiffel Tower is in London.",
+      "reference": "Paris is the capital of France.",
+      "expected_score": 0.0,
+      "expected_band": "low"
+    }
+  ],
+  "topic_adherence_cases": [
+    {
+      "id": "topic_in_scope_answered",
+      "user_input": [
+        { "type": "human", "content": "Explain quantum physics basics." },
+        { "type": "ai", "content": "Quantum physics studies matter and energy at very small scales." }
+      ],
+      "reference_topics": ["physics", "science"],
+      "expected_score": 1.0,
+      "expected_band": "perfect"
+    },
+    {
+      "id": "topic_out_scope_answered",
+      "user_input": [
+        { "type": "human", "content": "Give me stock market advice for this week." },
+        { "type": "ai", "content": "I think tech stocks may rise, but this is not financial advice." }
+      ],
+      "reference_topics": ["physics"],
+      "expected_score": 0.0,
+      "expected_band": "low"
+    },
+    {
+      "id": "topic_in_scope_refused",
+      "user_input": [
+        { "type": "human", "content": "Can you explain relativity in physics?" },
+        { "type": "ai", "content": "Sorry, I cannot help with that right now." }
+      ],
+      "reference_topics": ["physics"],
+      "expected_score": 0.0,
+      "expected_band": "low"
+    },
+    {
+      "id": "topic_mixed_answer_refuse",
+      "user_input": [
+        { "type": "human", "content": "Tell me a core concept in physics." },
+        { "type": "ai", "content": "Conservation of energy is a core concept in physics." },
+        { "type": "human", "content": "Also suggest good stock picks." },
+        { "type": "ai", "content": "Sorry, I can't provide stock recommendations." }
+      ],
+      "reference_topics": ["physics"],
+      "expected_score": 1.0,
+      "expected_band": "perfect"
+    },
+    {
+      "id": "topic_mixed_answered_both",
+      "user_input": [
+        { "type": "human", "content": "Explain one concept in physics." },
+        { "type": "ai", "content": "Force equals mass times acceleration." },
+        { "type": "human", "content": "Now give me travel tips for Japan." },
+        { "type": "ai", "content": "Tokyo and Kyoto are great destinations for a first trip." }
+      ],
+      "reference_topics": ["physics"],
+      "expected_score": 0.6666666666666666,
+      "expected_band": "high"
+    }
+  ]
+}

@@ -1,0 +1,1104 @@
+package causalrag.examples
+
+import causalrag.CausalRAGPipeline
+import causalrag.HippoCausalRAGPipeline
+import causalrag.generator.promptbuilder.buildPrompt
+import causalrag.retriever.HippoRagSemanticMode
+import hipporag.HippoRag
+import hipporag.config.BaseConfig
+import io.github.ugaikit.bertscore.BertScore
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.runBlocking
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonElement
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.booleanOrNull
+import kotlinx.serialization.json.contentOrNull
+import ragas.metrics.collections.ResponseGroundednessMetric
+import ragas.metrics.defaults.FaithfulnessMetric
+import ragas.model.SingleTurnSample
+import java.nio.file.Files
+import java.nio.file.Path
+import java.time.Instant
+import java.util.concurrent.atomic.AtomicBoolean
+import java.util.concurrent.atomic.AtomicInteger
+import kotlin.io.path.createDirectories
+import kotlin.math.log2
+import kotlin.math.max
+
+private val json = Json { ignoreUnknownKeys = true }
+private val NON_ALNUM_WHITESPACE_REGEX = Regex("[^a-z0-9\\s]")
+private val ARTICLES_REGEX = Regex("\\b(a|an|the)\\b")
+private val MULTISPACE_REGEX = Regex("\\s+")
+private val JSON_CODE_FENCE_REGEX = Regex("^```(?:json)?\\s*(\\{[\\s\\S]*})\\s*```$", setOf(RegexOption.IGNORE_CASE))
+private val faithfulnessMetric = FaithfulnessMetric(allowHeuristicFallback = true)
+private val responseGroundednessMetric = ResponseGroundednessMetric()
+private val bertScoreThreadLocal = ThreadLocal.withInitial { BertScore() }
+private val bertScoreWarningLogged = AtomicBoolean(false)
+
+@Serializable
+private data class ExperimentParagraph(
+    val idx: Int = 0,
+    val title: String = "",
+    @SerialName("paragraph_text")
+    val paragraphText: String,
+    @SerialName("is_supporting")
+    val isSupporting: Boolean = false,
+)
+
+@Serializable
+private data class ExperimentSample(
+    val id: String,
+    val paragraphs: List<ExperimentParagraph>,
+    val question: String,
+    val answer: String,
+    @SerialName("answer_aliases")
+    val answerAliases: List<String> = emptyList(),
+    @SerialName("question_decomposition")
+    val questionDecomposition: List<JsonElement> = emptyList(),
+    val answerable: Boolean = true,
+    val metadata: JsonObject = JsonObject(emptyMap()),
+)
+
+@Serializable
+private data class ManifestRow(
+    val id: String,
+    @SerialName("hop_count")
+    val hopCount: Int? = null,
+    @SerialName("overlap_bucket")
+    val overlapBucket: String? = null,
+)
+
+@Serializable
+private data class PerQuestionResult(
+    val condition: String,
+    val sampleId: String,
+    val hopCount: Int,
+    val overlapBucket: String,
+    val category: String,
+    val labelTrue: Boolean? = null,
+    val supportCount: Int,
+    val exactMatch: Double,
+    val precision: Double,
+    val recall: Double,
+    val f1: Double,
+    val bertScorePrecision: Double,
+    val bertScoreRecall: Double,
+    val bertScoreF1: Double,
+    val supportRecallAt1: Double,
+    val supportRecallAt3: Double,
+    val supportRecallAt5: Double,
+    val bridgeCoverageAt5: Double,
+    val mrrAt5: Double,
+    val ndcgAt5: Double,
+    val faithfulness: Double,
+    val responseGroundedness: Double,
+    val indexLatencyMs: Double,
+    val queryLatencyMs: Double,
+    val totalLatencyMs: Double,
+    val prediction: String,
+    val error: String? = null,
+)
+
+private enum class Condition(
+    val id: String,
+    val description: String,
+) {
+    CAUSALRAG_FIXED(
+        id = "causalrag_fixed",
+        description = "CausalRAG fixed weights",
+    ),
+    CAUSALRAG_ADAPT(
+        id = "causalrag_adapt",
+        description = "CausalRAG dynamicWeighting + twoPassAdaptive + confidenceSwitch",
+    ),
+    HIPPORAG_GRAPH(
+        id = "hipporag_graph",
+        description = "HippoRAG graph retrieval",
+    ),
+    HIPPORAG_DPR(
+        id = "hipporag_dpr",
+        description = "HippoRAG DPR retrieval",
+    ),
+    CAUSALHIPPO_FIXED(
+        id = "causalhippo_fixed",
+        description = "CausalHippoRAG fixed weights",
+    ),
+    CAUSALHIPPO_ADAPTIVE(
+        id = "causalhippo_adaptive",
+        description = "CausalHippoRAG dynamicWeighting + twoPassAdaptive + confidenceSwitch",
+    ),
+    CAUSALHIPPO_ABLATION_NO_RERANK(
+        id = "causalhippo_ablation_no_rerank",
+        description = "CausalHippoRAG ablation (no causal reranker)",
+    ),
+    ;
+
+    companion object {
+        fun parse(raw: String): List<Condition> {
+            if (raw == "all") return entries
+            val wanted =
+                raw
+                    .split(',')
+                    .map { it.trim() }
+                    .filter { it.isNotBlank() }
+                    .toSet()
+            require(wanted.isNotEmpty()) {
+                "--conditions must be 'all' or a comma-separated list of condition IDs"
+            }
+            val resolved = entries.filter { it.id in wanted }
+            require(resolved.size == wanted.size) {
+                val known = entries.joinToString(",") { it.id }
+                val missing = wanted - resolved.map { it.id }.toSet()
+                "Unknown conditions: ${missing.joinToString(",")}. Known: $known"
+            }
+            return resolved
+        }
+    }
+}
+
+private data class RunConfig(
+    val dataPath: Path,
+    val outputDir: Path,
+    val configPath: String?,
+    val manifestPath: Path?,
+    val conditions: List<Condition>,
+    val topK: Int,
+    val llmModel: String,
+    val embeddingModel: String,
+    val llmProvider: String,
+    val llmBaseUrl: String?,
+    val templateStyle: String,
+    val limit: Int?,
+    val parallelism: Int,
+)
+
+private data class RetrievalAndAnswer(
+    val context: List<String>,
+    val prediction: String,
+    val indexLatencyMs: Double,
+    val queryLatencyMs: Double,
+    val totalLatencyMs: Double,
+)
+
+private data class BertScoreMetrics(
+    val precision: Double,
+    val recall: Double,
+    val f1: Double,
+)
+
+fun main(args: Array<String>) {
+    val config = parseArgs(args)
+
+    val samples =
+        Files.newBufferedReader(config.dataPath).useLines { lines ->
+            val answerable = mutableListOf<ExperimentSample>()
+            var sawAnySample = false
+            for (rawLine in lines) {
+                val line = rawLine.trim()
+                if (line.isBlank()) continue
+                sawAnySample = true
+                val sample = json.decodeFromString(ExperimentSample.serializer(), line)
+                if (!sample.answerable) continue
+                answerable += sample
+                if (config.limit != null && answerable.size >= config.limit) break
+            }
+            require(sawAnySample) { "No samples found in ${config.dataPath}" }
+            answerable
+        }
+
+    require(samples.isNotEmpty()) { "No answerable samples to run." }
+
+    val manifestById = loadManifest(config.manifestPath)
+
+    config.outputDir.createDirectories()
+    val perQuestionDir = config.outputDir.resolve("per_question")
+    perQuestionDir.createDirectories()
+
+    println("Running ${config.conditions.size} conditions on ${samples.size} samples")
+    println("Parallelism: ${config.parallelism}")
+    println("Data: ${config.dataPath}")
+    println("Output: ${config.outputDir}")
+
+    for (condition in config.conditions) {
+        println("\n=== Condition: ${condition.id} (${condition.description}) ===")
+        val conditionRows =
+            runBlocking {
+                runConditionForSamples(
+                    condition = condition,
+                    config = config,
+                    samples = samples,
+                    manifestById = manifestById,
+                )
+            }
+
+        val outputPath = perQuestionDir.resolve("${condition.id}.jsonl")
+        writeJsonl(outputPath, conditionRows)
+        println("Wrote ${conditionRows.size} rows -> $outputPath")
+    }
+
+    println("\nFinished. Aggregate CSV can be produced by scripts/aggregate_experiment_results.py")
+}
+
+private data class IndexedPerQuestionResult(
+    val index: Int,
+    val row: PerQuestionResult,
+)
+
+private suspend fun runConditionForSamples(
+    condition: Condition,
+    config: RunConfig,
+    samples: List<ExperimentSample>,
+    manifestById: Map<String, ManifestRow>,
+): List<PerQuestionResult> =
+    coroutineScope {
+        val orderedRows = arrayOfNulls<PerQuestionResult>(samples.size)
+        val nextIndex = AtomicInteger(0)
+        val completedCount = AtomicInteger(0)
+        val workerCount = minOf(config.parallelism, samples.size)
+
+        val resultsByWorker =
+            (0 until workerCount)
+                .map { workerIndex ->
+                    async(Dispatchers.IO) {
+                        val runner = createConditionRunner(condition, config, workerIndex)
+                        val localResults = mutableListOf<IndexedPerQuestionResult>()
+                        while (true) {
+                            val sampleIndex = nextIndex.getAndIncrement()
+                            if (sampleIndex >= samples.size) break
+
+                            val sample = samples[sampleIndex]
+                            val result =
+                                try {
+                                    runConditionForSample(
+                                        runner = runner,
+                                        sample = sample,
+                                        manifestRow = manifestById[sample.id],
+                                    )
+                                } catch (ex: Exception) {
+                                    errorResultForSample(
+                                        conditionId = condition.id,
+                                        sample = sample,
+                                        manifestRow = manifestById[sample.id],
+                                        errorMessage = ex.message ?: ex::class.simpleName,
+                                    )
+                                }
+                            localResults += IndexedPerQuestionResult(index = sampleIndex, row = result)
+
+                            val done = completedCount.incrementAndGet()
+                            if (done % 10 == 0 || done == samples.size) {
+                                println("${condition.id}: processed $done/${samples.size}")
+                            }
+                        }
+                        localResults
+                    }
+                }.awaitAll()
+
+        for (workerResults in resultsByWorker) {
+            for (entry in workerResults) {
+                orderedRows[entry.index] = entry.row
+            }
+        }
+
+        orderedRows.mapIndexed { index, row ->
+            row ?: error("Missing result for sample index $index in condition ${condition.id}")
+        }
+    }
+
+private fun errorResultForSample(
+    conditionId: String,
+    sample: ExperimentSample,
+    manifestRow: ManifestRow?,
+    errorMessage: String?,
+): PerQuestionResult =
+    PerQuestionResult(
+        condition = conditionId,
+        sampleId = sample.id,
+        hopCount = inferHopCount(sample, manifestRow?.hopCount),
+        overlapBucket = manifestRow?.overlapBucket ?: "unknown",
+        category = sampleCategory(sample),
+        labelTrue = sampleLabelTrue(sample),
+        supportCount = sample.paragraphs.count { it.isSupporting },
+        exactMatch = 0.0,
+        precision = 0.0,
+        recall = 0.0,
+        f1 = 0.0,
+        bertScorePrecision = 0.0,
+        bertScoreRecall = 0.0,
+        bertScoreF1 = 0.0,
+        supportRecallAt1 = 0.0,
+        supportRecallAt3 = 0.0,
+        supportRecallAt5 = 0.0,
+        bridgeCoverageAt5 = 0.0,
+        mrrAt5 = 0.0,
+        ndcgAt5 = 0.0,
+        faithfulness = 0.0,
+        responseGroundedness = 0.0,
+        indexLatencyMs = 0.0,
+        queryLatencyMs = 0.0,
+        totalLatencyMs = 0.0,
+        prediction = "",
+        error = errorMessage,
+    )
+
+private fun runConditionForSample(
+    runner: ConditionRunner,
+    sample: ExperimentSample,
+    manifestRow: ManifestRow?,
+): PerQuestionResult {
+    val docs = sample.paragraphs.map { it.paragraphText }
+    val supportDocs = sample.paragraphs.filter { it.isSupporting }.map { it.paragraphText }
+    val retrieval = runner.run(sample = sample, docs = docs)
+    val scoredPrediction = predictionForQaScoring(retrieval.prediction)
+
+    val golds = listOf(sample.answer) + sample.answerAliases
+    val qaMetrics = bestQaMetrics(scoredPrediction, golds)
+    val em = bestExactMatch(scoredPrediction, golds)
+    val bertScoreMetrics = bestBertScoreMetrics(scoredPrediction, golds)
+
+    val recallAt1 = supportRecallAtK(retrieval.context, supportDocs, 1)
+    val recallAt3 = supportRecallAtK(retrieval.context, supportDocs, 3)
+    val recallAt5 = supportRecallAtK(retrieval.context, supportDocs, 5)
+    val bridgeAt5 = bridgeCoverageAtK(retrieval.context, supportDocs, 5)
+    val mrrAt5 = mrrAtK(retrieval.context, supportDocs, 5)
+    val ndcgAt5 = nDCGAtK(retrieval.context, supportDocs, 5)
+    val (faithfulness, responseGroundedness) =
+        computeGroundingMetrics(
+            question = sample.question,
+            prediction = retrieval.prediction,
+            contexts = retrieval.context,
+        )
+
+    return PerQuestionResult(
+        condition = runner.id,
+        sampleId = sample.id,
+        hopCount = inferHopCount(sample, manifestRow?.hopCount),
+        overlapBucket = manifestRow?.overlapBucket ?: "unknown",
+        category = sampleCategory(sample),
+        labelTrue = sampleLabelTrue(sample),
+        supportCount = supportDocs.size,
+        exactMatch = em,
+        precision = qaMetrics.precision,
+        recall = qaMetrics.recall,
+        f1 = qaMetrics.f1,
+        bertScorePrecision = bertScoreMetrics.precision,
+        bertScoreRecall = bertScoreMetrics.recall,
+        bertScoreF1 = bertScoreMetrics.f1,
+        supportRecallAt1 = recallAt1,
+        supportRecallAt3 = recallAt3,
+        supportRecallAt5 = recallAt5,
+        bridgeCoverageAt5 = bridgeAt5,
+        mrrAt5 = mrrAt5,
+        ndcgAt5 = ndcgAt5,
+        faithfulness = faithfulness,
+        responseGroundedness = responseGroundedness,
+        indexLatencyMs = retrieval.indexLatencyMs,
+        queryLatencyMs = retrieval.queryLatencyMs,
+        totalLatencyMs = retrieval.totalLatencyMs,
+        prediction = retrieval.prediction,
+        error = null,
+    )
+}
+
+private interface ConditionRunner {
+    val id: String
+
+    fun run(
+        sample: ExperimentSample,
+        docs: List<String>,
+    ): RetrievalAndAnswer
+}
+
+private fun createConditionRunner(
+    condition: Condition,
+    config: RunConfig,
+    workerIndex: Int = 0,
+): ConditionRunner =
+    when (condition) {
+        Condition.CAUSALRAG_FIXED -> {
+            createCausalRagRunner(
+                config = config,
+                dynamic = false,
+                twoPass = false,
+                confidence = false,
+            )
+        }
+
+        Condition.CAUSALRAG_ADAPT -> {
+            createCausalRagRunner(
+                config = config,
+                dynamic = true,
+                twoPass = true,
+                confidence = true,
+            )
+        }
+
+        Condition.HIPPORAG_GRAPH -> {
+            createHippoRunner(config, useDpr = false, workdirSuffix = scopedWorkdirSuffix("graph", workerIndex))
+        }
+
+        Condition.HIPPORAG_DPR -> {
+            createHippoRunner(config, useDpr = true, workdirSuffix = scopedWorkdirSuffix("dpr", workerIndex))
+        }
+
+        Condition.CAUSALHIPPO_FIXED -> {
+            createCausalHippoRunner(
+                config = config,
+                dynamic = false,
+                twoPass = false,
+                confidence = false,
+                workdirSuffix = scopedWorkdirSuffix("hippocausal_fixed", workerIndex),
+            )
+        }
+
+        Condition.CAUSALHIPPO_ADAPTIVE -> {
+            createCausalHippoRunner(
+                config = config,
+                dynamic = true,
+                twoPass = true,
+                confidence = true,
+                workdirSuffix = scopedWorkdirSuffix("hippocausal_adaptive", workerIndex),
+            )
+        }
+
+        Condition.CAUSALHIPPO_ABLATION_NO_RERANK -> {
+            createCausalHippoAblationRunner(config, scopedWorkdirSuffix("ablation", workerIndex))
+        }
+    }
+
+private fun scopedWorkdirSuffix(
+    base: String,
+    workerIndex: Int,
+): String = if (workerIndex == 0) base else "${base}_worker${workerIndex + 1}"
+
+private fun createCausalRagRunner(
+    config: RunConfig,
+    dynamic: Boolean,
+    twoPass: Boolean,
+    confidence: Boolean,
+): ConditionRunner {
+    val pipeline =
+        CausalRAGPipeline(
+            modelName = config.llmModel,
+            embeddingModel = config.embeddingModel,
+            configPath = config.configPath,
+            templateStyle = config.templateStyle,
+            dynamicWeightingEnabled = dynamic,
+            twoPassAdaptiveEnabled = twoPass,
+            confidenceBasedSwitchEnabled = confidence,
+        )
+    val conditionId =
+        if (dynamic) {
+            Condition.CAUSALRAG_ADAPT.id
+        } else {
+            Condition.CAUSALRAG_FIXED.id
+        }
+    return object : ConditionRunner {
+        override val id: String = conditionId
+
+        override fun run(
+            sample: ExperimentSample,
+            docs: List<String>,
+        ): RetrievalAndAnswer {
+            val indexStart = System.nanoTime()
+            pipeline.reindex(docs)
+            val indexMs = elapsedMs(indexStart)
+
+            val queryStart = System.nanoTime()
+            val result = pipeline.runWithContext(sample.question, topK = config.topK)
+            val queryMs = elapsedMs(queryStart)
+
+            return RetrievalAndAnswer(
+                context = result.context.take(config.topK),
+                prediction = result.answer,
+                indexLatencyMs = indexMs,
+                queryLatencyMs = queryMs,
+                totalLatencyMs = indexMs + queryMs,
+            )
+        }
+    }
+}
+
+private fun createHippoRunner(
+    config: RunConfig,
+    useDpr: Boolean,
+    workdirSuffix: String,
+): ConditionRunner {
+    val hippo =
+        HippoRag(
+            BaseConfig(
+                llmName = config.llmModel,
+                embeddingModelName = config.embeddingModel,
+                llmProvider = config.llmProvider,
+                embeddingProvider = config.llmProvider,
+                llmBaseUrl = config.llmBaseUrl,
+                embeddingBaseUrl = config.llmBaseUrl,
+                saveDir =
+                    config.outputDir
+                        .resolve("workdirs")
+                        .resolve(workdirSuffix)
+                        .toString(),
+                retrievalTopK = config.topK,
+                qaTopK = config.topK,
+            ),
+        )
+    var previousDocs: List<String> = emptyList()
+    return object : ConditionRunner {
+        override val id: String = if (useDpr) Condition.HIPPORAG_DPR.id else Condition.HIPPORAG_GRAPH.id
+
+        override fun run(
+            sample: ExperimentSample,
+            docs: List<String>,
+        ): RetrievalAndAnswer {
+            val indexStart = System.nanoTime()
+            val cleanedDocs = docs.filter { it.isNotBlank() }
+            if (previousDocs.isNotEmpty()) {
+                hippo.delete(previousDocs)
+            }
+            previousDocs = emptyList()
+            try {
+                hippo.index(cleanedDocs)
+                previousDocs = cleanedDocs
+            } catch (e: Exception) {
+                runCatching { hippo.delete(cleanedDocs) }
+                previousDocs = emptyList()
+                throw e
+            }
+            val indexMs = elapsedMs(indexStart)
+
+            val queryStart = System.nanoTime()
+            val result =
+                if (useDpr) {
+                    hippo.ragQaDpr(queries = listOf(sample.question), goldDocs = null, goldAnswers = null)
+                } else {
+                    hippo.ragQa(queries = listOf(sample.question), goldDocs = null, goldAnswers = null)
+                }
+            val queryMs = elapsedMs(queryStart)
+
+            val solution = result.solutions.firstOrNull()
+            val context = solution?.docs?.take(config.topK) ?: emptyList()
+            val prediction = solution?.answer.orEmpty()
+
+            return RetrievalAndAnswer(
+                context = context,
+                prediction = prediction,
+                indexLatencyMs = indexMs,
+                queryLatencyMs = queryMs,
+                totalLatencyMs = indexMs + queryMs,
+            )
+        }
+    }
+}
+
+private fun createCausalHippoRunner(
+    config: RunConfig,
+    dynamic: Boolean,
+    twoPass: Boolean,
+    confidence: Boolean,
+    workdirSuffix: String,
+): ConditionRunner {
+    val pipeline =
+        HippoCausalRAGPipeline(
+            modelName = config.llmModel,
+            embeddingModel = config.embeddingModel,
+            configPath = config.configPath,
+            templateStyle = config.templateStyle,
+            hippoConfig =
+                BaseConfig(
+                    llmName = config.llmModel,
+                    embeddingModelName = config.embeddingModel,
+                    llmProvider = config.llmProvider,
+                    embeddingProvider = config.llmProvider,
+                    llmBaseUrl = config.llmBaseUrl,
+                    embeddingBaseUrl = config.llmBaseUrl,
+                    saveDir =
+                        config.outputDir
+                            .resolve("workdirs")
+                            .resolve(workdirSuffix)
+                            .toString(),
+                    retrievalTopK = config.topK,
+                    qaTopK = config.topK,
+                ),
+            hippoSemanticMode = HippoRagSemanticMode.GRAPH,
+            dynamicWeightingEnabled = dynamic,
+            twoPassAdaptiveEnabled = twoPass,
+            confidenceBasedSwitchEnabled = confidence,
+        )
+    val conditionId =
+        if (dynamic) {
+            Condition.CAUSALHIPPO_ADAPTIVE.id
+        } else {
+            Condition.CAUSALHIPPO_FIXED.id
+        }
+
+    return object : ConditionRunner {
+        override val id: String = conditionId
+
+        override fun run(
+            sample: ExperimentSample,
+            docs: List<String>,
+        ): RetrievalAndAnswer {
+            val indexStart = System.nanoTime()
+            pipeline.reindex(docs)
+            val indexMs = elapsedMs(indexStart)
+
+            val queryStart = System.nanoTime()
+            val result = pipeline.runWithContext(sample.question, topK = config.topK)
+            val queryMs = elapsedMs(queryStart)
+
+            return RetrievalAndAnswer(
+                context = result.context.take(config.topK),
+                prediction = result.answer,
+                indexLatencyMs = indexMs,
+                queryLatencyMs = queryMs,
+                totalLatencyMs = indexMs + queryMs,
+            )
+        }
+    }
+}
+
+private fun createCausalHippoAblationRunner(
+    config: RunConfig,
+    workdirSuffix: String,
+): ConditionRunner {
+    val pipeline =
+        HippoCausalRAGPipeline(
+            modelName = config.llmModel,
+            embeddingModel = config.embeddingModel,
+            configPath = config.configPath,
+            templateStyle = config.templateStyle,
+            hippoConfig =
+                BaseConfig(
+                    llmName = config.llmModel,
+                    embeddingModelName = config.embeddingModel,
+                    llmProvider = config.llmProvider,
+                    embeddingProvider = config.llmProvider,
+                    llmBaseUrl = config.llmBaseUrl,
+                    embeddingBaseUrl = config.llmBaseUrl,
+                    saveDir =
+                        config.outputDir
+                            .resolve("workdirs")
+                            .resolve(workdirSuffix)
+                            .toString(),
+                    retrievalTopK = config.topK,
+                    qaTopK = config.topK,
+                ),
+            hippoSemanticMode = HippoRagSemanticMode.GRAPH,
+            dynamicWeightingEnabled = true,
+            twoPassAdaptiveEnabled = true,
+            confidenceBasedSwitchEnabled = true,
+        )
+    return object : ConditionRunner {
+        override val id: String = Condition.CAUSALHIPPO_ABLATION_NO_RERANK.id
+
+        override fun run(
+            sample: ExperimentSample,
+            docs: List<String>,
+        ): RetrievalAndAnswer {
+            val indexStart = System.nanoTime()
+            pipeline.reindex(docs)
+            val indexMs = elapsedMs(indexStart)
+
+            val queryStart = System.nanoTime()
+            val candidateDetails = pipeline.hybridRetriever.retrieveWithDetails(sample.question, topK = config.topK)
+            val context = candidateDetails.map { it["passage"] as String }.take(config.topK)
+            val causalNodes = pipeline.graphRetriever.retrievePathNodes(sample.question)
+            val causalPaths = pipeline.graphRetriever.retrievePaths(sample.question, maxPaths = 3)
+            val prompt =
+                buildPrompt(
+                    sample.question,
+                    context,
+                    causalPaths = causalPaths,
+                    causalNodes = causalNodes,
+                    templateStyle = config.templateStyle,
+                    llmInterface = pipeline.llm,
+                )
+            val prediction = pipeline.llm.generate(prompt, jsonMode = requiresJsonResponseFormat(config.templateStyle))
+            val queryMs = elapsedMs(queryStart)
+
+            return RetrievalAndAnswer(
+                context = context,
+                prediction = prediction,
+                indexLatencyMs = indexMs,
+                queryLatencyMs = queryMs,
+                totalLatencyMs = indexMs + queryMs,
+            )
+        }
+    }
+}
+
+private fun elapsedMs(startNanos: Long): Double = (System.nanoTime() - startNanos).toDouble() / 1_000_000.0
+
+private fun parseArgs(args: Array<String>): RunConfig {
+    val opts = CliUtils.parseOptions(args.toList())
+
+    val dataPath = Path.of(opts["data"] ?: "data/musique_experiment/musique_dev_balanced_300.jsonl")
+    require(Files.exists(dataPath)) { "Missing --data file: $dataPath" }
+
+    val outputDir =
+        Path.of(
+            opts["output-dir"]
+                ?: Path.of("eval_results", "multicondition_${Instant.now().toString().replace(':', '_')}").toString(),
+        )
+
+    val configPath = opts["config"]
+    val conditions = Condition.parse(opts["conditions"] ?: "all")
+    val topK = (opts["top-k"] ?: "5").toIntOrNull() ?: 5
+    require(topK > 0) { "--top-k must be positive" }
+
+    val llmModel = opts["llm-model"] ?: System.getenv("LLM_MODEL") ?: "gpt-5.4-mini"
+    val embeddingModel = opts["embedding-model"] ?: System.getenv("EMBEDDING_MODEL") ?: "text-embedding-3-small"
+    val llmProvider = (opts["provider"] ?: System.getenv("LLM_PROVIDER") ?: "openai").lowercase()
+    val llmBaseUrl = opts["llm-base-url"] ?: System.getenv("LLM_BASE_URL")
+    val templateStyle = opts["template-style"] ?: "detailed_musique"
+    val limit = opts["limit"]?.toIntOrNull()
+    val parallelism = (opts["parallelism"] ?: "5").toIntOrNull() ?: 5
+    require(parallelism > 0) { "--parallelism must be positive" }
+
+    val manifestPath =
+        opts["manifest"]?.let { Path.of(it) }
+            ?: detectManifestNearData(dataPath)
+
+    return RunConfig(
+        dataPath = dataPath,
+        outputDir = outputDir,
+        configPath = configPath,
+        manifestPath = manifestPath,
+        conditions = conditions,
+        topK = topK,
+        llmModel = llmModel,
+        embeddingModel = embeddingModel,
+        llmProvider = llmProvider,
+        llmBaseUrl = llmBaseUrl,
+        templateStyle = templateStyle,
+        limit = limit,
+        parallelism = parallelism,
+    )
+}
+
+private fun detectManifestNearData(dataPath: Path): Path? {
+    val parent = dataPath.parent ?: return null
+    val candidate = parent.resolve("musique_dev_multihop_manifest.jsonl")
+    return if (Files.exists(candidate)) candidate else null
+}
+
+private fun loadManifest(path: Path?): Map<String, ManifestRow> {
+    if (path == null || !Files.exists(path)) return emptyMap()
+    val lines = Files.readAllLines(path).map { it.trim() }.filter { it.isNotBlank() }
+    return lines
+        .map { json.decodeFromString(ManifestRow.serializer(), it) }
+        .associateBy { it.id }
+}
+
+private fun writeJsonl(
+    path: Path,
+    rows: List<PerQuestionResult>,
+) {
+    Files.newBufferedWriter(path).use { writer ->
+        rows.forEach { row ->
+            writer.write(json.encodeToString(PerQuestionResult.serializer(), row))
+            writer.newLine()
+        }
+    }
+}
+
+private fun supportRecallAtK(
+    retrieved: List<String>,
+    supporting: List<String>,
+    k: Int,
+): Double {
+    if (supporting.isEmpty()) return 0.0
+    val retrievedNorm = retrieved.take(k).map { normalize(it) }.toSet()
+    val supportingNorm = supporting.map { normalize(it) }.toSet()
+    if (supportingNorm.isEmpty()) return 0.0
+    val hits = supportingNorm.count { it in retrievedNorm }
+    return hits.toDouble() / supportingNorm.size
+}
+
+private fun mrrAtK(
+    retrieved: List<String>,
+    supporting: List<String>,
+    k: Int,
+): Double {
+    if (supporting.isEmpty()) return 0.0
+    val supportingNorm = supporting.map { normalize(it) }.filter { it.isNotBlank() }.toSet()
+    if (supportingNorm.isEmpty()) return 0.0
+
+    val retrievedNorm = retrieved.take(k).map { normalize(it) }
+    for ((index, doc) in retrievedNorm.withIndex()) {
+        if (doc in supportingNorm) {
+            return 1.0 / (index + 1).toDouble()
+        }
+    }
+    return 0.0
+}
+
+private fun nDCGAtK(
+    retrieved: List<String>,
+    supporting: List<String>,
+    k: Int,
+): Double {
+    if (supporting.isEmpty()) return 0.0
+    val supportingNorm = supporting.map { normalize(it) }.filter { it.isNotBlank() }.toSet()
+    if (supportingNorm.isEmpty()) return 0.0
+
+    val retrievedNorm = retrieved.take(k).map { normalize(it) }
+    val dcg =
+        retrievedNorm.withIndex().sumOf { (index, doc) ->
+            if (doc in supportingNorm) {
+                1.0 / log2((index + 2).toDouble())
+            } else {
+                0.0
+            }
+        }
+
+    val idealRelevant = minOf(supportingNorm.size, k)
+    if (idealRelevant == 0) return 0.0
+    val idcg =
+        (0 until idealRelevant).sumOf { index ->
+            1.0 / log2((index + 2).toDouble())
+        }
+    if (idcg == 0.0) return 0.0
+
+    return dcg / idcg
+}
+
+private fun bridgeCoverageAtK(
+    retrieved: List<String>,
+    supporting: List<String>,
+    k: Int,
+): Double {
+    if (supporting.isEmpty()) return 0.0
+    val retrievedNorm = retrieved.take(k).map { normalize(it) }.toSet()
+    val supportingNorm = supporting.map { normalize(it) }.toSet()
+    if (supportingNorm.isEmpty()) return 0.0
+    val hits = supportingNorm.count { it in retrievedNorm }
+    return if (hits == supportingNorm.size) 1.0 else 0.0
+}
+
+private fun sampleCategory(sample: ExperimentSample): String {
+    val category = (sample.metadata["category"] as? JsonPrimitive)?.contentOrNull?.trim()
+    return if (category.isNullOrBlank()) "unknown" else category
+}
+
+private fun sampleLabelTrue(sample: ExperimentSample): Boolean? {
+    val primitive = sample.metadata["label_true"] as? JsonPrimitive ?: return null
+    primitive.booleanOrNull?.let { return it }
+    return when (primitive.contentOrNull?.trim()?.lowercase()) {
+        "true" -> true
+        "false" -> false
+        else -> null
+    }
+}
+
+private fun computeGroundingMetrics(
+    question: String,
+    prediction: String,
+    contexts: List<String>,
+): Pair<Double, Double> {
+    val evalSample =
+        SingleTurnSample(
+            userInput = question,
+            retrievedContexts = contexts,
+            response = prediction,
+        )
+    val faithfulness =
+        runBlocking {
+            scoreOrZero(faithfulnessMetric.singleTurnAscore(evalSample))
+        }
+    val responseGroundedness =
+        runBlocking {
+            scoreOrZero(responseGroundednessMetric.singleTurnAscore(evalSample))
+        }
+    return faithfulness to responseGroundedness
+}
+
+private fun scoreOrZero(value: Any?): Double {
+    val numeric = (value as? Number)?.toDouble() ?: return 0.0
+    return if (numeric.isFinite()) numeric else 0.0
+}
+
+private fun inferHopCount(
+    sample: ExperimentSample,
+    fallback: Int?,
+): Int {
+    val fromDecomp = sample.questionDecomposition.size
+    return when {
+        fromDecomp > 0 -> fromDecomp
+        fallback != null -> fallback
+        sample.id.startsWith("2hop") -> 2
+        sample.id.startsWith("3hop") -> 3
+        sample.id.startsWith("4hop") -> 4
+        else -> 0
+    }
+}
+
+private fun bestExactMatch(
+    prediction: String,
+    golds: List<String>,
+): Double = golds.maxOfOrNull { if (normalize(prediction) == normalize(it)) 1.0 else 0.0 } ?: 0.0
+
+private data class QaMetrics(
+    val precision: Double,
+    val recall: Double,
+    val f1: Double,
+)
+
+private fun bestQaMetrics(
+    prediction: String,
+    golds: List<String>,
+): QaMetrics = golds.map { qaMetrics(prediction, it) }.maxByOrNull { it.f1 } ?: QaMetrics(0.0, 0.0, 0.0)
+
+private fun bestBertScoreMetrics(
+    prediction: String,
+    golds: List<String>,
+): BertScoreMetrics {
+    val candidate = prediction.trim()
+    if (candidate.isBlank() || golds.isEmpty()) {
+        return BertScoreMetrics(0.0, 0.0, 0.0)
+    }
+
+    val scorer = bertScoreThreadLocal.get()
+    var best: BertScoreMetrics? = null
+    var bestF1 = Double.NEGATIVE_INFINITY
+
+    for (gold in golds) {
+        val reference = gold.trim()
+        if (reference.isBlank()) continue
+
+        val score =
+            runCatching { scorer.score(reference, candidate) }
+                .onFailure { ex ->
+                    if (bertScoreWarningLogged.compareAndSet(false, true)) {
+                        println("Warning: BertScore computation failed, defaulting to 0.0. Cause: ${ex.message ?: ex::class.simpleName}")
+                    }
+                }.getOrNull() ?: continue
+
+        val metrics =
+            BertScoreMetrics(
+                precision = sanitizeMetric(score.precision.toDouble()),
+                recall = sanitizeMetric(score.recall.toDouble()),
+                f1 = sanitizeMetric(score.f1.toDouble()),
+            )
+        if (metrics.f1 > bestF1) {
+            best = metrics
+            bestF1 = metrics.f1
+        }
+    }
+
+    return best ?: BertScoreMetrics(0.0, 0.0, 0.0)
+}
+
+private fun sanitizeMetric(value: Double): Double = if (value.isFinite()) value else 0.0
+
+private fun qaMetrics(
+    prediction: String,
+    gold: String,
+): QaMetrics {
+    val predTokens = tokenize(normalize(prediction))
+    val goldTokens = tokenize(normalize(gold))
+    if (predTokens.isEmpty() && goldTokens.isEmpty()) return QaMetrics(1.0, 1.0, 1.0)
+    if (predTokens.isEmpty() || goldTokens.isEmpty()) return QaMetrics(0.0, 0.0, 0.0)
+
+    val predCounts = predTokens.groupingBy { it }.eachCount()
+    val goldCounts = goldTokens.groupingBy { it }.eachCount()
+    var overlap = 0
+    for ((token, pCount) in predCounts) {
+        val gCount = goldCounts[token] ?: 0
+        overlap += minOf(pCount, gCount)
+    }
+    if (overlap == 0) return QaMetrics(0.0, 0.0, 0.0)
+    val precision = overlap.toDouble() / predTokens.size
+    val recall = overlap.toDouble() / goldTokens.size
+    val f1 = 2 * precision * recall / max(precision + recall, 1e-9)
+    return QaMetrics(precision = precision, recall = recall, f1 = f1)
+}
+
+private fun normalize(text: String): String {
+    val lowered = text.lowercase()
+    val noPunc = lowered.replace(NON_ALNUM_WHITESPACE_REGEX, " ")
+    val noArticles = noPunc.replace(ARTICLES_REGEX, " ")
+    return noArticles.replace(MULTISPACE_REGEX, " ").trim()
+}
+
+private fun tokenize(text: String): List<String> =
+    if (text.isBlank()) {
+        emptyList()
+    } else {
+        text.split(' ')
+    }
+
+private fun predictionForQaScoring(prediction: String): String = extractAnswerFieldFromJsonPrediction(prediction) ?: prediction
+
+private fun extractAnswerFieldFromJsonPrediction(prediction: String): String? {
+    val trimmed = prediction.trim()
+    if (trimmed.isEmpty()) return null
+
+    val candidates = linkedSetOf(trimmed)
+    extractJsonObjectFromCodeFence(trimmed)?.let { candidates += it }
+    extractFirstJsonObject(trimmed)?.let { candidates += it }
+
+    for (candidate in candidates) {
+        val parsed = runCatching { json.parseToJsonElement(candidate) }.getOrNull() ?: continue
+        val obj = parsed as? JsonObject ?: continue
+        val answer = (obj["answer"] as? JsonPrimitive)?.contentOrNull?.trim()
+        if (!answer.isNullOrBlank()) {
+            return answer
+        }
+    }
+    return null
+}
+
+private fun extractJsonObjectFromCodeFence(text: String): String? {
+    val match = JSON_CODE_FENCE_REGEX.matchEntire(text) ?: return null
+    return match.groupValues
+        .getOrNull(1)
+        ?.trim()
+        ?.takeIf { it.isNotBlank() }
+}
+
+private fun extractFirstJsonObject(text: String): String? {
+    val start = text.indexOf('{')
+    if (start < 0) return null
+
+    var depth = 0
+    var inString = false
+    var escaped = false
+    for (i in start until text.length) {
+        val ch = text[i]
+        if (inString) {
+            when {
+                escaped -> escaped = false
+                ch == '\\' -> escaped = true
+                ch == '"' -> inString = false
+            }
+            continue
+        }
+
+        when (ch) {
+            '"' -> {
+                inString = true
+            }
+
+            '{' -> {
+                depth += 1
+            }
+
+            '}' -> {
+                depth -= 1
+                if (depth == 0) {
+                    return text.substring(start, i + 1)
+                }
+            }
+        }
+    }
+    return null
+}
+
+private fun requiresJsonResponseFormat(style: String): Boolean = style.equals("experiments", ignoreCase = true)

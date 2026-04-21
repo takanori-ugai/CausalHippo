@@ -1,0 +1,241 @@
+{
+  "source_modules": [
+    "src/ragas/metrics/_tool_call_accuracy.py",
+    "src/ragas/metrics/_tool_call_f1.py",
+    "src/ragas/metrics/collections/tool_call_accuracy/metric.py",
+    "src/ragas/metrics/collections/tool_call_f1/metric.py"
+  ],
+  "cases": [
+    {
+      "name": "exact_match_single_tool_call",
+      "user_input": [
+        {
+          "type": "human",
+          "content": "What is the weather in Paris?"
+        },
+        {
+          "type": "ai",
+          "content": "I will check that now.",
+          "tool_calls": [
+            {
+              "name": "get_weather",
+              "args": {
+                "location": "Paris"
+              }
+            }
+          ]
+        }
+      ],
+      "reference_tool_calls": [
+        {
+          "name": "get_weather",
+          "args": {
+            "location": "Paris"
+          }
+        }
+      ],
+      "expected_scores": {
+        "tool_call_accuracy_strict": 1.0,
+        "tool_call_accuracy_relaxed": 1.0,
+        "tool_call_f1": 1.0
+      },
+      "expected_bands": {
+        "tool_call_accuracy_strict": "perfect",
+        "tool_call_accuracy_relaxed": "perfect",
+        "tool_call_f1": "perfect"
+      }
+    },
+    {
+      "name": "order_mismatch_relaxed_alignment",
+      "user_input": [
+        {
+          "type": "human",
+          "content": "Get weather and UV for Paris."
+        },
+        {
+          "type": "ai",
+          "content": "Calling tools.",
+          "tool_calls": [
+            {
+              "name": "get_uv_index",
+              "args": {
+                "location": "Paris"
+              }
+            },
+            {
+              "name": "get_weather",
+              "args": {
+                "location": "Paris"
+              }
+            }
+          ]
+        }
+      ],
+      "reference_tool_calls": [
+        {
+          "name": "get_weather",
+          "args": {
+            "location": "Paris"
+          }
+        },
+        {
+          "name": "get_uv_index",
+          "args": {
+            "location": "Paris"
+          }
+        }
+      ],
+      "expected_scores": {
+        "tool_call_accuracy_strict": 0.0,
+        "tool_call_accuracy_relaxed": 1.0,
+        "tool_call_f1": 1.0
+      },
+      "expected_bands": {
+        "tool_call_accuracy_strict": "low",
+        "tool_call_accuracy_relaxed": "perfect",
+        "tool_call_f1": "perfect"
+      }
+    },
+    {
+      "name": "argument_partial_match",
+      "user_input": [
+        {
+          "type": "human",
+          "content": "Book me a table."
+        },
+        {
+          "type": "ai",
+          "content": "Calling reservation tool.",
+          "tool_calls": [
+            {
+              "name": "book_restaurant",
+              "args": {
+                "city": "Tokyo",
+                "party_size": 4
+              }
+            }
+          ]
+        }
+      ],
+      "reference_tool_calls": [
+        {
+          "name": "book_restaurant",
+          "args": {
+            "city": "Tokyo",
+            "party_size": 2
+          }
+        }
+      ],
+      "expected_scores": {
+        "tool_call_accuracy_strict": 0.5,
+        "tool_call_accuracy_relaxed": 0.5,
+        "tool_call_f1": 0.0
+      },
+      "expected_bands": {
+        "tool_call_accuracy_strict": "partial",
+        "tool_call_accuracy_relaxed": "partial",
+        "tool_call_f1": "low"
+      }
+    },
+    {
+      "name": "extra_predicted_tool_call",
+      "user_input": [
+        {
+          "type": "human",
+          "content": "Check weather and then send email."
+        },
+        {
+          "type": "ai",
+          "content": "Calling tools.",
+          "tool_calls": [
+            {
+              "name": "get_weather",
+              "args": {
+                "location": "Paris"
+              }
+            },
+            {
+              "name": "send_email",
+              "args": {
+                "to": "user@example.com"
+              }
+            }
+          ]
+        }
+      ],
+      "reference_tool_calls": [
+        {
+          "name": "get_weather",
+          "args": {
+            "location": "Paris"
+          }
+        }
+      ],
+      "expected_scores": {
+        "tool_call_accuracy_strict": 0.0,
+        "tool_call_accuracy_relaxed": 0.0,
+        "tool_call_f1": 0.6667
+      },
+      "expected_bands": {
+        "tool_call_accuracy_strict": "low",
+        "tool_call_accuracy_relaxed": "low",
+        "tool_call_f1": "high"
+      }
+    },
+    {
+      "name": "empty_predictions_and_reference",
+      "user_input": [
+        {
+          "type": "human",
+          "content": "Say hello."
+        },
+        {
+          "type": "ai",
+          "content": "Hello!"
+        }
+      ],
+      "reference_tool_calls": [],
+      "expected_scores": {
+        "tool_call_accuracy_strict": 1.0,
+        "tool_call_accuracy_relaxed": 1.0,
+        "tool_call_f1": 0.0
+      },
+      "expected_bands": {
+        "tool_call_accuracy_strict": "perfect",
+        "tool_call_accuracy_relaxed": "perfect",
+        "tool_call_f1": "low"
+      }
+    },
+    {
+      "name": "missing_predicted_calls",
+      "user_input": [
+        {
+          "type": "human",
+          "content": "Find flights to Osaka."
+        },
+        {
+          "type": "ai",
+          "content": "Sure, I can help with that."
+        }
+      ],
+      "reference_tool_calls": [
+        {
+          "name": "search_flights",
+          "args": {
+            "destination": "Osaka"
+          }
+        }
+      ],
+      "expected_scores": {
+        "tool_call_accuracy_strict": 0.0,
+        "tool_call_accuracy_relaxed": 0.0,
+        "tool_call_f1": 0.0
+      },
+      "expected_bands": {
+        "tool_call_accuracy_strict": "low",
+        "tool_call_accuracy_relaxed": "low",
+        "tool_call_f1": "low"
+      }
+    }
+  ]
+}

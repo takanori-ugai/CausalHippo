@@ -1,0 +1,71 @@
+{
+  "sources": [
+    "tests/e2e/metrics_migration/test_context_entity_recall_migration.py",
+    "src/ragas/metrics/_context_precision.py::IDBasedContextPrecision"
+  ],
+  "context_entity_recall_cases": [
+    {
+      "reference": "The Eiffel Tower in Paris, France was built in 1889 for the World's Fair.",
+      "retrieved_contexts": [
+        "The Eiffel Tower is located in Paris, France.",
+        "It was constructed in 1889 for the 1889 World's Fair."
+      ],
+      "expected_band": "high",
+      "expected_score": 1.0
+    },
+    {
+      "reference": "Albert Einstein was born in Germany in 1879 and developed the theory of relativity.",
+      "retrieved_contexts": [
+        "Einstein was a physicist born in Germany.",
+        "He created important theories in physics."
+      ],
+      "expected_band": "partial",
+      "expected_score": 0.4
+    },
+    {
+      "reference": "The Apollo 11 mission launched on July 16, 1969 with Neil Armstrong, Buzz Aldrin, and Michael Collins.",
+      "retrieved_contexts": [
+        "Apollo 11 was a space mission.",
+        "Neil Armstrong was the first person to walk on the Moon."
+      ],
+      "expected_band": "partial",
+      "expected_score": 0.3076923076923077
+    },
+    {
+      "reference": "Microsoft was founded by Bill Gates and Paul Allen in 1975 in Seattle, Washington.",
+      "retrieved_contexts": [
+        "Bill Gates founded Microsoft.",
+        "Paul Allen co-founded the company.",
+        "It was established in 1975 in Seattle, Washington."
+      ],
+      "expected_band": "high",
+      "expected_score": 1.0
+    },
+    {
+      "reference": "The Great Wall of China stretches over 21,196 kilometers and was built starting in the 7th century BC.",
+      "retrieved_contexts": [
+        "The Great Wall is in China.",
+        "It's a very long wall built long ago."
+      ],
+      "expected_band": "low",
+      "expected_score": 0.6666666666666666
+    }
+  ],
+  "id_based_context_precision_cases": [
+    {
+      "retrieved_context_ids": ["1", "2", "3"],
+      "reference_context_ids": ["2", "3", "4"],
+      "expected": 0.6666666667
+    },
+    {
+      "retrieved_context_ids": ["docA", "docA", "docB", "docC"],
+      "reference_context_ids": ["docB", "docD"],
+      "expected": 0.3333333333
+    },
+    {
+      "retrieved_context_ids": ["10", "20"],
+      "reference_context_ids": ["30", "40"],
+      "expected": 0.0
+    }
+  ]
+}

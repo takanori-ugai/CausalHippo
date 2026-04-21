@@ -1,0 +1,24 @@
+{
+  "documents": [
+    "Retrieval calibration alpha ensures stable scoring across benchmark windows. Retrieval calibration beta aligns ranking signals with context utility. Retrieval calibration gamma hardens evaluator outputs against drift.",
+    "Retrieval calibration delta improves traceability for synthesis candidates. Retrieval calibration epsilon enforces deterministic selection constraints. Retrieval calibration zeta increases overlap coverage in graph edges."
+  ],
+  "config": {
+    "testset_size": 4,
+    "max_sentences_per_chunk": 1,
+    "min_shared_keywords": 1,
+    "synthesis_controls": {
+      "seed": 11,
+      "sampling_mode": "temperature",
+      "temperature": 0.7,
+      "multi_hop_count": 2
+    }
+  },
+  "expected": {
+    "min_chunk_nodes": 6,
+    "min_overlap_relationships": 12,
+    "semantic_overlap_density_min": 0.8,
+    "semantic_overlap_density_max": 1.0,
+    "min_multi_hop_samples": 1
+  }
+}

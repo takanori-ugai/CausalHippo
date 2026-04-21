@@ -1,0 +1,45 @@
+ktor {
+    deployment {
+        port = 8080
+        host = "0.0.0.0"
+    }
+    application {
+        modules = [ lightrag.ApplicationKt.module ]
+    }
+}
+
+lightrag {
+    openai {
+        api_key = ${OPENAI_API_KEY} // Environment variable
+        chat_model_name = "gpt-4o-mini"
+        embedding_model_name = "text-embedding-3-small"
+        embedding_model_dimensions = 3072 // For text-embedding-3-large
+    }
+    ollama {
+        base_url = "http://localhost:11434"
+        chat_model_name = "llama3"
+        embedding_model_name = "all-minilm"
+    }
+    neo4j {
+        uri = "bolt://localhost:7687"
+        username = "neo4j"
+        password = "neo4j"
+    }
+    mongodb {
+        uri = "mongodb://localhost:27017"
+        database = "lightrag"
+    }
+    storage {
+        working_dir = "./rag_storage"
+        graph_storage_name = "InMemoryGraphStorage"
+        vector_storage_name = "InMemoryVectorStorage"
+    }
+    addon_config {
+        chunk_token_size = 1200
+        chunk_overlap_token_size = 100
+        cosine_better_threshold = 0.2
+        entity_types = ["Person", "Organization", "Location", "Event", "Concept"]
+        language = "English"
+    }
+    reset_storage = false // Controlled by LIGHTRAG_RESET_STORAGE env var
+}
