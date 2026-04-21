@@ -4,7 +4,13 @@ This document provides instructions for reproducing the experiment results prese
 
 ## Prerequisites
 
-### 1. Environment Setup
+### 1. System Requirements
+
+- **JDK**: 21 or newer.
+- **Python**: 3.12.
+- **Hardware**: Tested on a machine with 32GB RAM and no GPU.
+
+### 2. Environment Setup
 
 Set your LLM provider and API keys. OpenAI is recommended for the best results, especially for GraphRAG.
 
@@ -15,9 +21,19 @@ export LLM_MODEL=gpt-5.4-mini  # or gpt-4o
 export EMBEDDING_MODEL=text-embedding-3-small
 ```
 
-### 2. Data Acquisition
+### 3. Build
 
-#### MuSiQue
+The system must be built before running experiments:
+
+```bash
+./gradlew build
+```
+
+## Data Acquisition
+
+**Note: Data preparation can be skipped as processed data is already stored in the `./data/` directory.**
+
+### MuSiQue
 Run the download script to fetch the MuSiQue v1.0 dataset:
 
 ```bash
@@ -26,10 +42,10 @@ Run the download script to fetch the MuSiQue v1.0 dataset:
 
 This will extract the dataset files into the `MuSiQue/data/` directory.
 
-#### Causal QA
+### Causal QA
 The Causal QA datasets are located in `eval/causal/*.csv`.
 
-#### Webis-CausalQA
+### Webis-CausalQA
 If you have the Webis-CausalQA dataset, place the CSV files in `Webis/Webis-CausalQA-22-v-2.0/input/original_splits/`.
 
 ---

@@ -1,9 +1,9 @@
 package causalrag.examples.graph
 
+import causalrag.examples.CliUtils
 import com.knuddels.jtokkit.Encodings
 import com.knuddels.jtokkit.api.EncodingType
 import com.knuddels.jtokkit.api.IntArrayList
-import causalrag.examples.CliUtils
 import com.microsoft.graphrag.index.GraphRagConfig
 import com.microsoft.graphrag.index.NoopWorkflowCallbacks
 import com.microsoft.graphrag.index.defaultEmbeddingModel

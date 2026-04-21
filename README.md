@@ -1,4 +1,4 @@
-# HybridRAG
+# CausalHippoRAG
 
 This repository is primarily for `HybridRAG`: a two-stage retrieval-augmented generation pipeline that uses HippoRAG for broad candidate recall and a causal graph for reranking, explanation, and answer generation.
 
