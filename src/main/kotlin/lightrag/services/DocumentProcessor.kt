@@ -8,6 +8,7 @@ import lightrag.operate.chunkingByTokenSize
 import lightrag.operate.extractEntities
 import lightrag.operate.mergeNodesAndEdges
 import lightrag.utils.computeMd5
+import shared.chunking.DEFAULT_TIKTOKEN_MODEL
 
 private val logger = KotlinLogging.logger {}
 
@@ -89,13 +90,17 @@ class DocumentProcessor(
         content: String,
         chunkTokenSize: Int,
         chunkOverlapTokenSize: Int,
-    ) = chunkingByTokenSize(
-        tokenizer = tokenizer,
-        decoder = decoder,
-        content = content,
-        chunkTokenSize = chunkTokenSize,
-        chunkOverlapTokenSize = chunkOverlapTokenSize,
-    )
+    ): List<ChunkingResult> {
+        val tiktokenModel = (globalConfig["tiktoken_model"] as? String)?.ifBlank { DEFAULT_TIKTOKEN_MODEL } ?: DEFAULT_TIKTOKEN_MODEL
+        return chunkingByTokenSize(
+            tokenizer = tokenizer,
+            decoder = decoder,
+            content = content,
+            chunkTokenSize = chunkTokenSize,
+            chunkOverlapTokenSize = chunkOverlapTokenSize,
+            tiktokenModel = tiktokenModel,
+        )
+    }
 
     private fun buildChunksData(
         chunks: List<ChunkingResult>,

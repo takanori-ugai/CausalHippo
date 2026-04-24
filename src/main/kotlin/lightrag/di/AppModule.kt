@@ -1,8 +1,5 @@
 package lightrag.di
 
-import com.knuddels.jtokkit.Encodings
-import com.knuddels.jtokkit.api.EncodingType
-import com.knuddels.jtokkit.api.IntArrayList
 import dev.langchain4j.model.chat.ChatModel
 import dev.langchain4j.model.chat.StreamingChatModel
 import dev.langchain4j.model.embedding.EmbeddingModel
@@ -14,6 +11,9 @@ import lightrag.llm.LLMFactory
 import lightrag.services.IngestionService
 import lightrag.services.QueryService
 import lightrag.services.StorageManager
+import shared.chunking.DEFAULT_TIKTOKEN_MODEL
+import shared.chunking.decodeWithJTokKit
+import shared.chunking.encodeWithJTokKit
 
 data class LightRagRuntime(
     val lightRagConfig: LightRagConfig,
@@ -55,20 +55,9 @@ fun createLightRagRuntime(
         storageManagerFactory?.invoke(appConfig, globalConfig)
             ?: defaultStorageManager(appConfig, globalConfig)
 
-    val encoding = Encodings.newDefaultEncodingRegistry().getEncoding(EncodingType.CL100K_BASE)
-    val tokenizer: (String) -> List<Int> = { text ->
-        val encoded = encoding.encode(text)
-        val tokens = mutableListOf<Int>()
-        for (i in 0 until encoded.size()) {
-            tokens += encoded.get(i)
-        }
-        tokens
-    }
-    val decoder: (List<Int>) -> String = { tokenIds ->
-        val ids = IntArrayList()
-        tokenIds.forEach { ids.add(it) }
-        encoding.decode(ids)
-    }
+    val tiktokenModel = activeChatModelName(lightRagConfig).ifBlank { DEFAULT_TIKTOKEN_MODEL }
+    val tokenizer: (String) -> List<Int> = { text -> encodeWithJTokKit(text, tiktokenModel) }
+    val decoder: (List<Int>) -> String = { tokenIds -> decodeWithJTokKit(tokenIds, tiktokenModel) }
 
     val ingestionService =
         IngestionService(
@@ -140,6 +129,7 @@ fun defaultGlobalConfig(
         "llm_model_func" to appConfig.chatModel,
         "embedding_func" to appConfig.embeddingModel,
         "neo4j" to (appConfig.addonConfig.neo4j ?: lightRagConfig.neo4j),
+        "tiktoken_model" to activeChatModelName(lightRagConfig),
         "chunk_token_size" to chunkTokenSize,
         "chunk_overlap_token_size" to chunkOverlapTokenSize,
         "entity_types" to entityTypes,

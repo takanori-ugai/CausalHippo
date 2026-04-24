@@ -36,6 +36,8 @@ import hipporag.utils.reformatOpenieResults
 import hipporag.utils.retrieveKnn
 import hipporag.utils.textProcessing
 import io.github.oshai.kotlinlogging.KotlinLogging
+import shared.chunking.DEFAULT_TIKTOKEN_MODEL
+import shared.chunking.chunkByTokenSizeWithOverlap
 import java.io.File
 import java.util.Locale
 import kotlin.math.min
@@ -227,7 +229,8 @@ class HippoRag(
             return
         }
 
-        val chunks = chunkEmbeddingStore.getMissingStringHashIds(cleanedDocs)
+        val ingestChunks = chunkDocsForIngest(cleanedDocs)
+        val chunks = chunkEmbeddingStore.getMissingStringHashIds(ingestChunks)
         val (allOpenieInfo, chunkKeysToProcess) = loadExistingOpenie(chunks.keys.toList())
         val newOpenieRows = chunks.filterKeys { it in chunkKeysToProcess }
 
@@ -264,7 +267,8 @@ class HippoRag(
             return
         }
 
-        chunkEmbeddingStore.insertStrings(cleanedDocs)
+        val ingestChunks = chunkDocsForIngest(cleanedDocs)
+        chunkEmbeddingStore.insertStrings(ingestChunks)
         val chunkToRows = chunkEmbeddingStore.getAllIdToRows()
 
         val (allOpenieInfo, chunkKeysToProcess) = loadExistingOpenie(chunkToRows.keys.toList())
@@ -325,7 +329,8 @@ class HippoRag(
         }
 
         val currentDocs = chunkEmbeddingStore.getAllTexts()
-        val actualDocsToDelete = docsToDelete.filter { it in currentDocs }
+        val chunkedDocsToDelete = chunkDocsForIngest(docsToDelete.filter { it.isNotBlank() })
+        val actualDocsToDelete = chunkedDocsToDelete.filter { it in currentDocs }
 
         val chunkIdsToDelete = actualDocsToDelete.mapNotNull { chunkEmbeddingStore.textToHashId[it] }.toSet()
 
@@ -1462,6 +1467,28 @@ class HippoRag(
         val sortedDocScores = sortedDocIds.map { docScores[it] }.toDoubleArray()
 
         return sortedDocIds to sortedDocScores
+    }
+
+    private fun chunkDocsForIngest(docs: List<String>): List<String> {
+        val maxTokenSize = (globalConfig.preprocessChunkMaxTokenSize ?: 1200).coerceAtLeast(1)
+        val overlapTokenSize = globalConfig.preprocessChunkOverlapTokenSize.coerceIn(0, maxTokenSize - 1)
+        val tokenModel = globalConfig.preprocessEncoderName.ifBlank { DEFAULT_TIKTOKEN_MODEL }
+        val chunks =
+            docs
+                .flatMap { doc ->
+                    chunkByTokenSizeWithOverlap(
+                        content = doc,
+                        chunkTokenSize = maxTokenSize,
+                        chunkOverlapTokenSize = overlapTokenSize,
+                        model = tokenModel,
+                    )
+                }.map { it.content }
+                .filter { it.isNotBlank() }
+        if (chunks.isEmpty()) return docs
+        if (chunks.size != docs.size) {
+            logger.info { "Chunked ${docs.size} documents into ${chunks.size} token-overlap chunks for ingest." }
+        }
+        return chunks
     }
 
     private fun nowSeconds(): Double = System.nanoTime() / 1_000_000_000.0

@@ -1,8 +1,5 @@
 package com.microsoft.graphrag.query
 
-import com.knuddels.jtokkit.Encodings
-import com.knuddels.jtokkit.api.Encoding
-import com.knuddels.jtokkit.api.EncodingType
 import com.microsoft.graphrag.index.Claim
 import com.microsoft.graphrag.index.CommunityAssignment
 import com.microsoft.graphrag.index.CommunityReport
@@ -17,6 +14,8 @@ import dev.langchain4j.model.embedding.EmbeddingModel
 import dev.langchain4j.model.output.Response
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import shared.chunking.DEFAULT_TIKTOKEN_MODEL
+import shared.chunking.countTokensWithJTokKit
 
 /**
  * Builds local-search context similar to the Python LocalSearchMixedContext: maps queries to entities,
@@ -1346,7 +1345,7 @@ class LocalSearchContextBuilder(
      *
      * @return The number of tokens in the text.
      */
-    private fun tokenCount(text: String): Int = encoding.countTokens(text)
+    private fun tokenCount(text: String): Int = countTokensWithJTokKit(text, DEFAULT_TIKTOKEN_MODEL)
 
     /**
      * Compute the cosine similarity between two numeric vectors.
@@ -1407,7 +1406,4 @@ class LocalSearchContextBuilder(
         val chunks: List<QueryContextChunk>,
     )
 
-    private val encoding: Encoding by lazy {
-        Encodings.newLazyEncodingRegistry().getEncoding(EncodingType.CL100K_BASE)
-    }
 }

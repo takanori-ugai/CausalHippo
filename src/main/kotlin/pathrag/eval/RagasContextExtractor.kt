@@ -62,7 +62,7 @@ object RagasContextExtractor {
                 CSVFormat.DEFAULT
                     .builder()
                     .setIgnoreEmptyLines(true)
-                    .build()
+                    .get()
             CSVParser.parse(reader, format).use { parser ->
                 return parser.records.map { record -> record.toList() }
             }

@@ -27,6 +27,8 @@ import lightrag.llm.KeywordExtractor
 import lightrag.utils.JsonUtils
 import lightrag.utils.Prompts
 import lightrag.utils.computeMd5
+import shared.chunking.DEFAULT_TIKTOKEN_MODEL
+import shared.chunking.hardTruncateStringsByTokenBudget
 
 private val logger = KotlinLogging.logger {}
 
@@ -432,6 +434,7 @@ class QueryProcessor(
         if (allChunks.isEmpty() && searchResult.vectorChunks.isNotEmpty()) {
             allChunks = searchResult.vectorChunks
         }
+        allChunks = hardTruncateChunksByContextBudget(allChunks, queryParam.maxTotalTokens)
 
         val entitiesStr = buildEntitiesStr(entities)
         val relationsStr = buildRelationsStr(relations, queryParam.topK)
@@ -447,6 +450,22 @@ class QueryProcessor(
 
         val rawData = mapOf("entities" to entities, "relations" to relations, "chunks" to allChunks)
         return ContextResult(contextStr = contextContent, rawData = rawData)
+    }
+
+    private fun hardTruncateChunksByContextBudget(
+        chunks: List<Map<String, Any>>,
+        maxTokens: Int,
+    ): List<Map<String, Any>> {
+        if (chunks.isEmpty() || maxTokens <= 0) return emptyList()
+        val tokenModel = (globalConfig["tiktoken_model"] as? String)?.ifBlank { DEFAULT_TIKTOKEN_MODEL } ?: DEFAULT_TIKTOKEN_MODEL
+        val keptContents =
+            hardTruncateStringsByTokenBudget(
+                items = chunks.map { it["content"]?.toString().orEmpty() },
+                maxTokenSize = maxTokens,
+                model = tokenModel,
+                includePartialLastItem = false,
+            )
+        return chunks.take(keptContents.size)
     }
 
     private fun buildEntitiesStr(entities: List<Map<String, Any>>): String =

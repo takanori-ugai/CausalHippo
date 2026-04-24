@@ -267,7 +267,6 @@ class BasicQueryEngine(
             textUnits = textUnits,
             textEmbeddings = textEmbeddings,
             columnDelimiter = columnDelimiter,
-            encoding = encoding,
         )
 }
 

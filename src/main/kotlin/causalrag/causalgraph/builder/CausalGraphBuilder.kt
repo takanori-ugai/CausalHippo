@@ -14,6 +14,8 @@ import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
 import kotlinx.serialization.json.putJsonArray
+import shared.chunking.DEFAULT_TIKTOKEN_MODEL
+import shared.chunking.chunkByTokenSizeWithOverlap
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
@@ -45,6 +47,9 @@ class CausalTripleExtractor(
     private val method: String = "hybrid",
     private val llmInterface: LLMInterface? = null,
 ) {
+    private val ingestChunkTokenSize = 1200
+    private val ingestChunkOverlapTokenSize = 100
+
     private val stopwords =
         setOf(
             "a",
@@ -182,7 +187,13 @@ class CausalTripleExtractor(
             logger.warn { "LLM interface not provided, cannot perform LLM-based extraction" }
             return emptyList()
         }
-        val chunks = splitTextIntoChunks(text, maxLength = 3000)
+        val chunks =
+            chunkByTokenSizeWithOverlap(
+                content = text,
+                chunkTokenSize = ingestChunkTokenSize,
+                chunkOverlapTokenSize = ingestChunkOverlapTokenSize,
+                model = DEFAULT_TIKTOKEN_MODEL,
+            ).map { it.content }
         val allTriples = mutableListOf<CausalTriple>()
         for (chunk in chunks) {
             val prompt = createCausalExtractionPrompt(chunk)
@@ -362,40 +373,6 @@ CAUSAL RELATIONSHIPS:"""
         if (tokens.size == 1 && stopwords.contains(tokens[0])) return false
         if (tokens.all { stopwords.contains(it) }) return false
         return true
-    }
-
-    private fun splitTextIntoChunks(
-        text: String,
-        maxLength: Int,
-    ): List<String> {
-        if (text.length <= maxLength) return listOf(text)
-        val paragraphs = text.split("\n\n")
-        val chunks = mutableListOf<String>()
-        var current = ""
-        for (para in paragraphs) {
-            if (current.length + para.length + 2 <= maxLength) {
-                current = if (current.isEmpty()) para else "$current\n\n$para"
-            } else {
-                if (current.isNotEmpty()) chunks.add(current)
-                if (para.length > maxLength) {
-                    val sentences = para.split(Regex("(?<!\\w\\.\\w.)(?<![A-Z][a-z]\\.)(?<=\\.|\\?|!)\\s"))
-                    var sentChunk = ""
-                    for (sent in sentences) {
-                        if (sentChunk.length + sent.length + 1 <= maxLength) {
-                            sentChunk = if (sentChunk.isEmpty()) sent else "$sentChunk $sent"
-                        } else {
-                            if (sentChunk.isNotEmpty()) chunks.add(sentChunk)
-                            sentChunk = sent
-                        }
-                    }
-                    current = sentChunk
-                } else {
-                    current = para
-                }
-            }
-        }
-        if (current.isNotEmpty()) chunks.add(current)
-        return chunks
     }
 
     private fun deduplicateTriples(triples: List<CausalTriple>): List<CausalTriple> {

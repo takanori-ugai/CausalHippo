@@ -1,8 +1,5 @@
 package com.microsoft.graphrag.query
 
-import com.knuddels.jtokkit.Encodings
-import com.knuddels.jtokkit.api.Encoding
-import com.knuddels.jtokkit.api.EncodingType
 import com.microsoft.graphrag.index.CommunityReport
 import dev.langchain4j.data.message.SystemMessage
 import dev.langchain4j.data.message.UserMessage
@@ -21,6 +18,8 @@ import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.jsonPrimitive
+import shared.chunking.DEFAULT_TIKTOKEN_MODEL
+import shared.chunking.countTokensWithJTokKit
 import java.util.concurrent.CompletableFuture
 import kotlin.math.min
 
@@ -102,7 +101,7 @@ class GlobalSearchEngine(
     private val maxDataTokens: Int = maxContextTokens,
     private val mapParams: ModelParams = ModelParams(jsonResponse = true),
     private val reduceParams: ModelParams = ModelParams(jsonResponse = true),
-    private val encoding: Encoding = Encodings.newLazyEncodingRegistry().getEncoding(EncodingType.CL100K_BASE),
+    private val tiktokenModel: String = DEFAULT_TIKTOKEN_MODEL,
 ) {
     /**
      * Performs a map-reduce search over the configured community reports and returns the aggregated result.
@@ -593,7 +592,7 @@ class GlobalSearchEngine(
      *
      * @return The number of tokens in the given text.
      */
-    private fun tokenCount(text: String): Int = encoding.countTokens(text)
+    private fun tokenCount(text: String): Int = countTokensWithJTokKit(text, tiktokenModel)
 
     /**
      * Builds a textual conversation section and corresponding context records from a list of history turns.

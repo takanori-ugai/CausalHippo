@@ -21,6 +21,9 @@ import lightrag.core.types.BaseKVStorage
 import lightrag.core.types.BaseVectorStorage
 import lightrag.utils.Prompts
 import lightrag.utils.computeMd5
+import shared.chunking.DEFAULT_TIKTOKEN_MODEL
+import shared.chunking.countTokensWithJTokKit
+import shared.chunking.truncateTextByTokenSize as sharedTruncateTextByTokenSize
 
 private val logger = KotlinLogging.logger {}
 
@@ -165,13 +168,14 @@ fun processChunksUnified(
 ): List<Map<String, Any?>> {
     val resultChunks = mutableListOf<Map<String, Any?>>()
     var currentTokens = 0
+    val tokenModel = (globalConfig["tiktoken_model"] as? String)?.ifBlank { DEFAULT_TIKTOKEN_MODEL } ?: DEFAULT_TIKTOKEN_MODEL
 
     // Ensure chunks are unique by content, preserving order
     val distinctChunks = uniqueChunks.distinctBy { it["content"] as? String }
 
     for (chunk in distinctChunks) {
         val content = chunk["content"] as? String ?: ""
-        val chunkTokens = tokenizer(content).size
+        val chunkTokens = countTokensWithJTokKit(content, tokenModel)
 
         if (currentTokens + chunkTokens <= chunkTokenLimit) {
             resultChunks.add(chunk)
@@ -180,10 +184,10 @@ fun processChunksUnified(
             // If adding the whole chunk exceeds the limit, try to truncate it
             val remainingTokens = chunkTokenLimit - currentTokens
             if (remainingTokens > 0) {
-                val truncatedContent = truncateTextByTokenSize(content, remainingTokens, tokenizer, decoder)
+                val truncatedContent = sharedTruncateTextByTokenSize(content, remainingTokens, tokenModel)
                 if (truncatedContent.isNotBlank()) {
                     resultChunks.add(chunk + ("content" to truncatedContent))
-                    currentTokens += tokenizer(truncatedContent).size
+                    currentTokens += countTokensWithJTokKit(truncatedContent, tokenModel)
                 }
             }
             break // No more chunks can be added or partially added
@@ -206,13 +210,7 @@ fun truncateTextByTokenSize(
     maxTokenSize: Int,
     tokenizer: ((String) -> List<Int>),
     decoder: ((List<Int>) -> String),
-): String {
-    val tokens = tokenizer(text)
-    if (tokens.size <= maxTokenSize) {
-        return text
-    }
-    return decoder(tokens.subList(0, maxTokenSize))
-}
+): String = sharedTruncateTextByTokenSize(text, maxTokenSize, DEFAULT_TIKTOKEN_MODEL)
 
 // Function to convert map to JSON string, similar to Python's json.dumps
 // This function needs to be properly implemented based on the Python version.

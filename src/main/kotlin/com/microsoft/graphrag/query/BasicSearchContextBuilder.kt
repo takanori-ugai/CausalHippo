@@ -1,8 +1,5 @@
 package com.microsoft.graphrag.query
 
-import com.knuddels.jtokkit.Encodings
-import com.knuddels.jtokkit.api.Encoding
-import com.knuddels.jtokkit.api.EncodingType
 import com.microsoft.graphrag.index.LocalVectorStore
 import com.microsoft.graphrag.index.TextEmbedding
 import com.microsoft.graphrag.index.TextUnit
@@ -11,6 +8,8 @@ import dev.langchain4j.model.output.Response
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import shared.chunking.DEFAULT_TIKTOKEN_MODEL
+import shared.chunking.countTokensWithJTokKit
 import kotlin.math.sqrt
 
 /**
@@ -24,7 +23,7 @@ class BasicSearchContextBuilder(
     private val textUnits: List<TextUnit>,
     private val textEmbeddings: List<TextEmbedding>,
     private val columnDelimiter: String = "|",
-    private val encoding: Encoding = Encodings.newLazyEncodingRegistry().getEncoding(EncodingType.CL100K_BASE),
+    private val tiktokenModel: String = DEFAULT_TIKTOKEN_MODEL,
     private val textIdColumn: String = "source_id",
     private val textColumn: String = "text",
 ) {
@@ -170,7 +169,7 @@ class BasicSearchContextBuilder(
      *
      * @return The number of tokens in the provided text.
      */
-    private fun tokenCount(text: String): Int = encoding.countTokens(text)
+    private fun tokenCount(text: String): Int = countTokensWithJTokKit(text, tiktokenModel)
 
     /**
      * Compute the cosine similarity between two vectors.

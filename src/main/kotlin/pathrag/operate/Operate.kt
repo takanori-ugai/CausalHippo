@@ -25,7 +25,8 @@ import pathrag.utils.ResponseCache
 import pathrag.utils.Tokenizer
 import pathrag.utils.computeArgsHash
 import pathrag.utils.computeMdHashId
-import kotlin.math.min
+import shared.chunking.chunkByTokenSizeWithOverlap
+import shared.chunking.hardTruncateStringsByTokenBudget
 import kotlin.math.pow
 
 private val logger = KotlinLogging.logger("PathRAG-Operate")
@@ -88,28 +89,20 @@ fun chunkingByTokenSize(
     maxTokenSize: Int = 1024,
     tiktokenModel: String = "gpt-4o-mini",
 ): List<Map<String, Any>> {
-    require(maxTokenSize > overlapTokenSize) {
-        "maxTokenSize ($maxTokenSize) must be greater than overlapTokenSize ($overlapTokenSize)"
-    }
-    val tokens = Tokenizer.encode(content, tiktokenModel)
-    val chunks = mutableListOf<Map<String, Any>>()
-    var index = 0
-    var start = 0
-    while (start < tokens.size) {
-        val end = min(start + maxTokenSize, tokens.size)
-        val slice = tokens.subList(start, end)
-        val decoded = Tokenizer.decode(slice, tiktokenModel).trim()
-        chunks.add(
-            mapOf(
-                "tokens" to slice.size,
-                "content" to decoded,
-                "chunk_order_index" to index,
-            ),
+    val chunks =
+        chunkByTokenSizeWithOverlap(
+            content = content,
+            chunkTokenSize = maxTokenSize,
+            chunkOverlapTokenSize = overlapTokenSize,
+            model = tiktokenModel,
         )
-        index += 1
-        start += maxTokenSize - overlapTokenSize
+    return chunks.map { chunk ->
+        mapOf(
+            "tokens" to chunk.tokens,
+            "content" to chunk.content,
+            "chunk_order_index" to chunk.chunkOrderIndex,
+        )
     }
-    return chunks
 }
 
 /**
@@ -1195,16 +1188,14 @@ private fun truncateByToken(
     maxToken: Int,
     model: String = "gpt-4o-mini",
 ): List<Map<String, Any>> {
-    var count = 0
-    val result = mutableListOf<Map<String, Any>>()
-    for (item in list) {
-        val content = item["content"]?.toString() ?: ""
-        val tokens = Tokenizer.encode(content, model).size
-        count += tokens
-        if (count > maxToken) break
-        result.add(item)
-    }
-    return result
+    val keptContents =
+        hardTruncateStringsByTokenBudget(
+            items = list.map { it["content"]?.toString().orEmpty() },
+            maxTokenSize = maxToken,
+            model = model,
+            includePartialLastItem = false,
+        )
+    return list.take(keptContents.size)
 }
 
 private fun toCsv(

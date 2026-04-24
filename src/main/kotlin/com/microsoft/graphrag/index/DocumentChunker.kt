@@ -1,5 +1,7 @@
 package com.microsoft.graphrag.index
 
+import shared.chunking.DEFAULT_TIKTOKEN_MODEL
+import shared.chunking.chunkByTokenSizeWithOverlap
 import java.nio.file.Files
 import java.nio.file.Path
 import java.util.UUID
@@ -7,12 +9,14 @@ import java.util.UUID
 /**
  * Splits documents into overlapping chunks and converts them to text units.
  *
- * @property chunkSize Maximum size of each chunk in characters.
- * @property overlap Overlap size between consecutive chunks in characters.
+ * @property chunkSize Maximum size of each chunk in tokens.
+ * @property overlap Overlap size between consecutive chunks in tokens.
+ * @property tiktokenModel Tokenizer model used by JTokKit.
  */
 class DocumentChunker(
     private val chunkSize: Int = 1000,
     private val overlap: Int = 200,
+    private val tiktokenModel: String = DEFAULT_TIKTOKEN_MODEL,
 ) {
     /**
      * Loads all files under the input directory and chunks their content.
@@ -46,25 +50,20 @@ class DocumentChunker(
         sourcePath: String,
     ): List<DocumentChunk> {
         val normalized = text.replace("\r\n", "\n")
-        val result = mutableListOf<DocumentChunk>()
-        var start = 0
-        while (start < normalized.length) {
-            val end = (start + chunkSize).coerceAtMost(normalized.length)
-            val slice = normalized.substring(start, end)
-            val id = UUID.randomUUID().toString()
-            result.add(
-                DocumentChunk(
-                    id = id,
-                    sourcePath = sourcePath,
-                    text = slice,
-                ),
+        val tokenChunks =
+            chunkByTokenSizeWithOverlap(
+                content = normalized,
+                chunkTokenSize = chunkSize,
+                chunkOverlapTokenSize = overlap,
+                model = tiktokenModel,
             )
-            if (end == normalized.length) {
-                break
-            }
-            start += chunkSize - overlap
+        return tokenChunks.map { chunk ->
+            DocumentChunk(
+                id = UUID.randomUUID().toString(),
+                sourcePath = sourcePath,
+                text = chunk.content,
+            )
         }
-        return result
     }
 
     /**

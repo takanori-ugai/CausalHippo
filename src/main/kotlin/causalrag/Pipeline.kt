@@ -12,11 +12,15 @@ import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import shared.config.CommonRagConfigLoader
+import shared.chunking.DEFAULT_TIKTOKEN_MODEL
+import shared.chunking.chunkByTokenSizeWithOverlap
+import shared.chunking.hardTruncateStringsByTokenBudget
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
 
 private val logger = KotlinLogging.logger {}
+private val pipelineConfigJson = Json { ignoreUnknownKeys = true }
 
 /**
  * Serializable configuration for constructing a [CausalRAGPipeline].
@@ -76,6 +80,10 @@ class CausalRAGPipeline(
     twoPassAdaptiveEnabled: Boolean = false,
     confidenceBasedSwitchEnabled: Boolean = false,
 ) {
+    private val ingestChunkTokenSize = 1200
+    private val ingestChunkOverlapTokenSize = 100
+    private val promptContextTokenBudget = 4000
+
     private val config: PipelineConfig? = configPath?.let { loadConfig(it) }
     private val effectiveModelName = config?.modelName ?: modelName
     private val effectiveEmbeddingModel = config?.embeddingModel ?: embeddingModel
@@ -134,7 +142,7 @@ class CausalRAGPipeline(
         return try {
             val content = Files.readString(path)
             CommonRagConfigLoader.parseOrNull(content)?.toPipelineConfig()
-                ?: Json { ignoreUnknownKeys = true }.decodeFromString(PipelineConfig.serializer(), content)
+                ?: pipelineConfigJson.decodeFromString(PipelineConfig.serializer(), content)
         } catch (ex: IOException) {
             logger.error(ex) { "Failed to load config from $configPath" }
             throw ex
@@ -150,9 +158,10 @@ class CausalRAGPipeline(
      * @param documents Source documents to ingest.
      */
     fun index(documents: List<String>) {
-        graphBuilder.indexDocuments(documents)
-        vectorRetriever.indexCorpus(documents)
-        bm25Retriever.indexDocuments(documents)
+        val prepared = chunkDocumentsForIngest(documents)
+        graphBuilder.indexDocuments(prepared)
+        vectorRetriever.indexCorpus(prepared)
+        bm25Retriever.indexDocuments(prepared)
     }
 
     /**
@@ -166,6 +175,21 @@ class CausalRAGPipeline(
         bm25Retriever.clear()
         index(documents)
     }
+
+    private fun chunkDocumentsForIngest(documents: List<String>): List<String> =
+        documents
+            .asSequence()
+            .filter { it.isNotBlank() }
+            .flatMap { doc ->
+                chunkByTokenSizeWithOverlap(
+                    content = doc,
+                    chunkTokenSize = ingestChunkTokenSize,
+                    chunkOverlapTokenSize = ingestChunkOverlapTokenSize,
+                    model = DEFAULT_TIKTOKEN_MODEL,
+                ).asSequence()
+            }.map { it.content }
+            .filter { it.isNotBlank() }
+            .toList()
 
     /**
      * Saves the graph and vector index to a directory.
@@ -244,7 +268,14 @@ class CausalRAGPipeline(
 
         // Step 2: Rerank via causal path
         val reranked = reranker.rerank(query, candidates)
-        val rerankedPassages = reranked.map { it.first }.take(topK)
+        val topPassages = reranked.map { it.first }.take(topK)
+        val rerankedPassages =
+            hardTruncateStringsByTokenBudget(
+                items = topPassages,
+                maxTokenSize = promptContextTokenBudget,
+                model = DEFAULT_TIKTOKEN_MODEL,
+                includePartialLastItem = false,
+            )
 
         // Step 3: Build prompt with causal context
         val causalNodes = graphRetriever.retrievePathNodes(query)

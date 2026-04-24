@@ -9,6 +9,8 @@ import lightrag.core.types.BaseKVStorage
 import lightrag.core.types.BaseVectorStorage
 import lightrag.llm.EntityExtractor
 import lightrag.utils.computeMd5
+import shared.chunking.DEFAULT_TIKTOKEN_MODEL
+import shared.chunking.chunkByTokenSizeWithOverlap
 
 private val logger = KotlinLogging.logger {}
 
@@ -76,6 +78,7 @@ fun chunkingByTokenSize(
     splitByCharacterOnly: Boolean = false,
     chunkOverlapTokenSize: Int = 100,
     chunkTokenSize: Int = 1200,
+    tiktokenModel: String = DEFAULT_TIKTOKEN_MODEL,
 ): List<ChunkingResult> {
     validateChunkSizes(chunkTokenSize, chunkOverlapTokenSize)
 
@@ -91,12 +94,12 @@ fun chunkingByTokenSize(
                 decoder = decoder,
             )
         } else {
-            sequentialChunks(
-                tokens = tokenizer(content),
+            chunkByTokenSizeWithOverlap(
+                content = content,
                 chunkTokenSize = chunkTokenSize,
                 chunkOverlapTokenSize = chunkOverlapTokenSize,
-                decoder = decoder,
-            )
+                model = tiktokenModel,
+            ).map { it.tokens to it.content }
         }
 
     return processedChunks.mapIndexed { index, (length, chunk) ->
@@ -137,16 +140,6 @@ private fun splitByCharacterChunks(
         }
     }
     return newChunks
-}
-
-private fun sequentialChunks(
-    tokens: List<Int>,
-    chunkTokenSize: Int,
-    chunkOverlapTokenSize: Int,
-    decoder: (List<Int>) -> String,
-): List<Pair<Int, String>> {
-    val overlapStep = chunkTokenSize - chunkOverlapTokenSize
-    return splitTokensWithOverlap(tokens, chunkTokenSize, overlapStep, decoder)
 }
 
 private fun splitTokensWithOverlap(

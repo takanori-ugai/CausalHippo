@@ -73,7 +73,7 @@ fun Application.module() {
 
     runBlocking { storageManager.initialize() }
     runBlocking { rag.rebuildDerivedStorageIfEmpty() }
-    environment.monitor.subscribe(ApplicationStopping) {
+    monitor.subscribe(ApplicationStopping) {
         runBlocking { storageManager.persist() }
     }
 

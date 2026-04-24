@@ -13,8 +13,13 @@ import hipporag.HippoRag
 import hipporag.config.BaseConfig
 import kotlinx.serialization.json.Json
 import shared.config.CommonRagConfigLoader
+import shared.chunking.DEFAULT_TIKTOKEN_MODEL
+import shared.chunking.chunkByTokenSizeWithOverlap
+import shared.chunking.hardTruncateStringsByTokenBudget
 import java.nio.file.Files
 import java.nio.file.Path
+
+private val hippoPipelineConfigJson = Json { ignoreUnknownKeys = true }
 
 /**
  * Two-stage QA pipeline that uses HippoRAG for broad candidate recall and CausalRAG for causal validation.
@@ -38,6 +43,10 @@ class HippoCausalRAGPipeline(
     twoPassAdaptiveEnabled: Boolean = false,
     confidenceBasedSwitchEnabled: Boolean = false,
 ) {
+    private val ingestChunkTokenSize = 1200
+    private val ingestChunkOverlapTokenSize = 100
+    private val promptContextTokenBudget = 4000
+
     private val config: PipelineConfig? = configPath?.let { loadConfig(it) }
     private val effectiveModelName = config?.modelName ?: modelName
     private val effectiveEmbeddingModel = config?.embeddingModel ?: embeddingModel
@@ -89,12 +98,12 @@ class HippoCausalRAGPipeline(
      * Indexes documents into both HippoRAG and the causal graph.
      */
     fun index(documents: List<String>) {
-        val cleaned = documents.filter { it.isNotBlank() }
-        if (cleaned.isEmpty()) return
-        hippoRag.index(cleaned)
-        graphBuilder.indexDocuments(cleaned)
-        bm25Retriever.indexDocuments(cleaned)
-        indexedDocs = cleaned
+        val prepared = chunkDocumentsForIngest(documents)
+        if (prepared.isEmpty()) return
+        hippoRag.index(prepared)
+        graphBuilder.indexDocuments(prepared)
+        bm25Retriever.indexDocuments(prepared)
+        indexedDocs = prepared
     }
 
     /**
@@ -103,7 +112,7 @@ class HippoCausalRAGPipeline(
      * This preserves heavyweight clients while preventing cross-sample index contamination.
      */
     fun reindex(documents: List<String>) {
-        val cleaned = documents.filter { it.isNotBlank() }
+        val prepared = chunkDocumentsForIngest(documents)
         hybridRetriever.clearCache()
         if (indexedDocs.isNotEmpty()) {
             hippoRag.delete(indexedDocs)
@@ -111,16 +120,16 @@ class HippoCausalRAGPipeline(
         indexedDocs = emptyList()
         graphBuilder.clear()
         bm25Retriever.clear()
-        if (cleaned.isEmpty()) return
+        if (prepared.isEmpty()) return
 
         try {
-            hippoRag.index(cleaned)
-            graphBuilder.indexDocuments(cleaned)
-            bm25Retriever.indexDocuments(cleaned)
-            indexedDocs = cleaned
+            hippoRag.index(prepared)
+            graphBuilder.indexDocuments(prepared)
+            bm25Retriever.indexDocuments(prepared)
+            indexedDocs = prepared
         } catch (e: Exception) {
             // Best-effort rollback to preserve per-sample index isolation after partial failures.
-            runCatching { hippoRag.delete(cleaned) }
+            runCatching { hippoRag.delete(prepared) }
             runCatching { graphBuilder.clear() }
             runCatching { bm25Retriever.clear() }
             indexedDocs = emptyList()
@@ -138,7 +147,13 @@ class HippoCausalRAGPipeline(
         val candidateDetails = hybridRetriever.retrieveWithDetails(query, topK = topK)
         val candidates = candidateDetails.map { it["passage"] as String }
         val metadata = candidateDetails.map { mapOf("score" to (it["score"] as Double)) }
-        return reranker.rerank(query, candidates, metadata).map { it.first }.take(topK)
+        val topPassages = reranker.rerank(query, candidates, metadata).map { it.first }.take(topK)
+        return hardTruncateStringsByTokenBudget(
+            items = topPassages,
+            maxTokenSize = promptContextTokenBudget,
+            model = DEFAULT_TIKTOKEN_MODEL,
+            includePartialLastItem = false,
+        )
     }
 
     /**
@@ -159,7 +174,14 @@ class HippoCausalRAGPipeline(
         val candidateDetails = hybridRetriever.retrieveWithDetails(query, topK = topK)
         val candidates = candidateDetails.map { it["passage"] as String }
         val metadata = candidateDetails.map { mapOf("score" to (it["score"] as Double)) }
-        val rerankedPassages = reranker.rerank(query, candidates, metadata).map { it.first }.take(topK)
+        val topPassages = reranker.rerank(query, candidates, metadata).map { it.first }.take(topK)
+        val rerankedPassages =
+            hardTruncateStringsByTokenBudget(
+                items = topPassages,
+                maxTokenSize = promptContextTokenBudget,
+                model = DEFAULT_TIKTOKEN_MODEL,
+                includePartialLastItem = false,
+            )
         val causalNodes = graphRetriever.retrievePathNodes(query)
         val causalPaths = graphRetriever.retrievePaths(query, maxPaths = 3)
         val prompt =
@@ -188,7 +210,7 @@ class HippoCausalRAGPipeline(
         require(Files.exists(path)) { "Config file not found: $configPath" }
         val content = Files.readString(path)
         return CommonRagConfigLoader.parseOrNull(content)?.toPipelineConfig()
-            ?: Json { ignoreUnknownKeys = true }.decodeFromString(PipelineConfig.serializer(), content)
+            ?: hippoPipelineConfigJson.decodeFromString(PipelineConfig.serializer(), content)
     }
 
     private fun resolveHippoConfig(initial: BaseConfig?): BaseConfig =
@@ -227,6 +249,21 @@ class HippoCausalRAGPipeline(
             "dpr" -> HippoRagSemanticMode.DPR
             else -> throw IllegalArgumentException("Invalid semanticMode '$raw'. Expected 'graph' or 'dpr'.")
         }
+
+    private fun chunkDocumentsForIngest(documents: List<String>): List<String> =
+        documents
+            .asSequence()
+            .filter { it.isNotBlank() }
+            .flatMap { doc ->
+                chunkByTokenSizeWithOverlap(
+                    content = doc,
+                    chunkTokenSize = ingestChunkTokenSize,
+                    chunkOverlapTokenSize = ingestChunkOverlapTokenSize,
+                    model = DEFAULT_TIKTOKEN_MODEL,
+                ).asSequence()
+            }.map { it.content }
+            .filter { it.isNotBlank() }
+            .toList()
 
     private fun requiresJsonResponseFormat(style: String): Boolean = style.equals("experiments", ignoreCase = true)
 }

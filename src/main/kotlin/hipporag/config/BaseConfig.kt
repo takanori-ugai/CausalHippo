@@ -93,7 +93,7 @@ data class BaseConfig(
     var textPreprocessorClassName: String = "TextPreprocessor",
     var preprocessEncoderName: String = "gpt-4o",
     var preprocessChunkOverlapTokenSize: Int = 128,
-    var preprocessChunkMaxTokenSize: Int? = null,
+    var preprocessChunkMaxTokenSize: Int? = 1200,
     var preprocessChunkFunc: String = "by_token",
 ) {
     /**
