@@ -33,6 +33,11 @@ import java.time.format.DateTimeFormatter
 
 private fun pathRagSetting(name: String): String? = System.getProperty(name)?.takeIf { it.isNotBlank() } ?: System.getenv(name)
 
+private fun pathRagSetting(
+    name: String,
+    runtimeSettings: Map<String, String>,
+): String? = runtimeSettings[name]?.takeIf { it.isNotBlank() } ?: pathRagSetting(name)
+
 private fun defaultPathRagWorkingDir(): String =
     "./PathRAG_cache_" +
         LocalDateTime
@@ -83,13 +88,14 @@ class PathRAG(
             exampleNumber = pathRagSetting("KEYWORD_EXAMPLE_COUNT")?.toIntOrNull() ?: 3,
         ),
     private val extraConfig: ExtraConfig = ExtraConfig(),
+    private val runtimeSettings: Map<String, String> = emptyMap(),
 ) : AutoCloseable {
     private val logger = KotlinLogging.logger("PathRAG")
-    private val llmProvider: String = pathRagSetting("LLM_PROVIDER")?.lowercase() ?: "openai"
+    private val llmProvider: String = pathRagSetting("LLM_PROVIDER", runtimeSettings)?.lowercase() ?: "openai"
     private val llmModelName: String =
         when (llmProvider) {
-            "ollama" -> pathRagSetting("OLLAMA_MODEL") ?: "llama3"
-            else -> pathRagSetting("OPENAI_MODEL") ?: "gpt-4o-mini"
+            "ollama" -> pathRagSetting("OLLAMA_MODEL", runtimeSettings) ?: "llama3"
+            else -> pathRagSetting("OPENAI_MODEL", runtimeSettings) ?: "gpt-4o-mini"
         }
 
     companion object {
@@ -102,7 +108,7 @@ class PathRAG(
         ): PathRAG {
             val commonConfig = CommonRagConfigLoader.load(configPath)
             val settings = commonConfig.toPathRagSettings()
-            settings.applyAsSystemProperties()
+            val runtimeSettings = settings.toRuntimeSettingsMap()
             return PathRAG(
                 workingDir = workingDirOverride ?: settings.workingDir ?: defaultPathRagWorkingDir(),
                 kvStorage = settings.kvStorage ?: "JsonKVStorage",
@@ -110,7 +116,8 @@ class PathRAG(
                 graphStorage = settings.graphStorage ?: "NetworkXStorage",
                 chunkTokenSize = settings.chunkTokenSize ?: 1200,
                 chunkOverlapTokenSize = settings.chunkOverlapTokenSize ?: 100,
-                language = settings.language ?: pathRagSetting("LANGUAGE") ?: "English",
+                language = settings.language ?: pathRagSetting("LANGUAGE", runtimeSettings) ?: "English",
+                runtimeSettings = runtimeSettings,
             )
         }
     }
@@ -130,7 +137,7 @@ class PathRAG(
         }
     }
 
-    private val embeddingFunc = defaultEmbeddingFunc()
+    private val embeddingFunc = defaultEmbeddingFunc(runtimeSettings)
     private val llmModelFunc: suspend (String, String?, List<Map<String, String>>, Boolean, Boolean, Int?, Any?) -> String =
         when (llmProvider) {
             "ollama" -> { prompt, system, history, keyword, stream, maxTokens, hashingKv ->
@@ -143,6 +150,7 @@ class PathRAG(
                     stream = stream,
                     maxTokens = maxTokens,
                     hashingKv = hashingKv,
+                    runtimeSettings = runtimeSettings,
                 )
             }
 
@@ -156,6 +164,7 @@ class PathRAG(
                     stream = stream,
                     maxTokens = maxTokens,
                     hashingKv = hashingKv,
+                    runtimeSettings = runtimeSettings,
                 )
             }
         }

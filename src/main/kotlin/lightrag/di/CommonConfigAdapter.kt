@@ -46,6 +46,7 @@ fun loadLightRagConfigFromCommonJson(path: String = resolveLightRagConfigPath())
                 provider = null,
                 llmModelName = null,
                 embeddingModelName = null,
+                embeddingModelDimensions = null,
                 apiKey = null,
                 baseUrl = null,
                 workingDir = null,
@@ -60,10 +61,10 @@ fun loadLightRagConfigFromCommonJson(path: String = resolveLightRagConfigPath())
         }
 
     val provider = normalizeProvider(settings.provider ?: System.getenv("LLM_PROVIDER") ?: "openai")
-    val sharedBaseUrl = firstNonBlank(settings.baseUrl, System.getenv("LLM_BASE_URL"))
+    val sharedBaseUrl = firstNonBlankOrNull(settings.baseUrl, System.getenv("LLM_BASE_URL"))
 
-    val openAiApiKey = firstNonBlank(settings.apiKey, System.getenv("OPENAI_API_KEY")).orEmpty()
-    val openAiBaseUrl = firstNonBlank(sharedBaseUrl, System.getenv("OPENAI_API_BASE"))
+    val openAiApiKey = firstNonBlankOrNull(settings.apiKey, System.getenv("OPENAI_API_KEY")).orEmpty()
+    val openAiBaseUrl = firstNonBlankOrNull(sharedBaseUrl, System.getenv("OPENAI_API_BASE"))
     val openAiChatModelName =
         if (provider == "openai") {
             firstNonBlank(settings.llmModelName, System.getenv("LLM_MODEL"), DEFAULT_OPENAI_CHAT_MODEL)
@@ -76,6 +77,7 @@ fun loadLightRagConfigFromCommonJson(path: String = resolveLightRagConfigPath())
         } else {
             firstNonBlank(System.getenv("OPENAI_EMBEDDING_MODEL"), DEFAULT_OPENAI_EMBEDDING_MODEL)
         }
+    val openAiEmbeddingModelDimensions = settings.embeddingModelDimensions ?: inferEmbeddingDimension(openAiEmbeddingModelName)
 
     val ollamaBaseUrl = firstNonBlank(sharedBaseUrl, System.getenv("OLLAMA_BASE_URL"), DEFAULT_OLLAMA_BASE_URL)
     val ollamaChatModelName =
@@ -106,7 +108,7 @@ fun loadLightRagConfigFromCommonJson(path: String = resolveLightRagConfigPath())
                 apiKey = openAiApiKey,
                 chatModelName = openAiChatModelName,
                 embeddingModelName = openAiEmbeddingModelName,
-                embeddingModelDimensions = inferEmbeddingDimension(openAiEmbeddingModelName),
+                embeddingModelDimensions = openAiEmbeddingModelDimensions,
                 baseUrl = openAiBaseUrl,
             ),
         ollama =
@@ -146,6 +148,16 @@ private fun normalizeProvider(raw: String): String = if (raw.trim().lowercase() 
 
 private fun nonBlankOrNull(value: String?): String? = value?.trim()?.takeIf { it.isNotEmpty() }
 
+private fun firstNonBlankOrNull(vararg values: String?): String? {
+    for (value in values) {
+        val normalized = value?.trim()
+        if (!normalized.isNullOrEmpty()) {
+            return normalized
+        }
+    }
+    return null
+}
+
 private fun firstNonBlank(vararg values: String?): String {
     for (value in values) {
         val normalized = value?.trim()
@@ -169,6 +181,7 @@ private fun inferEmbeddingDimension(modelName: String): Int {
         normalized.contains("text-embedding-3-large") -> 3072
         normalized.contains("text-embedding-3-small") -> 1536
         normalized.contains("text-embedding-ada-002") -> 1536
+        normalized.contains("nomic-embed-text") -> 768
         else -> 1536
     }
 }

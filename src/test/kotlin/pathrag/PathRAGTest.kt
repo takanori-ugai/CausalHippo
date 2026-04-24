@@ -113,6 +113,7 @@ class PathRAGTest {
                     any(),
                     any(),
                     any(),
+                    any(),
                 )
             } returns "LLM-ANSWER"
 
@@ -136,6 +137,7 @@ class PathRAGTest {
             mockkStatic("pathrag.llm.LlmKt")
             coEvery {
                 pathrag.llm.openAiComplete(
+                    any(),
                     any(),
                     any(),
                     any(),
@@ -187,6 +189,7 @@ class PathRAGTest {
                         any(),
                         any(),
                         any(),
+                        any(),
                     )
                 }
             }
@@ -209,9 +212,10 @@ class PathRAGTest {
                     any(),
                     any(),
                     any(),
+                    any(),
                 )
             } answers { chatModel.chat(it.invocation.args[1] as String) }
-            coEvery { pathrag.llm.openAiEmbedding(any()) } returns listOf(DoubleArray(1536) { 0.01 })
+            coEvery { pathrag.llm.openAiEmbedding(any(), any()) } returns listOf(DoubleArray(1536) { 0.01 })
 
             PathRAG(chunkTokenSize = 16, chunkOverlapTokenSize = 4).use { rag ->
                 val chunkContent = "Alpha and Beta share history."
@@ -251,6 +255,7 @@ class PathRAGTest {
                         any(),
                         any(),
                         any(),
+                        any(),
                     )
                 }
                 verify(atLeast = 1) { chatModel.chat(any<String>()) }
@@ -264,11 +269,12 @@ class PathRAGTest {
             mockkStatic(GraphDatabase::class)
 
             coEvery {
-                pathrag.llm.openAiEmbedding(any())
+                pathrag.llm.openAiEmbedding(any(), any())
             } returns listOf(DoubleArray(1536) { 0.1 })
 
             coEvery {
                 pathrag.llm.openAiComplete(
+                    any(),
                     any(),
                     any(),
                     any(),
@@ -347,6 +353,7 @@ class PathRAGTest {
                         any(),
                         any(),
                         any(),
+                        any(),
                     )
                 }
             }
@@ -386,9 +393,10 @@ class PathRAGTest {
                     any(),
                     any(),
                     any(),
+                    any(),
                 )
             } answers { chatModel.chat(it.invocation.args[1] as String) }
-            coEvery { pathrag.llm.openAiEmbedding(any()) } answers { call ->
+            coEvery { pathrag.llm.openAiEmbedding(any(), any()) } answers { call ->
                 val inputs = call.invocation.args[0] as List<String>
                 inputs.map { DoubleArray(1536) { 0.02 } }
             }
@@ -447,9 +455,10 @@ class PathRAGTest {
                     any(),
                     any(),
                     any(),
+                    any(),
                 )
             } answers { chatModel.chat(it.invocation.args[1] as String) }
-            coEvery { pathrag.llm.openAiEmbedding(any()) } answers { call ->
+            coEvery { pathrag.llm.openAiEmbedding(any(), any()) } answers { call ->
                 val inputs = call.invocation.args[0] as List<String>
                 inputs.map { DoubleArray(1536) { 0.03 } }
             }
@@ -522,6 +531,7 @@ class PathRAGTest {
                     any(),
                     any(),
                     any(),
+                    any(),
                 )
             } answers { call ->
                 val keyword = call.invocation.args[4] as Boolean
@@ -531,7 +541,7 @@ class PathRAGTest {
                     "ANSWER"
                 }
             }
-            coEvery { pathrag.llm.openAiEmbedding(any()) } answers { call ->
+            coEvery { pathrag.llm.openAiEmbedding(any(), any()) } answers { call ->
                 val inputs = call.invocation.args[0] as List<String>
                 inputs.map { DoubleArray(1536) { 0.05 } }
             }

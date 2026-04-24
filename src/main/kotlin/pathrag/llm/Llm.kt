@@ -32,7 +32,10 @@ private const val DEFAULT_EMBED_CTX = 8192
 private const val DEFAULT_OLLAMA_EMBED_DIM = 768
 private const val DEFAULT_SYSTEM_PROMPT = "You are a helpful assistant."
 
-private fun setting(name: String): String? = System.getProperty(name)?.takeIf { it.isNotBlank() } ?: System.getenv(name)
+private fun setting(
+    name: String,
+    runtimeSettings: Map<String, String> = emptyMap(),
+): String? = runtimeSettings[name]?.takeIf { it.isNotBlank() } ?: System.getProperty(name)?.takeIf { it.isNotBlank() } ?: System.getenv(name)
 
 private val chatModels = ConcurrentHashMap<String, ChatModel>()
 private val embeddingModels = ConcurrentHashMap<String, EmbeddingModel>()
@@ -93,8 +96,9 @@ suspend fun openAiComplete(
     stream: Boolean = false,
     maxTokens: Int? = null,
     hashingKv: Any? = null,
+    runtimeSettings: Map<String, String> = emptyMap(),
 ): String {
-    val apiKey = setting("OPENAI_API_KEY")
+    val apiKey = setting("OPENAI_API_KEY", runtimeSettings)
     if (apiKey.isNullOrBlank()) {
         logger.warn { "OPENAI_API_KEY not set. Falling back to stubbed response." }
         delay(50)
@@ -106,11 +110,12 @@ suspend fun openAiComplete(
         }
     }
 
-    val logRequests = setting("OPENAI_LOG_REQUESTS")?.toBoolean() ?: false
-    val logResponses = setting("OPENAI_LOG_RESPONSES")?.toBoolean() ?: false
-    val baseUrl = setting("OPENAI_API_BASE")
+    val logRequests = setting("OPENAI_LOG_REQUESTS", runtimeSettings)?.toBoolean() ?: false
+    val logResponses = setting("OPENAI_LOG_RESPONSES", runtimeSettings)?.toBoolean() ?: false
+    val baseUrl = setting("OPENAI_API_BASE", runtimeSettings)
     val modelName = model.ifBlank { DEFAULT_CHAT_MODEL }
-    val chatKey = "$modelName|$baseUrl"
+    val apiKeyMarker = apiKey.hashCode().toString()
+    val chatKey = "$modelName|$baseUrl|apiKey=$apiKeyMarker"
     val chatModel: ChatModel =
         chatModels.computeIfAbsent(chatKey) {
             val builder =
@@ -128,8 +133,8 @@ suspend fun openAiComplete(
     val systemBlock = systemPrompt?.takeIf { it.isNotBlank() } ?: DEFAULT_SYSTEM_PROMPT
 
     return withContext(Dispatchers.IO) {
-        val maxAttempts = (setting("OPENAI_RETRY_ATTEMPTS")?.toIntOrNull() ?: 3).coerceAtLeast(1)
-        val backoffMs = (setting("OPENAI_RETRY_BACKOFF_MS")?.toLongOrNull() ?: 500L).coerceAtLeast(0L)
+        val maxAttempts = (setting("OPENAI_RETRY_ATTEMPTS", runtimeSettings)?.toIntOrNull() ?: 3).coerceAtLeast(1)
+        val backoffMs = (setting("OPENAI_RETRY_BACKOFF_MS", runtimeSettings)?.toLongOrNull() ?: 500L).coerceAtLeast(0L)
         var lastError: RuntimeException? = null
         val result =
             retryWithBackoff(
@@ -177,9 +182,10 @@ suspend fun ollamaComplete(
     stream: Boolean = false,
     maxTokens: Int? = null,
     hashingKv: Any? = null,
+    runtimeSettings: Map<String, String> = emptyMap(),
 ): String {
-    val baseUrl = setting("OLLAMA_BASE_URL") ?: setting("OLLAMA_HOST") ?: "http://localhost:11434"
-    val modelName = model.ifBlank { setting("OLLAMA_MODEL") ?: DEFAULT_OLLAMA_MODEL }
+    val baseUrl = setting("OLLAMA_BASE_URL", runtimeSettings) ?: setting("OLLAMA_HOST", runtimeSettings) ?: "http://localhost:11434"
+    val modelName = model.ifBlank { setting("OLLAMA_MODEL", runtimeSettings) ?: DEFAULT_OLLAMA_MODEL }
     val maxTokensValue = maxTokens?.takeIf { it > 0 }
     val chatKey = "ollama|$modelName|$baseUrl|numPredict=$maxTokensValue"
     val chatModel: ChatModel =
@@ -197,8 +203,8 @@ suspend fun ollamaComplete(
     val systemBlock = systemPrompt?.takeIf { it.isNotBlank() } ?: DEFAULT_SYSTEM_PROMPT
 
     return withContext(Dispatchers.IO) {
-        val maxAttempts = (setting("OLLAMA_RETRY_ATTEMPTS")?.toIntOrNull() ?: 3).coerceAtLeast(1)
-        val backoffMs = (setting("OLLAMA_RETRY_BACKOFF_MS")?.toLongOrNull() ?: 500L).coerceAtLeast(0L)
+        val maxAttempts = (setting("OLLAMA_RETRY_ATTEMPTS", runtimeSettings)?.toIntOrNull() ?: 3).coerceAtLeast(1)
+        val backoffMs = (setting("OLLAMA_RETRY_BACKOFF_MS", runtimeSettings)?.toLongOrNull() ?: 500L).coerceAtLeast(0L)
         var lastError: RuntimeException? = null
         val result =
             retryWithBackoff(
@@ -230,8 +236,11 @@ suspend fun ollamaComplete(
  * @throws IllegalStateException If the OpenAI embedding API fails after configured retry attempts.
  */
 @Suppress("TooGenericExceptionCaught")
-suspend fun openAiEmbedding(inputs: List<String>): List<DoubleArray> {
-    val apiKey = setting("OPENAI_API_KEY")
+suspend fun openAiEmbedding(
+    inputs: List<String>,
+    runtimeSettings: Map<String, String> = emptyMap(),
+): List<DoubleArray> {
+    val apiKey = setting("OPENAI_API_KEY", runtimeSettings)
     val sanitized = inputs.filter { it.isNotBlank() }
     if (sanitized.isEmpty()) return emptyList()
     if (apiKey.isNullOrBlank()) {
@@ -242,18 +251,18 @@ suspend fun openAiEmbedding(inputs: List<String>): List<DoubleArray> {
             DoubleArray(1536) { random.nextDouble() }
         }
     }
-    val baseUrl = setting("OPENAI_API_BASE")
-    val modelName = setting("OPENAI_EMBEDDING_MODEL") ?: DEFAULT_EMBED_MODEL
+    val baseUrl = setting("OPENAI_API_BASE", runtimeSettings)
+    val modelName = setting("OPENAI_EMBEDDING_MODEL", runtimeSettings) ?: DEFAULT_EMBED_MODEL
     val embedModel: EmbeddingModel =
-        embeddingModels.computeIfAbsent("$modelName|$baseUrl") {
+        embeddingModels.computeIfAbsent("$modelName|$baseUrl|apiKey=${apiKey.hashCode()}") {
             val builder = OpenAiEmbeddingModel.builder().apiKey(apiKey).modelName(modelName)
             baseUrl?.takeIf { it.isNotBlank() }?.let { builder.baseUrl(it) }
             builder.build()
         }
 
     return withContext(Dispatchers.IO) {
-        val maxAttempts = (setting("OPENAI_RETRY_ATTEMPTS")?.toIntOrNull() ?: 3).coerceAtLeast(1)
-        val backoffMs = (setting("OPENAI_RETRY_BACKOFF_MS")?.toLongOrNull() ?: 500L).coerceAtLeast(0L)
+        val maxAttempts = (setting("OPENAI_RETRY_ATTEMPTS", runtimeSettings)?.toIntOrNull() ?: 3).coerceAtLeast(1)
+        val backoffMs = (setting("OPENAI_RETRY_BACKOFF_MS", runtimeSettings)?.toLongOrNull() ?: 500L).coerceAtLeast(0L)
         var lastError: RuntimeException? = null
         val result =
             retryWithBackoff(
@@ -292,11 +301,14 @@ suspend fun openAiEmbedding(inputs: List<String>): List<DoubleArray> {
  * @throws IllegalStateException If the embedding call fails after the configured retry attempts.
  */
 @Suppress("TooGenericExceptionCaught")
-suspend fun ollamaEmbedding(inputs: List<String>): List<DoubleArray> {
+suspend fun ollamaEmbedding(
+    inputs: List<String>,
+    runtimeSettings: Map<String, String> = emptyMap(),
+): List<DoubleArray> {
     val sanitized = inputs.filter { it.isNotBlank() }
     if (sanitized.isEmpty()) return emptyList()
-    val baseUrl = setting("OLLAMA_BASE_URL") ?: setting("OLLAMA_HOST") ?: "http://localhost:11434"
-    val modelName = setting("OLLAMA_EMBED_MODEL") ?: DEFAULT_OLLAMA_EMBED_MODEL
+    val baseUrl = setting("OLLAMA_BASE_URL", runtimeSettings) ?: setting("OLLAMA_HOST", runtimeSettings) ?: "http://localhost:11434"
+    val modelName = setting("OLLAMA_EMBED_MODEL", runtimeSettings) ?: DEFAULT_OLLAMA_EMBED_MODEL
     val embedModel: EmbeddingModel =
         embeddingModels.computeIfAbsent("ollama|$modelName|$baseUrl") {
             OllamaEmbeddingModel
@@ -307,8 +319,8 @@ suspend fun ollamaEmbedding(inputs: List<String>): List<DoubleArray> {
         }
 
     return withContext(Dispatchers.IO) {
-        val maxAttempts = (setting("OLLAMA_RETRY_ATTEMPTS")?.toIntOrNull() ?: 3).coerceAtLeast(1)
-        val backoffMs = (setting("OLLAMA_RETRY_BACKOFF_MS")?.toLongOrNull() ?: 500L).coerceAtLeast(0L)
+        val maxAttempts = (setting("OLLAMA_RETRY_ATTEMPTS", runtimeSettings)?.toIntOrNull() ?: 3).coerceAtLeast(1)
+        val backoffMs = (setting("OLLAMA_RETRY_BACKOFF_MS", runtimeSettings)?.toLongOrNull() ?: 500L).coerceAtLeast(0L)
         var lastError: RuntimeException? = null
         val result =
             retryWithBackoff(
@@ -343,12 +355,12 @@ suspend fun ollamaEmbedding(inputs: List<String>): List<DoubleArray> {
  *
  * @return An EmbeddingFunc configured with the chosen provider's embedding dimension, maximum token size, and implementation function.
  */
-fun defaultEmbeddingFunc(): EmbeddingFunc =
-    embeddingModelConfig().let { (provider, dim, ctx) ->
-        val func =
+fun defaultEmbeddingFunc(runtimeSettings: Map<String, String> = emptyMap()): EmbeddingFunc =
+    embeddingModelConfig(runtimeSettings).let { (provider, dim, ctx) ->
+        val func: suspend (List<String>) -> List<DoubleArray> =
             when (provider) {
-                "ollama" -> ::ollamaEmbedding
-                else -> ::openAiEmbedding
+                "ollama" -> { inputs: List<String> -> ollamaEmbedding(inputs, runtimeSettings) }
+                else -> { inputs: List<String> -> openAiEmbedding(inputs, runtimeSettings) }
             }
         EmbeddingFunc(
             embeddingDim = dim,
@@ -369,16 +381,16 @@ fun defaultEmbeddingFunc(): EmbeddingFunc =
  *   - second: the embedding vector dimension (number of floats),
  *   - third: the context window size in tokens for that embedding model.
  */
-private fun embeddingModelConfig(): Triple<String, Int, Int> {
-    val provider = setting("EMBED_PROVIDER")?.lowercase() ?: "openai"
+private fun embeddingModelConfig(runtimeSettings: Map<String, String> = emptyMap()): Triple<String, Int, Int> {
+    val provider = setting("EMBED_PROVIDER", runtimeSettings)?.lowercase() ?: "openai"
     return when (provider) {
         "ollama" -> {
-            val dim = setting("OLLAMA_EMBED_DIM")?.toIntOrNull() ?: DEFAULT_OLLAMA_EMBED_DIM
+            val dim = setting("OLLAMA_EMBED_DIM", runtimeSettings)?.toIntOrNull() ?: DEFAULT_OLLAMA_EMBED_DIM
             Triple("ollama", dim, DEFAULT_EMBED_CTX)
         }
 
         else -> {
-            val modelName = setting("OPENAI_EMBEDDING_MODEL") ?: DEFAULT_EMBED_MODEL
+            val modelName = setting("OPENAI_EMBEDDING_MODEL", runtimeSettings) ?: DEFAULT_EMBED_MODEL
             val dim =
                 when {
                     modelName.contains("3-large", ignoreCase = true) -> {

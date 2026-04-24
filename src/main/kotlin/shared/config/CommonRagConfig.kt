@@ -126,6 +126,13 @@ data class CommonRagConfig(
         merged.setFromFirst("llmProvider", shared, "llmProvider", "provider")
         merged.setFromFirst("llmModelName", shared, "modelName", "llmModel", "llmName")
         merged.setFromFirst("embeddingModelName", shared, "embeddingModel", "embeddingModelName")
+        merged.setFromFirst(
+            "embeddingModelDimensions",
+            shared,
+            "embeddingModelDimensions",
+            "embeddingDimensions",
+            "embedding_dimension",
+        )
         merged.setFromFirst("apiKey", shared, "llmApiKey", "apiKey", "openAiApiKey")
         merged.setFromFirst("baseUrl", shared, "llmBaseUrl", "baseUrl")
         merged.putAll(lightrag)
@@ -134,6 +141,7 @@ data class CommonRagConfig(
             provider = firstString(obj, "llmProvider", "provider"),
             llmModelName = firstString(obj, "llmModelName", "llmModel", "modelName"),
             embeddingModelName = firstString(obj, "embeddingModelName", "embeddingModel"),
+            embeddingModelDimensions = firstInt(obj, "embeddingModelDimensions", "embeddingDimensions", "embedding_dimension"),
             apiKey = firstString(obj, "apiKey", "llmApiKey", "openAiApiKey"),
             baseUrl = firstString(obj, "baseUrl", "llmBaseUrl"),
             workingDir = firstString(obj, "workingDir", "working_dir"),
@@ -175,26 +183,30 @@ data class PathRagSettings(
     val ollamaEmbeddingModelName: String?,
 ) {
     /**
-     * PathRAG reads env variables directly in several places.
-     * We support single-JSON runtime wiring by exposing the same keys as system properties.
+     * Convert PathRAG settings into runtime key-values consumed by PathRAG/LLM helpers.
      */
-    fun applyAsSystemProperties() {
-        setProperty("LLM_PROVIDER", llmProvider)
-        setProperty("OPENAI_MODEL", llmModelName)
-        setProperty("OPENAI_EMBEDDING_MODEL", embeddingModelName)
-        setProperty("OPENAI_API_KEY", apiKey)
-        setProperty("OPENAI_API_BASE", baseUrl)
-        setProperty("OLLAMA_BASE_URL", ollamaBaseUrl)
-        setProperty("OLLAMA_MODEL", ollamaModelName)
-        setProperty("OLLAMA_EMBED_MODEL", ollamaEmbeddingModelName)
-        setProperty("LANGUAGE", language)
-    }
+    fun toRuntimeSettingsMap(): Map<String, String> =
+        buildMap {
+            putIfNonBlank("LLM_PROVIDER", llmProvider)
+            putIfNonBlank("OPENAI_MODEL", llmModelName)
+            putIfNonBlank("OPENAI_EMBEDDING_MODEL", embeddingModelName)
+            putIfNonBlank("OPENAI_API_KEY", apiKey)
+            putIfNonBlank("OPENAI_API_BASE", baseUrl)
+            putIfNonBlank("OLLAMA_BASE_URL", ollamaBaseUrl ?: baseUrl)
+            putIfNonBlank("OLLAMA_MODEL", ollamaModelName ?: llmModelName)
+            putIfNonBlank("OLLAMA_EMBED_MODEL", ollamaEmbeddingModelName ?: embeddingModelName)
+            putIfNonBlank("LANGUAGE", language)
+        }
 
-    private fun setProperty(
-        key: String,
-        value: String?,
-    ) {
-        if (!value.isNullOrBlank()) {
+    /**
+     * Backward-compatible bridge for legacy call sites that still rely on process-wide properties.
+     */
+    @Deprecated(
+        message = "Mutates JVM-global state. Prefer toRuntimeSettingsMap() and pass settings directly to PathRAG.",
+        replaceWith = ReplaceWith("toRuntimeSettingsMap()"),
+    )
+    fun applyAsSystemProperties() {
+        toRuntimeSettingsMap().forEach { (key, value) ->
             System.setProperty(key, value)
         }
     }
@@ -204,6 +216,7 @@ data class LightRagSettings(
     val provider: String?,
     val llmModelName: String?,
     val embeddingModelName: String?,
+    val embeddingModelDimensions: Int?,
     val apiKey: String?,
     val baseUrl: String?,
     val workingDir: String?,
@@ -312,4 +325,14 @@ private fun firstStringList(
         return arr.mapNotNull { (it as? JsonPrimitive)?.contentOrNull }
     }
     return null
+}
+
+private fun MutableMap<String, String>.putIfNonBlank(
+    key: String,
+    value: String?,
+) {
+    val normalized = value?.trim()
+    if (!normalized.isNullOrEmpty()) {
+        this[key] = normalized
+    }
 }

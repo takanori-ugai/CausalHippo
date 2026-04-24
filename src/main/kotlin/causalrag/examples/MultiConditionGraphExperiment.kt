@@ -620,7 +620,7 @@ private fun createPathRagRunner(
     workdirSuffix: String,
 ): ConditionRunner {
     val pathSettings = config.commonConfig?.toPathRagSettings()
-    pathSettings?.applyAsSystemProperties()
+    val pathRuntimeSettings = pathSettings?.toRuntimeSettingsMap() ?: emptyMap()
     val configuredRoot = pathSettings?.workingDir?.let { Path.of(it) }
     val workdirRoot = (configuredRoot ?: config.outputDir.resolve("workdirs")).resolve(workdirSuffix)
     workdirRoot.createDirectories()
@@ -643,6 +643,7 @@ private fun createPathRagRunner(
                     chunkTokenSize = pathSettings?.chunkTokenSize ?: 1200,
                     chunkOverlapTokenSize = pathSettings?.chunkOverlapTokenSize ?: 100,
                     language = pathSettings?.language ?: "English",
+                    runtimeSettings = pathRuntimeSettings,
                 )
 
             return try {

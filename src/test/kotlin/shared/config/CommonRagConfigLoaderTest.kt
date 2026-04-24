@@ -75,6 +75,7 @@ class CommonRagConfigLoaderTest {
                 "llmProvider": "openai",
                 "modelName": "gpt-shared",
                 "embeddingModel": "text-embedding-shared",
+                "embeddingModelDimensions": 1024,
                 "llmApiKey": "shared-key",
                 "llmBaseUrl": "http://localhost:1234/v1"
               },
@@ -102,12 +103,21 @@ class CommonRagConfigLoaderTest {
         assertEquals("text-embedding-shared", path.embeddingModelName)
         assertEquals("http://localhost:1234/v1", path.baseUrl)
         assertEquals(512, path.chunkTokenSize)
+        val runtimeSettings = path.toRuntimeSettingsMap()
+        assertEquals("openai", runtimeSettings["LLM_PROVIDER"])
+        assertEquals("gpt-shared", runtimeSettings["OPENAI_MODEL"])
+        assertEquals("text-embedding-shared", runtimeSettings["OPENAI_EMBEDDING_MODEL"])
+        assertEquals("http://localhost:1234/v1", runtimeSettings["OPENAI_API_BASE"])
+        assertEquals("gpt-shared", runtimeSettings["OLLAMA_MODEL"])
+        assertEquals("text-embedding-shared", runtimeSettings["OLLAMA_EMBED_MODEL"])
+        assertEquals("http://localhost:1234/v1", runtimeSettings["OLLAMA_BASE_URL"])
 
         val light = common.toLightRagSettings()
         assertEquals("./light-work", light.workingDir)
         assertEquals("openai", light.provider)
         assertEquals("gpt-shared", light.llmModelName)
         assertEquals("text-embedding-shared", light.embeddingModelName)
+        assertEquals(1024, light.embeddingModelDimensions)
         assertEquals(600, light.chunkTokenSize)
         assertEquals(listOf("Person", "Location"), light.entityTypes)
     }
