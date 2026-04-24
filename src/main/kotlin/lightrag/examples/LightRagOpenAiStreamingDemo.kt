@@ -1,19 +1,10 @@
 package lightrag.examples
 
-import dev.langchain4j.model.chat.ChatModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.runBlocking
 import lightrag.core.LightRAG
 import lightrag.core.QueryParam
-import lightrag.di.AppConfig
-import lightrag.di.LightRagConfig
-import lightrag.di.appModule
-import lightrag.llm.DualChatModel
-import lightrag.llm.LLMFactory
-import org.koin.core.context.loadKoinModules
-import org.koin.core.context.startKoin
-import org.koin.core.qualifier.named
-import org.koin.dsl.module
+import lightrag.di.createLightRagRuntime
 
 /**
  * Demonstrates how to run LightRAG with streaming mode enabled.
@@ -21,52 +12,18 @@ import org.koin.dsl.module
  */
 fun main() =
     runBlocking {
-        val koin =
-            startKoin {
-                allowOverride(true)
-                modules(appModule)
-            }.koin
-
-        // Use in-memory storage so the demo runs without Neo4j
-        loadKoinModules(
-            module {
-                single<ChatModel> {
-                    val cfg = get<LightRagConfig>()
-                    val chatModel =
-                        LLMFactory.createChatModel(
-                            binding = "openai",
-                            modelName = cfg.openai.chatModelName,
-                            apiKey = cfg.openai.apiKey,
+        val runtime =
+            createLightRagRuntime(
+                configTransform = { it.copy(provider = "openai") },
+                appConfigTransform =
+                    { appConfig, _ ->
+                        appConfig.copy(
+                            graphStorageName = "InMemoryGraphStorage",
+                            vectorStorageName = "InMemoryVectorStorage",
                         )
-                    val streamingChatModel =
-                        LLMFactory.createStreamingChatModel(
-                            binding = "openai",
-                            modelName = cfg.openai.chatModelName,
-                            apiKey = cfg.openai.apiKey,
-                        )
-                    DualChatModel(chatModel, streamingChatModel)
-                }
-
-                single<AppConfig> {
-                    val cfg = get<LightRagConfig>()
-                    AppConfig(
-                        workingDir = cfg.storage.workingDir,
-                        graphStorageName = "InMemoryGraphStorage",
-                        vectorStorageName = "InMemoryVectorStorage",
-                        addonConfig = addonConfigFrom(cfg),
-                        chatModel = get(),
-                        embeddingModel = get(),
-                    )
-                }
-
-                single<Map<String, Any?>>(named("globalConfig")) {
-                    val appConfig = get<AppConfig>()
-                    globalConfigFrom(appConfig)
-                }
-            },
-        )
-
-        val rag: LightRAG = koin.get()
+                    },
+            )
+        val rag: LightRAG = runtime.rag
 
         prepareWorkingDir(
             "./dickens",
@@ -82,7 +39,7 @@ fun main() =
                 ),
         )
 
-        testEmbeddingModel(koin.get(), "This is a test string for embedding.")
+        testEmbeddingModel(runtime.embeddingModel, "This is a test string for embedding.")
         rag.insert(loadBookContent())
         rag.rebuildDerivedStorageIfEmpty()
 

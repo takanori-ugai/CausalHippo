@@ -15,7 +15,7 @@ fun main() {
             "Climate policies aim to reduce emissions, thereby mitigating climate change effects.",
         )
 
-    val pipeline = CausalRAGPipeline(configPath = "config/causalrag.json")
+    val pipeline = CausalRAGPipeline(configPath = "config/common_rag.json")
     println("Pipeline initialized")
 
     println("Indexing documents...")

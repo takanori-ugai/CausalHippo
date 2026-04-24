@@ -41,6 +41,8 @@ import pathrag.eval.RagasContextExtractor
 import ragas.metrics.collections.ResponseGroundednessMetric
 import ragas.metrics.defaults.FaithfulnessMetric
 import ragas.model.SingleTurnSample
+import shared.config.CommonRagConfig
+import shared.config.CommonRagConfigLoader
 import java.nio.file.Files
 import java.nio.file.Path
 import java.time.Instant
@@ -172,6 +174,7 @@ private data class RunConfig(
     val dataPath: Path,
     val outputDir: Path,
     val manifestPath: Path?,
+    val commonConfig: CommonRagConfig?,
     val conditions: List<Condition>,
     val topK: Int,
     val llmModel: String,
@@ -438,8 +441,12 @@ private fun createLightRagRunner(
     config: RunConfig,
     workdirSuffix: String,
 ): ConditionRunner {
-    val provider = config.llmProvider.lowercase()
-    val apiKey = System.getenv("OPENAI_API_KEY")
+    val lightSettings = config.commonConfig?.toLightRagSettings()
+    val provider = (lightSettings?.provider ?: config.llmProvider).lowercase()
+    val llmModelName = lightSettings?.llmModelName ?: config.llmModel
+    val embeddingModelName = lightSettings?.embeddingModelName ?: config.embeddingModel
+    val baseUrl = lightSettings?.baseUrl ?: config.llmBaseUrl
+    val apiKey = lightSettings?.apiKey ?: System.getenv("OPENAI_API_KEY")
     if (provider == "openai" && apiKey.isNullOrBlank()) {
         error("OPENAI_API_KEY is required for provider=openai")
     }
@@ -447,8 +454,8 @@ private fun createLightRagRunner(
     val chatModel =
         LLMFactory.createChatModel(
             binding = provider,
-            modelName = config.llmModel,
-            baseUrl = config.llmBaseUrl,
+            modelName = llmModelName,
+            baseUrl = baseUrl,
             apiKey = apiKey,
             timeout = 120,
             temperature = 0.0,
@@ -458,8 +465,8 @@ private fun createLightRagRunner(
     val retrievalEmbeddingModel =
         LLMFactory.createEmbeddingModel(
             binding = provider,
-            modelName = config.embeddingModel,
-            baseUrl = config.llmBaseUrl,
+            modelName = embeddingModelName,
+            baseUrl = baseUrl,
             apiKey = apiKey,
             timeout = 120,
         )
@@ -477,7 +484,8 @@ private fun createLightRagRunner(
         tokenIds.forEach { intArrayList.add(it) }
         tokenizerEncoding.decode(intArrayList)
     }
-    val workdirRoot = config.outputDir.resolve("workdirs").resolve(workdirSuffix)
+    val configuredRoot = lightSettings?.workingDir?.let { Path.of(it) }
+    val workdirRoot = (configuredRoot ?: config.outputDir.resolve("workdirs")).resolve(workdirSuffix)
     workdirRoot.createDirectories()
 
     return object : ConditionRunner {
@@ -496,6 +504,15 @@ private fun createLightRagRunner(
                     embeddingModel = retrievalEmbeddingModel,
                     tokenizer = tokenizer,
                     decoder = decoder,
+                    graphStorageName = lightSettings?.graphStorageName ?: "InMemoryGraphStorage",
+                    vectorStorageName = lightSettings?.vectorStorageName ?: "InMemoryVectorStorage",
+                    chunkTokenSize = lightSettings?.chunkTokenSize ?: 1200,
+                    chunkOverlapTokenSize = lightSettings?.chunkOverlapTokenSize ?: 100,
+                    entityTypes =
+                        lightSettings?.entityTypes
+                            ?: listOf("Person", "Organization", "Location", "Event", "Concept"),
+                    language = lightSettings?.language ?: "English",
+                    cosineBetterThreshold = lightSettings?.cosineBetterThreshold,
                 )
 
             val indexStart = System.nanoTime()
@@ -538,15 +555,22 @@ private fun createLightRagForSample(
     embeddingModel: EmbeddingModel,
     tokenizer: (String) -> List<Int>,
     decoder: (List<Int>) -> String,
+    graphStorageName: String,
+    vectorStorageName: String,
+    chunkTokenSize: Int,
+    chunkOverlapTokenSize: Int,
+    entityTypes: List<String>,
+    language: String,
+    cosineBetterThreshold: Double?,
 ): LightRAG {
     val globalConfig =
         mapOf(
             "llm_model_func" to chatModel,
             "embedding_func" to embeddingModel,
-            "chunk_token_size" to 1200,
-            "chunk_overlap_token_size" to 100,
-            "entity_types" to listOf("Person", "Organization", "Location", "Event", "Concept"),
-            "language" to "English",
+            "chunk_token_size" to chunkTokenSize,
+            "chunk_overlap_token_size" to chunkOverlapTokenSize,
+            "entity_types" to entityTypes,
+            "language" to language,
             "working_dir" to workingDir,
             "enable_llm_cache" to false,
         )
@@ -555,9 +579,9 @@ private fun createLightRagForSample(
         StorageManager(
             workingDir = workingDir,
             embeddingModel = embeddingModel,
-            graphStorageName = "InMemoryGraphStorage",
-            vectorStorageName = "InMemoryVectorStorage",
-            addonConfig = AddonConfig(),
+            graphStorageName = graphStorageName,
+            vectorStorageName = vectorStorageName,
+            addonConfig = AddonConfig(cosineBetterThreshold = cosineBetterThreshold),
             globalConfig = globalConfig,
         )
     val ingestionService = IngestionService(storageManager, globalConfig, tokenizer, decoder)
@@ -595,7 +619,10 @@ private fun createPathRagRunner(
     config: RunConfig,
     workdirSuffix: String,
 ): ConditionRunner {
-    val workdirRoot = config.outputDir.resolve("workdirs").resolve(workdirSuffix)
+    val pathSettings = config.commonConfig?.toPathRagSettings()
+    pathSettings?.applyAsSystemProperties()
+    val configuredRoot = pathSettings?.workingDir?.let { Path.of(it) }
+    val workdirRoot = (configuredRoot ?: config.outputDir.resolve("workdirs")).resolve(workdirSuffix)
     workdirRoot.createDirectories()
 
     return object : ConditionRunner {
@@ -607,7 +634,16 @@ private fun createPathRagRunner(
         ): RetrievalAndAnswer {
             val sampleWorkdir = workdirRoot.resolve(sanitizeSampleId(sample.id))
             resetDirectory(sampleWorkdir)
-            val rag = PathRAG(workingDir = sampleWorkdir.toString())
+            val rag =
+                PathRAG(
+                    workingDir = sampleWorkdir.toString(),
+                    kvStorage = pathSettings?.kvStorage ?: "JsonKVStorage",
+                    vectorStorage = pathSettings?.vectorStorage ?: "NanoVectorDBStorage",
+                    graphStorage = pathSettings?.graphStorage ?: "NetworkXStorage",
+                    chunkTokenSize = pathSettings?.chunkTokenSize ?: 1200,
+                    chunkOverlapTokenSize = pathSettings?.chunkOverlapTokenSize ?: 100,
+                    language = pathSettings?.language ?: "English",
+                )
 
             return try {
                 val indexStart = System.nanoTime()
@@ -647,7 +683,7 @@ private fun createGraphRagRunner(
     require(config.llmProvider == "openai") {
         "GraphRAG currently supports only --provider openai (got '${config.llmProvider}')"
     }
-    val apiKey = System.getenv("OPENAI_API_KEY")
+    val apiKey = config.commonConfig?.sharedModelSettings()?.apiKey ?: System.getenv("OPENAI_API_KEY")
     require(!apiKey.isNullOrBlank()) { "OPENAI_API_KEY is required for GraphRAG condition." }
 
     val queryModelBuilder =
@@ -762,6 +798,12 @@ private fun parseArgs(args: Array<String>): RunConfig {
 
     val dataPath = Path.of(opts["data"] ?: "data/musique_experiment/musique_dev_balanced_300.jsonl")
     require(Files.exists(dataPath)) { "Missing --data file: $dataPath" }
+    val commonConfigPath = opts["config"]?.let { Path.of(it) }
+    if (commonConfigPath != null) {
+        require(Files.exists(commonConfigPath)) { "Missing --config file: $commonConfigPath" }
+    }
+    val commonConfig = commonConfigPath?.let { CommonRagConfigLoader.load(it) }
+    val sharedModel = commonConfig?.sharedModelSettings()
 
     val outputDir =
         Path.of(
@@ -773,10 +815,11 @@ private fun parseArgs(args: Array<String>): RunConfig {
     val topK = (opts["top-k"] ?: "5").toIntOrNull() ?: 5
     require(topK > 0) { "--top-k must be positive" }
 
-    val llmModel = opts["llm-model"] ?: System.getenv("LLM_MODEL") ?: "gpt-5.4-mini"
-    val embeddingModel = opts["embedding-model"] ?: System.getenv("EMBEDDING_MODEL") ?: "text-embedding-3-small"
-    val llmProvider = (opts["provider"] ?: System.getenv("LLM_PROVIDER") ?: "openai").lowercase()
-    val llmBaseUrl = opts["llm-base-url"] ?: System.getenv("LLM_BASE_URL")
+    val llmModel = opts["llm-model"] ?: sharedModel?.llmModelName ?: System.getenv("LLM_MODEL") ?: "gpt-5.4-mini"
+    val embeddingModel =
+        opts["embedding-model"] ?: sharedModel?.embeddingModelName ?: System.getenv("EMBEDDING_MODEL") ?: "text-embedding-3-small"
+    val llmProvider = (opts["provider"] ?: sharedModel?.provider ?: System.getenv("LLM_PROVIDER") ?: "openai").lowercase()
+    val llmBaseUrl = opts["llm-base-url"] ?: sharedModel?.baseUrl ?: System.getenv("LLM_BASE_URL")
     val limit = opts["limit"]?.toIntOrNull()
     val parallelism = (opts["parallelism"] ?: "5").toIntOrNull() ?: 5
     require(parallelism > 0) { "--parallelism must be positive" }
@@ -789,6 +832,7 @@ private fun parseArgs(args: Array<String>): RunConfig {
         dataPath = dataPath,
         outputDir = outputDir,
         manifestPath = manifestPath,
+        commonConfig = commonConfig,
         conditions = conditions,
         topK = topK,
         llmModel = llmModel,

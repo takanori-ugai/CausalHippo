@@ -140,12 +140,14 @@ To reproduce Graph-based RAG baselines (LightRAG, PathRAG) as shown in the table
 # For MuSiQue
 ./run_experiment_graph.sh \
   --data data/musique_experiment/musique_dev_balanced_300.jsonl \
+  --config config/common_rag.json \
   --conditions all \
   --top-k 5
 
 # For Causal-Reasoning-QA
 ./run_experiment_causal_graph.sh \
   --data data/causal_experiment/causal_qa_balanced_300.jsonl \
+  --config config/common_rag.json \
   --conditions all \
   --top-k 5
 ```

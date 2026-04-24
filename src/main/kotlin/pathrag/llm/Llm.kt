@@ -32,6 +32,8 @@ private const val DEFAULT_EMBED_CTX = 8192
 private const val DEFAULT_OLLAMA_EMBED_DIM = 768
 private const val DEFAULT_SYSTEM_PROMPT = "You are a helpful assistant."
 
+private fun setting(name: String): String? = System.getProperty(name)?.takeIf { it.isNotBlank() } ?: System.getenv(name)
+
 private val chatModels = ConcurrentHashMap<String, ChatModel>()
 private val embeddingModels = ConcurrentHashMap<String, EmbeddingModel>()
 private val chatServices = ConcurrentHashMap<String, TemplateChatService>()
@@ -92,7 +94,7 @@ suspend fun openAiComplete(
     maxTokens: Int? = null,
     hashingKv: Any? = null,
 ): String {
-    val apiKey = System.getenv("OPENAI_API_KEY")
+    val apiKey = setting("OPENAI_API_KEY")
     if (apiKey.isNullOrBlank()) {
         logger.warn { "OPENAI_API_KEY not set. Falling back to stubbed response." }
         delay(50)
@@ -104,9 +106,9 @@ suspend fun openAiComplete(
         }
     }
 
-    val logRequests = System.getenv("OPENAI_LOG_REQUESTS")?.toBoolean() ?: false
-    val logResponses = System.getenv("OPENAI_LOG_RESPONSES")?.toBoolean() ?: false
-    val baseUrl = System.getenv("OPENAI_API_BASE")
+    val logRequests = setting("OPENAI_LOG_REQUESTS")?.toBoolean() ?: false
+    val logResponses = setting("OPENAI_LOG_RESPONSES")?.toBoolean() ?: false
+    val baseUrl = setting("OPENAI_API_BASE")
     val modelName = model.ifBlank { DEFAULT_CHAT_MODEL }
     val chatKey = "$modelName|$baseUrl"
     val chatModel: ChatModel =
@@ -126,8 +128,8 @@ suspend fun openAiComplete(
     val systemBlock = systemPrompt?.takeIf { it.isNotBlank() } ?: DEFAULT_SYSTEM_PROMPT
 
     return withContext(Dispatchers.IO) {
-        val maxAttempts = (System.getenv("OPENAI_RETRY_ATTEMPTS")?.toIntOrNull() ?: 3).coerceAtLeast(1)
-        val backoffMs = (System.getenv("OPENAI_RETRY_BACKOFF_MS")?.toLongOrNull() ?: 500L).coerceAtLeast(0L)
+        val maxAttempts = (setting("OPENAI_RETRY_ATTEMPTS")?.toIntOrNull() ?: 3).coerceAtLeast(1)
+        val backoffMs = (setting("OPENAI_RETRY_BACKOFF_MS")?.toLongOrNull() ?: 500L).coerceAtLeast(0L)
         var lastError: RuntimeException? = null
         val result =
             retryWithBackoff(
@@ -176,8 +178,8 @@ suspend fun ollamaComplete(
     maxTokens: Int? = null,
     hashingKv: Any? = null,
 ): String {
-    val baseUrl = System.getenv("OLLAMA_BASE_URL") ?: System.getenv("OLLAMA_HOST") ?: "http://localhost:11434"
-    val modelName = model.ifBlank { System.getenv("OLLAMA_MODEL") ?: DEFAULT_OLLAMA_MODEL }
+    val baseUrl = setting("OLLAMA_BASE_URL") ?: setting("OLLAMA_HOST") ?: "http://localhost:11434"
+    val modelName = model.ifBlank { setting("OLLAMA_MODEL") ?: DEFAULT_OLLAMA_MODEL }
     val maxTokensValue = maxTokens?.takeIf { it > 0 }
     val chatKey = "ollama|$modelName|$baseUrl|numPredict=$maxTokensValue"
     val chatModel: ChatModel =
@@ -195,8 +197,8 @@ suspend fun ollamaComplete(
     val systemBlock = systemPrompt?.takeIf { it.isNotBlank() } ?: DEFAULT_SYSTEM_PROMPT
 
     return withContext(Dispatchers.IO) {
-        val maxAttempts = (System.getenv("OLLAMA_RETRY_ATTEMPTS")?.toIntOrNull() ?: 3).coerceAtLeast(1)
-        val backoffMs = (System.getenv("OLLAMA_RETRY_BACKOFF_MS")?.toLongOrNull() ?: 500L).coerceAtLeast(0L)
+        val maxAttempts = (setting("OLLAMA_RETRY_ATTEMPTS")?.toIntOrNull() ?: 3).coerceAtLeast(1)
+        val backoffMs = (setting("OLLAMA_RETRY_BACKOFF_MS")?.toLongOrNull() ?: 500L).coerceAtLeast(0L)
         var lastError: RuntimeException? = null
         val result =
             retryWithBackoff(
@@ -229,7 +231,7 @@ suspend fun ollamaComplete(
  */
 @Suppress("TooGenericExceptionCaught")
 suspend fun openAiEmbedding(inputs: List<String>): List<DoubleArray> {
-    val apiKey = System.getenv("OPENAI_API_KEY")
+    val apiKey = setting("OPENAI_API_KEY")
     val sanitized = inputs.filter { it.isNotBlank() }
     if (sanitized.isEmpty()) return emptyList()
     if (apiKey.isNullOrBlank()) {
@@ -240,8 +242,8 @@ suspend fun openAiEmbedding(inputs: List<String>): List<DoubleArray> {
             DoubleArray(1536) { random.nextDouble() }
         }
     }
-    val baseUrl = System.getenv("OPENAI_API_BASE")
-    val modelName = System.getenv("OPENAI_EMBEDDING_MODEL") ?: DEFAULT_EMBED_MODEL
+    val baseUrl = setting("OPENAI_API_BASE")
+    val modelName = setting("OPENAI_EMBEDDING_MODEL") ?: DEFAULT_EMBED_MODEL
     val embedModel: EmbeddingModel =
         embeddingModels.computeIfAbsent("$modelName|$baseUrl") {
             val builder = OpenAiEmbeddingModel.builder().apiKey(apiKey).modelName(modelName)
@@ -250,8 +252,8 @@ suspend fun openAiEmbedding(inputs: List<String>): List<DoubleArray> {
         }
 
     return withContext(Dispatchers.IO) {
-        val maxAttempts = (System.getenv("OPENAI_RETRY_ATTEMPTS")?.toIntOrNull() ?: 3).coerceAtLeast(1)
-        val backoffMs = (System.getenv("OPENAI_RETRY_BACKOFF_MS")?.toLongOrNull() ?: 500L).coerceAtLeast(0L)
+        val maxAttempts = (setting("OPENAI_RETRY_ATTEMPTS")?.toIntOrNull() ?: 3).coerceAtLeast(1)
+        val backoffMs = (setting("OPENAI_RETRY_BACKOFF_MS")?.toLongOrNull() ?: 500L).coerceAtLeast(0L)
         var lastError: RuntimeException? = null
         val result =
             retryWithBackoff(
@@ -293,8 +295,8 @@ suspend fun openAiEmbedding(inputs: List<String>): List<DoubleArray> {
 suspend fun ollamaEmbedding(inputs: List<String>): List<DoubleArray> {
     val sanitized = inputs.filter { it.isNotBlank() }
     if (sanitized.isEmpty()) return emptyList()
-    val baseUrl = System.getenv("OLLAMA_BASE_URL") ?: System.getenv("OLLAMA_HOST") ?: "http://localhost:11434"
-    val modelName = System.getenv("OLLAMA_EMBED_MODEL") ?: DEFAULT_OLLAMA_EMBED_MODEL
+    val baseUrl = setting("OLLAMA_BASE_URL") ?: setting("OLLAMA_HOST") ?: "http://localhost:11434"
+    val modelName = setting("OLLAMA_EMBED_MODEL") ?: DEFAULT_OLLAMA_EMBED_MODEL
     val embedModel: EmbeddingModel =
         embeddingModels.computeIfAbsent("ollama|$modelName|$baseUrl") {
             OllamaEmbeddingModel
@@ -305,8 +307,8 @@ suspend fun ollamaEmbedding(inputs: List<String>): List<DoubleArray> {
         }
 
     return withContext(Dispatchers.IO) {
-        val maxAttempts = (System.getenv("OLLAMA_RETRY_ATTEMPTS")?.toIntOrNull() ?: 3).coerceAtLeast(1)
-        val backoffMs = (System.getenv("OLLAMA_RETRY_BACKOFF_MS")?.toLongOrNull() ?: 500L).coerceAtLeast(0L)
+        val maxAttempts = (setting("OLLAMA_RETRY_ATTEMPTS")?.toIntOrNull() ?: 3).coerceAtLeast(1)
+        val backoffMs = (setting("OLLAMA_RETRY_BACKOFF_MS")?.toLongOrNull() ?: 500L).coerceAtLeast(0L)
         var lastError: RuntimeException? = null
         val result =
             retryWithBackoff(
@@ -368,15 +370,15 @@ fun defaultEmbeddingFunc(): EmbeddingFunc =
  *   - third: the context window size in tokens for that embedding model.
  */
 private fun embeddingModelConfig(): Triple<String, Int, Int> {
-    val provider = System.getenv("EMBED_PROVIDER")?.lowercase() ?: "openai"
+    val provider = setting("EMBED_PROVIDER")?.lowercase() ?: "openai"
     return when (provider) {
         "ollama" -> {
-            val dim = System.getenv("OLLAMA_EMBED_DIM")?.toIntOrNull() ?: DEFAULT_OLLAMA_EMBED_DIM
+            val dim = setting("OLLAMA_EMBED_DIM")?.toIntOrNull() ?: DEFAULT_OLLAMA_EMBED_DIM
             Triple("ollama", dim, DEFAULT_EMBED_CTX)
         }
 
         else -> {
-            val modelName = System.getenv("OPENAI_EMBEDDING_MODEL") ?: DEFAULT_EMBED_MODEL
+            val modelName = setting("OPENAI_EMBEDDING_MODEL") ?: DEFAULT_EMBED_MODEL
             val dim =
                 when {
                     modelName.contains("3-large", ignoreCase = true) -> {

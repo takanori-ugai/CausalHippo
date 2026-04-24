@@ -120,6 +120,11 @@ class MemoryStorage {
 class MemoryIndexPipeline(
     private val clock: () -> Instant = { Instant.now() },
 ) {
+    private val defaultConfigPath: (Path) -> Path = { root ->
+        val normalizedRoot = root.toAbsolutePath().normalize()
+        normalizedRoot.resolve("config/common_rag.json")
+    }
+
     private val json =
         Json {
             prettyPrint = true
@@ -138,7 +143,7 @@ class MemoryIndexPipeline(
         val inputDocs = discoverInput(options.root.resolve("input"))
         storage.writeStringList("input_docs", inputDocs)
 
-        val configPath = options.config ?: options.root.resolve("settings.yaml")
+        val configPath = options.config ?: defaultConfigPath(options.root)
         storage.writeText("config_path", configPath.toAbsolutePath().normalize().toString())
 
         storage.writeText(

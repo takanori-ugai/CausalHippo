@@ -26,12 +26,8 @@ import lightrag.api.routers.configureDocumentRoutes
 import lightrag.api.routers.configureGraphRoutes
 import lightrag.api.routers.configureOllamaRoutes
 import lightrag.api.routers.configureQueryRoutes
-import lightrag.core.LightRAG
-import lightrag.di.appModule
-import lightrag.services.StorageManager
+import lightrag.di.createLightRagRuntime
 import lightrag.utils.AnyValueSerializer
-import org.koin.ktor.ext.inject
-import org.koin.ktor.plugin.Koin
 
 private val logger = KotlinLogging.logger {}
 
@@ -64,13 +60,10 @@ fun Application.module() {
         allowHeader("Content-Type")
     }
 
-    install(Koin) {
-        modules(appModule)
-    }
-
-    val rag by inject<LightRAG>()
-    val storageManager by inject<StorageManager>()
-    val chatModel by inject<ChatModel>()
+    val runtime = createLightRagRuntime()
+    val rag = runtime.rag
+    val storageManager = runtime.storageManager
+    val chatModel: ChatModel = runtime.chatModel
 
     val resetStorage = System.getenv("LIGHTRAG_RESET_STORAGE")?.equals("true", ignoreCase = true) == true
     if (resetStorage) {

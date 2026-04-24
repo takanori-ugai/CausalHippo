@@ -116,6 +116,33 @@ class MainTest {
     }
 
     @Test
+    fun testLoadCommonConfigIntegration() {
+        val configFile = File(tempDir, "common-config.json")
+        configFile.writeText(
+            """{
+                "shared": {
+                    "modelName": "gpt-shared",
+                    "embeddingModel": "text-embedding-shared",
+                    "llmProvider": "openai",
+                    "llmApiKey": "shared-key"
+                },
+                "hipporag": {
+                    "saveDir": "common_outputs",
+                    "openieMode": "offline"
+                }
+            }""",
+        )
+
+        val config = loadConfigFromJson(configFile.path)
+        assertEquals("common_outputs", config.saveDir)
+        assertEquals("gpt-shared", config.llmName)
+        assertEquals("text-embedding-shared", config.embeddingModelName)
+        assertEquals("openai", config.llmProvider)
+        assertEquals("shared-key", config.openAiApiKey)
+        assertEquals("offline", config.openieMode)
+    }
+
+    @Test
     fun testPrintAnswersFormat() {
         val solutions =
             listOf(

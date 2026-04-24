@@ -88,7 +88,7 @@ class InitCommand : Runnable {
 class SharedIndexOptions {
     @Option(
         names = ["-c", "--config"],
-        description = ["Configuration file to use."],
+        description = ["Configuration file to use (default: config/common_rag.json)."],
     )
     var config: Path? = null
 
@@ -251,7 +251,7 @@ class PromptTuneCommand : Runnable {
 
     @Option(
         names = ["-c", "--config"],
-        description = ["Configuration file to use."],
+        description = ["Configuration file to use (default: config/common_rag.json)."],
     )
     var config: Path? = null
 
@@ -391,7 +391,7 @@ class QueryCommand : Runnable {
 
     @Option(
         names = ["-c", "--config"],
-        description = ["Configuration file to use."],
+        description = ["Configuration file to use (default: config/common_rag.json)."],
     )
     var config: Path? = null
 

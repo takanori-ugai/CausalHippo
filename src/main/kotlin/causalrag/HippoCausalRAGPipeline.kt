@@ -12,6 +12,7 @@ import causalrag.retriever.HybridRetriever
 import hipporag.HippoRag
 import hipporag.config.BaseConfig
 import kotlinx.serialization.json.Json
+import shared.config.CommonRagConfigLoader
 import java.nio.file.Files
 import java.nio.file.Path
 
@@ -185,9 +186,9 @@ class HippoCausalRAGPipeline(
     private fun loadConfig(configPath: String): PipelineConfig {
         val path = Path.of(configPath)
         require(Files.exists(path)) { "Config file not found: $configPath" }
-        val json = Json { ignoreUnknownKeys = true }
         val content = Files.readString(path)
-        return json.decodeFromString(PipelineConfig.serializer(), content)
+        return CommonRagConfigLoader.parseOrNull(content)?.toPipelineConfig()
+            ?: Json { ignoreUnknownKeys = true }.decodeFromString(PipelineConfig.serializer(), content)
     }
 
     private fun resolveHippoConfig(initial: BaseConfig?): BaseConfig =

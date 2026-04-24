@@ -3,7 +3,7 @@ set -euo pipefail
 
 DATA_PATH="data/musique_experiment/musique_dev_balanced_300.jsonl"
 OUTPUT_DIR=""
-CONFIG_PATH="config/causalrag.json"
+CONFIG_PATH="config/common_rag.json"
 MANIFEST_PATH=""
 CONDITIONS="all"
 TOP_K="5"
@@ -23,7 +23,7 @@ Usage: ./run_experiment.sh [options]
 Options:
   --data <path>            Input MuSiQue JSONL
   --output-dir <path>      Output directory (default: eval_results/multicondition_<timestamp>)
-  --config <path>          Pipeline config path (default: config/causalrag.json)
+  --config <path>          Pipeline/common config path (default: config/common_rag.json)
   --manifest <path>        Manifest JSONL (optional; auto-detected when omitted)
   --conditions <list>      all or comma list of condition IDs
   --top-k <int>            Retrieval topK (default: 5)

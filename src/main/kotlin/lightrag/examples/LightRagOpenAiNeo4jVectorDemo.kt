@@ -3,15 +3,7 @@ package lightrag.examples
 import kotlinx.coroutines.runBlocking
 import lightrag.core.LightRAG
 import lightrag.core.QueryParam
-import lightrag.di.AppConfig
-import lightrag.di.LightRagConfig
-import lightrag.di.appModule
-import lightrag.services.StorageManager
-import org.koin.core.context.loadKoinModules
-import org.koin.core.context.startKoin
-import org.koin.core.qualifier.named
-import org.koin.dsl.module
-import org.koin.java.KoinJavaComponent.get
+import lightrag.di.createLightRagRuntime
 
 /**
  * Demo showing LightRAG with both graph storage and vector storage backed by Neo4j.
@@ -22,14 +14,19 @@ import org.koin.java.KoinJavaComponent.get
  */
 fun main() =
     runBlocking {
-        startKoin {
-            allowOverride(true)
-            modules(appModule)
-        }
-        loadKoinModules(neo4jOverrideModule())
-
-        val rag: LightRAG = get(LightRAG::class.java)
-        val storageManager: StorageManager = get(StorageManager::class.java)
+        val runtime =
+            createLightRagRuntime(
+                configTransform = { it.copy(provider = "openai") },
+                appConfigTransform =
+                    { appConfig, _ ->
+                        appConfig.copy(
+                            graphStorageName = "Neo4jGraphStorage",
+                            vectorStorageName = "Neo4jVectorStorage",
+                        )
+                    },
+            )
+        val rag = runtime.rag
+        val storageManager = runtime.storageManager
 
         println("Initializing Neo4j vector/graph storage...")
         storageManager.initialize()
@@ -51,33 +48,6 @@ fun main() =
         }
 
         storageManager.persist()
-    }
-
-/**
- * Overrides Koin bindings to force Neo4j-backed graph and vector storage for the demo run.
- */
-private fun neo4jOverrideModule() =
-    module {
-        single<AppConfig> {
-            val cfg = get<LightRagConfig>()
-            AppConfig(
-                workingDir = cfg.storage.workingDir,
-                graphStorageName = "Neo4jGraphStorage",
-                vectorStorageName = "Neo4jVectorStorage",
-                addonConfig = addonConfigFrom(cfg),
-                llmBinding = "openai",
-                llmModelName = cfg.openai.chatModelName,
-                embeddingBinding = "openai",
-                embeddingModelName = cfg.openai.embeddingModelName,
-                chatModel = get(),
-                embeddingModel = get(),
-            )
-        }
-
-        single<Map<String, Any?>>(named("globalConfig")) {
-            val appConfig = get<AppConfig>()
-            globalConfigFrom(appConfig)
-        }
     }
 
 /**

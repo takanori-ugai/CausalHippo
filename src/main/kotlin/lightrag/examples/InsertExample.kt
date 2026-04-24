@@ -1,22 +1,14 @@
 package lightrag.examples
 
 import kotlinx.coroutines.runBlocking
-import lightrag.core.LightRAG
-import lightrag.di.appModule
-import org.koin.core.context.startKoin
-import org.koin.java.KoinJavaComponent.get
+import lightrag.di.createLightRagRuntime
 
 /**
  * The main function for the insert example.
  */
 fun main() =
     runBlocking {
-        startKoin {
-            allowOverride(true)
-            modules(appModule)
-        }
-
-        val rag: LightRAG = get(LightRAG::class.java)
+        val rag = createLightRagRuntime().rag
 
         val trackId = rag.insert("This is a test document content about Entity1 and Entity2.")
         println("Insert started with trackId: $trackId")

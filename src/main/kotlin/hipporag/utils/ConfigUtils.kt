@@ -8,6 +8,7 @@ import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.doubleOrNull
 import kotlinx.serialization.json.intOrNull
 import kotlinx.serialization.json.jsonPrimitive
+import shared.config.CommonRagConfigLoader
 import java.io.File
 
 /**
@@ -15,6 +16,9 @@ import java.io.File
  */
 fun loadConfigFromJson(path: String): BaseConfig {
     val text = File(path).readText()
+    CommonRagConfigLoader.parseOrNull(text)?.let { common ->
+        return common.toHippoBaseConfig()
+    }
     val json = jsonWithDefaults { ignoreUnknownKeys = true }
     val element = json.parseToJsonElement(text)
     val config = BaseConfig()

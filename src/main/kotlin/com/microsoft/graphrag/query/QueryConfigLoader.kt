@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import com.microsoft.graphrag.prompts.query.QUESTION_SYSTEM_PROMPT
 import com.microsoft.graphrag.query.DriftSearchEngine.Companion.DEFAULT_DRIFT_PRIMER_PROMPT
@@ -13,6 +12,7 @@ import com.microsoft.graphrag.query.GlobalSearchEngine.Companion.DEFAULT_GENERAL
 import com.microsoft.graphrag.query.GlobalSearchEngine.Companion.DEFAULT_MAP_SYSTEM_PROMPT
 import com.microsoft.graphrag.query.GlobalSearchEngine.Companion.DEFAULT_REDUCE_SYSTEM_PROMPT
 import io.github.oshai.kotlinlogging.KotlinLogging
+import shared.config.CommonRagConfigLoader
 import java.nio.file.Files
 import java.nio.file.Path
 
@@ -169,30 +169,40 @@ data class DriftSearchConfig(
 )
 
 /**
- * Loads and resolves query configuration from a settings file.
+ * Loads and resolves query configuration from a JSON settings file.
  */
 object QueryConfigLoader {
+    private const val DEFAULT_COMMON_CONFIG = "config/common_rag.json"
     private const val DEFAULT_CHAT_ID = "default_chat_model"
     private const val DEFAULT_EMBEDDING_ID = "default_embedding_model"
     private val logger = KotlinLogging.logger {}
 
     private val mapper: ObjectMapper =
-        ObjectMapper(YAMLFactory())
+        ObjectMapper()
             .registerKotlinModule()
             .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+
+    private data class SharedModelDefaults(
+        val chatModelName: String? = null,
+        val embeddingModelName: String? = null,
+    ) {
+        fun defaultChatConfig(): QueryModelConfig? =
+            chatModelName
+                ?.trim()
+                ?.takeIf { it.isNotEmpty() }
+                ?.let { QueryModelConfig(model = it) }
+    }
 
     /**
      * Builds a QueryConfig for the given project root by loading and merging configuration from a settings file.
      *
-     * If a settings file is provided (via `configPath`) or found at `<root>/settings.yaml`, that file is parsed
-     * and used
-     * to populate index definitions, default model selections, prompts, and per-component search settings. If the file
-     * is missing or cannot be parsed, a sensible default configuration is returned based on `root` and any provided
-     * `overrideOutputDirs`.
+     * If a settings file is provided (via `configPath`) or a default JSON config is found under `root`,
+     * that file is parsed and used to populate index definitions, default model selections, prompts, and
+     * per-component search settings. If the file is missing or cannot be parsed, a sensible default
+     * configuration is returned based on `root` and any provided `overrideOutputDirs`.
      *
      * @param root The filesystem root path for the project; used to resolve relative paths in the configuration.
-     * @param configPath Optional explicit path to a settings file; when null the loader looks for
-     * `settings.yaml` under `root`.
+     * @param configPath Optional explicit path to a settings file.
      * @param overrideOutputDirs Optional list of output directories that override outputs declared in the
      * settings file.
      * @return A fully populated QueryConfig containing resolved root, index configurations, default
@@ -207,7 +217,7 @@ object QueryConfigLoader {
         overrideOutputDirs: List<Path> = emptyList(),
     ): QueryConfig {
         val resolvedRoot = root.toAbsolutePath().normalize()
-        val settingsPath = (configPath ?: resolvedRoot.resolve("settings.yaml")).toAbsolutePath().normalize()
+        val settingsPath = (configPath ?: defaultConfigPath(resolvedRoot)).toAbsolutePath().normalize()
         val overrideDirs = overrideOutputDirs.map { it.toAbsolutePath().normalize() }
 
         if (!Files.exists(settingsPath)) {
@@ -215,20 +225,39 @@ object QueryConfigLoader {
             return defaultConfig(resolvedRoot, indexes)
         }
 
-        val raw =
-            runCatching {
-                mapper.readValue(settingsPath.toFile(), RawConfig::class.java)
-            }.getOrElse { error ->
-                logger.warn { "Failed to parse $settingsPath ($error); using default outputs." }
+        val content =
+            runCatching { Files.readString(settingsPath) }.getOrElse { error ->
+                logger.warn { "Failed to read $settingsPath ($error); using default outputs." }
                 val indexes = buildIndexConfigs(resolvedRoot, null, overrideDirs)
                 return defaultConfig(resolvedRoot, indexes)
+            }
+
+        val sharedDefaults =
+            CommonRagConfigLoader
+                .parseOrNull(content)
+                ?.sharedModelSettings()
+                ?.let {
+                    SharedModelDefaults(
+                        chatModelName = it.llmModelName,
+                        embeddingModelName = it.embeddingModelName,
+                    )
+                }
+                ?: SharedModelDefaults()
+
+        val raw =
+            runCatching {
+                mapper.readValue(content, RawConfig::class.java)
+            }.getOrElse { error ->
+                logger.warn { "Failed to parse $settingsPath as JSON ($error); using default outputs." }
+                val indexes = buildIndexConfigs(resolvedRoot, null, overrideDirs)
+                return defaultConfig(resolvedRoot, indexes, sharedDefaults)
             }
 
         val configRoot = raw.rootDir?.let { resolvedRoot.resolve(it).normalize() } ?: resolvedRoot
         val indexes = buildIndexConfigs(configRoot, raw, overrideDirs)
 
-        val defaultChat = resolveModel(raw.models, DEFAULT_CHAT_ID)
-        val defaultEmbedding = resolveEmbedding(raw, DEFAULT_EMBEDDING_ID)
+        val defaultChat = resolveModel(raw.models, DEFAULT_CHAT_ID) ?: sharedDefaults.defaultChatConfig()
+        val defaultEmbedding = resolveEmbedding(raw, DEFAULT_EMBEDDING_ID) ?: sharedDefaults.embeddingModelName
 
         val basicPrompt = loadPrompt(configRoot, raw.basicSearch?.prompt, DEFAULT_BASIC_SEARCH_SYSTEM_PROMPT)
         val localPrompt = loadPrompt(configRoot, raw.localSearch?.prompt, DEFAULT_LOCAL_SEARCH_SYSTEM_PROMPT)
@@ -307,6 +336,8 @@ object QueryConfigLoader {
         )
     }
 
+    private fun defaultConfigPath(root: Path): Path = root.resolve(DEFAULT_COMMON_CONFIG)
+
     /**
      * Build a QueryConfig populated with sensible defaults derived from the given root and index configurations.
      *
@@ -323,13 +354,14 @@ object QueryConfigLoader {
     private fun defaultConfig(
         root: Path,
         indexConfigs: List<QueryIndexConfig>,
+        sharedDefaults: SharedModelDefaults = SharedModelDefaults(),
     ): QueryConfig {
         val indexes =
             indexConfigs.ifEmpty {
                 listOf(QueryIndexConfig("default", root.resolve("sample-index/output")))
             }
-        val defaultChat = QueryModelConfig("gpt-4o-mini")
-        val defaultEmbedding = "text-embedding-3-small"
+        val defaultChat = sharedDefaults.defaultChatConfig() ?: QueryModelConfig("gpt-4o-mini")
+        val defaultEmbedding = sharedDefaults.embeddingModelName ?: "text-embedding-3-small"
         return QueryConfig(
             root = root,
             indexes = indexes,

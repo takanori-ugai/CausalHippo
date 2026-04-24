@@ -3,7 +3,7 @@ set -euo pipefail
 
 DATA_PATH="data/causal_experiment/causal_qa_balanced_300.jsonl"
 OUTPUT_DIR=""
-CONFIG_PATH="config/causalrag.json"
+CONFIG_PATH="config/common_rag.json"
 CONDITIONS="all"
 TOP_K="5"
 PARALLELISM="5"
@@ -22,7 +22,7 @@ Usage: ./run_experiment_causal.sh [options]
 Options:
   --data <path>            Input MuSiQue-style causal QA JSONL (default: data/causal_experiment/causal_qa_balanced_300.jsonl)
   --output-dir <path>      Output directory (default: eval_results/causal_multicondition_<timestamp>)
-  --config <path>          Pipeline config path (default: config/causalrag.json)
+  --config <path>          Pipeline/common config path (default: config/common_rag.json)
   --conditions <list>      all or comma list of condition IDs
   --top-k <int>            Retrieval topK (default: 5)
   --parallelism <int>      Number of samples to execute in parallel (default: 5)

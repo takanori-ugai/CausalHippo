@@ -1,0 +1,48 @@
+{
+  "shared": {
+    "llmProvider": "openai",
+    "modelName": "gpt-5.4-mini",
+    "embeddingModel": "text-embedding-3-small",
+    "llmApiKey": null,
+    "embeddingApiKey": null,
+    "llmBaseUrl": null
+  },
+  "causalrag": {
+    "graphPath": null,
+    "indexPath": null,
+    "templateStyle": "detailed",
+    "semanticMode": "dpr",
+    "minCausalMatches": 0
+  },
+  "hipporag": {
+    "saveDir": "outputs",
+    "openieMode": "online",
+    "forceIndexFromScratch": false,
+    "forceOpenieFromScratch": false
+  },
+  "pathrag": {
+    "workingDir": "./pathrag_storage",
+    "kvStorage": "JsonKVStorage",
+    "vectorStorage": "NanoVectorDBStorage",
+    "graphStorage": "NetworkXStorage",
+    "chunkTokenSize": 1200,
+    "chunkOverlapTokenSize": 100,
+    "language": "English"
+  },
+  "lightrag": {
+    "workingDir": "./lightrag_storage",
+    "graphStorageName": "InMemoryGraphStorage",
+    "vectorStorageName": "InMemoryVectorStorage",
+    "chunkTokenSize": 1200,
+    "chunkOverlapTokenSize": 100,
+    "entityTypes": [
+      "Person",
+      "Organization",
+      "Location",
+      "Event",
+      "Concept"
+    ],
+    "language": "English",
+    "cosineBetterThreshold": 0.2
+  }
+}

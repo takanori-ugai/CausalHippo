@@ -11,6 +11,7 @@ import causalrag.retriever.VectorStoreRetriever
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
+import shared.config.CommonRagConfigLoader
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
@@ -131,9 +132,9 @@ class CausalRAGPipeline(
         val path = Path.of(configPath)
         require(Files.exists(path)) { "Config file not found: $configPath" }
         return try {
-            val json = Json { ignoreUnknownKeys = true }
             val content = Files.readString(path)
-            json.decodeFromString(PipelineConfig.serializer(), content)
+            CommonRagConfigLoader.parseOrNull(content)?.toPipelineConfig()
+                ?: Json { ignoreUnknownKeys = true }.decodeFromString(PipelineConfig.serializer(), content)
         } catch (ex: IOException) {
             logger.error(ex) { "Failed to load config from $configPath" }
             throw ex

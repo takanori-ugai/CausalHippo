@@ -1,10 +1,7 @@
 package lightrag.examples
 
 import kotlinx.coroutines.runBlocking
-import lightrag.core.LightRAG
-import lightrag.di.appModule
-import lightrag.services.StorageManager
-import org.koin.core.context.startKoin
+import lightrag.di.createLightRagRuntime
 
 /**
  * The main function for the LightRAG OpenAI demo.
@@ -13,9 +10,9 @@ import org.koin.core.context.startKoin
  */
 fun main() =
     runBlocking {
-        val koin = startKoin { modules(appModule) }.koin
-        val rag: LightRAG = koin.get()
-        val storageManager: StorageManager = koin.get()
+        val runtime = createLightRagRuntime(configTransform = { it.copy(provider = "openai") })
+        val rag = runtime.rag
+        val storageManager = runtime.storageManager
 
         prepareWorkingDir(
             "./dickens",
@@ -34,7 +31,7 @@ fun main() =
         // Initialize storages (connects Neo4j and loads persisted data) before insert/query.
         storageManager.initialize()
 
-        testEmbeddingModel(koin.get(), "This is a test string for embedding.")
+        testEmbeddingModel(runtime.embeddingModel, "This is a test string for embedding.")
         rag.insert(loadBookContent())
         runDemoQueries(rag, "What are the top themes related with King of England")
         println("\nDone!")

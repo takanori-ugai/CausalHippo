@@ -1,228 +1,254 @@
 package lightrag.di
 
 import com.knuddels.jtokkit.Encodings
-import com.knuddels.jtokkit.api.Encoding
-import com.knuddels.jtokkit.api.EncodingRegistry
 import com.knuddels.jtokkit.api.EncodingType
-import com.typesafe.config.Config
-import com.typesafe.config.ConfigFactory
+import com.knuddels.jtokkit.api.IntArrayList
 import dev.langchain4j.model.chat.ChatModel
 import dev.langchain4j.model.chat.StreamingChatModel
 import dev.langchain4j.model.embedding.EmbeddingModel
 import lightrag.core.AddonConfig
 import lightrag.core.LightRAG
 import lightrag.core.LightRagOverrides
-import lightrag.core.Neo4jConfig
 import lightrag.llm.DualChatModel
 import lightrag.llm.LLMFactory
 import lightrag.services.IngestionService
 import lightrag.services.QueryService
 import lightrag.services.StorageManager
-import org.koin.core.qualifier.named
-import org.koin.dsl.module
 
-val appModule =
-    module {
-        single {
-            val rawConfig: Config = ConfigFactory.load()
-            val lightragConfig = rawConfig.getConfig("lightrag")
-            val openaiConfig = lightragConfig.getConfig("openai")
-            val ollamaConfig = lightragConfig.getConfig("ollama")
-            val neo4jConfig = lightragConfig.getConfig("neo4j")
-            val mongodbConfig = lightragConfig.getConfig("mongodb")
-            val storageConfig = lightragConfig.getConfig("storage")
-            val addonConfigValues = lightragConfig.getConfig("addon_config")
+data class LightRagRuntime(
+    val lightRagConfig: LightRagConfig,
+    val appConfig: AppConfig,
+    val chatModel: ChatModel,
+    val embeddingModel: EmbeddingModel,
+    val globalConfig: Map<String, Any?>,
+    val storageManager: StorageManager,
+    val ingestionService: IngestionService,
+    val queryService: QueryService,
+    val rag: LightRAG,
+)
 
-            LightRagConfig(
-                openai =
-                    OpenAiConfig(
-                        apiKey = System.getenv("OPENAI_API_KEY") ?: openaiConfig.getString("api_key"),
-                        chatModelName = openaiConfig.getString("chat_model_name"),
-                        embeddingModelName = openaiConfig.getString("embedding_model_name"),
-                        embeddingModelDimensions = openaiConfig.getInt("embedding_model_dimensions"),
-                    ),
-                ollama =
-                    OllamaConfig(
-                        baseUrl = System.getenv("OLLAMA_BASE_URL") ?: ollamaConfig.getString("base_url"),
-                        chatModelName = ollamaConfig.getString("chat_model_name"),
-                        embeddingModelName = ollamaConfig.getString("embedding_model_name"),
-                    ),
-                neo4j =
-                    Neo4jConfig(
-                        uri = System.getenv("NEO4J_URI") ?: neo4jConfig.getString("uri"),
-                        username = System.getenv("NEO4J_USERNAME") ?: neo4jConfig.getString("username"),
-                        password = System.getenv("NEO4J_PASSWORD") ?: neo4jConfig.getString("password"),
-                    ),
-                mongodb =
-                    MongoDbConfig(
-                        uri = System.getenv("MONGO_URI") ?: mongodbConfig.getString("uri"),
-                        database = System.getenv("MONGO_DB") ?: mongodbConfig.getString("database"),
-                    ),
-                storage =
-                    StorageConfig(
-                        workingDir = storageConfig.getString("working_dir"),
-                        graphStorageName = storageConfig.getString("graph_storage_name"),
-                        vectorStorageName = storageConfig.getString("vector_storage_name"),
-                    ),
-                addonConfig =
-                    AddonConfigConfig(
-                        chunkTokenSize = addonConfigValues.getInt("chunk_token_size"),
-                        chunkOverlapTokenSize = addonConfigValues.getInt("chunk_overlap_token_size"),
-                        cosineBetterThreshold = addonConfigValues.getDouble("cosine_better_threshold"),
-                        entityTypes = addonConfigValues.getStringList("entity_types"),
-                        language = addonConfigValues.getString("language"),
-                    ),
-                resetStorage =
-                    System.getenv("LIGHTRAG_RESET_STORAGE")?.toBoolean()
-                        ?: lightragConfig.getBoolean("reset_storage"),
-            )
+fun createLightRagRuntime(
+    configPath: String = resolveLightRagConfigPath(),
+    configTransform: (LightRagConfig) -> LightRagConfig = { it },
+    chatModelFactory: ((LightRagConfig) -> ChatModel)? = null,
+    streamingChatModelFactory: ((LightRagConfig) -> StreamingChatModel)? = null,
+    embeddingModelFactory: ((LightRagConfig) -> EmbeddingModel)? = null,
+    appConfigTransform: (AppConfig, LightRagConfig) -> AppConfig = { appConfig, _ -> appConfig },
+    globalConfigFactory: ((AppConfig, LightRagConfig) -> Map<String, Any?>)? = null,
+    storageManagerFactory: ((AppConfig, Map<String, Any?>) -> StorageManager)? = null,
+): LightRagRuntime {
+    val lightRagConfig = configTransform(loadLightRagConfigFromCommonJson(configPath))
+    val chatModel = createChatModel(lightRagConfig, chatModelFactory, streamingChatModelFactory)
+    val embeddingModel = embeddingModelFactory?.invoke(lightRagConfig) ?: createEmbeddingModel(lightRagConfig)
+
+    val appConfig =
+        appConfigTransform(
+            defaultAppConfig(lightRagConfig, chatModel, embeddingModel),
+            lightRagConfig,
+        )
+
+    val globalConfig =
+        globalConfigFactory?.invoke(appConfig, lightRagConfig)
+            ?: defaultGlobalConfig(appConfig, lightRagConfig)
+
+    val storageManager =
+        storageManagerFactory?.invoke(appConfig, globalConfig)
+            ?: defaultStorageManager(appConfig, globalConfig)
+
+    val encoding = Encodings.newDefaultEncodingRegistry().getEncoding(EncodingType.CL100K_BASE)
+    val tokenizer: (String) -> List<Int> = { text ->
+        val encoded = encoding.encode(text)
+        val tokens = mutableListOf<Int>()
+        for (i in 0 until encoded.size()) {
+            tokens += encoded.get(i)
         }
+        tokens
+    }
+    val decoder: (List<Int>) -> String = { tokenIds ->
+        val ids = IntArrayList()
+        tokenIds.forEach { ids.add(it) }
+        encoding.decode(ids)
+    }
 
-        single {
-            val lightRagConfig = get<LightRagConfig>()
-            val chatModel =
-                LLMFactory.createChatModel(
-                    binding = "openai",
-                    modelName = lightRagConfig.openai.chatModelName,
-                    apiKey = lightRagConfig.openai.apiKey,
-                )
-            val streamingChatModel =
-                LLMFactory.createStreamingChatModel(
-                    binding = "openai",
-                    modelName = lightRagConfig.openai.chatModelName,
-                    apiKey = lightRagConfig.openai.apiKey,
-                )
-            DualChatModel(chatModel, streamingChatModel)
-        }
+    val ingestionService =
+        IngestionService(
+            storageManager = storageManager,
+            globalConfig = globalConfig,
+            tokenizer = tokenizer,
+            decoder = decoder,
+        )
+    val queryService =
+        QueryService(
+            storageManager = storageManager,
+            chatModel = chatModel,
+            hashingKv = appConfig.hashingKv,
+            globalConfig = globalConfig,
+            tokenizer = tokenizer,
+            decoder = decoder,
+        )
+    val rag =
+        LightRAG(
+            ingestionService = ingestionService,
+            queryService = queryService,
+            storageManager = storageManager,
+        )
 
-        single<ChatModel> { get<DualChatModel>() }
+    return LightRagRuntime(
+        lightRagConfig = lightRagConfig,
+        appConfig = appConfig,
+        chatModel = chatModel,
+        embeddingModel = embeddingModel,
+        globalConfig = globalConfig,
+        storageManager = storageManager,
+        ingestionService = ingestionService,
+        queryService = queryService,
+        rag = rag,
+    )
+}
 
-        single<StreamingChatModel> { get<DualChatModel>() }
+fun defaultAppConfig(
+    lightRagConfig: LightRagConfig,
+    chatModel: ChatModel,
+    embeddingModel: EmbeddingModel,
+): AppConfig {
+    val provider = normalizedProvider(lightRagConfig)
+    return AppConfig(
+        llmBinding = provider,
+        embeddingBinding = provider,
+        llmModelName = activeChatModelName(lightRagConfig),
+        embeddingModelName = activeEmbeddingModelName(lightRagConfig),
+        chatModel = chatModel,
+        embeddingModel = embeddingModel,
+        workingDir = lightRagConfig.storage.workingDir,
+        graphStorageName = lightRagConfig.storage.graphStorageName,
+        vectorStorageName = lightRagConfig.storage.vectorStorageName,
+        addonConfig = defaultAddonConfig(lightRagConfig),
+    )
+}
 
-        single<EmbeddingModel> {
-            val lightRagConfig = get<LightRagConfig>()
-            LLMFactory.createEmbeddingModel(
-                binding = "openai",
-                modelName = lightRagConfig.openai.embeddingModelName,
-                apiKey = lightRagConfig.openai.apiKey,
-            )
-        }
+fun defaultGlobalConfig(
+    appConfig: AppConfig,
+    lightRagConfig: LightRagConfig,
+): Map<String, Any?> {
+    val overrides = appConfig.addonConfig.overrides
+    val chunkTokenSize = overrides.chunkTokenSize ?: 1200
+    val chunkOverlapTokenSize = overrides.chunkOverlapTokenSize ?: 100
+    val entityTypes = overrides.entityTypes ?: listOf("Person", "Organization", "Location", "Event", "Concept")
+    val language = overrides.language ?: "English"
 
-        single {
-            val lightRagConfig = get<LightRagConfig>()
-            AppConfig(
-                chatModel = get(),
-                embeddingModel = get(),
-                workingDir = lightRagConfig.storage.workingDir,
-                graphStorageName = lightRagConfig.storage.graphStorageName,
-                vectorStorageName = lightRagConfig.storage.vectorStorageName,
-                addonConfig =
-                    AddonConfig(
-                        neo4j = lightRagConfig.neo4j,
-                        overrides =
-                            LightRagOverrides(
-                                chunkTokenSize = lightRagConfig.addonConfig.chunkTokenSize,
-                                chunkOverlapTokenSize = lightRagConfig.addonConfig.chunkOverlapTokenSize,
-                                entityTypes = lightRagConfig.addonConfig.entityTypes,
-                                language = lightRagConfig.addonConfig.language,
-                                cosineBetterThreshold = lightRagConfig.addonConfig.cosineBetterThreshold,
-                            ),
-                        cosineBetterThreshold = lightRagConfig.addonConfig.cosineBetterThreshold,
-                    ),
-            )
-        }
+    return mapOf(
+        "llm_model_func" to appConfig.chatModel,
+        "embedding_func" to appConfig.embeddingModel,
+        "neo4j" to (appConfig.addonConfig.neo4j ?: lightRagConfig.neo4j),
+        "chunk_token_size" to chunkTokenSize,
+        "chunk_overlap_token_size" to chunkOverlapTokenSize,
+        "entity_types" to entityTypes,
+        "language" to language,
+        "working_dir" to appConfig.workingDir,
+        "enable_llm_cache" to (appConfig.hashingKv != null),
+    ) + appConfig.addonConfig.toMap()
+}
 
-        single { Encodings.newDefaultEncodingRegistry() }
-        single { get<EncodingRegistry>().getEncoding(EncodingType.CL100K_BASE) }
+fun defaultStorageManager(
+    appConfig: AppConfig,
+    globalConfig: Map<String, Any?>,
+): StorageManager =
+    StorageManager(
+        workingDir = appConfig.workingDir,
+        embeddingModel = appConfig.embeddingModel,
+        graphStorageName = appConfig.graphStorageName,
+        vectorStorageName = appConfig.vectorStorageName,
+        addonConfig = appConfig.addonConfig,
+        globalConfig = globalConfig,
+        docStatusStorageOverride = appConfig.docStatusStorageOverride,
+        fullDocsStorageOverride = appConfig.fullDocsStorageOverride,
+        textChunksStorageOverride = appConfig.textChunksStorageOverride,
+        fullEntitiesStorageOverride = appConfig.fullEntitiesStorageOverride,
+        fullRelationsStorageOverride = appConfig.fullRelationsStorageOverride,
+    )
 
-        single(named("tokenizer")) {
-            val enc = get<Encoding>()
-            val tokenizer: (String) -> List<Int> = { text: String ->
-                val intArrayList = enc.encode(text)
-                val list = mutableListOf<Int>()
-                for (i in 0 until intArrayList.size()) {
-                    list.add(intArrayList.get(i))
-                }
-                list
-            }
-            tokenizer
-        }
+fun defaultAddonConfig(lightRagConfig: LightRagConfig): AddonConfig =
+    AddonConfig(
+        neo4j = lightRagConfig.neo4j,
+        overrides =
+            LightRagOverrides(
+                chunkTokenSize = lightRagConfig.addonConfig.chunkTokenSize,
+                chunkOverlapTokenSize = lightRagConfig.addonConfig.chunkOverlapTokenSize,
+                entityTypes = lightRagConfig.addonConfig.entityTypes,
+                language = lightRagConfig.addonConfig.language,
+                cosineBetterThreshold = lightRagConfig.addonConfig.cosineBetterThreshold,
+            ),
+        cosineBetterThreshold = lightRagConfig.addonConfig.cosineBetterThreshold,
+    )
 
-        single(named("decoder")) {
-            val enc = get<Encoding>()
-            val decoder: (List<Int>) -> String = { list ->
-                val intArrayList =
-                    com.knuddels.jtokkit.api
-                        .IntArrayList()
-                list.forEach { intArrayList.add(it) }
-                enc.decode(intArrayList)
-            }
-            decoder
-        }
+private fun createChatModel(
+    lightRagConfig: LightRagConfig,
+    chatModelFactory: ((LightRagConfig) -> ChatModel)?,
+    streamingChatModelFactory: ((LightRagConfig) -> StreamingChatModel)?,
+): ChatModel {
+    val baseChatModel = chatModelFactory?.invoke(lightRagConfig) ?: createProviderChatModel(lightRagConfig)
+    val streamingChatModel = streamingChatModelFactory?.invoke(lightRagConfig)
 
-        single(named("globalConfig")) {
-            val appConfig = get<AppConfig>()
-            val overrides = appConfig.addonConfig.overrides
-            val chunkTokenSize = overrides.chunkTokenSize ?: 1200
-            val chunkOverlapTokenSize = overrides.chunkOverlapTokenSize ?: 100
-            val entityTypes = overrides.entityTypes ?: listOf("Person", "Organization", "Location", "Event", "Concept")
-            val language = overrides.language ?: "English"
-            mapOf(
-                "llm_model_func" to appConfig.chatModel,
-                "embedding_func" to appConfig.embeddingModel,
-                "neo4j" to get<LightRagConfig>().neo4j,
-                "chunk_token_size" to chunkTokenSize,
-                "chunk_overlap_token_size" to chunkOverlapTokenSize,
-                "entity_types" to entityTypes,
-                "language" to language,
-                "working_dir" to appConfig.workingDir,
-                "enable_llm_cache" to (appConfig.hashingKv != null),
-            ) + appConfig.addonConfig.toMap()
-        }
-
-        single {
-            val appConfig = get<AppConfig>()
-            StorageManager(
-                workingDir = appConfig.workingDir,
-                embeddingModel = appConfig.embeddingModel,
-                graphStorageName = appConfig.graphStorageName,
-                vectorStorageName = appConfig.vectorStorageName,
-                addonConfig = appConfig.addonConfig,
-                globalConfig = get(named("globalConfig")),
-                docStatusStorageOverride = appConfig.docStatusStorageOverride,
-                fullDocsStorageOverride = appConfig.fullDocsStorageOverride,
-                textChunksStorageOverride = appConfig.textChunksStorageOverride,
-                fullEntitiesStorageOverride = appConfig.fullEntitiesStorageOverride,
-                fullRelationsStorageOverride = appConfig.fullRelationsStorageOverride,
-            )
-        }
-
-        single {
-            IngestionService(
-                storageManager = get(),
-                globalConfig = get(named("globalConfig")),
-                tokenizer = get(named("tokenizer")),
-                decoder = get(named("decoder")),
-            )
-        }
-
-        single {
-            val appConfig = get<AppConfig>()
-            QueryService(
-                storageManager = get(),
-                chatModel = get(),
-                hashingKv = appConfig.hashingKv,
-                globalConfig = get(named("globalConfig")),
-                tokenizer = get(named("tokenizer")),
-                decoder = get(named("decoder")),
-            )
-        }
-
-        single {
-            LightRAG(
-                ingestionService = get(),
-                queryService = get(),
-                storageManager = get(),
-            )
+    if (streamingChatModel != null) {
+        return if (baseChatModel is StreamingChatModel) {
+            baseChatModel
+        } else {
+            DualChatModel(baseChatModel, streamingChatModel)
         }
     }
+
+    if (chatModelFactory == null) {
+        return DualChatModel(baseChatModel, createProviderStreamingChatModel(lightRagConfig))
+    }
+
+    return baseChatModel
+}
+
+private fun createProviderChatModel(lightRagConfig: LightRagConfig): ChatModel =
+    LLMFactory.createChatModel(
+        binding = normalizedProvider(lightRagConfig),
+        modelName = activeChatModelName(lightRagConfig),
+        baseUrl = activeBaseUrl(lightRagConfig),
+        apiKey = activeApiKey(lightRagConfig),
+    )
+
+private fun createProviderStreamingChatModel(lightRagConfig: LightRagConfig): StreamingChatModel =
+    LLMFactory.createStreamingChatModel(
+        binding = normalizedProvider(lightRagConfig),
+        modelName = activeChatModelName(lightRagConfig),
+        baseUrl = activeBaseUrl(lightRagConfig),
+        apiKey = activeApiKey(lightRagConfig),
+    )
+
+private fun createEmbeddingModel(lightRagConfig: LightRagConfig): EmbeddingModel =
+    LLMFactory.createEmbeddingModel(
+        binding = normalizedProvider(lightRagConfig),
+        modelName = activeEmbeddingModelName(lightRagConfig),
+        baseUrl = activeBaseUrl(lightRagConfig),
+        apiKey = activeApiKey(lightRagConfig),
+    )
+
+private fun normalizedProvider(lightRagConfig: LightRagConfig): String = lightRagConfig.provider.trim().lowercase()
+
+private fun activeChatModelName(lightRagConfig: LightRagConfig): String =
+    if (normalizedProvider(lightRagConfig) == "ollama") {
+        lightRagConfig.ollama.chatModelName
+    } else {
+        lightRagConfig.openai.chatModelName
+    }
+
+private fun activeEmbeddingModelName(lightRagConfig: LightRagConfig): String =
+    if (normalizedProvider(lightRagConfig) == "ollama") {
+        lightRagConfig.ollama.embeddingModelName
+    } else {
+        lightRagConfig.openai.embeddingModelName
+    }
+
+private fun activeBaseUrl(lightRagConfig: LightRagConfig): String? =
+    if (normalizedProvider(lightRagConfig) == "ollama") {
+        lightRagConfig.ollama.baseUrl
+    } else {
+        lightRagConfig.openai.baseUrl
+    }
+
+private fun activeApiKey(lightRagConfig: LightRagConfig): String? = lightRagConfig.openai.apiKey.takeIf { it.isNotBlank() }

@@ -17,9 +17,8 @@ import javafx.scene.shape.Line
 import javafx.scene.text.Text
 import javafx.stage.Stage
 import kotlinx.coroutines.runBlocking
-import lightrag.di.appModule
+import lightrag.di.createLightRagRuntime
 import lightrag.services.StorageManager
-import org.koin.core.context.startKoin
 import java.util.UUID
 
 /**
@@ -34,8 +33,7 @@ class GraphStorageVisualizerFx : Application() {
     private val maxScale = 5.0
 
     override fun start(stage: Stage) {
-        val koin = startKoin { modules(appModule) }.koin
-        storageManager = koin.get()
+        storageManager = createLightRagRuntime().storageManager
 
         val reload = Button("Reload Graph")
         val status = Label("Loading graph…")

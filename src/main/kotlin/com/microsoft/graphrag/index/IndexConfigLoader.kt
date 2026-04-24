@@ -3,9 +3,13 @@ package com.microsoft.graphrag.index
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import io.github.oshai.kotlinlogging.KotlinLogging
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.contentOrNull
+import shared.config.CommonRagConfig
+import shared.config.CommonRagConfigLoader
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
@@ -20,21 +24,22 @@ data class IndexConfig(
 )
 
 /**
- * Loads index configuration from a YAML file under the provided root.
+ * Loads index configuration from a JSON file under the provided root.
  */
 object IndexConfigLoader {
+    private const val DEFAULT_COMMON_CONFIG = "config/common_rag.json"
     private val logger = KotlinLogging.logger {}
 
     private val mapper: ObjectMapper =
-        ObjectMapper(YAMLFactory())
+        ObjectMapper()
             .registerKotlinModule()
             .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
 
     /**
-     * Loads configuration from `settings.yaml` (or an explicit config path) and resolves directories.
+     * Loads configuration from `config/common_rag.json` (or an explicit config path) and resolves directories.
      *
      * @param root Project root used to resolve relative paths.
-     * @param configPath Optional explicit config file path; defaults to `root/settings.yaml`.
+     * @param configPath Optional explicit config file path.
      * @param overrideOutputDir Optional explicit output directory override.
      * @return IndexConfig containing a GraphRagConfig with resolved `rootDir`, `inputDir`, `outputDir`, and `updateOutputDir`.
      */
@@ -44,22 +49,8 @@ object IndexConfigLoader {
         overrideOutputDir: Path? = null,
     ): IndexConfig {
         val resolvedRoot = root.toAbsolutePath().normalize()
-        val settingsPath = (configPath ?: resolvedRoot.resolve("settings.yaml")).toAbsolutePath().normalize()
-
-        val raw =
-            if (Files.exists(settingsPath)) {
-                try {
-                    mapper.readValue(settingsPath.toFile(), RawIndexConfig::class.java)
-                } catch (e: IOException) {
-                    logger.warn { "Failed to parse $settingsPath ($e); using defaults." }
-                    RawIndexConfig()
-                }
-            } else {
-                if (configPath != null) {
-                    logger.warn { "Config file not found: $settingsPath; using defaults." }
-                }
-                RawIndexConfig()
-            }
+        val settingsPath = (configPath ?: defaultConfigPath(resolvedRoot)).toAbsolutePath().normalize()
+        val raw = loadRawConfig(settingsPath, configPath != null)
 
         val configRoot = raw.rootDir?.let { resolvedRoot.resolve(it).normalize() } ?: resolvedRoot
         val inputDir =
@@ -90,6 +81,88 @@ object IndexConfigLoader {
         )
     }
 
+    private fun defaultConfigPath(root: Path): Path = root.resolve(DEFAULT_COMMON_CONFIG)
+
+    private fun loadRawConfig(
+        settingsPath: Path,
+        explicitConfig: Boolean,
+    ): RawIndexConfig {
+        if (!Files.exists(settingsPath)) {
+            if (explicitConfig) {
+                logger.warn { "Config file not found: $settingsPath; using defaults." }
+            }
+            return RawIndexConfig()
+        }
+
+        val text =
+            runCatching { Files.readString(settingsPath) }.getOrElse { error ->
+                logger.warn { "Failed to read $settingsPath ($error); using defaults." }
+                return RawIndexConfig()
+            }
+
+        val commonFallback = CommonRagConfigLoader.parseOrNull(text)?.toRawIndexConfig()
+        val parsed =
+            runCatching { mapper.readValue(text, RawIndexConfig::class.java) }.getOrElse { error ->
+                if (error is IOException) {
+                    logger.warn { "Failed to parse $settingsPath as JSON ($error); using defaults." }
+                } else {
+                    logger.warn { "Failed to parse $settingsPath ($error); using defaults." }
+                }
+                RawIndexConfig()
+            }
+        return parsed.withFallback(commonFallback)
+    }
+
+    private fun CommonRagConfig.toRawIndexConfig(): RawIndexConfig {
+        val rootDir = jsonString(shared, "rootDir", "root_dir")
+        val inputDir = jsonString(shared, "inputDir", "input_dir")
+        val outputDir = jsonString(shared, "outputDir", "output_dir")
+        return RawIndexConfig(
+            rootDir = rootDir,
+            input = inputDir?.let { RawInput(baseDir = it) },
+            output = outputDir?.let { RawOutput(baseDir = it) },
+        )
+    }
+
+    private fun RawIndexConfig.withFallback(fallback: RawIndexConfig?): RawIndexConfig {
+        if (fallback == null) return this
+        return RawIndexConfig(
+            rootDir = this.rootDir ?: fallback.rootDir,
+            input = (this.input ?: fallback.input)?.withFallback(fallback.input),
+            output = (this.output ?: fallback.output)?.withFallback(fallback.output),
+        )
+    }
+
+    private fun RawInput.withFallback(fallback: RawInput?): RawInput =
+        RawInput(
+            baseDir = this.baseDir ?: fallback?.baseDir,
+            storage = (this.storage ?: fallback?.storage)?.withFallback(fallback?.storage),
+        )
+
+    private fun RawOutput.withFallback(fallback: RawOutput?): RawOutput =
+        RawOutput(
+            baseDir = this.baseDir ?: fallback?.baseDir,
+        )
+
+    private fun RawStorage.withFallback(fallback: RawStorage?): RawStorage =
+        RawStorage(
+            baseDir = this.baseDir ?: fallback?.baseDir,
+        )
+
+    private fun jsonString(
+        source: JsonObject,
+        vararg keys: String,
+    ): String? {
+        for (key in keys) {
+            val value = source[key] as? JsonPrimitive ?: continue
+            val str = value.contentOrNull?.trim()
+            if (!str.isNullOrBlank()) {
+                return str
+            }
+        }
+        return null
+    }
+
     private fun resolveBaseDir(
         root: Path,
         configured: String?,
@@ -108,7 +181,7 @@ object IndexConfigLoader {
 }
 
 /**
- * Raw YAML-backed configuration container.
+ * Raw JSON-backed configuration container.
  *
  * @property rootDir Optional `root_dir` value; if absent, defaults to the provided root.
  * @property input Optional `input` configuration section.

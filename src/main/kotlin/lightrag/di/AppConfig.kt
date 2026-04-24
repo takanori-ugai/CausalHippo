@@ -27,6 +27,7 @@ data class AppConfig(
 )
 
 data class LightRagConfig(
+    val provider: String = "openai",
     val openai: OpenAiConfig,
     val ollama: OllamaConfig,
     val neo4j: Neo4jConfig,
@@ -41,6 +42,7 @@ data class OpenAiConfig(
     val chatModelName: String,
     val embeddingModelName: String,
     val embeddingModelDimensions: Int,
+    val baseUrl: String? = null,
 )
 
 data class OllamaConfig(

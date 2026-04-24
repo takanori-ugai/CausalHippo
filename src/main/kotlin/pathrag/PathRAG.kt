@@ -27,43 +27,50 @@ import pathrag.storage.Neo4jVectorStorage
 import pathrag.storage.NetworkXStorage
 import pathrag.utils.ResponseCache
 import pathrag.utils.computeMdHashId
+import shared.config.CommonRagConfigLoader
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+
+private fun pathRagSetting(name: String): String? = System.getProperty(name)?.takeIf { it.isNotBlank() } ?: System.getenv(name)
+
+private fun defaultPathRagWorkingDir(): String =
+    "./PathRAG_cache_" +
+        LocalDateTime
+            .now()
+            .format(DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss"))
 
 /**
  * Core Kotlin implementation of PathRAG that handles ingestion and query flows.
  */
 class PathRAG(
-    private val workingDir: String = "./PathRAG_cache_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss")),
+    private val workingDir: String = defaultPathRagWorkingDir(),
     private val kvStorage: String = "JsonKVStorage",
     private val vectorStorage: String = "NanoVectorDBStorage",
     private val graphStorage: String = "NetworkXStorage",
     private val chunkTokenSize: Int = 1200,
     private val chunkOverlapTokenSize: Int = 100,
-    private val language: String = System.getenv("LANGUAGE") ?: "English",
+    private val language: String = pathRagSetting("LANGUAGE") ?: "English",
     private val keywordExamples: String =
-        (System.getenv("KEYWORDS_EXAMPLES") ?: "")
+        (pathRagSetting("KEYWORDS_EXAMPLES") ?: "")
             .ifBlank {
                 pathrag.prompt.Prompts.KEYWORDS_EXTRACTION_EXAMPLES
                     .joinToString("\n")
             },
-    private val similarityCheckPrompt: String = System.getenv("SIMILARITY_CHECK_PROMPT") ?: pathrag.prompt.Prompts.SIMILARITY_CHECK,
+    private val similarityCheckPrompt: String = pathRagSetting("SIMILARITY_CHECK_PROMPT") ?: pathrag.prompt.Prompts.SIMILARITY_CHECK,
     private val embeddingCacheConfig: Map<String, Any?> =
         mapOf(
-            "enabled" to (System.getenv("EMBEDDING_CACHE_ENABLED")?.toBoolean() ?: false),
-            "similarity_threshold" to (System.getenv("EMBEDDING_CACHE_SIM_THRESHOLD")?.toDoubleOrNull() ?: 0.95),
-            "use_llm_check" to (System.getenv("EMBEDDING_CACHE_USE_LLM_CHECK")?.toBoolean() ?: false),
+            "enabled" to (pathRagSetting("EMBEDDING_CACHE_ENABLED")?.toBoolean() ?: false),
+            "similarity_threshold" to (pathRagSetting("EMBEDDING_CACHE_SIM_THRESHOLD")?.toDoubleOrNull() ?: 0.95),
+            "use_llm_check" to (pathRagSetting("EMBEDDING_CACHE_USE_LLM_CHECK")?.toBoolean() ?: false),
         ),
     private val highLevelKeywords: List<String> =
-        System
-            .getenv("HIGH_LEVEL_KEYWORDS")
+        pathRagSetting("HIGH_LEVEL_KEYWORDS")
             ?.split(",")
             ?.map { it.trim() }
             ?.filter { it.isNotBlank() }
             ?: emptyList(),
     private val lowLevelKeywords: List<String> =
-        System
-            .getenv("LOW_LEVEL_KEYWORDS")
+        pathRagSetting("LOW_LEVEL_KEYWORDS")
             ?.split(",")
             ?.map { it.trim() }
             ?.filter { it.isNotBlank() }
@@ -71,19 +78,42 @@ class PathRAG(
     private val clearCacheOnStart: Boolean = false,
     private val addonParams: AddonParams =
         AddonParams(
-            entityTypes = System.getenv("ENTITY_TYPES")?.split(",")?.map { it.trim() } ?: emptyList(),
+            entityTypes = pathRagSetting("ENTITY_TYPES")?.split(",")?.map { it.trim() } ?: emptyList(),
             language = language, // follow top-level language
-            exampleNumber = System.getenv("KEYWORD_EXAMPLE_COUNT")?.toIntOrNull() ?: 3,
+            exampleNumber = pathRagSetting("KEYWORD_EXAMPLE_COUNT")?.toIntOrNull() ?: 3,
         ),
     private val extraConfig: ExtraConfig = ExtraConfig(),
 ) : AutoCloseable {
     private val logger = KotlinLogging.logger("PathRAG")
-    private val llmProvider: String = System.getenv("LLM_PROVIDER")?.lowercase() ?: "openai"
+    private val llmProvider: String = pathRagSetting("LLM_PROVIDER")?.lowercase() ?: "openai"
     private val llmModelName: String =
         when (llmProvider) {
-            "ollama" -> System.getenv("OLLAMA_MODEL") ?: "llama3"
-            else -> System.getenv("OPENAI_MODEL") ?: "gpt-4o-mini"
+            "ollama" -> pathRagSetting("OLLAMA_MODEL") ?: "llama3"
+            else -> pathRagSetting("OPENAI_MODEL") ?: "gpt-4o-mini"
         }
+
+    companion object {
+        /**
+         * Build a PathRAG instance from a common multi-module JSON config file.
+         */
+        fun fromCommonConfig(
+            configPath: String,
+            workingDirOverride: String? = null,
+        ): PathRAG {
+            val commonConfig = CommonRagConfigLoader.load(configPath)
+            val settings = commonConfig.toPathRagSettings()
+            settings.applyAsSystemProperties()
+            return PathRAG(
+                workingDir = workingDirOverride ?: settings.workingDir ?: defaultPathRagWorkingDir(),
+                kvStorage = settings.kvStorage ?: "JsonKVStorage",
+                vectorStorage = settings.vectorStorage ?: "NanoVectorDBStorage",
+                graphStorage = settings.graphStorage ?: "NetworkXStorage",
+                chunkTokenSize = settings.chunkTokenSize ?: 1200,
+                chunkOverlapTokenSize = settings.chunkOverlapTokenSize ?: 100,
+                language = settings.language ?: pathRagSetting("LANGUAGE") ?: "English",
+            )
+        }
+    }
 
     private fun clearResponseCacheFile() {
         if (!clearCacheOnStart) return

@@ -18,7 +18,6 @@ group = "com.causalrag"
 version = "0.0.1"
 
 val ktorVersion = "3.4.1"
-val koinVersion = "4.2.0"
 val osName = System.getProperty("os.name").lowercase()
 val archName = System.getProperty("os.arch").lowercase()
 val networkAnalysisVersion = "1.3.0"
@@ -73,10 +72,6 @@ dependencies {
     implementation("dev.langchain4j:langchain4j-open-ai-official:1.12.2-beta22")
     implementation("dev.langchain4j:langchain4j-ollama:1.12.2")
     implementation("dev.langchain4j:langchain4j-community-neo4j:1.12.2-beta22")
-    // Koin for Ktor
-    implementation("io.insert-koin:koin-ktor:$koinVersion")
-    implementation("io.insert-koin:koin-core:$koinVersion")
-    implementation("io.insert-koin:koin-logger-slf4j:$koinVersion")
 
     implementation("com.auth0:java-jwt:4.5.1")
     // JTokkit
@@ -101,7 +96,6 @@ dependencies {
     implementation("blue.strategic.parquet:parquet-floor:1.51")
     implementation("info.picocli:picocli:4.7.6")
     implementation("nl.cwts:networkanalysis:$networkAnalysisVersion")
-    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.17.2")
 }
 
 tasks {

@@ -19,6 +19,7 @@ import kotlin.test.assertTrue
 class TestPipeline {
     private lateinit var tempDir: Path
     private lateinit var configPath: Path
+    private lateinit var commonConfigPath: Path
 
     private val testDocs =
         listOf(
@@ -34,7 +35,9 @@ class TestPipeline {
     fun setUp() {
         tempDir = Files.createTempDirectory("causalrag-test")
         configPath = tempDir.resolve("causalrag-test-config.json")
+        commonConfigPath = tempDir.resolve("common-rag-config.json")
         writeTestConfig(configPath)
+        writeCommonConfig(commonConfigPath)
     }
 
     /**
@@ -51,6 +54,14 @@ class TestPipeline {
     @Test
     fun testPipelineInit() {
         val pipeline = CausalRAGPipeline(configPath = configPath.toString())
+        assertNotNull(pipeline)
+        assertNotNull(pipeline.graphBuilder)
+        assertNotNull(pipeline.vectorRetriever)
+    }
+
+    @Test
+    fun testPipelineInitWithCommonConfig() {
+        val pipeline = CausalRAGPipeline(configPath = commonConfigPath.toString())
         assertNotNull(pipeline)
         assertNotNull(pipeline.graphBuilder)
         assertNotNull(pipeline.vectorRetriever)
@@ -116,6 +127,38 @@ class TestPipeline {
                     "graphPath" to JsonNull,
                     "indexPath" to JsonNull,
                     "templateStyle" to JsonPrimitive("detailed"),
+                ),
+            )
+        val content =
+            Json { prettyPrint = true }.encodeToString(
+                JsonElement.serializer(),
+                json,
+            )
+        Files.writeString(path, content)
+    }
+
+    private fun writeCommonConfig(path: Path) {
+        val json =
+            JsonObject(
+                mapOf(
+                    "shared" to
+                        JsonObject(
+                            mapOf(
+                                "llmProvider" to JsonPrimitive("mock"),
+                                "modelName" to JsonPrimitive("gpt-4o-mini"),
+                                "embeddingModel" to JsonPrimitive("text-embedding-3-small"),
+                                "llmApiKey" to JsonPrimitive(""),
+                                "embeddingApiKey" to JsonPrimitive(""),
+                            ),
+                        ),
+                    "causalrag" to
+                        JsonObject(
+                            mapOf(
+                                "templateStyle" to JsonPrimitive("detailed"),
+                                "graphPath" to JsonNull,
+                                "indexPath" to JsonNull,
+                            ),
+                        ),
                 ),
             )
         val content =

@@ -4,6 +4,7 @@ set -euo pipefail
 DATA_PATH="data/causal_experiment/causal_qa_balanced_300.jsonl"
 OUTPUT_DIR=""
 MANIFEST_PATH=""
+CONFIG_PATH=""
 CONDITIONS="all"
 TOP_K="5"
 PARALLELISM="2"
@@ -22,6 +23,7 @@ Options:
   --data <path>            Input MuSiQue-style causal QA JSONL
   --output-dir <path>      Output directory (default: eval_results/causal_graph_multicondition_<timestamp>)
   --manifest <path>        Manifest JSONL (optional)
+  --config <path>          Common JSON config for shared/causalrag/hipporag/pathrag/lightrag
   --conditions <list>      all or comma list of condition IDs
   --top-k <int>            Retrieval topK (default: 5)
   --parallelism <int>      Number of samples to execute in parallel (default: 2)
@@ -52,6 +54,7 @@ while [[ $# -gt 0 ]]; do
     --data) DATA_PATH="$2"; shift 2 ;;
     --output-dir) OUTPUT_DIR="$2"; shift 2 ;;
     --manifest) MANIFEST_PATH="$2"; shift 2 ;;
+    --config) CONFIG_PATH="$2"; shift 2 ;;
     --conditions) CONDITIONS="$2"; shift 2 ;;
     --top-k) TOP_K="$2"; shift 2 ;;
     --parallelism) PARALLELISM="$2"; shift 2 ;;
@@ -103,6 +106,10 @@ APP_ARGS=(
 
 if [[ -n "$MANIFEST_PATH" ]]; then
   APP_ARGS+=(--manifest "$MANIFEST_PATH")
+fi
+
+if [[ -n "$CONFIG_PATH" ]]; then
+  APP_ARGS+=(--config "$CONFIG_PATH")
 fi
 
 if [[ -n "$LIMIT" ]]; then

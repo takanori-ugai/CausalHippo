@@ -3,12 +3,9 @@ package lightrag.examples
 import kotlinx.coroutines.runBlocking
 import lightrag.core.LightRAG
 import lightrag.di.LightRagConfig
-import lightrag.di.appModule
+import lightrag.di.createLightRagRuntime
 import lightrag.llm.LLMFactory
 import lightrag.services.StorageManager
-import org.koin.core.context.loadKoinModules
-import org.koin.core.context.startKoin
-import org.koin.dsl.module
 
 /**
  * The main function for the LightRAG OpenAI Neo4j demo.
@@ -17,15 +14,17 @@ import org.koin.dsl.module
  */
 fun main() =
     runBlocking {
-        val koin =
-            startKoin {
-                allowOverride(true)
-                modules(appModule)
-            }.koin
-        loadKoinModules(loggingModule(koin))
-
-        val rag: LightRAG = koin.get()
-        val storageManager: StorageManager = koin.get()
+        val runtime =
+            createLightRagRuntime(
+                configTransform = { it.copy(provider = "openai") },
+                chatModelFactory = { cfg -> createOpenAiLoggingChatModel(cfg) },
+                appConfigTransform =
+                    { appConfig, _ ->
+                        appConfig.copy(graphStorageName = "Neo4jGraphStorage")
+                    },
+            )
+        val rag: LightRAG = runtime.rag
+        val storageManager: StorageManager = runtime.storageManager
 
         if (!initializeNeo4j(storageManager)) return@runBlocking
 
@@ -48,19 +47,14 @@ fun main() =
         println("\nDone!")
     }
 
-private fun loggingModule(koin: org.koin.core.Koin) =
-    module {
-        single<dev.langchain4j.model.chat.ChatModel> {
-            val cfg = koin.get<LightRagConfig>()
-            LLMFactory.createChatModel(
-                binding = "openai",
-                modelName = cfg.openai.chatModelName,
-                apiKey = cfg.openai.apiKey,
-                logRequests = true,
-                logResponses = true,
-            )
-        }
-    }
+private fun createOpenAiLoggingChatModel(cfg: LightRagConfig) =
+    LLMFactory.createChatModel(
+        binding = "openai",
+        modelName = cfg.openai.chatModelName,
+        apiKey = cfg.openai.apiKey,
+        logRequests = true,
+        logResponses = true,
+    )
 
 /**
  * Initializes Neo4j-backed storages and drops any existing data so the demo starts fresh.
@@ -76,11 +70,11 @@ private suspend fun initializeNeo4j(storageManager: StorageManager): Boolean {
         true
     } catch (e: IllegalStateException) {
         println("Error initializing Neo4j storage: ${e.message}")
-        println("Please ensure Neo4j is running and configured correctly in application.conf")
+        println("Please ensure Neo4j is running and configured via config/common_rag.json or NEO4J_* environment variables")
         false
     } catch (e: IllegalArgumentException) {
         println("Error initializing Neo4j storage: ${e.message}")
-        println("Please ensure Neo4j is running and configured correctly in application.conf")
+        println("Please ensure Neo4j is running and configured via config/common_rag.json or NEO4J_* environment variables")
         false
     }
 }

@@ -39,13 +39,13 @@ Show the version:
 Index a text file or a directory of `.txt` files into a HybridRAG working directory:
 
 ```bash
-./gradlew run --args="index --input data/docs --output tmp/hybrid-index --config config/causalrag.json"
+./gradlew run --args="index --input data/docs --output tmp/hybrid-index --config config/common_rag.json"
 ```
 
 Query a previously indexed HybridRAG directory:
 
 ```bash
-./gradlew run --args="query --index tmp/hybrid-index --query \"What causes coastal flooding?\" --config config/causalrag.json"
+./gradlew run --args="query --index tmp/hybrid-index --query \"What causes coastal flooding?\" --config config/common_rag.json"
 ```
 
 Generate an interactive HTML visualization from a saved causal graph:
@@ -74,17 +74,19 @@ The HybridRAG index directory stores at least:
 
 ## Configuration
 
-The sample config at `config/causalrag.json` covers the shared pipeline settings used by the HybridRAG path:
+The sample config at `config/common_rag.json` is the default shared config for HybridRAG and graph-based runs:
 
-- `modelName`
-- `embeddingModel`
-- `llmProvider`
-- `llmApiKey`
-- `llmBaseUrl`
-- `embeddingApiKey`
-- `templateStyle`
+- `shared` (provider/model/base-url/API key defaults)
+- `causalrag` (pipeline template/retrieval settings)
+- `hipporag` (HippoRAG runtime settings)
+- `pathrag` (PathRAG storage/runtime settings)
+- `lightrag` (LightRAG storage/runtime settings)
 
 HybridRAG passes the effective model settings into HippoRAG as well, so one config can drive both stages.
+
+For cross-module runs, you can use `config/common_rag.json` (single JSON schema with `shared`, `causalrag`,
+`hipporag`, `pathrag`, and `lightrag` sections). `CausalRAGPipeline` and HippoRAG config loading support this
+format directly, and the graph experiment runners accept it via `--config`.
 
 ### Prompt Style Behaviour
 

@@ -1,16 +1,7 @@
 package lightrag.examples
 
 import kotlinx.coroutines.runBlocking
-import lightrag.core.LightRAG
-import lightrag.di.AppConfig
-import lightrag.di.LightRagConfig
-import lightrag.di.appModule
-import lightrag.services.StorageManager
-import org.koin.core.context.loadKoinModules
-import org.koin.core.context.startKoin
-import org.koin.core.qualifier.named
-import org.koin.dsl.module
-import org.koin.java.KoinJavaComponent.get
+import lightrag.di.createLightRagRuntime
 
 /**
  * The main function for the LightRAG OpenAI MongoDB Graph demo.
@@ -19,14 +10,16 @@ import org.koin.java.KoinJavaComponent.get
  */
 fun main() =
     runBlocking {
-        startKoin {
-            allowOverride(true)
-            modules(appModule)
-        }
-        loadKoinModules(mongoOverrideModule())
-
-        val rag: LightRAG = get(LightRAG::class.java)
-        val storageManager: StorageManager = get(StorageManager::class.java)
+        val runtime =
+            createLightRagRuntime(
+                configTransform = { it.copy(provider = "openai") },
+                appConfigTransform =
+                    { appConfig, _ ->
+                        appConfig.copy(graphStorageName = "MongoGraphStorage")
+                    },
+            )
+        val rag = runtime.rag
+        val storageManager = runtime.storageManager
 
         prepareWorkingDir("./mongodb_test_dir")
         storageManager.initialize()
@@ -36,28 +29,4 @@ fun main() =
 
         runDemoQueries(rag, "What are the top themes in this story?")
         storageManager.persist()
-    }
-
-private fun mongoOverrideModule() =
-    module {
-        single<AppConfig> {
-            val cfg = get<LightRagConfig>()
-            AppConfig(
-                workingDir = cfg.storage.workingDir,
-                graphStorageName = "MongoGraphStorage",
-                vectorStorageName = cfg.storage.vectorStorageName,
-                addonConfig = addonConfigFrom(cfg),
-                llmBinding = "openai",
-                llmModelName = cfg.openai.chatModelName,
-                embeddingBinding = "openai",
-                embeddingModelName = cfg.openai.embeddingModelName,
-                chatModel = get(),
-                embeddingModel = get(),
-            )
-        }
-
-        single<Map<String, Any?>>(named("globalConfig")) {
-            val appConfig = get<AppConfig>()
-            globalConfigFrom(appConfig)
-        }
     }
