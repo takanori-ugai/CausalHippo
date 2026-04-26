@@ -35,7 +35,8 @@ private const val DEFAULT_SYSTEM_PROMPT = "You are a helpful assistant."
 private fun setting(
     name: String,
     runtimeSettings: Map<String, String> = emptyMap(),
-): String? = runtimeSettings[name]?.takeIf { it.isNotBlank() } ?: System.getProperty(name)?.takeIf { it.isNotBlank() } ?: System.getenv(name)
+): String? =
+    runtimeSettings[name]?.takeIf { it.isNotBlank() } ?: System.getProperty(name)?.takeIf { it.isNotBlank() } ?: System.getenv(name)
 
 private val chatModels = ConcurrentHashMap<String, ChatModel>()
 private val embeddingModels = ConcurrentHashMap<String, EmbeddingModel>()

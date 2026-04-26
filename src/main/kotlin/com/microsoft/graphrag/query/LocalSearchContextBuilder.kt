@@ -1405,5 +1405,4 @@ class LocalSearchContextBuilder(
         val section: String,
         val chunks: List<QueryContextChunk>,
     )
-
 }

@@ -12,10 +12,10 @@ import causalrag.retriever.HybridRetriever
 import hipporag.HippoRag
 import hipporag.config.BaseConfig
 import kotlinx.serialization.json.Json
-import shared.config.CommonRagConfigLoader
 import shared.chunking.DEFAULT_TIKTOKEN_MODEL
 import shared.chunking.chunkByTokenSizeWithOverlap
 import shared.chunking.hardTruncateStringsByTokenBudget
+import shared.config.CommonRagConfigLoader
 import java.nio.file.Files
 import java.nio.file.Path
 
@@ -43,10 +43,6 @@ class HippoCausalRAGPipeline(
     twoPassAdaptiveEnabled: Boolean = false,
     confidenceBasedSwitchEnabled: Boolean = false,
 ) {
-    private val ingestChunkTokenSize = 1200
-    private val ingestChunkOverlapTokenSize = 100
-    private val promptContextTokenBudget = 4000
-
     private val config: PipelineConfig? = configPath?.let { loadConfig(it) }
     private val effectiveModelName = config?.modelName ?: modelName
     private val effectiveEmbeddingModel = config?.embeddingModel ?: embeddingModel
@@ -58,6 +54,9 @@ class HippoCausalRAGPipeline(
     private val effectiveTemplateStyle = templateStyle ?: config?.templateStyle ?: "detailed"
     private val effectiveHippoSemanticMode = config?.semanticMode?.let { parseSemanticMode(it) } ?: hippoSemanticMode
     private val effectiveMinCausalMatches = config?.minCausalMatches ?: minCausalMatches
+    private val effectiveIngestChunkTokenSize = config?.ingestChunkTokenSize ?: 1200
+    private val effectiveIngestChunkOverlapTokenSize = config?.ingestChunkOverlapTokenSize ?: 100
+    private val effectivePromptContextTokenBudget = config?.promptContextTokenBudget ?: 4000
     private var indexedDocs: List<String> = emptyList()
 
     internal val llm: LLMInterface =
@@ -74,6 +73,8 @@ class HippoCausalRAGPipeline(
             embeddingApiKey = effectiveEmbeddingApiKey,
             extractorMethod = "hybrid",
             llmInterface = llm,
+            ingestChunkTokenSize = effectiveIngestChunkTokenSize,
+            ingestChunkOverlapTokenSize = effectiveIngestChunkOverlapTokenSize,
         )
     internal val hippoRag: HippoRag = HippoRag(resolveHippoConfig(hippoConfig))
     internal val semanticRetriever = HippoRagSemanticRetrieverAdapter(hippoRag, mode = effectiveHippoSemanticMode)
@@ -150,7 +151,7 @@ class HippoCausalRAGPipeline(
         val topPassages = reranker.rerank(query, candidates, metadata).map { it.first }.take(topK)
         return hardTruncateStringsByTokenBudget(
             items = topPassages,
-            maxTokenSize = promptContextTokenBudget,
+            maxTokenSize = effectivePromptContextTokenBudget,
             model = DEFAULT_TIKTOKEN_MODEL,
             includePartialLastItem = false,
         )
@@ -178,7 +179,7 @@ class HippoCausalRAGPipeline(
         val rerankedPassages =
             hardTruncateStringsByTokenBudget(
                 items = topPassages,
-                maxTokenSize = promptContextTokenBudget,
+                maxTokenSize = effectivePromptContextTokenBudget,
                 model = DEFAULT_TIKTOKEN_MODEL,
                 includePartialLastItem = false,
             )
@@ -257,8 +258,8 @@ class HippoCausalRAGPipeline(
             .flatMap { doc ->
                 chunkByTokenSizeWithOverlap(
                     content = doc,
-                    chunkTokenSize = ingestChunkTokenSize,
-                    chunkOverlapTokenSize = ingestChunkOverlapTokenSize,
+                    chunkTokenSize = effectiveIngestChunkTokenSize,
+                    chunkOverlapTokenSize = effectiveIngestChunkOverlapTokenSize,
                     model = DEFAULT_TIKTOKEN_MODEL,
                 ).asSequence()
             }.map { it.content }

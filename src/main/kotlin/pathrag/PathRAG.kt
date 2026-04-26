@@ -1,7 +1,8 @@
 package pathrag
 
+import com.fasterxml.jackson.core.type.TypeReference
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import io.github.oshai.kotlinlogging.KotlinLogging
-import kotlinx.coroutines.runBlocking
 import pathrag.base.AddonParams
 import pathrag.base.BaseGraphStorage
 import pathrag.base.BaseKVStorage
@@ -28,6 +29,8 @@ import pathrag.storage.NetworkXStorage
 import pathrag.utils.ResponseCache
 import pathrag.utils.computeMdHashId
 import shared.config.CommonRagConfigLoader
+import shared.rag.CommonRag
+import java.io.File
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -89,8 +92,10 @@ class PathRAG(
         ),
     private val extraConfig: ExtraConfig = ExtraConfig(),
     private val runtimeSettings: Map<String, String> = emptyMap(),
-) : AutoCloseable {
+) : CommonRag<QueryParam, String>,
+    AutoCloseable {
     private val logger = KotlinLogging.logger("PathRAG")
+    private val objectMapper = jacksonObjectMapper()
     private val llmProvider: String = pathRagSetting("LLM_PROVIDER", runtimeSettings)?.lowercase() ?: "openai"
     private val llmModelName: String =
         when (llmProvider) {
@@ -307,6 +312,10 @@ class PathRAG(
      */
     fun insert(stringOrStrings: Any) = runBlockingMaybe { ainsert(stringOrStrings) }
 
+    override fun upsert(data: String) = insert(data)
+
+    override fun upsert(data: Collection<String>) = insert(data)
+
     /**
      * Expose the underlying graph storage for inspection.
      */
@@ -369,6 +378,10 @@ class PathRAG(
             throw e
         }
     }
+
+    override suspend fun aupsert(data: String) = ainsert(data)
+
+    override suspend fun aupsert(data: Collection<String>) = ainsert(data)
 
     /**
      * Insert a pre-built custom knowledge graph payload into the PathRAG storages synchronously.
@@ -545,13 +558,12 @@ class PathRAG(
      * @param param Additional query options (e.g., retrieval limits, filters, or response formatting).
      * @return The generated response text for the given query.
      */
-    fun query(
+    override fun query(
         query: String,
-        param: QueryParam = QueryParam(),
-    ): String =
-        runBlocking {
-            aquery(query, param)
-        }
+        param: QueryParam,
+    ): String = runBlockingMaybe { aquery(query, param) }
+
+    fun query(query: String): String = query(query, QueryParam())
 
     /**
      * Run a query against the knowledge graph and retrieval stores using the configured RAG mode and produce a textual response.
@@ -560,9 +572,9 @@ class PathRAG(
      * @param param Additional query options and controls (e.g., result limits, filters, and retrieval settings).
      * @return The generated response text for the given query.
      */
-    suspend fun aquery(
+    override suspend fun aquery(
         query: String,
-        param: QueryParam = QueryParam(),
+        param: QueryParam,
     ): String {
         val response =
             kgQuery(
@@ -578,6 +590,8 @@ class PathRAG(
             )
         return response
     }
+
+    suspend fun aquery(query: String): String = aquery(query, QueryParam())
 
     /**
      * Delete the entity with the given name and all of its relationships synchronously.
@@ -712,6 +726,8 @@ class PathRAG(
         logger.info { "Graph and associated entity/relationship vectors dropped." }
     }
 
+    override fun drop() = dropAll()
+
     /**
      * Drop all storage namespaces (graph, vectors, and KV stores).
      */
@@ -733,6 +749,107 @@ class PathRAG(
         runCatching { relationshipsVdb.drop() }.onFailure { ex -> logger.warn(ex) { "Failed to drop relationships vector storage" } }
         runCatching { chunksVdb.drop() }.onFailure { ex -> logger.warn(ex) { "Failed to drop chunks vector storage" } }
         logger.info { "All PathRAG storages dropped." }
+    }
+
+    override suspend fun adrop() = adropAll()
+
+    override fun saveGraph(path: String) = runBlockingMaybe { asaveGraph(path) }
+
+    @Suppress("TooGenericExceptionCaught")
+    override suspend fun asaveGraph(path: String) {
+        val nodeIds = chunkEntityRelationGraph.nodes()
+        val edgePairs = chunkEntityRelationGraph.edges()
+        val nodes =
+            nodeIds.associateWith { nodeId ->
+                chunkEntityRelationGraph.getNode(nodeId)?.toMap().orEmpty()
+            }
+        val edges =
+            edgePairs.map { (source, target) ->
+                mapOf(
+                    "source" to source,
+                    "target" to target,
+                    "data" to chunkEntityRelationGraph.getEdge(source, target)?.toMap().orEmpty(),
+                )
+            }
+        val payload =
+            mapOf(
+                "nodes" to nodes,
+                "edges" to edges,
+            )
+        val output = File(path)
+        output.parentFile?.mkdirs()
+        try {
+            output.writeText(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(payload))
+            logger.info { "Saved graph snapshot to '$path' with ${nodes.size} nodes and ${edges.size} edges." }
+        } catch (e: Exception) {
+            logger.error(e) { "Failed to save graph snapshot to '$path'." }
+            throw e
+        }
+    }
+
+    override fun loadGraph(path: String) = runBlockingMaybe { aloadGraph(path) }
+
+    @Suppress("TooGenericExceptionCaught", "UNCHECKED_CAST")
+    override suspend fun aloadGraph(path: String) {
+        val input = File(path)
+        require(input.exists()) { "Graph snapshot file not found: $path" }
+        val payloadType = object : TypeReference<Map<String, Any?>>() {}
+        val payload =
+            try {
+                objectMapper.readValue(input, payloadType)
+            } catch (e: Exception) {
+                logger.error(e) { "Failed to parse graph snapshot from '$path'." }
+                throw e
+            }
+        val nodesRaw = payload["nodes"] as? Map<*, *> ?: emptyMap<Any?, Any?>()
+        val edgesRaw = payload["edges"] as? List<*> ?: emptyList<Any?>()
+
+        adropGraph()
+
+        nodesRaw.forEach { (rawNodeId, rawNodeData) ->
+            val nodeId = rawNodeId?.toString()?.trim().orEmpty()
+            if (nodeId.isBlank()) return@forEach
+            val nodeData = (rawNodeData as? Map<*, *>)?.entries?.associate { it.key.toString() to it.value } ?: emptyMap()
+            chunkEntityRelationGraph.upsertNode(nodeId, nodeData)
+            val vectorId = computeMdHashId(nodeId, prefix = "ent-")
+            entitiesVdb.upsert(
+                mapOf(
+                    vectorId to
+                        mapOf(
+                            "content" to nodeData["description"]?.toString().orEmpty(),
+                            "entity_name" to nodeId,
+                            "source_id" to nodeData["source_id"]?.toString().orEmpty(),
+                        ),
+                ),
+            )
+        }
+
+        edgesRaw.forEach { rawEdge ->
+            val edge = rawEdge as? Map<*, *> ?: return@forEach
+            val source = edge["source"]?.toString()?.trim().orEmpty()
+            val target = edge["target"]?.toString()?.trim().orEmpty()
+            if (source.isBlank() || target.isBlank()) return@forEach
+            val edgeData = (edge["data"] as? Map<*, *>)?.entries?.associate { it.key.toString() to it.value } ?: emptyMap()
+            chunkEntityRelationGraph.upsertEdge(source, target, edgeData)
+            val description = edgeData["description"]?.toString().orEmpty()
+            val keywords = edgeData["keywords"]?.toString().orEmpty()
+            val relId = computeMdHashId(source + target, prefix = "rel-")
+            relationshipsVdb.upsert(
+                mapOf(
+                    relId to
+                        mapOf(
+                            "src_id" to source,
+                            "tgt_id" to target,
+                            "content" to (description + keywords),
+                            "keywords" to keywords,
+                            "description" to description,
+                            "source_id" to edgeData["source_id"]?.toString().orEmpty(),
+                        ),
+                ),
+            )
+        }
+
+        logger.info { "Loaded graph snapshot from '$path' with ${nodesRaw.size} nodes and ${edgesRaw.size} edges." }
     }
 
     /**

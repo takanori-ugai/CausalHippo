@@ -46,10 +46,9 @@ data class CausalTriple(
 class CausalTripleExtractor(
     private val method: String = "hybrid",
     private val llmInterface: LLMInterface? = null,
+    private val ingestChunkTokenSize: Int = 1200,
+    private val ingestChunkOverlapTokenSize: Int = 100,
 ) {
-    private val ingestChunkTokenSize = 1200
-    private val ingestChunkOverlapTokenSize = 100
-
     private val stopwords =
         setOf(
             "a",
@@ -400,6 +399,8 @@ CAUSAL RELATIONSHIPS:"""
  * @param graphPath Optional path to a previously saved graph to load during initialization.
  * @param embeddingModel Optional pre-configured embedding model to use instead of creating one.
  * @param embeddingApiKey Optional API key used when creating the default embedding model.
+ * @param ingestChunkTokenSize Token size used when chunking documents for LLM extraction.
+ * @param ingestChunkOverlapTokenSize Overlap size used when chunking documents for LLM extraction.
  */
 @Suppress("TooGenericExceptionCaught")
 class CausalGraphBuilder(
@@ -412,6 +413,8 @@ class CausalGraphBuilder(
     graphPath: String? = null,
     embeddingModel: EmbeddingModel? = null,
     embeddingApiKey: String? = null,
+    ingestChunkTokenSize: Int = 1200,
+    ingestChunkOverlapTokenSize: Int = 100,
 ) {
     private val graph = DirectedGraph()
     private val _nodeText: MutableMap<String, String> = mutableMapOf()
@@ -430,7 +433,13 @@ class CausalGraphBuilder(
      */
     val nodeEmbeddings: Map<String, DoubleArray>
         get() = _nodeEmbeddings.mapValues { (_, embedding) -> embedding.copyOf() }
-    private val extractor = CausalTripleExtractor(method = extractorMethod, llmInterface = llmInterface)
+    private val extractor =
+        CausalTripleExtractor(
+            method = extractorMethod,
+            llmInterface = llmInterface,
+            ingestChunkTokenSize = ingestChunkTokenSize,
+            ingestChunkOverlapTokenSize = ingestChunkOverlapTokenSize,
+        )
 
     init {
         if (graphPath != null) {

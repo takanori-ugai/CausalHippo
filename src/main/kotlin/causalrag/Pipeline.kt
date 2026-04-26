@@ -11,10 +11,10 @@ import causalrag.retriever.VectorStoreRetriever
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
-import shared.config.CommonRagConfigLoader
 import shared.chunking.DEFAULT_TIKTOKEN_MODEL
 import shared.chunking.chunkByTokenSizeWithOverlap
 import shared.chunking.hardTruncateStringsByTokenBudget
+import shared.config.CommonRagConfigLoader
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
@@ -36,6 +36,9 @@ private val pipelineConfigJson = Json { ignoreUnknownKeys = true }
  * @property templateStyle Prompt template style.
  * @property semanticMode HippoRAG semantic retrieval mode (`graph` or `dpr`) for HybridRAG.
  * @property minCausalMatches Minimum matched causal nodes required to keep a candidate passage.
+ * @property ingestChunkTokenSize Token size used for ingestion-time chunking.
+ * @property ingestChunkOverlapTokenSize Overlap size used for ingestion-time chunking.
+ * @property promptContextTokenBudget Token budget used when building generation context.
  */
 @Serializable
 data class PipelineConfig(
@@ -50,6 +53,9 @@ data class PipelineConfig(
     val templateStyle: String? = null,
     val semanticMode: String? = null,
     val minCausalMatches: Int? = null,
+    val ingestChunkTokenSize: Int? = null,
+    val ingestChunkOverlapTokenSize: Int? = null,
+    val promptContextTokenBudget: Int? = null,
 )
 
 /**
@@ -80,10 +86,6 @@ class CausalRAGPipeline(
     twoPassAdaptiveEnabled: Boolean = false,
     confidenceBasedSwitchEnabled: Boolean = false,
 ) {
-    private val ingestChunkTokenSize = 1200
-    private val ingestChunkOverlapTokenSize = 100
-    private val promptContextTokenBudget = 4000
-
     private val config: PipelineConfig? = configPath?.let { loadConfig(it) }
     private val effectiveModelName = config?.modelName ?: modelName
     private val effectiveEmbeddingModel = config?.embeddingModel ?: embeddingModel
@@ -95,6 +97,9 @@ class CausalRAGPipeline(
     private val effectiveEmbeddingApiKey = config?.embeddingApiKey ?: System.getenv("OPENAI_API_KEY")
     private val effectiveTemplateStyle = templateStyle ?: config?.templateStyle ?: "detailed"
     private val effectiveMinCausalMatches = config?.minCausalMatches ?: 0
+    private val effectiveIngestChunkTokenSize = config?.ingestChunkTokenSize ?: 1200
+    private val effectiveIngestChunkOverlapTokenSize = config?.ingestChunkOverlapTokenSize ?: 100
+    private val effectivePromptContextTokenBudget = config?.promptContextTokenBudget ?: 4000
 
     // Core components
     internal val llm: LLMInterface =
@@ -111,6 +116,8 @@ class CausalRAGPipeline(
             embeddingApiKey = effectiveEmbeddingApiKey,
             extractorMethod = "hybrid",
             llmInterface = llm,
+            ingestChunkTokenSize = effectiveIngestChunkTokenSize,
+            ingestChunkOverlapTokenSize = effectiveIngestChunkOverlapTokenSize,
         )
     internal val vectorRetriever: VectorStoreRetriever =
         VectorStoreRetriever(
@@ -183,8 +190,8 @@ class CausalRAGPipeline(
             .flatMap { doc ->
                 chunkByTokenSizeWithOverlap(
                     content = doc,
-                    chunkTokenSize = ingestChunkTokenSize,
-                    chunkOverlapTokenSize = ingestChunkOverlapTokenSize,
+                    chunkTokenSize = effectiveIngestChunkTokenSize,
+                    chunkOverlapTokenSize = effectiveIngestChunkOverlapTokenSize,
                     model = DEFAULT_TIKTOKEN_MODEL,
                 ).asSequence()
             }.map { it.content }
@@ -272,7 +279,7 @@ class CausalRAGPipeline(
         val rerankedPassages =
             hardTruncateStringsByTokenBudget(
                 items = topPassages,
-                maxTokenSize = promptContextTokenBudget,
+                maxTokenSize = effectivePromptContextTokenBudget,
                 model = DEFAULT_TIKTOKEN_MODEL,
                 includePartialLastItem = false,
             )

@@ -15,12 +15,18 @@ class CommonRagConfigLoaderTest {
                 "llmProvider": "openai",
                 "modelName": "gpt-shared",
                 "embeddingModel": "text-embedding-shared",
-                "llmApiKey": "shared-key"
+                "llmApiKey": "shared-key",
+                "chunkTokenSize": 900,
+                "chunkOverlapTokenSize": 90,
+                "contextTokenBudget": 3500
               },
               "causalrag": {
                 "modelName": "gpt-causal",
                 "templateStyle": "structured",
-                "minCausalMatches": 2
+                "minCausalMatches": 2,
+                "chunk_token_size": 700,
+                "ingestChunkOverlapTokenSize": 70,
+                "prompt_context_token_budget": 2800
               }
             }
             """.trimIndent()
@@ -34,6 +40,9 @@ class CommonRagConfigLoaderTest {
         assertEquals("shared-key", pipeline.llmApiKey)
         assertEquals("structured", pipeline.templateStyle)
         assertEquals(2, pipeline.minCausalMatches)
+        assertEquals(700, pipeline.ingestChunkTokenSize)
+        assertEquals(70, pipeline.ingestChunkOverlapTokenSize)
+        assertEquals(2800, pipeline.promptContextTokenBudget)
     }
 
     @Test

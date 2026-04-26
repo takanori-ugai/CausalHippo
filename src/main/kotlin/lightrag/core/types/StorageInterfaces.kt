@@ -4,6 +4,7 @@ import dev.langchain4j.model.embedding.EmbeddingModel
 import kotlinx.serialization.Contextual
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import shared.rag.CommonVectorStorage
 
 /**
  * Base interface for storage with a namespace and workspace.
@@ -44,10 +45,24 @@ interface StorageNameSpace {
  * @property cosineBetterThanThreshold The threshold for cosine similarity.
  * @property metaFields The set of meta fields.
  */
-interface BaseVectorStorage : StorageNameSpace {
+interface BaseVectorStorage :
+    StorageNameSpace,
+    CommonVectorStorage<Any> {
     val embeddingFunc: EmbeddingModel
     val cosineBetterThanThreshold: Double
     val metaFields: Set<String>
+
+    /**
+     * Queries the vector storage.
+     * @param query The query string.
+     * @param topK The number of top results to return.
+     * @param queryEmbedding The query embedding.
+     * @return A list of maps representing the results.
+     */
+    override suspend fun query(
+        query: String,
+        topK: Int,
+    ): List<Map<String, Any>> = query(query, topK, queryEmbedding = null)
 
     /**
      * Queries the vector storage.
@@ -66,19 +81,19 @@ interface BaseVectorStorage : StorageNameSpace {
      * Upserts data into the vector storage.
      * @param data The data to upsert.
      */
-    suspend fun upsert(data: Map<String, Map<String, Any>>)
+    override suspend fun upsert(data: Map<String, Map<String, Any>>)
 
     /**
      * Deletes an entity from the vector storage.
      * @param entityName The name of the entity to delete.
      */
-    suspend fun deleteEntity(entityName: String)
+    override suspend fun deleteEntity(entityName: String)
 
     /**
      * Deletes an entity relation from the vector storage.
      * @param entityName The name of the entity relation to delete.
      */
-    suspend fun deleteEntityRelation(entityName: String)
+    override suspend fun deleteEntityRelation(entityName: String)
 
     /**
      * Gets an item by its ID.

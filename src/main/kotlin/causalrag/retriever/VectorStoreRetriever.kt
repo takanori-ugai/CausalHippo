@@ -418,6 +418,13 @@ class VectorStoreRetriever(
     fun getPassages(): List<String> = passages.toList()
 
     /**
+     * Returns metadata currently stored in the vector index.
+     *
+     * @return Metadata entries aligned with [getPassages].
+     */
+    fun getMetadata(): List<Map<String, Any>> = metadata.toList()
+
+    /**
      * Clears all in-memory vectors, passages, and metadata.
      */
     fun clear() {

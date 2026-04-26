@@ -133,7 +133,7 @@ class BaseConfigTest {
         assertEquals("TextPreprocessor", config.textPreprocessorClassName)
         assertEquals("gpt-4o", config.preprocessEncoderName)
         assertEquals(128, config.preprocessChunkOverlapTokenSize)
-        assertNull(config.preprocessChunkMaxTokenSize)
+        assertEquals(1200, config.preprocessChunkMaxTokenSize)
         assertEquals("by_token", config.preprocessChunkFunc)
     }
 }

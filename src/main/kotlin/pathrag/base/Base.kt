@@ -1,6 +1,7 @@
 package pathrag.base
 
 import kotlinx.coroutines.runBlocking
+import shared.rag.CommonVectorStorage
 
 /**
  * Parameters controlling how PathRAG builds and returns context for a query.
@@ -155,7 +156,8 @@ open class StorageNameSpace(
 abstract class BaseVectorStorage(
     namespace: String,
     globalConfig: Map<String, Any?>,
-) : StorageNameSpace(namespace, globalConfig) {
+) : StorageNameSpace(namespace, globalConfig),
+    CommonVectorStorage<Any?> {
     /**
      * Perform a similarity search over stored vectors for the given query.
      *
@@ -163,7 +165,7 @@ abstract class BaseVectorStorage(
      *
      * @return A list of result records; each record is a map of field names to their values (nullable).
      */
-    abstract suspend fun query(
+    abstract override suspend fun query(
         query: String,
         topK: Int,
     ): List<Map<String, Any?>>
@@ -174,7 +176,7 @@ abstract class BaseVectorStorage(
      * @param data Map where each key is a record identifier and each value is a map of fields for that record
      *             (for example vector and metadata fields).
      */
-    abstract suspend fun upsert(data: Map<String, Map<String, Any?>>)
+    abstract override suspend fun upsert(data: Map<String, Map<String, Any?>>)
 
     /**
      * Remove all vectors associated with the given entity.
@@ -183,7 +185,7 @@ abstract class BaseVectorStorage(
      *
      * @param entityName The identifier or name of the entity whose vectors should be removed.
      */
-    open suspend fun deleteEntity(entityName: String) {}
+    open override suspend fun deleteEntity(entityName: String) {}
 
     /**
      * Delete all relationship vectors associated with the given entity within this namespace.
@@ -193,6 +195,10 @@ abstract class BaseVectorStorage(
      * @param entityName Identifier or name of the entity whose relationship vectors will be removed.
      */
     open suspend fun deleteRelation(entityName: String) {}
+
+    open override suspend fun deleteEntityRelation(entityName: String) {
+        deleteRelation(entityName)
+    }
 
     /**
      * Delete the stored vector representing the relationship from a source node to a target node.

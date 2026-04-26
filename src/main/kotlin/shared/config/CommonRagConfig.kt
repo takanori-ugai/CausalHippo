@@ -54,7 +54,51 @@ data class CommonRagConfig(
         merged.setFromFirst("llmApiKey", shared, "llmApiKey", "apiKey", "openAiApiKey")
         merged.setFromFirst("llmBaseUrl", shared, "llmBaseUrl", "baseUrl")
         merged.setFromFirst("embeddingApiKey", shared, "embeddingApiKey")
+        merged.setFromFirst(
+            "ingestChunkTokenSize",
+            shared,
+            "ingestChunkTokenSize",
+            "chunkTokenSize",
+            "chunk_token_size",
+        )
+        merged.setFromFirst(
+            "ingestChunkOverlapTokenSize",
+            shared,
+            "ingestChunkOverlapTokenSize",
+            "chunkOverlapTokenSize",
+            "chunk_overlap_token_size",
+        )
+        merged.setFromFirst(
+            "promptContextTokenBudget",
+            shared,
+            "promptContextTokenBudget",
+            "contextTokenBudget",
+            "context_token_budget",
+            "prompt_context_token_budget",
+        )
         merged.putAll(causalrag)
+        merged.setFromFirst(
+            "ingestChunkTokenSize",
+            causalrag,
+            "ingestChunkTokenSize",
+            "chunkTokenSize",
+            "chunk_token_size",
+        )
+        merged.setFromFirst(
+            "ingestChunkOverlapTokenSize",
+            causalrag,
+            "ingestChunkOverlapTokenSize",
+            "chunkOverlapTokenSize",
+            "chunk_overlap_token_size",
+        )
+        merged.setFromFirst(
+            "promptContextTokenBudget",
+            causalrag,
+            "promptContextTokenBudget",
+            "contextTokenBudget",
+            "context_token_budget",
+            "prompt_context_token_budget",
+        )
         return JSON.decodeFromJsonElement(PipelineConfig.serializer(), JsonObject(merged))
     }
 

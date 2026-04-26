@@ -1,9 +1,10 @@
 package causalrag.examples
 
-import causalrag.CausalRAGPipeline
+import causalrag.CausalRAG
+import causalrag.QueryParam
 
 /**
- * Runs a minimal end-to-end demonstration of the CausalRAG pipeline.
+ * Runs a minimal end-to-end demonstration of the CausalRAG wrapper.
  */
 fun main() {
     val documents =
@@ -15,18 +16,16 @@ fun main() {
             "Climate policies aim to reduce emissions, thereby mitigating climate change effects.",
         )
 
-    val pipeline = CausalRAGPipeline(configPath = "config/common_rag.json")
-    println("Pipeline initialized")
+    val rag = CausalRAG(configPath = "config/common_rag.json")
+    println("CausalRAG initialized")
 
     println("Indexing documents...")
-    pipeline.index(documents)
+    rag.upsert(documents)
     println("Indexed ${documents.size} documents with causal relationships")
 
     val saveDir = "causalrag_index"
-    val saved = pipeline.save(saveDir)
-    if (saved) {
-        println("Saved index to $saveDir")
-    }
+    rag.saveGraph(saveDir)
+    println("Saved index to $saveDir")
 
     val queries =
         listOf(
@@ -40,7 +39,7 @@ fun main() {
         println("Query: $query")
         println("=".repeat(80))
 
-        val result = pipeline.runWithContext(query, topK = 3)
+        val result = rag.query(query, QueryParam(topK = 3))
         println("\nAnswer: ${result.answer}")
 
         println("\nSupporting context:")

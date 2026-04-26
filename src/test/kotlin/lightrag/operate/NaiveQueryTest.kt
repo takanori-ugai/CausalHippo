@@ -36,10 +36,12 @@ class NaiveQueryTest {
         hashingKv: BaseKVStorage? = null,
     ): NaiveQueryParams {
         val chunksVdb = mockk<BaseVectorStorage>()
-        coEvery { chunksVdb.query(any(), any(), any()) } returns
+        val mockedChunks =
             chunks.map {
                 it.filterValues { v -> v != null }.mapValues { entry -> entry.value!! }
             }
+        coEvery { chunksVdb.query(any<String>(), any<Int>()) } returns mockedChunks
+        coEvery { chunksVdb.query(any<String>(), any<Int>(), any()) } returns mockedChunks
         every { chunksVdb.cosineBetterThanThreshold } returns 0.8
 
         return NaiveQueryParams(
