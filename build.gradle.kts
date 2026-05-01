@@ -70,9 +70,9 @@ dependencies {
     // LangChain4j dependencies
     implementation("dev.langchain4j:langchain4j:1.14.0")
     implementation("dev.langchain4j:langchain4j-open-ai:1.14.0")
-    implementation("dev.langchain4j:langchain4j-open-ai-official:1.14.0-beta22")
+    implementation("dev.langchain4j:langchain4j-open-ai-official:1.14.0-beta24")
     implementation("dev.langchain4j:langchain4j-ollama:1.14.0")
-    implementation("dev.langchain4j:langchain4j-community-neo4j:1.14.0-beta22")
+    implementation("dev.langchain4j:langchain4j-community-neo4j:1.14.0-beta24")
     // Koin for Ktor
     implementation("io.insert-koin:koin-ktor:$koinVersion")
     implementation("io.insert-koin:koin-core:$koinVersion")
