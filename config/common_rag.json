@@ -12,7 +12,10 @@
     "indexPath": null,
     "templateStyle": "detailed",
     "semanticMode": "dpr",
-    "minCausalMatches": 0
+    "minCausalMatches": 0,
+    "ingestChunkTokenSize": 1200,
+    "ingestChunkOverlapTokenSize": 100,
+    "promptContextTokenBudget": 4000
   },
   "hipporag": {
     "saveDir": "outputs",
