@@ -63,7 +63,7 @@ dependencies {
     implementation("com.github.haifengl:smile-core:4.4.2")
     implementation("gg.jte:jte-kotlin:3.2.3")
     implementation("org.apache.commons:commons-csv:1.14.1")
-    implementation("org.apache.pdfbox:pdfbox:3.0.4")
+    implementation("org.apache.pdfbox:pdfbox:3.0.7")
     implementation("io.ragas:ragas-kotlin:0.0.1")
     implementation("io.github.ugaikit:bertscore:0.1.0")
 
