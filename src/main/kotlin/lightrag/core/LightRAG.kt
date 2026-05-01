@@ -152,24 +152,38 @@ class LightRAG(
         storageManager.drop()
     }
 
+    override fun inspectGraph(): Map<String, Any?> = runBlocking { ainspectGraph() }
+
+    override suspend fun ainspectGraph(): Map<String, Any?> {
+        val graph = storageManager.chunkEntityRelationGraph
+        val nodes = graph.getAllNodes()
+        val edges = graph.getAllEdges()
+        return mapOf(
+            "nodes" to nodes,
+            "edges" to edges,
+            "metadata" to
+                mapOf(
+                    "nodeCount" to nodes.size,
+                    "edgeCount" to edges.size,
+                ),
+        )
+    }
+
     override fun saveGraph(path: String) = runBlocking { asaveGraph(path) }
 
     @Suppress("TooGenericExceptionCaught")
     override suspend fun asaveGraph(path: String) {
-        val graph = storageManager.chunkEntityRelationGraph
-        val payload =
-            mapOf(
-                "nodes" to graph.getAllNodes(),
-                "edges" to graph.getAllEdges(),
-            )
+        val payload = ainspectGraph()
+        val metadata = payload["metadata"] as? Map<*, *> ?: emptyMap<Any?, Any?>()
+        val nodeCount = metadata["nodeCount"] as? Int ?: 0
+        val edgeCount = metadata["edgeCount"] as? Int ?: 0
 
         val output = File(path)
         output.parentFile?.mkdirs()
         try {
             output.writeText(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(payload))
             logger.info {
-                "Saved LightRAG graph snapshot to '$path' with ${payload["nodes"]?.let { it as List<*> }?.size ?: 0} nodes and " +
-                    "${payload["edges"]?.let { it as List<*> }?.size ?: 0} edges."
+                "Saved LightRAG graph snapshot to '$path' with $nodeCount nodes and $edgeCount edges."
             }
         } catch (e: Exception) {
             logger.error(e) { "Failed to save LightRAG graph snapshot to '$path'." }

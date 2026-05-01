@@ -68,6 +68,43 @@ class CausalRAG(
         pipeline.bm25Retriever.clear()
     }
 
+    override fun inspectGraph(): Map<String, Any?> = runBlocking { ainspectGraph() }
+
+    override suspend fun ainspectGraph(): Map<String, Any?> {
+        val graph = pipeline.graphBuilder.getGraph()
+        val nodeText = pipeline.graphBuilder.nodeText
+        val nodes =
+            graph
+                .nodes()
+                .sorted()
+                .map { nodeId ->
+                    mapOf(
+                        "id" to nodeId,
+                        "text" to (nodeText[nodeId] ?: nodeId),
+                        "in_degree" to graph.inDegree(nodeId),
+                        "out_degree" to graph.outDegree(nodeId),
+                    )
+                }
+        val edges =
+            graph.edges().map { edge ->
+                mapOf(
+                    "source" to edge.from,
+                    "target" to edge.to,
+                    "weight" to edge.weight,
+                )
+            }
+        return mapOf(
+            "nodes" to nodes,
+            "edges" to edges,
+            "metadata" to
+                mapOf(
+                    "nodeCount" to nodes.size,
+                    "edgeCount" to edges.size,
+                    "hasCycle" to graph.hasCycle(),
+                ),
+        )
+    }
+
     override fun saveGraph(path: String) = runBlocking { asaveGraph(path) }
 
     override suspend fun asaveGraph(path: String) {

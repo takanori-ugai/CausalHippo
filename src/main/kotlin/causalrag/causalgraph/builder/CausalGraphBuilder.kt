@@ -1,5 +1,7 @@
 package causalrag.causalgraph.builder
 
+import causalrag.DEFAULT_INGEST_CHUNK_OVERLAP_TOKEN_SIZE
+import causalrag.DEFAULT_INGEST_CHUNK_TOKEN_SIZE
 import causalrag.causalgraph.graph.DirectedGraph
 import causalrag.generator.llm.LLMInterface
 import causalrag.utils.EmbeddingModel
@@ -46,8 +48,8 @@ data class CausalTriple(
 class CausalTripleExtractor(
     private val method: String = "hybrid",
     private val llmInterface: LLMInterface? = null,
-    private val ingestChunkTokenSize: Int = 1200,
-    private val ingestChunkOverlapTokenSize: Int = 100,
+    private val ingestChunkTokenSize: Int = DEFAULT_INGEST_CHUNK_TOKEN_SIZE,
+    private val ingestChunkOverlapTokenSize: Int = DEFAULT_INGEST_CHUNK_OVERLAP_TOKEN_SIZE,
 ) {
     private val stopwords =
         setOf(
@@ -413,8 +415,8 @@ class CausalGraphBuilder(
     graphPath: String? = null,
     embeddingModel: EmbeddingModel? = null,
     embeddingApiKey: String? = null,
-    ingestChunkTokenSize: Int = 1200,
-    ingestChunkOverlapTokenSize: Int = 100,
+    ingestChunkTokenSize: Int = DEFAULT_INGEST_CHUNK_TOKEN_SIZE,
+    ingestChunkOverlapTokenSize: Int = DEFAULT_INGEST_CHUNK_OVERLAP_TOKEN_SIZE,
 ) {
     private val graph = DirectedGraph()
     private val _nodeText: MutableMap<String, String> = mutableMapOf()

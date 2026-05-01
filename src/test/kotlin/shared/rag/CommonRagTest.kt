@@ -37,6 +37,10 @@ class CommonRagTest {
                 rag.upsert("Alpha and Beta are connected in one document.")
                 assertTrue(pathRag.graph().hasNode("ALPHA"))
                 assertTrue(pathRag.graph().hasEdge("ALPHA", "BETA"))
+                val inspection = rag.inspectGraph()
+                assertTrue(inspection.containsKey("nodes"))
+                assertTrue(inspection.containsKey("edges"))
+                assertTrue((inspection["metadata"] as? Map<*, *>)?.containsKey("nodeCount") == true)
 
                 val context = rag.query("How are Alpha and Beta related?", QueryParam(mode = "local", onlyNeedContext = true, topK = 5))
                 assertTrue(context.contains("local-information"))
@@ -70,6 +74,10 @@ class CommonRagTest {
                 rag.aupsert(listOf("Alpha and Beta are connected in another document."))
                 assertTrue(pathRag.graph().hasNode("ALPHA"))
                 assertTrue(pathRag.graph().hasEdge("ALPHA", "BETA"))
+                val inspection = rag.ainspectGraph()
+                assertTrue(inspection.containsKey("nodes"))
+                assertTrue(inspection.containsKey("edges"))
+                assertTrue((inspection["metadata"] as? Map<*, *>)?.containsKey("edgeCount") == true)
 
                 val context = rag.aquery("Tell me about Alpha and Beta", QueryParam(mode = "local", onlyNeedContext = true, topK = 5))
                 assertTrue(context.contains("local-information"))

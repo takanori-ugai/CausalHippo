@@ -1,10 +1,11 @@
 package causalrag.examples
 
-import causalrag.CausalRAGPipeline
-import causalrag.HippoCausalRAGPipeline
+import causalrag.CausalHippoQueryParam
+import causalrag.CausalHippoRAG
+import causalrag.CausalRAG
+import causalrag.generator.llm.LLMInterface
 import causalrag.generator.promptbuilder.buildPrompt
-import causalrag.retriever.HippoRagSemanticMode
-import hipporag.HippoRag
+import hipporag.HippoRAG
 import hipporag.config.BaseConfig
 import io.github.ugaikit.bertscore.BertScore
 import kotlinx.coroutines.Dispatchers
@@ -31,6 +32,8 @@ import java.util.concurrent.atomic.AtomicInteger
 import kotlin.io.path.createDirectories
 import kotlin.math.log2
 import kotlin.math.max
+import causalrag.QueryParam as CausalQueryParam
+import hipporag.QueryParam as HippoQueryParam
 
 private val json = Json { ignoreUnknownKeys = true }
 private val NON_ALNUM_WHITESPACE_REGEX = Regex("[^a-z0-9\\s]")
@@ -483,8 +486,8 @@ private fun createCausalRagRunner(
     twoPass: Boolean,
     confidence: Boolean,
 ): ConditionRunner {
-    val pipeline =
-        CausalRAGPipeline(
+    val rag =
+        CausalRAG(
             modelName = config.llmModel,
             embeddingModel = config.embeddingModel,
             configPath = config.configPath,
@@ -507,11 +510,12 @@ private fun createCausalRagRunner(
             docs: List<String>,
         ): RetrievalAndAnswer {
             val indexStart = System.nanoTime()
-            pipeline.reindex(docs)
+            rag.drop()
+            rag.upsert(docs)
             val indexMs = elapsedMs(indexStart)
 
             val queryStart = System.nanoTime()
-            val result = pipeline.runWithContext(sample.question, topK = config.topK)
+            val result = rag.query(sample.question, CausalQueryParam(topK = config.topK))
             val queryMs = elapsedMs(queryStart)
 
             return RetrievalAndAnswer(
@@ -531,24 +535,24 @@ private fun createHippoRunner(
     workdirSuffix: String,
 ): ConditionRunner {
     val hippo =
-        HippoRag(
-            BaseConfig(
-                llmName = config.llmModel,
-                embeddingModelName = config.embeddingModel,
-                llmProvider = config.llmProvider,
-                embeddingProvider = config.llmProvider,
-                llmBaseUrl = config.llmBaseUrl,
-                embeddingBaseUrl = config.llmBaseUrl,
-                saveDir =
-                    config.outputDir
-                        .resolve("workdirs")
-                        .resolve(workdirSuffix)
-                        .toString(),
-                retrievalTopK = config.topK,
-                qaTopK = config.topK,
-            ),
+        HippoRAG(
+            config =
+                BaseConfig(
+                    llmName = config.llmModel,
+                    embeddingModelName = config.embeddingModel,
+                    llmProvider = config.llmProvider,
+                    embeddingProvider = config.llmProvider,
+                    llmBaseUrl = config.llmBaseUrl,
+                    embeddingBaseUrl = config.llmBaseUrl,
+                    saveDir =
+                        config.outputDir
+                            .resolve("workdirs")
+                            .resolve(workdirSuffix)
+                            .toString(),
+                    retrievalTopK = config.topK,
+                    qaTopK = config.topK,
+                ),
         )
-    var previousDocs: List<String> = emptyList()
     return object : ConditionRunner {
         override val id: String = if (useDpr) Condition.HIPPORAG_DPR.id else Condition.HIPPORAG_GRAPH.id
 
@@ -558,32 +562,26 @@ private fun createHippoRunner(
         ): RetrievalAndAnswer {
             val indexStart = System.nanoTime()
             val cleanedDocs = docs.filter { it.isNotBlank() }
-            if (previousDocs.isNotEmpty()) {
-                hippo.delete(previousDocs)
-            }
-            previousDocs = emptyList()
-            try {
-                hippo.index(cleanedDocs)
-                previousDocs = cleanedDocs
-            } catch (e: Exception) {
-                runCatching { hippo.delete(cleanedDocs) }
-                previousDocs = emptyList()
-                throw e
+            hippo.drop()
+            if (cleanedDocs.isNotEmpty()) {
+                hippo.upsert(cleanedDocs)
             }
             val indexMs = elapsedMs(indexStart)
 
             val queryStart = System.nanoTime()
             val result =
-                if (useDpr) {
-                    hippo.ragQaDpr(queries = listOf(sample.question), goldDocs = null, goldAnswers = null)
-                } else {
-                    hippo.ragQa(queries = listOf(sample.question), goldDocs = null, goldAnswers = null)
-                }
+                hippo.query(
+                    sample.question,
+                    HippoQueryParam(
+                        mode = if (useDpr) "dpr" else "graph",
+                        topK = config.topK,
+                        includeAnswer = true,
+                    ),
+                )
             val queryMs = elapsedMs(queryStart)
 
-            val solution = result.solutions.firstOrNull()
-            val context = solution?.docs?.take(config.topK) ?: emptyList()
-            val prediction = solution?.answer.orEmpty()
+            val context = result.docs.take(config.topK)
+            val prediction = result.answer.orEmpty()
 
             return RetrievalAndAnswer(
                 context = context,
@@ -603,8 +601,8 @@ private fun createCausalHippoRunner(
     confidence: Boolean,
     workdirSuffix: String,
 ): ConditionRunner {
-    val pipeline =
-        HippoCausalRAGPipeline(
+    val rag =
+        CausalHippoRAG(
             modelName = config.llmModel,
             embeddingModel = config.embeddingModel,
             configPath = config.configPath,
@@ -625,7 +623,6 @@ private fun createCausalHippoRunner(
                     retrievalTopK = config.topK,
                     qaTopK = config.topK,
                 ),
-            hippoSemanticMode = HippoRagSemanticMode.GRAPH,
             dynamicWeightingEnabled = dynamic,
             twoPassAdaptiveEnabled = twoPass,
             confidenceBasedSwitchEnabled = confidence,
@@ -645,11 +642,12 @@ private fun createCausalHippoRunner(
             docs: List<String>,
         ): RetrievalAndAnswer {
             val indexStart = System.nanoTime()
-            pipeline.reindex(docs)
+            rag.drop()
+            rag.upsert(docs)
             val indexMs = elapsedMs(indexStart)
 
             val queryStart = System.nanoTime()
-            val result = pipeline.runWithContext(sample.question, topK = config.topK)
+            val result = rag.query(sample.question, CausalHippoQueryParam(topK = config.topK))
             val queryMs = elapsedMs(queryStart)
 
             return RetrievalAndAnswer(
@@ -667,8 +665,8 @@ private fun createCausalHippoAblationRunner(
     config: RunConfig,
     workdirSuffix: String,
 ): ConditionRunner {
-    val pipeline =
-        HippoCausalRAGPipeline(
+    val rag =
+        CausalHippoRAG(
             modelName = config.llmModel,
             embeddingModel = config.embeddingModel,
             configPath = config.configPath,
@@ -689,10 +687,15 @@ private fun createCausalHippoAblationRunner(
                     retrievalTopK = config.topK,
                     qaTopK = config.topK,
                 ),
-            hippoSemanticMode = HippoRagSemanticMode.GRAPH,
             dynamicWeightingEnabled = true,
             twoPassAdaptiveEnabled = true,
             confidenceBasedSwitchEnabled = true,
+        )
+    val llm =
+        LLMInterface(
+            modelName = config.llmModel,
+            provider = config.llmProvider,
+            baseUrl = config.llmBaseUrl,
         )
     return object : ConditionRunner {
         override val id: String = Condition.CAUSALHIPPO_ABLATION_NO_RERANK.id
@@ -702,14 +705,30 @@ private fun createCausalHippoAblationRunner(
             docs: List<String>,
         ): RetrievalAndAnswer {
             val indexStart = System.nanoTime()
-            pipeline.reindex(docs)
+            rag.drop()
+            rag.upsert(docs)
             val indexMs = elapsedMs(indexStart)
 
             val queryStart = System.nanoTime()
-            val candidateDetails = pipeline.hybridRetriever.retrieveWithDetails(sample.question, topK = config.topK)
-            val context = candidateDetails.map { it["passage"] as String }.take(config.topK)
-            val causalNodes = pipeline.graphRetriever.retrievePathNodes(sample.question)
-            val causalPaths = pipeline.graphRetriever.retrievePaths(sample.question, maxPaths = 3)
+            val contextResult =
+                rag.query(
+                    sample.question,
+                    CausalHippoQueryParam(
+                        topK = config.topK,
+                        onlyNeedContext = true,
+                    ),
+                )
+            val pathsResult =
+                rag.query(
+                    sample.question,
+                    CausalHippoQueryParam(
+                        maxPaths = 3,
+                        onlyNeedCausalPaths = true,
+                    ),
+                )
+            val context = contextResult.context.take(config.topK)
+            val causalPaths = pathsResult.causalPaths
+            val causalNodes = emptyList<String>()
             val prompt =
                 buildPrompt(
                     sample.question,
@@ -717,9 +736,9 @@ private fun createCausalHippoAblationRunner(
                     causalPaths = causalPaths,
                     causalNodes = causalNodes,
                     templateStyle = config.templateStyle,
-                    llmInterface = pipeline.llm,
+                    llmInterface = llm,
                 )
-            val prediction = pipeline.llm.generate(prompt, jsonMode = requiresJsonResponseFormat(config.templateStyle))
+            val prediction = llm.generate(prompt, jsonMode = requiresJsonResponseFormat(config.templateStyle))
             val queryMs = elapsedMs(queryStart)
 
             return RetrievalAndAnswer(

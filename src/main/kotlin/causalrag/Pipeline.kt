@@ -97,9 +97,11 @@ class CausalRAGPipeline(
     private val effectiveEmbeddingApiKey = config?.embeddingApiKey ?: System.getenv("OPENAI_API_KEY")
     private val effectiveTemplateStyle = templateStyle ?: config?.templateStyle ?: "detailed"
     private val effectiveMinCausalMatches = config?.minCausalMatches ?: 0
-    private val effectiveIngestChunkTokenSize = config?.ingestChunkTokenSize ?: 1200
-    private val effectiveIngestChunkOverlapTokenSize = config?.ingestChunkOverlapTokenSize ?: 100
-    private val effectivePromptContextTokenBudget = config?.promptContextTokenBudget ?: 4000
+    private val effectiveIngestChunkTokenSize = config?.ingestChunkTokenSize ?: DEFAULT_INGEST_CHUNK_TOKEN_SIZE
+    private val effectiveIngestChunkOverlapTokenSize =
+        config?.ingestChunkOverlapTokenSize ?: DEFAULT_INGEST_CHUNK_OVERLAP_TOKEN_SIZE
+    private val effectivePromptContextTokenBudget =
+        config?.promptContextTokenBudget ?: DEFAULT_PROMPT_CONTEXT_TOKEN_BUDGET
 
     // Core components
     internal val llm: LLMInterface =

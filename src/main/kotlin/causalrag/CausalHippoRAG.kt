@@ -1,5 +1,7 @@
 package causalrag
 
+import com.fasterxml.jackson.core.type.TypeReference
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import hipporag.config.BaseConfig
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.coroutines.runBlocking
@@ -55,6 +57,7 @@ class CausalHippoRAG(
 
     private val logger = KotlinLogging.logger("CausalHippoRAG")
     private val json = Json { ignoreUnknownKeys = true }
+    private val objectMapper = jacksonObjectMapper()
     private val args =
         PipelineArgs(
             modelName = modelName,
@@ -205,6 +208,27 @@ class CausalHippoRAG(
         pipeline.hybridRetriever.clearCache()
     }
 
+    override fun inspectGraph(): Map<String, Any?> = runBlocking { ainspectGraph() }
+
+    override suspend fun ainspectGraph(): Map<String, Any?> {
+        val causalSnapshot = inspectCausalGraph()
+        val hippoSnapshot = inspectHippoGraph()
+        val causalMeta = causalSnapshot["metadata"] as? Map<*, *> ?: emptyMap<Any?, Any?>()
+        val hippoMeta = hippoSnapshot["metadata"] as? Map<*, *> ?: emptyMap<Any?, Any?>()
+
+        return mapOf(
+            "causal_graph" to causalSnapshot,
+            "hippo_graph" to hippoSnapshot,
+            "metadata" to
+                mapOf(
+                    "causalNodeCount" to (causalMeta["nodeCount"] as? Int ?: 0),
+                    "causalEdgeCount" to (causalMeta["edgeCount"] as? Int ?: 0),
+                    "hippoNodeCount" to (hippoMeta["nodeCount"] as? Int ?: 0),
+                    "hippoEdgeCount" to (hippoMeta["edgeCount"] as? Int ?: 0),
+                ),
+        )
+    }
+
     override fun query(
         query: String,
         param: CausalHippoQueryParam,
@@ -329,5 +353,70 @@ class CausalHippoRAG(
             .walk(normalized)
             .sorted(Comparator.reverseOrder())
             .forEach { Files.deleteIfExists(it) }
+    }
+
+    private fun inspectCausalGraph(): Map<String, Any?> {
+        val graph = pipeline.graphBuilder.getGraph()
+        val nodeText = pipeline.graphBuilder.nodeText
+        val nodes =
+            graph
+                .nodes()
+                .sorted()
+                .map { nodeId ->
+                    mapOf(
+                        "id" to nodeId,
+                        "text" to (nodeText[nodeId] ?: nodeId),
+                        "in_degree" to graph.inDegree(nodeId),
+                        "out_degree" to graph.outDegree(nodeId),
+                    )
+                }
+        val edges =
+            graph.edges().map { edge ->
+                mapOf(
+                    "source" to edge.from,
+                    "target" to edge.to,
+                    "weight" to edge.weight,
+                )
+            }
+        return mapOf(
+            "nodes" to nodes,
+            "edges" to edges,
+            "metadata" to
+                mapOf(
+                    "nodeCount" to nodes.size,
+                    "edgeCount" to edges.size,
+                    "hasCycle" to graph.hasCycle(),
+                ),
+        )
+    }
+
+    private fun inspectHippoGraph(): Map<String, Any?> {
+        val graphPath = hippoWorkingDir(pipeline.hippoRag.globalConfig).resolve("graph.json")
+        if (!Files.exists(graphPath) || !Files.isRegularFile(graphPath)) {
+            return mapOf(
+                "nodes" to emptyList<Map<String, Any?>>(),
+                "edges" to emptyList<Map<String, Any?>>(),
+                "metadata" to
+                    mapOf(
+                        "nodeCount" to 0,
+                        "edgeCount" to 0,
+                        "directed" to pipeline.hippoRag.globalConfig.isDirectedGraph,
+                    ),
+            )
+        }
+        val payloadType = object : TypeReference<Map<String, Any?>>() {}
+        val payload = objectMapper.readValue(graphPath.toFile(), payloadType)
+        val nodes = payload["vertices"] as? List<*> ?: emptyList<Any?>()
+        val edges = payload["edges"] as? List<*> ?: emptyList<Any?>()
+        return mapOf(
+            "nodes" to nodes,
+            "edges" to edges,
+            "metadata" to
+                mapOf(
+                    "nodeCount" to nodes.size,
+                    "edgeCount" to edges.size,
+                    "directed" to (payload["directed"] as? Boolean ?: false),
+                ),
+        )
     }
 }

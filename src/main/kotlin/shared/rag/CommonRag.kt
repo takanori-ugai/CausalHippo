@@ -78,6 +78,16 @@ interface CommonRag<QueryOptions, QueryResult> {
     suspend fun aloadGraph(path: String)
 
     /**
+     * Synchronously inspect graph data.
+     */
+    fun inspectGraph(): Map<String, Any?>
+
+    /**
+     * Asynchronously inspect graph data.
+     */
+    suspend fun ainspectGraph(): Map<String, Any?>
+
+    /**
      * Synchronously execute a query.
      */
     fun query(

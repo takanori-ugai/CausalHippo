@@ -753,10 +753,30 @@ class PathRAG(
 
     override suspend fun adrop() = adropAll()
 
+    override fun inspectGraph(): Map<String, Any?> = runBlockingMaybe { ainspectGraph() }
+
+    override suspend fun ainspectGraph(): Map<String, Any?> = buildGraphInspectionPayload()
+
     override fun saveGraph(path: String) = runBlockingMaybe { asaveGraph(path) }
 
     @Suppress("TooGenericExceptionCaught")
     override suspend fun asaveGraph(path: String) {
+        val payload = buildGraphInspectionPayload()
+        val metadata = payload["metadata"] as? Map<*, *> ?: emptyMap<Any?, Any?>()
+        val nodeCount = metadata["nodeCount"] as? Int ?: 0
+        val edgeCount = metadata["edgeCount"] as? Int ?: 0
+        val output = File(path)
+        output.parentFile?.mkdirs()
+        try {
+            output.writeText(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(payload))
+            logger.info { "Saved graph snapshot to '$path' with $nodeCount nodes and $edgeCount edges." }
+        } catch (e: Exception) {
+            logger.error(e) { "Failed to save graph snapshot to '$path'." }
+            throw e
+        }
+    }
+
+    private suspend fun buildGraphInspectionPayload(): Map<String, Any?> {
         val nodeIds = chunkEntityRelationGraph.nodes()
         val edgePairs = chunkEntityRelationGraph.edges()
         val nodes =
@@ -771,20 +791,17 @@ class PathRAG(
                     "data" to chunkEntityRelationGraph.getEdge(source, target)?.toMap().orEmpty(),
                 )
             }
-        val payload =
-            mapOf(
-                "nodes" to nodes,
-                "edges" to edges,
-            )
-        val output = File(path)
-        output.parentFile?.mkdirs()
-        try {
-            output.writeText(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(payload))
-            logger.info { "Saved graph snapshot to '$path' with ${nodes.size} nodes and ${edges.size} edges." }
-        } catch (e: Exception) {
-            logger.error(e) { "Failed to save graph snapshot to '$path'." }
-            throw e
-        }
+        return mapOf(
+            "nodes" to nodes,
+            "edges" to edges,
+            "metadata" to
+                mapOf(
+                    "nodeCount" to nodes.size,
+                    "edgeCount" to edges.size,
+                    "graphStorage" to graphStorage,
+                    "workingDir" to workingDir,
+                ),
+        )
     }
 
     override fun loadGraph(path: String) = runBlockingMaybe { aloadGraph(path) }

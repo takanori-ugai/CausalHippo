@@ -120,6 +120,59 @@ class GraphRAG(
         ensureDirectories()
     }
 
+    override fun inspectGraph(): Map<String, Any?> = runBlocking { ainspectGraph() }
+
+    override suspend fun ainspectGraph(): Map<String, Any?> {
+        val indexData =
+            runCatching { QueryIndexLoader(outputDir).load() }.getOrElse { ex ->
+                logger.warn(ex) { "GraphRAG inspection skipped: failed to load index from '$outputDir'." }
+                return emptyGraphInspection()
+            }
+
+        val nodes =
+            indexData.entities.map { entity ->
+                mapOf(
+                    "id" to entity.id,
+                    "name" to entity.name,
+                    "type" to entity.type,
+                    "description" to entity.description,
+                    "source_chunk_id" to entity.sourceChunkId,
+                    "community_ids" to entity.communityIds,
+                    "text_unit_ids" to entity.textUnitIds,
+                )
+            }
+
+        val edges =
+            indexData.relationships.map { relationship ->
+                mapOf(
+                    "id" to relationship.id,
+                    "source" to relationship.sourceId,
+                    "target" to relationship.targetId,
+                    "type" to relationship.type,
+                    "weight" to relationship.weight,
+                    "description" to relationship.description,
+                    "source_chunk_id" to relationship.sourceChunkId,
+                    "text_unit_ids" to relationship.textUnitIds,
+                )
+            }
+
+        return mapOf(
+            "nodes" to nodes,
+            "edges" to edges,
+            "metadata" to
+                mapOf(
+                    "nodeCount" to nodes.size,
+                    "edgeCount" to edges.size,
+                    "communityCount" to
+                        indexData.communities
+                            .map { it.communityId }
+                            .toSet()
+                            .size,
+                    "textUnitCount" to indexData.textUnits.size,
+                ),
+        )
+    }
+
     override fun saveGraph(path: String) = runBlocking { asaveGraph(path) }
 
     override suspend fun asaveGraph(path: String) {
@@ -442,6 +495,19 @@ class GraphRAG(
         val bytes = MessageDigest.getInstance("MD5").digest(value.toByteArray())
         return bytes.joinToString("") { "%02x".format(it) }
     }
+
+    private fun emptyGraphInspection(): Map<String, Any?> =
+        mapOf(
+            "nodes" to emptyList<Map<String, Any?>>(),
+            "edges" to emptyList<Map<String, Any?>>(),
+            "metadata" to
+                mapOf(
+                    "nodeCount" to 0,
+                    "edgeCount" to 0,
+                    "communityCount" to 0,
+                    "textUnitCount" to 0,
+                ),
+        )
 
     private fun copyDirectory(
         source: Path,

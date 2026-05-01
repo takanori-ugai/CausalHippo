@@ -1,5 +1,7 @@
 package hipporag
 
+import com.fasterxml.jackson.core.type.TypeReference
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import hipporag.config.BaseConfig
 import hipporag.utils.QuerySolution
 import kotlinx.coroutines.runBlocking
@@ -20,6 +22,7 @@ class HippoRAG(
     private var hippoRag: HippoRag,
 ) : CommonRag<QueryParam, QuerySolution> {
     private var config: BaseConfig = hippoRag.globalConfig.copy()
+    private val objectMapper = jacksonObjectMapper()
 
     constructor(
         config: BaseConfig = BaseConfig(),
@@ -130,6 +133,30 @@ class HippoRAG(
         reinitialize()
     }
 
+    override fun inspectGraph(): Map<String, Any?> = runBlocking { ainspectGraph() }
+
+    override suspend fun ainspectGraph(): Map<String, Any?> {
+        val graphPath = workingDir().resolve("graph.json")
+        if (!Files.exists(graphPath) || !Files.isRegularFile(graphPath)) {
+            return emptyGraphInspection()
+        }
+
+        val payloadType = object : TypeReference<Map<String, Any?>>() {}
+        val payload = objectMapper.readValue(graphPath.toFile(), payloadType)
+        val nodes = payload["vertices"] as? List<*> ?: emptyList<Any?>()
+        val edges = payload["edges"] as? List<*> ?: emptyList<Any?>()
+        return mapOf(
+            "nodes" to nodes,
+            "edges" to edges,
+            "metadata" to
+                mapOf(
+                    "nodeCount" to nodes.size,
+                    "edgeCount" to edges.size,
+                    "directed" to (payload["directed"] as? Boolean ?: false),
+                ),
+        )
+    }
+
     override fun query(
         query: String,
         param: QueryParam,
@@ -216,4 +243,16 @@ class HippoRAG(
             .sorted(Comparator.reverseOrder())
             .forEach { Files.deleteIfExists(it) }
     }
+
+    private fun emptyGraphInspection(): Map<String, Any?> =
+        mapOf(
+            "nodes" to emptyList<Map<String, Any?>>(),
+            "edges" to emptyList<Map<String, Any?>>(),
+            "metadata" to
+                mapOf(
+                    "nodeCount" to 0,
+                    "edgeCount" to 0,
+                    "directed" to config.isDirectedGraph,
+                ),
+        )
 }
