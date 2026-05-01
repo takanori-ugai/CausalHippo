@@ -238,10 +238,11 @@ class HippoRAG(
         if (!Files.exists(path)) return
         val normalized = path.toAbsolutePath().normalize()
         require(normalized.nameCount > 1) { "Refusing to delete unsafe path: $normalized" }
-        Files
-            .walk(normalized)
-            .sorted(Comparator.reverseOrder())
-            .forEach { Files.deleteIfExists(it) }
+        Files.walk(normalized).use { stream ->
+            stream
+                .sorted(Comparator.reverseOrder())
+                .forEach { Files.deleteIfExists(it) }
+        }
     }
 
     private fun emptyGraphInspection(): Map<String, Any?> =

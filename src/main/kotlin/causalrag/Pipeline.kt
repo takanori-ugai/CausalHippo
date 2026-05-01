@@ -11,6 +11,9 @@ import causalrag.retriever.VectorStoreRetriever
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
+import shared.chunking.DEFAULT_INGEST_CHUNK_OVERLAP_TOKEN_SIZE
+import shared.chunking.DEFAULT_INGEST_CHUNK_TOKEN_SIZE
+import shared.chunking.DEFAULT_PROMPT_CONTEXT_TOKEN_BUDGET
 import shared.chunking.DEFAULT_TIKTOKEN_MODEL
 import shared.chunking.chunkByTokenSizeWithOverlap
 import shared.chunking.hardTruncateStringsByTokenBudget

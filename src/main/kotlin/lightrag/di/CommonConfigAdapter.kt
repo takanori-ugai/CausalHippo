@@ -17,6 +17,7 @@ const val DEFAULT_LIGHTRAG_COMMON_CONFIG = "config/common_rag.json"
 
 private const val DEFAULT_OPENAI_CHAT_MODEL = "gpt-4o-mini"
 private const val DEFAULT_OPENAI_EMBEDDING_MODEL = "text-embedding-3-small"
+private const val DEFAULT_OPENAI_EMBEDDING_DIMENSION = 1536
 private const val DEFAULT_OLLAMA_CHAT_MODEL = "llama3"
 private const val DEFAULT_OLLAMA_EMBEDDING_MODEL = "all-minilm"
 private const val DEFAULT_OLLAMA_BASE_URL = "http://localhost:11434"
@@ -77,7 +78,7 @@ fun loadLightRagConfigFromCommonJson(path: String = resolveLightRagConfigPath())
         } else {
             firstNonBlank(System.getenv("OPENAI_EMBEDDING_MODEL"), DEFAULT_OPENAI_EMBEDDING_MODEL)
         }
-    val openAiEmbeddingModelDimensions = settings.embeddingModelDimensions ?: inferEmbeddingDimension(openAiEmbeddingModelName)
+    val openAiEmbeddingModelDimensions = resolveEmbeddingDimension(settings, openAiEmbeddingModelName)
 
     val ollamaBaseUrl = firstNonBlank(sharedBaseUrl, System.getenv("OLLAMA_BASE_URL"), DEFAULT_OLLAMA_BASE_URL)
     val ollamaChatModelName =
@@ -177,11 +178,29 @@ private fun parseBoolean(raw: String?): Boolean? =
 
 private fun inferEmbeddingDimension(modelName: String): Int {
     val normalized = modelName.lowercase()
-    return when {
-        normalized.contains("text-embedding-3-large") -> 3072
-        normalized.contains("text-embedding-3-small") -> 1536
-        normalized.contains("text-embedding-ada-002") -> 1536
-        normalized.contains("nomic-embed-text") -> 768
-        else -> 1536
+    val inferred =
+        when {
+            normalized.contains("text-embedding-3-large") -> 3072
+            normalized.contains("text-embedding-3-small") -> 1536
+            normalized.contains("text-embedding-ada-002") -> 1536
+            normalized.contains("nomic-embed-text") -> 768
+            else -> null
+        }
+    if (inferred != null) {
+        return inferred
     }
+    logger.warn {
+        "Unrecognized embedding model '$modelName'; defaulting dimension to $DEFAULT_OPENAI_EMBEDDING_DIMENSION. " +
+            "Set 'embeddingModelDimensions' in common config or OPENAI_EMBEDDING_DIMENSION/EMBEDDING_DIMENSION env vars."
+    }
+    return DEFAULT_OPENAI_EMBEDDING_DIMENSION
 }
+
+private fun resolveEmbeddingDimension(
+    settings: LightRagSettings,
+    embeddingModelName: String,
+): Int =
+    settings.embeddingModelDimensions
+        ?: System.getenv("OPENAI_EMBEDDING_DIMENSION")?.toIntOrNull()
+        ?: System.getenv("EMBEDDING_DIMENSION")?.toIntOrNull()
+        ?: inferEmbeddingDimension(embeddingModelName)

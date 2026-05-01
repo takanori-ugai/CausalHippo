@@ -77,6 +77,13 @@ data class CommonRagConfig(
             "prompt_context_token_budget",
         )
         merged.putAll(causalrag)
+        // Re-apply canonical keys from module section so module aliases override shared values.
+        merged.setFromFirst("modelName", causalrag, "modelName", "llmModel", "llmName")
+        merged.setFromFirst("embeddingModel", causalrag, "embeddingModel", "embeddingModelName")
+        merged.setFromFirst("llmProvider", causalrag, "llmProvider", "provider")
+        merged.setFromFirst("llmApiKey", causalrag, "llmApiKey", "apiKey", "openAiApiKey")
+        merged.setFromFirst("llmBaseUrl", causalrag, "llmBaseUrl", "baseUrl")
+        merged.setFromFirst("embeddingApiKey", causalrag, "embeddingApiKey")
         merged.setFromFirst(
             "ingestChunkTokenSize",
             causalrag,
@@ -130,6 +137,18 @@ data class CommonRagConfig(
         merged.setFromFirst("apiKey", shared, "llmApiKey", "apiKey", "openAiApiKey")
         merged.setFromFirst("baseUrl", shared, "llmBaseUrl", "baseUrl")
         merged.putAll(pathrag)
+        // Re-apply canonical keys from module section so module aliases override shared values.
+        merged.setFromFirst("llmProvider", pathrag, "llmProvider", "provider")
+        merged.setFromFirst("llmModelName", pathrag, "llmModelName", "llmModel", "modelName", "openaiModel")
+        merged.setFromFirst(
+            "embeddingModelName",
+            pathrag,
+            "embeddingModelName",
+            "embeddingModel",
+            "openaiEmbeddingModel",
+        )
+        merged.setFromFirst("apiKey", pathrag, "apiKey", "llmApiKey", "openAiApiKey")
+        merged.setFromFirst("baseUrl", pathrag, "baseUrl", "llmBaseUrl", "openAiApiBase")
         val obj = JsonObject(merged)
         return PathRagSettings(
             workingDir = firstString(obj, "workingDir", "working_dir"),
@@ -180,6 +199,19 @@ data class CommonRagConfig(
         merged.setFromFirst("apiKey", shared, "llmApiKey", "apiKey", "openAiApiKey")
         merged.setFromFirst("baseUrl", shared, "llmBaseUrl", "baseUrl")
         merged.putAll(lightrag)
+        // Re-apply canonical keys from module section so module aliases override shared values.
+        merged.setFromFirst("llmProvider", lightrag, "llmProvider", "provider")
+        merged.setFromFirst("llmModelName", lightrag, "llmModelName", "llmModel", "modelName")
+        merged.setFromFirst("embeddingModelName", lightrag, "embeddingModelName", "embeddingModel")
+        merged.setFromFirst(
+            "embeddingModelDimensions",
+            lightrag,
+            "embeddingModelDimensions",
+            "embeddingDimensions",
+            "embedding_dimension",
+        )
+        merged.setFromFirst("apiKey", lightrag, "apiKey", "llmApiKey", "openAiApiKey")
+        merged.setFromFirst("baseUrl", lightrag, "baseUrl", "llmBaseUrl")
         val obj = JsonObject(merged)
         return LightRagSettings(
             provider = firstString(obj, "llmProvider", "provider"),

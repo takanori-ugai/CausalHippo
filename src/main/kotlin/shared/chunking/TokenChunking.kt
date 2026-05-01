@@ -6,6 +6,9 @@ import com.knuddels.jtokkit.api.IntArrayList
 import java.util.concurrent.ConcurrentHashMap
 
 const val DEFAULT_TIKTOKEN_MODEL: String = "gpt-4o-mini"
+const val DEFAULT_INGEST_CHUNK_TOKEN_SIZE: Int = 1200
+const val DEFAULT_INGEST_CHUNK_OVERLAP_TOKEN_SIZE: Int = 100
+const val DEFAULT_PROMPT_CONTEXT_TOKEN_BUDGET: Int = 4000
 private const val DEFAULT_FALLBACK_ENCODING = "cl100k_base"
 
 /**
@@ -78,8 +81,8 @@ fun countTokensWithJTokKit(
  */
 fun chunkByTokenSizeWithOverlap(
     content: String,
-    chunkTokenSize: Int = 1200,
-    chunkOverlapTokenSize: Int = 100,
+    chunkTokenSize: Int = DEFAULT_INGEST_CHUNK_TOKEN_SIZE,
+    chunkOverlapTokenSize: Int = DEFAULT_INGEST_CHUNK_OVERLAP_TOKEN_SIZE,
     model: String = DEFAULT_TIKTOKEN_MODEL,
 ): List<TokenChunk> {
     require(chunkTokenSize > 0) { "chunkTokenSize must be positive." }

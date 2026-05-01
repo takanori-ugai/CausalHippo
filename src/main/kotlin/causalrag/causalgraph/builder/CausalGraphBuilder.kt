@@ -1,7 +1,5 @@
 package causalrag.causalgraph.builder
 
-import causalrag.DEFAULT_INGEST_CHUNK_OVERLAP_TOKEN_SIZE
-import causalrag.DEFAULT_INGEST_CHUNK_TOKEN_SIZE
 import causalrag.causalgraph.graph.DirectedGraph
 import causalrag.generator.llm.LLMInterface
 import causalrag.utils.EmbeddingModel
@@ -16,6 +14,8 @@ import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
 import kotlinx.serialization.json.putJsonArray
+import shared.chunking.DEFAULT_INGEST_CHUNK_OVERLAP_TOKEN_SIZE
+import shared.chunking.DEFAULT_INGEST_CHUNK_TOKEN_SIZE
 import shared.chunking.DEFAULT_TIKTOKEN_MODEL
 import shared.chunking.chunkByTokenSizeWithOverlap
 import java.io.IOException

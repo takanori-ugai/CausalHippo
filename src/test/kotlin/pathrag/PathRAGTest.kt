@@ -598,4 +598,93 @@ class PathRAGTest {
                 }
             }
         }
+
+    @Test
+    fun runtimeSettingsTakePrecedenceOverSystemPropertiesForProviderAndModel() {
+        withSystemProperty("LLM_PROVIDER", "openai") {
+            withSystemProperty("OPENAI_MODEL", "sys-openai-model") {
+                withSystemProperty("OLLAMA_MODEL", "sys-ollama-model") {
+                    PathRAG(
+                        chunkTokenSize = 16,
+                        chunkOverlapTokenSize = 4,
+                        runtimeSettings =
+                            mapOf(
+                                "LLM_PROVIDER" to "ollama",
+                                "OLLAMA_MODEL" to "runtime-ollama-model",
+                            ),
+                    ).use { rag ->
+                        assertEquals("ollama", privateString(rag, "llmProvider"))
+                        assertEquals("runtime-ollama-model", privateString(rag, "llmModelName"))
+                    }
+                }
+            }
+        }
+    }
+
+    @Test
+    fun systemPropertiesAreUsedWhenRuntimeSettingsMissing() {
+        withSystemProperty("LLM_PROVIDER", "ollama") {
+            withSystemProperty("OLLAMA_MODEL", "sys-ollama-model") {
+                PathRAG(
+                    chunkTokenSize = 16,
+                    chunkOverlapTokenSize = 4,
+                    runtimeSettings = emptyMap(),
+                ).use { rag ->
+                    assertEquals("ollama", privateString(rag, "llmProvider"))
+                    assertEquals("sys-ollama-model", privateString(rag, "llmModelName"))
+                }
+            }
+        }
+    }
+
+    @Test
+    fun blankRuntimeSettingsFallBackToSystemProperties() {
+        withSystemProperty("LLM_PROVIDER", "openai") {
+            withSystemProperty("OPENAI_MODEL", "sys-openai-model") {
+                PathRAG(
+                    chunkTokenSize = 16,
+                    chunkOverlapTokenSize = 4,
+                    runtimeSettings =
+                        mapOf(
+                            "LLM_PROVIDER" to "   ",
+                            "OPENAI_MODEL" to "",
+                        ),
+                ).use { rag ->
+                    assertEquals("openai", privateString(rag, "llmProvider"))
+                    assertEquals("sys-openai-model", privateString(rag, "llmModelName"))
+                }
+            }
+        }
+    }
+
+    private fun privateString(
+        instance: Any,
+        fieldName: String,
+    ): String {
+        val field = instance.javaClass.getDeclaredField(fieldName)
+        field.isAccessible = true
+        return field.get(instance) as String
+    }
+
+    private fun <T> withSystemProperty(
+        name: String,
+        value: String?,
+        block: () -> T,
+    ): T {
+        val previous = System.getProperty(name)
+        if (value == null) {
+            System.clearProperty(name)
+        } else {
+            System.setProperty(name, value)
+        }
+        return try {
+            block()
+        } finally {
+            if (previous == null) {
+                System.clearProperty(name)
+            } else {
+                System.setProperty(name, previous)
+            }
+        }
+    }
 }

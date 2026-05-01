@@ -65,6 +65,10 @@ class GraphRAG(
     AutoCloseable {
     private val logger = KotlinLogging.logger("GraphRAG")
     private val callbacks = NoopWorkflowCallbacks()
+    private val indexDataLock = Any()
+
+    @Volatile
+    private var cachedIndexData: QueryIndexData? = null
     private var vectorStorageBackend: GraphRAGVectorStorage? = null
 
     init {
@@ -90,6 +94,7 @@ class GraphRAG(
             return
         }
 
+        invalidateLoadedState()
         ensureDirectories()
         persistInputDocuments(documents)
 
@@ -116,7 +121,7 @@ class GraphRAG(
         deleteDirectory(inputDir)
         deleteDirectory(outputDir)
         deleteDirectory(updateOutputDir)
-        vectorStorageBackend = null
+        invalidateLoadedState()
         ensureDirectories()
     }
 
@@ -124,7 +129,7 @@ class GraphRAG(
 
     override suspend fun ainspectGraph(): Map<String, Any?> {
         val indexData =
-            runCatching { QueryIndexLoader(outputDir).load() }.getOrElse { ex ->
+            runCatching { loadIndexDataOrThrow("Failed to load GraphRAG index from '$outputDir'.") }.getOrElse { ex ->
                 logger.warn(ex) { "GraphRAG inspection skipped: failed to load index from '$outputDir'." }
                 return emptyGraphInspection()
             }
@@ -194,9 +199,9 @@ class GraphRAG(
         require(Files.exists(source) && Files.isDirectory(source)) {
             "Graph snapshot directory not found: $source"
         }
+        invalidateLoadedState()
         deleteDirectory(outputDir)
         copyDirectory(source, outputDir)
-        vectorStorageBackend = null
         logger.info { "Loaded GraphRAG graph artifacts from '$source' into '$outputDir'." }
     }
 
@@ -211,13 +216,7 @@ class GraphRAG(
         param: QueryParam,
     ): QueryResult {
         val mode = param.mode.lowercase()
-        val indexData =
-            runCatching { QueryIndexLoader(outputDir).load() }.getOrElse { ex ->
-                throw IllegalStateException(
-                    "Failed to load GraphRAG index from '$outputDir'. Run upsert() first.",
-                    ex,
-                )
-            }
+        val indexData = loadIndexDataOrThrow("Failed to load GraphRAG index from '$outputDir'. Run upsert() first.")
 
         val apiKey = System.getenv("OPENAI_API_KEY") ?: error("OPENAI_API_KEY environment variable is required for GraphRAG query.")
         val callbackCollector = CollectingQueryCallbacks()
@@ -430,14 +429,17 @@ class GraphRAG(
 
     override suspend fun upsert(data: Map<String, Map<String, Any?>>) {
         ensureVectorStorageBackend().upsert(data)
+        invalidateLoadedState()
     }
 
     override suspend fun deleteEntity(entityName: String) {
         ensureVectorStorageBackend().deleteEntity(entityName)
+        invalidateLoadedState()
     }
 
     override suspend fun deleteEntityRelation(entityName: String) {
         ensureVectorStorageBackend().deleteEntityRelation(entityName)
+        invalidateLoadedState()
     }
 
     private fun ensureDirectories() {
@@ -459,40 +461,59 @@ class GraphRAG(
 
     private suspend fun ensureVectorStorageBackend(): GraphRAGVectorStorage {
         vectorStorageBackend?.let { return it }
-        val indexData =
-            runCatching { QueryIndexLoader(outputDir).load() }.getOrElse { ex ->
-                throw IllegalStateException(
-                    "Failed to load GraphRAG vector index from '$outputDir'. Run upsert() first.",
-                    ex,
-                )
-            }
+        val indexData = loadIndexDataOrThrow("Failed to load GraphRAG vector index from '$outputDir'. Run upsert() first.")
         val apiKey =
             System.getenv("OPENAI_API_KEY") ?: error("OPENAI_API_KEY environment variable is required for GraphRAG vector operations.")
         val embeddingModel = defaultEmbeddingModel(apiKey, defaultEmbeddingModelName)
         return createVectorStorageBackend(indexData, embeddingModel).also { vectorStorageBackend = it }
     }
 
+    private fun loadIndexDataOrThrow(errorMessage: String): QueryIndexData {
+        cachedIndexData?.let { return it }
+        return synchronized(indexDataLock) {
+            cachedIndexData
+                ?: runCatching { QueryIndexLoader(outputDir).load() }
+                    .getOrElse { ex ->
+                        throw IllegalStateException(errorMessage, ex)
+                    }.also { loaded ->
+                        cachedIndexData = loaded
+                    }
+        }
+    }
+
+    private fun invalidateLoadedState() {
+        synchronized(indexDataLock) {
+            cachedIndexData = null
+            vectorStorageBackend = null
+        }
+    }
+
     private fun persistInputDocuments(documents: List<String>) {
         documents.forEach { content ->
-            val digest = md5(content)
+            val contentBytes = content.toByteArray(Charsets.UTF_8)
+            val contentSize = contentBytes.size.toLong()
+            val digest = md5(contentBytes)
             var target = inputDir.resolve("doc-$digest.txt")
             var suffix = 1
             while (Files.exists(target)) {
-                val existing = runCatching { Files.readString(target) }.getOrDefault("")
-                if (existing == content) {
-                    break
+                val sameSize = runCatching { Files.size(target) == contentSize }.getOrDefault(false)
+                if (sameSize) {
+                    val existing = runCatching { Files.readString(target, Charsets.UTF_8) }.getOrNull()
+                    if (existing == content) {
+                        break
+                    }
                 }
                 target = inputDir.resolve("doc-$digest-$suffix.txt")
                 suffix += 1
             }
             if (!Files.exists(target)) {
-                Files.writeString(target, content)
+                Files.write(target, contentBytes)
             }
         }
     }
 
-    private fun md5(value: String): String {
-        val bytes = MessageDigest.getInstance("MD5").digest(value.toByteArray())
+    private fun md5(value: ByteArray): String {
+        val bytes = MessageDigest.getInstance("MD5").digest(value)
         return bytes.joinToString("") { "%02x".format(it) }
     }
 
@@ -534,10 +555,13 @@ class GraphRAG(
 
     private fun deleteDirectory(path: Path) {
         if (!Files.exists(path)) return
-        Files
-            .walk(path)
-            .sorted(Comparator.reverseOrder())
-            .forEach { Files.deleteIfExists(it) }
+        val normalized = path.toAbsolutePath().normalize()
+        require(normalized.nameCount > 1) { "Refusing to delete unsafe path: $normalized" }
+        Files.walk(normalized).use { stream ->
+            stream
+                .sorted(Comparator.reverseOrder())
+                .forEach { Files.deleteIfExists(it) }
+        }
     }
 
     @Suppress("ReturnCount", "LoopWithTooManyJumpStatements")

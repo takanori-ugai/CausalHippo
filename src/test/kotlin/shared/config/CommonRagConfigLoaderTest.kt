@@ -136,4 +136,106 @@ class CommonRagConfigLoaderTest {
         val raw = """{"modelName":"plain-causal"}"""
         assertNull(CommonRagConfigLoader.parseOrNull(raw))
     }
+
+    @Test
+    fun `module alias keys override shared canonical keys for causalrag`() {
+        val raw =
+            """
+            {
+              "shared": {
+                "modelName": "shared-model",
+                "embeddingModel": "shared-embed",
+                "llmProvider": "openai",
+                "llmApiKey": "shared-key",
+                "llmBaseUrl": "http://shared/v1",
+                "embeddingApiKey": "shared-embed-key"
+              },
+              "causalrag": {
+                "llmModel": "causal-alias-model",
+                "embeddingModelName": "causal-alias-embed",
+                "provider": "ollama",
+                "apiKey": "causal-api-key",
+                "baseUrl": "http://causal/v1",
+                "embeddingApiKey": "causal-embed-key"
+              }
+            }
+            """.trimIndent()
+
+        val common = CommonRagConfigLoader.parseOrNull(raw)
+        assertNotNull(common)
+        val pipeline = common.toPipelineConfig()
+        assertEquals("causal-alias-model", pipeline.modelName)
+        assertEquals("causal-alias-embed", pipeline.embeddingModel)
+        assertEquals("ollama", pipeline.llmProvider)
+        assertEquals("causal-api-key", pipeline.llmApiKey)
+        assertEquals("http://causal/v1", pipeline.llmBaseUrl)
+        assertEquals("causal-embed-key", pipeline.embeddingApiKey)
+    }
+
+    @Test
+    fun `module alias keys override shared canonical keys for pathrag`() {
+        val raw =
+            """
+            {
+              "shared": {
+                "llmProvider": "openai",
+                "modelName": "shared-model",
+                "embeddingModel": "shared-embed",
+                "llmApiKey": "shared-key",
+                "llmBaseUrl": "http://shared/v1"
+              },
+              "pathrag": {
+                "provider": "ollama",
+                "modelName": "path-alias-model",
+                "openaiEmbeddingModel": "path-alias-embed",
+                "openAiApiKey": "path-api-key",
+                "openAiApiBase": "http://path/v1"
+              }
+            }
+            """.trimIndent()
+
+        val common = CommonRagConfigLoader.parseOrNull(raw)
+        assertNotNull(common)
+        val path = common.toPathRagSettings()
+        assertEquals("ollama", path.llmProvider)
+        assertEquals("path-alias-model", path.llmModelName)
+        assertEquals("path-alias-embed", path.embeddingModelName)
+        assertEquals("path-api-key", path.apiKey)
+        assertEquals("http://path/v1", path.baseUrl)
+    }
+
+    @Test
+    fun `module alias keys override shared canonical keys for lightrag`() {
+        val raw =
+            """
+            {
+              "shared": {
+                "llmProvider": "openai",
+                "modelName": "shared-model",
+                "embeddingModel": "shared-embed",
+                "embeddingModelDimensions": 1536,
+                "llmApiKey": "shared-key",
+                "llmBaseUrl": "http://shared/v1"
+              },
+              "lightrag": {
+                "provider": "ollama",
+                "modelName": "light-alias-model",
+                "embeddingModel": "light-alias-embed",
+                "embedding_dimension": 768,
+                "openAiApiKey": "light-api-key",
+                "llmBaseUrl": "http://light/v1"
+              }
+            }
+            """.trimIndent()
+
+        val common = CommonRagConfigLoader.parseOrNull(raw)
+        assertNotNull(common)
+        val light = common.toLightRagSettings()
+        assertEquals("ollama", light.provider)
+        assertEquals("light-alias-model", light.llmModelName)
+        assertEquals("light-alias-embed", light.embeddingModelName)
+        assertEquals(768, light.embeddingModelDimensions)
+        assertEquals("light-api-key", light.apiKey)
+        assertEquals("http://light/v1", light.baseUrl)
+    }
 }

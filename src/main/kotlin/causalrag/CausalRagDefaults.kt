@@ -1,5 +1,0 @@
-package causalrag
-
-internal const val DEFAULT_INGEST_CHUNK_TOKEN_SIZE = 1200
-internal const val DEFAULT_INGEST_CHUNK_OVERLAP_TOKEN_SIZE = 100
-internal const val DEFAULT_PROMPT_CONTEXT_TOKEN_BUDGET = 4000
