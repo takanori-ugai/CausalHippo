@@ -112,7 +112,7 @@ class PathRAG(
             workingDirOverride: String? = null,
         ): PathRAG {
             val commonConfig = CommonRagConfigLoader.load(configPath)
-            val settings = commonConfig.toPathRagSettings()
+            val settings = commonConfig.toPathRagConfig()
             val runtimeSettings = settings.toRuntimeSettingsMap()
             return PathRAG(
                 workingDir = workingDirOverride ?: settings.workingDir ?: defaultPathRagWorkingDir(),

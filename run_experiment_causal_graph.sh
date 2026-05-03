@@ -142,7 +142,7 @@ if [[ -n "$LLM_BASE_URL" ]]; then
 fi
 
 ./gradlew --quiet execute \
-  -PmainClass=causalrag.examples.graph.MultiConditionGraphExperimentKt \
+  -PmainClass=shared.eval.graph.MultiConditionGraphExperimentKt \
   --args="${APP_ARGS[*]}"
 
 if [[ "$SKIP_AGGREGATE" == "false" ]]; then

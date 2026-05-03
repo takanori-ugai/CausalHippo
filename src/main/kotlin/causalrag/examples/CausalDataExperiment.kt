@@ -1,7 +1,8 @@
 package causalrag.examples
 
-import causalrag.CausalRAGPipeline
-import causalrag.HippoCausalRAGPipeline
+import causalhippo.CausalHippoPipeline
+import causalrag.CausalRAG
+import causalrag.QueryParam
 import causalrag.generator.promptbuilder.buildPrompt
 import causalrag.retriever.HippoRagSemanticMode
 import hipporag.HippoRag
@@ -315,8 +316,8 @@ private fun createCausalRagRunner(
     twoPass: Boolean,
     confidence: Boolean,
 ): CausalConditionRunner {
-    val pipeline =
-        CausalRAGPipeline(
+    val rag =
+        CausalRAG(
             modelName = config.llmModel,
             embeddingModel = config.embeddingModel,
             configPath = config.configPath,
@@ -337,11 +338,11 @@ private fun createCausalRagRunner(
 
         override fun run(sample: CausalCsvSample): CausalRetrievalAndAnswer {
             val indexStart = System.nanoTime()
-            pipeline.reindex(listOf(sample.paragraph))
+            rag.reindex(listOf(sample.paragraph))
             val indexMs = elapsedMs(indexStart)
 
             val queryStart = System.nanoTime()
-            val result = pipeline.runWithContext(sample.question, topK = config.topK)
+            val result = rag.query(sample.question, QueryParam(topK = config.topK))
             val queryMs = elapsedMs(queryStart)
 
             return CausalRetrievalAndAnswer(
@@ -429,7 +430,7 @@ private fun createCausalHippoRunner(
     workdirSuffix: String,
 ): CausalConditionRunner {
     val pipeline =
-        HippoCausalRAGPipeline(
+        CausalHippoPipeline(
             modelName = config.llmModel,
             embeddingModel = config.embeddingModel,
             configPath = config.configPath,
@@ -487,7 +488,7 @@ private fun createCausalHippoRunner(
 
 private fun createCausalHippoAblationRunner(config: CausalRunConfig): CausalConditionRunner {
     val pipeline =
-        HippoCausalRAGPipeline(
+        CausalHippoPipeline(
             modelName = config.llmModel,
             embeddingModel = config.embeddingModel,
             configPath = config.configPath,

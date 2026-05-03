@@ -1,7 +1,7 @@
 package causalrag.examples
 
-import causalrag.CausalRAGPipeline
-import causalrag.HippoCausalRAGPipeline
+import causalhippo.CausalHippoPipeline
+import causalrag.CausalRAG
 import causalrag.evaluation.CausalEvaluator
 import causalrag.evaluation.EvalExample
 import causalrag.evaluation.EvaluationResult
@@ -128,7 +128,7 @@ object CliUtils {
      * @param modelName Optional LLM model override.
      * @param embeddingModel Optional embedding model override.
      * @param semanticMode HippoRAG semantic retrieval mode.
-     * @return Configured [HippoCausalRAGPipeline].
+     * @return Configured [CausalHippoPipeline].
      */
     fun createHybridPipeline(
         configPath: String?,
@@ -136,7 +136,7 @@ object CliUtils {
         modelName: String?,
         embeddingModel: String?,
         semanticMode: HippoRagSemanticMode,
-    ): HippoCausalRAGPipeline {
+    ): CausalHippoPipeline {
         val resolvedModelName = modelName ?: "gpt-4o-mini"
         val resolvedEmbeddingModel = embeddingModel ?: "text-embedding-3-small"
         val hippoConfig =
@@ -146,7 +146,7 @@ object CliUtils {
                 saveDir = workingDir,
             )
 
-        return HippoCausalRAGPipeline(
+        return CausalHippoPipeline(
             modelName = resolvedModelName,
             embeddingModel = resolvedEmbeddingModel,
             configPath = configPath,
@@ -168,9 +168,12 @@ object CliUtils {
         warn: (String) -> Unit,
         error: (String) -> Unit,
     ): EvalRunResult? {
-        val pipeline = CausalRAGPipeline(modelName = config.modelName, embeddingModel = config.embeddingModel)
+        val rag = CausalRAG(modelName = config.modelName, embeddingModel = config.embeddingModel)
         if (config.indexDir != null) {
-            val loaded = pipeline.load(config.indexDir)
+            val loaded =
+                runCatching {
+                    rag.loadGraph(config.indexDir)
+                }.isSuccess
             if (!loaded) {
                 warn("Failed to load index from ${config.indexDir}; evaluation may lack causal paths.")
             }
@@ -207,7 +210,7 @@ object CliUtils {
 
         val results =
             CausalEvaluator.evaluatePipeline(
-                pipeline = pipeline,
+                rag = rag,
                 evalData = evalData,
                 metrics = metrics,
                 llmInterface = llm,

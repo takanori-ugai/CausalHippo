@@ -118,7 +118,7 @@ echo "[run_experiment] QA metrics: exact_match, precision, recall, f1"
 echo "[run_experiment] BertScore metrics: bertscore_precision, bertscore_recall, bertscore_f1"
 
 ./gradlew --quiet execute \
-  -PmainClass=causalrag.examples.MultiConditionExperimentKt \
+  -PmainClass=shared.eval.MultiConditionExperimentKt \
   --args="${APP_ARGS[*]}"
 
 if [[ "$SKIP_AGGREGATE" == "false" ]]; then

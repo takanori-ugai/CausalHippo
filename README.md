@@ -6,7 +6,7 @@ At a high level:
 
 - HippoRAG handles graph-assisted semantic recall
 - CausalRAG components build and query explicit causal pathways
-- `HippoCausalRAGPipeline` combines both into the main HybridRAG flow
+- `CausalHippoPipeline` combines both into the main HybridRAG flow
 
 The project uses Kotlin/JVM, the Gradle wrapper, LangChain4j integrations, JTE prompt templates, KtLint, and Detekt.
 
@@ -85,7 +85,7 @@ The sample config at `config/common_rag.json` is the default shared config for H
 HybridRAG passes the effective model settings into HippoRAG as well, so one config can drive both stages.
 
 For cross-module runs, you can use `config/common_rag.json` (single JSON schema with `shared`, `causalrag`,
-`hipporag`, `pathrag`, and `lightrag` sections). `CausalRAGPipeline` and HippoRAG config loading support this
+`hipporag`, `pathrag`, and `lightrag` sections). `CausalRAG` and HippoRAG config loading support this
 format directly, and the graph experiment runners accept it via `--config`.
 
 ### Prompt Style Behaviour
@@ -100,7 +100,7 @@ format directly, and the graph experiment runners accept it via `--config`.
 
 ## Main Pipeline
 
-The primary orchestration class is [`HippoCausalRAGPipeline`](src/main/kotlin/causalrag/HippoCausalRAGPipeline.kt).
+The primary orchestration class is [`CausalHippoPipeline`](src/main/kotlin/causalhippo/CausalHippoPipeline.kt).
 
 Its flow is:
 

@@ -1,6 +1,8 @@
 package causalrag.evaluation
 
-import causalrag.CausalRAGPipeline
+import causalrag.CausalRAG
+import causalrag.CausalRagRunResult
+import causalrag.QueryParam
 import causalrag.generator.llm.LLMInterface
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.serialization.Serializable
@@ -379,26 +381,16 @@ Overall rating:
     }
 
     companion object {
-        /**
-         * Runs a pipeline over evaluation data and scores the resulting answers.
-         *
-         * @param pipeline Pipeline under evaluation.
-         * @param evalData Evaluation examples.
-         * @param metrics Metrics to compute. Uses defaults when omitted.
-         * @param llmInterface Optional evaluator model override.
-         * @param resultsDir Optional output directory for serialized reports.
-         * @return Evaluation summary for the run.
-         */
-        fun evaluatePipeline(
-            pipeline: CausalRAGPipeline,
+        private fun evaluateWithRunner(
             evalData: List<EvalExample>,
-            metrics: List<String>? = null,
-            llmInterface: LLMInterface? = null,
-            resultsDir: String? = null,
+            metrics: List<String>?,
+            llmInterface: LLMInterface,
+            resultsDir: String?,
+            runner: (String) -> CausalRagRunResult,
         ): EvaluationResult {
             val evaluator =
                 CausalEvaluator(
-                    llmInterface = llmInterface ?: pipeline.llm,
+                    llmInterface = llmInterface,
                     metrics = metrics,
                     resultsDir = resultsDir,
                 )
@@ -412,7 +404,7 @@ Overall rating:
             val causalPaths = mutableListOf<List<List<String>>>()
 
             for (question in questions) {
-                val result = pipeline.runWithContext(question)
+                val result = runner(question)
                 answers.add(result.answer)
                 contexts.add(result.context)
                 causalPaths.add(result.causalPaths)
@@ -426,5 +418,30 @@ Overall rating:
                 groundTruths = if (hasGroundTruths) groundTruths else null,
             )
         }
+
+        /**
+         * Runs a CausalRAG instance over evaluation data and scores generated answers.
+         *
+         * @param rag CausalRAG instance under evaluation.
+         * @param evalData Evaluation examples.
+         * @param metrics Metrics to compute. Uses defaults when omitted.
+         * @param llmInterface Optional evaluator model override.
+         * @param resultsDir Optional output directory for serialized reports.
+         * @return Evaluation summary for the run.
+         */
+        fun evaluatePipeline(
+            rag: CausalRAG,
+            evalData: List<EvalExample>,
+            metrics: List<String>? = null,
+            llmInterface: LLMInterface? = null,
+            resultsDir: String? = null,
+        ): EvaluationResult =
+            evaluateWithRunner(
+                evalData = evalData,
+                metrics = metrics,
+                llmInterface = llmInterface ?: rag.evaluatorLlmInterface,
+                resultsDir = resultsDir,
+                runner = { question -> rag.query(question, QueryParam()) },
+            )
     }
 }

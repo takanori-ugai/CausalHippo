@@ -1,7 +1,8 @@
-package causalrag.examples
+package shared.eval
 
-import causalrag.CausalHippoQueryParam
-import causalrag.CausalHippoRAG
+import causalrag.examples.CliUtils
+import causalhippo.CausalHippoQueryParam
+import causalhippo.CausalHippoRAG
 import causalrag.CausalRAG
 import causalrag.generator.llm.LLMInterface
 import causalrag.generator.promptbuilder.buildPrompt

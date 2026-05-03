@@ -1,4 +1,4 @@
-package causalrag.examples.graph
+package shared.eval.graph
 
 import causalrag.examples.CliUtils
 import com.knuddels.jtokkit.Encodings
@@ -441,7 +441,7 @@ private fun createLightRagRunner(
     config: RunConfig,
     workdirSuffix: String,
 ): ConditionRunner {
-    val lightSettings = config.commonConfig?.toLightRagSettings()
+    val lightSettings = config.commonConfig?.toLightRagConfig()
     val provider = (lightSettings?.provider ?: config.llmProvider).lowercase()
     val llmModelName = lightSettings?.llmModelName ?: config.llmModel
     val embeddingModelName = lightSettings?.embeddingModelName ?: config.embeddingModel
@@ -619,7 +619,7 @@ private fun createPathRagRunner(
     config: RunConfig,
     workdirSuffix: String,
 ): ConditionRunner {
-    val pathSettings = config.commonConfig?.toPathRagSettings()
+    val pathSettings = config.commonConfig?.toPathRagConfig()
     val pathRuntimeSettings = pathSettings?.toRuntimeSettingsMap() ?: emptyMap()
     val configuredRoot = pathSettings?.workingDir?.let { Path.of(it) }
     val workdirRoot = (configuredRoot ?: config.outputDir.resolve("workdirs")).resolve(workdirSuffix)

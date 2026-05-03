@@ -14,7 +14,7 @@ import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
 /**
- * Tests pipeline initialization, indexing, querying, and persistence.
+ * Tests CausalRAG initialization, indexing, querying, and persistence.
  */
 class TestPipeline {
     private lateinit var tempDir: Path
@@ -49,22 +49,18 @@ class TestPipeline {
     }
 
     /**
-     * Verifies that the pipeline initializes its core components.
+     * Verifies that CausalRAG initializes.
      */
     @Test
     fun testPipelineInit() {
-        val pipeline = CausalRAGPipeline(configPath = configPath.toString())
-        assertNotNull(pipeline)
-        assertNotNull(pipeline.graphBuilder)
-        assertNotNull(pipeline.vectorRetriever)
+        val rag = CausalRAG(configPath = configPath.toString())
+        assertNotNull(rag)
     }
 
     @Test
     fun testPipelineInitWithCommonConfig() {
-        val pipeline = CausalRAGPipeline(configPath = commonConfigPath.toString())
-        assertNotNull(pipeline)
-        assertNotNull(pipeline.graphBuilder)
-        assertNotNull(pipeline.vectorRetriever)
+        val rag = CausalRAG(configPath = commonConfigPath.toString())
+        assertNotNull(rag)
     }
 
     /**
@@ -72,10 +68,12 @@ class TestPipeline {
      */
     @Test
     fun testDocumentIndexing() {
-        val pipeline = CausalRAGPipeline(configPath = configPath.toString())
-        pipeline.index(testDocs)
-        val graph = pipeline.graphBuilder.getGraph()
-        assertTrue(graph.numberOfNodes() > 0)
+        val rag = CausalRAG(configPath = configPath.toString())
+        rag.upsert(testDocs)
+        val snapshot = rag.inspectGraph()
+        val metadata = snapshot["metadata"] as? Map<*, *> ?: emptyMap<Any?, Any?>()
+        val nodeCount = metadata["nodeCount"] as? Int ?: 0
+        assertTrue(nodeCount > 0)
     }
 
     /**
@@ -83,12 +81,12 @@ class TestPipeline {
      */
     @Test
     fun testQueryExecution() {
-        val pipeline = CausalRAGPipeline(configPath = configPath.toString())
-        pipeline.index(testDocs)
-        val context = pipeline.retrieveContext("What causes coastal flooding?", topK = 3)
-        assertTrue(context.isNotEmpty())
-        val paths = pipeline.retrieveCausalPaths("What causes coastal flooding?", maxPaths = 3)
-        assertTrue(paths.isNotEmpty())
+        val rag = CausalRAG(configPath = configPath.toString())
+        rag.upsert(testDocs)
+        val contextResult = rag.query("What causes coastal flooding?", QueryParam(topK = 3, onlyNeedContext = true))
+        assertTrue(contextResult.context.isNotEmpty())
+        val pathResult = rag.query("What causes coastal flooding?", QueryParam(maxPaths = 3, onlyNeedCausalPaths = true))
+        assertTrue(pathResult.causalPaths.isNotEmpty())
     }
 
     /**
@@ -96,22 +94,20 @@ class TestPipeline {
      */
     @Test
     fun testSaveAndLoad() {
-        val pipeline1 = CausalRAGPipeline(configPath = configPath.toString())
-        pipeline1.index(testDocs)
+        val rag1 = CausalRAG(configPath = configPath.toString())
+        rag1.upsert(testDocs)
 
         val saveDir = tempDir.resolve("causalrag_index")
         Files.createDirectories(saveDir)
-        val saved = pipeline1.save(saveDir.toString())
-        assertTrue(saved)
+        rag1.saveGraph(saveDir.toString())
 
-        val pipeline2 = CausalRAGPipeline(configPath = configPath.toString())
-        val loaded = pipeline2.load(saveDir.toString())
-        assertTrue(loaded)
+        val rag2 = CausalRAG(configPath = configPath.toString())
+        rag2.loadGraph(saveDir.toString())
 
-        val context = pipeline2.retrieveContext("What is climate change?", topK = 3)
-        assertTrue(context.isNotEmpty())
-        val paths = pipeline2.retrieveCausalPaths("What is climate change?", maxPaths = 3)
-        assertTrue(paths.isNotEmpty())
+        val contextResult = rag2.query("What is climate change?", QueryParam(topK = 3, onlyNeedContext = true))
+        assertTrue(contextResult.context.isNotEmpty())
+        val pathResult = rag2.query("What is climate change?", QueryParam(maxPaths = 3, onlyNeedCausalPaths = true))
+        assertTrue(pathResult.causalPaths.isNotEmpty())
     }
 
     private fun writeTestConfig(path: Path) {

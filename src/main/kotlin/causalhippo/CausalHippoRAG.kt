@@ -1,7 +1,9 @@
-package causalrag
+package causalhippo
 
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import causalrag.CausalRagRunResult
+import causalrag.retriever.HippoRagSemanticMode
 import hipporag.config.BaseConfig
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.coroutines.runBlocking
@@ -30,7 +32,7 @@ class CausalHippoRAG(
     configPath: String? = null,
     templateStyle: String? = null,
     hippoConfig: BaseConfig? = null,
-    hippoSemanticMode: causalrag.retriever.HippoRagSemanticMode = causalrag.retriever.HippoRagSemanticMode.GRAPH,
+    hippoSemanticMode: HippoRagSemanticMode = HippoRagSemanticMode.GRAPH,
     semanticWeight: Double = 0.4,
     causalWeight: Double = 0.5,
     bm25Weight: Double = 0.1,
@@ -38,14 +40,14 @@ class CausalHippoRAG(
     dynamicWeightingEnabled: Boolean = false,
     twoPassAdaptiveEnabled: Boolean = false,
     confidenceBasedSwitchEnabled: Boolean = false,
-) : CommonRag<CausalHippoQueryParam, PipelineRunResult> {
+) : CommonRag<CausalHippoQueryParam, CausalRagRunResult> {
     private data class PipelineArgs(
         val modelName: String,
         val embeddingModel: String,
         val configPath: String?,
         val templateStyle: String?,
         val hippoConfig: BaseConfig?,
-        val hippoSemanticMode: causalrag.retriever.HippoRagSemanticMode,
+        val hippoSemanticMode: HippoRagSemanticMode,
         val semanticWeight: Double,
         val causalWeight: Double,
         val bm25Weight: Double,
@@ -74,12 +76,12 @@ class CausalHippoRAG(
             twoPassAdaptiveEnabled = twoPassAdaptiveEnabled,
             confidenceBasedSwitchEnabled = confidenceBasedSwitchEnabled,
         )
-    private var pipeline: HippoCausalRAGPipeline = createPipeline()
+    private var pipeline: CausalHippoPipeline = createPipeline()
 
     companion object {
         fun fromCommonConfig(configPath: String): CausalHippoRAG {
             val commonConfig = CommonRagConfigLoader.load(configPath)
-            val causalConfig = commonConfig.toPipelineConfig()
+            val causalConfig = commonConfig.toCaualRagConfig()
             val hippoConfig = commonConfig.toHippoBaseConfig()
             return CausalHippoRAG(
                 modelName = causalConfig.modelName ?: "gpt-4o-mini",
@@ -232,12 +234,12 @@ class CausalHippoRAG(
     override fun query(
         query: String,
         param: CausalHippoQueryParam,
-    ): PipelineRunResult = runBlocking { aquery(query, param) }
+    ): CausalRagRunResult = runBlocking { aquery(query, param) }
 
     override suspend fun aquery(
         query: String,
         param: CausalHippoQueryParam,
-    ): PipelineRunResult {
+    ): CausalRagRunResult {
         val topK = param.topK.coerceAtLeast(1)
         val maxPaths = param.maxPaths.coerceAtLeast(1)
 
@@ -254,7 +256,7 @@ class CausalHippoRAG(
                 } else {
                     emptyList()
                 }
-            return PipelineRunResult(answer = "", context = context, causalPaths = causalPaths)
+            return CausalRagRunResult(answer = "", context = context, causalPaths = causalPaths)
         }
 
         val result = pipeline.runWithContext(query, topK = topK)
@@ -265,8 +267,8 @@ class CausalHippoRAG(
         }
     }
 
-    private fun createPipeline(): HippoCausalRAGPipeline =
-        HippoCausalRAGPipeline(
+    private fun createPipeline(): CausalHippoPipeline =
+        CausalHippoPipeline(
             modelName = args.modelName,
             embeddingModel = args.embeddingModel,
             configPath = args.configPath,

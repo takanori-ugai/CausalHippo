@@ -1,7 +1,8 @@
-package causalrag
+package causalhippo
 
 import causalrag.causalgraph.builder.CausalGraphBuilder
 import causalrag.causalgraph.retriever.CausalPathRetriever
+import causalrag.CausalRagRunResult
 import causalrag.generator.llm.LLMInterface
 import causalrag.generator.promptbuilder.buildPrompt
 import causalrag.reranker.CausalPathReranker
@@ -18,11 +19,12 @@ import shared.chunking.DEFAULT_PROMPT_CONTEXT_TOKEN_BUDGET
 import shared.chunking.DEFAULT_TIKTOKEN_MODEL
 import shared.chunking.chunkByTokenSizeWithOverlap
 import shared.chunking.hardTruncateStringsByTokenBudget
+import shared.config.CaualRagConfig
 import shared.config.CommonRagConfigLoader
 import java.nio.file.Files
 import java.nio.file.Path
 
-private val hippoPipelineConfigJson = Json { ignoreUnknownKeys = true }
+private val hippoCaualRagConfigJson = Json { ignoreUnknownKeys = true }
 
 /**
  * Two-stage QA pipeline that uses HippoRAG for broad candidate recall and CausalRAG for causal validation.
@@ -31,7 +33,7 @@ private val hippoPipelineConfigJson = Json { ignoreUnknownKeys = true }
  * and explain answers for causality-sensitive questions.
  */
 @Suppress("TooGenericExceptionCaught")
-class HippoCausalRAGPipeline(
+class CausalHippoPipeline(
     modelName: String = "gpt-4o-mini",
     embeddingModel: String = "text-embedding-3-small",
     configPath: String? = null,
@@ -46,7 +48,7 @@ class HippoCausalRAGPipeline(
     twoPassAdaptiveEnabled: Boolean = false,
     confidenceBasedSwitchEnabled: Boolean = false,
 ) {
-    private val config: PipelineConfig? = configPath?.let { loadConfig(it) }
+    private val config: CaualRagConfig? = configPath?.let { loadConfig(it) }
     private val effectiveModelName = config?.modelName ?: modelName
     private val effectiveEmbeddingModel = config?.embeddingModel ?: embeddingModel
     private val effectiveGraphPath = config?.graphPath
@@ -176,7 +178,7 @@ class HippoCausalRAGPipeline(
     fun runWithContext(
         query: String,
         topK: Int = 5,
-    ): PipelineRunResult {
+    ): CausalRagRunResult {
         val candidateDetails = hybridRetriever.retrieveWithDetails(query, topK = topK)
         val candidates = candidateDetails.map { it["passage"] as String }
         val metadata = candidateDetails.map { mapOf("score" to (it["score"] as Double)) }
@@ -200,7 +202,7 @@ class HippoCausalRAGPipeline(
                 llmInterface = llm,
             )
         val answer = llm.generate(prompt, jsonMode = requiresJsonResponseFormat(effectiveTemplateStyle))
-        return PipelineRunResult(answer, rerankedPassages, causalPaths)
+        return CausalRagRunResult(answer, rerankedPassages, causalPaths)
     }
 
     /**
@@ -211,12 +213,12 @@ class HippoCausalRAGPipeline(
         topK: Int = 5,
     ): String = runWithContext(query, topK).answer
 
-    private fun loadConfig(configPath: String): PipelineConfig {
+    private fun loadConfig(configPath: String): CaualRagConfig {
         val path = Path.of(configPath)
         require(Files.exists(path)) { "Config file not found: $configPath" }
         val content = Files.readString(path)
-        return CommonRagConfigLoader.parseOrNull(content)?.toPipelineConfig()
-            ?: hippoPipelineConfigJson.decodeFromString(PipelineConfig.serializer(), content)
+        return CommonRagConfigLoader.parseOrNull(content)?.toCaualRagConfig()
+            ?: hippoCaualRagConfigJson.decodeFromString(CaualRagConfig.serializer(), content)
     }
 
     private fun resolveHippoConfig(initial: BaseConfig?): BaseConfig =
@@ -273,3 +275,9 @@ class HippoCausalRAGPipeline(
 
     private fun requiresJsonResponseFormat(style: String): Boolean = style.equals("experiments", ignoreCase = true)
 }
+
+@Deprecated(
+    message = "Use CausalHippoPipeline",
+    replaceWith = ReplaceWith("CausalHippoPipeline"),
+)
+typealias HippoCausalRAGPipeline = CausalHippoPipeline

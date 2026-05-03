@@ -5,9 +5,16 @@ import com.knuddels.jtokkit.api.Encoding
 import com.knuddels.jtokkit.api.IntArrayList
 import java.util.concurrent.ConcurrentHashMap
 
+/** Default model name used for JTokKit tokenization when no model is specified. */
 const val DEFAULT_TIKTOKEN_MODEL: String = "gpt-4o-mini"
+
+/** Default token size used for ingestion chunking. */
 const val DEFAULT_INGEST_CHUNK_TOKEN_SIZE: Int = 1200
+
+/** Default overlap (in tokens) between consecutive ingestion chunks. */
 const val DEFAULT_INGEST_CHUNK_OVERLAP_TOKEN_SIZE: Int = 100
+
+/** Default maximum token budget used when building prompt context. */
 const val DEFAULT_PROMPT_CONTEXT_TOKEN_BUDGET: Int = 4000
 private const val DEFAULT_FALLBACK_ENCODING = "cl100k_base"
 
@@ -41,7 +48,11 @@ private object JTokKitCodec {
 }
 
 /**
- * Encode [text] into token IDs using JTokKit.
+ * Encodes [text] into token IDs using the tokenizer associated with [model].
+ *
+ * @param text source text to encode.
+ * @param model model name used to resolve the tokenizer; blank values use [DEFAULT_TIKTOKEN_MODEL].
+ * @return token IDs in model-tokenizer order.
  */
 fun encodeWithJTokKit(
     text: String,
@@ -56,7 +67,11 @@ fun encodeWithJTokKit(
 }
 
 /**
- * Decode token IDs back into text using JTokKit.
+ * Decodes token [tokens] into text using the tokenizer associated with [model].
+ *
+ * @param tokens token IDs to decode.
+ * @param model model name used to resolve the tokenizer; blank values use [DEFAULT_TIKTOKEN_MODEL].
+ * @return decoded text.
  */
 fun decodeWithJTokKit(
     tokens: List<Int>,
@@ -69,7 +84,11 @@ fun decodeWithJTokKit(
 }
 
 /**
- * Count tokens in [text] for the target [model].
+ * Counts the number of tokens in [text] for the tokenizer associated with [model].
+ *
+ * @param text source text to measure.
+ * @param model model name used to resolve the tokenizer; blank values use [DEFAULT_TIKTOKEN_MODEL].
+ * @return number of tokens produced by encoding [text].
  */
 fun countTokensWithJTokKit(
     text: String,
@@ -77,7 +96,15 @@ fun countTokensWithJTokKit(
 ): Int = JTokKitCodec.encoding(model).countTokens(text)
 
 /**
- * Token-based chunking with overlap.
+ * Splits [content] into overlapping token-based chunks and preserves source order.
+ *
+ * Each returned [TokenChunk.content] is decoded from token slices and trimmed.
+ *
+ * @param content source content to chunk.
+ * @param chunkTokenSize maximum tokens per chunk; must be positive.
+ * @param chunkOverlapTokenSize overlap between adjacent chunks; must be non-negative and smaller than [chunkTokenSize].
+ * @param model model name used to resolve the tokenizer.
+ * @return ordered token chunks, or an empty list when [content] is blank.
  */
 fun chunkByTokenSizeWithOverlap(
     content: String,
@@ -117,7 +144,12 @@ fun chunkByTokenSizeWithOverlap(
 }
 
 /**
- * Hard-truncate [text] to at most [maxTokenSize] tokens.
+ * Hard-truncates [text] to at most [maxTokenSize] tokens.
+ *
+ * @param text source text.
+ * @param maxTokenSize maximum number of tokens to keep.
+ * @param model model name used to resolve the tokenizer.
+ * @return decoded truncated text, or an empty string when [maxTokenSize] is non-positive or [text] is blank.
  */
 fun truncateTextByTokenSize(
     text: String,
@@ -133,7 +165,14 @@ fun truncateTextByTokenSize(
 /**
  * Hard token-budget truncation for ordered text items.
  *
- * When [includePartialLastItem] is true, a partial final item may be included.
+ * Items are consumed in input order until the cumulative token count would exceed [maxTokenSize].
+ * When [includePartialLastItem] is true, a truncated suffix item is included when budget remains.
+ *
+ * @param items ordered text items.
+ * @param maxTokenSize overall token budget for all returned items.
+ * @param model model name used to resolve the tokenizer.
+ * @param includePartialLastItem whether to include a token-truncated version of the first overflowing item.
+ * @return retained full (and optionally partial) items that fit in the budget.
  */
 fun hardTruncateStringsByTokenBudget(
     items: List<String>,

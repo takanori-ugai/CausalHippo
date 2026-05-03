@@ -8,87 +8,119 @@ package shared.rag
  */
 interface CommonRag<QueryOptions, QueryResult> {
     /**
-     * Synchronously ingest or update data.
+     * Synchronously ingests or updates a single text payload.
+     *
+     * @param data text payload to index.
      */
     fun upsert(data: String)
 
     /**
-     * Synchronously ingest or update data.
+     * Synchronously ingests or updates multiple text payloads.
+     *
+     * @param data text payloads to index.
      */
     fun upsert(data: Collection<String>)
 
     /**
-     * Synchronously ingest or update data.
+     * Synchronously ingests or updates multiple text payloads from an array.
+     *
+     * @param data text payloads to index.
      */
     fun upsert(data: Array<String>) = upsert(data.asList())
 
     /**
-     * Synchronously ingest or update data.
+     * Synchronously ingests or updates multiple text payloads from a sequence.
+     *
+     * @param data text payloads to index.
      */
     fun upsert(data: Sequence<String>) = upsert(data.toList())
 
     /**
-     * Asynchronously ingest or update data.
+     * Asynchronously ingests or updates a single text payload.
+     *
+     * @param data text payload to index.
      */
     suspend fun aupsert(data: String)
 
     /**
-     * Asynchronously ingest or update data.
+     * Asynchronously ingests or updates multiple text payloads.
+     *
+     * @param data text payloads to index.
      */
     suspend fun aupsert(data: Collection<String>)
 
     /**
-     * Asynchronously ingest or update data.
+     * Asynchronously ingests or updates multiple text payloads from an array.
+     *
+     * @param data text payloads to index.
      */
     suspend fun aupsert(data: Array<String>) = aupsert(data.asList())
 
     /**
-     * Asynchronously ingest or update data.
+     * Asynchronously ingests or updates multiple text payloads from a sequence.
+     *
+     * @param data text payloads to index.
      */
     suspend fun aupsert(data: Sequence<String>) = aupsert(data.toList())
 
     /**
-     * Synchronously drop all data for this RAG instance.
+     * Synchronously removes all indexed data for this RAG instance.
      */
     fun drop()
 
     /**
-     * Asynchronously drop all data for this RAG instance.
+     * Asynchronously removes all indexed data for this RAG instance.
      */
     suspend fun adrop()
 
     /**
-     * Synchronously save graph data to persistent storage.
+     * Synchronously saves graph state to persistent storage.
+     *
+     * @param path output location for serialized graph data.
      */
     fun saveGraph(path: String)
 
     /**
-     * Asynchronously save graph data to persistent storage.
+     * Asynchronously saves graph state to persistent storage.
+     *
+     * @param path output location for serialized graph data.
      */
     suspend fun asaveGraph(path: String)
 
     /**
-     * Synchronously load graph data from persistent storage.
+     * Synchronously loads graph state from persistent storage.
+     *
+     * @param path input location for serialized graph data.
      */
     fun loadGraph(path: String)
 
     /**
-     * Asynchronously load graph data from persistent storage.
+     * Asynchronously loads graph state from persistent storage.
+     *
+     * @param path input location for serialized graph data.
      */
     suspend fun aloadGraph(path: String)
 
     /**
-     * Synchronously inspect graph data.
+     * Synchronously inspects graph state for diagnostics.
+     *
+     * @return diagnostic graph snapshot.
      */
     fun inspectGraph(): Map<String, Any?>
 
     /**
-     * Asynchronously inspect graph data.
+     * Asynchronously inspects graph state for diagnostics.
+     *
+     * @return diagnostic graph snapshot.
      */
     suspend fun ainspectGraph(): Map<String, Any?>
 
     /**
-     * Synchronously execute a query.
+     * Synchronously executes a retrieval query.
+     *
+     * @param query query text.
+     * @param param query-time options.
+     * @return query result payload.
      */
     fun query(
         query: String,
@@ -96,7 +128,11 @@ interface CommonRag<QueryOptions, QueryResult> {
     ): QueryResult
 
     /**
-     * Asynchronously execute a query.
+     * Asynchronously executes a retrieval query.
+     *
+     * @param query query text.
+     * @param param query-time options.
+     * @return query result payload.
      */
     suspend fun aquery(
         query: String,

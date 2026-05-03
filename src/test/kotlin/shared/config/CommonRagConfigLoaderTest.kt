@@ -33,7 +33,7 @@ class CommonRagConfigLoaderTest {
 
         val common = CommonRagConfigLoader.parseOrNull(raw)
         assertNotNull(common)
-        val pipeline = common.toPipelineConfig()
+        val pipeline = common.toCaualRagConfig()
         assertEquals("gpt-causal", pipeline.modelName)
         assertEquals("text-embedding-shared", pipeline.embeddingModel)
         assertEquals("openai", pipeline.llmProvider)
@@ -105,7 +105,7 @@ class CommonRagConfigLoaderTest {
         val common = CommonRagConfigLoader.parseOrNull(raw)
         assertNotNull(common)
 
-        val path = common.toPathRagSettings()
+        val path = common.toPathRagConfig()
         assertEquals("./path-work", path.workingDir)
         assertEquals("openai", path.llmProvider)
         assertEquals("gpt-shared", path.llmModelName)
@@ -121,7 +121,7 @@ class CommonRagConfigLoaderTest {
         assertEquals("text-embedding-shared", runtimeSettings["OLLAMA_EMBED_MODEL"])
         assertEquals("http://localhost:1234/v1", runtimeSettings["OLLAMA_BASE_URL"])
 
-        val light = common.toLightRagSettings()
+        val light = common.toLightRagConfig()
         assertEquals("./light-work", light.workingDir)
         assertEquals("openai", light.provider)
         assertEquals("gpt-shared", light.llmModelName)
@@ -163,7 +163,7 @@ class CommonRagConfigLoaderTest {
 
         val common = CommonRagConfigLoader.parseOrNull(raw)
         assertNotNull(common)
-        val pipeline = common.toPipelineConfig()
+        val pipeline = common.toCaualRagConfig()
         assertEquals("causal-alias-model", pipeline.modelName)
         assertEquals("causal-alias-embed", pipeline.embeddingModel)
         assertEquals("ollama", pipeline.llmProvider)
@@ -196,7 +196,7 @@ class CommonRagConfigLoaderTest {
 
         val common = CommonRagConfigLoader.parseOrNull(raw)
         assertNotNull(common)
-        val path = common.toPathRagSettings()
+        val path = common.toPathRagConfig()
         assertEquals("ollama", path.llmProvider)
         assertEquals("path-alias-model", path.llmModelName)
         assertEquals("path-alias-embed", path.embeddingModelName)
@@ -230,7 +230,7 @@ class CommonRagConfigLoaderTest {
 
         val common = CommonRagConfigLoader.parseOrNull(raw)
         assertNotNull(common)
-        val light = common.toLightRagSettings()
+        val light = common.toLightRagConfig()
         assertEquals("ollama", light.provider)
         assertEquals("light-alias-model", light.llmModelName)
         assertEquals("light-alias-embed", light.embeddingModelName)

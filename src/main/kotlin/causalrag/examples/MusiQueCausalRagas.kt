@@ -1,6 +1,7 @@
 package causalrag.examples
 
-import causalrag.CausalRAGPipeline
+import causalrag.CausalRAG
+import causalrag.QueryParam
 import dev.langchain4j.model.openai.OpenAiChatModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -28,7 +29,7 @@ import java.util.concurrent.atomic.AtomicInteger
 import java.util.concurrent.atomic.DoubleAdder
 
 /**
- * Runs MusiQue evaluation using CausalRAGPipeline for generation and ragas for scoring.
+ * Runs MusiQue evaluation using CausalRAG for generation and ragas for scoring.
  */
 object MusiQueCausalRagas {
     private val inputJson = Json { ignoreUnknownKeys = true }
@@ -129,18 +130,18 @@ object MusiQueCausalRagas {
                             try {
                                 val documents = example.paragraphs.map { it.paragraphText }
                                 // Each MusiQue sample has its own document set.
-                                // CausalRAGPipeline#index mutates internal graph/vector/BM25 state and
-                                // does not expose a full reset API, so we keep one pipeline per sample
-                                // to avoid cross-sample index contamination under parallel execution.
-                                val pipeline =
-                                    CausalRAGPipeline(
+                                // CausalRAG mutates internal graph/vector/BM25 state, so we keep one
+                                // instance per sample to avoid cross-sample index contamination under
+                                // parallel execution.
+                                val rag =
+                                    CausalRAG(
                                         modelName = modelName,
                                         embeddingModel = embeddingModel,
                                         configPath = configPath.toString(),
                                     )
 
-                                pipeline.index(documents)
-                                val result = pipeline.runWithContext(example.question, topK = 10)
+                                rag.upsert(documents)
+                                val result = rag.query(example.question, QueryParam(topK = 10))
                                 val prediction = result.answer
                                 val golds = listOf(example.answer) + example.answerAliases
                                 val reference = EvalUtils.pickBestReferenceForPrediction(prediction, golds)
@@ -276,7 +277,7 @@ object MusiQueCausalRagas {
         println("MusiQue + ragas evaluation completed for $count samples")
         println("Generation Model: $modelName")
         println("Evaluation Model: $evalModelName")
-        println("Pipeline: CausalRAGPipeline")
+        println("Pipeline: CausalRAG")
         println("ExactMatch: ${"%.4f".format(exactMatch)}")
         println("Correctness: ${"%.4f".format(correctness)}")
         println("Precision: ${"%.4f".format(precision)}")

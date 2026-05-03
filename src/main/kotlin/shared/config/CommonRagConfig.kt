@@ -1,8 +1,8 @@
 package shared.config
 
-import causalrag.PipelineConfig
 import hipporag.config.BaseConfig
 import hipporag.utils.applyConfigOverrides
+import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
@@ -24,6 +24,14 @@ import java.nio.file.Path
  *   "pathrag": { ... },
  *   "lightrag": { ... }
  * }
+ *
+ * Each module-specific section overrides equivalent values from [shared].
+ *
+ * @property shared defaults shared across all modules.
+ * @property causalrag overrides for CausalRAG [CaualRagConfig] resolution.
+ * @property hipporag overrides for HippoRAG [BaseConfig] resolution.
+ * @property pathrag overrides for PathRAG runtime/config resolution.
+ * @property lightrag overrides for LightRAG runtime/config resolution.
  */
 data class CommonRagConfig(
     val shared: JsonObject = JsonObject(emptyMap()),
@@ -32,6 +40,11 @@ data class CommonRagConfig(
     val pathrag: JsonObject = JsonObject(emptyMap()),
     val lightrag: JsonObject = JsonObject(emptyMap()),
 ) {
+    /**
+     * Extracts common LLM/embedding settings from the [shared] section only.
+     *
+     * @return normalized shared model settings.
+     */
     fun sharedModelSettings(): SharedModelSettings =
         SharedModelSettings(
             provider = firstString(shared, "llmProvider", "provider"),
@@ -43,10 +56,13 @@ data class CommonRagConfig(
         )
 
     /**
-     * Resolve causalrag [PipelineConfig] from common config.
-     * Section values override shared values.
+     * Resolves CausalRAG [CaualRagConfig] from this common config.
+     *
+     * Values from [causalrag] override [shared], including alias forms.
+     *
+     * @return merged [CaualRagConfig] for CausalRAG.
      */
-    fun toPipelineConfig(): PipelineConfig {
+    fun toCaualRagConfig(): CaualRagConfig {
         val merged = mutableMapOf<String, JsonElement>()
         merged.setFromFirst("modelName", shared, "modelName", "llmModel", "llmName")
         merged.setFromFirst("embeddingModel", shared, "embeddingModel", "embeddingModelName")
@@ -106,12 +122,28 @@ data class CommonRagConfig(
             "context_token_budget",
             "prompt_context_token_budget",
         )
-        return JSON.decodeFromJsonElement(PipelineConfig.serializer(), JsonObject(merged))
+        return JSON.decodeFromJsonElement(CaualRagConfig.serializer(), JsonObject(merged))
     }
 
+    @Deprecated(
+        message = "Use toCaualRagConfig()",
+        replaceWith = ReplaceWith("toCaualRagConfig()"),
+    )
+    fun toCausalRagSettings(): CaualRagConfig = toCaualRagConfig()
+
+    @Deprecated(
+        message = "Use toCaualRagConfig()",
+        replaceWith = ReplaceWith("toCaualRagConfig()"),
+    )
+    fun toPipelineConfig(): CaualRagConfig = toCaualRagConfig()
+
     /**
-     * Resolve HippoRAG [BaseConfig] from common config.
-     * Section values override shared values.
+     * Resolves HippoRAG [BaseConfig] from this common config.
+     *
+     * Values from [hipporag] override [shared].
+     *
+     * @param base base configuration to apply overrides onto.
+     * @return merged HippoRAG configuration.
      */
     fun toHippoBaseConfig(base: BaseConfig = BaseConfig()): BaseConfig {
         val merged = mutableMapOf<String, JsonElement>()
@@ -126,10 +158,13 @@ data class CommonRagConfig(
     }
 
     /**
-     * Resolve PathRAG construction + runtime properties from common config.
-     * Section values override shared values.
+     * Resolves PathRAG config from this common config.
+     *
+     * Values from [pathrag] override [shared], including alias forms.
+     *
+     * @return merged PathRAG config.
      */
-    fun toPathRagSettings(): PathRagSettings {
+    fun toPathRagConfig(): PathRagConfig {
         val merged = mutableMapOf<String, JsonElement>()
         merged.setFromFirst("llmProvider", shared, "llmProvider", "provider")
         merged.setFromFirst("llmModelName", shared, "modelName", "llmModel", "llmName")
@@ -150,7 +185,7 @@ data class CommonRagConfig(
         merged.setFromFirst("apiKey", pathrag, "apiKey", "llmApiKey", "openAiApiKey")
         merged.setFromFirst("baseUrl", pathrag, "baseUrl", "llmBaseUrl", "openAiApiBase")
         val obj = JsonObject(merged)
-        return PathRagSettings(
+        return PathRagConfig(
             workingDir = firstString(obj, "workingDir", "working_dir"),
             kvStorage = firstString(obj, "kvStorage", "kv_storage"),
             vectorStorage = firstString(obj, "vectorStorage", "vector_storage"),
@@ -180,11 +215,20 @@ data class CommonRagConfig(
         )
     }
 
+    @Deprecated(
+        message = "Use toPathRagConfig()",
+        replaceWith = ReplaceWith("toPathRagConfig()"),
+    )
+    fun toPathRagSettings(): PathRagConfig = toPathRagConfig()
+
     /**
-     * Resolve LightRAG runtime settings from common config.
-     * Section values override shared values.
+     * Resolves LightRAG runtime config from this common config.
+     *
+     * Values from [lightrag] override [shared], including alias forms.
+     *
+     * @return merged LightRAG config.
      */
-    fun toLightRagSettings(): LightRagSettings {
+    fun toLightRagConfig(): LightRagConfig {
         val merged = mutableMapOf<String, JsonElement>()
         merged.setFromFirst("llmProvider", shared, "llmProvider", "provider")
         merged.setFromFirst("llmModelName", shared, "modelName", "llmModel", "llmName")
@@ -213,7 +257,7 @@ data class CommonRagConfig(
         merged.setFromFirst("apiKey", lightrag, "apiKey", "llmApiKey", "openAiApiKey")
         merged.setFromFirst("baseUrl", lightrag, "baseUrl", "llmBaseUrl")
         val obj = JsonObject(merged)
-        return LightRagSettings(
+        return LightRagConfig(
             provider = firstString(obj, "llmProvider", "provider"),
             llmModelName = firstString(obj, "llmModelName", "llmModel", "modelName"),
             embeddingModelName = firstString(obj, "embeddingModelName", "embeddingModel"),
@@ -230,8 +274,24 @@ data class CommonRagConfig(
             cosineBetterThreshold = firstDouble(obj, "cosineBetterThreshold", "cosine_better_threshold"),
         )
     }
+
+    @Deprecated(
+        message = "Use toLightRagConfig()",
+        replaceWith = ReplaceWith("toLightRagConfig()"),
+    )
+    fun toLightRagSettings(): LightRagConfig = toLightRagConfig()
 }
 
+/**
+ * Shared model/credential settings resolved from common configuration.
+ *
+ * @property provider LLM provider identifier (for example `openai` or `ollama`).
+ * @property llmModelName model name used for generation requests.
+ * @property embeddingModelName model name used for embedding requests.
+ * @property apiKey primary API key for LLM calls.
+ * @property embeddingApiKey optional dedicated API key for embeddings.
+ * @property baseUrl optional provider base URL override.
+ */
 data class SharedModelSettings(
     val provider: String?,
     val llmModelName: String?,
@@ -241,7 +301,49 @@ data class SharedModelSettings(
     val baseUrl: String?,
 )
 
-data class PathRagSettings(
+/**
+ * CausalRAG construction/runtime settings resolved from common configuration.
+ *
+ * This shared DTO intentionally avoids any dependency on `causalrag` module types.
+ */
+@Serializable
+data class CaualRagConfig(
+    val modelName: String? = null,
+    val embeddingModel: String? = null,
+    val graphPath: String? = null,
+    val indexPath: String? = null,
+    val llmProvider: String? = null,
+    val llmApiKey: String? = null,
+    val llmBaseUrl: String? = null,
+    val embeddingApiKey: String? = null,
+    val templateStyle: String? = null,
+    val semanticMode: String? = null,
+    val minCausalMatches: Int? = null,
+    val ingestChunkTokenSize: Int? = null,
+    val ingestChunkOverlapTokenSize: Int? = null,
+    val promptContextTokenBudget: Int? = null,
+)
+
+/**
+ * PathRAG construction and runtime settings resolved from common configuration.
+ *
+ * @property workingDir working directory used by PathRAG storage.
+ * @property kvStorage key-value storage backend name.
+ * @property vectorStorage vector storage backend name.
+ * @property graphStorage graph storage backend name.
+ * @property chunkTokenSize maximum chunk size in tokens.
+ * @property chunkOverlapTokenSize overlap size between adjacent chunks in tokens.
+ * @property language language hint consumed by PathRAG prompts.
+ * @property llmProvider LLM provider identifier.
+ * @property llmModelName model name used for generation.
+ * @property embeddingModelName model name used for embedding.
+ * @property apiKey API key used by the provider.
+ * @property baseUrl provider base URL.
+ * @property ollamaBaseUrl Ollama endpoint override.
+ * @property ollamaModelName Ollama generation model override.
+ * @property ollamaEmbeddingModelName Ollama embedding model override.
+ */
+data class PathRagConfig(
     val workingDir: String?,
     val kvStorage: String?,
     val vectorStorage: String?,
@@ -259,7 +361,11 @@ data class PathRagSettings(
     val ollamaEmbeddingModelName: String?,
 ) {
     /**
-     * Convert PathRAG settings into runtime key-values consumed by PathRAG/LLM helpers.
+     * Converts PathRAG config into runtime key-values consumed by PathRAG/LLM helpers.
+     *
+     * Empty and blank values are excluded from the returned map.
+     *
+     * @return runtime settings map keyed by PathRAG environment variable names.
      */
     fun toRuntimeSettingsMap(): Map<String, String> =
         buildMap {
@@ -275,7 +381,7 @@ data class PathRagSettings(
         }
 
     /**
-     * Backward-compatible bridge for legacy call sites that still rely on process-wide properties.
+     * Backward-compatible bridge for legacy call sites that still rely on JVM system properties.
      */
     @Deprecated(
         message = "Mutates JVM-global state. Prefer toRuntimeSettingsMap() and pass settings directly to PathRAG.",
@@ -288,7 +394,25 @@ data class PathRagSettings(
     }
 }
 
-data class LightRagSettings(
+/**
+ * LightRAG runtime settings resolved from common configuration.
+ *
+ * @property provider LLM provider identifier.
+ * @property llmModelName model name used for generation.
+ * @property embeddingModelName model name used for embedding.
+ * @property embeddingModelDimensions embedding vector dimensionality.
+ * @property apiKey API key used by the provider.
+ * @property baseUrl provider base URL.
+ * @property workingDir LightRAG working directory.
+ * @property graphStorageName graph storage backend name.
+ * @property vectorStorageName vector storage backend name.
+ * @property chunkTokenSize maximum chunk size in tokens.
+ * @property chunkOverlapTokenSize overlap size between adjacent chunks in tokens.
+ * @property entityTypes optional entity type allow-list.
+ * @property language language hint used in extraction/query prompts.
+ * @property cosineBetterThreshold similarity threshold tuning parameter.
+ */
+data class LightRagConfig(
     val provider: String?,
     val llmModelName: String?,
     val embeddingModelName: String?,
@@ -305,7 +429,16 @@ data class LightRagSettings(
     val cosineBetterThreshold: Double?,
 )
 
+/**
+ * Loader/parsing helpers for the canonical multi-module common config JSON document.
+ */
 object CommonRagConfigLoader {
+    /**
+     * Parses [content] into [CommonRagConfig] when it matches the expected multi-module shape.
+     *
+     * @param content JSON config text.
+     * @return parsed config, or `null` when the payload is invalid/non-common-config JSON.
+     */
     fun parseOrNull(content: String): CommonRagConfig? {
         val root = runCatching { JSON.parseToJsonElement(content) }.getOrNull() as? JsonObject ?: return null
         if (!looksLikeCommonConfig(root)) return null
@@ -318,11 +451,24 @@ object CommonRagConfigLoader {
         )
     }
 
+    /**
+     * Loads and parses common config JSON from [path].
+     *
+     * @param path path to a JSON file.
+     * @return parsed common config.
+     * @throws IllegalStateException when file content is not a valid common config document.
+     */
     fun load(path: Path): CommonRagConfig {
         val text = Files.readString(path)
         return parseOrNull(text) ?: error("Not a common config JSON file: $path")
     }
 
+    /**
+     * Loads and parses common config JSON from [path].
+     *
+     * @param path path string to a JSON file.
+     * @return parsed common config.
+     */
     fun load(path: String): CommonRagConfig = load(Path.of(path))
 
     private fun looksLikeCommonConfig(root: JsonObject): Boolean =

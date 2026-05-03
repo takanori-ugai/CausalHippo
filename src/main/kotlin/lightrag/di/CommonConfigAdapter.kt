@@ -3,14 +3,20 @@ package lightrag.di
 import io.github.oshai.kotlinlogging.KotlinLogging
 import lightrag.core.Neo4jConfig
 import shared.config.CommonRagConfigLoader
-import shared.config.LightRagSettings
 import java.nio.file.Files
 import java.nio.file.Path
+import shared.config.LightRagConfig as CommonLightRagConfig
 
 /**
- * Load the LightRAG-specific runtime settings from a common multi-module JSON config file.
+ * Load the LightRAG-specific runtime config from a common multi-module JSON config file.
  */
-fun loadLightRagSettingsFromCommonConfig(path: String): LightRagSettings = CommonRagConfigLoader.load(path).toLightRagSettings()
+fun loadLightRagConfigFromCommonConfig(path: String): CommonLightRagConfig = CommonRagConfigLoader.load(path).toLightRagConfig()
+
+@Deprecated(
+    message = "Use loadLightRagConfigFromCommonConfig()",
+    replaceWith = ReplaceWith("loadLightRagConfigFromCommonConfig(path)"),
+)
+fun loadLightRagSettingsFromCommonConfig(path: String): CommonLightRagConfig = loadLightRagConfigFromCommonConfig(path)
 
 const val LIGHTRAG_CONFIG_ENV = "LIGHTRAG_CONFIG"
 const val DEFAULT_LIGHTRAG_COMMON_CONFIG = "config/common_rag.json"
@@ -40,10 +46,10 @@ fun resolveLightRagConfigPath(explicitPath: String? = null): String {
 fun loadLightRagConfigFromCommonJson(path: String = resolveLightRagConfigPath()): LightRagConfig {
     val settings =
         if (Files.exists(Path.of(path))) {
-            loadLightRagSettingsFromCommonConfig(path)
+            loadLightRagConfigFromCommonConfig(path)
         } else {
             logger.warn { "Common config not found at '$path'; using LightRAG defaults + environment variables." }
-            LightRagSettings(
+            CommonLightRagConfig(
                 provider = null,
                 llmModelName = null,
                 embeddingModelName = null,
@@ -197,7 +203,7 @@ private fun inferEmbeddingDimension(modelName: String): Int {
 }
 
 private fun resolveEmbeddingDimension(
-    settings: LightRagSettings,
+    settings: CommonLightRagConfig,
     embeddingModelName: String,
 ): Int =
     settings.embeddingModelDimensions

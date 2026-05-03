@@ -1,6 +1,7 @@
 package causalrag.examples
 
-import causalrag.CausalRAGPipeline
+import causalrag.CausalRAG
+import causalrag.QueryParam
 import dev.langchain4j.model.openai.OpenAiChatModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -135,17 +136,17 @@ object OpenAlexIntroMusiQueCausalRagas {
                         semaphore.withPermit {
                             try {
                                 val documents = example.paragraphs.map { it.paragraphText }
-                                // Each sample has its own passages. The pipeline mutates in-memory index state,
+                                // Each sample has its own passages. CausalRAG mutates in-memory index state,
                                 // so keep one instance per sample to avoid cross-sample contamination.
-                                val pipeline =
-                                    CausalRAGPipeline(
+                                val rag =
+                                    CausalRAG(
                                         modelName = modelName,
                                         embeddingModel = embeddingModel,
                                         configPath = configPath.toString(),
                                     )
 
-                                pipeline.index(documents)
-                                val result = pipeline.runWithContext(example.question, topK = 10)
+                                rag.upsert(documents)
+                                val result = rag.query(example.question, QueryParam(topK = 10))
                                 val prediction = result.answer
                                 val golds = listOf(example.answer) + example.answerAliases
                                 val reference = EvalUtils.pickBestReferenceForPrediction(prediction, golds)
@@ -282,7 +283,7 @@ object OpenAlexIntroMusiQueCausalRagas {
         println("Input: $dataPath")
         println("Generation Model: $modelName")
         println("Evaluation Model: $evalModelName")
-        println("Pipeline: CausalRAGPipeline")
+        println("Pipeline: CausalRAG")
         println("Answer Faithfulness: ${"%.4f".format(faithfulnessAvg)}")
         println("Context Precision: ${"%.4f".format(contextPrecisionAvg)}")
         println("Response Groundedness: ${"%.4f".format(responseGroundednessAvg)}")

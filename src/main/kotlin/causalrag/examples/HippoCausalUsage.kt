@@ -1,6 +1,6 @@
 package causalrag.examples
 
-import causalrag.HippoCausalRAGPipeline
+import causalhippo.CausalHippoPipeline
 import causalrag.retriever.HippoRagSemanticMode
 import hipporag.config.BaseConfig
 import java.nio.file.Files
@@ -32,7 +32,7 @@ fun main() {
         )
 
     val pipeline =
-        HippoCausalRAGPipeline(
+        CausalHippoPipeline(
             modelName = "gpt-5.4-mini",
             embeddingModel = "text-embedding-3-small",
             hippoConfig = hippoConfig,
