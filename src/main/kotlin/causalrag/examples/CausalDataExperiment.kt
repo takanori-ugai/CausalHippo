@@ -150,6 +150,12 @@ private data class CausalRetrievalAndAnswer(
 )
 
 @Suppress("TooGenericExceptionCaught")
+@Deprecated(
+    message =
+        "Legacy direct evaluator entrypoint. Prefer shared.eval.MultiConditionExperimentKt " +
+            "with --use-unified-api=true for unified adapter-based runs.",
+    level = DeprecationLevel.WARNING,
+)
 fun main(args: Array<String>) {
     val config = parseArgs(args)
     val samples = loadCausalCsvSamples(config.dataDir, config.dataGlob, config.limit)

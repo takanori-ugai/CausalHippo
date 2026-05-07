@@ -14,6 +14,8 @@ PROVIDER="${LLM_PROVIDER:-openai}"
 LLM_BASE_URL="${LLM_BASE_URL:-}"
 TEMPLATE_STYLE="experiments"
 SKIP_AGGREGATE="false"
+USE_UNIFIED_API="false"
+USE_UNIFIED_PERSISTENCE="false"
 
 usage() {
   cat <<'EOF_USAGE'
@@ -32,6 +34,8 @@ Options:
   --provider <name>        openai|azure|ollama (default: env LLM_PROVIDER or openai)
   --llm-base-url <url>     Optional base URL
   --template-style <name>  Prompt template style (default: experiments)
+  --use-unified-api        Route conditions through shared unified adapters
+  --use-unified-persistence Enable unified persistence SPI sidecar in unified mode
   --skip-aggregate         Skip CSV aggregation step
   -h, --help               Show this help
 
@@ -57,6 +61,8 @@ while [[ $# -gt 0 ]]; do
     --provider) PROVIDER="$2"; shift 2 ;;
     --llm-base-url) LLM_BASE_URL="$2"; shift 2 ;;
     --template-style) TEMPLATE_STYLE="$2"; shift 2 ;;
+    --use-unified-api) USE_UNIFIED_API="true"; shift 1 ;;
+    --use-unified-persistence) USE_UNIFIED_PERSISTENCE="true"; shift 1 ;;
     --skip-aggregate) SKIP_AGGREGATE="true"; shift 1 ;;
     -h|--help) usage; exit 0 ;;
     *)
@@ -87,6 +93,8 @@ APP_ARGS=(
   --parallelism "$PARALLELISM"
   --provider "$PROVIDER"
   --template-style "$TEMPLATE_STYLE"
+  --use-unified-api "$USE_UNIFIED_API"
+  --use-unified-persistence "$USE_UNIFIED_PERSISTENCE"
 )
 
 if [[ -n "$LIMIT" ]]; then

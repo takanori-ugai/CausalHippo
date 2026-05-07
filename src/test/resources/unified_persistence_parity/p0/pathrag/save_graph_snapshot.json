@@ -1,0 +1,34 @@
+{
+  "nodes": {
+    "ALPHA": {
+      "entity_name": "ALPHA",
+      "entity_type": "THING",
+      "description": "alpha desc",
+      "source_id": "doc-1"
+    },
+    "BETA": {
+      "entity_name": "BETA",
+      "entity_type": "THING",
+      "description": "beta desc",
+      "source_id": "doc-1"
+    }
+  },
+  "edges": [
+    {
+      "source": "ALPHA",
+      "target": "BETA",
+      "data": {
+        "description": "alpha connects beta",
+        "keywords": "connect",
+        "weight": 1.0,
+        "source_id": "doc-1"
+      }
+    }
+  ],
+  "metadata": {
+    "nodeCount": 2,
+    "edgeCount": 1,
+    "graphStorage": "NetworkXStorage",
+    "workingDir": "./tmp_pathrag"
+  }
+}

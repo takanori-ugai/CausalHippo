@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "entity_id": "ALPHA",
+      "entity_name": "ALPHA",
+      "description": "alpha desc"
+    },
+    {
+      "entity_id": "BETA",
+      "entity_name": "BETA",
+      "description": "beta desc"
+    }
+  ],
+  "edges": [
+    {
+      "source": "ALPHA",
+      "target": "BETA",
+      "src_id": "ALPHA",
+      "tgt_id": "BETA",
+      "description": "alpha causes beta",
+      "keywords": "cause"
+    }
+  ],
+  "metadata": {
+    "nodeCount": 2,
+    "edgeCount": 1
+  }
+}

@@ -14,6 +14,8 @@ EMBEDDING_MODEL="${EMBEDDING_MODEL:-text-embedding-3-small}"
 PROVIDER="${LLM_PROVIDER:-openai}"
 LLM_BASE_URL="${LLM_BASE_URL:-}"
 SKIP_AGGREGATE="false"
+USE_UNIFIED_API="false"
+USE_UNIFIED_PERSISTENCE="false"
 
 usage() {
   cat <<'EOF_USAGE'
@@ -32,6 +34,8 @@ Options:
   --embedding-model <name> Override embedding model
   --provider <name>        openai|ollama (default: env LLM_PROVIDER or openai)
   --llm-base-url <url>     Optional base URL
+  --use-unified-api        Route conditions through shared unified adapters
+  --use-unified-persistence Enable unified persistence SPI sidecar in unified mode
   --skip-aggregate         Skip CSV aggregation step
   -h, --help               Show this help
 
@@ -63,6 +67,8 @@ while [[ $# -gt 0 ]]; do
     --embedding-model) EMBEDDING_MODEL="$2"; shift 2 ;;
     --provider) PROVIDER="$2"; shift 2 ;;
     --llm-base-url) LLM_BASE_URL="$2"; shift 2 ;;
+    --use-unified-api) USE_UNIFIED_API="true"; shift 1 ;;
+    --use-unified-persistence) USE_UNIFIED_PERSISTENCE="true"; shift 1 ;;
     --skip-aggregate) SKIP_AGGREGATE="true"; shift 1 ;;
     -h|--help) usage; exit 0 ;;
     *)
@@ -102,6 +108,8 @@ APP_ARGS=(
   --top-k "$TOP_K"
   --parallelism "$PARALLELISM"
   --provider "$PROVIDER"
+  --use-unified-api "$USE_UNIFIED_API"
+  --use-unified-persistence "$USE_UNIFIED_PERSISTENCE"
 )
 
 if [[ -n "$MANIFEST_PATH" ]]; then

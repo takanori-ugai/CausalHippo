@@ -108,6 +108,13 @@ Evaluates standard and causal RAG approaches on the MuSiQue dataset.
   --data data/musique_experiment/musique_dev_balanced_300.jsonl \
   --conditions all \
   --top-k 5
+
+# Unified adapters path
+./run_experiment.sh \
+  --data data/musique_experiment/musique_dev_balanced_300.jsonl \
+  --conditions all \
+  --top-k 5 \
+  --use-unified-api
 ```
 
 ### B. Causal-Reasoning-QA Multi-Condition RAG (Table 3, 4)
@@ -119,6 +126,13 @@ Evaluates approaches on the original Causal-Reasoning-QA dataset.
   --data data/causal_experiment/causal_qa_balanced_300.jsonl \
   --conditions all \
   --top-k 5
+
+# Unified adapters path
+./run_experiment_causal.sh \
+  --data data/causal_experiment/causal_qa_balanced_300.jsonl \
+  --conditions all \
+  --top-k 5 \
+  --use-unified-api
 ```
 
 ### C. Webis-CausalQA-22 Multi-Condition RAG (Table 1)
@@ -130,6 +144,13 @@ Evaluates approaches on the Webis-CausalQA-22 dataset.
   --data data/webis_experiment/webis_train_balanced_300.jsonl \
   --conditions all \
   --top-k 5
+
+# Unified adapters path
+./run_experiment.sh \
+  --data data/webis_experiment/webis_train_balanced_300.jsonl \
+  --conditions all \
+  --top-k 5 \
+  --use-unified-api
 ```
 
 ### D. Graph-based RAG Comparison (MuSiQue & Causal)
@@ -142,14 +163,16 @@ To reproduce Graph-based RAG baselines (LightRAG, PathRAG) as shown in the table
   --data data/musique_experiment/musique_dev_balanced_300.jsonl \
   --config config/common_rag.json \
   --conditions all \
-  --top-k 5
+  --top-k 5 \
+  --use-unified-api
 
 # For Causal-Reasoning-QA
 ./run_experiment_causal_graph.sh \
   --data data/causal_experiment/causal_qa_balanced_300.jsonl \
   --config config/common_rag.json \
   --conditions all \
-  --top-k 5
+  --top-k 5 \
+  --use-unified-api
 ```
 
 ---
@@ -211,3 +234,26 @@ Available in `summary_label_aware_by_condition.csv` and `summary_by_condition_ca
 - **Parallelism**: Use `--parallelism <n>` to control concurrent sample processing (default is 5 for RAG, 2 for Graph).
 - **Output**: Per-question JSONL records are saved in the `per_question/` subdirectory of the experiment output.
 - **Aggregation**: `scripts/aggregate_experiment_results.py` is called automatically unless `--skip-aggregate` is passed.
+
+## Unified vs Legacy Parity Check
+
+After running both legacy and unified experiments on the same dataset/conditions, compare per-question outputs:
+
+```bash
+python3 scripts/compare_unified_parity.py \
+  --legacy-dir eval_results/multicondition_YYYYMMDD_HHMMSS \
+  --unified-dir eval_results/multicondition_YYYYMMDD_HHMMSS_unified \
+  --conditions all \
+  --output-json eval_results/parity_report.json
+```
+
+Optional thresholded failure mode:
+
+```bash
+python3 scripts/compare_unified_parity.py \
+  --legacy-dir eval_results/multicondition_legacy \
+  --unified-dir eval_results/multicondition_unified \
+  --max-mean-abs-diff 0.01 \
+  --max-max-abs-diff 0.10 \
+  --max-missing-ratio 0.0
+```

@@ -1,0 +1,60 @@
+{
+  "causal_graph": {
+    "nodes": [
+      {
+        "id": "N1",
+        "text": "Alpha",
+        "in_degree": 0,
+        "out_degree": 1
+      },
+      {
+        "id": "N2",
+        "text": "Beta",
+        "in_degree": 1,
+        "out_degree": 0
+      }
+    ],
+    "edges": [
+      {
+        "source": "N1",
+        "target": "N2",
+        "weight": 0.9
+      }
+    ],
+    "metadata": {
+      "nodeCount": 2,
+      "edgeCount": 1,
+      "hasCycle": false
+    }
+  },
+  "hippo_graph": {
+    "nodes": [
+      {
+        "name": "Alpha",
+        "type": "entity"
+      },
+      {
+        "name": "Beta",
+        "type": "entity"
+      }
+    ],
+    "edges": [
+      {
+        "source": "Alpha",
+        "target": "Beta",
+        "weight": 1.0
+      }
+    ],
+    "metadata": {
+      "nodeCount": 2,
+      "edgeCount": 1,
+      "directed": false
+    }
+  },
+  "metadata": {
+    "causalNodeCount": 2,
+    "causalEdgeCount": 1,
+    "hippoNodeCount": 2,
+    "hippoEdgeCount": 1
+  }
+}

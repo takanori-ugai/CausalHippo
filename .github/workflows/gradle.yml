@@ -36,3 +36,25 @@ jobs:
     - name: Build with Gradle Wrapper
       run: ./gradlew build
 
+    - name: Unified API Contract Gate
+      run: ./gradlew test --tests "shared.rag.unified.*"
+
+    - name: Unified Persistence Contract Gate
+      run: >
+        ./gradlew test
+        --tests "shared.rag.spi.persistence.*"
+        --tests "shared.rag.unified.UnifiedPersistence*"
+
+    - name: Unified Persistence Baseline Gate
+      run: python3 scripts/check_unified_persistence_baseline.py
+
+    - name: Unified Parity Fixture Gate
+      run: >
+        python3 scripts/compare_unified_parity.py
+        --legacy-dir src/test/resources/unified_parity/legacy
+        --unified-dir src/test/resources/unified_parity/unified
+        --conditions all
+        --max-mean-abs-diff 0.01
+        --max-max-abs-diff 0.02
+        --max-missing-ratio 0.0
+        --min-prediction-match 1.0

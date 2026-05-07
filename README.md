@@ -88,6 +88,22 @@ For cross-module runs, you can use `config/common_rag.json` (single JSON schema 
 `hipporag`, `pathrag`, and `lightrag` sections). `CausalRAG` and HippoRAG config loading support this
 format directly, and the graph experiment runners accept it via `--config`.
 
+## Unified RAG API
+
+The repository now includes a unified adapter layer in `src/main/kotlin/shared/rag/unified` built on top of
+`shared.rag.CommonRag`:
+
+- One request model: `UnifiedQuery`
+- One response model: `UnifiedResponse`
+- One factory entrypoint: `UnifiedRagFactory.create(...)`
+- Supported backends: `GraphRAG`, `LightRAG`, `PathRAG`, `HippoRAG`, `CausalRAG`, `CausalHippoRAG`
+
+Run the sample:
+
+```bash
+./gradlew execute -PmainClass=shared.rag.unified.UnifiedSampleKt
+```
+
 ### Prompt Style Behaviour
 
 `templateStyle` controls which prompt template suffix is requested during answer generation.
@@ -141,6 +157,20 @@ Run the six-condition comparison experiment (CausalRAG / HippoRAG / CausalHippoR
 This writes per-question JSONL under `eval_results/multicondition_*/per_question/` and aggregated CSV files:
 - `summary_by_condition.csv`
 - `per_question_metrics.csv`
+
+For the graph-focused evaluator (`shared.eval.graph.MultiConditionGraphExperimentKt`), you can route
+`lightrag/pathrag/graphrag` conditions through the unified API adapters with:
+
+```bash
+./gradlew execute -PmainClass=shared.eval.graph.MultiConditionGraphExperimentKt --args="--conditions all --use-unified-api true"
+```
+
+For the causal/hippo evaluator (`shared.eval.MultiConditionExperimentKt`), you can route
+`causalrag/hipporag/causalhipporag` conditions through the unified API adapters with:
+
+```bash
+./gradlew execute -PmainClass=shared.eval.MultiConditionExperimentKt --args="--conditions all --use-unified-api true"
+```
 ## OpenAlex Dataset Builder
 
 Build an evaluation dataset similar to the CausalRAG paper setup using OpenAlex plus `gpt-5.4-mini` question generation:

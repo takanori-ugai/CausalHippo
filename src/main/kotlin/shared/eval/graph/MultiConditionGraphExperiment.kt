@@ -43,6 +43,10 @@ import ragas.metrics.defaults.FaithfulnessMetric
 import ragas.model.SingleTurnSample
 import shared.config.CommonRagConfig
 import shared.config.CommonRagConfigLoader
+import shared.rag.unified.RagId
+import shared.rag.unified.UnifiedMode
+import shared.rag.unified.UnifiedQuery
+import shared.rag.unified.UnifiedRagFactory
 import java.nio.file.Files
 import java.nio.file.Path
 import java.time.Instant
@@ -174,6 +178,7 @@ private data class RunConfig(
     val dataPath: Path,
     val outputDir: Path,
     val manifestPath: Path?,
+    val commonConfigPath: Path?,
     val commonConfig: CommonRagConfig?,
     val conditions: List<Condition>,
     val topK: Int,
@@ -183,6 +188,8 @@ private data class RunConfig(
     val llmBaseUrl: String?,
     val limit: Int?,
     val parallelism: Int,
+    val useUnifiedApi: Boolean,
+    val useUnifiedPersistence: Boolean,
 )
 
 private data class RetrievalAndAnswer(
@@ -201,6 +208,9 @@ private data class BertScoreMetrics(
 
 fun main(args: Array<String>) {
     val config = parseArgs(args)
+    if (!config.useUnifiedApi) {
+        printLegacyModeDeprecationWarning("shared.eval.graph.MultiConditionGraphExperimentKt")
+    }
 
     val samples =
         Files.newBufferedReader(config.dataPath).useLines { lines ->
@@ -229,6 +239,8 @@ fun main(args: Array<String>) {
 
     println("Running ${config.conditions.size} conditions on ${samples.size} samples")
     println("Parallelism: ${config.parallelism}")
+    println("Unified API: ${config.useUnifiedApi}")
+    println("Unified persistence SPI: ${config.useUnifiedPersistence}")
     println("Data: ${config.dataPath}")
     println("Output: ${config.outputDir}")
 
@@ -250,6 +262,13 @@ fun main(args: Array<String>) {
     }
 
     println("\nFinished. Aggregate CSV can be produced by scripts/aggregate_experiment_results.py")
+}
+
+private fun printLegacyModeDeprecationWarning(entryPoint: String) {
+    println(
+        "WARNING: --use-unified-api=false keeps '$entryPoint' on legacy condition runners. " +
+            "This compatibility path is planned for deprecation; prefer --use-unified-api=true.",
+    )
 }
 
 private data class IndexedPerQuestionResult(
@@ -425,17 +444,194 @@ private fun createConditionRunner(
     condition: Condition,
     config: RunConfig,
     workerIndex: Int = 0,
-): ConditionRunner =
-    when (condition) {
+): ConditionRunner {
+    if (config.useUnifiedApi) {
+        return createUnifiedConditionRunner(
+            condition = condition,
+            config = config,
+            workdirSuffix = scopedWorkdirSuffix("${condition.id}_unified", workerIndex),
+        )
+    }
+    return when (condition) {
         Condition.LIGHTRAG -> createLightRagRunner(config, scopedWorkdirSuffix("lightrag", workerIndex))
         Condition.PATHRAG -> createPathRagRunner(config, scopedWorkdirSuffix("pathrag", workerIndex))
         Condition.GRAPHRAG -> createGraphRagRunner(config, scopedWorkdirSuffix("graphrag", workerIndex))
     }
+}
 
 private fun scopedWorkdirSuffix(
     base: String,
     workerIndex: Int,
 ): String = if (workerIndex == 0) base else "${base}_worker${workerIndex + 1}"
+
+private fun createUnifiedConditionRunner(
+    condition: Condition,
+    config: RunConfig,
+    workdirSuffix: String,
+): ConditionRunner {
+    val workdirRoot = config.outputDir.resolve("workdirs").resolve(workdirSuffix)
+    workdirRoot.createDirectories()
+    val configPath = config.commonConfigPath?.toString()
+
+    return object : ConditionRunner {
+        override val id: String = condition.id
+
+        override fun run(
+            sample: ExperimentSample,
+            docs: List<String>,
+        ): RetrievalAndAnswer {
+            val sampleWorkdir = workdirRoot.resolve(sanitizeSampleId(sample.id))
+            resetDirectory(sampleWorkdir)
+            val ragId = condition.toUnifiedRagId()
+
+            if (condition == Condition.GRAPHRAG) {
+                require(config.llmProvider == "openai") {
+                    "GraphRAG currently supports only --provider openai (got '${config.llmProvider}')"
+                }
+                val apiKey = config.commonConfig?.sharedModelSettings()?.apiKey ?: System.getenv("OPENAI_API_KEY")
+                require(!apiKey.isNullOrBlank()) { "OPENAI_API_KEY is required for GraphRAG condition." }
+            }
+
+            val handle =
+                UnifiedRagFactory.create(
+                    ragId = ragId,
+                    configPath = configPath,
+                    overrides = buildUnifiedOverrides(condition, config, sampleWorkdir),
+                )
+            val rag = handle.rag
+            return try {
+                val indexStart = System.nanoTime()
+                rag.drop()
+                rag.upsert(docs.filter { it.isNotBlank() })
+                val indexMs = elapsedMs(indexStart)
+
+                val queryText =
+                    if (condition == Condition.PATHRAG) {
+                        "Answer in one or few words, no extra information: ${sample.question}"
+                    } else {
+                        sample.question
+                    }
+                val queryStart = System.nanoTime()
+                val response =
+                    rag.query(
+                        queryText,
+                        buildUnifiedQuery(condition, config),
+                    )
+                val queryMs = elapsedMs(queryStart)
+
+                val contexts =
+                    response.context
+                        .map { it.text.trim() }
+                        .filter { it.isNotBlank() }
+                        .take(config.topK)
+                val prediction =
+                    if (condition == Condition.LIGHTRAG) {
+                        removeThinkTags(response.answer.orEmpty()).trim()
+                    } else {
+                        response.answer.orEmpty().trim()
+                    }
+
+                RetrievalAndAnswer(
+                    context = contexts,
+                    prediction = prediction,
+                    indexLatencyMs = indexMs,
+                    queryLatencyMs = queryMs,
+                    totalLatencyMs = indexMs + queryMs,
+                )
+            } finally {
+                runCatching { rag.drop() }
+            }
+        }
+    }
+}
+
+private fun Condition.toUnifiedRagId(): RagId =
+    when (this) {
+        Condition.LIGHTRAG -> RagId.LIGHT_RAG
+        Condition.PATHRAG -> RagId.PATH_RAG
+        Condition.GRAPHRAG -> RagId.GRAPH_RAG
+    }
+
+private fun buildUnifiedOverrides(
+    condition: Condition,
+    config: RunConfig,
+    sampleWorkdir: Path,
+): Map<String, Any?> {
+    val persistenceOverrides: Map<String, Any?> =
+        if (config.useUnifiedPersistence) {
+            mapOf(
+                "useUnifiedPersistence" to true,
+                "persistenceBackend" to "filesystem_snapshot",
+                "persistenceRootDir" to sampleWorkdir.resolve("unified_persistence").toString(),
+            )
+        } else {
+            emptyMap()
+        }
+
+    return when (condition) {
+        Condition.LIGHTRAG ->
+            mapOf(
+                "workingDir" to sampleWorkdir.toString(),
+            ) + persistenceOverrides
+
+        Condition.PATHRAG ->
+            mapOf(
+                "workingDir" to sampleWorkdir.toString(),
+            ) + persistenceOverrides
+
+        Condition.GRAPHRAG ->
+            mapOf(
+                "rootDir" to sampleWorkdir.toString(),
+                "chatModelName" to config.llmModel,
+                "embeddingModelName" to config.embeddingModel,
+            ) + persistenceOverrides
+    }
+}
+
+private fun buildUnifiedQuery(
+    condition: Condition,
+    config: RunConfig,
+): UnifiedQuery =
+    when (condition) {
+        Condition.LIGHTRAG ->
+            UnifiedQuery(
+                mode = UnifiedMode.HYBRID,
+                topK = config.topK,
+                includeAnswer = true,
+                includeContext = true,
+                includeReferences = true,
+                extras =
+                    mapOf(
+                        "chunkTopK" to config.topK,
+                    ),
+            )
+
+        Condition.PATHRAG ->
+            UnifiedQuery(
+                mode = UnifiedMode.HYBRID,
+                topK = config.topK,
+                includeAnswer = true,
+                includeContext = true,
+                includeReferences = false,
+                extras =
+                    mapOf(
+                        "responseType" to "One Sentence",
+                    ),
+            )
+
+        Condition.GRAPHRAG ->
+            UnifiedQuery(
+                mode = UnifiedMode.BASIC,
+                topK = config.topK,
+                includeAnswer = true,
+                includeContext = true,
+                includeReferences = true,
+                extras =
+                    mapOf(
+                        "responseType" to "Answer in one or few words.",
+                    ),
+            )
+    }
 
 private fun createLightRagRunner(
     config: RunConfig,
@@ -824,6 +1020,11 @@ private fun parseArgs(args: Array<String>): RunConfig {
     val limit = opts["limit"]?.toIntOrNull()
     val parallelism = (opts["parallelism"] ?: "5").toIntOrNull() ?: 5
     require(parallelism > 0) { "--parallelism must be positive" }
+    val useUnifiedApi = parseBooleanOption(opts["use-unified-api"]) ?: false
+    val useUnifiedPersistence = parseBooleanOption(opts["use-unified-persistence"]) ?: false
+    require(!useUnifiedPersistence || useUnifiedApi) {
+        "--use-unified-persistence requires --use-unified-api=true"
+    }
 
     val manifestPath =
         opts["manifest"]?.let { Path.of(it) }
@@ -833,6 +1034,7 @@ private fun parseArgs(args: Array<String>): RunConfig {
         dataPath = dataPath,
         outputDir = outputDir,
         manifestPath = manifestPath,
+        commonConfigPath = commonConfigPath,
         commonConfig = commonConfig,
         conditions = conditions,
         topK = topK,
@@ -842,8 +1044,17 @@ private fun parseArgs(args: Array<String>): RunConfig {
         llmBaseUrl = llmBaseUrl,
         limit = limit,
         parallelism = parallelism,
+        useUnifiedApi = useUnifiedApi,
+        useUnifiedPersistence = useUnifiedPersistence,
     )
 }
+
+private fun parseBooleanOption(raw: String?): Boolean? =
+    when (raw?.trim()?.lowercase()) {
+        "1", "true", "yes", "on" -> true
+        "0", "false", "no", "off" -> false
+        else -> null
+    }
 
 private fun detectManifestNearData(dataPath: Path): Path? {
     val parent = dataPath.parent ?: return null

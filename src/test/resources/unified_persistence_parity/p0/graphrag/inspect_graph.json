@@ -1,0 +1,50 @@
+{
+  "nodes": [
+    {
+      "id": "E1",
+      "name": "Alpha",
+      "type": "Entity",
+      "description": "Alpha node",
+      "source_chunk_id": "chunk-1",
+      "community_ids": [
+        0
+      ],
+      "text_unit_ids": [
+        "tu-1"
+      ]
+    },
+    {
+      "id": "E2",
+      "name": "Beta",
+      "type": "Entity",
+      "description": "Beta node",
+      "source_chunk_id": "chunk-2",
+      "community_ids": [
+        0
+      ],
+      "text_unit_ids": [
+        "tu-2"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "R1",
+      "source": "E1",
+      "target": "E2",
+      "type": "related_to",
+      "weight": 1.0,
+      "description": "Alpha related to Beta",
+      "source_chunk_id": "chunk-1",
+      "text_unit_ids": [
+        "tu-1"
+      ]
+    }
+  ],
+  "metadata": {
+    "nodeCount": 2,
+    "edgeCount": 1,
+    "communityCount": 1,
+    "textUnitCount": 2
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "phase": "P0",
+  "version": 1,
+  "description": "Baseline persistence inventory and fixture coverage for unified SPI planning.",
+  "rags": [
+    {
+      "ragId": "GRAPH_RAG",
+      "saveGraphPathType": "directory",
+      "loadGraphPathType": "directory",
+      "saveIncludes": {
+        "graph": true,
+        "vector": true,
+        "kv": true
+      },
+      "baseline": {
+        "inspectFixture": "graphrag/inspect_graph.json",
+        "roundTripFixtureStatus": "unavailable",
+        "roundTripFixtureNote": "GraphRAG saveGraph copies runtime index output directory; static deterministic fixture is not available without generated artifacts."
+      }
+    },
+    {
+      "ragId": "LIGHT_RAG",
+      "saveGraphPathType": "json-file",
+      "loadGraphPathType": "json-file",
+      "saveIncludes": {
+        "graph": true,
+        "vector": false,
+        "kv": false
+      },
+      "baseline": {
+        "inspectFixture": "lightrag/inspect_graph.json",
+        "roundTripFixtureStatus": "available",
+        "roundTripFixtureRoot": "lightrag"
+      }
+    },
+    {
+      "ragId": "PATH_RAG",
+      "saveGraphPathType": "json-file",
+      "loadGraphPathType": "json-file",
+      "saveIncludes": {
+        "graph": true,
+        "vector": false,
+        "kv": false
+      },
+      "baseline": {
+        "inspectFixture": "pathrag/inspect_graph.json",
+        "roundTripFixtureStatus": "available",
+        "roundTripFixtureRoot": "pathrag"
+      }
+    },
+    {
+      "ragId": "HIPPO_RAG",
+      "saveGraphPathType": "directory",
+      "loadGraphPathType": "directory",
+      "saveIncludes": {
+        "graph": true,
+        "vector": true,
+        "kv": true
+      },
+      "baseline": {
+        "inspectFixture": "hipporag/inspect_graph.json",
+        "roundTripFixtureStatus": "available",
+        "roundTripFixtureRoot": "hipporag"
+      }
+    },
+    {
+      "ragId": "CAUSAL_RAG",
+      "saveGraphPathType": "directory",
+      "loadGraphPathType": "directory",
+      "saveIncludes": {
+        "graph": true,
+        "vector": true,
+        "kv": false
+      },
+      "baseline": {
+        "inspectFixture": "causalrag/inspect_graph.json",
+        "roundTripFixtureStatus": "available",
+        "roundTripFixtureRoot": "causalrag"
+      }
+    },
+    {
+      "ragId": "CAUSAL_HIPPO_RAG",
+      "saveGraphPathType": "directory",
+      "loadGraphPathType": "directory",
+      "saveIncludes": {
+        "graph": true,
+        "vector": true,
+        "kv": true
+      },
+      "baseline": {
+        "inspectFixture": "causalhippo/inspect_graph.json",
+        "roundTripFixtureStatus": "available",
+        "roundTripFixtureRoot": "causalhippo"
+      }
+    }
+  ]
+}

@@ -56,6 +56,12 @@ object MusiQueHippoRagas {
      * - MUSIQUE_PARALLELISM (default: 5)
      */
     @Suppress("TooGenericExceptionCaught")
+    @Deprecated(
+        message =
+            "Legacy per-backend evaluator entrypoint. Prefer shared.eval.MultiConditionExperimentKt " +
+                "with --use-unified-api=true for unified adapter-based runs.",
+        level = DeprecationLevel.WARNING,
+    )
     @JvmStatic
     fun main(args: Array<String>) {
         val dataPath = resolveInputPath(args)

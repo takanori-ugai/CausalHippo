@@ -9,6 +9,12 @@ private val logger = KotlinLogging.logger {}
  *
  * @param args Command-line arguments.
  */
+@Deprecated(
+    message =
+        "Legacy evaluator entrypoint. Prefer shared.eval.MultiConditionExperimentKt " +
+            "with --use-unified-api=true for unified adapter-based runs.",
+    level = DeprecationLevel.WARNING,
+)
 fun main(args: Array<String>) {
     val options = CliUtils.parseOptions(args.toList())
     val evalDataPath =

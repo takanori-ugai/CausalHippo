@@ -1,0 +1,21 @@
+{
+  "ids": [
+    "0",
+    "1"
+  ],
+  "metadata": [
+    {
+      "source": "doc-1"
+    },
+    {
+      "source": "doc-2"
+    }
+  ],
+  "passages": [
+    "Alpha influences Beta.",
+    "Beta affects Gamma."
+  ],
+  "backend": "memory",
+  "embedding_model": "text-embedding-3-small",
+  "vector_dimension": 2
+}

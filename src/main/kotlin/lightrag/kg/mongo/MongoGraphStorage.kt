@@ -38,8 +38,15 @@ class MongoGraphStorage(
     private lateinit var edgesCollection: MongoCollection<Document>
 
     private val uri: String =
-        System.getenv("MONGO_URI") ?: "mongodb://0.0.0.0:27017/?directConnection=true"
-    private val dbName: String = System.getenv("MONGO_DATABASE") ?: "LightRAG"
+        (globalConfig["mongo_uri"] as? String)
+            ?: (globalConfig["mongoUri"] as? String)
+            ?: System.getenv("MONGO_URI")
+            ?: "mongodb://0.0.0.0:27017/?directConnection=true"
+    private val dbName: String =
+        (globalConfig["mongo_database"] as? String)
+            ?: (globalConfig["mongoDatabase"] as? String)
+            ?: System.getenv("MONGO_DATABASE")
+            ?: "LightRAG"
     private val collectionName: String = System.getenv("MONGO_KG_COLLECTION") ?: "MDB_KG"
 
     /**

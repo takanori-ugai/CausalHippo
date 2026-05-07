@@ -8,9 +8,11 @@ import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.booleanOrNull
 import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.doubleOrNull
 import kotlinx.serialization.json.intOrNull
+import kotlinx.serialization.json.longOrNull
 import java.nio.file.Files
 import java.nio.file.Path
 
@@ -19,6 +21,7 @@ import java.nio.file.Path
  *
  * {
  *   "shared": { ... },
+ *   "unified": { ... },
  *   "causalrag": { ... },
  *   "hipporag": { ... },
  *   "pathrag": { ... },
@@ -28,6 +31,7 @@ import java.nio.file.Path
  * Each module-specific section overrides equivalent values from [shared].
  *
  * @property shared defaults shared across all modules.
+ * @property unified overrides/defaults for unified API + persistence SPI wiring.
  * @property causalrag overrides for CausalRAG [CaualRagConfig] resolution.
  * @property hipporag overrides for HippoRAG [BaseConfig] resolution.
  * @property pathrag overrides for PathRAG runtime/config resolution.
@@ -35,6 +39,7 @@ import java.nio.file.Path
  */
 data class CommonRagConfig(
     val shared: JsonObject = JsonObject(emptyMap()),
+    val unified: JsonObject = JsonObject(emptyMap()),
     val causalrag: JsonObject = JsonObject(emptyMap()),
     val hipporag: JsonObject = JsonObject(emptyMap()),
     val pathrag: JsonObject = JsonObject(emptyMap()),
@@ -280,6 +285,35 @@ data class CommonRagConfig(
         replaceWith = ReplaceWith("toLightRagConfig()"),
     )
     fun toLightRagSettings(): LightRagConfig = toLightRagConfig()
+
+    /**
+     * Resolves unified persistence defaults from the [unified] section.
+     *
+     * Supported keys:
+     * - `useUnifiedPersistence`
+     * - `useUnifiedSpiForRetrievalAndIndex`
+     * - `persistenceBackend`
+     * - `persistenceRootDir`
+     * - `persistenceConfig`
+     *
+     * @return map suitable for merging with unified factory overrides.
+     */
+    fun unifiedPersistenceOverrides(): Map<String, Any?> {
+        val overrides = linkedMapOf<String, Any?>()
+        firstBoolean(unified, "useUnifiedPersistence")?.let { overrides["useUnifiedPersistence"] = it }
+        firstBoolean(unified, "useUnifiedSpiForRetrievalAndIndex")?.let {
+            overrides["useUnifiedSpiForRetrievalAndIndex"] = it
+        }
+        firstString(unified, "persistenceBackend")?.let { overrides["persistenceBackend"] = it }
+        firstString(unified, "persistenceRootDir")?.let { overrides["persistenceRootDir"] = it }
+        firstObject(unified, "persistenceConfig")?.let { cfg ->
+            val map = cfg.toAnyMap()
+            if (map.isNotEmpty()) {
+                overrides["persistenceConfig"] = map
+            }
+        }
+        return overrides
+    }
 }
 
 /**
@@ -444,6 +478,7 @@ object CommonRagConfigLoader {
         if (!looksLikeCommonConfig(root)) return null
         return CommonRagConfig(
             shared = root["shared"] as? JsonObject ?: JsonObject(emptyMap()),
+            unified = root["unified"] as? JsonObject ?: JsonObject(emptyMap()),
             causalrag = root["causalrag"] as? JsonObject ?: JsonObject(emptyMap()),
             hipporag = root["hipporag"] as? JsonObject ?: JsonObject(emptyMap()),
             pathrag = root["pathrag"] as? JsonObject ?: JsonObject(emptyMap()),
@@ -473,6 +508,7 @@ object CommonRagConfigLoader {
 
     private fun looksLikeCommonConfig(root: JsonObject): Boolean =
         root.containsKey("shared") ||
+            root.containsKey("unified") ||
             root.containsKey("causalrag") ||
             root.containsKey("hipporag") ||
             root.containsKey("pathrag") ||
@@ -538,6 +574,28 @@ private fun firstDouble(
     return null
 }
 
+private fun firstBoolean(
+    source: JsonObject,
+    vararg keys: String,
+): Boolean? {
+    for (key in keys) {
+        val value = source[key] as? JsonPrimitive ?: continue
+        value.booleanOrNull?.let { return it }
+    }
+    return null
+}
+
+private fun firstObject(
+    source: JsonObject,
+    vararg keys: String,
+): JsonObject? {
+    for (key in keys) {
+        val value = source[key] as? JsonObject ?: continue
+        return value
+    }
+    return null
+}
+
 private fun firstStringList(
     source: JsonObject,
     vararg keys: String,
@@ -548,6 +606,23 @@ private fun firstStringList(
     }
     return null
 }
+
+private fun JsonObject.toAnyMap(): Map<String, Any?> = this.entries.associate { (k, v) -> k to v.toAnyValue() }
+
+private fun JsonElement.toAnyValue(): Any? =
+    when (this) {
+        is JsonObject -> this.toAnyMap()
+        is JsonArray -> this.map { it.toAnyValue() }
+        is JsonPrimitive ->
+            when {
+                this.toString().startsWith("\"") -> this.contentOrNull
+                this.booleanOrNull != null -> this.booleanOrNull
+                this.intOrNull != null -> this.intOrNull
+                this.longOrNull != null -> this.longOrNull
+                this.doubleOrNull != null -> this.doubleOrNull
+                else -> this.contentOrNull
+            }
+    }
 
 private fun MutableMap<String, String>.putIfNonBlank(
     key: String,

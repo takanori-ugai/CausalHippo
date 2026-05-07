@@ -25,6 +25,10 @@ import kotlinx.serialization.json.contentOrNull
 import ragas.metrics.collections.ResponseGroundednessMetric
 import ragas.metrics.defaults.FaithfulnessMetric
 import ragas.model.SingleTurnSample
+import shared.rag.unified.RagId
+import shared.rag.unified.UnifiedMode
+import shared.rag.unified.UnifiedQuery
+import shared.rag.unified.UnifiedRagFactory
 import java.nio.file.Files
 import java.nio.file.Path
 import java.time.Instant
@@ -181,6 +185,8 @@ private data class RunConfig(
     val templateStyle: String,
     val limit: Int?,
     val parallelism: Int,
+    val useUnifiedApi: Boolean,
+    val useUnifiedPersistence: Boolean,
 )
 
 private data class RetrievalAndAnswer(
@@ -199,6 +205,9 @@ private data class BertScoreMetrics(
 
 fun main(args: Array<String>) {
     val config = parseArgs(args)
+    if (!config.useUnifiedApi) {
+        printLegacyModeDeprecationWarning("shared.eval.MultiConditionExperimentKt")
+    }
 
     val samples =
         Files.newBufferedReader(config.dataPath).useLines { lines ->
@@ -227,6 +236,8 @@ fun main(args: Array<String>) {
 
     println("Running ${config.conditions.size} conditions on ${samples.size} samples")
     println("Parallelism: ${config.parallelism}")
+    println("Unified API: ${config.useUnifiedApi}")
+    println("Unified persistence SPI: ${config.useUnifiedPersistence}")
     println("Data: ${config.dataPath}")
     println("Output: ${config.outputDir}")
 
@@ -248,6 +259,13 @@ fun main(args: Array<String>) {
     }
 
     println("\nFinished. Aggregate CSV can be produced by scripts/aggregate_experiment_results.py")
+}
+
+private fun printLegacyModeDeprecationWarning(entryPoint: String) {
+    println(
+        "WARNING: --use-unified-api=false keeps '$entryPoint' on legacy condition runners. " +
+            "This compatibility path is planned for deprecation; prefer --use-unified-api=true.",
+    )
 }
 
 private data class IndexedPerQuestionResult(
@@ -423,8 +441,15 @@ private fun createConditionRunner(
     condition: Condition,
     config: RunConfig,
     workerIndex: Int = 0,
-): ConditionRunner =
-    when (condition) {
+): ConditionRunner {
+    if (config.useUnifiedApi) {
+        return createUnifiedConditionRunner(
+            condition = condition,
+            config = config,
+            workdirSuffix = scopedWorkdirSuffix("${condition.id}_unified", workerIndex),
+        )
+    }
+    return when (condition) {
         Condition.CAUSALRAG_FIXED -> {
             createCausalRagRunner(
                 config = config,
@@ -475,11 +500,213 @@ private fun createConditionRunner(
             createCausalHippoAblationRunner(config, scopedWorkdirSuffix("ablation", workerIndex))
         }
     }
+}
 
 private fun scopedWorkdirSuffix(
     base: String,
     workerIndex: Int,
 ): String = if (workerIndex == 0) base else "${base}_worker${workerIndex + 1}"
+
+private fun createUnifiedConditionRunner(
+    condition: Condition,
+    config: RunConfig,
+    workdirSuffix: String,
+): ConditionRunner {
+    val workdirRoot = config.outputDir.resolve("workdirs").resolve(workdirSuffix)
+    workdirRoot.createDirectories()
+    val handle =
+        UnifiedRagFactory.create(
+            ragId = condition.toUnifiedRagId(),
+            configPath = config.configPath,
+            overrides = buildUnifiedOverrides(condition, config, workdirRoot),
+        )
+    val rag = handle.rag
+    val ablationLlm =
+        if (condition == Condition.CAUSALHIPPO_ABLATION_NO_RERANK) {
+            LLMInterface(
+                modelName = config.llmModel,
+                provider = config.llmProvider,
+                baseUrl = config.llmBaseUrl,
+            )
+        } else {
+            null
+        }
+
+    return object : ConditionRunner {
+        override val id: String = condition.id
+
+        override fun run(
+            sample: ExperimentSample,
+            docs: List<String>,
+        ): RetrievalAndAnswer {
+            val indexStart = System.nanoTime()
+            rag.drop()
+            rag.upsert(docs.filter { it.isNotBlank() })
+            val indexMs = elapsedMs(indexStart)
+
+            val queryStart = System.nanoTime()
+            val queryResult = rag.query(sample.question, buildUnifiedQuery(condition, config))
+            val context =
+                queryResult.context
+                    .map { it.text.trim() }
+                    .filter { it.isNotBlank() }
+                    .take(config.topK)
+            val prediction =
+                if (condition == Condition.CAUSALHIPPO_ABLATION_NO_RERANK) {
+                    val llm = requireNotNull(ablationLlm) { "Ablation LLM must be initialized." }
+                    val prompt =
+                        buildPrompt(
+                            sample.question,
+                            context,
+                            causalPaths = queryResult.graphPaths,
+                            causalNodes = emptyList(),
+                            templateStyle = config.templateStyle,
+                            llmInterface = llm,
+                        )
+                    llm.generate(prompt, jsonMode = requiresJsonResponseFormat(config.templateStyle))
+                } else {
+                    queryResult.answer.orEmpty().trim()
+                }
+            val queryMs = elapsedMs(queryStart)
+
+            return RetrievalAndAnswer(
+                context = context,
+                prediction = prediction,
+                indexLatencyMs = indexMs,
+                queryLatencyMs = queryMs,
+                totalLatencyMs = indexMs + queryMs,
+            )
+        }
+    }
+}
+
+private fun Condition.toUnifiedRagId(): RagId =
+    when (this) {
+        Condition.CAUSALRAG_FIXED,
+        Condition.CAUSALRAG_ADAPT,
+        -> RagId.CAUSAL_RAG
+
+        Condition.HIPPORAG_GRAPH,
+        Condition.HIPPORAG_DPR,
+        -> RagId.HIPPO_RAG
+
+        Condition.CAUSALHIPPO_FIXED,
+        Condition.CAUSALHIPPO_ADAPTIVE,
+        Condition.CAUSALHIPPO_ABLATION_NO_RERANK,
+        -> RagId.CAUSAL_HIPPO_RAG
+    }
+
+private fun buildUnifiedOverrides(
+    condition: Condition,
+    config: RunConfig,
+    workdirRoot: Path,
+): Map<String, Any?> {
+    val persistenceOverrides: Map<String, Any?> =
+        if (config.useUnifiedPersistence) {
+            mapOf(
+                "useUnifiedPersistence" to true,
+                "persistenceBackend" to "filesystem_snapshot",
+                "persistenceRootDir" to workdirRoot.resolve("unified_persistence").toString(),
+            )
+        } else {
+            emptyMap()
+        }
+    val baseHippoOverrides =
+        mapOf(
+            "saveDir" to workdirRoot.toString(),
+            "llmModelName" to config.llmModel,
+            "embeddingModelName" to config.embeddingModel,
+            "llmProvider" to config.llmProvider,
+            "embeddingProvider" to config.llmProvider,
+            "llmBaseUrl" to config.llmBaseUrl,
+            "embeddingBaseUrl" to config.llmBaseUrl,
+            "openAiApiKey" to System.getenv("OPENAI_API_KEY"),
+            "retrievalTopK" to config.topK,
+            "qaTopK" to config.topK,
+        )
+
+    return when (condition) {
+        Condition.CAUSALRAG_FIXED ->
+            mapOf(
+                "modelName" to config.llmModel,
+                "embeddingModel" to config.embeddingModel,
+                "templateStyle" to config.templateStyle,
+                "dynamicWeightingEnabled" to false,
+                "twoPassAdaptiveEnabled" to false,
+                "confidenceBasedSwitchEnabled" to false,
+            ) + persistenceOverrides
+
+        Condition.CAUSALRAG_ADAPT ->
+            mapOf(
+                "modelName" to config.llmModel,
+                "embeddingModel" to config.embeddingModel,
+                "templateStyle" to config.templateStyle,
+                "dynamicWeightingEnabled" to true,
+                "twoPassAdaptiveEnabled" to true,
+                "confidenceBasedSwitchEnabled" to true,
+            ) + persistenceOverrides
+
+        Condition.HIPPORAG_GRAPH,
+        Condition.HIPPORAG_DPR,
+        -> baseHippoOverrides + persistenceOverrides
+
+        Condition.CAUSALHIPPO_FIXED ->
+            baseHippoOverrides +
+                mapOf(
+                    "modelName" to config.llmModel,
+                    "embeddingModel" to config.embeddingModel,
+                    "templateStyle" to config.templateStyle,
+                    "dynamicWeightingEnabled" to false,
+                    "twoPassAdaptiveEnabled" to false,
+                    "confidenceBasedSwitchEnabled" to false,
+                ) +
+                persistenceOverrides
+
+        Condition.CAUSALHIPPO_ADAPTIVE,
+        Condition.CAUSALHIPPO_ABLATION_NO_RERANK,
+        -> baseHippoOverrides +
+            mapOf(
+                "modelName" to config.llmModel,
+                "embeddingModel" to config.embeddingModel,
+                "templateStyle" to config.templateStyle,
+                "dynamicWeightingEnabled" to true,
+                "twoPassAdaptiveEnabled" to true,
+                "confidenceBasedSwitchEnabled" to true,
+            ) +
+            persistenceOverrides
+    }
+}
+
+private fun buildUnifiedQuery(
+    condition: Condition,
+    config: RunConfig,
+): UnifiedQuery =
+    when (condition) {
+        Condition.CAUSALRAG_FIXED,
+        Condition.CAUSALRAG_ADAPT,
+        -> UnifiedQuery(mode = UnifiedMode.CAUSAL, topK = config.topK, includeReferences = true)
+
+        Condition.HIPPORAG_GRAPH ->
+            UnifiedQuery(mode = UnifiedMode.GRAPH, topK = config.topK, includeReferences = true)
+
+        Condition.HIPPORAG_DPR ->
+            UnifiedQuery(mode = UnifiedMode.DPR, topK = config.topK, includeReferences = true)
+
+        Condition.CAUSALHIPPO_FIXED,
+        Condition.CAUSALHIPPO_ADAPTIVE,
+        -> UnifiedQuery(mode = UnifiedMode.CAUSAL, topK = config.topK, includeReferences = true)
+
+        Condition.CAUSALHIPPO_ABLATION_NO_RERANK ->
+            UnifiedQuery(
+                mode = UnifiedMode.CAUSAL,
+                topK = config.topK,
+                includeAnswer = false,
+                includeContext = true,
+                includeReferences = false,
+                includeGraphPaths = true,
+                extras = mapOf("maxPaths" to 3),
+            )
+    }
 
 private fun createCausalRagRunner(
     config: RunConfig,
@@ -780,6 +1007,11 @@ private fun parseArgs(args: Array<String>): RunConfig {
     val limit = opts["limit"]?.toIntOrNull()
     val parallelism = (opts["parallelism"] ?: "5").toIntOrNull() ?: 5
     require(parallelism > 0) { "--parallelism must be positive" }
+    val useUnifiedApi = parseBooleanOption(opts["use-unified-api"]) ?: false
+    val useUnifiedPersistence = parseBooleanOption(opts["use-unified-persistence"]) ?: false
+    require(!useUnifiedPersistence || useUnifiedApi) {
+        "--use-unified-persistence requires --use-unified-api=true"
+    }
 
     val manifestPath =
         opts["manifest"]?.let { Path.of(it) }
@@ -799,8 +1031,17 @@ private fun parseArgs(args: Array<String>): RunConfig {
         templateStyle = templateStyle,
         limit = limit,
         parallelism = parallelism,
+        useUnifiedApi = useUnifiedApi,
+        useUnifiedPersistence = useUnifiedPersistence,
     )
 }
+
+private fun parseBooleanOption(raw: String?): Boolean? =
+    when (raw?.trim()?.lowercase()) {
+        "1", "true", "yes", "on" -> true
+        "0", "false", "no", "off" -> false
+        else -> null
+    }
 
 private fun detectManifestNearData(dataPath: Path): Path? {
     val parent = dataPath.parent ?: return null

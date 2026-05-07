@@ -1,0 +1,31 @@
+{
+  "nodes": {
+    "N1": "Alpha",
+    "N2": "Beta"
+  },
+  "variants": {
+    "N1": [
+      "alpha"
+    ],
+    "N2": [
+      "beta"
+    ]
+  },
+  "edges": [
+    {
+      "from": "N1",
+      "to": "N2",
+      "weight": 0.9
+    }
+  ],
+  "embeddings": {
+    "N1": [
+      0.1,
+      0.2
+    ],
+    "N2": [
+      0.2,
+      0.3
+    ]
+  }
+}

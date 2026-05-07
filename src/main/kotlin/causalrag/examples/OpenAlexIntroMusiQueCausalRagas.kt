@@ -66,6 +66,12 @@ object OpenAlexIntroMusiQueCausalRagas {
      * - MUSIQUE_PARALLELISM (default: 5)
      */
     @Suppress("TooGenericExceptionCaught")
+    @Deprecated(
+        message =
+            "Legacy evaluator entrypoint. Prefer shared.eval.MultiConditionExperimentKt " +
+                "with --use-unified-api=true for unified adapter-based runs.",
+        level = DeprecationLevel.WARNING,
+    )
     @JvmStatic
     fun main(args: Array<String>) {
         val dataPath = resolveInputPath(args)

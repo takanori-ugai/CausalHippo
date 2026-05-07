@@ -7,6 +7,17 @@
     "embeddingApiKey": null,
     "llmBaseUrl": null
   },
+  "unified": {
+    "useUnifiedPersistence": true,
+    "useUnifiedSpiForRetrievalAndIndex": true,
+    "persistenceBackend": "filesystem_snapshot",
+    "persistenceRootDir": "./unified_persistence",
+    "persistenceConfig": {
+      "metadata": {
+        "source": "config/common_rag.json"
+      }
+    }
+  },
   "causalrag": {
     "graphPath": null,
     "indexPath": null,

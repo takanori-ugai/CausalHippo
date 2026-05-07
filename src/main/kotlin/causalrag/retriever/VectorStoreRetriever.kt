@@ -425,6 +425,21 @@ class VectorStoreRetriever(
     fun getMetadata(): List<Map<String, Any>> = metadata.toList()
 
     /**
+     * Returns raw vectors currently stored in the index.
+     *
+     * @return Defensive copies of indexed vectors.
+     */
+    fun getVectors(): List<DoubleArray> = vectors.map { it.copyOf() }
+
+    /**
+     * Encodes arbitrary text with the retriever's configured encoder.
+     *
+     * @param text Input text to embed.
+     * @return Embedding vector or `null` when the encoder is unavailable.
+     */
+    fun encodeForQuery(text: String): DoubleArray? = encoder?.encode(text)
+
+    /**
      * Clears all in-memory vectors, passages, and metadata.
      */
     fun clear() {

@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {
+      "name": "Alpha",
+      "type": "entity"
+    },
+    {
+      "name": "Beta",
+      "type": "entity"
+    }
+  ],
+  "edges": [
+    {
+      "source": "Alpha",
+      "target": "Beta",
+      "weight": 1.0
+    }
+  ],
+  "metadata": {
+    "nodeCount": 2,
+    "edgeCount": 1,
+    "directed": false
+  }
+}
