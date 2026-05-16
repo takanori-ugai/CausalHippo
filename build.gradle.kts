@@ -96,8 +96,8 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.21.3")
     implementation("org.jgrapht:jgrapht-core:$jgraphtVersion")
     // Keep Hadoop before parquet-floor on classpath: parquet-floor bundles a stub FSDataInputStream.
-    implementation("org.apache.hadoop:hadoop-client-api:3.4.1")
-    runtimeOnly("org.apache.hadoop:hadoop-client-runtime:3.4.1")
+    implementation("org.apache.hadoop:hadoop-client-api:3.5.0")
+    runtimeOnly("org.apache.hadoop:hadoop-client-runtime:3.5.0")
     implementation("blue.strategic.parquet:parquet-floor:1.69")
     implementation("info.picocli:picocli:4.7.6")
     implementation("nl.cwts:networkanalysis:$networkAnalysisVersion")
