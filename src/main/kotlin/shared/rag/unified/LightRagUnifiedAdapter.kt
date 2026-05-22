@@ -1,9 +1,9 @@
 package shared.rag.unified
 
+import kotlinx.coroutines.runBlocking
 import lightrag.core.LightRAG
 import lightrag.core.QueryParam as LightQueryParam
 import lightrag.core.QueryResult as LightQueryResult
-import kotlinx.coroutines.runBlocking
 
 /**
  * Unified adapter for LightRAG.
@@ -153,10 +153,11 @@ class LightRagUnifiedAdapter(
                 val groupItems = value as? List<*> ?: return@forEach
                 groupItems.forEachIndexed { index, row ->
                     val rowMap = asStringMap(row)
-                    val text = rowMap["content"]?.toString()?.ifBlank { null }
-                        ?: rowMap["text"]?.toString()?.ifBlank { null }
-                        ?: rowMap["description"]?.toString()?.ifBlank { null }
-                        ?: rowMap.toString()
+                    val text =
+                        rowMap["content"]?.toString()?.ifBlank { null }
+                            ?: rowMap["text"]?.toString()?.ifBlank { null }
+                            ?: rowMap["description"]?.toString()?.ifBlank { null }
+                            ?: rowMap.toString()
                     rows +=
                         ContextItem(
                             id = "$group:$index",

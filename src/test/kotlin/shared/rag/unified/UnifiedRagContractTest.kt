@@ -4,7 +4,6 @@ import causalhippo.CausalHippoRAG
 import causalrag.CausalRAG
 import causalrag.CausalRagRunResult
 import com.microsoft.graphrag.GraphRAG
-import com.microsoft.graphrag.query.QueryResult as GraphQueryResult
 import hipporag.HippoRAG
 import hipporag.utils.QuerySolution
 import io.mockk.coEvery
@@ -12,11 +11,12 @@ import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
 import lightrag.core.LightRAG
-import lightrag.core.QueryResult as LightQueryResult
 import pathrag.PathRAG
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
+import com.microsoft.graphrag.query.QueryResult as GraphQueryResult
+import lightrag.core.QueryResult as LightQueryResult
 
 class UnifiedRagContractTest {
     @Test

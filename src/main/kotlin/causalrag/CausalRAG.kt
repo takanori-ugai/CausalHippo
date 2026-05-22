@@ -621,7 +621,12 @@ class CausalRAG(
         val metadata = vectorRetriever.getMetadata()
         val records =
             passages.mapIndexedNotNull { index, passage ->
-                val id = metadata.getOrNull(index)?.get("id")?.toString()?.takeIf { it.isNotBlank() } ?: index.toString()
+                val id =
+                    metadata
+                        .getOrNull(index)
+                        ?.get("id")
+                        ?.toString()
+                        ?.takeIf { it.isNotBlank() } ?: index.toString()
                 val vector = vectors.getOrNull(index)?.toList() ?: vectorRetriever.encodeForQuery(passage)?.toList()
                 if (vector.isNullOrEmpty()) {
                     null
@@ -691,7 +696,9 @@ class CausalRAG(
             }
         val metadata =
             records.map { record ->
-                record.metadata.entries.mapNotNull { (key, value) -> value?.let { key to it } }.toMap()
+                record.metadata.entries
+                    .mapNotNull { (key, value) -> value?.let { key to it } }
+                    .toMap()
             }
         val ids = records.map { it.id }
 

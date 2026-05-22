@@ -2,11 +2,6 @@ package shared.rag.spi.persistence
 
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import java.nio.file.Files
-import java.nio.file.Path
-import java.time.Instant
-import java.util.Base64
-import kotlin.math.sqrt
 import org.neo4j.driver.AuthTokens
 import org.neo4j.driver.Driver
 import org.neo4j.driver.GraphDatabase
@@ -15,6 +10,11 @@ import org.neo4j.driver.Session
 import org.neo4j.driver.SessionConfig
 import org.neo4j.driver.TransactionContext
 import org.neo4j.driver.Values
+import java.nio.file.Files
+import java.nio.file.Path
+import java.time.Instant
+import java.util.Base64
+import kotlin.math.sqrt
 
 /**
  * Neo4j-backed persistence backend for graph/vector/kv/artifact state.
@@ -26,7 +26,8 @@ class Neo4jPersistenceBackend : PersistenceBackendFactory {
         val password = config.string("password") ?: config.string("neo4jPassword") ?: "password"
         val database = config.string("database") ?: config.string("neo4jDatabase")
         val rootDir =
-            config.string("rootDir")
+            config
+                .string("rootDir")
                 ?.trim()
                 ?.takeIf { it.isNotEmpty() }
                 ?.let { Path.of(it).toAbsolutePath().normalize() }

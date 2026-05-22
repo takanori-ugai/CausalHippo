@@ -1,8 +1,8 @@
 package shared.rag.spi.persistence
 
+import kotlinx.coroutines.runBlocking
 import java.nio.file.Files
 import java.nio.file.Path
-import kotlinx.coroutines.runBlocking
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull

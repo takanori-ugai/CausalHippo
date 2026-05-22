@@ -1,9 +1,9 @@
 package shared.rag.unified
 
 import com.microsoft.graphrag.GraphRAG
+import kotlinx.coroutines.runBlocking
 import com.microsoft.graphrag.QueryParam as GraphQueryParam
 import com.microsoft.graphrag.query.QueryResult as GraphQueryResult
-import kotlinx.coroutines.runBlocking
 
 /**
  * Unified adapter for GraphRAG.

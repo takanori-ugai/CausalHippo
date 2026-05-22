@@ -569,22 +569,25 @@ private fun buildUnifiedOverrides(
         }
 
     return when (condition) {
-        Condition.LIGHTRAG ->
+        Condition.LIGHTRAG -> {
             mapOf(
                 "workingDir" to sampleWorkdir.toString(),
             ) + persistenceOverrides
+        }
 
-        Condition.PATHRAG ->
+        Condition.PATHRAG -> {
             mapOf(
                 "workingDir" to sampleWorkdir.toString(),
             ) + persistenceOverrides
+        }
 
-        Condition.GRAPHRAG ->
+        Condition.GRAPHRAG -> {
             mapOf(
                 "rootDir" to sampleWorkdir.toString(),
                 "chatModelName" to config.llmModel,
                 "embeddingModelName" to config.embeddingModel,
             ) + persistenceOverrides
+        }
     }
 }
 
@@ -593,7 +596,7 @@ private fun buildUnifiedQuery(
     config: RunConfig,
 ): UnifiedQuery =
     when (condition) {
-        Condition.LIGHTRAG ->
+        Condition.LIGHTRAG -> {
             UnifiedQuery(
                 mode = UnifiedMode.HYBRID,
                 topK = config.topK,
@@ -605,8 +608,9 @@ private fun buildUnifiedQuery(
                         "chunkTopK" to config.topK,
                     ),
             )
+        }
 
-        Condition.PATHRAG ->
+        Condition.PATHRAG -> {
             UnifiedQuery(
                 mode = UnifiedMode.HYBRID,
                 topK = config.topK,
@@ -618,8 +622,9 @@ private fun buildUnifiedQuery(
                         "responseType" to "One Sentence",
                     ),
             )
+        }
 
-        Condition.GRAPHRAG ->
+        Condition.GRAPHRAG -> {
             UnifiedQuery(
                 mode = UnifiedMode.BASIC,
                 topK = config.topK,
@@ -631,6 +636,7 @@ private fun buildUnifiedQuery(
                         "responseType" to "Answer in one or few words.",
                     ),
             )
+        }
     }
 
 private fun createLightRagRunner(

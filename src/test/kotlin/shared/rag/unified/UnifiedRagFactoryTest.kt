@@ -1,9 +1,9 @@
 package shared.rag.unified
 
-import java.nio.file.Files
-import java.nio.file.Path
 import shared.rag.spi.persistence.VectorRecord
 import shared.rag.spi.persistence.VectorSnapshot
+import java.nio.file.Files
+import java.nio.file.Path
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
@@ -148,7 +148,7 @@ class UnifiedRagFactoryTest {
             val metadata = inspect["metadata"] as Map<*, *>
             assertEquals("in_memory", metadata["persistenceBackend"])
             assertTrue(
-                Files.exists(Path.of("${snapshotPath}.unified_spi").resolve("manifest.json")),
+                Files.exists(Path.of("$snapshotPath.unified_spi").resolve("manifest.json")),
             )
             handle.close()
         } finally {

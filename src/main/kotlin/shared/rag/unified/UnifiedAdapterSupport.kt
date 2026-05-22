@@ -59,10 +59,11 @@ internal fun buildMetadata(
     unsupported: List<String> = emptyList(),
     extra: Map<String, Any?> = emptyMap(),
 ): Map<String, Any?> {
-    val metadata = mutableMapOf<String, Any?>(
-        "ragId" to ragId.name,
-        "modeUsed" to modeUsed,
-    )
+    val metadata =
+        mutableMapOf<String, Any?>(
+            "ragId" to ragId.name,
+            "modeUsed" to modeUsed,
+        )
     if (unsupported.isNotEmpty()) {
         metadata["unsupported"] = unsupported
     }

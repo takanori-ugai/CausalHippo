@@ -1,19 +1,19 @@
 package shared.rag.unified
 
-import java.nio.file.Files
-import java.nio.file.Path
-import java.time.Instant
 import kotlinx.coroutines.runBlocking
+import shared.rag.spi.persistence.FilesystemSnapshotBackend
 import shared.rag.spi.persistence.GraphEdgeRecord
 import shared.rag.spi.persistence.GraphNodeRecord
 import shared.rag.spi.persistence.GraphSnapshot
 import shared.rag.spi.persistence.InMemoryPersistenceBackend
+import shared.rag.spi.persistence.KvSnapshot
 import shared.rag.spi.persistence.MongoDbPersistenceBackend
 import shared.rag.spi.persistence.Neo4jPersistenceBackend
 import shared.rag.spi.persistence.PersistenceBackendFactory
 import shared.rag.spi.persistence.PersistenceSession
-import shared.rag.spi.persistence.FilesystemSnapshotBackend
-import shared.rag.spi.persistence.KvSnapshot
+import java.nio.file.Files
+import java.nio.file.Path
+import java.time.Instant
 
 internal class UnifiedPersistenceAdapter(
     private val ragId: RagId,
@@ -162,15 +162,28 @@ internal object UnifiedPersistenceFactory {
 
     private fun resolveBackend(name: String): PersistenceBackendFactory =
         when (name.trim().lowercase()) {
-            "filesystem", "filesystem_snapshot", "fs" -> FilesystemSnapshotBackend()
-            "in_memory", "inmemory", "memory" -> InMemoryPersistenceBackend()
-            "neo4j" -> Neo4jPersistenceBackend()
-            "mongodb", "mongo" -> MongoDbPersistenceBackend()
-            else ->
+            "filesystem", "filesystem_snapshot", "fs" -> {
+                FilesystemSnapshotBackend()
+            }
+
+            "in_memory", "inmemory", "memory" -> {
+                InMemoryPersistenceBackend()
+            }
+
+            "neo4j" -> {
+                Neo4jPersistenceBackend()
+            }
+
+            "mongodb", "mongo" -> {
+                MongoDbPersistenceBackend()
+            }
+
+            else -> {
                 error(
                     "Unsupported unified persistence backend '$name'. " +
                         "Supported: filesystem_snapshot, in_memory, neo4j, mongodb",
                 )
+            }
         }
 
     private fun buildConfig(overrides: Map<String, Any?>): Map<String, Any?> {

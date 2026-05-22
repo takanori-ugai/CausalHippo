@@ -598,7 +598,10 @@ class LightRAG(
                 .vector(unifiedSpiVectorNamespace, dimensions = queryEmbedding.size, metric = "cosine")
                 .query(queryEmbedding, topK = topK.coerceAtLeast(1))
                 .mapNotNull { record ->
-                    record.metadata["content"]?.toString()?.trim()?.takeIf { it.isNotBlank() }
+                    record.metadata["content"]
+                        ?.toString()
+                        ?.trim()
+                        ?.takeIf { it.isNotBlank() }
                 }
         } catch (ex: RuntimeException) {
             logger.warn(ex) { "Unified SPI vector retrieval failed for LightRAG." }
@@ -829,7 +832,11 @@ class LightRAG(
     private fun embedForSpi(text: String): List<Double>? {
         val model = embeddingModelForSpi ?: storageManager.chunksVdb.embeddingFunc
         return try {
-            model.embed(text).content().vector().map { it.toDouble() }
+            model
+                .embed(text)
+                .content()
+                .vector()
+                .map { it.toDouble() }
         } catch (ex: RuntimeException) {
             logger.warn(ex) { "Failed to embed text for LightRAG unified SPI indexing/retrieval." }
             null

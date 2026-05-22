@@ -1,8 +1,8 @@
 package causalhippo
 
+import causalrag.CausalRagRunResult
 import causalrag.causalgraph.builder.CausalGraphBuilder
 import causalrag.causalgraph.retriever.CausalPathRetriever
-import causalrag.CausalRagRunResult
 import causalrag.generator.llm.LLMInterface
 import causalrag.generator.promptbuilder.buildPrompt
 import causalrag.reranker.CausalPathReranker

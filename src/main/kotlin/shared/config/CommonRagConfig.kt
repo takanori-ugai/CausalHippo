@@ -611,9 +611,15 @@ private fun JsonObject.toAnyMap(): Map<String, Any?> = this.entries.associate { 
 
 private fun JsonElement.toAnyValue(): Any? =
     when (this) {
-        is JsonObject -> this.toAnyMap()
-        is JsonArray -> this.map { it.toAnyValue() }
-        is JsonPrimitive ->
+        is JsonObject -> {
+            this.toAnyMap()
+        }
+
+        is JsonArray -> {
+            this.map { it.toAnyValue() }
+        }
+
+        is JsonPrimitive -> {
             when {
                 this.toString().startsWith("\"") -> this.contentOrNull
                 this.booleanOrNull != null -> this.booleanOrNull
@@ -622,6 +628,7 @@ private fun JsonElement.toAnyValue(): Any? =
                 this.doubleOrNull != null -> this.doubleOrNull
                 else -> this.contentOrNull
             }
+        }
     }
 
 private fun MutableMap<String, String>.putIfNonBlank(

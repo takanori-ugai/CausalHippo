@@ -11,35 +11,37 @@ class PersistenceBackendContractTest {
     @Test
     fun `neo4j backend session initializes capability metadata`() {
         val backend = Neo4jPersistenceBackend()
-        backend.open(
-            mapOf(
-                "uri" to "bolt://localhost:7687",
-                "username" to "neo4j",
-                "password" to "test",
-                "database" to "neo4j",
-            ),
-        ).use { session ->
-            assertEquals("neo4j", session.backendId)
-            assertTrue(session.capabilities.supportsGraphPersistence)
-            assertTrue(session.capabilities.supportsVectorPersistence)
-            assertTrue(session.capabilities.supportsKvPersistence)
-        }
+        backend
+            .open(
+                mapOf(
+                    "uri" to "bolt://localhost:7687",
+                    "username" to "neo4j",
+                    "password" to "test",
+                    "database" to "neo4j",
+                ),
+            ).use { session ->
+                assertEquals("neo4j", session.backendId)
+                assertTrue(session.capabilities.supportsGraphPersistence)
+                assertTrue(session.capabilities.supportsVectorPersistence)
+                assertTrue(session.capabilities.supportsKvPersistence)
+            }
     }
 
     @Test
     fun `mongodb backend session initializes capability metadata`() {
         val backend = MongoDbPersistenceBackend()
-        backend.open(
-            mapOf(
-                "connectionString" to "mongodb://localhost:27017",
-                "database" to "unified_rag_test",
-            ),
-        ).use { session ->
-            assertEquals("mongodb", session.backendId)
-            assertTrue(session.capabilities.supportsGraphPersistence)
-            assertTrue(session.capabilities.supportsVectorPersistence)
-            assertTrue(session.capabilities.supportsKvPersistence)
-        }
+        backend
+            .open(
+                mapOf(
+                    "connectionString" to "mongodb://localhost:27017",
+                    "database" to "unified_rag_test",
+                ),
+            ).use { session ->
+                assertEquals("mongodb", session.backendId)
+                assertTrue(session.capabilities.supportsGraphPersistence)
+                assertTrue(session.capabilities.supportsVectorPersistence)
+                assertTrue(session.capabilities.supportsKvPersistence)
+            }
     }
 
     @Test

@@ -1,9 +1,9 @@
 package shared.eval
 
-import causalrag.examples.CliUtils
 import causalhippo.CausalHippoQueryParam
 import causalhippo.CausalHippoRAG
 import causalrag.CausalRAG
+import causalrag.examples.CliUtils
 import causalrag.generator.llm.LLMInterface
 import causalrag.generator.promptbuilder.buildPrompt
 import hipporag.HippoRAG
@@ -626,7 +626,7 @@ private fun buildUnifiedOverrides(
         )
 
     return when (condition) {
-        Condition.CAUSALRAG_FIXED ->
+        Condition.CAUSALRAG_FIXED -> {
             mapOf(
                 "modelName" to config.llmModel,
                 "embeddingModel" to config.embeddingModel,
@@ -635,8 +635,9 @@ private fun buildUnifiedOverrides(
                 "twoPassAdaptiveEnabled" to false,
                 "confidenceBasedSwitchEnabled" to false,
             ) + persistenceOverrides
+        }
 
-        Condition.CAUSALRAG_ADAPT ->
+        Condition.CAUSALRAG_ADAPT -> {
             mapOf(
                 "modelName" to config.llmModel,
                 "embeddingModel" to config.embeddingModel,
@@ -645,12 +646,15 @@ private fun buildUnifiedOverrides(
                 "twoPassAdaptiveEnabled" to true,
                 "confidenceBasedSwitchEnabled" to true,
             ) + persistenceOverrides
+        }
 
         Condition.HIPPORAG_GRAPH,
         Condition.HIPPORAG_DPR,
-        -> baseHippoOverrides + persistenceOverrides
+        -> {
+            baseHippoOverrides + persistenceOverrides
+        }
 
-        Condition.CAUSALHIPPO_FIXED ->
+        Condition.CAUSALHIPPO_FIXED -> {
             baseHippoOverrides +
                 mapOf(
                     "modelName" to config.llmModel,
@@ -661,19 +665,22 @@ private fun buildUnifiedOverrides(
                     "confidenceBasedSwitchEnabled" to false,
                 ) +
                 persistenceOverrides
+        }
 
         Condition.CAUSALHIPPO_ADAPTIVE,
         Condition.CAUSALHIPPO_ABLATION_NO_RERANK,
-        -> baseHippoOverrides +
-            mapOf(
-                "modelName" to config.llmModel,
-                "embeddingModel" to config.embeddingModel,
-                "templateStyle" to config.templateStyle,
-                "dynamicWeightingEnabled" to true,
-                "twoPassAdaptiveEnabled" to true,
-                "confidenceBasedSwitchEnabled" to true,
-            ) +
-            persistenceOverrides
+        -> {
+            baseHippoOverrides +
+                mapOf(
+                    "modelName" to config.llmModel,
+                    "embeddingModel" to config.embeddingModel,
+                    "templateStyle" to config.templateStyle,
+                    "dynamicWeightingEnabled" to true,
+                    "twoPassAdaptiveEnabled" to true,
+                    "confidenceBasedSwitchEnabled" to true,
+                ) +
+                persistenceOverrides
+        }
     }
 }
 
@@ -684,19 +691,25 @@ private fun buildUnifiedQuery(
     when (condition) {
         Condition.CAUSALRAG_FIXED,
         Condition.CAUSALRAG_ADAPT,
-        -> UnifiedQuery(mode = UnifiedMode.CAUSAL, topK = config.topK, includeReferences = true)
+        -> {
+            UnifiedQuery(mode = UnifiedMode.CAUSAL, topK = config.topK, includeReferences = true)
+        }
 
-        Condition.HIPPORAG_GRAPH ->
+        Condition.HIPPORAG_GRAPH -> {
             UnifiedQuery(mode = UnifiedMode.GRAPH, topK = config.topK, includeReferences = true)
+        }
 
-        Condition.HIPPORAG_DPR ->
+        Condition.HIPPORAG_DPR -> {
             UnifiedQuery(mode = UnifiedMode.DPR, topK = config.topK, includeReferences = true)
+        }
 
         Condition.CAUSALHIPPO_FIXED,
         Condition.CAUSALHIPPO_ADAPTIVE,
-        -> UnifiedQuery(mode = UnifiedMode.CAUSAL, topK = config.topK, includeReferences = true)
+        -> {
+            UnifiedQuery(mode = UnifiedMode.CAUSAL, topK = config.topK, includeReferences = true)
+        }
 
-        Condition.CAUSALHIPPO_ABLATION_NO_RERANK ->
+        Condition.CAUSALHIPPO_ABLATION_NO_RERANK -> {
             UnifiedQuery(
                 mode = UnifiedMode.CAUSAL,
                 topK = config.topK,
@@ -706,6 +719,7 @@ private fun buildUnifiedQuery(
                 includeGraphPaths = true,
                 extras = mapOf("maxPaths" to 3),
             )
+        }
     }
 
 private fun createCausalRagRunner(

@@ -1388,7 +1388,10 @@ class PathRAG(
                 .vector(unifiedSpiVectorNamespace, dimensions = queryEmbedding.size, metric = "cosine")
                 .query(queryEmbedding, topK = topK.coerceAtLeast(1))
                 .mapNotNull { record ->
-                    record.metadata["content"]?.toString()?.trim()?.takeIf { it.isNotBlank() }
+                    record.metadata["content"]
+                        ?.toString()
+                        ?.trim()
+                        ?.takeIf { it.isNotBlank() }
                 }
         } catch (ex: RuntimeException) {
             logger.warn(ex) { "Unified SPI vector retrieval failed for PathRAG." }

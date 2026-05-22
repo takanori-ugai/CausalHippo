@@ -2,13 +2,10 @@ package shared.rag.unified
 
 import causalhippo.CausalHippoQueryParam
 import causalhippo.CausalHippoRAG
-import causalrag.CausalRagRunResult
 import causalrag.CausalRAG
+import causalrag.CausalRagRunResult
 import com.microsoft.graphrag.GraphRAG
-import com.microsoft.graphrag.QueryParam as GraphQueryParam
-import com.microsoft.graphrag.query.QueryResult as GraphQueryResult
 import hipporag.HippoRAG
-import hipporag.QueryParam as HippoQueryParam
 import hipporag.utils.QuerySolution
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -16,12 +13,15 @@ import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
 import lightrag.core.LightRAG
-import lightrag.core.QueryParam as LightQueryParam
-import lightrag.core.QueryResult as LightQueryResult
 import pathrag.PathRAG
-import pathrag.base.QueryParam as PathQueryParam
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import com.microsoft.graphrag.QueryParam as GraphQueryParam
+import com.microsoft.graphrag.query.QueryResult as GraphQueryResult
+import hipporag.QueryParam as HippoQueryParam
+import lightrag.core.QueryParam as LightQueryParam
+import lightrag.core.QueryResult as LightQueryResult
+import pathrag.base.QueryParam as PathQueryParam
 
 class UnifiedModeMappingTest {
     @Test
@@ -111,7 +111,8 @@ class UnifiedModeMappingTest {
     fun `causal adapter maps maxPaths extra`() =
         runBlocking {
             val delegate = mockk<CausalRAG>()
-            coEvery { delegate.aquery(any(), any()) } returns CausalRagRunResult(answer = "ok", context = emptyList(), causalPaths = emptyList())
+            coEvery { delegate.aquery(any(), any()) } returns
+                CausalRagRunResult(answer = "ok", context = emptyList(), causalPaths = emptyList())
 
             val adapter = CausalRagUnifiedAdapter(delegate)
             adapter.aquery(
@@ -136,7 +137,8 @@ class UnifiedModeMappingTest {
     fun `causal hippo adapter maps maxPaths extra`() =
         runBlocking {
             val delegate = mockk<CausalHippoRAG>()
-            coEvery { delegate.aquery(any(), any()) } returns CausalRagRunResult(answer = "ok", context = emptyList(), causalPaths = emptyList())
+            coEvery { delegate.aquery(any(), any()) } returns
+                CausalRagRunResult(answer = "ok", context = emptyList(), causalPaths = emptyList())
 
             val adapter = CausalHippoRagUnifiedAdapter(delegate)
             adapter.aquery(

@@ -5,14 +5,14 @@ import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.mongodb.client.model.Filters
 import com.mongodb.client.model.ReplaceOptions
 import com.mongodb.kotlin.client.coroutine.MongoClient
+import kotlinx.coroutines.flow.toList
+import kotlinx.coroutines.runBlocking
+import org.bson.Document
 import java.nio.file.Files
 import java.nio.file.Path
 import java.time.Instant
 import java.util.Base64
 import kotlin.math.sqrt
-import kotlinx.coroutines.flow.toList
-import kotlinx.coroutines.runBlocking
-import org.bson.Document
 
 /**
  * MongoDB-backed persistence backend for graph/vector/kv/artifact state.
@@ -29,7 +29,8 @@ class MongoDbPersistenceBackend : PersistenceBackendFactory {
                 ?: config.string("mongoDatabase")
                 ?: "unified_rag"
         val rootDir =
-            config.string("rootDir")
+            config
+                .string("rootDir")
                 ?.trim()
                 ?.takeIf { it.isNotEmpty() }
                 ?.let { Path.of(it).toAbsolutePath().normalize() }
@@ -620,8 +621,7 @@ private class MongoKvStore(
                     val key = document.getString("key")
                     val value = parseAny(document.getString("value_json") ?: "null")
                     key to value
-                }
-                .toSortedMap()
+                }.toSortedMap()
         }
 
     override fun snapshot(): KvSnapshot {

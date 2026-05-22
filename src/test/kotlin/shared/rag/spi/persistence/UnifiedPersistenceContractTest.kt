@@ -1,7 +1,7 @@
 package shared.rag.spi.persistence
 
-import java.nio.file.Files
 import kotlinx.coroutines.runBlocking
+import java.nio.file.Files
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
@@ -20,29 +20,30 @@ class UnifiedPersistenceContractTest {
 
             try {
                 backends.forEach { backend ->
-                    backend.factory.open(
-                        backend.config +
-                            mapOf(
-                                "metadata" to
-                                    mapOf(
-                                        "suite" to "p4",
-                                        "backend" to backend.id,
-                                    ),
-                            ),
-                    ).use { session ->
-                        assertEquals(backend.id, session.backendId)
-                        assertTrue(session.capabilities.supportsGraphPersistence)
-                        assertTrue(session.capabilities.supportsVectorPersistence)
-                        assertTrue(session.capabilities.supportsKvPersistence)
-                        assertTrue(session.capabilities.supportsAtomicCheckpoint)
-                        assertFalse(session.capabilities.supportsIncrementalCheckpoint)
-                        assertTrue(session.capabilities.supportsCrossBackendImport)
+                    backend.factory
+                        .open(
+                            backend.config +
+                                mapOf(
+                                    "metadata" to
+                                        mapOf(
+                                            "suite" to "p4",
+                                            "backend" to backend.id,
+                                        ),
+                                ),
+                        ).use { session ->
+                            assertEquals(backend.id, session.backendId)
+                            assertTrue(session.capabilities.supportsGraphPersistence)
+                            assertTrue(session.capabilities.supportsVectorPersistence)
+                            assertTrue(session.capabilities.supportsKvPersistence)
+                            assertTrue(session.capabilities.supportsAtomicCheckpoint)
+                            assertFalse(session.capabilities.supportsIncrementalCheckpoint)
+                            assertTrue(session.capabilities.supportsCrossBackendImport)
 
-                        session.graph("g").upsertNode("n1", mapOf("k" to "v"))
-                        val manifest = session.checkpoint(root.resolve("checkpoint-${backend.id}").toString())
-                        assertEquals("p4", manifest.metadata["suite"])
-                        assertEquals(backend.id, manifest.metadata["backend"])
-                    }
+                            session.graph("g").upsertNode("n1", mapOf("k" to "v"))
+                            val manifest = session.checkpoint(root.resolve("checkpoint-${backend.id}").toString())
+                            assertEquals("p4", manifest.metadata["suite"])
+                            assertEquals(backend.id, manifest.metadata["backend"])
+                        }
                 }
             } finally {
                 root.toFile().deleteRecursively()

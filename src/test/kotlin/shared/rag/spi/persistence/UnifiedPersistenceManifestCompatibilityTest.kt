@@ -1,8 +1,8 @@
 package shared.rag.spi.persistence
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import java.nio.file.Files
 import kotlinx.coroutines.runBlocking
+import java.nio.file.Files
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
@@ -49,10 +49,30 @@ class UnifiedPersistenceManifestCompatibilityTest {
                 assertTrue(tree.has("artifacts"))
                 assertTrue(tree.has("metadata"))
 
-                assertTrue(manifest.graph.single().payloadPath.startsWith("graph/"))
-                assertTrue(manifest.vector.single().payloadPath.startsWith("vector/"))
-                assertTrue(manifest.kv.single().payloadPath.startsWith("kv/"))
-                assertTrue(manifest.artifacts.single().payloadPath.startsWith("artifacts/"))
+                assertTrue(
+                    manifest.graph
+                        .single()
+                        .payloadPath
+                        .startsWith("graph/"),
+                )
+                assertTrue(
+                    manifest.vector
+                        .single()
+                        .payloadPath
+                        .startsWith("vector/"),
+                )
+                assertTrue(
+                    manifest.kv
+                        .single()
+                        .payloadPath
+                        .startsWith("kv/"),
+                )
+                assertTrue(
+                    manifest.artifacts
+                        .single()
+                        .payloadPath
+                        .startsWith("artifacts/"),
+                )
             } finally {
                 root.toFile().deleteRecursively()
             }
@@ -78,7 +98,13 @@ class UnifiedPersistenceManifestCompatibilityTest {
                     session.restore(checkpointPath.toString())
 
                     assertEquals(1, session.graph("g").nodes().size)
-                    assertEquals(1, session.vector("v", dimensions = 2, metric = "cosine").snapshot().records.size)
+                    assertEquals(
+                        1,
+                        session
+                            .vector("v", dimensions = 2, metric = "cosine")
+                            .snapshot()
+                            .records.size,
+                    )
                     assertEquals(true, session.kv("k").get("flag"))
                     val artifact = session.artifacts("a").readText("data.txt")
                     assertNotNull(artifact)

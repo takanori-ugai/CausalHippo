@@ -22,11 +22,12 @@ class UnifiedPersistenceBaselineFixtureTest {
         val inventory = readJsonObject(root.resolve("inventory.json"))
         val rows = inventory["rags"] as? JsonArray ?: fail("inventory.json must contain 'rags' array")
         val ragIds =
-            rows.map { row ->
-                val rowObj = row as? JsonObject ?: fail("inventory row must be a JSON object")
-                val ragId = rowObj["ragId"] as? JsonPrimitive ?: fail("inventory row missing ragId")
-                ragId.content
-            }.toSet()
+            rows
+                .map { row ->
+                    val rowObj = row as? JsonObject ?: fail("inventory row must be a JSON object")
+                    val ragId = rowObj["ragId"] as? JsonPrimitive ?: fail("inventory row missing ragId")
+                    ragId.content
+                }.toSet()
 
         assertEquals(
             setOf(
