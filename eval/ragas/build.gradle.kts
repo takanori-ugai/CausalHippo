@@ -34,7 +34,7 @@ repositories {
 dependencies {
     implementation("ch.qos.logback:logback-classic:1.5.32")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0")
     implementation("io.github.oshai:kotlin-logging-jvm:8.0.01")
     implementation("com.github.haifengl:smile-core:4.4.2")
     implementation("gg.jte:jte-kotlin:3.2.4")
@@ -47,7 +47,7 @@ dependencies {
     implementation("dev.langchain4j:langchain4j-community-neo4j:1.12.1-beta21")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:2.3.21")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0")
     testImplementation("io.mockk:mockk:1.14.9")
 }
 
