@@ -28,6 +28,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
+    - name: Normalize eval/ragas wrapper jar
+      run: cp gradle/wrapper/gradle-wrapper.jar eval/ragas/gradle/wrapper/gradle-wrapper.jar
+
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
     - name: Setup Gradle
@@ -35,4 +38,3 @@ jobs:
 
     - name: Build with Gradle Wrapper
       run: ./gradlew build
-
