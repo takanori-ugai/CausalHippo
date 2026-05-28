@@ -59,7 +59,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
     implementation("io.github.oshai:kotlin-logging-jvm:8.0.01")
-    implementation("com.github.haifengl:smile-core:4.4.2")
+    implementation("com.github.haifengl:smile-core:6.1.0")
     implementation("gg.jte:jte-kotlin:3.2.3")
     implementation("org.apache.commons:commons-csv:1.14.1")
     implementation("org.apache.pdfbox:pdfbox:3.0.7")
