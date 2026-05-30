@@ -3,7 +3,7 @@ import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 plugins {
     kotlin("jvm") version "2.3.10"
     application
-    id("com.gradleup.shadow") version "9.3.1"
+    id("com.gradleup.shadow") version "9.4.1"
     kotlin("plugin.serialization") version "2.3.10"
     id("org.jlleitschuh.gradle.ktlint") version "14.0.1"
     id("io.gitlab.arturbosch.detekt") version "1.23.8"
@@ -33,21 +33,21 @@ repositories {
 
 dependencies {
     implementation("ch.qos.logback:logback-classic:1.5.32")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0")
     implementation("io.github.oshai:kotlin-logging-jvm:8.0.01")
     implementation("com.github.haifengl:smile-core:4.4.2")
-    implementation("gg.jte:jte-kotlin:3.2.3")
+    implementation("gg.jte:jte-kotlin:3.2.4")
 
     // LangChain4j dependencies
-    implementation("dev.langchain4j:langchain4j:1.14.0")
-    implementation("dev.langchain4j:langchain4j-open-ai:1.14.0")
-    implementation("dev.langchain4j:langchain4j-azure-open-ai:1.14.0")
-    implementation("dev.langchain4j:langchain4j-ollama:1.14.0")
+    implementation("dev.langchain4j:langchain4j:1.15.0")
+    implementation("dev.langchain4j:langchain4j-open-ai:1.15.0")
+    implementation("dev.langchain4j:langchain4j-azure-open-ai:1.15.0")
+    implementation("dev.langchain4j:langchain4j-ollama:1.15.0")
     implementation("dev.langchain4j:langchain4j-community-neo4j:1.12.1-beta21")
 
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:2.3.10")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:2.3.21")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0")
     testImplementation("io.mockk:mockk:1.14.9")
 }
 
