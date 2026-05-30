@@ -70,7 +70,12 @@ fun loadLightRagConfigFromCommonJson(path: String = resolveLightRagConfigPath())
     val provider = normalizeProvider(settings.provider ?: System.getenv("LLM_PROVIDER") ?: "openai")
     val sharedBaseUrl = firstNonBlankOrNull(settings.baseUrl, System.getenv("LLM_BASE_URL"))
 
-    val openAiApiKey = firstNonBlankOrNull(settings.apiKey, System.getenv("OPENAI_API_KEY")).orEmpty()
+    val openAiApiKey =
+        firstNonBlankOrNull(
+            settings.apiKey,
+            if (provider == "gemini") System.getenv("GEMINI_API_KEY") else null,
+            System.getenv("OPENAI_API_KEY"),
+        ).orEmpty()
     val openAiBaseUrl = firstNonBlankOrNull(sharedBaseUrl, System.getenv("OPENAI_API_BASE"))
     val openAiChatModelName =
         if (provider == "openai") {
@@ -151,7 +156,12 @@ fun loadLightRagConfigFromCommonJson(path: String = resolveLightRagConfigPath())
     )
 }
 
-private fun normalizeProvider(raw: String): String = if (raw.trim().lowercase() == "ollama") "ollama" else "openai"
+private fun normalizeProvider(raw: String): String =
+    when (raw.trim().lowercase()) {
+        "ollama" -> "ollama"
+        "gemini", "google", "google_gemini" -> "gemini"
+        else -> "openai"
+    }
 
 private fun nonBlankOrNull(value: String?): String? = value?.trim()?.takeIf { it.isNotEmpty() }
 

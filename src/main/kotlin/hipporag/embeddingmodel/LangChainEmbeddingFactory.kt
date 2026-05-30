@@ -1,6 +1,7 @@
 package hipporag.embeddingmodel
 
 import dev.langchain4j.model.embedding.EmbeddingModel
+import dev.langchain4j.model.googleai.GoogleAiEmbeddingModel
 import dev.langchain4j.model.ollama.OllamaEmbeddingModel
 import dev.langchain4j.model.openaiofficial.OpenAiOfficialEmbeddingModel
 import hipporag.config.BaseConfig
@@ -12,6 +13,7 @@ import java.net.URI
  */
 class LangChainEmbeddingFactory : EmbeddingModelFactory {
     private val logger = KotlinLogging.logger {}
+    private val defaultGeminiBaseUrl = "https://generativelanguage.googleapis.com/v1beta/openai"
 
     /**
      * Creates a LangChain4j embedding model wrapped in [BaseEmbeddingModel].
@@ -50,7 +52,7 @@ class LangChainEmbeddingFactory : EmbeddingModelFactory {
                     "Supported providers: OpenAI-compatible (default), " +
                     "and Ollama (set embeddingProvider=ollama or use an Ollama base URL).",
             )
-        } else if (provider != null && provider !in setOf("openai", "ollama")) {
+        } else if (provider != null && provider !in setOf("openai", "ollama", "gemini", "google", "google_gemini")) {
             logger.warn { "Unknown embedding provider '$provider'. Falling back to OpenAI-compatible settings." }
         }
         return when {
@@ -72,6 +74,21 @@ class LangChainEmbeddingFactory : EmbeddingModelFactory {
                     .baseUrl(baseUrl)
                     .modelName(model)
                     .build()
+            }
+
+            provider in setOf("gemini", "google", "google_gemini") -> {
+                val apiKey =
+                    globalConfig.openAiApiKey
+                        ?: System.getenv("GEMINI_API_KEY")
+                        ?: System.getenv("OPENAI_API_KEY")
+                        ?: error("Gemini API key not found. Set GEMINI_API_KEY/OPENAI_API_KEY or openAiApiKey in config.")
+                val builder =
+                    GoogleAiEmbeddingModel
+                        .builder()
+                        .apiKey(apiKey)
+                        .modelName(embeddingModelName)
+                builder.baseUrl(globalConfig.embeddingBaseUrl ?: defaultGeminiBaseUrl)
+                builder.build()
             }
 
             isLikelyOllamaBaseUrl(globalConfig.embeddingBaseUrl) -> {

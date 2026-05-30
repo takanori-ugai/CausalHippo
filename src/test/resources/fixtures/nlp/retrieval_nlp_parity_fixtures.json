@@ -1,0 +1,18 @@
+[
+  {
+    "name": "regex_minimal_baseline",
+    "provider": "regex",
+    "question": "What does OpenAI build in San Francisco?",
+    "stopwords": [
+      "what",
+      "does",
+      "in"
+    ],
+    "python_entities": [],
+    "python_keywords": [],
+    "required_keywords": [],
+    "forbidden_keywords": [],
+    "min_entity_overlap": 1.0,
+    "min_keyword_overlap": 1.0
+  }
+]

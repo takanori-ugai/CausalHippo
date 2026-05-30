@@ -96,13 +96,34 @@ The repository now includes a unified adapter layer in `src/main/kotlin/shared/r
 - One request model: `UnifiedQuery`
 - One response model: `UnifiedResponse`
 - One factory entrypoint: `UnifiedRagFactory.create(...)`
-- Supported backends: `GraphRAG`, `LightRAG`, `PathRAG`, `HippoRAG`, `CausalRAG`, `CausalHippoRAG`
+- Supported backends: `GraphRAG`, `YOUTURAG` (`RagId.YOUTU_RAG`), `LightRAG`, `PathRAG`, `HippoRAG`, `CausalRAG`, `CausalHippoRAG`
 
 Run the sample:
 
 ```bash
 ./gradlew execute -PmainClass=shared.rag.unified.UnifiedSampleKt
 ```
+
+Use YOUTURAG through the same unified factory:
+
+```kotlin
+val handle =
+    UnifiedRagFactory.create(
+        ragId = RagId.YOUTU_RAG,
+        configPath = "config/base_config.json", // youtuRAG config
+        overrides =
+            mapOf(
+                "datasetName" to "demo",
+                // optional: project root for youtuRAG data/output resolution
+                "rootDir" to ".",
+                // optional: "main" (default) or "backend"
+                "ircotPromptSource" to "main",
+            ),
+    )
+```
+
+YOUTURAG unified query extras:
+- `datasetName` (or `dataset`) to select dataset per request.
 
 ### Prompt Style Behaviour
 

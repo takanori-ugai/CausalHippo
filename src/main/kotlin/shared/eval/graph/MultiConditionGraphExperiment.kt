@@ -149,11 +149,18 @@ private enum class Condition(
         id = "graphrag",
         description = "GraphRAG (com/microsoft/graphrag)",
     ),
+    YOUTURAG(
+        id = "youturag",
+        description = "YoutuRAG (com/youtu/graphrag, unified adapter)",
+    ),
     ;
 
     companion object {
         fun parse(raw: String): List<Condition> {
-            if (raw == "all") return entries
+            if (raw == "all") {
+                // Preserve historical meaning of "all" for this graph-focused evaluator.
+                return listOf(LIGHTRAG, PATHRAG, GRAPHRAG)
+            }
             val wanted =
                 raw
                     .split(',')
@@ -456,6 +463,7 @@ private fun createConditionRunner(
         Condition.LIGHTRAG -> createLightRagRunner(config, scopedWorkdirSuffix("lightrag", workerIndex))
         Condition.PATHRAG -> createPathRagRunner(config, scopedWorkdirSuffix("pathrag", workerIndex))
         Condition.GRAPHRAG -> createGraphRagRunner(config, scopedWorkdirSuffix("graphrag", workerIndex))
+        Condition.YOUTURAG -> error("Condition 'youturag' requires --use-unified-api=true")
     }
 }
 
@@ -550,6 +558,7 @@ private fun Condition.toUnifiedRagId(): RagId =
         Condition.LIGHTRAG -> RagId.LIGHT_RAG
         Condition.PATHRAG -> RagId.PATH_RAG
         Condition.GRAPHRAG -> RagId.GRAPH_RAG
+        Condition.YOUTURAG -> RagId.YOUTU_RAG
     }
 
 private fun buildUnifiedOverrides(
@@ -586,6 +595,13 @@ private fun buildUnifiedOverrides(
                 "rootDir" to sampleWorkdir.toString(),
                 "chatModelName" to config.llmModel,
                 "embeddingModelName" to config.embeddingModel,
+            ) + persistenceOverrides
+        }
+
+        Condition.YOUTURAG -> {
+            mapOf(
+                "rootDir" to sampleWorkdir.toString(),
+                "datasetName" to "demo",
             ) + persistenceOverrides
         }
     }
@@ -634,6 +650,21 @@ private fun buildUnifiedQuery(
                 extras =
                     mapOf(
                         "responseType" to "Answer in one or few words.",
+                    ),
+            )
+        }
+
+        Condition.YOUTURAG -> {
+            UnifiedQuery(
+                mode = UnifiedMode.HYBRID,
+                topK = config.topK,
+                includeAnswer = true,
+                includeContext = true,
+                includeReferences = true,
+                includeFollowUps = true,
+                extras =
+                    mapOf(
+                        "datasetName" to "demo",
                     ),
             )
         }

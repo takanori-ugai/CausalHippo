@@ -3,6 +3,9 @@ package lightrag.llm
 import dev.langchain4j.model.chat.ChatModel
 import dev.langchain4j.model.chat.StreamingChatModel
 import dev.langchain4j.model.embedding.EmbeddingModel
+import dev.langchain4j.model.googleai.GoogleAiEmbeddingModel
+import dev.langchain4j.model.googleai.GoogleAiGeminiChatModel
+import dev.langchain4j.model.googleai.GoogleAiGeminiStreamingChatModel
 import dev.langchain4j.model.ollama.OllamaChatModel
 import dev.langchain4j.model.ollama.OllamaEmbeddingModel
 import dev.langchain4j.model.ollama.OllamaStreamingChatModel
@@ -15,6 +18,8 @@ import java.time.Duration
  * A factory for creating [ChatModel]s and [EmbeddingModel]s.
  */
 object LLMFactory {
+    private const val DEFAULT_GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
+
     /**
      * Build a [ChatModel] for the given binding.
      *
@@ -49,7 +54,7 @@ object LLMFactory {
         logRequests: Boolean = true,
         logResponses: Boolean = true,
     ): ChatModel =
-        when (binding) {
+        when (binding.lowercase()) {
             "openai" -> {
                 val builder =
                     OpenAiChatModel
@@ -62,6 +67,19 @@ object LLMFactory {
                 if (baseUrl != null) {
                     builder.baseUrl(baseUrl)
                 }
+                builder.build()
+            }
+
+            "gemini", "google", "google_gemini" -> {
+                val builder =
+                    GoogleAiGeminiChatModel
+                        .builder()
+                        .modelName(modelName)
+                        .apiKey(apiKey ?: "demo")
+                        .logRequests(logRequests)
+                        .logResponses(logResponses)
+                        .timeout(Duration.ofSeconds(timeout))
+                builder.baseUrl(baseUrl ?: DEFAULT_GEMINI_BASE_URL)
                 builder.build()
             }
 
@@ -98,7 +116,7 @@ object LLMFactory {
         logRequests: Boolean = true,
         logResponses: Boolean = true,
     ): StreamingChatModel =
-        when (binding) {
+        when (binding.lowercase()) {
             "openai" -> {
                 val builder =
                     OpenAiStreamingChatModel
@@ -111,6 +129,19 @@ object LLMFactory {
                 if (baseUrl != null) {
                     builder.baseUrl(baseUrl)
                 }
+                builder.build()
+            }
+
+            "gemini", "google", "google_gemini" -> {
+                val builder =
+                    GoogleAiGeminiStreamingChatModel
+                        .builder()
+                        .modelName(modelName)
+                        .apiKey(apiKey ?: "demo")
+                        .logRequests(logRequests)
+                        .logResponses(logResponses)
+                        .timeout(Duration.ofSeconds(timeout))
+                builder.baseUrl(baseUrl ?: DEFAULT_GEMINI_BASE_URL)
                 builder.build()
             }
 
@@ -150,7 +181,7 @@ object LLMFactory {
         apiKey: String? = null,
         timeout: Long = 60,
     ): EmbeddingModel =
-        when (binding) {
+        when (binding.lowercase()) {
             "openai" -> {
                 val builder =
                     OpenAiEmbeddingModel
@@ -162,6 +193,18 @@ object LLMFactory {
                 if (baseUrl != null) {
                     builder.baseUrl(baseUrl)
                 }
+                builder.build()
+            }
+
+            "gemini", "google", "google_gemini" -> {
+                val builder =
+                    GoogleAiEmbeddingModel
+                        .builder()
+                        .modelName(modelName)
+                        .apiKey(apiKey ?: "demo")
+                        .logRequests(true)
+                        .timeout(Duration.ofSeconds(timeout))
+                builder.baseUrl(baseUrl ?: DEFAULT_GEMINI_BASE_URL)
                 builder.build()
             }
 
