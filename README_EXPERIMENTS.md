@@ -175,18 +175,35 @@ To reproduce Graph-based RAG baselines (LightRAG, PathRAG) as shown in the table
   --use-unified-api
 ```
 
+## System Mappings in Paper
+
+For the results presented in the submitted paper, the following mappings between the system names in tables and the experiment `Condition ID` are used:
+
+| Paper System Name | Condition ID |
+| :--- | :--- |
+| **CausalHippo** | `causalhippo_ablation_no_rerank` |
+| **CausalHippo-Fixed** | `causalhippo_fixed` |
+| **causalrag** | `causalrag_fixed` |
+| **hipporag** | `hipporag_graph` |
+
 ---
 
+## 1) Dataset Preparation
+...
 ## Condition IDs Reference
 
 | Condition ID | Description | Runner(s) |
 | :--- | :--- | :--- |
-| `causalrag_fixed` | CausalRAG with fixed causal extraction. | RAG |
+| `causalrag_fixed` | CausalRAG with fixed causal extraction. (**causalrag** in paper) | RAG |
 | `causalrag_adapt` | CausalRAG with adaptive causal extraction. | RAG |
-| `hipporag_graph` | HippoRAG using Graph-based retrieval. | RAG |
+| `hipporag_graph` | HippoRAG using Graph-based retrieval. (**hipporag** in paper) | RAG |
 | `hipporag_dpr` | HippoRAG using DPR-based retrieval. | RAG |
-| `causalhippo_fixed` | Hybrid CausalHippo (Fixed). | RAG |
+| `causalhippo_fixed` | Hybrid CausalHippo (Fixed). (**CausalHippo-Fixed** in paper) | RAG |
 | `causalhippo_adaptive` | Hybrid CausalHippo (Adaptive). | RAG |
+| `causalhippo_ablation_no_two_pass` | CausalHippoRAG ablation (dynamic weighting + confidence switch, no Two-Pass Adaptation). | RAG |
+| `causalhippo_ablation_no_confidence_switch` | CausalHippoRAG ablation (dynamic weighting + Two-Pass Adaptation, no Confidence-Based Switch). | RAG |
+| `causalhippo_ablation_no_two_pass_no_confidence_switch` | CausalHippoRAG ablation (dynamic weighting only; no Two-Pass Adaptation, no Confidence-Based Switch). | RAG |
+| `causalhippo_ablation_no_rerank` | CausalHippoRAG without causal reranking. (**CausalHippo** in paper) | RAG |
 | `lightrag` | LightRAG implementation. | Graph |
 | `pathrag` | PathRAG implementation. | Graph |
 | `graphrag` | Microsoft GraphRAG implementation. | Graph |
@@ -226,6 +243,60 @@ Experiments output detailed results in `eval_results/<experiment_name>_<timestam
 Available in `summary_label_aware_by_condition.csv` and `summary_by_condition_category.csv`:
 - **Unknown Precision/Recall/F1**: Performance on detecting unanswerable/negative causal relations.
 - **Label-Aware Means**: Metrics split by `label_true=true` and `label_true=false`.
+
+---
+
+## 4) Sensitivity Analysis (Figure 4)
+
+We conduct a sensitivity analysis on the hyper-parameters $\alpha$ (`gatingPathCoef`: causal node weighting) and $\beta$ (`gatingCoverageCoef`: causal relationship strength weighting) to understand their impact on the `CausalHippo` performance.
+
+### Running Sensitivity Sweep
+
+To reproduce the sweep over the parameter space:
+
+```bash
+./scripts/sensitivity_sweep.sh
+```
+
+This script iterates through multiple combinations of $\alpha$ and $\beta$, saving aggregated results to `eval_results/sensitivity_analysis/`.
+
+### Summary of Results (Sample)
+
+The following table summarizes the performance across different configurations (extracted from `logs/sensitivity_sweep_revised.log` on a 10-sample subset):
+
+| $\alpha$ | $\beta$ | F1 Score | Exact Match | Support Recall @5 | Avg Causal Gate |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 0.0 | 0.0 | **0.667** | **0.50** | 0.80 | 0.173 |
+| 0.0 | 2.0 | 0.437 | 0.20 | 0.80 | 0.295 |
+| 0.0 | 4.0 | 0.637 | 0.40 | 0.80 | 0.275 |
+| 2.0 | 0.0 | 0.467 | 0.30 | 0.80 | 0.337 |
+| 2.0 | 2.0 | 0.300 | 0.10 | 0.80 | 0.359 |
+| 2.0 | 4.0 | 0.540 | 0.40 | 0.80 | 0.327 |
+| 4.0 | 0.0 | 0.424 | 0.20 | 0.80 | 0.298 |
+| 4.0 | 2.0 | 0.573 | 0.30 | 0.80 | 0.384 |
+| 4.0 | 4.0 | 0.580 | 0.40 | 0.80 | 0.332 |
+
+*Note: Results on the full dataset (300 samples) as reported in `SensitivityAnalysis.md` show that $\alpha=0.0, \beta=4.0$ is the optimal configuration for causal reasoning tasks.*
+
+### 5) Quantifying Stability and Robustness
+
+To evaluate how consistently the system performs across diverse scenarios, we define several meta-metrics:
+- **Stability ($\sigma_{F1}$)**: Standard deviation of F1-scores across benchmarks (lower is better).
+- **Floor ($Min_{F1}$)**: The minimum performance bound across benchmarks (higher is better).
+- **Robustness ($CV_{F1}$)**: Coefficient of Variation of F1-scores across the 20 logical categories in *Causal-Reasoning-QA* (lower is better).
+- **Rank ($Avg_{MRR}$)**: Average ordinal rank based on MRR@5 across benchmarks (lower is better).
+
+#### Summary of Stability & Robustness
+
+| System | Stability ($\sigma_{F1}$) ↓ | Floor ($Min_{F1}$) ↑ | Robustness ($CV_{F1}$) ↓ | Rank ($Avg_{MRR}$) ↓ |
+| :--- | :---: | :---: | :---: | :---: |
+| **CausalHippo** | **0.064** | 0.361 | 0.434 | 1.67 |
+| **CausalHippo-Fixed** | 0.070 | **0.372** | 0.450 | **1.33** |
+| **CausalHippo (no Ph3&4)** | 0.068 | 0.359 | **0.401** | 2.00 |
+| **causalrag** | 0.075 | 0.350 | 0.488 | 3.00 |
+| **hipporag** | 0.120 | 0.033 | 0.867 | 5.00 |
+
+*Data derived from the ISWC submission manuscript (Section 6.1).*
 
 ---
 
