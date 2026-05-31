@@ -142,7 +142,7 @@ fun Application.youtuGraphRagModule() {
                     }
                 }
             } finally {
-                wsManager.disconnect(clientId)
+                wsManager.disconnect(clientId, this)
                 close(CloseReason(CloseReason.Codes.NORMAL, "Connection closed"))
             }
         }

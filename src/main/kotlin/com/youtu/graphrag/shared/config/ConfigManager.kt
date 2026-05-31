@@ -244,7 +244,7 @@ class ConfigManager(
 
     companion object {
         private const val DEFAULT_CONFIG_PATH = "config/base_config.json"
-        private val PLACEHOLDER_REGEX = Regex("\\{([^{}]+)}")
+        private val PLACEHOLDER_REGEX = Regex("\\{([a-zA-Z0-9_]+)}")
 
         private fun createMapper(factory: com.fasterxml.jackson.core.JsonFactory? = null): ObjectMapper =
             (if (factory == null) ObjectMapper() else ObjectMapper(factory))

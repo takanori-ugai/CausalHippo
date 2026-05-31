@@ -19,8 +19,11 @@ class WebSocketConnectionManager {
         activeConnections[clientId] = session
     }
 
-    fun disconnect(clientId: String) {
-        activeConnections.remove(clientId)
+    fun disconnect(
+        clientId: String,
+        session: DefaultWebSocketServerSession,
+    ) {
+        activeConnections.remove(clientId, session)
     }
 
     suspend fun sendMessage(
@@ -34,7 +37,7 @@ class WebSocketConnectionManager {
             session.send(Frame.Text(payload))
         }.onFailure { error ->
             logger.warn(error) { "Error sending websocket message to client '$clientId'" }
-            disconnect(clientId)
+            disconnect(clientId, session)
         }
     }
 }

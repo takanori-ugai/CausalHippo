@@ -310,12 +310,17 @@ class DatasetFileService(
     ): UploadResult {
         require(files.isNotEmpty()) { "No files were provided" }
 
-        val tempFiles =
-            files.map { file ->
+        val tempFiles = mutableListOf<TempFileInfo>()
+        try {
+            files.forEach { file ->
                 val tempFile = Files.createTempFile("graphrag_compat_", ".tmp")
                 Files.write(tempFile, file.bytes)
-                TempFileInfo(file.fileName, tempFile)
+                tempFiles.add(TempFileInfo(file.fileName, tempFile))
             }
+        } catch (error: Exception) {
+            tempFiles.forEach { info -> info.tempFilePath.deleteIfExists() }
+            throw error
+        }
 
         return uploadFilesFromTemp(tempFiles, onProgress = onProgress)
     }
@@ -384,7 +389,9 @@ class DatasetFileService(
         val bytes =
             try {
                 inputStream.use { input ->
-                    input.copyToWithLimit(Files.newOutputStream(tempFile), MAX_SCHEMA_FILE_SIZE)
+                    Files.newOutputStream(tempFile).use { output ->
+                        input.copyToWithLimit(output, MAX_SCHEMA_FILE_SIZE)
+                    }
                 }
                 Files.readAllBytes(tempFile)
             } finally {

@@ -95,6 +95,25 @@ class ConfigManagerTest {
     }
 
     @Test
+    fun `getPromptFormatted ignores escaped json braces in templates`() {
+        val config = ConfigManager("config/base_config.json")
+
+        val rendered =
+            config.getPromptFormatted(
+                category = "construction",
+                promptType = "general",
+                variables =
+                    mapOf(
+                        "schema" to "{}",
+                        "chunk" to "Alpha influences Beta.",
+                    ),
+            )
+
+        assertTrue(rendered.contains("\"attributes\""))
+        assertTrue(rendered.contains("Alpha influences Beta."))
+    }
+
+    @Test
     fun `creates output directories based on config`() {
         val tempRoot = createTempDirectory("youtu-graphrag-config-test")
         val baseDir = tempRoot.resolve("output")

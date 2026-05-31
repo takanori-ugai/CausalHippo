@@ -17,6 +17,12 @@ import com.youtu.graphrag.shared.llm.LlmOutputParser
 import com.youtu.graphrag.shared.treecomm.FastTreeComm
 import com.youtu.graphrag.shared.treecomm.TreeCommOptions
 import io.github.oshai.kotlinlogging.KotlinLogging
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.sync.Semaphore
+import kotlinx.coroutines.sync.withPermit
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardOpenOption
@@ -354,9 +360,22 @@ class KTBuilder(
         val relationships = mutableListOf<GraphRelationship>()
         val entityByName = linkedMapOf<String, GraphNode>()
         val seenEntityTriples = linkedSetOf<EntityTripleKey>()
+        val maxWorkers = config.construction.maxWorkers.coerceAtLeast(1)
+        val semaphore = Semaphore(maxWorkers)
 
-        chunks.forEach { chunk ->
-            val extraction = extractChunkKnowledge(chunk.text)
+        val chunkExtractions =
+            runBlocking(Dispatchers.Default) {
+                chunks
+                    .map { chunk ->
+                        async {
+                            semaphore.withPermit {
+                                chunk to extractChunkKnowledge(chunk.text)
+                            }
+                        }
+                    }.awaitAll()
+            }
+
+        chunkExtractions.forEach { (chunk, extraction) ->
             if (mode == "agent") {
                 updateSchemaWithNewTypes(extraction.newSchemaTypes)
             }
