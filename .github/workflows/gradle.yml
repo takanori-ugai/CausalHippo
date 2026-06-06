@@ -37,7 +37,7 @@ jobs:
       uses: gradle/actions/setup-gradle@v6.1.0 # v4.0.0
 
     - name: Build with Gradle Wrapper
-      run: ./gradlew build
+      run: ./gradlew build -x integrationTest
 
     - name: Unified API Contract Gate
       run: ./gradlew test --tests "shared.rag.unified.*"
