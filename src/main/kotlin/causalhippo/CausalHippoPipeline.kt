@@ -247,7 +247,7 @@ class CausalHippoPipeline(
     ): String =
         current?.lowercase()
             ?: when (fallback.lowercase()) {
-                "openai", "ollama" -> fallback.lowercase()
+                "openai", "ollama", "gemini" -> fallback.lowercase()
                 else -> "openai"
             }
 

@@ -5,6 +5,7 @@ package shared.rag.unified
  */
 enum class RagId {
     GRAPH_RAG,
+    YOUTU_RAG,
     LIGHT_RAG,
     PATH_RAG,
     HIPPO_RAG,

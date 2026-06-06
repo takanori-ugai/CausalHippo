@@ -146,15 +146,25 @@ private enum class Condition(
         id = "causalhippo_ablation_no_rerank",
         description = "CausalHippoRAG ablation (no causal reranker)",
     ),
+    YOUTURAG(
+        id = "youturag",
+        description = "YoutuRAG (com/youtu/graphrag, unified adapter)",
+    ),
     ;
 
     companion object {
         fun parse(raw: String): List<Condition> {
             if (raw == "all") return entries
+
+            fun normalizeConditionId(id: String): String =
+                when (id.trim().lowercase()) {
+                    "youtu", "youtu_rag", "youtu-rag" -> "youturag"
+                    else -> id.trim().lowercase()
+                }
             val wanted =
                 raw
                     .split(',')
-                    .map { it.trim() }
+                    .map { normalizeConditionId(it) }
                     .filter { it.isNotBlank() }
                     .toSet()
             require(wanted.isNotEmpty()) {
@@ -499,6 +509,10 @@ private fun createConditionRunner(
         Condition.CAUSALHIPPO_ABLATION_NO_RERANK -> {
             createCausalHippoAblationRunner(config, scopedWorkdirSuffix("ablation", workerIndex))
         }
+
+        Condition.YOUTURAG -> {
+            error("Condition 'youturag' requires --use-unified-api=true")
+        }
     }
 }
 
@@ -594,6 +608,8 @@ private fun Condition.toUnifiedRagId(): RagId =
         Condition.CAUSALHIPPO_ADAPTIVE,
         Condition.CAUSALHIPPO_ABLATION_NO_RERANK,
         -> RagId.CAUSAL_HIPPO_RAG
+
+        Condition.YOUTURAG -> RagId.YOUTU_RAG
     }
 
 private fun buildUnifiedOverrides(
@@ -681,6 +697,13 @@ private fun buildUnifiedOverrides(
                 ) +
                 persistenceOverrides
         }
+
+        Condition.YOUTURAG -> {
+            mapOf(
+                "rootDir" to workdirRoot.toString(),
+                "datasetName" to "demo",
+            ) + persistenceOverrides
+        }
     }
 }
 
@@ -718,6 +741,18 @@ private fun buildUnifiedQuery(
                 includeReferences = false,
                 includeGraphPaths = true,
                 extras = mapOf("maxPaths" to 3),
+            )
+        }
+
+        Condition.YOUTURAG -> {
+            UnifiedQuery(
+                mode = UnifiedMode.HYBRID,
+                topK = config.topK,
+                includeAnswer = true,
+                includeContext = true,
+                includeReferences = true,
+                includeFollowUps = true,
+                extras = mapOf("datasetName" to "demo"),
             )
         }
     }

@@ -1,0 +1,29 @@
+[
+  {
+    "name": "regex_openai_location",
+    "provider": "regex",
+    "question": "Where is OpenAI based in San Francisco?",
+    "stopwords": [
+      "where",
+      "is",
+      "in"
+    ],
+    "python_entities": [
+      "OpenAI",
+      "San Francisco"
+    ],
+    "python_keywords": [
+      "openai",
+      "san",
+      "francisco"
+    ],
+    "required_keywords": [
+      "openai"
+    ],
+    "forbidden_keywords": [
+      "london"
+    ],
+    "min_entity_overlap": 1.0,
+    "min_keyword_overlap": 1.0
+  }
+]

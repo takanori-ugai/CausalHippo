@@ -4,6 +4,8 @@ import causalhippo.CausalHippoRAG
 import causalrag.CausalRAG
 import causalrag.retriever.HippoRagSemanticMode
 import com.microsoft.graphrag.GraphRAG
+import com.youtu.graphrag.shared.config.ConfigManager
+import com.youtu.graphrag.shared.retriever.IrcotPromptSource
 import hipporag.HippoRAG
 import hipporag.config.BaseConfig
 import lightrag.core.LightRAG
@@ -49,11 +51,12 @@ object UnifiedRagFactory {
                     RagId.PATH_RAG -> createPathRag(configPath, effectiveOverrides)
                     RagId.LIGHT_RAG -> createLightRag(configPath, effectiveOverrides)
                     RagId.GRAPH_RAG -> createGraphRag(effectiveOverrides)
+                    RagId.YOUTU_RAG -> createYoutuRag(configPath, effectiveOverrides)
                 }
             if (session == null) return baseHandle
 
             val shouldWrapWithGenericPersistenceAdapter =
-                ragId != RagId.CAUSAL_RAG && ragId != RagId.LIGHT_RAG && ragId != RagId.PATH_RAG
+                ragId != RagId.CAUSAL_RAG && ragId != RagId.LIGHT_RAG && ragId != RagId.PATH_RAG && ragId != RagId.YOUTU_RAG
             return if (shouldWrapWithGenericPersistenceAdapter) {
                 baseHandle.copy(
                     rag =
@@ -290,6 +293,59 @@ object UnifiedRagFactory {
         )
     }
 
+    private fun createYoutuRag(
+        configPath: String?,
+        overrides: Map<String, Any?>,
+    ): UnifiedRagHandle {
+        val effective = withPersistenceBridgeDefaults(RagId.YOUTU_RAG, overrides)
+        val persistenceSession = effective.persistenceSession("__persistenceSession")
+        val useUnifiedSpi = effective.bool("__useUnifiedSpiForRetrievalAndIndex") ?: false
+        val rootDir =
+            (effective.string("rootDir")?.let { Path.of(it) } ?: Path.of("."))
+                .toAbsolutePath()
+                .normalize()
+        val datasetName = effective.string("datasetName") ?: "demo"
+        val youtuConfigPath = resolveYoutuConfigPath(configPath, effective.string("configPath"))
+        val ircotPromptSource =
+            when (effective.string("ircotPromptSource")?.trim()?.lowercase()) {
+                "backend" -> IrcotPromptSource.BACKEND
+                else -> IrcotPromptSource.MAIN
+            }
+
+        val adapter =
+            YoutuRagUnifiedAdapter(
+                config = ConfigManager(youtuConfigPath),
+                datasetName = datasetName,
+                rootDir = rootDir,
+                ircotPromptSource = ircotPromptSource,
+                persistenceSession = persistenceSession,
+                useUnifiedSpiForRetrievalAndIndex = useUnifiedSpi,
+                persistenceNamespacePrefix = effective.string("persistenceNamespacePrefix") ?: "youturag",
+            )
+
+        return UnifiedRagHandle(
+            id = RagId.YOUTU_RAG,
+            capabilities = YoutuRagUnifiedAdapter.CAPABILITIES,
+            rag = adapter,
+        )
+    }
+
+    private fun resolveYoutuConfigPath(
+        explicitConfigPath: String?,
+        overrideConfigPath: String?,
+    ): String? {
+        if (!explicitConfigPath.isNullOrBlank()) return explicitConfigPath
+        if (!overrideConfigPath.isNullOrBlank()) return overrideConfigPath
+
+        val baseConfig = Path.of("config/base_config.json")
+        if (Files.exists(baseConfig)) return baseConfig.toString()
+
+        val commonConfig = Path.of("config/common_rag.json")
+        if (Files.exists(commonConfig)) return commonConfig.toString()
+
+        return null
+    }
+
     private fun parseHippoSemanticMode(raw: String?): HippoRagSemanticMode =
         when (raw?.trim()?.lowercase()) {
             "dpr" -> HippoRagSemanticMode.DPR
@@ -409,6 +465,10 @@ object UnifiedRagFactory {
 
             RagId.CAUSAL_HIPPO_RAG -> {
                 bridged.putIfAbsent("saveDir", Path.of(rootDir, "causal_hipporag").toString())
+            }
+
+            RagId.YOUTU_RAG -> {
+                bridged.putIfAbsent("rootDir", Path.of(rootDir, "youtu_rag").toString())
             }
         }
         return bridged

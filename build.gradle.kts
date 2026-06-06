@@ -1,7 +1,7 @@
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
-    kotlin("jvm") version "2.3.20"
+    kotlin("jvm") version "2.4.0"
     application
     id("com.gradleup.shadow") version "9.4.1"
     kotlin("plugin.serialization") version "2.3.20"
@@ -18,6 +18,7 @@ group = "com.causalrag"
 version = "0.0.1"
 
 val ktorVersion = "3.4.1"
+val koinVersion = "4.2.1"
 val osName = System.getProperty("os.name").lowercase()
 val archName = System.getProperty("os.arch").lowercase()
 val networkAnalysisVersion = "1.3.0"
@@ -53,6 +54,7 @@ dependencies {
     implementation("io.ktor:ktor-server-netty")
     implementation("io.ktor:ktor-server-content-negotiation")
     implementation("io.ktor:ktor-serialization-kotlinx-json")
+    implementation("io.ktor:ktor-server-websockets")
     implementation("io.ktor:ktor-server-swagger")
     implementation("io.ktor:ktor-server-cors")
     implementation("ch.qos.logback:logback-classic:1.5.32")
@@ -63,6 +65,8 @@ dependencies {
     implementation("gg.jte:jte-kotlin:3.2.4")
     implementation("org.apache.commons:commons-csv:1.14.1")
     implementation("org.apache.pdfbox:pdfbox:3.0.7")
+    implementation("org.apache.poi:poi-ooxml:5.5.1")
+    implementation("org.apache.poi:poi-scratchpad:5.5.1")
     implementation("io.ragas:ragas-kotlin:0.0.1")
     implementation("io.github.ugaikit:bertscore:0.1.0")
 
@@ -70,6 +74,7 @@ dependencies {
     implementation("dev.langchain4j:langchain4j:1.15.0")
     implementation("dev.langchain4j:langchain4j-open-ai:1.15.0")
     implementation("dev.langchain4j:langchain4j-open-ai-official:1.15.0-beta25")
+    implementation("dev.langchain4j:langchain4j-google-ai-gemini:1.15.0")
     implementation("dev.langchain4j:langchain4j-ollama:1.15.0")
     implementation("dev.langchain4j:langchain4j-community-neo4j:1.15.0-beta25")
 
@@ -90,12 +95,16 @@ dependencies {
 
     implementation("tools.jackson.module:jackson-module-kotlin:3.1.4")
     implementation("org.jgrapht:jgrapht-core:$jgraphtVersion")
+    implementation("org.apache.lucene:lucene-core:10.4.0")
+    implementation("org.apache.lucene:lucene-analysis-common:10.4.0")
     // Keep Hadoop before parquet-floor on classpath: parquet-floor bundles a stub FSDataInputStream.
     implementation("org.apache.hadoop:hadoop-client-api:3.5.0")
     runtimeOnly("org.apache.hadoop:hadoop-client-runtime:3.5.0")
     implementation("blue.strategic.parquet:parquet-floor:2.1")
     implementation("info.picocli:picocli:4.7.6")
     implementation("nl.cwts:networkanalysis:$networkAnalysisVersion")
+    implementation("org.jetbrains.kotlinx:multik-default:0.3.1")
+    implementation("org.apache.opennlp:opennlp-tools:2.5.4")
 }
 
 tasks {
