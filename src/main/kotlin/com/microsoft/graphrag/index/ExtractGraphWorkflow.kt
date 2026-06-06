@@ -2,11 +2,11 @@ package com.microsoft.graphrag.index
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
-import tools.jackson.databind.ObjectMapper
 import dev.langchain4j.data.message.ChatMessage
 import dev.langchain4j.data.message.UserMessage
 import dev.langchain4j.model.openai.OpenAiChatModel
 import io.github.oshai.kotlinlogging.KotlinLogging
+import tools.jackson.databind.ObjectMapper
 
 /**
  * Extracts entities and relationships from document chunks using an LLM.

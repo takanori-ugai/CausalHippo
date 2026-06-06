@@ -1,12 +1,12 @@
 package hipporag
 
-import tools.jackson.core.type.TypeReference
-import tools.jackson.module.kotlin.jacksonObjectMapper
 import hipporag.config.BaseConfig
 import hipporag.utils.QuerySolution
 import kotlinx.coroutines.runBlocking
 import shared.config.CommonRagConfigLoader
 import shared.rag.CommonRag
+import tools.jackson.core.type.TypeReference
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardCopyOption

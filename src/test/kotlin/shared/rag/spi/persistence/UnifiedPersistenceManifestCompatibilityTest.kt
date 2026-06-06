@@ -1,7 +1,7 @@
 package shared.rag.spi.persistence
 
-import tools.jackson.module.kotlin.jacksonObjectMapper
 import kotlinx.coroutines.runBlocking
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.nio.file.Files
 import kotlin.test.Test
 import kotlin.test.assertEquals

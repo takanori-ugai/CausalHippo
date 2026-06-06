@@ -1,10 +1,10 @@
 package com.microsoft.graphrag.index
 
-import tools.jackson.databind.ObjectMapper
 import dev.langchain4j.data.message.ChatMessage
 import dev.langchain4j.data.message.UserMessage
 import dev.langchain4j.model.openai.OpenAiChatModel
 import io.github.oshai.kotlinlogging.KotlinLogging
+import tools.jackson.databind.ObjectMapper
 
 /**
  * Extracts claims from document chunks using an LLM.
