@@ -5,8 +5,8 @@ import dev.langchain4j.data.message.SystemMessage
 import dev.langchain4j.data.message.UserMessage
 import dev.langchain4j.model.chat.ChatModel
 import dev.langchain4j.model.chat.response.ChatResponse
+import dev.langchain4j.model.googleai.GoogleAiGeminiChatModel
 import dev.langchain4j.model.ollama.OllamaChatModel
-import dev.langchain4j.model.openai.OpenAiChatModel
 import dev.langchain4j.model.openai.OpenAiChatRequestParameters
 import dev.langchain4j.model.openaiofficial.OpenAiOfficialChatModel
 import io.github.oshai.kotlinlogging.KotlinLogging
@@ -29,14 +29,26 @@ class LLMInterface(
     private val systemMessage: String? = null,
     private val baseUrl: String? = null,
 ) {
+    companion object {
+        private const val DEFAULT_GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
+    }
+
     private val providerName = provider.lowercase()
-    private val apiKeyValue = apiKey ?: System.getenv("OPENAI_API_KEY")
+    private val apiKeyValue =
+        apiKey
+            ?: if (providerName in setOf("gemini", "google", "google_gemini")) {
+                System.getenv("GEMINI_API_KEY") ?: System.getenv("OPENAI_API_KEY")
+            } else {
+                System.getenv("OPENAI_API_KEY")
+            }
 
     private var chatModel: ChatModel? = null
     private var lastTemperature: Double? = null
     private var lastJsonMode: Boolean? = null
     private var lastMaxTokens: Int? = null
     private var lastJsonArrayMode: Boolean? = null
+    private var lastGeminiTemperature: Double? = null
+    private var lastGeminiMaxTokens: Int? = null
 
     /**
      * Generates a chat completion for the supplied prompt.
@@ -65,6 +77,10 @@ class LLMInterface(
             when (providerName) {
                 "openai" -> {
                     chatOpenAi(prompt, temperature, maxTokens, jsonMode, jsonArrayMode)
+                }
+
+                "gemini", "google", "google_gemini" -> {
+                    chatGemini(prompt, temperature, maxTokens, jsonMode, jsonArrayMode)
                 }
 
                 "ollama" -> {
@@ -97,6 +113,19 @@ class LLMInterface(
         jsonArrayMode: Boolean,
     ): String = extractResponseText(getOpenAiModel(temperature, maxTokens, jsonMode, jsonArrayMode).chat(buildMessages(prompt)))
 
+    private fun chatGemini(
+        prompt: String,
+        temperature: Double,
+        maxTokens: Int,
+        jsonMode: Boolean,
+        jsonArrayMode: Boolean,
+    ): String {
+        if (jsonMode || jsonArrayMode) {
+            logger.debug { "jsonMode/jsonArrayMode requested for Gemini; relying on prompt-level formatting." }
+        }
+        return extractResponseText(getGeminiModel(temperature, maxTokens).chat(buildMessages(prompt)))
+    }
+
     internal fun extractResponseText(response: ChatResponse): String {
         val aiMessage = response.aiMessage()
         val text = aiMessage.text()
@@ -123,8 +152,23 @@ class LLMInterface(
         maxTokens: Int,
         jsonMode: Boolean,
         jsonArrayMode: Boolean,
+    ): ChatModel =
+        getOpenAiCompatibleModel(
+            temperature = temperature,
+            maxTokens = maxTokens,
+            jsonMode = jsonMode,
+            jsonArrayMode = jsonArrayMode,
+            effectiveBaseUrl = baseUrl,
+        )
+
+    private fun getOpenAiCompatibleModel(
+        temperature: Double,
+        maxTokens: Int,
+        jsonMode: Boolean,
+        jsonArrayMode: Boolean,
+        effectiveBaseUrl: String?,
     ): ChatModel {
-        check(!apiKeyValue.isNullOrBlank()) { "OPENAI_API_KEY is not configured." }
+        check(!apiKeyValue.isNullOrBlank()) { "API key is not configured for provider '$providerName'." }
         val includeTemperature = supportsTemperature(modelName)
         val effectiveTemperature = if (includeTemperature) temperature else null
         if (
@@ -150,8 +194,8 @@ class LLMInterface(
                             }.maxCompletionTokens(maxTokens)
                             .build(),
                     )
-            if (baseUrl != null) {
-                builder.baseUrl(baseUrl)
+            if (effectiveBaseUrl != null) {
+                builder.baseUrl(effectiveBaseUrl)
             }
             if (jsonMode) {
                 if (jsonArrayMode) {
@@ -177,6 +221,35 @@ class LLMInterface(
                 builder.baseUrl(baseUrl)
             }
             chatModel = builder.build()
+        }
+        return chatModel!!
+    }
+
+    private fun getGeminiModel(
+        temperature: Double,
+        maxTokens: Int,
+    ): ChatModel {
+        check(!apiKeyValue.isNullOrBlank()) { "API key is not configured for provider '$providerName'." }
+        val includeTemperature = supportsTemperature(modelName)
+        val effectiveTemperature = if (includeTemperature) temperature else null
+        if (
+            chatModel == null ||
+            lastGeminiTemperature != effectiveTemperature ||
+            lastGeminiMaxTokens != maxTokens
+        ) {
+            val builder =
+                GoogleAiGeminiChatModel
+                    .builder()
+                    .apiKey(apiKeyValue)
+                    .modelName(modelName)
+                    .baseUrl(baseUrl ?: DEFAULT_GEMINI_BASE_URL)
+                    .maxOutputTokens(maxTokens)
+            if (includeTemperature) {
+                builder.temperature(temperature)
+            }
+            chatModel = builder.build()
+            lastGeminiTemperature = effectiveTemperature
+            lastGeminiMaxTokens = maxTokens
         }
         return chatModel!!
     }

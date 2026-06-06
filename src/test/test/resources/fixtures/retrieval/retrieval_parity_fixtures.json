@@ -1,0 +1,375 @@
+[
+  {
+    "name": "default_single_hop",
+    "question": "Who leads Project Alpha?",
+    "involved_types": {},
+    "config_overrides": {
+      "retrieval": {
+        "enable_reranking": false,
+        "enable_query_enhancement": false,
+        "strategy": {
+          "enable_parallel": false,
+          "enabled": ["lexical_triple", "lexical_chunk", "triple_chunk_bridge"]
+        }
+      }
+    },
+    "top_k": 1,
+    "recall_paths": 1,
+    "graph": [
+      {
+        "start_node": {
+          "label": "entity",
+          "properties": {
+            "name": "Project Alpha",
+            "chunk id": "c1"
+          }
+        },
+        "relation": "led_by",
+        "end_node": {
+          "label": "entity",
+          "properties": {
+            "name": "Alice",
+            "chunk id": "c1"
+          }
+        }
+      }
+    ],
+    "chunks": [
+      {
+        "id": "c1",
+        "text": "Project Alpha is led by Alice."
+      }
+    ],
+    "expected": {
+      "triples": [
+        "(Project Alpha, led_by, Alice)"
+      ],
+      "chunk_ids": [
+        "c1"
+      ],
+      "chunk_contents": [
+        "Project Alpha is led by Alice."
+      ],
+      "chunk_retrieval_prefixes": [
+        "[Chunk c1] Project Alpha is led by Alice."
+      ],
+      "retrieval_strategy_prefix": ""
+    }
+  },
+  {
+    "name": "multi_hop_chain",
+    "question": "How is Alpha connected to Gamma?",
+    "involved_types": {},
+    "config_overrides": {
+      "retrieval": {
+        "enable_reranking": false,
+        "enable_query_enhancement": false,
+        "strategy": {
+          "enable_parallel": true,
+          "enabled": ["lexical_triple", "path_expand", "lexical_chunk", "triple_chunk_bridge"],
+          "weights": {
+            "lexical_triple": 1.0,
+            "path_expand": 1.0,
+            "lexical_chunk": 1.0,
+            "triple_chunk_bridge": 1.0
+          }
+        }
+      }
+    },
+    "top_k": 2,
+    "recall_paths": 2,
+    "graph": [
+      {
+        "start_node": {
+          "label": "entity",
+          "properties": {
+            "name": "Alpha",
+            "chunk id": "c1"
+          }
+        },
+        "relation": "linked_to",
+        "end_node": {
+          "label": "entity",
+          "properties": {
+            "name": "Beta",
+            "chunk id": "c1"
+          }
+        }
+      },
+      {
+        "start_node": {
+          "label": "entity",
+          "properties": {
+            "name": "Beta",
+            "chunk id": "c2"
+          }
+        },
+        "relation": "connected_to",
+        "end_node": {
+          "label": "entity",
+          "properties": {
+            "name": "Gamma",
+            "chunk id": "c2"
+          }
+        }
+      }
+    ],
+    "chunks": [
+      {
+        "id": "c1",
+        "text": "Alpha links to Beta in the first relation."
+      },
+      {
+        "id": "c2",
+        "text": "Beta connects onward to Gamma in the second relation."
+      }
+    ],
+    "expected": {
+      "triples": [
+        "(Beta, connected_to, Gamma)",
+        "(Alpha, linked_to, Beta)"
+      ],
+      "chunk_ids": [
+        "c2",
+        "c1"
+      ],
+      "chunk_contents": [
+        "Beta connects onward to Gamma in the second relation.",
+        "Alpha links to Beta in the first relation."
+      ],
+      "chunk_retrieval_prefixes": [
+        "[Chunk c2]",
+        "[Chunk c1]"
+      ],
+      "retrieval_strategy_prefix": ""
+    }
+  },
+  {
+    "name": "community_aware",
+    "question": "Which entity is a member of Community_1?",
+    "involved_types": {
+      "relations": ["member_of"]
+    },
+    "config_overrides": {
+      "retrieval": {
+        "enable_reranking": false,
+        "enable_query_enhancement": false,
+        "strategy": {
+          "enable_parallel": true,
+          "enabled": ["lexical_triple", "community_triple", "lexical_chunk", "triple_chunk_bridge"],
+          "weights": {
+            "lexical_triple": 1.0,
+            "community_triple": 1.2,
+            "lexical_chunk": 1.0,
+            "triple_chunk_bridge": 1.0
+          }
+        }
+      }
+    },
+    "top_k": 2,
+    "recall_paths": 1,
+    "graph": [
+      {
+        "start_node": {
+          "label": "entity",
+          "properties": {
+            "name": "Alice",
+            "chunk id": "c1"
+          }
+        },
+        "relation": "member_of",
+        "end_node": {
+          "label": "community",
+          "properties": {
+            "name": "Community_1",
+            "chunk id": "c1"
+          }
+        }
+      },
+      {
+        "start_node": {
+          "label": "keyword",
+          "properties": {
+            "name": "Alice",
+            "chunk id": "c2"
+          }
+        },
+        "relation": "keyword_of",
+        "end_node": {
+          "label": "community",
+          "properties": {
+            "name": "Community_1",
+            "chunk id": "c2"
+          }
+        }
+      }
+    ],
+    "chunks": [
+      {
+        "id": "c1",
+        "text": "Alice is a member of Community_1."
+      },
+      {
+        "id": "c2",
+        "text": "Alice is a representative keyword for Community_1."
+      }
+    ],
+    "expected": {
+      "triples": [
+        "(Alice, member_of, Community_1)"
+      ],
+      "chunk_ids": [
+        "c1",
+        "c2"
+      ],
+      "chunk_contents": [
+        "Alice is a member of Community_1.",
+        "Alice is a representative keyword for Community_1."
+      ],
+      "chunk_retrieval_prefixes": [
+        "[Chunk c1]",
+        "[Chunk c2]"
+      ],
+      "retrieval_strategy_prefix": ""
+    }
+  },
+  {
+    "name": "noisy_distractor",
+    "question": "Who founded OpenAI?",
+    "involved_types": {},
+    "config_overrides": {
+      "retrieval": {
+        "enable_reranking": false,
+        "enable_query_enhancement": false,
+        "strategy": {
+          "enable_parallel": true,
+          "enabled": ["lexical_triple", "lexical_chunk", "triple_chunk_bridge"]
+        }
+      }
+    },
+    "top_k": 1,
+    "recall_paths": 1,
+    "graph": [
+      {
+        "start_node": {
+          "label": "entity",
+          "properties": {
+            "name": "OpenAI",
+            "chunk id": "c1"
+          }
+        },
+        "relation": "founded_by",
+        "end_node": {
+          "label": "entity",
+          "properties": {
+            "name": "Sam Altman",
+            "chunk id": "c1"
+          }
+        }
+      },
+      {
+        "start_node": {
+          "label": "entity",
+          "properties": {
+            "name": "OpenAI",
+            "chunk id": "c2"
+          }
+        },
+        "relation": "located_in",
+        "end_node": {
+          "label": "entity",
+          "properties": {
+            "name": "San Francisco",
+            "chunk id": "c2"
+          }
+        }
+      }
+    ],
+    "chunks": [
+      {
+        "id": "c1",
+        "text": "OpenAI was founded by Sam Altman."
+      },
+      {
+        "id": "c2",
+        "text": "OpenAI has headquarters in San Francisco."
+      }
+    ],
+    "expected": {
+      "triples": [
+        "(OpenAI, founded_by, Sam Altman)"
+      ],
+      "chunk_ids": [
+        "c1"
+      ],
+      "chunk_contents": [
+        "OpenAI was founded by Sam Altman."
+      ],
+      "chunk_retrieval_prefixes": [
+        "[Chunk c1]"
+      ],
+      "retrieval_strategy_prefix": ""
+    }
+  },
+  {
+    "name": "chunk_bridge_union",
+    "question": "Tell me about Beta.",
+    "involved_types": {},
+    "config_overrides": {
+      "retrieval": {
+        "enable_reranking": false,
+        "enable_query_enhancement": false,
+        "strategy": {
+          "enable_parallel": true,
+          "enabled": ["lexical_triple", "lexical_chunk", "triple_chunk_bridge"]
+        }
+      }
+    },
+    "top_k": 2,
+    "recall_paths": 1,
+    "graph": [
+      {
+        "start_node": {
+          "label": "entity",
+          "properties": {
+            "name": "Delta",
+            "chunk id": "c1"
+          }
+        },
+        "relation": "mentions",
+        "end_node": {
+          "label": "entity",
+          "properties": {
+            "name": "Echo",
+            "chunk id": "c1"
+          }
+        }
+      }
+    ],
+    "chunks": [
+      {
+        "id": "c1",
+        "text": "Delta and Echo are linked in the source text."
+      },
+      {
+        "id": "c2",
+        "text": "Beta appears frequently in this standalone chunk."
+      }
+    ],
+    "expected": {
+      "triples": [
+
+      ],
+      "chunk_ids": [
+        "c2"
+      ],
+      "chunk_contents": [
+        "Beta appears frequently in this standalone chunk."
+      ],
+      "chunk_retrieval_prefixes": [
+        "[Chunk c2]"
+      ],
+      "retrieval_strategy_prefix": ""
+    }
+  }
+]

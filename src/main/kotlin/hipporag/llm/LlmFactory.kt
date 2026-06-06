@@ -1,7 +1,7 @@
 package hipporag.llm
 
+import dev.langchain4j.model.googleai.GoogleAiGeminiChatModel
 import dev.langchain4j.model.ollama.OllamaChatModel
-import dev.langchain4j.model.openai.OpenAiChatModel
 import dev.langchain4j.model.openai.OpenAiChatRequestParameters
 import dev.langchain4j.model.openaiofficial.OpenAiOfficialChatModel
 import hipporag.config.BaseConfig
@@ -9,6 +9,7 @@ import io.github.oshai.kotlinlogging.KotlinLogging
 import shared.llm.supportsTemperature
 
 private val logger = KotlinLogging.logger {}
+private const val DEFAULT_GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
 
 /**
  * Builds an LLM client from [globalConfig].
@@ -39,7 +40,7 @@ fun getLlm(globalConfig: BaseConfig): BaseLLM {
                 "Supported providers: OpenAI-compatible (default)," +
                 "and Ollama (set llmProvider=ollama or use an Ollama base URL).",
         )
-    } else if (provider != null && provider !in setOf("openai", "ollama")) {
+    } else if (provider != null && provider !in setOf("openai", "ollama", "gemini", "google", "google_gemini")) {
         logger.warn { "Unknown LLM provider '$provider'. Falling back to OpenAI-compatible settings." }
     }
 
@@ -61,6 +62,29 @@ fun getLlm(globalConfig: BaseConfig): BaseLLM {
                     .modelName(ollamaModel)
                     .temperature(temperature)
                     .build()
+            LangChainChatLLM(model)
+        }
+
+        provider in setOf("gemini", "google", "google_gemini") -> {
+            val apiKey =
+                globalConfig.openAiApiKey
+                    ?: System.getenv("GEMINI_API_KEY")
+                    ?: System.getenv("OPENAI_API_KEY")
+                    ?: error("Gemini API key not configured. Set GEMINI_API_KEY/OPENAI_API_KEY or openAiApiKey in config.")
+            val includeTemperature = supportsTemperature(modelName)
+            val builder =
+                GoogleAiGeminiChatModel
+                    .builder()
+                    .apiKey(apiKey)
+                    .modelName(modelName)
+                    .baseUrl(globalConfig.llmBaseUrl ?: DEFAULT_GEMINI_BASE_URL)
+            if (includeTemperature) {
+                builder.temperature(temperature)
+            }
+            if (globalConfig.maxNewTokens != null) {
+                builder.maxOutputTokens(globalConfig.maxNewTokens)
+            }
+            val model = builder.build()
             LangChainChatLLM(model)
         }
 

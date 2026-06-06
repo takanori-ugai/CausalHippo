@@ -33,7 +33,7 @@ Options:
   --limit <int>            Limit samples (optional)
   --llm-model <name>       Override generation model
   --embedding-model <name> Override embedding model
-  --provider <name>        openai|azure|ollama (default: env LLM_PROVIDER or openai)
+  --provider <name>        openai|azure|ollama|gemini (default: env LLM_PROVIDER or openai)
   --llm-base-url <url>     Optional base URL
   --template-style <name>  Prompt template style (default: detailed_musique)
   --use-unified-api        Route conditions through shared unified adapters
