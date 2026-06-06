@@ -22,10 +22,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up JDK 17
+    - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
-        java-version: '17'
+        java-version: '21'
         distribution: 'temurin'
 
     - name: Normalize eval/ragas wrapper jar
@@ -37,7 +37,7 @@ jobs:
       uses: gradle/actions/setup-gradle@v6.1.0 # v4.0.0
 
     - name: Build with Gradle Wrapper
-      run: ./gradlew build -x integrationTest
+      run: ./gradlew build
 
     - name: Unified API Contract Gate
       run: ./gradlew test --tests "shared.rag.unified.*"
