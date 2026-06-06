@@ -1,10 +1,17 @@
 package com.youtu.graphrag.shared.llm
 
+import tools.jackson.databind.DeserializationFeature
 import tools.jackson.databind.ObjectMapper
-import tools.jackson.module.kotlin.jacksonObjectMapper
+import tools.jackson.databind.json.JsonMapper
+import tools.jackson.module.kotlin.KotlinModule
 
 object LlmOutputParser {
-    private val mapper: ObjectMapper = jacksonObjectMapper()
+    private val mapper: ObjectMapper =
+        JsonMapper
+            .builder()
+            .addModule(KotlinModule.Builder().build())
+            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+            .build()
 
     private val fenceRegex =
         Regex(

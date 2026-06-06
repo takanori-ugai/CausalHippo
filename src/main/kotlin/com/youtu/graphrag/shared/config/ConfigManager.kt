@@ -2,9 +2,13 @@ package com.youtu.graphrag.shared.config
 
 import io.github.oshai.kotlinlogging.KotlinLogging
 import tools.jackson.core.type.TypeReference
+import tools.jackson.databind.DeserializationFeature
 import tools.jackson.databind.ObjectMapper
+import tools.jackson.databind.cfg.MapperBuilder
+import tools.jackson.databind.json.JsonMapper
 import tools.jackson.dataformat.yaml.YAMLFactory
-import tools.jackson.module.kotlin.jacksonObjectMapper
+import tools.jackson.dataformat.yaml.YAMLMapper
+import tools.jackson.module.kotlin.KotlinModule
 import java.nio.file.Files
 import java.nio.file.Path
 import java.util.Locale
@@ -291,11 +295,17 @@ class ConfigManager(
         private val NON_NORMALIZED_MAP_KEYS = setOf("weights", "datasets", "prompts")
         private val RECURSIVELY_PRESERVED_MAP_KEYS = setOf("prompts")
 
-        private fun createMapper(factory: tools.jackson.core.TokenStreamFactory? = null): ObjectMapper =
+        private fun createMapper(factory: YAMLFactory? = null): ObjectMapper =
             if (factory == null) {
-                jacksonObjectMapper()
+                buildConfiguredMapper(JsonMapper.builder())
             } else {
-                ObjectMapper(factory)
+                buildConfiguredMapper(YAMLMapper.builder(factory))
             }
+
+        private fun <M : ObjectMapper, B : MapperBuilder<M, B>> buildConfiguredMapper(builder: B): ObjectMapper =
+            builder
+                .addModule(KotlinModule.Builder().build())
+                .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+                .build()
     }
 }

@@ -10,8 +10,10 @@ import com.microsoft.graphrag.query.GlobalSearchEngine.Companion.DEFAULT_MAP_SYS
 import com.microsoft.graphrag.query.GlobalSearchEngine.Companion.DEFAULT_REDUCE_SYSTEM_PROMPT
 import io.github.oshai.kotlinlogging.KotlinLogging
 import shared.config.CommonRagConfigLoader
+import tools.jackson.databind.DeserializationFeature
 import tools.jackson.databind.ObjectMapper
-import tools.jackson.module.kotlin.jacksonObjectMapper
+import tools.jackson.databind.json.JsonMapper
+import tools.jackson.module.kotlin.KotlinModule
 import java.nio.file.Files
 import java.nio.file.Path
 
@@ -176,7 +178,12 @@ object QueryConfigLoader {
     private const val DEFAULT_EMBEDDING_ID = "default_embedding_model"
     private val logger = KotlinLogging.logger {}
 
-    private val mapper: ObjectMapper = jacksonObjectMapper()
+    private val mapper: ObjectMapper =
+        JsonMapper
+            .builder()
+            .addModule(KotlinModule.Builder().build())
+            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+            .build()
 
     private data class SharedModelDefaults(
         val chatModelName: String? = null,

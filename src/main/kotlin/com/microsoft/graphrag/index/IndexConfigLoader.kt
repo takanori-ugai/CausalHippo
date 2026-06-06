@@ -7,8 +7,10 @@ import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.contentOrNull
 import shared.config.CommonRagConfig
 import shared.config.CommonRagConfigLoader
+import tools.jackson.databind.DeserializationFeature
 import tools.jackson.databind.ObjectMapper
-import tools.jackson.module.kotlin.jacksonObjectMapper
+import tools.jackson.databind.json.JsonMapper
+import tools.jackson.module.kotlin.KotlinModule
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
@@ -29,7 +31,12 @@ object IndexConfigLoader {
     private const val DEFAULT_COMMON_CONFIG = "config/common_rag.json"
     private val logger = KotlinLogging.logger {}
 
-    private val mapper: ObjectMapper = jacksonObjectMapper()
+    private val mapper: ObjectMapper =
+        JsonMapper
+            .builder()
+            .addModule(KotlinModule.Builder().build())
+            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+            .build()
 
     /**
      * Loads configuration from `config/common_rag.json` (or an explicit config path) and resolves directories.

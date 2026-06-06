@@ -9,7 +9,8 @@ import org.neo4j.driver.SessionConfig
 import org.neo4j.driver.TransactionContext
 import org.neo4j.driver.Values
 import tools.jackson.core.type.TypeReference
-import tools.jackson.module.kotlin.jacksonObjectMapper
+import tools.jackson.databind.json.JsonMapper
+import tools.jackson.module.kotlin.KotlinModule
 import java.nio.file.Files
 import java.nio.file.Path
 import java.time.Instant
@@ -51,7 +52,12 @@ private class Neo4jPersistenceSession(
     private val rootDir: Path?,
     private val metadata: Map<String, String>,
 ) : PersistenceSession {
-    private val objectMapper = jacksonObjectMapper()
+    private val objectMapper =
+        JsonMapper
+            .builder()
+            .addModule(KotlinModule.Builder().build())
+            .findAndAddModules()
+            .build()
     private val driver: Driver = GraphDatabase.driver(uri, AuthTokens.basic(username, password))
 
     override val backendId: String = "neo4j"

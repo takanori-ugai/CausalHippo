@@ -7,7 +7,8 @@ import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
 import org.bson.Document
 import tools.jackson.core.type.TypeReference
-import tools.jackson.module.kotlin.jacksonObjectMapper
+import tools.jackson.databind.json.JsonMapper
+import tools.jackson.module.kotlin.KotlinModule
 import java.nio.file.Files
 import java.nio.file.Path
 import java.time.Instant
@@ -50,7 +51,12 @@ private class MongoDbPersistenceSession(
     private val rootDir: Path?,
     private val metadata: Map<String, String>,
 ) : PersistenceSession {
-    private val objectMapper = jacksonObjectMapper()
+    private val objectMapper =
+        JsonMapper
+            .builder()
+            .addModule(KotlinModule.Builder().build())
+            .findAndAddModules()
+            .build()
     private val client = MongoClient.create(connectionString)
     private val database = client.getDatabase(databaseName)
 

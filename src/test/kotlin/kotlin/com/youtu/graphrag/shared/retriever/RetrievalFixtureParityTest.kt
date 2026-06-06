@@ -4,7 +4,9 @@ import com.youtu.graphrag.shared.config.ConfigManager
 import com.youtu.graphrag.shared.graph.GraphRelationship
 import tools.jackson.core.type.TypeReference
 import tools.jackson.databind.ObjectMapper
-import tools.jackson.module.kotlin.jacksonObjectMapper
+import tools.jackson.databind.PropertyNamingStrategies
+import tools.jackson.databind.json.JsonMapper
+import tools.jackson.module.kotlin.KotlinModule
 import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.io.path.createDirectories
@@ -39,7 +41,12 @@ private data class RetrievalParityFixture(
 )
 
 class RetrievalFixtureParityTest {
-    private val mapper = jacksonObjectMapper()
+    private val mapper: ObjectMapper =
+        JsonMapper
+            .builder()
+            .addModule(KotlinModule.Builder().build())
+            .propertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE)
+            .build()
 
     @Test
     fun `retrieval fixtures lock parity fields and strategy metadata`() {
@@ -124,43 +131,7 @@ class RetrievalFixtureParityTest {
                 "Fixture resource not found: $resourcePath"
             }
         return stream.use { input ->
-            val rawFixtures: List<Map<String, Any?>> =
-                mapper.readValue(input, object : TypeReference<List<Map<String, Any?>>>() {})
-            rawFixtures.map { rawFixture ->
-                mapper.convertValue(normalizeKeys(rawFixture), RetrievalParityFixture::class.java)
-            }
-        }
-    }
-
-    private fun normalizeKeys(value: Any?): Any? =
-        when (value) {
-            is Map<*, *> -> {
-                value.entries.associate { (key, nestedValue) ->
-                    snakeToCamel(key.toString()) to normalizeKeys(nestedValue)
-                }
-            }
-
-            is List<*> -> {
-                value.map { normalizeKeys(it) }
-            }
-
-            else -> {
-                value
-            }
-        }
-
-    private fun snakeToCamel(key: String): String {
-        if ('_' !in key) {
-            return key
-        }
-        val parts = key.split('_')
-        return buildString {
-            append(parts.firstOrNull().orEmpty())
-            parts.drop(1).forEach { part ->
-                if (part.isNotEmpty()) {
-                    append(part.replaceFirstChar { it.uppercase() })
-                }
-            }
+            mapper.readValue(input, object : TypeReference<List<RetrievalParityFixture>>() {})
         }
     }
 
