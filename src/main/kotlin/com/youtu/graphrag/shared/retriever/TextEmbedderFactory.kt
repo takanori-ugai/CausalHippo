@@ -1,10 +1,10 @@
 package com.youtu.graphrag.shared.retriever
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import com.youtu.graphrag.shared.config.ConfigManager
 import dev.langchain4j.model.googleai.GoogleAiEmbeddingModel
 import io.github.oshai.kotlinlogging.KotlinLogging
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
@@ -19,7 +19,7 @@ class OpenAiTextEmbedder(
     private val fallback: TextEmbedder,
     private val timeout: Duration = Duration.ofSeconds(30),
     private val httpClient: HttpClient = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(10)).build(),
-    private val objectMapper: ObjectMapper = ObjectMapper().registerKotlinModule(),
+    private val objectMapper: ObjectMapper = jacksonObjectMapper(),
 ) : TextEmbedder {
     private val logger = KotlinLogging.logger {}
     override val modelTag: String = "openai:$modelName:$dimensions@${baseUrl.trimEnd('/')}"

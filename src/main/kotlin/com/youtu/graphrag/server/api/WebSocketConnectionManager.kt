@@ -1,10 +1,10 @@
 package com.youtu.graphrag.server.api
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import io.github.oshai.kotlinlogging.KotlinLogging
 import io.ktor.server.websocket.DefaultWebSocketServerSession
 import io.ktor.websocket.Frame
 import io.ktor.websocket.send
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.util.concurrent.ConcurrentHashMap
 
 class WebSocketConnectionManager {

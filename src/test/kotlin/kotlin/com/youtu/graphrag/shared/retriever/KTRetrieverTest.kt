@@ -1,10 +1,10 @@
 package com.youtu.graphrag.shared.retriever
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import com.youtu.graphrag.shared.config.ConfigManager
 import com.youtu.graphrag.shared.graph.GraphNode
 import com.youtu.graphrag.shared.graph.GraphRelationship
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.io.path.createDirectories
@@ -17,7 +17,7 @@ import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
 
 class KTRetrieverTest {
-    private val mapper = ObjectMapper().registerKotlinModule()
+    private val mapper = jacksonObjectMapper()
 
     @Test
     fun `generatePrompt uses general retrieval prompt for default datasets`() {

@@ -1,11 +1,10 @@
 package com.youtu.graphrag.shared.retriever
 
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.databind.PropertyNamingStrategies
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import com.youtu.graphrag.shared.config.ConfigManager
 import com.youtu.graphrag.shared.graph.GraphRelationship
+import tools.jackson.core.type.TypeReference
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.io.path.createDirectories
@@ -40,10 +39,7 @@ private data class RetrievalParityFixture(
 )
 
 class RetrievalFixtureParityTest {
-    private val mapper =
-        ObjectMapper()
-            .registerKotlinModule()
-            .setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE)
+    private val mapper = jacksonObjectMapper()
 
     @Test
     fun `retrieval fixtures lock parity fields and strategy metadata`() {
@@ -128,7 +124,43 @@ class RetrievalFixtureParityTest {
                 "Fixture resource not found: $resourcePath"
             }
         return stream.use { input ->
-            mapper.readValue(input, object : TypeReference<List<RetrievalParityFixture>>() {})
+            val rawFixtures: List<Map<String, Any?>> =
+                mapper.readValue(input, object : TypeReference<List<Map<String, Any?>>>() {})
+            rawFixtures.map { rawFixture ->
+                mapper.convertValue(normalizeKeys(rawFixture), RetrievalParityFixture::class.java)
+            }
+        }
+    }
+
+    private fun normalizeKeys(value: Any?): Any? =
+        when (value) {
+            is Map<*, *> -> {
+                value.entries.associate { (key, nestedValue) ->
+                    snakeToCamel(key.toString()) to normalizeKeys(nestedValue)
+                }
+            }
+
+            is List<*> -> {
+                value.map { normalizeKeys(it) }
+            }
+
+            else -> {
+                value
+            }
+        }
+
+    private fun snakeToCamel(key: String): String {
+        if ('_' !in key) {
+            return key
+        }
+        val parts = key.split('_')
+        return buildString {
+            append(parts.firstOrNull().orEmpty())
+            parts.drop(1).forEach { part ->
+                if (part.isNotEmpty()) {
+                    append(part.replaceFirstChar { it.uppercase() })
+                }
+            }
         }
     }
 

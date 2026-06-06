@@ -1,9 +1,5 @@
 package com.youtu.graphrag.cli
 
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.databind.JsonNode
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import com.youtu.graphrag.server.api.QuestionAnsweringService
 import com.youtu.graphrag.shared.config.ConfigManager
 import com.youtu.graphrag.shared.config.ConfigProvider
@@ -16,6 +12,10 @@ import kotlinx.coroutines.runBlocking
 import picocli.CommandLine
 import picocli.CommandLine.Command
 import picocli.CommandLine.Option
+import tools.jackson.core.type.TypeReference
+import tools.jackson.databind.JsonNode
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.nio.file.Path
 import java.util.Locale
 import kotlin.io.path.createDirectories
@@ -45,7 +45,7 @@ class MainCommand(
     private val llmClient: LlmClient = LlmClientFactory.fromEnvironment(),
 ) : Runnable {
     private val logger = KotlinLogging.logger {}
-    private val objectMapper = ObjectMapper().registerKotlinModule()
+    private val objectMapper = jacksonObjectMapper()
 
     @Option(
         names = ["--config"],
@@ -470,7 +470,7 @@ class MainCommand(
 
 internal fun loadQaItems(
     qaPath: String,
-    objectMapper: ObjectMapper = ObjectMapper().registerKotlinModule(),
+    objectMapper: ObjectMapper = jacksonObjectMapper(),
 ): List<QaItem> {
     val qaFile = Path.of(qaPath)
     if (!qaFile.exists()) {

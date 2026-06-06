@@ -1,7 +1,5 @@
 package com.youtu.graphrag.shared.prompt
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import com.youtu.graphrag.shared.config.ConfigManager
 import com.youtu.graphrag.shared.constructor.KTBuilder
 import com.youtu.graphrag.shared.decomposer.GraphQ
@@ -10,6 +8,8 @@ import com.youtu.graphrag.shared.graph.GraphRelationship
 import com.youtu.graphrag.shared.llm.LlmClient
 import com.youtu.graphrag.shared.retriever.IrcotPromptSource
 import com.youtu.graphrag.shared.retriever.KTRetriever
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.nio.file.Files
 import java.nio.file.Path
 import java.security.MessageDigest
@@ -20,7 +20,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class PromptSnapshotMatrixTest {
-    private val mapper = ObjectMapper().registerKotlinModule()
+    private val mapper = jacksonObjectMapper()
 
     @Test
     fun `rendered prompt snapshot matrix matches expected dataset mode variants`() {

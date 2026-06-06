@@ -1,8 +1,5 @@
 package com.youtu.graphrag.shared.retriever
 
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import com.youtu.graphrag.shared.config.ConfigManager
 import com.youtu.graphrag.shared.graph.GraphRelationship
 import com.youtu.graphrag.shared.retriever.nlp.QueryNlp
@@ -15,6 +12,9 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
 import kotlinx.coroutines.withTimeoutOrNull
+import tools.jackson.core.type.TypeReference
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.nio.file.Path
 import java.util.Locale
 import kotlin.io.path.createDirectories
@@ -128,11 +128,11 @@ class KTRetriever private constructor(
     private val queryNlp: QueryNlp,
 ) {
     private val logger = KotlinLogging.logger {}
-    private val mapper = ObjectMapper().registerKotlinModule()
+    private val mapper = jacksonObjectMapper()
 
     companion object {
         private val logger = KotlinLogging.logger {}
-        private val mapper = ObjectMapper().registerKotlinModule()
+        private val mapper = jacksonObjectMapper()
         private val EXCLUDED_OUTPUT_RELATIONS = setOf("represented_by", "kw_filter_by")
         private val COMMUNITY_RELATIONS = setOf("member_of", "keyword_of", "represented_by", "kw_filter_by")
 
@@ -913,7 +913,7 @@ private class IndexBuilder(
     private val embedder: TextEmbedder,
 ) {
     private val logger = KotlinLogging.logger {}
-    private val mapper = ObjectMapper().registerKotlinModule()
+    private val mapper = jacksonObjectMapper()
     private val cacheModelTag = embedder.modelTag
     private val tripleCacheFileName = "triple_embedding_cache.json"
     private val chunkCacheFileName = "chunk_embedding_cache.json"

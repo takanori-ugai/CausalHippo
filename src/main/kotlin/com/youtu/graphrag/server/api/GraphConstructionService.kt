@@ -1,8 +1,5 @@
 package com.youtu.graphrag.server.api
 
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import com.youtu.graphrag.shared.config.ConfigManager
 import com.youtu.graphrag.shared.constructor.KTBuilder
 import com.youtu.graphrag.shared.graph.GraphRelationship
@@ -10,6 +7,9 @@ import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.jsonObject
+import tools.jackson.core.type.TypeReference
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.nio.file.Path
 import kotlin.io.path.createDirectories
 import kotlin.io.path.deleteIfExists
@@ -33,7 +33,7 @@ class GraphConstructionService(
     private val rootDir: Path = Path.of("."),
 ) {
     private val logger = KotlinLogging.logger {}
-    private val mapper = ObjectMapper().registerKotlinModule()
+    private val mapper = jacksonObjectMapper()
     private val json = Json { ignoreUnknownKeys = true }
 
     private val graphsDir = resolveConfiguredPath(config.output.graphsDir)
