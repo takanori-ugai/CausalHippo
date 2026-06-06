@@ -1,7 +1,7 @@
 package hipporag
 
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import tools.jackson.core.type.TypeReference
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import hipporag.config.BaseConfig
 import hipporag.utils.QuerySolution
 import kotlinx.coroutines.runBlocking

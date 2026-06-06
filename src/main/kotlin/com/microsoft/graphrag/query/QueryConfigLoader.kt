@@ -2,9 +2,8 @@ package com.microsoft.graphrag.query
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.fasterxml.jackson.databind.DeserializationFeature
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import com.microsoft.graphrag.prompts.query.QUESTION_SYSTEM_PROMPT
 import com.microsoft.graphrag.query.DriftSearchEngine.Companion.DEFAULT_DRIFT_PRIMER_PROMPT
 import com.microsoft.graphrag.query.DriftSearchEngine.Companion.DEFAULT_DRIFT_REDUCE_PROMPT
@@ -177,10 +176,7 @@ object QueryConfigLoader {
     private const val DEFAULT_EMBEDDING_ID = "default_embedding_model"
     private val logger = KotlinLogging.logger {}
 
-    private val mapper: ObjectMapper =
-        ObjectMapper()
-            .registerKotlinModule()
-            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+    private val mapper: ObjectMapper = jacksonObjectMapper()
 
     private data class SharedModelDefaults(
         val chatModelName: String? = null,

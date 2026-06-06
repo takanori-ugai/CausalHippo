@@ -1,7 +1,7 @@
 package shared.rag.spi.persistence
 
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import tools.jackson.core.type.TypeReference
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import org.neo4j.driver.AuthTokens
 import org.neo4j.driver.Driver
 import org.neo4j.driver.GraphDatabase
@@ -51,7 +51,7 @@ private class Neo4jPersistenceSession(
     private val rootDir: Path?,
     private val metadata: Map<String, String>,
 ) : PersistenceSession {
-    private val objectMapper = jacksonObjectMapper().findAndRegisterModules()
+    private val objectMapper = jacksonObjectMapper()
     private val driver: Driver = GraphDatabase.driver(uri, AuthTokens.basic(username, password))
 
     override val backendId: String = "neo4j"
@@ -344,7 +344,7 @@ private class Neo4jGraphStore(
     private val namespace: String,
     private val readTx: ((TransactionContext) -> Any?) -> Any?,
     private val writeTx: ((TransactionContext) -> Any?) -> Any?,
-    private val objectMapper: com.fasterxml.jackson.databind.ObjectMapper,
+    private val objectMapper: tools.jackson.databind.ObjectMapper,
 ) : GraphStore {
     override fun upsertNode(
         id: String,
@@ -499,7 +499,7 @@ private class Neo4jVectorStore(
     private val metric: String,
     private val readTx: ((TransactionContext) -> Any?) -> Any?,
     private val writeTx: ((TransactionContext) -> Any?) -> Any?,
-    private val objectMapper: com.fasterxml.jackson.databind.ObjectMapper,
+    private val objectMapper: tools.jackson.databind.ObjectMapper,
 ) : VectorIndexStore {
     init {
         ensureSchema(dimensions, metric)
@@ -665,7 +665,7 @@ private class Neo4jKvStore(
     private val namespace: String,
     private val readTx: ((TransactionContext) -> Any?) -> Any?,
     private val writeTx: ((TransactionContext) -> Any?) -> Any?,
-    private val objectMapper: com.fasterxml.jackson.databind.ObjectMapper,
+    private val objectMapper: tools.jackson.databind.ObjectMapper,
 ) : KvStore {
     override fun put(
         key: String,

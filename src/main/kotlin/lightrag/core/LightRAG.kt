@@ -1,7 +1,7 @@
 package lightrag.core
 
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import tools.jackson.core.type.TypeReference
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import dev.langchain4j.model.embedding.EmbeddingModel
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.SerialName

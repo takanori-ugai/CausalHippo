@@ -2,8 +2,8 @@ package causalhippo
 
 import causalrag.CausalRagRunResult
 import causalrag.retriever.HippoRagSemanticMode
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import tools.jackson.core.type.TypeReference
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import hipporag.config.BaseConfig
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.coroutines.runBlocking

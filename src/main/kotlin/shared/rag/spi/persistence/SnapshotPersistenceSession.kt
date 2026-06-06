@@ -1,6 +1,6 @@
 package shared.rag.spi.persistence
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardCopyOption
@@ -13,7 +13,7 @@ internal abstract class SnapshotPersistenceSession(
     final override val capabilities: PersistenceCapabilities,
     private val manifestMetadata: Map<String, String> = emptyMap(),
 ) : PersistenceSession {
-    private val objectMapper = jacksonObjectMapper().findAndRegisterModules()
+    private val objectMapper = jacksonObjectMapper()
 
     private val graphStates = mutableMapOf<String, GraphState>()
     private val vectorStates = mutableMapOf<String, VectorState>()

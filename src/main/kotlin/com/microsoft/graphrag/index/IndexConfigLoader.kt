@@ -1,9 +1,8 @@
 package com.microsoft.graphrag.index
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.fasterxml.jackson.databind.DeserializationFeature
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
@@ -30,10 +29,7 @@ object IndexConfigLoader {
     private const val DEFAULT_COMMON_CONFIG = "config/common_rag.json"
     private val logger = KotlinLogging.logger {}
 
-    private val mapper: ObjectMapper =
-        ObjectMapper()
-            .registerKotlinModule()
-            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+    private val mapper: ObjectMapper = jacksonObjectMapper()
 
     /**
      * Loads configuration from `config/common_rag.json` (or an explicit config path) and resolves directories.
