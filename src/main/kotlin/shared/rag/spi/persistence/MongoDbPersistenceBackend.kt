@@ -1,13 +1,14 @@
 package shared.rag.spi.persistence
 
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.mongodb.client.model.Filters
 import com.mongodb.client.model.ReplaceOptions
 import com.mongodb.kotlin.client.coroutine.MongoClient
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
 import org.bson.Document
+import tools.jackson.core.type.TypeReference
+import tools.jackson.databind.json.JsonMapper
+import tools.jackson.module.kotlin.KotlinModule
 import java.nio.file.Files
 import java.nio.file.Path
 import java.time.Instant
@@ -50,7 +51,12 @@ private class MongoDbPersistenceSession(
     private val rootDir: Path?,
     private val metadata: Map<String, String>,
 ) : PersistenceSession {
-    private val objectMapper = jacksonObjectMapper().findAndRegisterModules()
+    private val objectMapper =
+        JsonMapper
+            .builder()
+            .addModule(KotlinModule.Builder().build())
+            .findAndAddModules()
+            .build()
     private val client = MongoClient.create(connectionString)
     private val database = client.getDatabase(databaseName)
 
@@ -317,7 +323,7 @@ private class MongoGraphStore(
     private val namespace: String,
     private val nodesCollection: com.mongodb.kotlin.client.coroutine.MongoCollection<Document>,
     private val edgesCollection: com.mongodb.kotlin.client.coroutine.MongoCollection<Document>,
-    private val objectMapper: com.fasterxml.jackson.databind.ObjectMapper,
+    private val objectMapper: tools.jackson.databind.ObjectMapper,
 ) : GraphStore {
     override fun upsertNode(
         id: String,
@@ -446,7 +452,7 @@ private class MongoVectorStore(
     private val dimensions: Int?,
     private val metric: String,
     private val vectorsCollection: com.mongodb.kotlin.client.coroutine.MongoCollection<Document>,
-    private val objectMapper: com.fasterxml.jackson.databind.ObjectMapper,
+    private val objectMapper: tools.jackson.databind.ObjectMapper,
 ) : VectorIndexStore {
     init {
         ensureSchema(dimensions, metric)
@@ -575,7 +581,7 @@ private class MongoVectorStore(
 private class MongoKvStore(
     private val namespace: String,
     private val kvCollection: com.mongodb.kotlin.client.coroutine.MongoCollection<Document>,
-    private val objectMapper: com.fasterxml.jackson.databind.ObjectMapper,
+    private val objectMapper: tools.jackson.databind.ObjectMapper,
 ) : KvStore {
     override fun put(
         key: String,

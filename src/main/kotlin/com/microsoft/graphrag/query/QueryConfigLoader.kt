@@ -2,9 +2,6 @@ package com.microsoft.graphrag.query
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.fasterxml.jackson.databind.DeserializationFeature
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import com.microsoft.graphrag.prompts.query.QUESTION_SYSTEM_PROMPT
 import com.microsoft.graphrag.query.DriftSearchEngine.Companion.DEFAULT_DRIFT_PRIMER_PROMPT
 import com.microsoft.graphrag.query.DriftSearchEngine.Companion.DEFAULT_DRIFT_REDUCE_PROMPT
@@ -13,6 +10,10 @@ import com.microsoft.graphrag.query.GlobalSearchEngine.Companion.DEFAULT_MAP_SYS
 import com.microsoft.graphrag.query.GlobalSearchEngine.Companion.DEFAULT_REDUCE_SYSTEM_PROMPT
 import io.github.oshai.kotlinlogging.KotlinLogging
 import shared.config.CommonRagConfigLoader
+import tools.jackson.databind.DeserializationFeature
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.databind.json.JsonMapper
+import tools.jackson.module.kotlin.KotlinModule
 import java.nio.file.Files
 import java.nio.file.Path
 
@@ -178,9 +179,11 @@ object QueryConfigLoader {
     private val logger = KotlinLogging.logger {}
 
     private val mapper: ObjectMapper =
-        ObjectMapper()
-            .registerKotlinModule()
+        JsonMapper
+            .builder()
+            .addModule(KotlinModule.Builder().build())
             .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+            .build()
 
     private data class SharedModelDefaults(
         val chatModelName: String? = null,

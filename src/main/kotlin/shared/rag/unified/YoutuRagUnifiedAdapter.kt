@@ -1,7 +1,5 @@
 package shared.rag.unified
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import com.youtu.graphrag.server.api.GraphConstructionService
 import com.youtu.graphrag.server.api.QuestionAnsweringService
 import com.youtu.graphrag.server.api.contracts.QuestionResponse
@@ -18,6 +16,8 @@ import shared.rag.spi.persistence.GraphNodeRecord
 import shared.rag.spi.persistence.GraphSnapshot
 import shared.rag.spi.persistence.KvSnapshot
 import shared.rag.spi.persistence.PersistenceSession
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardCopyOption
@@ -41,7 +41,7 @@ class YoutuRagUnifiedAdapter(
     private val persistenceNamespacePrefix: String = "youturag",
 ) : UnifiedRag {
     val capabilities: RagCapabilities = CAPABILITIES
-    private val mapper = ObjectMapper().registerKotlinModule()
+    private val mapper = jacksonObjectMapper()
     private val graphService = GraphConstructionService(config = config, rootDir = rootDir)
     private val qaService =
         QuestionAnsweringService(

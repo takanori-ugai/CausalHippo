@@ -1,7 +1,7 @@
 package shared.rag.spi.persistence
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import kotlinx.coroutines.runBlocking
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.nio.file.Files
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -9,7 +9,7 @@ import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
 class UnifiedPersistenceManifestCompatibilityTest {
-    private val objectMapper = jacksonObjectMapper().findAndRegisterModules()
+    private val objectMapper = jacksonObjectMapper()
 
     @Test
     fun `filesystem checkpoint writes versioned canonical manifest shape`() =

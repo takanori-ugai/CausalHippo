@@ -1,7 +1,7 @@
 package com.youtu.graphrag.parity
 
-import com.fasterxml.jackson.databind.JsonNode
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import tools.jackson.databind.JsonNode
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import kotlin.math.abs
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue

@@ -1,13 +1,13 @@
 package com.youtu.graphrag.server.api
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import com.youtu.graphrag.server.api.contracts.DatasetInfo
 import com.youtu.graphrag.server.api.contracts.DatasetsResponse
 import com.youtu.graphrag.shared.ingest.BestEffortDocumentParser
 import com.youtu.graphrag.shared.ingest.DocumentParser
 import com.youtu.graphrag.shared.io.decodeBytesWithDetection
 import io.github.oshai.kotlinlogging.KotlinLogging
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.io.InputStream
 import java.io.OutputStream
 import java.nio.file.Files
@@ -97,7 +97,7 @@ class DatasetFileService(
     private val documentParser: DocumentParser = BestEffortDocumentParser(),
 ) {
     private val logger = KotlinLogging.logger {}
-    private val mapper = ObjectMapper().registerKotlinModule()
+    private val mapper = jacksonObjectMapper()
 
     companion object {
         const val MAX_UPLOAD_FILE_SIZE = 50 * 1024 * 1024L // 50MB

@@ -1,9 +1,5 @@
 package com.youtu.graphrag.shared.constructor
 
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.databind.JsonNode
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import com.knuddels.jtokkit.Encodings
 import com.knuddels.jtokkit.api.Encoding
 import com.knuddels.jtokkit.api.EncodingType
@@ -23,6 +19,10 @@ import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
+import tools.jackson.core.type.TypeReference
+import tools.jackson.databind.JsonNode
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardOpenOption
@@ -67,7 +67,7 @@ class KTBuilder(
     private val llmClient: LlmClient = LlmClientFactory.fromEnvironment(),
 ) {
     private val logger = KotlinLogging.logger {}
-    private val mapper = ObjectMapper().registerKotlinModule()
+    private val mapper = jacksonObjectMapper()
     private val schemaFile: Path = resolvePath(schemaPath)
     private var schema: MutableMap<String, Any?> = loadSchema(schemaFile)
     private var llmExtractionDisabled = false

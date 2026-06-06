@@ -1,8 +1,8 @@
 package com.youtu.graphrag.server.api
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.youtu.graphrag.shared.ingest.DocumentParser
 import kotlinx.coroutines.runBlocking
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.nio.file.Files
 import java.nio.file.Path
 import java.time.Clock

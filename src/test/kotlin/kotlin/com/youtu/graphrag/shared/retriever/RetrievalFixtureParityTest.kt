@@ -1,11 +1,12 @@
 package com.youtu.graphrag.shared.retriever
 
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.databind.PropertyNamingStrategies
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import com.youtu.graphrag.shared.config.ConfigManager
 import com.youtu.graphrag.shared.graph.GraphRelationship
+import tools.jackson.core.type.TypeReference
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.databind.PropertyNamingStrategies
+import tools.jackson.databind.json.JsonMapper
+import tools.jackson.module.kotlin.KotlinModule
 import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.io.path.createDirectories
@@ -40,10 +41,12 @@ private data class RetrievalParityFixture(
 )
 
 class RetrievalFixtureParityTest {
-    private val mapper =
-        ObjectMapper()
-            .registerKotlinModule()
-            .setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE)
+    private val mapper: ObjectMapper =
+        JsonMapper
+            .builder()
+            .addModule(KotlinModule.Builder().build())
+            .propertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE)
+            .build()
 
     @Test
     fun `retrieval fixtures lock parity fields and strategy metadata`() {

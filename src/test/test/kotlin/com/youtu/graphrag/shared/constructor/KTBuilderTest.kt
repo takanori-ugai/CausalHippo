@@ -1,7 +1,7 @@
 package com.youtu.graphrag.shared.constructor
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import com.youtu.graphrag.shared.config.ConfigManager
 import com.youtu.graphrag.shared.llm.LlmClient
 import java.nio.file.Files
@@ -16,7 +16,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class KTBuilderTest {
-    private val mapper = ObjectMapper().registerKotlinModule()
+    private val mapper = jacksonObjectMapper()
 
     @Test
     fun `buildKnowledgeGraph maps llm extraction payload into graph relationships`() {
@@ -174,9 +174,12 @@ class KTBuilderTest {
         assertTrue(relationships.any { relationship -> relationship.relation == "discovered_in" })
 
         val evolvedSchema = mapper.readTree(schemaPath.toFile())
-        val nodes = evolvedSchema.path("Nodes").map { value -> value.asText() }
-        val relations = evolvedSchema.path("Relations").map { value -> value.asText() }
-        val attributes = evolvedSchema.path("Attributes").map { value -> value.asText() }
+        val nodesNode = evolvedSchema.path("Nodes")
+        val relationsNode = evolvedSchema.path("Relations")
+        val attributesNode = evolvedSchema.path("Attributes")
+        val nodes = (0 until nodesNode.size()).map { index -> nodesNode.get(index).asText() }
+        val relations = (0 until relationsNode.size()).map { index -> relationsNode.get(index).asText() }
+        val attributes = (0 until attributesNode.size()).map { index -> attributesNode.get(index).asText() }
 
         assertTrue("artifact" in nodes)
         assertTrue("location" in nodes)

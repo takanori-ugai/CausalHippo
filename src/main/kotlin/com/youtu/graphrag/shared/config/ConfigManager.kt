@@ -1,12 +1,14 @@
 package com.youtu.graphrag.shared.config
 
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.databind.DeserializationFeature
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.databind.PropertyNamingStrategies
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import io.github.oshai.kotlinlogging.KotlinLogging
+import tools.jackson.core.type.TypeReference
+import tools.jackson.databind.DeserializationFeature
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.databind.cfg.MapperBuilder
+import tools.jackson.databind.json.JsonMapper
+import tools.jackson.dataformat.yaml.YAMLFactory
+import tools.jackson.dataformat.yaml.YAMLMapper
+import tools.jackson.module.kotlin.KotlinModule
 import java.nio.file.Files
 import java.nio.file.Path
 import java.util.Locale
@@ -151,7 +153,7 @@ class ConfigManager(
     }
 
     private fun parseConfig() {
-        parsedConfig = jsonMapper.convertValue(rawConfig, AppConfig::class.java)
+        parsedConfig = jsonMapper.convertValue(normalizeKeys(rawConfig), AppConfig::class.java)
     }
 
     private fun validateConfig() {
@@ -242,14 +244,68 @@ class ConfigManager(
     @Suppress("UNCHECKED_CAST")
     private fun toStringAnyMap(map: Map<*, *>): Map<String, Any?> = map as Map<String, Any?>
 
+    private fun normalizeKeys(
+        value: Any?,
+        parentKey: String? = null,
+        preserveKeys: Boolean = false,
+    ): Any? =
+        when (value) {
+            is Map<*, *> -> {
+                val preserveThisLevel = preserveKeys || parentKey in NON_NORMALIZED_MAP_KEYS
+                val preserveChildren = preserveKeys || parentKey in RECURSIVELY_PRESERVED_MAP_KEYS
+                value.entries.associate { (key, nestedValue) ->
+                    val keyString = key.toString()
+                    val normalizedKey =
+                        if (preserveThisLevel) {
+                            keyString
+                        } else {
+                            snakeToCamel(keyString)
+                        }
+                    normalizedKey to normalizeKeys(nestedValue, normalizedKey, preserveChildren)
+                }
+            }
+
+            is List<*> -> {
+                value.map { normalizeKeys(it, parentKey, preserveKeys) }
+            }
+
+            else -> {
+                value
+            }
+        }
+
+    private fun snakeToCamel(key: String): String {
+        if ('_' !in key) {
+            return key
+        }
+        val parts = key.split('_')
+        return buildString {
+            append(parts.firstOrNull().orEmpty())
+            parts.drop(1).forEach { part ->
+                if (part.isNotEmpty()) {
+                    append(part.replaceFirstChar { it.titlecase(Locale.ROOT) })
+                }
+            }
+        }
+    }
+
     companion object {
         private const val DEFAULT_CONFIG_PATH = "config/base_config.json"
         private val PLACEHOLDER_REGEX = Regex("\\{([a-zA-Z0-9_]+)}")
+        private val NON_NORMALIZED_MAP_KEYS = setOf("weights", "datasets", "prompts")
+        private val RECURSIVELY_PRESERVED_MAP_KEYS = setOf("prompts")
 
-        private fun createMapper(factory: com.fasterxml.jackson.core.JsonFactory? = null): ObjectMapper =
-            (if (factory == null) ObjectMapper() else ObjectMapper(factory))
-                .registerKotlinModule()
-                .setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE)
+        private fun createMapper(factory: YAMLFactory? = null): ObjectMapper =
+            if (factory == null) {
+                buildConfiguredMapper(JsonMapper.builder())
+            } else {
+                buildConfiguredMapper(YAMLMapper.builder(factory))
+            }
+
+        private fun <M : ObjectMapper, B : MapperBuilder<M, B>> buildConfiguredMapper(builder: B): ObjectMapper =
+            builder
+                .addModule(KotlinModule.Builder().build())
                 .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+                .build()
     }
 }

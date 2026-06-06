@@ -1,7 +1,7 @@
 package com.youtu.graphrag.parity
 
-import com.fasterxml.jackson.databind.JsonNode
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import tools.jackson.databind.JsonNode
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import kotlin.math.abs
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
@@ -38,8 +38,8 @@ object JsonParityUtils {
     private fun canonicalize(node: JsonNode): JsonNode {
         if (node.isObject) {
             val canonical = mapper.nodeFactory.objectNode()
-            node.fieldNames().asSequence().toList().sorted().forEach { fieldName ->
-                canonical.set<JsonNode>(fieldName, canonicalize(node.get(fieldName)))
+            node.propertyNames().toList().sorted().forEach { fieldName ->
+                canonical.set(fieldName, canonicalize(node.get(fieldName)))
             }
             return canonical
         }

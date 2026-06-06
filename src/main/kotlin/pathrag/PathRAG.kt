@@ -1,7 +1,5 @@
 package pathrag
 
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import io.github.oshai.kotlinlogging.KotlinLogging
 import pathrag.base.AddonParams
 import pathrag.base.BaseGraphStorage
@@ -37,6 +35,8 @@ import shared.rag.spi.persistence.KvSnapshot
 import shared.rag.spi.persistence.PersistenceSession
 import shared.rag.spi.persistence.VectorRecord
 import shared.rag.spi.persistence.VectorSnapshot
+import tools.jackson.core.type.TypeReference
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.io.File
 import java.time.Instant
 import java.time.LocalDateTime

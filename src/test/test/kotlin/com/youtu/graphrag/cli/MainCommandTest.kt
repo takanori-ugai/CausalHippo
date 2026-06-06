@@ -1,8 +1,8 @@
 package com.youtu.graphrag.cli
 
-import com.fasterxml.jackson.databind.JsonNode
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
+import tools.jackson.databind.JsonNode
+import tools.jackson.databind.ObjectMapper
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import com.youtu.graphrag.shared.llm.LlmClient
 import picocli.CommandLine
 import java.nio.file.Files
@@ -130,7 +130,7 @@ class MainCommandTest {
         assertTrue(qaResultPath.exists(), "QA result output should be generated")
         assertTrue(qaSummaryPath.exists(), "QA summary output should be generated")
 
-        val mapper = ObjectMapper().registerKotlinModule()
+        val mapper = jacksonObjectMapper()
         val resultNode: JsonNode = mapper.readTree(qaResultPath.toFile())
         assertTrue(resultNode.isArray, "QA results should be an array")
         val firstResult = resultNode[0]
