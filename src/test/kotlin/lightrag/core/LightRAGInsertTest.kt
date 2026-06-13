@@ -128,7 +128,7 @@ class LightRAGInsertTest {
     }
 
     private fun buildMockedRag(tempDir: File): Pair<LightRAG, CapturingSlot<List<ChatMessage>>> {
-        val mockChatModel = mockk<ChatModel>()
+        val mockChatModel = mockk<ChatModel>(relaxed = true)
         val mockEmbeddingModel = mockk<EmbeddingModel>()
         mockEmbeddings(mockEmbeddingModel)
 
