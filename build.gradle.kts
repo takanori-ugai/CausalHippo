@@ -93,7 +93,7 @@ dependencies {
     implementation("org.openjfx:javafx-graphics:$javafxVersion:$javafxPlatform")
     implementation("org.openjfx:javafx-controls:$javafxVersion:$javafxPlatform")
 
-    implementation("tools.jackson.module:jackson-module-kotlin:3.1.4")
+    implementation("tools.jackson.module:jackson-module-kotlin:3.2.0")
     implementation("tools.jackson.dataformat:jackson-dataformat-yaml:3.1.4")
     implementation("org.jgrapht:jgrapht-core:$jgraphtVersion")
     implementation("org.apache.lucene:lucene-core:10.4.0")
