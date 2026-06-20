@@ -76,7 +76,7 @@ dependencies {
     implementation("dev.langchain4j:langchain4j-open-ai-official:1.16.1-beta26")
     implementation("dev.langchain4j:langchain4j-google-ai-gemini:1.16.3")
     implementation("dev.langchain4j:langchain4j-ollama:1.16.3")
-    implementation("dev.langchain4j:langchain4j-community-neo4j:1.16.3-beta25")
+    implementation("dev.langchain4j:langchain4j-community-neo4j:1.16.3-beta26")
 
     implementation("com.auth0:java-jwt:4.5.1")
     // JTokkit
