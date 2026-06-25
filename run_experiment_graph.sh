@@ -28,7 +28,7 @@ Options:
   --limit <int>            Limit samples (optional)
   --llm-model <name>       Override generation model
   --embedding-model <name> Override embedding model
-  --provider <name>        openai|ollama (default: env LLM_PROVIDER or openai)
+  --provider <name>        openai|ollama|gemini (default: env LLM_PROVIDER or openai)
   --llm-base-url <url>     Optional base URL
   --skip-aggregate         Skip CSV aggregation step
   -h, --help               Show this help
