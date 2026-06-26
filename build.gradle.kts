@@ -87,7 +87,7 @@ dependencies {
     implementation("org.mongodb:bson-kotlinx:5.8.0")
     implementation("org.neo4j.driver:neo4j-java-driver:6.0.3")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:2.3.21")
-    testImplementation("io.mockk:mockk:1.14.9")
+    testImplementation("io.mockk:mockk:1.14.11")
 
     implementation("org.openjfx:javafx-base:$javafxVersion:$javafxPlatform")
     implementation("org.openjfx:javafx-graphics:$javafxVersion:$javafxPlatform")
