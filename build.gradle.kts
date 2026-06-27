@@ -73,7 +73,7 @@ dependencies {
     // LangChain4j dependencies
     implementation("dev.langchain4j:langchain4j:1.17.0")
     implementation("dev.langchain4j:langchain4j-open-ai:1.17.0")
-    implementation("dev.langchain4j:langchain4j-open-ai-official:1.16.1-beta26")
+    implementation("dev.langchain4j:langchain4j-open-ai-official:1.17.0-beta27")
     implementation("dev.langchain4j:langchain4j-google-ai-gemini:1.17.0")
     implementation("dev.langchain4j:langchain4j-ollama:1.17.0")
     implementation("dev.langchain4j:langchain4j-community-neo4j:1.16.0-beta26")
