@@ -1467,7 +1467,7 @@ private fun Route.documentRoutes(
                         else -> {}
                     }
                 } finally {
-                    part.dispose()
+                    part.release()
                 }
             }
             if (savedDocs.isEmpty()) {

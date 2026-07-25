@@ -121,11 +121,11 @@ class KTBuilder(
                 listOf(mapper.convertValue(root, object : TypeReference<Map<String, Any?>>() {}))
             }
 
-            root.isTextual -> {
+            root.isString -> {
                 listOf(
                     mapOf(
                         "title" to "document_0",
-                        "text" to root.asText(),
+                        "text" to root.asString(),
                     ),
                 )
             }
@@ -145,10 +145,10 @@ class KTBuilder(
                 mapper.convertValue(node, object : TypeReference<Map<String, Any?>>() {})
             }
 
-            node.isTextual -> {
+            node.isString -> {
                 mapOf(
                     "title" to "document_$index",
-                    "text" to node.asText(),
+                    "text" to node.asString(),
                 )
             }
 
