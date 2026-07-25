@@ -118,11 +118,12 @@ tasks {
     }
 
     // Separate task for scriptable/CLI runs; keeps `run` intact for IDE defaults.
-    val execute = register<JavaExec>("execute") {
-        group = "application"
-        mainClass.set(application.mainClass)
-        classpath = sourceSets.main.get().runtimeClasspath
-    }
+    val execute =
+        register<JavaExec>("execute") {
+            group = "application"
+            mainClass.set(application.mainClass)
+            classpath = sourceSets.main.get().runtimeClasspath
+        }
 
     shadowJar {
         isZip64 = true
