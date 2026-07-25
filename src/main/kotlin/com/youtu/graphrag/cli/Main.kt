@@ -523,12 +523,12 @@ private fun extractText(
     keys.forEach { key ->
         val value = node.get(key) ?: return@forEach
         when {
-            value.isTextual -> {
-                return value.asText()
+            value.isString -> {
+                return value.asString()
             }
 
             value.isArray -> {
-                val joined = value.filter { it.isTextual }.joinToString(" | ") { it.asText() }
+                val joined = value.filter { it.isString }.joinToString(" | ") { it.asString() }
                 if (joined.isNotBlank()) {
                     return joined
                 }

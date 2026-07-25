@@ -177,7 +177,7 @@ fun Application.youtuGraphRagModule() {
                             tempFiles.add(TempFileInfo(originalName, tempFile))
                         }
                     } finally {
-                        part.dispose.invoke()
+                        part.release()
                     }
                 }
 
@@ -530,7 +530,7 @@ fun Application.youtuGraphRagModule() {
                             tempSchemaFile = tempFile
                         }
                     } finally {
-                        part.dispose.invoke()
+                        part.release()
                     }
                 }
 

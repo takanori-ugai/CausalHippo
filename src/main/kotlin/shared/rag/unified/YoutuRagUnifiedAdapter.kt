@@ -392,6 +392,7 @@ class YoutuRagUnifiedAdapter(
         )
     }
 
+    @Suppress("UNCHECKED_CAST")
     private fun jsonObjectToMap(value: JsonObject?): Map<String, Any?> {
         if (value == null) return emptyMap()
         return jsonElementToAny(value) as? Map<String, Any?> ?: emptyMap()
