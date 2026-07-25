@@ -83,8 +83,8 @@ dependencies {
     implementation("com.knuddels:jtokkit:1.1.0")
 
     // MongoDB
-    implementation("org.mongodb:mongodb-driver-kotlin-coroutine:5.8.0")
-    implementation("org.mongodb:bson-kotlinx:5.8.0")
+    implementation("org.mongodb:mongodb-driver-kotlin-coroutine:5.9.0")
+    implementation("org.mongodb:bson-kotlinx:5.9.0")
     implementation("org.neo4j.driver:neo4j-java-driver:6.2.0")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:2.3.21")
     testImplementation("io.mockk:mockk:1.14.11")
@@ -96,8 +96,8 @@ dependencies {
     implementation("tools.jackson.module:jackson-module-kotlin:3.2.0")
     implementation("tools.jackson.dataformat:jackson-dataformat-yaml:3.2.1")
     implementation("org.jgrapht:jgrapht-core:$jgraphtVersion")
-    implementation("org.apache.lucene:lucene-core:10.4.0")
-    implementation("org.apache.lucene:lucene-analysis-common:10.4.0")
+    implementation("org.apache.lucene:lucene-core:10.5.0")
+    implementation("org.apache.lucene:lucene-analysis-common:10.5.0")
     // Keep Hadoop before parquet-floor on classpath: parquet-floor bundles a stub FSDataInputStream.
     implementation("org.apache.hadoop:hadoop-client-api:3.5.0")
     runtimeOnly("org.apache.hadoop:hadoop-client-runtime:3.5.0")
@@ -118,11 +118,12 @@ tasks {
     }
 
     // Separate task for scriptable/CLI runs; keeps `run` intact for IDE defaults.
-    val execute by registering(JavaExec::class) {
-        group = "application"
-        mainClass.set(application.mainClass)
-        classpath = sourceSets.main.get().runtimeClasspath
-    }
+    val execute =
+        register<JavaExec>("execute") {
+            group = "application"
+            mainClass.set(application.mainClass)
+            classpath = sourceSets.main.get().runtimeClasspath
+        }
 
     shadowJar {
         isZip64 = true
