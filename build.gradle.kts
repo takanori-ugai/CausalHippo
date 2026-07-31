@@ -22,7 +22,7 @@ val koinVersion = "4.2.1"
 val osName = System.getProperty("os.name").lowercase()
 val archName = System.getProperty("os.arch").lowercase()
 val networkAnalysisVersion = "1.3.0"
-val jgraphtVersion = "1.5.2"
+val jgraphtVersion = "1.5.3"
 val javafxVersion = "21.0.5"
 val javafxPlatform =
     when {
