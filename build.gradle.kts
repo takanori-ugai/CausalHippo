@@ -4,7 +4,7 @@ plugins {
     kotlin("jvm") version "2.4.10"
     application
     id("com.gradleup.shadow") version "9.6.1"
-    kotlin("plugin.serialization") version "2.4.0"
+    kotlin("plugin.serialization") version "2.4.10"
     id("org.jlleitschuh.gradle.ktlint") version "14.2.0"
     id("io.gitlab.arturbosch.detekt") version "1.23.8"
 }
@@ -85,7 +85,7 @@ dependencies {
     // MongoDB
     implementation("org.mongodb:mongodb-driver-kotlin-coroutine:5.9.1")
     implementation("org.mongodb:bson-kotlinx:5.9.1")
-    implementation("org.neo4j.driver:neo4j-java-driver:6.2.0")
+    implementation("org.neo4j.driver:neo4j-java-driver:6.2.1")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:2.4.10")
     testImplementation("io.mockk:mockk:1.14.11")
 
