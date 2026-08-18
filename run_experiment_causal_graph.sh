@@ -149,9 +149,11 @@ if [[ -n "$LLM_BASE_URL" ]]; then
   export OPENAI_API_BASE="$LLM_BASE_URL"
 fi
 
-./gradlew --quiet execute \
-  -PmainClass=shared.eval.graph.MultiConditionGraphExperimentKt \
-  --args="${APP_ARGS[*]}"
+#./gradlew --quiet execute \
+#  -PmainClass=shared.eval.graph.MultiConditionGraphExperimentKt \
+#  --args="${APP_ARGS[*]}"
+echo ${APP_ARGS[*]}
+java -cp build/libs/causalrag-0.0.1-all.jar shared.eval.graph.MultiConditionGraphExperimentKt ${APP_ARGS[*]}
 
 if [[ "$SKIP_AGGREGATE" == "false" ]]; then
   python3 scripts/aggregate_experiment_results.py --input-dir "$OUTPUT_DIR"

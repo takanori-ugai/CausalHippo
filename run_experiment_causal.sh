@@ -123,9 +123,11 @@ echo "[run_experiment_causal] conditions: $CONDITIONS"
 echo "[run_experiment_causal] QA metrics: exact_match, precision, recall, f1"
 echo "[run_experiment_causal] BertScore metrics: bertscore_precision, bertscore_recall, bertscore_f1"
 
-./gradlew --quiet execute \
-  -PmainClass=shared.eval.MultiConditionExperimentKt \
-  --args="${APP_ARGS[*]}"
+#./gradlew --quiet execute \
+#  -PmainClass=shared.eval.MultiConditionExperimentKt \
+#  --args="${APP_ARGS[*]}"
+echo ${APP_ARGS[*]}
+java -cp build/libs/causalrag-0.0.1-all.jar shared.eval.MultiConditionExperimentKt ${APP_ARGS[*]}
 
 if [[ "$SKIP_AGGREGATE" == "false" ]]; then
   python3 scripts/aggregate_experiment_results.py --input-dir "$OUTPUT_DIR"

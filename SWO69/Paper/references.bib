@@ -1,0 +1,369 @@
+@inproceedings{girju-etal-2007-semeval,
+    title = "{S}em{E}val-2007 Task 04: Classification of Semantic Relations between Nominals",
+    author = "Girju, Roxana  and
+      Nakov, Preslav  and
+      Nastase, Vivi  and
+      Szpakowicz, Stan  and
+      Turney, Peter  and
+      Yuret, Deniz",
+    editor = "Agirre, Eneko  and
+      M{\`a}rquez, Llu{\'i}s  and
+      Wicentowski, Richard",
+    booktitle = "Proceedings of the Fourth International Workshop on Semantic Evaluations ({S}em{E}val-2007)",
+    month = jun,
+    year = "2007",
+    address = "Prague, Czech Republic",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/S07-1003/",
+    pages = "13--18"
+}
+
+
+@misc{yang2021surveyextractioncausalrelations,
+      title={A Survey on Extraction of Causal Relations from Natural Language Text}, 
+      author={Jie Yang and Soyeon Caren Han and Josiah Poon},
+      year={2021},
+      eprint={2101.06426},
+      archivePrefix={arXiv},
+      primaryClass={cs.IR},
+      url={https://arxiv.org/abs/2101.06426}, 
+}
+
+@article{AKKASI2021103820,
+title = {Causal relationship extraction from biomedical text using deep neural models: A comprehensive survey},
+journal = {Journal of Biomedical Informatics},
+volume = {119},
+pages = {103820},
+year = {2021},
+issn = {1532-0464},
+doi = {https://doi.org/10.1016/j.jbi.2021.103820},
+url = {https://www.sciencedirect.com/science/article/pii/S1532046421001490},
+author = {Abbas Akkasi and Mari-Francine Moens},
+keywords = {Biomedical cause-effect, Relation extraction, Natural language processing, Information extraction},
+abstract = {The identification of causal relationships between events or entities within biomedical texts is of great importance for creating scientific knowledge bases and is also a fundamental natural language processing (NLP) task. A causal (cause-effect) relation is defined as an association between two events in which the first must occur before the second. Although this task is an open problem in artificial intelligence, and despite its important role in information extraction from the biomedical literature, very few works have considered this problem. However, with the advent of new techniques in machine learning, especially deep neural networks, research increasingly addresses this problem. This paper summarizes state-of-the-art research, its applications, existing datasets, and remaining challenges. For this survey we have implemented and evaluated various techniques including a Multiview CNN (MVC), attention-based BiLSTM models and state-of-the-art word embedding models, such as those obtained with bidirectional encoder representations (ELMo) and transformer architectures (BioBERT). In addition, we have evaluated a graph LSTM as well as a baseline rule based system. We have investigated the class imbalance problem as an innate property of annotated data in this type of task. The results show that a considerable improvement of the results of state-of-the-art systems can be achieved when a simple random oversampling technique for data augmentation is used in order to reduce class imbalance.}
+
+@ARTICLE{9706608,
+  author={Jaimini, Utkarshani and Sheth, Amit},
+  journal={IEEE Internet Computing}, 
+  title={CausalKG: Causal Knowledge Graph Explainability Using Interventional and Counterfactual Reasoning}, 
+  year={2022},
+  volume={26},
+  number={1},
+  pages={43-50},
+  keywords={Cognition;Internet;Decision making;Planning;Human factors},
+  doi={10.1109/MIC.2021.3133551}}
+
+@techreport{Fujitsu2024CausalKG,
+  author      = {{Fujitsu Limited}},
+  title       = {Fujitsu Causal Knowledge Graph: Transform to Data-Driven Decision-Making based on Logical Reasoning},
+  institution = {Fujitsu Limited, Artificial Intelligence Laboratory},
+  year        = {2024},
+  month       = oct,
+  type        = {White Paper},
+  url         = {https://www.fujitsu.com/global/documents/about/research/article/202410-causal-knowledge-graph/202410_White-Paper-Casual-Knowledge-Graph_EN.pdf},
+  note        = {Accessed 2025-07-29},
+}
+
+@article{LYU2023104298,
+title = {Causal knowledge graph construction and evaluation for clinical decision support of diabetic nephropathy},
+journal = {Journal of Biomedical Informatics},
+volume = {139},
+pages = {104298},
+year = {2023},
+issn = {1532-0464},
+doi = {https://doi.org/10.1016/j.jbi.2023.104298},
+url = {https://www.sciencedirect.com/science/article/pii/S1532046423000199},
+author = {Kewei Lyu and Yu Tian and Yong Shang and Tianshu Zhou and Ziyue Yang and Qianghua Liu and Xi Yao and Ping Zhang and Jianghua Chen and Jingsong Li},
+keywords = {Knowledge graph, Electronic health record, Causal knowledge, Diabetic nephropathy},
+abstract = {Background
+Many important clinical decisions require causal knowledge (CK) to take action. Although many causal knowledge bases for medicine have been constructed, a comprehensive evaluation based on real-world data and methods for handling potential knowledge noise are still lacking.
+Objective
+The objectives of our study are threefold: (1) propose a framework for the construction of a large-scale and high-quality causal knowledge graph (CKG); (2) design the methods for knowledge noise reduction to improve the quality of the CKG; (3) evaluate the knowledge completeness and accuracy of the CKG using real-world data.
+Material and methods
+We extracted causal triples from three knowledge sources (SemMedDB, UpToDate and Churchill's Pocketbook of Differential Diagnosis) based on rule methods and language models, performed ontological encoding, and then designed semantic modeling between electronic health record (EHR) data and the CKG to complete knowledge instantiation. We proposed two graph pruning strategies (co-occurrence ratio and causality ratio) to reduce the potential noise introduced by SemMedDB. Finally, the evaluation was carried out by taking the diagnostic decision support (DDS) of diabetic nephropathy (DN) as a real-world case. The data originated from a Chinese hospital EHR system from October 2010 to October 2020. The knowledge completeness and accuracy of the CKG were evaluated based on three state-of-the-art embedding methods (R-GCN, MHGRN and MedPath), the annotated clinical text and the expert review, respectively.
+Results
+This graph included 153,289 concepts and 1,719,968 causal triples. A total of 1427 inpatient data were used for evaluation. Better results were achieved by combining three knowledge sources than using only SemMedDB (three models: area under the receiver operating characteristic curve (AUC): p < 0.01, F1: p < 0.01), and the graph covered 93.9 % of the causal relations between diseases and diagnostic evidence recorded in clinical text. Causal relations played a vital role in all relations related to disease progression for DDS of DN (three models: AUC: p > 0.05, F1: p > 0.05), and after pruning, the knowledge accuracy of the CKG was significantly improved (three models: AUC: p < 0.01, F1: p < 0.01; expert review: average accuracy: + 5.5 %).
+Conclusions
+The results demonstrated that our proposed CKG could completely and accurately capture the abstract CK under the concrete EHR data, and the pruning strategies could improve the knowledge accuracy of our CKG. The CKG has the potential to be applied to the DDS of diseases.}
+}
+
+@article{kiciman2024causal,
+author = {Kiciman, Emre and Ness, Robert Osazuwa and Sharma, Amit and Tan, Chenhao},
+title = {Causal Reasoning and Large Language Models: Opening a New Frontier for Causality},
+year = {2024},
+month = {August},
+abstract = {The causal capabilities of large language models (LLMs) is a matter of significant debate, with critical implications for the use of LLMs in societally impactful domains such as medicine, science, law, and policy. We further our understanding of LLMs and their causal implications, considering the distinctions between different types of causal reasoning tasks, as well as the entangled threats of construct and measurement validity. LLM-based methods establish new state-of-the-art accuracies on multiple causal benchmarks. Algorithms based on GPT-3.5 and 4 outperform existing algorithms on a pairwise causal discovery task (97%, 13 points gain), counterfactual reasoning task (92%, 20 points gain), and actual causality (86% accuracy in determining necessary and sufficient causes in vignettes). At the same time, LLMs exhibit unpredictable failure modes and we provide some techniques to interpret their robustness.
+
+Crucially, LLMs perform these causal tasks while relying on sources of knowledge and methods distinct from and complementary to non-LLM based approaches. Specifically, LLMs bring capabilities so far understood to be restricted to humans, such as using collected knowledge to generate causal graphs or identifying background causal context from natural language. We envision LLMs to be used alongside existing causal methods, as a proxy for human domain knowledge and to reduce human effort in setting up a causal analysis, one of the biggest impediments to the widespread adoption of causal methods. We also see existing causal methods as promising tools for LLMs to formalize, validate, and communicate their reasoning especially in high-stakes scenarios.
+
+In capturing common sense and domain knowledge about causal mechanisms and supporting translation between natural language and formal methods, LLMs open new frontiers for advancing the research, practice, and adoption of causality.},
+url = {https://www.microsoft.com/en-us/research/publication/causal-reasoning-and-large-language-models-opening-a-new-frontier-for-causality/},
+journal = {Transactions on Machine Learning Research (TMLR)},
+note = {Selected for presentation at ICLR 2025},
+}
+
+@inproceedings{joshi-etal-2024-llms,
+    title = "{LLM}s Are Prone to Fallacies in Causal Inference",
+    author = "Joshi, Nitish  and
+      Saparov, Abulhair  and
+      Wang, Yixin  and
+      He, He",
+    editor = "Al-Onaizan, Yaser  and
+      Bansal, Mohit  and
+      Chen, Yun-Nung",
+    booktitle = "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2024",
+    address = "Miami, Florida, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.emnlp-main.590/",
+    doi = "10.18653/v1/2024.emnlp-main.590",
+    pages = "10553--10569"
+}
+
+
+@misc{jin2024largelanguagemodelsinfer,
+      title={Can Large Language Models Infer Causation from Correlation?}, 
+      author={Zhijing Jin and Jiarui Liu and Zhiheng Lyu and Spencer Poff and Mrinmaya Sachan and Rada Mihalcea and Mona Diab and Bernhard Schölkopf},
+      year={2024},
+      eprint={2306.05836},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2306.05836}, 
+}
+
+@Article{info13080364,
+AUTHOR = {Chen, Yang and Wan, Weibing and Hu, Jimi and Wang, Yuxuan and Huang, Bo},
+TITLE = {Complex Causal Extraction of Fusion of Entity Location Sensing and Graph Attention Networks},
+JOURNAL = {Information},
+VOLUME = {13},
+YEAR = {2022},
+NUMBER = {8},
+ARTICLE-NUMBER = {364},
+URL = {https://www.mdpi.com/2078-2489/13/8/364},
+ISSN = {2078-2489},
+DOI = {10.3390/info13080364}
+}
+
+@misc{yamin2025failuremodesllmscausal,
+      title={Failure Modes of LLMs for Causal Reasoning on Narratives}, 
+      author={Khurram Yamin and Shantanu Gupta and Gaurav R. Ghosal and Zachary C. Lipton and Bryan Wilder},
+      year={2025},
+      eprint={2410.23884},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2410.23884}, 
+}
+
+@misc{liu2025largelanguagemodelscausal,
+      title={Large Language Models and Causal Inference in Collaboration: A Survey}, 
+      author={Xiaoyu Liu and Paiheng Xu and Junda Wu and Jiaxin Yuan and Yifan Yang and Yuhang Zhou and Fuxiao Liu and Tianrui Guan and Haoliang Wang and Tong Yu and Julian McAuley and Wei Ai and Furong Huang},
+      year={2025},
+      eprint={2403.09606},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2403.09606}, 
+}
+
+@misc{chi2025unveilingcausalreasoninglarge,
+      title={Unveiling Causal Reasoning in Large Language Models: Reality or Mirage?}, 
+      author={Haoang Chi and He Li and Wenjing Yang and Feng Liu and Long Lan and Xiaoguang Ren and Tongliang Liu and Bo Han},
+      year={2025},
+      eprint={2506.21215},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2506.21215}, 
+}
+
+@misc{du2025icecreamdoesntcause,
+      title={Ice Cream Doesn't Cause Drowning: Benchmarking LLMs Against Statistical Pitfalls in Causal Inference}, 
+      author={Jin Du and Li Chen and Xun Xian and An Luo and Fangqiao Tian and Ganghua Wang and Charles Doss and Xiaotong Shen and Jie Ding},
+      year={2025},
+      eprint={2505.13770},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2505.13770}, 
+}
+
+@misc{chen2025unbiasedevaluationlargelanguage,
+      title={Unbiased Evaluation of Large Language Models from a Causal Perspective}, 
+      author={Meilin Chen and Jian Tian and Liang Ma and Di Xie and Weijie Chen and Jiang Zhu},
+      year={2025},
+      eprint={2502.06655},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2502.06655}, 
+}
+
+@article{vanNoord2025MeasureDiversity,
+    title = {{W}e {N}eed to {M}easure {D}ata {D}iversity in {NLP} {\textemdash} {B}etter and {B}roader},
+    author = {van Noord, Willem and Elazar, Yanai and Geva, Mor and Sch{\"u}tz, Michael and Marasovi{\'c}, Ana and Grotel{\"u}schen, Felix and Verspoor, Karin},
+    year = {2025},
+    journal = {arXiv preprint arXiv:2505.20264}, % プレプリントサーバー名と識別子
+    eprint = {2505.20264},
+    archiveprefix = {arXiv},
+    primaryclass = {cs.CL}
+}
+
+@article{ugai2025,
+  title={因果ナレッジグラフ生成に向けた {AI} マルチエージェントと大規模言語モデルを用いた因果関係抽出},
+  author={鵜飼 孝典},
+  journal={人工知能学会第二種研究会資料},
+  volume={2025},
+  number={SWO-066},
+  pages={10},
+  year={2025},
+  doi={10.11517/jsaisigtwo.2025.SWO-066_10}
+}
+
+@article{10.1162/coli_a_00016,
+    author = {Baroni, Marco and Lenci, Alessandro},
+    title = {Distributional Memory: A General Framework for Corpus-Based Semantics},
+    journal = {Computational Linguistics},
+    volume = {36},
+    number = {4},
+    pages = {673-721},
+    year = {2010},
+    month = {12},
+    abstract = {Research into corpus-based semantics has focused on the development of ad hoc models that treat single tasks, or sets of closely related tasks, as unrelated challenges to be tackled by extracting different kinds of distributional information from the corpus. As an alternative to this “one task, one model” approach, the Distributional Memory framework extracts distributional information once and for all from the corpus, in the form of a set of weighted word-link-word tuples arranged into a third-order tensor. Different matrices are then generated from the tensor, and their rows and columns constitute natural spaces to deal with different semantic problems. In this way, the same distributional information can be shared across tasks such as modeling word similarity judgments, discovering synonyms, concept categorization, predicting selectional preferences of verbs, solving analogy problems, classifying relations between word pairs, harvesting qualia structures with patterns or example pairs, predicting the typical properties of concepts, and classifying verbs into alternation classes. Extensive empirical testing in all these domains shows that a Distributional Memory implementation performs competitively against task-specific algorithms recently reported in the literature for the same tasks, and against our implementations of several state-of-the-art methods. The Distributional Memory approach is thus shown to be tenable despite the constraints imposed by its multi-purpose nature.},
+    issn = {0891-2017},
+    doi = {10.1162/coli_a_00016},
+    url = {https://doi.org/10.1162/coli_a_00016},
+    eprint = {https://direct.mit.edu/coli/article-pdf/36/4/673/1810191/coli_a_00016.pdf},
+]
+
+@article{hotelling1933analysis,
+    title = {{A}nalysis of a {C}omplex of {S}tatistical {V}ariables into {P}rincipal {C}omponents},
+    author = {Hotelling, Harold},
+    journal = {Journal of Educational Psychology},
+    volume = {24},
+    number = {6},
+    pages = {417--441},
+    year = {1933},
+    doi = {10.1037/h0070851}
+}
+
+@article{Ugai2025Embedding,
+    title = {{E}mbedding {M}ethod for {K}nowledge {G}raph with {D}ensely {D}efined {O}ntology},
+    author = {Ugai, Takanori},
+    year = {2025},
+    journal = {arXiv preprint arXiv:2504.02889},
+    eprint = {2504.02889},
+    archiveprefix = {arXiv},
+    primaryclass = {cs.AI} % または cs.LG, cs.CL など分野に合わせて調整
+}
+
+@misc{mikolov2013efficientestimationwordrepresentations,
+      title={Efficient Estimation of Word Representations in Vector Space}, 
+      author={Tomas Mikolov and Kai Chen and Greg Corrado and Jeffrey Dean},
+      year={2013},
+      eprint={1301.3781},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/1301.3781}, 
+}
+
+@inproceedings{10.5555/2999792.2999959,
+author = {Mikolov, Tomas and Sutskever, Ilya and Chen, Kai and Corrado, Greg and Dean, Jeffrey},
+title = {Distributed representations of words and phrases and their compositionality},
+year = {2013},
+publisher = {Curran Associates Inc.},
+address = {Red Hook, NY, USA},
+booktitle = {Proceedings of the 27th International Conference on Neural Information Processing Systems - Volume 2},
+pages = {3111–3119},
+series = {NIPS'13}
+}
+
+@article{edge2024graphrag,
+  title={From Local to Global: A Graph {RAG} Approach to Query-Focused Summarization},
+  author={Edge, Darren and Trinh, Ha and Cheng, Newman and Bradley, Joshua and Chao, Alex and Mody, Apurva and Truitt, Steven and Larson, Jonathan},
+  journal={arXiv preprint arXiv:2404.16130},
+  year={2024}
+}
+
+@article{guo2024lightrag,
+  title={{LightRAG}: Simple and Fast Retrieval-Augmented Generation},
+  author={Guo, Zirui and Liang, Lun and Zheng, Zepeng and Chen, Yikai and Wang, Yibo and Zhang, Muhan},
+  journal={arXiv preprint arXiv:2410.05779},
+  year={2024}
+}
+
+@article{chen2024pathrag,
+  title={{PathRAG}: Pruning Graph-based Retrieval Augmented Generation with Relational Paths},
+  author={Chen, Fankai and Zhang, Bing and Chen, Xuanting and Zhou, Yikai and Huang, Xuanjing and Wei, Zhongyu},
+  journal={arXiv preprint arXiv:2502.14902},
+  year={2024}
+}
+
+@inproceedings{gutierrez2024hipporag,
+  title={{HippoRAG}: Neurobiologically Inspired Long-Term Memory for Large Language Models},
+  author={Jim{\'e}nez Guti{\'e}rrez, Bernal and Shu, Yiheng and Gu, Yu and Zhu, Michihiro and Wang, Sheng and Su, Yu},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
+  volume={37},
+  pages={111756--111786},
+  year={2024}
+}
+
+@inproceedings{lewis2020rag,
+  title={Retrieval-Augmented Generation for Knowledge-Intensive {NLP} Tasks},
+  author={Lewis, Patrick and Perez, Ethan and Piktus, Aleksandra and Petroni, Fabio and Karpukhin, Vladimir and Goyal, Naman and K{\"u}ttler, Heinrich and Lewis, Mike and Yih, Wen-tau and Rockt{\"a}schel, Tim and Riedel, Sebastian and Kiela, Douwe},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
+  volume={33},
+  pages={9459--9474},
+  year={2020}
+}
+
+@article{trivedi2022musique,
+  title={{MuSiQue}: Multihop Questions via Single-hop Question Composition},
+  author={Trivedi, Harsh and Balasubramanian, Niranjan and Khot, Tushar and Sabharwal, Ashish},
+  journal={Transactions of the Association for Computational Linguistics},
+  volume={10},
+  pages={539--554},
+  year={2022}
+}
+
+@inproceedings{yang2018hotpotqa,
+  title={{HotpotQA}: A Dataset for Diverse, Explainable Multi-hop Question Answering},
+  author={Yang, Zhilin and Qi, Peng and Zhang, Saizheng and Bengio, Yoshua and Cohen, William and Salakhutdinov, Ruslan and Manning, Christopher D},
+  booktitle={Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing},
+  pages={2369--2380},
+  year={2018}
+}
+
+@article{pan2024unifying,
+  title={Unifying Large Language Models and Knowledge Graphs: A Roadmap},
+  author={Pan, Shirui and Luo, Linhao and Wang, Yansong and Chen, Chen and Wang, Jiapu and Wu, Xindong},
+  journal={IEEE Transactions on Knowledge and Data Engineering},
+  volume={36},
+  number={7},
+  pages={3580--3599},
+  year={2024}
+}
+
+@article{traag2019leiden,
+  title={From {Louvain} to {Leiden}: guaranteeing well-connected communities},
+  author={Traag, Vincent A and Waltman, Ludo and Van Eck, Nees Jan},
+  journal={Scientific Reports},
+  volume={9},
+  number={1},
+  pages={5233},
+  year={2019}
+}
+
+@inproceedings{haveliwala2002topic,
+  title={Topic-sensitive {PageRank}},
+  author={Haveliwala, Taher H},
+  booktitle={Proceedings of the 11th international conference on World Wide Web},
+  pages={517--526},
+  year={2002}
+}
+
+@article{xiao2025graphragbench,
+  title={{GraphRAG-Bench}: Challenging Domain-Specific Reasoning for Evaluating Graph Retrieval-Augmented Generation},
+  author={Xiao, Yilin and Dong, Junnan and Zhou, Chuang and Dong, Su and Zhang, Qian-wen and Yin, Di and Sun, Xing and Huang, Xiao},
+  journal={arXiv preprint arXiv:2506.02404},
+  year={2025}
+}
+
+
+

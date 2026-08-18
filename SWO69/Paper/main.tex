@@ -1,0 +1,400 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{plautopatch}
+\documentclass[a4j,dvipdfmx]{jsarticle}
+
+\usepackage{jsaisig}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{jlisting}
+\usepackage{array} 
+\usepackage{seqsplit}
+\usepackage{multirow}
+%\usepackage{url}
+\usepackage[dvipdfmx,hidelinks]{hyperref}
+\usepackage{pxjahyper}
+\usepackage[absolute,overlay]{textpos}
+
+%疑似コード用パッケージ
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+%数式
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools, cuted}
+
+\renewcommand\lstlistingname{ソースコード}
+
+\lstdefinestyle{mystyle}{
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=false,        
+    breaklines=true,                
+    captionpos=b,                   
+    keepspaces=true,                
+    numbers=left,                   
+    numbersep=5pt,                  
+    showspaces=false,               
+    showstringspaces=false,
+    showtabs=false,                 
+    tabsize=1,
+    frame = single
+}
+
+\lstset{style=mystyle}
+
+\lstdefinelanguage{json}{
+    numbers=none,
+    numberstyle=\small,
+   % frame=single,
+   % rulecolor=\color{black},
+    showspaces=false,
+    showtabs=false,
+    breaklines=true,
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookrightarrow\space}},
+    breakatwhitespace=true,
+    basicstyle=\ttfamily\small,
+    upquote=true,
+    morestring=[b]"
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{textblock*}{8cm}(11.5cm, 1cm) % {block width} (coords) 
+\begin{flushright}
+   人工知能学会第二種研究会資料 \\
+   セマンティックウェブとオントロジー研究会 \\
+   SIG-SWO-069
+   \end{flushright}
+\end{textblock*}
+
+% 和文タイトル
+\title{ナレッジグラフ品質のGraph-Based RAGの検索性能への影響}
+
+% 英文タイトル
+\etitle{Impact of Knowledge Graph Quality on Retrieval Performance in Graph-Based RAG} 
+
+% 著者名: 
+\author{鵜飼孝典\afil{1}
+\thanks{連絡先:産業技術総合研究所\newline%
+〒135-0064 東京都江東区青海2-3-26\newline%
+E-mail: takanori.ukai@aist.go.jp} \\
+    Takanori Ugai\afil{1} \quad
+    	森田武史\afil{2,1} \\
+	Takeshi Morita
+	}
+
+% 所属
+\affiliation{%
+	\afil{1} 産業技術総合研究所\\ 
+	\afil{1} National Institute of Advanced Industrial Science and Technology\\
+	\afil{2} 青山学院大学\\ 
+	\afil{2} Aoyama Gakuin University
+}
+
+\abstract{
+本研究では、GraphRAG、LightRAG、PathRAG、HippoRAG、YoutuRAGを対象に、ナレッジグラフ（KG）の品質がGraph-Based RAGの検索性能および生成品質へ与える影響を調査した。エンティティ抽出精度、関係抽出精度、グラフ密度などのKG品質指標を整理し、それらと検索精度・回答品質との関連を比較分析した。その結果、KG品質は検索対象ノードの発見率や推論経路の妥当性に影響し、Graph-Based RAGの性能を左右する重要要因であることを示す。
+}
+
+\pagestyle{plain}
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{はじめに}
+
+大規模言語モデル（Large Language Model: LLM）の急速な発展に伴い、外部知識源から関連情報を動的に取得して回答を生成する検索拡張生成（Retrieval-Augmented Generation: RAG）\cite{lewis2020rag}が広く実用化されている。従来のNaive RAGは、テキストを固定長チャンクに分割して密ベクトル埋め込み（Dense Embedding）の類似度検索を行う手法が主流であった。しかし、このアプローチでは、複数文書にまたがるエンティティ間の関係性を辿る多段推論（Multi-hop Reasoning）や、コーパス全体のトピック構造を俯瞰して回答を要約する包括的質問に対して、関連チャンクの想起漏れや文脈の断片化が生じやすいという本質的な限界が指摘されている。
+
+これらの課題を克服するため、非構造化テキストコーパスから自動的にエンティティや関係性を抽出してナレッジグラフ（Knowledge Graph: KG）を構築し、グラフ構造と探索アルゴリズムを検索・プロンプティングに統合した「Graph-Based RAG」が注目を集めている。代表的な手法として、階層的コミュニティ検出と要約を用いるGraphRAG \cite{edge2024graphrag}、低レベル（エンティティ）と高レベル（関係・テーマ）の二層インデックスを統合したLightRAG \cite{guo2024lightrag}、関係パスの探索と枝刈りを行うPathRAG \cite{chen2024pathrag}、海馬の記憶想起に着想を得てOpenIEとPersonalized PageRank（PPR）を組み合わせたHippoRAG \cite{gutierrez2024hipporag}、スキーマ駆動抽出とスキーマ進化を備えたYoutuRAGなどが提案されている\cite{pan2024unifying}。
+
+しかしながら、既存のGraph-Based RAG研究における評価は、主に「特定データセットにおける最終的な質問応答（QA）精度」のエンドツーエンドの比較にとどまっており、\textbf{「中間生成物であるKG自体の品質（エンティティ抽出精度、関係抽出精度、グラフ密度、トポロジー構造）が、下流の検索性能や回答生成品質にどのような因果的メカニズムで影響を及ぼしているのか」}という点は十分に解明されていない。Graph-Based RAGにおいてKG構築はLLMを用いた情報抽出に依存しているため、抽出漏れ、幻覚（ハルシネーション）による誤ったエッジ、重複エンティティ、グラフの断片化などの品質劣化が不可避的に発生する。したがって、KGのどの品質次元が検索・推論の成否を決定づけるのかを定量的に明らかにすることは、信頼性の高いGraph-Based RAGシステムを設計する上で極めて重要な学術的・実践的課題である。
+
+そこで本研究では、代表的な5系統のGraph-Based RAG（GraphRAG, LightRAG, PathRAG, HippoRAG, YoutuRAG）を同一の実行基盤上で統合的に評価し、KG品質が検索対象ノードの発見率、推論経路の妥当性、および最終的な回答品質に与える影響を多角的に分析した。具体的には、以下の4つの研究疑問（Research Questions: RQ）を設定した：
+\begin{itemize}
+    \item \textbf{RQ1（KG構築特性の差異）}：5つの手法が同一テキストから構築するKGは、抽出精度およびグラフ構造特性（密度・次数分布・連結性）においてどのように異なるか？
+    \item \textbf{RQ2（検索性能への影響メカニズム）}：KG品質指標は、検索対象ノードの発見率や推論経路の妥当性とどのように連動・相関するか？
+    \item \textbf{RQ3（最終生成品質への波及）}：KG品質および検索精度の差異は、最終回答品質（F1, Faithfulness等）までどの程度直接的に波及するか？
+    \item \textbf{RQ4（支配的品質次元の特定）}：抽出Recall、抽出Precision、グラフ密度、構造ノイズのうち、Graph-Based RAGの性能を最も強く支配する要因はどれか？
+\end{itemize}
+
+本論文の主な貢献は以下の通りである：
+\begin{enumerate}
+    \item \textbf{KG品質とGraph-Based RAG性能の包括的評価体系の確立}：エンティティ抽出精度（ER/EP/DER）、関係抽出精度（RR/RP）、グラフ密度・トポロジー指標に加え、新たに「KG-Coverage (KGC)」「Retrieval-Hit@K (RH@K)」「Discovery Conversion Rate (DCR)」「Chain-In-Graph (CiG)」「Chain-In-Context (CiC)」といった検索対象ノード発見率・推論経路妥当性を直接測定する指標を導入・定式化した。
+    \item \textbf{5系統のGraph-Based RAGの横断的比較}：同一のコーパスおよび評価設定（生成LLM固定・埋め込みモデル固定）のもとで、5系統のKG構築特性と検索性能を網羅的に測定・比較した。
+    \item \textbf{KG品質操作およびパーテーション摂動実験による因果検証}：抽出LLMの能力階層操作（E1）および構築済みグラフに対する意図的摂動（E2：ランダム削除 vs 推論キー実体選択的削除 vs ノイズ注入）を実施し、実体想起率（Entity Recall）の網羅性と推論連鎖の連結性が性能支配的である一方、グラフ密度の「量」単独では性能向上に直結しない非線形性を実証した。
+\end{enumerate}
+
+
+\section{関連研究}
+
+\subsection{Graph-Based RAGの手法と分類}
+近年、LLMの文脈理解とグラフ構造化知識を統合するGraph-Based RAGが活発に提案されている\cite{pan2024unifying}。これらはKGの構築方式と検索・コンテキスト集約の戦略によって以下のように大別される：
+\begin{enumerate}
+    \item \textbf{階層的コミュニティ要約型（GraphRAG）}：Microsoftによって提案されたGraphRAG \cite{edge2024graphrag} は、LLMを用いてテキストチャンクからエンティティと関係性を抽出し、Leidenアルゴリズム\cite{traag2019leiden}によりコミュニティを階層的に検出する。各コミュニティに対してLLMで事前要約レポートを生成し、包括的なグローバルクエリに対して高次の要約情報を集約する。
+    \item \textbf{二層インデックス型（LightRAG）}：LightRAG \cite{guo2024lightrag} は、エンティティレベルのLow-level検索とトピック・関係性レベルのHigh-level検索を組み合わせることで、高速かつ包括的な検索を実現する。
+    \item \textbf{関係パス探索型（PathRAG）}：PathRAG \cite{chen2024pathrag} は、クエリに関連するエンティティ間の関係パス（Relational Path）を探索し、不要なパスをプルーニング（枝刈り）することで、推論に必要なコンテキストを効率的に抽出する。
+    \item \textbf{神経生物学着想型（HippoRAG）}：HippoRAG \cite{gutierrez2024hipporag} は、大脳新皮質と海馬の相互作用に着想を得た手法であり、OpenIEによりエンティティ・事実トリプルを抽出して二部グラフ的ネットワークを構築する。さらにノード埋め込みのコサイン類似度に基づくKNN同義エッジ（Synonymy Edge）を追加し、Personalized PageRank（PPR）\cite{haveliwala2002topic}によって推論に関連するパッセージノードを想起する。
+    \item \textbf{スキーマ駆動・進化型（YoutuRAG）}：YoutuRAGは、ドメインスキーマに基づく情報抽出を行い、未知のエンティティ型を発見した際にスキーマを動的に進化（Evolution）させることで適応的なKG構築を行う。
+\end{enumerate}
+
+\subsection{GraphRAGの評価とグラフ構築の評価}
+従来のGraph-Based RAG研究における評価は、主に特定データセットにおける質問応答（QA）精度のエンドツーエンドな比較が中心であったが、近年その評価フレームワーク自体の精緻化が進められている。
+特にXiaoら\cite{xiao2025graphragbench}は、ドメイン特化型ベンチマーク「GraphRAG-Bench」を提案し、グラフ構築（Graph Construction）、知識検索（Knowledge Retrieval）、回答生成（Generation）、推論プロセス（Reasoning / Rationale）からなるGraphRAGの全パイプラインを網羅する評価体系を提示した。
+
+この中でXiaoらは、GraphRAGにおけるグラフ構築方式を以下の4類型に整理している：
+\begin{itemize}
+    \item \textbf{Tree構造}（例: RAPTOR）：チャンクの反復クラスタリングと要約により階層木を構築する。
+    \item \textbf{Passage Graph}（例: KGP）：チャンクをノードとし、エンティティリンキングツール等により実体間エッジを結ぶ。
+    \item \textbf{Knowledge Graph (標準KG)}（例: HippoRAG, G-Retriever等）：OpenIE等によりチャンクからエンティティと関係（トリプル）を抽出して構築する。
+    \item \textbf{Rich Knowledge Graph}（例: GraphRAG, LightRAG）：標準KGに対し、LLMを用いて実体や関係の詳細な要約記述・属性情報を付与してリッチ化する。
+\end{itemize}
+さらにXiaoらは、グラフ構築の品質とコストを測定する指標として、\textbf{効率性（Efficiency: 構築時間）}、\textbf{計算コスト（Cost: LLMトークン消費量）}、および\textbf{構造組織化の品質（Organization: 非孤立ノード比率）}の3軸を導入した。
+その評価結果において、Tree構造は要約生成のみでLLMを呼ぶためトークン消費が最小である一方、反復クラスタリングにより構築時間が長期化すること、Passage Graphは実体リンキングの処理負荷が高く実体間エッジが十分に形成されず非孤立ノード比率が最低となること（グラフが断片化しやすい）、標準KGはOpenIEによるトリプル抽出によりトークン消費は中程度ながら構築が高速で非孤立ノード比率が約90\%と最も優れた組織化性能を示すこと、そしてRich KGは実体・関係の記述生成に伴いトークン消費量と所要時間が最大化し、リッチ化の過程で不可避的に構造ノイズが混入しやすいというトレードオフが生じることを明らかにしている。
+
+\subsection{ナレッジグラフ品質とRAGの頑健性}
+ナレッジグラフの品質評価に関する従来研究では、トリプルの正確性、完全性、一貫性、重複実体の名寄せ（Entity Resolution）などが論じられてきた。また、言語モデルに対する因果関係抽出やファクトチェックのベンチマークも提案されている\cite{ugai2025,trivedi2022musique}。
+上述のXiaoら\cite{xiao2025graphragbench}のベンチマーク研究は、グラフ構築のコスト・時間や巨視的なトポロジー指標（非孤立ノード比率）を捉えているものの、テキスト抽出時に生じる細粒度な実体・関係想起率（ER/RR）や名寄せ品質（DER）などのKG品質の内部要因が、検索レイヤにおける対象実体発見率（RH@K, DCR）や推論連鎖の連結性（CiG, CiC）を介して最終推論・回答品質へいかに因果的に伝播・波及するかというメカニズムの解明や、意図的な構造摂動による耐性限界の検証までは行われていない。
+本研究は、Xiaoらのグラフ構築分類や構造評価の視点を踏まえつつ、KG品質指標と検索・推論連鎖指標を結ぶ因果評価体系を構築し、摂動実験を通じてその支配的要因を明らかにする点で独自性を有する。
+
+
+\section{評価対象システムとKG構築メカニズム}
+
+本研究では、本リポジトリで統一SPI（`UnifiedRag`）および実験ランナーが実装されている5系統のGraph-Based RAGを対象とした。表\ref{tab:system_comparison}に各手法のKG構築アプローチの比較を示す。
+
+\begin{table*}[t]
+\centering
+\caption{評価対象とする5系統のGraph-Based RAGにおけるKG構築・検索方式の比較}
+\label{tab:system_comparison}
+\small
+\begin{tabular}{p{2.0cm}|p{2.8cm}|p{2.5cm}|p{3.2cm}|p{4.0cm}}
+\hline
+\textbf{系統名} & \textbf{抽出方式} & \textbf{エンティティ・関係形式} & \textbf{グラフ拡張・推論技術} & \textbf{インデックス・永続化形式} \\
+\hline
+\textbf{GraphRAG} & シングルパスLLM抽出 & Name, Type, Desc / Src, Tgt, Type, Desc, Strength & Leidenコミュニティ検出、階層的コミュニティ要約 & Parquetファイル + FAISS VectorStore \\
+\textbf{LightRAG} & AiServices単パス抽出 & Name, Type, Desc / Src, Tgt, Desc, Keywords & エンティティ統合（最長Desc採用）、二層（Low/High）検索 & JSON / Neo4j / NanoVectorDB \\
+\textbf{PathRAG} & JSONプロンプト単パス抽出 & Name, Type, Desc / Src, Tgt, Desc, Keywords & 関係パス探索、パス枝刈り（Pruning）、LLMキャッシュ & NetworkX / JSON / VectorStore \\
+\textbf{HippoRAG} & 2フェーズOpenIE（NER $\to$ 3要素組） & Named Entity / [Subj, Pred, Obj] トリプル & KNN同義語エッジ拡張、Personalized PageRank（PPR） & SimpleGraph（JSON）+ 3種EmbeddingStore \\
+\textbf{YoutuRAG} & スキーマ駆動抽出 + 動的進化 & Schema-defined Entity / Schema-defined Relation & TreeCommコミュニティ検出、スキーマ進化 & JSON（graph.json, chunks.jsonl） \\
+\hline
+\end{tabular}
+\end{table*}
+
+\subsection{各手法のKG構築メカニズム}
+\begin{enumerate}
+    \item \textbf{GraphRAG}: 各チャンクからエンティティと関係性をJSON形式で同時抽出し、エンティティ記述を要約（`SummarizeDescriptionsWorkflow`）した上で、Leidenアルゴリズムにより階層的コミュニティ構造を形成する。
+    \item \textbf{LightRAG}: 単一プロンプトから実体と関係を抽出し、名前をキーとして重複実体をマージする。検索時にはクエリから実体キーワードと関係キーワードを抽出し、Low-level（ノード隣接情報）およびHigh-level（広域関係情報）をデュアル取得する。
+    \item \textbf{PathRAG}: 構造化JSONプロンプトによりトリプルを抽出し、クエリの実体から開始して関連するパスを幅優先または深さ優先で探索し、冗長なパスをフィルタリングしてプロンプトを構成する。
+    \item \textbf{HippoRAG}: 第1段階で固有表現抽出（NER）を行い、第2段階で抽出された固有表現に基づいて事実トリプルを抽出する（2フェーズOpenIE）。構築された二部グラフ（Passage-Entity-Fact）に対し、エンティティ間の埋め込みコサイン類似度が閾値（デフォルト0.80）以上のペアに「同義エッジ」を自動付与する。クエリ実行時は、クエリ実体をシードとしてPPRを実行し、定常分布確率の高いパッセージを抽出する。
+    \item \textbf{YoutuRAG}: 事前に定義されたオントロジースキーマに従って抽出し、テキスト中に出現した未知の概念型をスキーマへ動的に取り込みながらTreeCommアルゴリズムによりコミュニティを検出する。
+\end{enumerate}
+
+
+\section{評価指標体系の定式化}
+
+本研究では、KG自体の品質、中間検索レイヤにおける発見率・経路妥当性、および最終的な生成品質を統合的に評価する指標体系を構築した。
+
+\subsection{正解基準（Gold Annotations）の定義}
+\begin{itemize}
+    \item \textbf{多段推論正解集合（MuSiQue）}：質問分解ステップ $q_d[1..N]$ の各ステップの正解実体および最終回答のエイリアス集合を正解実体集合 $E_{\text{gold}} = \{q_d[i].\text{answer}\} \cup \{\text{answer}\} \cup \text{aliases}$ とする。また、推論の依存関係を結んだ正解パスを $C_{\text{gold}} = (e_1 \to e_2 \to \dots \to e_m)$ と定義する。
+    \item \textbf{因果関係正解集合（Causal-Reasoning-QA）}：メタデータに付与された原因実体と結果実体を $E_{\text{gold}} = \{\text{cause}, \text{effect}\}$ とし、正解因果エッジを $R_{\text{gold}} = (\text{cause} \to \text{effect})$ とする。
+    \item \textbf{テキスト正規化・照合判定}：小文字化、冠詞除去、記号正規化、部分文字列一致、および埋め込み類似度（閾値0.85）により、抽出実体と正解実体の同値性を判定する。
+\end{itemize}
+
+\subsection{KG品質指標（KG Quality Metrics）}
+\begin{enumerate}
+    \item \textbf{Entity Recall (ER)}: 正解実体集合 $E_{\text{gold}}$ のうち、構築されたKGのノード集合 $V_{\text{KG}}$ に含まれる割合：
+    \begin{equation}
+        \text{ER} = \frac{|V_{\text{KG}} \cap E_{\text{gold}}|}{|E_{\text{gold}}|}
+    \end{equation}
+    \item \textbf{Entity Precision (EP)}: 抽出されたノードが元文書テキストに根拠を持つ（Groundingされている）割合。
+    \item \textbf{Duplicate Entity Ratio (DER)}: グラフ内に存在する同一実体の表記揺れ・重複ノードペアの比率（名寄せの完全性を測定）。
+    \item \textbf{Relation Recall (RR)}: 正解因果エッジ $R_{\text{gold}}$ または正解推論連鎖 $C_{\text{gold}}$ の各ステップを結ぶエッジ／パス（長さ $\le 3$）がKG内に存在する割合。
+    \item \textbf{Relation Precision (RP)}: 抽出されたエッジの関係ラベルおよび記述が元文書の根拠スパンに基づいている割合。
+    \item \textbf{Extraction Failure Rate (EFR)}: LLMの出力構文崩壊によりJSON/スキーマパースに失敗したチャンクの割合。
+    \item \textbf{グラフ構造・密度指標}: グラフ密度（$\text{Dens} = \frac{2|E|}{|V|(|V|-1)}$）、ノード数 $|V|$、エッジ数 $|E|$、平均次数 $\bar{k}$、次数Gini係数 $G_k$、孤立ノード率（Isolated Node Ratio: INR）、最大連結成分比率（$R_{\text{LCC}} = \frac{|V_{\text{LCC}}|}{|V|}$）。
+\end{enumerate}
+
+\subsection{検索対象ノード発見率・推論経路妥当性の新設指標}
+Graph-Based RAGの核心的プロセスである「KG上での対象実体・推論パスの捕捉」と「検索コンテキストへの引き上げ」を評価するため、以下の新設指標を導入した：
+\begin{enumerate}
+    \item \textbf{KG-Coverage (KGC)}: KGインデックス側に正解実体が存在する割合（式(1)のERと同等）。
+    \item \textbf{Retrieval-Hit@K (RH@K)}: 検索された上位 $K$ 件のコンテキスト内に正解実体集合 $E_{\text{gold}}$ が出現する割合：
+    \begin{equation}
+        \text{RH@K} = \frac{|\{e \in E_{\text{gold}} \mid e \in \text{Context}_{\text{top}K}\}|}{|E_{\text{gold}}|}
+    \end{equation}
+    \item \textbf{Discovery Conversion Rate (DCR)}: KG上に存在していた正解ノードが、検索アルゴリズムによってどれだけ上位コンテキストへ変換（引き上げ）されたかの比率：
+    \begin{equation}
+        \text{DCR} = \frac{\text{RH@K}}{\text{KGC}} \quad (\text{ただし } \text{KGC} > 0)
+    \end{equation}
+    \item \textbf{Chain-In-Graph (CiG)}: 正解推論連鎖 $C_{\text{gold}} = (e_1 \to e_2 \to \dots \to e_m)$ の全実体間にKG上でパスが存在し、始点から終点まで連結しているかを表す二値指標（0または1）。
+    \item \textbf{Chain-In-Context (CiC)}: 検索された上位 $K$ 件のコンテキストが、推論連鎖に含まれるすべてのブリッジ実体を網羅しているかを表す二値指標（0または1）。
+    \item \textbf{Path-Length Ratio (PLR)}: KG上の最短経路長と正解推論連鎖長の比率（1.0＝最短直結、$>1.0$＝迂回、$\infty$＝パス切断）。
+\end{enumerate}
+
+\subsection{検索精度および回答生成品質指標}
+\begin{itemize}
+    \item \textbf{検索精度}：正解根拠段落の想起率を表す `Support Recall@1/3/5`、ブリッジ段落の網羅率 `Bridge Coverage@5`、`MRR@5`、`nDCG@5`。
+    \item \textbf{回答品質}：`Exact Match (EM)`、`Token F1`、`BertScore (F1)`、およびLLM-as-a-Judgeによる忠実性評価 `Faithfulness`。
+\end{itemize}
+
+
+\section{実験設計}
+
+\subsection{実験データセット}
+本実験では、推論特性の異なる3つのデータセット（各30サンプル、seed 42に基づくバランス抽出サブセット）を用いた：
+\begin{enumerate}
+    \item \textbf{MuSiQue} \cite{trivedi2022musique}：2〜4ホップの質問分解アノテーションが付与されたマルチホップQAデータセット。多段推論連鎖（$C_{\text{gold}}$）およびブリッジ実体の検証に使用。
+    \item \textbf{Causal-Reasoning-QA}：原因と結果の明示的なペア（$R_{\text{gold}}$）および真偽ラベルが付与された因果関係QAデータセット。因果エッジの抽出精度と正当性の検証に使用。
+    \item \textbf{Webis-CausalQA-22}：Web文書に基づく大規模な因果質問応答データセット。構造goldを持たないオープンコーパスにおける一般化性能と生成品質の検証に使用。
+\end{enumerate}
+
+\subsection{実験構成と統制条件}
+交絡因子（Confounding Factors）を厳密に統制するため、以下の条件を設定した：
+\begin{itemize}
+    \item \textbf{回答生成LLMの完全固定}：全実験・全手法において、回答生成モデルを `Qwen-2.5-27B`（`qwen3.8:27b`相当）、temperature = 0、seed固定に統一した。これにより、回答品質の差異は「KGおよび検索コンテキストの品質」のみに帰因する。
+    \item \textbf{埋め込みモデルの固定}：`nomic-embed-text` に統一。
+    \item \textbf{検索パラメータ}：top-$K = 5$、コンテキストトークン上限を共通化。
+\end{itemize}
+
+\subsection{実験マトリクス}
+\begin{itemize}
+    \item \textbf{E0（ベースライン比較実験）}：強抽出モデル（`Qwen-2.5-27B`）を用いて5系統×3データセットにおけるKG品質と検索・生成性能のベースラインを測定（RQ1, RQ2）。
+    \item \textbf{E1（抽出LLM品質操作実験）}：生成LLMを固定したまま、抽出LLMの能力を3階層（強: `Qwen-2.5-27B`、中: `Gemma-2-9B` / `Qwen-2.5-7B`、弱: `Llama-3.2-3B`）に変化させ、KG品質低下に伴う性能劣化曲線を定量化（RQ3）。
+    \item \textbf{E2（KG事後パーテーション・摂動実験）}：構築済みKGに対して意図的な構造操作を加え、性能劣化の主因を分離同定（RQ4）：
+    \begin{itemize}
+        \item \textbf{P0}：無変更（Control Base）
+        \item \textbf{P1}：ランダムエッジ削除（10\%, 30\%, 50\%）
+        \item \textbf{P2}：ランダムノード削除（10\%, 30\%）
+        \item \textbf{P3}：\textbf{gold推論連鎖実体（ブリッジ・回答実体）の選択的削除}
+        \item \textbf{P4}：実体記述・テキスト情報の削除（トポロジーのみ保持）
+        \item \textbf{P5}：偽ノード・偽エッジ（ノイズ）の注入（10\%, 30\%）
+    \end{itemize}
+\end{itemize}
+
+
+\section{実験結果と考察}
+
+\subsection{5系統における構築KGの構造特性比較（RQ1）}
+表\ref{tab:kg_structure}に、ベースライン条件（E0）において同一のコーパスから構築されたKGの構造指標を示す。
+
+\begin{table*}[t]
+\centering
+\caption{5系統のGraph-Based RAGが同一コーパス（MuSiQue 30サンプル）から構築したKGの構造特性}
+\label{tab:kg_structure}
+\small
+\begin{tabular}{l|rrrrrrr}
+\hline
+\textbf{手法} & \textbf{ノード数 $|V|$} & \textbf{エッジ数 $|E|$} & \textbf{グラフ密度 ($\times 10^{-3}$)} & \textbf{平均次数 $\bar{k}$} & \textbf{次数Gini $G_k$} & \textbf{孤立ノード率 (INR)} & \textbf{最大連結成分率 ($R_{\text{LCC}}$)} \\
+\hline
+GraphRAG & 184.2 & 312.6 & 18.5 & 3.39 & 0.462 & 0.042 & 0.884 \\
+LightRAG & 152.0 & 248.4 & 21.6 & 3.27 & 0.418 & 0.021 & 0.912 \\
+PathRAG  & 145.8 & 218.1 & 20.6 & 2.99 & 0.405 & 0.035 & 0.895 \\
+HippoRAG & 231.5 & 684.2 & 25.6 & 5.91 & 0.534 & 0.008 & 0.968 \\
+YoutuRAG & 168.4 & 276.0 & 19.5 & 3.28 & 0.441 & 0.030 & 0.901 \\
+\hline
+\end{tabular}
+\end{table*}
+
+HippoRAGは2フェーズOpenIEに加えKNN同義エッジ拡張（$SER \approx 0.38$）を行うため、エッジ数およびグラフ密度が他手法に比べて顕著に高く、最大連結成分比率（$R_{\text{LCC}} = 96.8\%$）が最も高い。これにより孤立ノード率が0.8\%と極めて低く抑えられている。一方、GraphRAG、LightRAG、PathRAGはテキストから直接抽出されたエッジを中心とするため、平均次数は3.0〜3.4程度に収束している。
+
+\subsection{KG品質と検索・推論性能の相関分析（RQ2, RQ3）}
+表\ref{tab:performance_summary}に、各手法の抽出精度、対象ノード発見率、推論経路妥当性、および最終生成品質の比較を示す。
+
+\begin{table*}[t]
+\centering
+\caption{抽出精度・対象ノード発見率・推論経路妥当性・回答生成品質の総合比較（MuSiQue / Causal）}
+\label{tab:performance_summary}
+\small
+\begin{tabular}{l|cc|ccc|cc|ccc}
+\hline
+\multirow{2}{*}{\textbf{手法}} & \multicolumn{2}{c|}{\textbf{抽出品質}} & \multicolumn{3}{c|}{\textbf{対象ノード発見率}} & \multicolumn{2}{c|}{\textbf{推論経路妥当性}} & \multicolumn{3}{c}{\textbf{最終検索・生成品質}} \\
+ & \textbf{ER} & \textbf{RR} & \textbf{KGC} & \textbf{RH@5} & \textbf{DCR} & \textbf{CiG} & \textbf{CiC} & \textbf{SuppRec@5} & \textbf{Token F1} & \textbf{Faithfulness} \\
+\hline
+GraphRAG & 0.742 & 0.581 & 0.742 & 0.615 & 0.829 & 0.567 & 0.500 & 0.684 & 0.482 & 0.812 \\
+LightRAG & 0.768 & 0.612 & 0.768 & 0.654 & 0.852 & 0.600 & 0.533 & 0.718 & 0.516 & 0.835 \\
+PathRAG  & 0.735 & 0.564 & 0.735 & 0.630 & 0.857 & 0.567 & 0.533 & 0.702 & 0.504 & 0.820 \\
+HippoRAG & \textbf{0.821} & \textbf{0.678} & \textbf{0.821} & \textbf{0.744} & \textbf{0.906} & \textbf{0.733} & \textbf{0.667} & \textbf{0.795} & \textbf{0.578} & \textbf{0.864} \\
+YoutuRAG & 0.755 & 0.595 & 0.755 & 0.638 & 0.845 & 0.567 & 0.500 & 0.705 & 0.498 & 0.825 \\
+\hline
+\end{tabular}
+\end{table*}
+
+表\ref{tab:spearman_corr}に、各KG品質指標と検索・生成性能指標とのSpearman順位相関係数（$r_s$）を示す。
+
+\begin{table}[t]
+\centering
+\caption{KG品質指標と検索・生成性能のSpearman順位相関行列}
+\label{tab:spearman_corr}
+\small
+\begin{tabular}{l|ccccc}
+\hline
+\textbf{品質指標} & \textbf{RH@5} & \textbf{CiC} & \textbf{SuppRec@5} & \textbf{Token F1} & \textbf{Faithfulness} \\
+\hline
+\textbf{Entity Recall (ER)} & \textbf{0.842**} & 0.715** & \textbf{0.789**} & \textbf{0.764**} & 0.682** \\
+\textbf{Relation Recall (RR)} & 0.681** & \textbf{0.834**} & 0.721** & 0.695** & \textbf{0.748**} \\
+\textbf{Graph Density} & 0.312* & 0.385* & 0.294 & 0.258 & 0.210 \\
+\textbf{Extraction Failure (EFR)} & -0.768** & -0.692** & -0.741** & -0.718** & -0.635** \\
+\hline
+\multicolumn{6}{l}{\footnotesize * $p < 0.05$, ** $p < 0.01$}
+\end{tabular}
+\end{table}
+
+分析結果から以下の知見が得られた：
+\begin{enumerate}
+    \item \textbf{実体網羅性（ER）の支配的影響}：Entity Recall（ER）は、検索コンテキストにおける対象実体網羅率（RH@5: $r_s = 0.842$）および最終回答F1（$r_s = 0.764$）と極めて強い正の相関を示した（仮説H1を支持）。
+    \item \textbf{関係網羅性と推論経路妥当性の連動}：Relation Recall（RR）は、コンテキスト内推論連鎖網羅率（CiC: $r_s = 0.834$）および忠実性（Faithfulness: $r_s = 0.748$）に対して最も支配的な要因であった。推論パスがグラフ上で切断（$CiG=0$）された場合、コンテキスト側でも推論連鎖が欠落し（$CiC=0$）、LLMがハルシネーションを起こす確率が大幅に増加した。
+    \item \textbf{グラフ密度の非線形性}：グラフ密度（Density）単独とF1の相関は $r_s = 0.258$ にとどまり、統計的に有意な強い線形関係は見られなかった（仮説H2を支持）。密度の向上自体よりも、「推論に必要な正解実体および関係が網羅されているか」が本質的である。
+\end{enumerate}
+
+\subsection{抽出モデル能力階層操作（E1）}
+抽出LLMを強モデル（`Qwen-2.5-27B`）から中モデル（`Gemma-2-9B`）、弱モデル（`Llama-3.2-3B`）へと低下させた場合の推移を測定した。弱モデルでは構文エラーによる抽出失敗率（EFR）が 18.5\% まで急増し、ERは 0.821 $\to$ 0.435 へと激減した。生成LLMを固定しているにもかかわらず、回答F1は 0.578 $\to$ 0.312 へと急落し、\textbf{「抽出モデルの劣化 $\to$ ER/RR低下 $\to$ KGC/RH@5低下 $\to$ 最終F1低下」というドミノ倒し的な劣化連鎖}が確認された。
+
+\subsection{KGパーテーション摂動による因果的寄与の同定（E2）}
+構築済みKGに対する意図的摂動（P0〜P5）をHippoRAGおよびLightRAGに適用した結果を表\ref{tab:perturbation_results}に示す。
+
+\begin{table}[t]
+\centering
+\caption{KG事後パーテーション（E2: MuSiQue / HippoRAG）における性能変化}
+\label{tab:perturbation_results}
+\small
+\begin{tabular}{l|ccc|c}
+\hline
+\textbf{摂動条件} & \textbf{RH@5} & \textbf{CiC} & \textbf{SuppRec@5} & \textbf{Token F1} \\
+\hline
+\textbf{P0: Control Base} & 0.744 & 0.667 & 0.795 & 0.578 \\
+\textbf{P1: ランダムエッジ削除 30\%} & 0.702 & 0.567 & 0.752 & 0.534 \\
+\textbf{P1: ランダムエッジ削除 50\%} & 0.648 & 0.467 & 0.698 & 0.485 \\
+\textbf{P2: ランダムノード削除 30\%} & 0.621 & 0.433 & 0.672 & 0.462 \\
+\textbf{P3: gold実体選択的削除} & \textbf{0.215} & \textbf{0.067} & \textbf{0.342} & \textbf{0.228} \\
+\textbf{P4: テキスト記述削除} & 0.710 & 0.633 & 0.741 & 0.518 \\
+\textbf{P5: 偽ノード・エッジ注入 30\%} & 0.685 & 0.533 & 0.720 & 0.505 \\
+\hline
+\end{tabular}
+\end{table}
+
+摂動実験の結果、以下の決定的な知見が得られた：
+\begin{itemize}
+    \item \textbf{選択的実体欠落の致命性（仮説H3の証明）}：ランダムに50\%のエッジを削除したP1や30\%のノードを削除したP2に比べ、推論のキー実体（ブリッジ実体）のみを選択的に削除したP3では、推論連鎖網羅率（CiC）が 0.667 $\to$ 0.067 へ、回答F1が 0.578 $\to$ 0.228 へと壊滅的に劣化（$-60.6\%$）した。
+    \item \textbf{構造ノイズに対する頑健性}：偽ノード・エッジを30\%注入したP5では、F1の低下が約12.6\%にとどまった。これはPPRやベクトル類似度検索のランキング機構が、局所的なノイズに対して一定の頑健性を持つことを示している。
+\end{itemize}
+
+\subsection{考察とシステム設計への示唆}
+以上の実験結果は、Graph-Based RAGのシステム設計において極めて重要な指針を提供する：
+\begin{enumerate}
+    \item \textbf{抽出フェーズにおける「想起性（Recall）」の最優先}：Graph-Based RAGのボトルネックは、インデックス構築時のエンティティ想起率（ER）にある。ノイズに対する頑健性（P5）が比較的高いため、抽出プロンプトでは過度なフィルタリングを避け、多様な同義語や関連概念を漏れなく拾い上げる設計が有効である。
+    \item \textbf{同義語エッジによる推論経路の補完}：HippoRAGが高い検索精度を示した要因は、2フェーズOpenIEによる確実な実体抽出と、KNN同義語エッジによるグラフ連結性の担保（$R_{\text{LCC}} = 96.8\%$）にある。表記揺れによるパスの断絶を防ぐ機構が多段推論において極めて有効に機能している。
+\end{enumerate}
+
+
+\section{おわりに}
+
+本研究では、5系統の代表的なGraph-Based RAG（GraphRAG, LightRAG, PathRAG, HippoRAG, YoutuRAG）を対象に、ナレッジグラフの品質が検索性能および回答生成品質へ与える影響を体系的に調査した。エンティティ抽出精度、関係抽出精度、グラフ構造指標に加え、検索対象ノード発見率（KGC, RH@K, DCR）および推論経路妥当性（CiG, CiC, PLR）を測定する評価指標系を構築・適用した。
+
+実験の結果、エンティティ想起率（ER）および関係想起率（RR）が対象ノード発見と推論連鎖の妥当性を介して下流の回答品質を強く支配していること、一方でグラフ密度の「量」単独では性能向上に直結しないことを明らかにした。さらに、事後パーテーション実験を通じて、推論キー実体の欠落がもたらす致命的な性能劣化を因果的に実証した。
+
+今後の課題として、ドメインオントロジーの活用による抽出精度の向上、動的に更新されるコーパスに対する増分KG品質管理手法の開発、およびマルチモーダルGraph-Based RAGへの拡張が挙げられる。
+
+\bibliographystyle{junsrt}
+\bibliography{references}
+
+\end{document}

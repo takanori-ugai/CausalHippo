@@ -3,16 +3,16 @@ set -euo pipefail
 
 DATA_PATH="data/musique_experiment/musique_dev_balanced_300.jsonl"
 OUTPUT_DIR=""
-CONFIG_PATH="config/common_rag.json"
+CONFIG_PATH="config/common_rag_ollama.json"
 MANIFEST_PATH=""
 CONDITIONS="all"
 TOP_K="5"
 PARALLELISM="5"
 LIMIT=""
-LLM_MODEL="${LLM_MODEL:-gpt-5.4-mini}"
-EMBEDDING_MODEL="${EMBEDDING_MODEL:-}"
-PROVIDER="${LLM_PROVIDER:-openai}"
-LLM_BASE_URL="${LLM_BASE_URL:-}"
+LLM_MODEL="${LLM_MODEL:-gemma4:e4b}"
+EMBEDDING_MODEL="${EMBEDDING_MODEL:-nomic-embed-text}"
+PROVIDER="${LLM_PROVIDER:-ollama}"
+LLM_BASE_URL="${LLM_BASE_URL:-http://127.0.0.1:11434}"
 TEMPLATE_STYLE="detailed_musique"
 SKIP_AGGREGATE="false"
 USE_UNIFIED_API="false"
@@ -20,21 +20,21 @@ USE_UNIFIED_PERSISTENCE="false"
 
 usage() {
   cat <<'EOF'
-Usage: ./run_experiment.sh [options]
+Usage: ./run_experiment_ollama.sh [options]
 
 Options:
   --data <path>            Input MuSiQue JSONL
   --output-dir <path>      Output directory (default: eval_results/multicondition_<timestamp>)
-  --config <path>          Pipeline/common config path (default: config/common_rag.json)
+  --config <path>          Pipeline/common config path (default: config/common_rag_ollama.json)
   --manifest <path>        Manifest JSONL (optional; auto-detected when omitted)
   --conditions <list>      all or comma list of condition IDs
   --top-k <int>            Retrieval topK (default: 5)
   --parallelism <int>      Number of samples to execute in parallel (default: 5)
   --limit <int>            Limit samples (optional)
-  --llm-model <name>       Override generation model
-  --embedding-model <name> Override embedding model
-  --provider <name>        openai|azure|ollama|gemini (default: env LLM_PROVIDER or openai)
-  --llm-base-url <url>     Optional base URL
+  --llm-model <name>       Override generation model (default: qwen3.8:27b)
+  --embedding-model <name> Override embedding model (default: nomic-embed-text)
+  --provider <name>        openai|azure|ollama|gemini (default: env LLM_PROVIDER or ollama)
+  --llm-base-url <url>     Optional base URL (default: http://127.0.0.1:11434)
   --template-style <name>  Prompt template style (default: detailed_musique)
   --use-unified-api        Route conditions through shared unified adapters
   --use-unified-persistence Enable unified persistence SPI sidecar in unified mode
@@ -42,10 +42,19 @@ Options:
   -h, --help               Show this help
 
 Example:
-  ./run_experiment.sh \
+  ./run_experiment_ollama.sh \
     --data data/musique_experiment/musique_dev_balanced_300.jsonl \
     --conditions all \
     --top-k 5
+
+Notes:
+  Uses a local Ollama server (default http://127.0.0.1:11434).
+  NOTE: use 127.0.0.1, not localhost — this box resolves localhost to ::1
+  first and Ollama only listens on the IPv4 loopback, so GraphRAG's HTTP
+  client (no IPv4 fallback) connect-times-out otherwise.
+  Make sure both models are pulled first, e.g.:
+    ollama pull qwen3.8:27b
+    ollama pull nomic-embed-text
 EOF
 }
 
@@ -77,7 +86,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ -z "$OUTPUT_DIR" ]]; then
-  OUTPUT_DIR="eval_results/multicondition_$(date -u +%Y%m%d_%H%M%S)"
+  OUTPUT_DIR="eval_results/multicondition_ollama_$(date -u +%Y%m%d_%H%M%S)"
 fi
 
 if [[ ! -f "$DATA_PATH" ]]; then
@@ -120,10 +129,14 @@ if [[ -n "$LLM_BASE_URL" ]]; then
   APP_ARGS+=(--llm-base-url "$LLM_BASE_URL")
 fi
 
-echo "[run_experiment] output: $OUTPUT_DIR"
-echo "[run_experiment] conditions: $CONDITIONS"
-echo "[run_experiment] QA metrics: exact_match, precision, recall, f1"
-echo "[run_experiment] BertScore metrics: bertscore_precision, bertscore_recall, bertscore_f1"
+echo "[run_experiment_ollama] output: $OUTPUT_DIR"
+echo "[run_experiment_ollama] provider: $PROVIDER"
+echo "[run_experiment_ollama] llm model: $LLM_MODEL"
+echo "[run_experiment_ollama] embedding model: $EMBEDDING_MODEL"
+echo "[run_experiment_ollama] base url: $LLM_BASE_URL"
+echo "[run_experiment_ollama] conditions: $CONDITIONS"
+echo "[run_experiment_ollama] QA metrics: exact_match, precision, recall, f1"
+echo "[run_experiment_ollama] BertScore metrics: bertscore_precision, bertscore_recall, bertscore_f1"
 
 #./gradlew --quiet execute \
 #  -PmainClass=shared.eval.MultiConditionExperimentKt \
@@ -135,10 +148,10 @@ if [[ "$SKIP_AGGREGATE" == "false" ]]; then
   python3 scripts/aggregate_experiment_results.py --input-dir "$OUTPUT_DIR"
 fi
 
-echo "[run_experiment] done"
-echo "[run_experiment] per-question JSONL: $OUTPUT_DIR/per_question"
-echo "[run_experiment] summary CSV: $OUTPUT_DIR/summary_by_condition.csv"
-echo "[run_experiment] summary by category CSV: $OUTPUT_DIR/summary_by_condition_category.csv"
-echo "[run_experiment] label-aware summary CSV: $OUTPUT_DIR/summary_label_aware_by_condition.csv"
-echo "[run_experiment] per-question CSV: $OUTPUT_DIR/per_question_metrics.csv"
-echo "[run_experiment] note: CSV outputs include BertScore columns"
+echo "[run_experiment_ollama] done"
+echo "[run_experiment_ollama] per-question JSONL: $OUTPUT_DIR/per_question"
+echo "[run_experiment_ollama] summary CSV: $OUTPUT_DIR/summary_by_condition.csv"
+echo "[run_experiment_ollama] summary by category CSV: $OUTPUT_DIR/summary_by_condition_category.csv"
+echo "[run_experiment_ollama] label-aware summary CSV: $OUTPUT_DIR/summary_label_aware_by_condition.csv"
+echo "[run_experiment_ollama] per-question CSV: $OUTPUT_DIR/per_question_metrics.csv"
+echo "[run_experiment_ollama] note: CSV outputs include BertScore columns"

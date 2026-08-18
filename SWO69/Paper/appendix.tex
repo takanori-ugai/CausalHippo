@@ -1,0 +1,75 @@
+\appendix
+\section{Appendix}
+\subsection{Information on the Computer Resources}
+\begin{itemize}
+    \item CPU: 3.60 GHz
+    \item Memory: 64.0 GB
+\end{itemize}
+
+\subsection{Dataset}
+Example dataset for a state change task and a placement task are shown below.
+
+\lstinputlisting
+[float=tb,caption=Example of State Change Task (Turn on all lightswitches),label=Listing1]
+{listings/state_change_task.txt}
+
+\lstinputlisting
+[float=tb,caption=Example of Placement Task (Put all apples on the kitchencounter),label=Listing2]
+{listings/placement_task.txt}
+
+The type of target objects their frequency in the state change task and the placement task are shown below.
+
+\begin{figure}[tb]
+  \begin{center}
+    \includegraphics[width=\linewidth]{figures/state_change_task_object.png}
+    \caption{The type of target objects and their frequency in the state change task.}
+    \label{state_change_task_object}
+  \end{center}
+\end{figure}
+
+\begin{figure}[tb]
+  \begin{center}
+    \includegraphics[width=\linewidth]{figures/placement_task_object.png}
+    \caption{The type of target objects and their frequency in the placement task.}
+    \label{placement_task_object}
+  \end{center}
+\end{figure}
+
+The type of initial room and frequency in the state change task and the placement task are shown below.
+
+\begin{figure}[tb]
+  \begin{center}
+    \includegraphics[width=\linewidth]{figures/state_change_room.png}
+    \caption{The type of initial room and frequency in the state change task.}
+    \label{state_change_room}
+  \end{center}
+\end{figure}
+
+\begin{figure}[tb]
+  \begin{center}
+    \includegraphics[width=\linewidth]{figures/placement_room.png}
+    \caption{The type of initial room and frequency in the placement task.}
+    \label{placement_room}
+  \end{center}
+\end{figure}
+
+\subsection{Prompts}
+Example prompts used in Section\ref{subsec4.3} are shown below.
+
+\lstinputlisting
+[float=tb,caption=Allowed Actions,label=Listing3]
+{listings/allowed_actions.txt}
+
+\lstinputlisting
+[float=tb,caption=Examples of Task and Action Scripts (Task: Code \ref{Listing1}),label=Listing4]
+{listings/example_task.txt}
+
+
+\lstinputlisting
+[float=tb,caption=Home Environmental Knowledge (Task: Code \ref{Listing1}),label=Listing5]
+{listings/home_environmental_knowledge.txt}
+
+\lstinputlisting
+[float=tb,caption=Task and Action History (Task: Code \ref{Listing1}),label=Listing6]
+{listings/task_prompt.txt}
+
