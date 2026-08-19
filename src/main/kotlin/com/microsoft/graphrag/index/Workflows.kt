@@ -376,20 +376,51 @@ private suspend fun communityReports(
 /**
  * Creates a shared OpenAiChatModel configured for the pipeline.
  *
- * The model is configured to use the package's OpenAI API key, the "gpt-4o-mini"
- * model name, JSON Schema response formatting capability, and strict JSON schema validation.
+ * The model uses the package's OpenAI API key, the model name from
+ * `OPENAI_MODEL`/`LLM_MODEL` (default "gpt-4o-mini"), and — when
+ * `OPENAI_API_BASE`/`LLM_BASE_URL` is set — that OpenAI-compatible base URL
+ * (e.g. an Ollama `http://127.0.0.1:11434/v1` endpoint for offline runs).
+ * Without a base URL it targets the public OpenAI API. JSON Schema response
+ * formatting with strict validation is always enabled.
  *
  * @return An OpenAiChatModel configured with the shared API key, model name, supported capability
  *         RESPONSE_FORMAT_JSON_SCHEMA, and strict JSON schema enforcement.
  */
-private fun defaultChatModel(): dev.langchain4j.model.openai.OpenAiChatModel =
-    dev.langchain4j.model.openai.OpenAiChatModel
-        .builder()
-        .apiKey(openAiApiKey)
-        .modelName("gpt-4o-mini")
-        .supportedCapabilities(RESPONSE_FORMAT_JSON_SCHEMA)
-        .strictJsonSchema(true)
-        .build()
+private fun defaultChatModel(): dev.langchain4j.model.openai.OpenAiChatModel {
+    val builder =
+        dev.langchain4j.model.openai.OpenAiChatModel
+            .builder()
+            .apiKey(openAiApiKey)
+            .modelName(openAiModelName("gpt-4o-mini", "OPENAI_MODEL", "LLM_MODEL"))
+            .supportedCapabilities(RESPONSE_FORMAT_JSON_SCHEMA)
+            .strictJsonSchema(true)
+    openAiBaseUrl()?.let { builder.baseUrl(it) }
+    return builder.build()
+}
+
+/**
+ * Returns the first non-blank value of the given environment variables, or [default] when none
+ * are set. Lets offline/local endpoints (Ollama etc.) be selected without code changes.
+ */
+internal fun openAiModelName(
+    default: String,
+    vararg names: String,
+): String =
+    names
+        .mapNotNull { System.getenv(it) }
+        .firstOrNull { it.isNotBlank() }
+        ?.trim()
+        ?: default
+
+/**
+ * Returns the OpenAI-compatible base URL from `OPENAI_API_BASE` or `LLM_BASE_URL`, or `null`
+ * when neither is set (clients then default to the public OpenAI API).
+ */
+internal fun openAiBaseUrl(): String? =
+    listOf("OPENAI_API_BASE", "LLM_BASE_URL")
+        .mapNotNull { System.getenv(it) }
+        .firstOrNull { it.isNotBlank() }
+        ?.trim()
 
 /**
  * Retrieves the OpenAI API key from the OPENAI_API_KEY environment variable and fails fast if missing.

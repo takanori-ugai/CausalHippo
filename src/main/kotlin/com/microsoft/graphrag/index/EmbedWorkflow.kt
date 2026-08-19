@@ -100,16 +100,25 @@ class EmbedWorkflow(
 /**
  * Creates an OpenAI-backed EmbeddingModel configured with the given API key and model name.
  *
+ * When [modelName] is left at its default, the `OPENAI_EMBEDDING_MODEL`/`EMBEDDING_MODEL`
+ * environment variables select the model (e.g. "nomic-embed-text" for Ollama runs). When
+ * `OPENAI_API_BASE`/`LLM_BASE_URL` is set, requests go to that OpenAI-compatible endpoint
+ * instead of the public OpenAI API.
+ *
  * @param apiKey The OpenAI API key used to authenticate requests.
- * @param modelName The embedding model identifier to use (default: "text-embedding-3-small").
+ * @param modelName The embedding model identifier to use (default: env override or
+ *        "text-embedding-3-small").
  * @return An EmbeddingModel instance that sends embedding requests to the specified OpenAI model.
  */
 fun defaultEmbeddingModel(
     apiKey: String,
-    modelName: String = "text-embedding-3-small",
-): EmbeddingModel =
-    OpenAiEmbeddingModel
-        .builder()
-        .apiKey(apiKey)
-        .modelName(modelName)
-        .build()
+    modelName: String = openAiModelName("text-embedding-3-small", "OPENAI_EMBEDDING_MODEL", "EMBEDDING_MODEL"),
+): EmbeddingModel {
+    val builder =
+        OpenAiEmbeddingModel
+            .builder()
+            .apiKey(apiKey)
+            .modelName(modelName)
+    openAiBaseUrl()?.let { builder.baseUrl(it) }
+    return builder.build()
+}

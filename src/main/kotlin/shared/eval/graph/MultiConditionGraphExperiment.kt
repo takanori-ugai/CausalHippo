@@ -130,6 +130,7 @@ private data class PerQuestionResult(
     val queryLatencyMs: Double,
     val totalLatencyMs: Double,
     val prediction: String,
+    val retrievedContexts: List<String> = emptyList(),
     val error: String? = null,
 )
 
@@ -197,6 +198,12 @@ private data class RunConfig(
     val parallelism: Int,
     val useUnifiedApi: Boolean,
     val useUnifiedPersistence: Boolean,
+    // SWO69 E1: extraction (KG-building) LLM; null/absent = same as --llm-model.
+    // Answer generation stays on --llm-model so E1 isolates KG quality.
+    val extractionLlmModel: String?,
+    // SWO69 E2: root dir of per-sample perturbed snapshots (<root>/<sampleId>/);
+    // when set, the LightRAG condition loads the snapshot instead of building.
+    val e2SnapshotRoot: Path?,
 )
 
 private data class RetrievalAndAnswer(
@@ -211,6 +218,17 @@ private data class BertScoreMetrics(
     val precision: Double,
     val recall: Double,
     val f1: Double,
+)
+
+/** One text chunk from an E2 snapshot's chunks.json (see scripts/perturb_kg.py). */
+@Serializable
+private data class E2ChunkRow(
+    val id: String? = null,
+    val content: String = "",
+    @SerialName("full_doc_id")
+    val fullDocId: String? = null,
+    @SerialName("file_path")
+    val filePath: String? = null,
 )
 
 fun main(args: Array<String>) {
@@ -434,6 +452,7 @@ private fun runConditionForSample(
         queryLatencyMs = retrieval.queryLatencyMs,
         totalLatencyMs = retrieval.totalLatencyMs,
         prediction = retrieval.prediction,
+        retrievedContexts = retrieval.context,
         error = null,
     )
 }
@@ -511,6 +530,17 @@ private fun createUnifiedConditionRunner(
                 val indexStart = System.nanoTime()
                 rag.drop()
                 rag.upsert(docs.filter { it.isNotBlank() })
+                // SWO69 T1: persist a per-sample KG snapshot before finally{drop()} wipes
+                // the (mostly in-memory) stores — analysis scripts read these files.
+                val snapshotTarget =
+                    when (condition) {
+                        Condition.GRAPHRAG,
+                        Condition.YOUTURAG,
+                        -> sampleWorkdir.resolve("kg_snapshot").toString()
+
+                        else -> sampleWorkdir.resolve("kg_snapshot/knowledge-graph.json").toString()
+                    }
+                runCatching { rag.saveGraph(snapshotTarget) }
                 val indexMs = elapsedMs(indexStart)
 
                 val queryText =
@@ -730,10 +760,27 @@ private fun createLightRagRunner(
         ): RetrievalAndAnswer {
             val sampleWorkdir = workdirRoot.resolve(sanitizeSampleId(sample.id))
             resetDirectory(sampleWorkdir)
+            // SWO69 E1: extraction LLM may differ from the (fixed) answer model.
+            val extractionModelName = config.extractionLlmModel ?: llmModelName
+            val extractionChat =
+                if (extractionModelName == llmModelName) {
+                    chatModel
+                } else {
+                    LLMFactory.createChatModel(
+                        binding = provider,
+                        modelName = extractionModelName,
+                        baseUrl = baseUrl,
+                        apiKey = apiKey,
+                        timeout = 120,
+                        temperature = 0.0,
+                        logRequests = false,
+                        logResponses = false,
+                    )
+                }
             val rag =
                 createLightRagForSample(
                     workingDir = sampleWorkdir.toString(),
-                    chatModel = chatModel,
+                    chatModel = extractionChat,
                     embeddingModel = retrievalEmbeddingModel,
                     tokenizer = tokenizer,
                     decoder = decoder,
@@ -746,13 +793,53 @@ private fun createLightRagRunner(
                             ?: listOf("Person", "Organization", "Location", "Event", "Concept"),
                     language = lightSettings?.language ?: "English",
                     cosineBetterThreshold = lightSettings?.cosineBetterThreshold,
+                    queryChatModel = chatModel,
                 )
 
+            val e2SnapRoot = config.e2SnapshotRoot?.resolve(sanitizeSampleId(sample.id))
             val indexStart = System.nanoTime()
-            runBlocking {
-                rag.storageManager.initialize()
-                rag.insert(docs.filter { it.isNotBlank() })
-                rag.rebuildDerivedStorageIfEmpty()
+            if (e2SnapRoot != null) {
+                // SWO69 E2: load the perturbed snapshot instead of building (T7).
+                // Layout (scripts/perturb_kg.py): <root>/<sid>/knowledge-graph.json
+                // plus an optional chunks.json with the sample's text chunks
+                // (LightRAG's snapshot round-trip only carries nodes/edges).
+                val kgJson = e2SnapRoot.resolve("knowledge-graph.json")
+                require(kgJson.toFile().isFile) { "E2 snapshot not found: $kgJson" }
+                runBlocking { rag.storageManager.initialize() }
+                rag.loadGraph(kgJson.toString())
+                val chunksFile = e2SnapRoot.resolve("chunks.json")
+                if (chunksFile.toFile().isFile) {
+                    val rows =
+                        json
+                            .decodeFromString<List<E2ChunkRow>>(chunksFile.toFile().readText())
+                            .mapNotNull { row ->
+                                row.id?.takeIf { it.isNotBlank() }?.let { id ->
+                                    id to
+                                        mapOf(
+                                            "content" to row.content,
+                                            "full_doc_id" to (row.fullDocId ?: ""),
+                                            "file_path" to (row.filePath ?: "unknown_source"),
+                                        )
+                                }
+                            }.toMap()
+                    if (rows.isNotEmpty()) {
+                        runBlocking {
+                            rag.storageManager.textChunks.upsert(rows)
+                            // InMemoryVectorStorage re-embeds `content` on upsert.
+                            rag.storageManager.chunksVdb.upsert(rows)
+                        }
+                    }
+                }
+            } else {
+                runBlocking {
+                    rag.storageManager.initialize()
+                    rag.insert(docs.filter { it.isNotBlank() })
+                    rag.rebuildDerivedStorageIfEmpty()
+                }
+                // SWO69 T1: persist the per-sample KG (LightRAG storage is in-memory by default).
+                runCatching {
+                    rag.saveGraph(sampleWorkdir.resolve("kg_snapshot/knowledge-graph.json").toString())
+                }
             }
             val indexMs = elapsedMs(indexStart)
 
@@ -795,6 +882,8 @@ private fun createLightRagForSample(
     entityTypes: List<String>,
     language: String,
     cosineBetterThreshold: Double?,
+    // SWO69 E1: answer-generation model (defaults to the extraction model).
+    queryChatModel: ChatModel = chatModel,
 ): LightRAG {
     val globalConfig =
         mapOf(
@@ -821,7 +910,8 @@ private fun createLightRagForSample(
     val queryService =
         QueryService(
             storageManager = storageManager,
-            chatModel = chatModel,
+            // E1: answer generation stays on the fixed model; extraction used `chatModel`.
+            chatModel = queryChatModel,
             hashingKv = null,
             globalConfig = globalConfig,
             tokenizer = tokenizer,
@@ -883,6 +973,10 @@ private fun createPathRagRunner(
                 val indexStart = System.nanoTime()
                 rag.clear()
                 rag.insert(docs.filter { it.isNotBlank() })
+                // SWO69 T1: persist the per-sample KG (PathRAG storage is in-memory by default).
+                runCatching {
+                    rag.saveGraph(sampleWorkdir.resolve("kg_snapshot/knowledge-graph.json").toString())
+                }
                 val indexMs = elapsedMs(indexStart)
 
                 val questionPrompt = "Answer in one or few words, no extra information: ${sample.question}"
@@ -968,6 +1062,20 @@ private fun createGraphRagRunner(
                 }
             }
             val indexMs = elapsedMs(indexStart)
+
+            // SWO69 T1: persist the per-sample KG (the pipeline's parquet tables
+            // live in output/) so scripts/analyze_kg_quality.py can glob
+            // **/kg_snapshot/entities.parquet after the workdir is reused.
+            val snapshotDir = sampleRoot.resolve("kg_snapshot")
+            runCatching {
+                snapshotDir.createDirectories()
+                for (name in listOf("entities.parquet", "relationships.parquet")) {
+                    val src = outputDir.resolve(name)
+                    if (Files.exists(src)) {
+                        Files.copy(src, snapshotDir.resolve(name))
+                    }
+                }
+            }
 
             val queryStart = System.nanoTime()
             val index = QueryIndexLoader(outputDir).load()
@@ -1067,6 +1175,16 @@ private fun parseArgs(args: Array<String>): RunConfig {
         opts["manifest"]?.let { Path.of(it) }
             ?: detectManifestNearData(dataPath)
 
+    // SWO69 E1/E2 knobs (see RunConfig).
+    val extractionLlmModel =
+        opts["extraction-llm-model"]?.takeIf { it.isNotBlank() }
+    val e2SnapshotRoot =
+        opts["e2-snapshot-root"]?.let { raw ->
+            val path = Path.of(raw)
+            require(Files.isDirectory(path)) { "Missing --e2-snapshot-root directory: $path" }
+            path
+        }
+
     return RunConfig(
         dataPath = dataPath,
         outputDir = outputDir,
@@ -1083,6 +1201,8 @@ private fun parseArgs(args: Array<String>): RunConfig {
         parallelism = parallelism,
         useUnifiedApi = useUnifiedApi,
         useUnifiedPersistence = useUnifiedPersistence,
+        extractionLlmModel = extractionLlmModel,
+        e2SnapshotRoot = e2SnapshotRoot,
     )
 }
 

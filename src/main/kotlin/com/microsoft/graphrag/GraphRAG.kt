@@ -4,6 +4,7 @@ import com.microsoft.graphrag.index.GraphRagConfig
 import com.microsoft.graphrag.index.NoopWorkflowCallbacks
 import com.microsoft.graphrag.index.defaultEmbeddingModel
 import com.microsoft.graphrag.index.defaultPipeline
+import com.microsoft.graphrag.index.openAiBaseUrl
 import com.microsoft.graphrag.index.runPipeline
 import com.microsoft.graphrag.query.BasicQueryEngine
 import com.microsoft.graphrag.query.CollectingQueryCallbacks
@@ -228,12 +229,15 @@ class GraphRAG(
                 level = param.communityLevel,
             )
 
-        fun buildStreamingModel(modelName: String?): OpenAiStreamingChatModel =
-            OpenAiStreamingChatModel
-                .builder()
-                .apiKey(apiKey)
-                .modelName(modelName ?: defaultChatModelName)
-                .build()
+        fun buildStreamingModel(modelName: String?): OpenAiStreamingChatModel {
+            val builder =
+                OpenAiStreamingChatModel
+                    .builder()
+                    .apiKey(apiKey)
+                    .modelName(modelName ?: defaultChatModelName)
+            openAiBaseUrl()?.let { builder.baseUrl(it) }
+            return builder.build()
+        }
 
         fun buildEmbeddingModel(modelName: String?): EmbeddingModel = defaultEmbeddingModel(apiKey, modelName ?: defaultEmbeddingModelName)
 

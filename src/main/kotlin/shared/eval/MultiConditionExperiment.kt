@@ -111,6 +111,7 @@ private data class PerQuestionResult(
     val queryLatencyMs: Double,
     val totalLatencyMs: Double,
     val prediction: String,
+    val retrievedContexts: List<String> = emptyList(),
     val error: String? = null,
 )
 
@@ -197,6 +198,11 @@ private data class RunConfig(
     val parallelism: Int,
     val useUnifiedApi: Boolean,
     val useUnifiedPersistence: Boolean,
+    // SWO69 E2: root dir of per-sample perturbed snapshots (<root>/<sampleId>/ =
+    // HippoRAG snapshot dir with working_dir/); when set, the hipporag_graph
+    // condition loads the snapshot instead of building (mirrors the graph
+    // runner's --e2-snapshot-root, see MultiConditionGraphExperiment.kt).
+    val e2SnapshotRoot: Path?,
 )
 
 private data class RetrievalAndAnswer(
@@ -434,6 +440,7 @@ private fun runConditionForSample(
         queryLatencyMs = retrieval.queryLatencyMs,
         totalLatencyMs = retrieval.totalLatencyMs,
         prediction = retrieval.prediction,
+        retrievedContexts = retrieval.context,
         error = null,
     )
 }
@@ -839,9 +846,29 @@ private fun createHippoRunner(
         ): RetrievalAndAnswer {
             val indexStart = System.nanoTime()
             val cleanedDocs = docs.filter { it.isNotBlank() }
-            hippo.drop()
-            if (cleanedDocs.isNotEmpty()) {
-                hippo.upsert(cleanedDocs)
+            val e2Snap = config.e2SnapshotRoot?.resolve(sanitizeSampleId(sample.id))
+            if (e2Snap != null) {
+                // SWO69 E2 (T7): load the perturbed snapshot instead of building.
+                // Layout (scripts/perturb_kg.py): <root>/<sampleId>/working_dir/
+                // is a full HippoRAG working dir — only graph.json is perturbed,
+                // embeddings/openie artifacts are carried over.
+                require(Files.isDirectory(e2Snap)) { "E2 snapshot not found: $e2Snap" }
+                hippo.drop()
+                hippo.loadGraph(e2Snap.toString())
+            } else {
+                hippo.drop()
+                if (cleanedDocs.isNotEmpty()) {
+                    hippo.upsert(cleanedDocs)
+                    // SWO69 T1: snapshot the per-sample KG — the shared saveDir is dropped
+                    // and reused on the next sample, so only the last graph would survive.
+                    val snapshotDir =
+                        config.outputDir
+                            .resolve("workdirs")
+                            .resolve(workdirSuffix)
+                            .resolve("snapshots")
+                            .resolve(sanitizeSampleId(sample.id))
+                    runCatching { hippo.saveGraph(snapshotDir.toString()) }
+                }
             }
             val indexMs = elapsedMs(indexStart)
 
@@ -1066,6 +1093,14 @@ private fun parseArgs(args: Array<String>): RunConfig {
         opts["manifest"]?.let { Path.of(it) }
             ?: detectManifestNearData(dataPath)
 
+    // SWO69 E2 (T7): load per-sample perturbed snapshots instead of building.
+    val e2SnapshotRoot =
+        opts["e2-snapshot-root"]?.let { raw ->
+            val path = Path.of(raw)
+            require(Files.isDirectory(path)) { "Missing --e2-snapshot-root directory: $path" }
+            path
+        }
+
     return RunConfig(
         dataPath = dataPath,
         outputDir = outputDir,
@@ -1082,6 +1117,7 @@ private fun parseArgs(args: Array<String>): RunConfig {
         parallelism = parallelism,
         useUnifiedApi = useUnifiedApi,
         useUnifiedPersistence = useUnifiedPersistence,
+        e2SnapshotRoot = e2SnapshotRoot,
     )
 }
 
@@ -1233,6 +1269,8 @@ private fun scoreOrZero(value: Any?): Double {
     val numeric = (value as? Number)?.toDouble() ?: return 0.0
     return if (numeric.isFinite()) numeric else 0.0
 }
+
+private fun sanitizeSampleId(sampleId: String): String = sampleId.replace(Regex("[^A-Za-z0-9._-]"), "_")
 
 private fun inferHopCount(
     sample: ExperimentSample,
