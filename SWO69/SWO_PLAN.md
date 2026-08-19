@@ -54,15 +54,18 @@
 > 2. `youturag` の実行には `--use-unified-api=true` が必須。
 > 3. `graphrag` はランナーの仕様上 `--provider openai` ＋ APIキーの指定が必要となるため、ローカルOllama環境ではOpenAI互換エンドポイント（`http://localhost:11434/v1`＋ダミーAPIキー）を介して実行する。
 
-### 2.2 データセット（30サンプル評価セット）
+### 2.2 データセット（15サンプル評価セット）
 
 | データセット | 件数 | 構造gold注釈の所在 | 本研究における役割 |
 |---|---|---|---|
-| **MuSiQue** (`data/musique_experiment/musique_dev_balanced_30.jsonl`) | 30 | `question_decomposition[].answer`（ブリッジ実体）+ `answer`/`answer_aliases` | **多段推論・推論経路妥当性の主軸**（gold実体連鎖が得られる） |
-| **Causal-Reasoning-QA** (`data/causal_experiment/causal_qa_balanced_30.jsonl`) | 30 | `metadata.cause_candidate`, `metadata.effect`, `label_true` | **因果関係抽出精度・エッジ正当性の主軸**（gold cause→effect が得られる） |
-| **Webis-CausalQA-22** (`data/webis_experiment/webis_train_balanced_30.jsonl`) | 30 | なし（文書テキスト＋QAペアのみ） | **一般化検証・回答品質の補助評価軸**（構造指標・LLM採点） |
+| **MuSiQue** (`data/musique_experiment/musique_dev_balanced_30.jsonl`) | 15 | `question_decomposition[].answer`（ブリッジ実体）+ `answer`/`answer_aliases` | **多段推論・推論経路妥当性の主軸**（gold実体連鎖が得られる） |
+| **Causal-Reasoning-QA** (`data/causal_experiment/causal_qa_balanced_30.jsonl`) | 15 | `metadata.cause_candidate`, `metadata.effect`, `label_true` | **因果関係抽出精度・エッジ正当性の主軸**（gold cause→effect が得られる） |
+| **Webis-CausalQA-22** (`data/webis_experiment/webis_train_balanced_30.jsonl`) | 15 | なし（文書テキスト＋QAペアのみ） | **一般化検証・回答品質の補助評価軸**（構造指標・LLM採点） |
 
-> **30件データセット生成手順（決定論的サブセット、seed 42）**：
+> **15サンプル評価サブセット（SWO69実験の既定、2026-08-19 適用）**：
+> 30サンプルのマスタセットから先頭15件（ランナーの `--limit 15`、統合スクリプトの `SVO69_LIMIT=15`）を用いる。平衡性を維持している（MuSiQue: 2/3/4-hop = 6/5/4、Causal-Reasoning-QA: true/false = 8/7）。
+
+> **30件マスタデータセット生成手順（決定論的サブセット、seed 42）**：
 > - MuSiQue：`python3 scripts/prepare_musique_experiment_data.py --balanced-size 30 --seed 42`
 > - Causal-Reasoning-QA：`python3 scripts/prepare_causal_experiment_data.py --target-size 30 --seed 42`（※`--target-size` を使用）
 > - Webis：`python3 scripts/prepare_webis_experiment_data.py --balanced-size 30 --seed 42`
@@ -174,7 +177,7 @@ flowchart LR
 ### E0：ベースライン実験（全5系統 × 3データセット）
 
 - **目的**：標準的な強抽出モデル（`qwen3.8:27b`）において、各系統が構築するKG品質と、その検索・生成性能のベースラインを測定し、系統間差異を明らかにする（RQ1）。
-- **構成**：5系統（GraphRAG, LightRAG, PathRAG, HippoRAG, YoutuRAG）× 3データセット × 30サンプル × 3反復（LLM非決定性の検証）。
+- **構成**：5系統（GraphRAG, LightRAG, PathRAG, HippoRAG, YoutuRAG）× 3データセット × 15サンプル × 3反復（LLM非決定性の検証）。
 - **回答生成**：全系統 `qwen3.8:27b` 固定。
 
 ### E1：抽出LLMの品質操作（KG品質の直接的な介入実験）
@@ -186,7 +189,7 @@ flowchart LR
 ### E2：KG事後パーテーション（制御されたグラフ編集・摂動実験）
 
 - **目的**：構築済みインデックスに対して特定の要素を選択的・人工的に摂動（Perturbation）させ、性能劣化の主因が「特定実体の欠落」か「全体的なエッジノイズ」かを分離同定する（H2, H3の直接証明）。
-- **対象**：代表2系統（**HippoRAG** および **LightRAG**）、MuSiQue 30サンプル。
+- **対象**：代表2系統（**HippoRAG** および **LightRAG**）、MuSiQue 15サンプル。
 - **摂動条件（P0〜P5）**：
 
 | 条件ID | 摂動操作 | 摂動強度 | 検証目的 |
@@ -280,11 +283,11 @@ gantt
 
 ### 実行時間見積もりと適応的縮小ルール
 
-- **基準実行量**：E0（1,350クエリ相当）＋ E1（900クエリ相当）＋ E2（約360クエリ相当）
+- **基準実行量（15サンプル構成）**：E0（675クエリ相当）＋ E1（450クエリ相当）＋ E2（約180クエリ相当）
 - **縮小ルール（時間・計算リソース超過時の段階的フォールバック）**：
   1. **Step 1**：反復回数を 3反復 $\to$ 1反復（決定論的固定）に削減。
   2. **Step 2**：Webisデータセット（gold構造なし）を任意（optional）とし、MuSiQue + Causal-Reasoning-QA の2データセットに絞り込む。
-  3. **Step 3**：データセット件数を 30サンプル $\to$ 15サンプルに半減（バランス維持）。
+  3. **Step 3**：データセット件数を 30サンプル $\to$ 15サンプルに半減（バランス維持）。**2026-08-19 適用済み**：15サンプルが実験の既定構成（`SVO69_LIMIT=15`、`run_experiment_swo69.sh` の既定値）。さらなる縮小が必要な場合は 15 $\to$ 10サンプル。
 
 ---
 

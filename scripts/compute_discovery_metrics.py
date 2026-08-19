@@ -322,7 +322,7 @@ def main(argv: list[str] | None = None) -> int:
                 r[col]
                 for r in sub
                 if isinstance(r.get(col), (int, float))
-                and not (isinstance(r.get(col), float) and math.isnan(r[col]))
+                and math.isfinite(r[col])  # skip NaN and inf (plr=inf = disconnected chain)
             ]
             agg[col] = round(sum(vals) / len(vals), 6) if vals else None
         agg_rows.append(agg)

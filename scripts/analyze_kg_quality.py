@@ -40,6 +40,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import math
 import re
 import sys
 from collections import Counter
@@ -607,7 +608,11 @@ def main(argv: list[str] | None = None) -> int:
         sub = [r for r in rows if r["system"] == system]
         agg = {"system": system, "n_samples": len(sub)}
         for col in STRUCT_COLS + GOLD_COLS + META_COLS:
-            vals = [r[col] for r in sub if isinstance(r.get(col), (int, float))]
+            vals = [
+                r[col]
+                for r in sub
+                if isinstance(r.get(col), (int, float)) and math.isfinite(r[col])
+            ]
             agg[col] = round(sum(vals) / len(vals), 6) if vals else None
         by_system_rows.append(agg)
     by_system_csv = out_dir / "kg_quality_by_system.csv"
