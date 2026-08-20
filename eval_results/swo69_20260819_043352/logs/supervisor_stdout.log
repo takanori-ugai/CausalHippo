@@ -1,0 +1,42 @@
+=== [swo69-continue] 2026-08-19T09:15:52Z supervisor up (job=2170104.pbs1, mode=all, run_dir=/home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352) ===
+SWO69/continue_swo69.sh: line 88: $2: unbound variable
+=== [swo69-continue] 2026-08-19T09:17:34Z supervisor up (job=2170104.pbs1, mode=all, run_dir=/home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352) ===
+=== [swo69-continue] 2026-08-19T09:17:35Z successor queued: job=2170184 (it will wait for us to terminate, then resume) ===
+=== [swo69-continue] 2026-08-19T09:17:35Z Ollama already up ===
+=== [swo69-continue] 2026-08-19T09:17:35Z run script already alive — attaching ===
+=== [swo69-continue] 2026-08-19T09:18:35Z RESTART: run script dead; last started condition: graphrag_e0_graphrag_musique ===
+=== [swo69-continue] 2026-08-19T09:18:36Z launching: bash run_experiment_swo69.sh all (SVO69_TS=20260819_043352) ===
+=== [swo69-continue] 2026-08-19T09:18:41Z run script alive (pid=1282084) ===
+=== [swo69-continue] 2026-08-19T09:21:43Z successor queued: job=2170196 (it will wait for us to terminate, then resume) ===
+SWO69/continue_swo69.sh: line 118: 10#00*3600 + 10#17*60 + 09: value too great for base (error token is "09")
+SWO69/continue_swo69.sh: line 119: 10800 -  : syntax error: operand expected (error token is "-  ")
+=== [swo69-continue] 2026-08-19T09:21:44Z walltime remaining s < reserve 900s — exiting; PBS kill follows, successor resumes ===
+=== [swo69-continue] 2026-08-19T09:41:05Z supervisor up (job=2170104.pbs1, mode=all, run_dir=/home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352) ===
+=== [swo69-continue] 2026-08-19T09:41:05Z ERROR: qsub failed: qsub: directive error: -o /home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352/logs/pbs_from_2170104.pbs1.out (%j is NOT expanded by this PBS)  ===
+=== [swo69-continue] 2026-08-19T09:41:05Z WARN: successor submission failed — will retry in the watch loop ===
+=== [swo69-continue] 2026-08-19T09:41:05Z Ollama already up ===
+=== [swo69-continue] 2026-08-19T09:41:06Z run script already alive — attaching ===
+=== [swo69-continue] 2026-08-19T09:41:06Z ERROR: qsub failed: qsub: directive error: -o /home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352/logs/pbs_from_2170104.pbs1.out (%j is NOT expanded by this PBS)  ===
+=== [swo69-continue] 2026-08-19T09:41:06Z WARN: successor submission failed (will retry) ===
+=== [swo69-continue] 2026-08-19T09:42:07Z ERROR: qsub failed: qsub: directive error: -o /home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352/logs/pbs_from_2170104.pbs1.out (%j is NOT expanded by this PBS)  ===
+=== [swo69-continue] 2026-08-19T09:42:07Z WARN: successor submission failed (will retry) ===
+=== [swo69-continue] 2026-08-19T09:43:08Z ERROR: qsub failed: qsub: directive error: -o /home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352/logs/pbs_from_2170104.pbs1.out (%j is NOT expanded by this PBS)  ===
+=== [swo69-continue] 2026-08-19T09:43:08Z WARN: successor submission failed (will retry) ===
+=== [swo69-continue] 2026-08-19T09:44:08Z ERROR: qsub failed: qsub: directive error: -o /home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352/logs/pbs_from_2170104.pbs1.out (%j is NOT expanded by this PBS)  ===
+=== [swo69-continue] 2026-08-19T09:44:08Z WARN: successor submission failed (will retry) ===
+=== [swo69-continue] 2026-08-19T09:45:09Z ERROR: qsub failed: qsub: directive error: -o /home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352/logs/pbs_from_2170104.pbs1.out (%j is NOT expanded by this PBS)  ===
+=== [swo69-continue] 2026-08-19T09:45:09Z WARN: successor submission failed (will retry) ===
+=== [swo69-continue] 2026-08-19T09:46:10Z ERROR: qsub failed: qsub: directive error: -o /home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352/logs/pbs_from_2170104.pbs1.out (%j is NOT expanded by this PBS)  ===
+=== [swo69-continue] 2026-08-19T09:46:10Z WARN: successor submission failed (will retry) ===
+=== [swo69-continue] 2026-08-19T09:47:15Z ERROR: qsub failed: qsub: directive error: -o /home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352/logs/pbs_from_2170104.pbs1.out (%j is NOT expanded by this PBS)  ===
+=== [swo69-continue] 2026-08-19T09:47:15Z WARN: successor submission failed (will retry) ===
+=== [swo69-continue] 2026-08-19T09:48:21Z ERROR: qsub failed: qsub: directive error: -o /home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352/logs/pbs_from_2170104.pbs1.out (%j is NOT expanded by this PBS)  ===
+=== [swo69-continue] 2026-08-19T09:48:21Z WARN: successor submission failed (will retry) ===
+=== [swo69-continue] 2026-08-19T09:49:24Z ERROR: qsub failed: qsub: directive error: -o /home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352/logs/pbs_from_2170104.pbs1.out (%j is NOT expanded by this PBS)  ===
+=== [swo69-continue] 2026-08-19T09:49:24Z WARN: successor submission failed (will retry) ===
+=== [swo69-continue] 2026-08-19T09:50:29Z ERROR: qsub failed: qsub: directive error: -o /home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352/logs/pbs_from_2170104.pbs1.out (%j is NOT expanded by this PBS)  ===
+=== [swo69-continue] 2026-08-19T09:50:29Z WARN: successor submission failed (will retry) ===
+=== [swo69-continue] 2026-08-19T09:50:34Z supervisor up (job=2170104.pbs1, mode=all, run_dir=/home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352) ===
+=== [swo69-continue] 2026-08-19T09:50:35Z successor queued: job=2170368 (it will wait for us to terminate, then resume) ===
+=== [swo69-continue] 2026-08-19T09:50:35Z Ollama already up ===
+=== [swo69-continue] 2026-08-19T09:50:36Z run script already alive — attaching ===
