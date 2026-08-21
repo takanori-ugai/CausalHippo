@@ -1,0 +1,81 @@
+{
+    "chunks": [
+        {
+            "id": "0c4b6ca9-12f2-4012-a06b-8ea9f6954e16",
+            "sourcePath": "eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/workdirs/graphrag/Data-Shared_Trend_No_Direct_Link_484/input/doc_6.txt",
+            "text": "Recent statistics indicate that as bike sharing program usage has increased, so have local noise complaints. Community boards have started to wonder if the influx of bikes is making the city louder. The temporal correlation is often cited in city council discussions. Yet, urban noise is more directly impacted by construction, nightlife, and traffic volumes. The two metrics are not causally connected."
+        },
+        {
+            "id": "b3f49da5-42b2-4b44-b203-9766d208d304",
+            "sourcePath": "eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/workdirs/graphrag/Data-Shared_Trend_No_Direct_Link_484/input/doc_3.txt",
+            "text": "Over the months, the community observes that as daylight hours lengthen, there are more planned picnic events in local parks. Some neighbors suggest that the longer days directly inspire families to organize outdoor gatherings. Event organizers often link their schedules to the changing sunlight. Yet, both trends are naturally connected to the arrival of summer, not to each other."
+        },
+        {
+            "id": "79874746-ee4e-4371-895e-31c2c5588b6d",
+            "sourcePath": "eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/workdirs/graphrag/Data-Shared_Trend_No_Direct_Link_484/input/doc_4.txt",
+            "text": "Every spring, pharmacies stock up on allergy medication just as the city hosts its annual flower festivals. Festival organizers and pharmacists both see a jump in activity during this period. Visitors often assume the festival prompts the increased need for medication, given the timing. However, both phenomena are reactions to the same surge in pollen, not to each other. The simultaneous rise in medication sales and festival attendance is a seasonal, not causal, overlap."
+        },
+        {
+            "id": "944b65cb-1966-4db7-a480-9faab03b0021",
+            "sourcePath": "eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/workdirs/graphrag/Data-Shared_Trend_No_Direct_Link_484/input/doc_5.txt",
+            "text": "Last Friday evening, the city experienced an unexpected power outage that left many neighborhoods in darkness. Just minutes after the blackout, the loud ringing of a fire alarm echoed through one of the apartment complexes downtown. Residents gathered outside, speculating about a possible electrical fault causing both events. Interestingly, the alarm system seemed to activate in the immediate aftermath of the outage. The timing of both incidents raised eyebrows among those affected."
+        },
+        {
+            "id": "ecc01cfe-7c66-4088-937d-134b8f78dd1f",
+            "sourcePath": "eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/workdirs/graphrag/Data-Shared_Trend_No_Direct_Link_484/input/doc_2.txt",
+            "text": "On Monday morning, the fire alarm rang out across the office building shortly after some construction work began on the upper floors. Employees quickly evacuated, believing the noise and vibrations from the construction had triggered the alarm. The timing certainly seemed suspicious, as the alarm sounded mere minutes into the first hammer strikes. Yet, later inspection revealed a faulty sensor caused the alert, with no connection to the ongoing renovations. The sequence of events, however, led many to draw the wrong conclusion."
+        },
+        {
+            "id": "68a2eb48-6434-4267-bd35-50138b24e219",
+            "sourcePath": "eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/workdirs/graphrag/Data-Shared_Trend_No_Direct_Link_484/input/doc_1.txt",
+            "text": "A boom in vintage furniture sales has occurred at the same time as minimalist home design trends have gained momentum. Design magazines often highlight both, and consumers are encouraged to blend the two styles. This could lead one to believe that buying vintage pieces prompts minimalist decor choices, but both trends are independently shaped by shifts in design preferences."
+        }
+    ],
+    "text_units": [
+        {
+            "id": "tu-0c4b6ca9-12f2-4012-a06b-8ea9f6954e16",
+            "chunkId": "0c4b6ca9-12f2-4012-a06b-8ea9f6954e16",
+            "text": "Recent statistics indicate that as bike sharing program usage has increased, so have local noise complaints. Community boards have started to wonder if the influx of bikes is making the city louder. The temporal correlation is often cited in city council discussions. Yet, urban noise is more directly impacted by construction, nightlife, and traffic volumes. The two metrics are not causally connected.",
+            "sourcePath": "eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/workdirs/graphrag/Data-Shared_Trend_No_Direct_Link_484/input/doc_6.txt"
+        },
+        {
+            "id": "tu-b3f49da5-42b2-4b44-b203-9766d208d304",
+            "chunkId": "b3f49da5-42b2-4b44-b203-9766d208d304",
+            "text": "Over the months, the community observes that as daylight hours lengthen, there are more planned picnic events in local parks. Some neighbors suggest that the longer days directly inspire families to organize outdoor gatherings. Event organizers often link their schedules to the changing sunlight. Yet, both trends are naturally connected to the arrival of summer, not to each other.",
+            "sourcePath": "eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/workdirs/graphrag/Data-Shared_Trend_No_Direct_Link_484/input/doc_3.txt"
+        },
+        {
+            "id": "tu-79874746-ee4e-4371-895e-31c2c5588b6d",
+            "chunkId": "79874746-ee4e-4371-895e-31c2c5588b6d",
+            "text": "Every spring, pharmacies stock up on allergy medication just as the city hosts its annual flower festivals. Festival organizers and pharmacists both see a jump in activity during this period. Visitors often assume the festival prompts the increased need for medication, given the timing. However, both phenomena are reactions to the same surge in pollen, not to each other. The simultaneous rise in medication sales and festival attendance is a seasonal, not causal, overlap.",
+            "sourcePath": "eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/workdirs/graphrag/Data-Shared_Trend_No_Direct_Link_484/input/doc_4.txt"
+        },
+        {
+            "id": "tu-944b65cb-1966-4db7-a480-9faab03b0021",
+            "chunkId": "944b65cb-1966-4db7-a480-9faab03b0021",
+            "text": "Last Friday evening, the city experienced an unexpected power outage that left many neighborhoods in darkness. Just minutes after the blackout, the loud ringing of a fire alarm echoed through one of the apartment complexes downtown. Residents gathered outside, speculating about a possible electrical fault causing both events. Interestingly, the alarm system seemed to activate in the immediate aftermath of the outage. The timing of both incidents raised eyebrows among those affected.",
+            "sourcePath": "eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/workdirs/graphrag/Data-Shared_Trend_No_Direct_Link_484/input/doc_5.txt"
+        },
+        {
+            "id": "tu-ecc01cfe-7c66-4088-937d-134b8f78dd1f",
+            "chunkId": "ecc01cfe-7c66-4088-937d-134b8f78dd1f",
+            "text": "On Monday morning, the fire alarm rang out across the office building shortly after some construction work began on the upper floors. Employees quickly evacuated, believing the noise and vibrations from the construction had triggered the alarm. The timing certainly seemed suspicious, as the alarm sounded mere minutes into the first hammer strikes. Yet, later inspection revealed a faulty sensor caused the alert, with no connection to the ongoing renovations. The sequence of events, however, led many to draw the wrong conclusion.",
+            "sourcePath": "eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/workdirs/graphrag/Data-Shared_Trend_No_Direct_Link_484/input/doc_2.txt"
+        },
+        {
+            "id": "tu-68a2eb48-6434-4267-bd35-50138b24e219",
+            "chunkId": "68a2eb48-6434-4267-bd35-50138b24e219",
+            "text": "A boom in vintage furniture sales has occurred at the same time as minimalist home design trends have gained momentum. Design magazines often highlight both, and consumers are encouraged to blend the two styles. This could lead one to believe that buying vintage pieces prompts minimalist decor choices, but both trends are independently shaped by shifts in design preferences.",
+            "sourcePath": "eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/workdirs/graphrag/Data-Shared_Trend_No_Direct_Link_484/input/doc_1.txt"
+        }
+    ],
+    "entities": [],
+    "relationships": [],
+    "claims": [],
+    "entity_summaries": [],
+    "text_embeddings": [],
+    "entity_embeddings": [],
+    "communities": [],
+    "community_hierarchy": {},
+    "community_reports": []
+}

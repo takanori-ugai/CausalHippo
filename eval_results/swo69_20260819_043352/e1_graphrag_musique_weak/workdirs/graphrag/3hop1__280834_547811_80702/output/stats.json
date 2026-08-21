@@ -1,0 +1,35 @@
+{
+    "workflows": {
+        "load_input_documents": {
+            "overall": 0.014211163
+        },
+        "extract_graph": {
+            "overall": 0.239880199
+        },
+        "extract_claims": {
+            "overall": 0.241418833
+        },
+        "summarize_descriptions": {
+            "overall": 0.001117443
+        },
+        "embed_text": {
+            "overall": 0.233077378
+        },
+        "embed_graph": {
+            "overall": 0.0020288
+        },
+        "build_graph": {
+            "overall": 7.67817E-4
+        },
+        "community_detection": {
+            "overall": 8.47454E-4
+        },
+        "community_reports": {
+            "overall": 0.00102211
+        },
+        "write_outputs": {
+            "overall": 0.061555933
+        }
+    },
+    "totalRuntime": 0.79777909
+}

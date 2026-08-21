@@ -1,0 +1,782 @@
+{
+  "nodes" : {
+    "NICAEA" : {
+      "entity_type" : "GEO",
+      "description" : "The Empire of Nicaea, where Anna of Hohenstaufen served as Empress.",
+      "source_id" : "chunk-629e6e6fabf32529ba414ce8706f6118"
+    },
+    "HOUSE OF LUXEMBOURG" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A late medieval European royal family that ruled as King of the Romans, Holy Roman Emperors, Kings of Bohemia, and Hungary between 1308 and 1437.<SEP>Royal dynasty to which Anne of Bohemia belonged. A noble house with holdings across Central Europe.",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4<SEP>chunk-26600f02626fc29206a4ece7e99d32cd"
+    },
+    "SAINT HENRY II" : {
+      "entity_type" : "PERSON",
+      "description" : "Holy Roman Emperor, spouse of Saint Cunigunde of Luxembourg. Died in 1024, after which his wife served as interim Regent.",
+      "source_id" : "chunk-f88657c9cea7dae517da8b3f6d0dbaec"
+    },
+    "MARCUS JULIUS PHILIPPUS" : {
+      "entity_type" : "PERSON",
+      "description" : "Brother of Priscus, later became Roman Emperor known as 'Philip the Arab'.",
+      "source_id" : "chunk-7517459249c2a4134b57336844dd5810"
+    },
+    "BOHEMIA" : {
+      "entity_type" : "GEO",
+      "description" : "A European territory where the House of Luxembourg held the title of King (Čeští králové, König von Böhmen).<SEP>Kingdom in Central Europe, associated with Anne of Bohemia's origin and Charles IV's rule.",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4<SEP>chunk-26600f02626fc29206a4ece7e99d32cd"
+    },
+    "ENGLAND" : {
+      "entity_type" : "GEO",
+      "description" : "Kingdom where Anne of Bohemia served as Queen and Richard II reigned as King.",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4"
+    },
+    "POMERANIA" : {
+      "entity_type" : "GEO",
+      "description" : "Region in northern Europe, associated with Elizabeth of Pomerania.",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4"
+    },
+    "AUGSBURG" : {
+      "entity_type" : "GEO",
+      "description" : "The imperial city where the Peace of Augsburg was signed in September 1555.",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    },
+    "HOLY ROMAN EMPEROR" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The supreme title of the Holy Roman Empire, held by members of the House of Luxembourg.",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    },
+    "FREDERICK II" : {
+      "entity_type" : "PERSON",
+      "description" : "Holy Roman Emperor and father of Anna of Hohenstaufen (Constance).",
+      "source_id" : "chunk-629e6e6fabf32529ba414ce8706f6118"
+    },
+    "SYLVESTER" : {
+      "entity_type" : "PERSON",
+      "description" : "A name derived from the Latin adjective silvestris meaning 'wooded' or 'wild'. Spellings with Sylv- date from after the Classical period.",
+      "source_id" : "chunk-cc4e91b61ff9682166c1fad5f31fb347"
+    },
+    "ELIZABETH OF POMERANIA" : {
+      "entity_type" : "PERSON",
+      "description" : "Mother of Anne of Bohemia, associated with Pomerania.",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4"
+    },
+    "SAINT CUNIGUNDE OF LUXEMBOURG" : {
+      "entity_type" : "PERSON",
+      "description" : "Empress of the Holy Roman Empire (c. 975–1040), OSB, Roman Catholic saint, Patroness of Luxembourg and Lithuania. Served as interim Regent after her husband's death in 1024.",
+      "source_id" : "chunk-f88657c9cea7dae517da8b3f6d0dbaec"
+    },
+    "LATIN" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A language in which both silvestris and silva exist. Classical Latin is a specific period of this language with distinct phonological features.",
+      "source_id" : "chunk-cc4e91b61ff9682166c1fad5f31fb347"
+    },
+    "CHRISTENDOM" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The body of Christendom whose legal division was made permanent within the Holy Roman Empire by the Peace of Augsburg.",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    },
+    "ROMAN CATHOLIC CHURCH" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "The religious organization to which Saint Cunigunde belongs as a recognized saint. Her feast day is celebrated on 3 March.",
+      "source_id" : "chunk-f88657c9cea7dae517da8b3f6d0dbaec"
+    },
+    "KING OF BOHEMIA" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The royal title for the ruler of Bohemia, held by the House of Luxembourg (Čeští králové, König von Böhmen).",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    },
+    "CLASSICAL LATIN" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A period of Latin where y represented a separate sound from i, used in transcriptions of foreign words. Spellings used Silv- prefix.",
+      "source_id" : "chunk-cc4e91b61ff9682166c1fad5f31fb347"
+    },
+    "EUROPE" : {
+      "entity_type" : "GEO",
+      "description" : "The continent where the House of Luxembourg was a late medieval royal family.",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    },
+    "HUNGARY" : {
+      "entity_type" : "GEO",
+      "description" : "A European territory where the House of Luxembourg held the title of King.",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    },
+    "DEATH OF SAINT HENRY II" : {
+      "entity_type" : "EVENT",
+      "description" : "The death of Holy Roman Emperor Saint Henry II in 1024, which prompted Cunigunde to serve as interim Regent.",
+      "source_id" : "chunk-f88657c9cea7dae517da8b3f6d0dbaec"
+    },
+    "ROMAN EMPIRE" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "The political and territorial power under which Syria was a province, citizens held Roman status, and Marcus Julius Philippus served as Emperor.",
+      "source_id" : "chunk-7517459249c2a4134b57336844dd5810"
+    },
+    "FERDINAND I" : {
+      "entity_type" : "PERSON",
+      "description" : "Successor to Charles V as Holy Roman Emperor.",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    },
+    "HOHENSTAUFEN" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A ruling dynasty to which Anna of Hohenstaufen belonged; also associated with Frederick II.",
+      "source_id" : "chunk-629e6e6fabf32529ba414ce8706f6118"
+    },
+    "SILVESTRIS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A Latin adjective meaning 'wooded' or 'wild', from which the name Sylvester is derived. Derives from the noun silva.",
+      "source_id" : "chunk-cc4e91b61ff9682166c1fad5f31fb347"
+    },
+    "RICHARD II" : {
+      "entity_type" : "PERSON",
+      "description" : "King of England, husband of Anne of Bohemia. Greatly mourned her after 12 years of childless marriage.",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4"
+    },
+    "LUXEMBOURG" : {
+      "entity_type" : "GEO",
+      "description" : "A country for which Saint Cunigunde is the Patroness. Also associated with her name and origin.",
+      "source_id" : "chunk-f88657c9cea7dae517da8b3f6d0dbaec"
+    },
+    "SILVA" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A Latin noun meaning 'woodland', from which the adjective silvestris derives.",
+      "source_id" : "chunk-cc4e91b61ff9682166c1fad5f31fb347"
+    },
+    "ANNA OF HOHENSTAUFEN" : {
+      "entity_type" : "PERSON",
+      "description" : "Empress of Nicaea (1230–1307), born Constance, daughter of Frederick II and Bianca Lancia, member of the Hohenstaufen dynasty.",
+      "source_id" : "chunk-629e6e6fabf32529ba414ce8706f6118"
+    },
+    "DAMASCUS" : {
+      "entity_type" : "GEO",
+      "description" : "A city possibly identified as the birthplace of Priscus, located in the Roman province of Syria.",
+      "source_id" : "chunk-7517459249c2a4134b57336844dd5810"
+    },
+    "JULIUS MARINUS" : {
+      "entity_type" : "PERSON",
+      "description" : "A local Roman citizen in Syria, possibly of some importance. Father of Priscus and Marcus Julius Philippus.",
+      "source_id" : "chunk-7517459249c2a4134b57336844dd5810"
+    },
+    "HOLY ROMAN EMPIRE" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A medieval European political entity whose rulership was held by the House of Luxembourg and later contested by the House of Wittelsbach.<SEP>Political entity in which Charles IV served as Emperor.<SEP>The empire to which Saint Cunigunde was Empress by marriage and Saint Henry II was Emperor.<SEP>The political entity within which the legal division of Christendom was made permanent by the Peace of Augsburg.",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4<SEP>chunk-3e8f393a55aae9bd9cf3b8f5a42b369d<SEP>chunk-26600f02626fc29206a4ece7e99d32cd<SEP>chunk-f88657c9cea7dae517da8b3f6d0dbaec"
+    },
+    "PEACE OF WESTPHALIA" : {
+      "entity_type" : "EVENT",
+      "description" : "A later treaty that finally allowed Calvinism, which had been excluded by the Peace of Augsburg.",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    },
+    "KING OF THE ROMANS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A royal title held by members of the House of Luxembourg between 1308 and 1437.",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    },
+    "PEACE OF AUGSBURG" : {
+      "entity_type" : "EVENT",
+      "description" : "A treaty signed in September 1555 that ended the religious struggle between Charles V and the Schmalkaldic League, making the legal division of Christendom permanent.",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    },
+    "LUTHERANISM" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A Christian confession that rulers were allowed to choose as the official religion of their state under the Peace of Augsburg.",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    },
+    "KING OF HUNGARY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The royal title for the ruler of Hungary, held by the House of Luxembourg.",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    },
+    "CALVINISM" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A Christian confession not permitted under the Peace of Augsburg until the later Peace of Westphalia.",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    },
+    "CHARLES IV" : {
+      "entity_type" : "PERSON",
+      "description" : "Holy Roman Emperor and King of Bohemia, father of Anne of Bohemia.",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4"
+    },
+    "ROMAN CATHOLICISM" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A Christian confession that rulers were allowed to choose as the official religion of their state under the Peace of Augsburg.",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    },
+    "LITHUANIA" : {
+      "entity_type" : "GEO",
+      "description" : "A country for which Saint Cunigunde is the Patroness.",
+      "source_id" : "chunk-f88657c9cea7dae517da8b3f6d0dbaec"
+    },
+    "CHARLES V" : {
+      "entity_type" : "PERSON",
+      "description" : "Holy Roman Emperor and party to the Peace of Augsburg; predecessor of Ferdinand I.",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    },
+    "HOUSE OF WITTELSBACH" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A rival royal family that twice interrupted the rule of the House of Luxembourg over the Holy Roman Empire.",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    },
+    "BIANCA LANCIA" : {
+      "entity_type" : "PERSON",
+      "description" : "Mother of Anna of Hohenstaufen and wife of Frederick II, Holy Roman Emperor.",
+      "source_id" : "chunk-629e6e6fabf32529ba414ce8706f6118"
+    },
+    "ANNE OF BOHEMIA" : {
+      "entity_type" : "PERSON",
+      "description" : "Queen of England (1366–1394), first wife of King Richard II, eldest daughter of Charles IV, member of the House of Luxembourg, died childless at 28.",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4"
+    },
+    "PRISCUS" : {
+      "entity_type" : "PERSON",
+      "description" : "Born in the Roman province of Syria, possibly in Damascus. Son of Julius Marinus and brother of Marcus Julius Philippus (Philip the Arab).",
+      "source_id" : "chunk-7517459249c2a4134b57336844dd5810"
+    },
+    "SCHMALKALDIC LEAGUE" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A Protestant alliance that was a party to the Peace of Augsburg treaty.",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    },
+    "SYRIA" : {
+      "entity_type" : "GEO",
+      "description" : "A Roman province where Priscus was born. A geographical region in the Roman Empire.",
+      "source_id" : "chunk-7517459249c2a4134b57336844dd5810"
+    }
+  },
+  "edges" : [ {
+    "source" : "ANNE OF BOHEMIA",
+    "target" : "ELIZABETH OF POMERANIA",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Elizabeth of Pomerania was the mother of Anne of Bohemia.",
+      "keywords" : "parentage, mother, lineage",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4"
+    }
+  }, {
+    "source" : "PEACE OF AUGSBURG",
+    "target" : "SCHMALKALDIC LEAGUE",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "The Schmalkaldic League was a signatory party to the Peace of Augsburg treaty.",
+      "keywords" : "treaty, signatory, alliance",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    }
+  }, {
+    "source" : "ANNE OF BOHEMIA",
+    "target" : "CHARLES IV",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Charles IV, Holy Roman Emperor and King of Bohemia, was the father of Anne of Bohemia.",
+      "keywords" : "parentage, father, royalty",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4"
+    }
+  }, {
+    "source" : "ANNA OF HOHENSTAUFEN",
+    "target" : "HOHENSTAUFEN",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Anna belongs to the Hohenstaufen dynasty, reflected in her name.",
+      "keywords" : "dynasty, family, lineage",
+      "source_id" : "chunk-629e6e6fabf32529ba414ce8706f6118"
+    }
+  }, {
+    "source" : "PRISCUS",
+    "target" : "JULIUS MARINUS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Julius Marinus is the father of Priscus.",
+      "keywords" : "parentage, family",
+      "source_id" : "chunk-7517459249c2a4134b57336844dd5810"
+    }
+  }, {
+    "source" : "SYLVESTER",
+    "target" : "CLASSICAL LATIN",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Spellings of Sylvester with Sylv- in place of Silv- date from after the Classical period.",
+      "keywords" : "chronology, spelling evolution",
+      "source_id" : "chunk-cc4e91b61ff9682166c1fad5f31fb347"
+    }
+  }, {
+    "source" : "KING OF THE ROMANS",
+    "target" : "HOLY ROMAN EMPIRE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "King of the Romans was a title associated with the governance of the Holy Roman Empire.",
+      "keywords" : "title, political role, governance",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    }
+  }, {
+    "source" : "DAMASCUS",
+    "target" : "SYRIA",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Damascus is a city located within the Roman province of Syria.",
+      "keywords" : "geographic containment, city-province",
+      "source_id" : "chunk-7517459249c2a4134b57336844dd5810"
+    }
+  }, {
+    "source" : "RICHARD II",
+    "target" : "ENGLAND",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Richard II was King of England, reigning during Anne of Bohemia's time as Queen.",
+      "keywords" : "kingdom, reign, monarchy",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4"
+    }
+  }, {
+    "source" : "HOLY ROMAN EMPEROR",
+    "target" : "HOLY ROMAN EMPIRE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Holy Roman Emperor was the supreme sovereign title of the Holy Roman Empire.",
+      "keywords" : "title, sovereignty, supreme authority",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    }
+  }, {
+    "source" : "ANNE OF BOHEMIA",
+    "target" : "ENGLAND",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Anne of Bohemia served as Queen of England as wife of King Richard II.",
+      "keywords" : "queen, reign, England",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4"
+    }
+  }, {
+    "source" : "HOUSE OF LUXEMBOURG",
+    "target" : "EUROPE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The House of Luxembourg was a late medieval European royal family.",
+      "keywords" : "origin, geographic context, medieval",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    }
+  }, {
+    "source" : "MARCUS JULIUS PHILIPPUS",
+    "target" : "ROMAN EMPIRE",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Marcus Julius Philippus became the Roman Emperor, known as Philip the Arab.",
+      "keywords" : "emperor, highest office",
+      "source_id" : "chunk-7517459249c2a4134b57336844dd5810"
+    }
+  }, {
+    "source" : "SAINT HENRY II",
+    "target" : "HOLY ROMAN EMPIRE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Saint Henry II was the Holy Roman Emperor who ruled the empire.",
+      "keywords" : "emperor, rule, governance",
+      "source_id" : "chunk-f88657c9cea7dae517da8b3f6d0dbaec"
+    }
+  }, {
+    "source" : "FREDERICK II",
+    "target" : "HOHENSTAUFEN",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Frederick II is associated with the Hohenstaufen dynasty, Anna's family name.",
+      "keywords" : "dynasty, imperial family",
+      "source_id" : "chunk-629e6e6fabf32529ba414ce8706f6118"
+    }
+  }, {
+    "source" : "CALVINISM",
+    "target" : "PEACE OF WESTPHALIA",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Calvinism was not allowed under the Peace of Augsburg and was only permitted until the Peace of Westphalia.",
+      "keywords" : "exclusion, later permission, religious freedom",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    }
+  }, {
+    "source" : "CHARLES IV",
+    "target" : "HOLY ROMAN EMPIRE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Charles IV served as Holy Roman Emperor, leading the empire.",
+      "keywords" : "emperor, empire, governance",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4"
+    }
+  }, {
+    "source" : "CHARLES IV",
+    "target" : "ELIZABETH OF POMERANIA",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Charles IV and Elizabeth of Pomerania were the parents of Anne of Bohemia.",
+      "keywords" : "parents, family, marriage",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4"
+    }
+  }, {
+    "source" : "KING OF HUNGARY",
+    "target" : "HUNGARY",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "King of Hungary was the royal title for the ruler of the Hungarian territory.",
+      "keywords" : "title, territorial rule, sovereignty",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    }
+  }, {
+    "source" : "HOUSE OF LUXEMBOURG",
+    "target" : "HOLY ROMAN EMPIRE",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Members of the House of Luxembourg ruled as Kings of the Romans and Holy Roman Emperors over the Holy Roman Empire from 1308 to 1437.",
+      "keywords" : "rulership, sovereignty, medieval rule",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    }
+  }, {
+    "source" : "SAINT CUNIGUNDE OF LUXEMBOURG",
+    "target" : "DEATH OF SAINT HENRY II",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Cunigunde assumed the role of interim Regent following the death of her husband in 1024.",
+      "keywords" : "regency, succession, leadership",
+      "source_id" : "chunk-f88657c9cea7dae517da8b3f6d0dbaec"
+    }
+  }, {
+    "source" : "PRISCUS",
+    "target" : "DAMASCUS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Priscus was possibly born in the city of Damascus.",
+      "keywords" : "birthplace, possible origin",
+      "source_id" : "chunk-7517459249c2a4134b57336844dd5810"
+    }
+  }, {
+    "source" : "JULIUS MARINUS",
+    "target" : "SYRIA",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Julius Marinus was a local Roman citizen residing in Syria.",
+      "keywords" : "residence, local citizen",
+      "source_id" : "chunk-7517459249c2a4134b57336844dd5810"
+    }
+  }, {
+    "source" : "SYLVESTER",
+    "target" : "LATIN",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Sylvester is a Latin-derived name, part of the broader Latin linguistic tradition.",
+      "keywords" : "etymology, linguistic origin",
+      "source_id" : "chunk-cc4e91b61ff9682166c1fad5f31fb347"
+    }
+  }, {
+    "source" : "ANNA OF HOHENSTAUFEN",
+    "target" : "BIANCA LANCIA",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Anna is the daughter of Bianca Lancia.",
+      "keywords" : "parentage, mother, lineage",
+      "source_id" : "chunk-629e6e6fabf32529ba414ce8706f6118"
+    }
+  }, {
+    "source" : "ANNE OF BOHEMIA",
+    "target" : "HOUSE OF LUXEMBOURG",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Anne of Bohemia was a member of the House of Luxembourg, a royal dynasty.",
+      "keywords" : "dynasty, lineage, nobility",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4"
+    }
+  }, {
+    "source" : "SAINT CUNIGUNDE OF LUXEMBOURG",
+    "target" : "HOLY ROMAN EMPIRE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Cunigunde held the title of Empress of the Holy Roman Empire and later served as interim Regent.",
+      "keywords" : "empress, regency, imperial role",
+      "source_id" : "chunk-f88657c9cea7dae517da8b3f6d0dbaec"
+    }
+  }, {
+    "source" : "SILVA",
+    "target" : "LATIN",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Silva is a Latin noun, part of the Latin language.",
+      "keywords" : "language, lexical item",
+      "source_id" : "chunk-cc4e91b61ff9682166c1fad5f31fb347"
+    }
+  }, {
+    "source" : "CLASSICAL LATIN",
+    "target" : "LATIN",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Classical Latin is a specific period of the Latin language with distinct phonological rules.",
+      "keywords" : "historical period, language dialect",
+      "source_id" : "chunk-cc4e91b61ff9682166c1fad5f31fb347"
+    }
+  }, {
+    "source" : "SILVESTRIS",
+    "target" : "LATIN",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Silvestris is a Latin adjective, part of the Latin language.",
+      "keywords" : "language, lexical item",
+      "source_id" : "chunk-cc4e91b61ff9682166c1fad5f31fb347"
+    }
+  }, {
+    "source" : "ANNA OF HOHENSTAUFEN",
+    "target" : "NICAEA",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Anna of Hohenstaufen held the title of Empress of Nicaea.",
+      "keywords" : "empress, title, rule",
+      "source_id" : "chunk-629e6e6fabf32529ba414ce8706f6118"
+    }
+  }, {
+    "source" : "ELIZABETH OF POMERANIA",
+    "target" : "POMERANIA",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Elizabeth of Pomerania was associated with the region of Pomerania, indicating her origin or territorial claim.",
+      "keywords" : "origin, region, lineage",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4"
+    }
+  }, {
+    "source" : "KING OF BOHEMIA",
+    "target" : "BOHEMIA",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "King of Bohemia was the royal title for the ruler of the Bohemian territory.",
+      "keywords" : "title, territorial rule, sovereignty",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    }
+  }, {
+    "source" : "SAINT CUNIGUNDE OF LUXEMBOURG",
+    "target" : "ROMAN CATHOLIC CHURCH",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Cunigunde is recognized as a Roman Catholic saint with a feast day of 3 March and belongs to the OSB order.",
+      "keywords" : "saint, feast day, religious order",
+      "source_id" : "chunk-f88657c9cea7dae517da8b3f6d0dbaec"
+    }
+  }, {
+    "source" : "SYLVESTER",
+    "target" : "SILVESTRIS",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Sylvester is a name directly derived from the Latin adjective silvestris.",
+      "keywords" : "etymology, derivation, naming",
+      "source_id" : "chunk-cc4e91b61ff9682166c1fad5f31fb347"
+    }
+  }, {
+    "source" : "CHARLES V",
+    "target" : "HOLY ROMAN EMPIRE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Charles V held the title of Holy Roman Emperor.",
+      "keywords" : "title, leadership, empire",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    }
+  }, {
+    "source" : "PRISCUS",
+    "target" : "MARCUS JULIUS PHILIPPUS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Priscus and Marcus Julius Philippus are brothers, both sons of Julius Marinus.",
+      "keywords" : "sibling, family bond",
+      "source_id" : "chunk-7517459249c2a4134b57336844dd5810"
+    }
+  }, {
+    "source" : "ANNA OF HOHENSTAUFEN",
+    "target" : "FREDERICK II",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Anna is the daughter of Frederick II, Holy Roman Emperor.",
+      "keywords" : "parentage, father, lineage",
+      "source_id" : "chunk-629e6e6fabf32529ba414ce8706f6118"
+    }
+  }, {
+    "source" : "SYRIA",
+    "target" : "ROMAN EMPIRE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Syria was a province of the Roman Empire at the time of Priscus's birth.",
+      "keywords" : "province, political territory",
+      "source_id" : "chunk-7517459249c2a4134b57336844dd5810"
+    }
+  }, {
+    "source" : "HOUSE OF LUXEMBOURG",
+    "target" : "HUNGARY",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The House of Luxembourg held the title of King of Hungary during their medieval rule.",
+      "keywords" : "rulership, title, territory",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    }
+  }, {
+    "source" : "PEACE OF AUGSBURG",
+    "target" : "CHARLES V",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Charles V was a signatory party to the Peace of Augsburg treaty.",
+      "keywords" : "treaty, signatory, emperor",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    }
+  }, {
+    "source" : "ANNE OF BOHEMIA",
+    "target" : "RICHARD II",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Anne of Bohemia was the first wife of King Richard II; they were married for 12 years before her death, and he greatly mourned her.",
+      "keywords" : "marriage, royal couple, mourning",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4"
+    }
+  }, {
+    "source" : "SILVESTRIS",
+    "target" : "SILVA",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The adjective silvestris derives from the Latin noun silva meaning 'woodland'.",
+      "keywords" : "derivation, morphological origin",
+      "source_id" : "chunk-cc4e91b61ff9682166c1fad5f31fb347"
+    }
+  }, {
+    "source" : "PEACE OF AUGSBURG",
+    "target" : "CHRISTENDOM",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The treaty officially ended the religious struggle and made the legal division of Christendom permanent.",
+      "keywords" : "religious division, settlement, permanence",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    }
+  }, {
+    "source" : "PEACE OF AUGSBURG",
+    "target" : "ROMAN CATHOLICISM",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The treaty allowed rulers to choose Roman Catholicism as the official confession of their state.",
+      "keywords" : "religious freedom, confession, permission",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    }
+  }, {
+    "source" : "PEACE OF AUGSBURG",
+    "target" : "AUGSBURG",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The treaty was signed in the imperial city of Augsburg in September 1555.",
+      "keywords" : "location, signing place",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    }
+  }, {
+    "source" : "SAINT CUNIGUNDE OF LUXEMBOURG",
+    "target" : "LITHUANIA",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Cunigunde is the Patroness of Lithuania, holding religious significance for the country.",
+      "keywords" : "patroness, religious significance",
+      "source_id" : "chunk-f88657c9cea7dae517da8b3f6d0dbaec"
+    }
+  }, {
+    "source" : "HOUSE OF WITTELSBACH",
+    "target" : "HOLY ROMAN EMPIRE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The House of Wittelsbach twice interrupted the rule of the House of Luxembourg over the Holy Roman Empire.",
+      "keywords" : "rivalry, interruption, succession",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    }
+  }, {
+    "source" : "SAINT CUNIGUNDE OF LUXEMBOURG",
+    "target" : "LUXEMBOURG",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Cunigunde is the Patroness of Luxembourg and bears its name in her title.",
+      "keywords" : "patroness, national significance, origin",
+      "source_id" : "chunk-f88657c9cea7dae517da8b3f6d0dbaec"
+    }
+  }, {
+    "source" : "FREDERICK II",
+    "target" : "BIANCA LANCIA",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Frederick II and Bianca Lancia are the parents of Anna, indicating a marital or parental relationship.",
+      "keywords" : "parents, marriage, family",
+      "source_id" : "chunk-629e6e6fabf32529ba414ce8706f6118"
+    }
+  }, {
+    "source" : "CHARLES IV",
+    "target" : "BOHEMIA",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Charles IV was King of Bohemia, ruling the kingdom in Central Europe.",
+      "keywords" : "kingship, reign, Bohemia",
+      "source_id" : "chunk-d018f1b03db75fe4171cbc90d13b58c4"
+    }
+  }, {
+    "source" : "PRISCUS",
+    "target" : "SYRIA",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Priscus was born in the Roman province of Syria.",
+      "keywords" : "birthplace, origin",
+      "source_id" : "chunk-7517459249c2a4134b57336844dd5810"
+    }
+  }, {
+    "source" : "PEACE OF AUGSBURG",
+    "target" : "HOLY ROMAN EMPIRE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The treaty made the legal division of Christendom permanent within the Holy Roman Empire.",
+      "keywords" : "legal division, empire, jurisdiction",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    }
+  }, {
+    "source" : "JULIUS MARINUS",
+    "target" : "ROMAN EMPIRE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Julius Marinus held Roman citizenship under the Roman Empire.",
+      "keywords" : "citizenship, political status",
+      "source_id" : "chunk-7517459249c2a4134b57336844dd5810"
+    }
+  }, {
+    "source" : "HOUSE OF LUXEMBOURG",
+    "target" : "BOHEMIA",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The House of Luxembourg held the title of King of Bohemia during their medieval rule.",
+      "keywords" : "rulership, title, territory",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    }
+  }, {
+    "source" : "SAINT CUNIGUNDE OF LUXEMBOURG",
+    "target" : "SAINT HENRY II",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Cunigunde was Empress by marriage to Saint Henry II; she served as interim Regent after his death.",
+      "keywords" : "marriage, regency, spouse",
+      "source_id" : "chunk-f88657c9cea7dae517da8b3f6d0dbaec"
+    }
+  }, {
+    "source" : "PEACE OF AUGSBURG",
+    "target" : "LUTHERANISM",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The treaty allowed rulers to choose Lutheranism as the official confession of their state.",
+      "keywords" : "religious freedom, confession, permission",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    }
+  }, {
+    "source" : "HOUSE OF WITTELSBACH",
+    "target" : "HOUSE OF LUXEMBOURG",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The House of Wittelsbach was a rival dynasty to the House of Luxembourg in the contest for the Holy Roman Empire.",
+      "keywords" : "dynastic rivalry, competition, opposition",
+      "source_id" : "chunk-26600f02626fc29206a4ece7e99d32cd"
+    }
+  }, {
+    "source" : "CHARLES V",
+    "target" : "FERDINAND I",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Charles V was the predecessor of Ferdinand I as Holy Roman Emperor.",
+      "keywords" : "succession, predecessor, emperor",
+      "source_id" : "chunk-3e8f393a55aae9bd9cf3b8f5a42b369d"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 48,
+    "edgeCount" : 59,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260819_043352/e0_pathrag_musique/storage/pathrag/pathrag/3hop2__90098_91678_10557"
+  }
+}

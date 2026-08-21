@@ -1,0 +1,85 @@
+kotlin-logging: initializing... active logger factory: Slf4jLoggerFactory
+15:27:43,795 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found logback-core version 1.5.38
+15:27:43,796 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - No custom configurators were discovered as a service.
+15:27:43,797 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+15:27:43,798 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+15:27:43,804 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+15:27:43,810 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml]
+15:27:43,892 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Scan attribute set to true. Will scan for configuration file changes.
+15:27:43,893 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@15de0b3c - URL [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml] is not of type file
+15:27:43,896 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "INFO" substituted for "${ROOT_LOG_LEVEL:-INFO}"
+15:27:43,896 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL:-DEBUG}"
+15:27:43,896 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_LOG_LEVEL:-TRACE}"
+15:27:43,896 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL:-TRACE}"
+15:27:43,896 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL:-ERROR}"
+15:27:43,896 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL:-ERROR}"
+15:27:43,896 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL:-ERROR}"
+15:27:43,896 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL:-DEBUG}"
+15:27:43,897 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Missing watchable .xml or .properties files.
+15:27:43,897 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Watching .xml files requires that the main configuration file is reachable as a URL
+15:27:43,897 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Main configuration file URL: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml
+15:27:43,898 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - FileWatchList= {}
+15:27:43,898 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - URLWatchList= {}
+15:27:43,901 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+15:27:43,901 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+15:27:43,906 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+15:27:43,942 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - NOTE: Writing to the console can be slow. Try to avoid logging to the 
+15:27:43,942 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - console in production environments, especially in high volume systems.
+15:27:43,942 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also https://logback.qos.ch/codes.html#slowConsole
+15:27:43,943 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL}"
+15:27:43,943 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag] to DEBUG
+15:27:43,946 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag] to false
+15:27:43,946 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag]
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_LOG_LEVEL}"
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.neo4j] to TRACE
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.neo4j] to false
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.neo4j]
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL}"
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.neo4j.driver] to TRACE
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.neo4j.driver] to false
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[org.neo4j.driver]
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL}"
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.memory] to DEBUG
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.memory] to false
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.memory]
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL}"
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j] to ERROR
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j] to false
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j]
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.okhttp] to ERROR
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.okhttp] to false
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.okhttp]
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.openai] to ERROR
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.openai] to false
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.openai]
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [okhttp3] to ERROR
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [okhttp3] to false
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[okhttp3]
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL}"
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.ai4j.openai4j] to ERROR
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.ai4j.openai4j] to false
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.ai4j.openai4j]
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "INFO" substituted for "${ROOT_LOG_LEVEL}"
+15:27:43,947 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+15:27:43,947 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+15:27:43,948 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@3857f613 - End of configuration.
+15:27:43,948 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@198b6731 - Registering current configuration as safe fallback point
+15:27:43,954 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 150 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+WARNING: --use-unified-api=false keeps 'shared.eval.graph.MultiConditionGraphExperimentKt' on legacy condition runners. This compatibility path is planned for deprecation; prefer --use-unified-api=true.
+Running 1 conditions on 15 samples
+Parallelism: 1
+Unified API: false
+Unified persistence SPI: false
+Data: data/webis_experiment/webis_train_balanced_30.jsonl
+Output: eval_results/swo69_20260819_043352/e0_lightrag_webis
+
+=== Condition: lightrag (LightRAG (lightrag)) ===
+lightrag: processed 10/15
+lightrag: processed 15/15
+Wrote 15 rows -> eval_results/swo69_20260819_043352/e0_lightrag_webis/per_question/lightrag.jsonl
+
+Finished. Aggregate CSV can be produced by scripts/aggregate_experiment_results.py

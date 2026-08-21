@@ -1,0 +1,67 @@
+{
+  "nodes" : {
+    "METHANOL" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A solvent used in method development.",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    },
+    "CHRONOLOGY OF SOLVENT USE" : {
+      "entity_type" : "EVENT",
+      "description" : "A historical timeline of solvent use in method development.",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    },
+    "ACETONITRILE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A solvent used in method development.",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    },
+    "WATER" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A solvent used in method development.",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    }
+  },
+  "edges" : [ {
+    "source" : "METHANOL",
+    "target" : "WATER",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Methanol forms highly viscous mixtures with water at certain concentrations.",
+      "keywords" : "viscosity, solvent interactions",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    }
+  }, {
+    "source" : "ACETONITRILE",
+    "target" : "METHANOL",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Acetonitrile is often used in conjunction with methanol in method development.",
+      "keywords" : "solvent combination, selectivity",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    }
+  }, {
+    "source" : "ACETONITRILE",
+    "target" : "WATER",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Acetonitrile can be used with water to produce a wide range of selectivity options.",
+      "keywords" : "solvent mixtures, selectivity",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    }
+  }, {
+    "source" : "WATER",
+    "target" : "CHRONOLOGY OF SOLVENT USE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Water is used in the development of the chronology of solvent use in method development.",
+      "keywords" : "historical context, solvent development",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 4,
+    "edgeCount" : 4,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260819_043352/e1_pathrag_webis_weak/storage/pathrag/pathrag/gooaq_53482"
+  }
+}

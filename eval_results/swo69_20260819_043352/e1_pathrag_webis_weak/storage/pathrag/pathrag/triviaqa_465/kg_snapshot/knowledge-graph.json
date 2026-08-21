@@ -1,0 +1,806 @@
+{
+  "nodes" : {
+    "IMDB" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A review website",
+      "source_id" : "chunk-81443a6ecc49ebe1c1c47016d035875c"
+    },
+    "NEW" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A film released in 2008.",
+      "source_id" : "chunk-4baf7978b03db33c988b386914e14e36"
+    },
+    "GARY DRETZKA" : {
+      "entity_type" : "PERSON",
+      "description" : "A person mentioned in the text.",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    },
+    "HUMANITY" : {
+      "entity_type" : "GEO",
+      "description" : "A geographical location mentioned in the text.",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    },
+    "ORION MAGAZINE" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "An organization mentioned in the text",
+      "source_id" : "chunk-81443a6ecc49ebe1c1c47016d035875c"
+    },
+    "MOVIE CITY NEWS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "An organization mentioned in the text.",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    },
+    "CHICAGO" : {
+      "entity_type" : "GEO",
+      "description" : "A city in the state of Illinois, USA",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    },
+    "J.J. ABRAMS" : {
+      "entity_type" : "PERSON",
+      "description" : "A person involved in producing the Bad Robot Productions",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    },
+    "CINEMA" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The art of filmmaking",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    },
+    "ERECTALIS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A category or concept mentioned in the text.",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    },
+    "GAPERS BLOCK FILM REVIEW" : {
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6",
+      "description" : "A review of a film on Gapers Block",
+      "entity_type" : "UNKNOWN"
+    },
+    "TENTH DOCTOR" : {
+      "entity_type" : "PERSON",
+      "description" : "A person mentioned in the BBC Documentaries",
+      "source_id" : "chunk-21bfd2f843f888ec6f6608b09b0983f8"
+    },
+    "UFOS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A category of UFOs",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    },
+    "WALL·E" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A waste management robot that discovers a hidden message.",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    },
+    "ELIZABETH" : {
+      "entity_type" : "PERSON",
+      "description" : "A person mentioned in the text.",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    },
+    "CINEMA INDUSTRY" : {
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6",
+      "description" : "The film industry",
+      "entity_type" : "UNKNOWN"
+    },
+    "UT" : {
+      "entity_type" : "GEO",
+      "description" : "A location",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    },
+    "FLOOD" : {
+      "entity_type" : "CONCEPT",
+      "description" : "A concept mentioned in the text",
+      "source_id" : "chunk-81443a6ecc49ebe1c1c47016d035875c"
+    },
+    "LIBRARY RESOURCES" : {
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6",
+      "description" : "A repository of books, media, and other resources",
+      "entity_type" : "UNKNOWN"
+    },
+    "NO COUNTRY FOR OLD MEN" : {
+      "entity_type" : "BOOK",
+      "description" : "A book mentioned in the text",
+      "source_id" : "chunk-81443a6ecc49ebe1c1c47016d035875c"
+    },
+    "FLYNT" : {
+      "entity_type" : "PERSON",
+      "description" : "A person mentioned in the BBC Documentaries",
+      "source_id" : "chunk-21bfd2f843f888ec6f6608b09b0983f8"
+    },
+    "INSIDE OUT: A MASTERPIECE" : {
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6",
+      "description" : "The film Inside Out is a masterpiece",
+      "entity_type" : "UNKNOWN"
+    },
+    "NAVAKA114" : {
+      "entity_type" : "PERSON",
+      "description" : "A fanfiction author",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    },
+    "JON" : {
+      "entity_type" : "PERSON",
+      "description" : "A person mentioned in the text.",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    },
+    "LIBRARY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A repository of books, media, and other resources",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    },
+    "BLOGDIAL" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A category of blogs",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    },
+    "WALL-E" : {
+      "entity_type" : "PERSON",
+      "description" : "A robot designed to clean up an abandoned Earth.",
+      "source_id" : "chunk-4baf7978b03db33c988b386914e14e36"
+    },
+    "ALLEN INSTITUTE FOR BRAIN SCIENCE" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "An organization mentioned in the text",
+      "source_id" : "chunk-81443a6ecc49ebe1c1c47016d035875c"
+    },
+    "MADAGASCAR" : {
+      "entity_type" : "GEO",
+      "description" : "An island nation off the coast of East Africa",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    },
+    "GAMERA VS JUSTICE LEAGUE" : {
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6",
+      "description" : "A film featuring Gamera fighting the Justice League",
+      "entity_type" : "UNKNOWN"
+    },
+    "GOLDWYN" : {
+      "entity_type" : "PERSON",
+      "description" : "A film producer who left the group to form Goldwyn Pictures.",
+      "source_id" : "chunk-4baf7978b03db33c988b386914e14e36"
+    },
+    "MASSACHUSETTS" : {
+      "entity_type" : "GEO",
+      "description" : "A state in the United States",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    },
+    "MAN" : {
+      "entity_type" : "PERSON",
+      "description" : "A species that had to leave Earth due to environmental issues.<SEP>A species that left Earth and forgot to turn off a robot.",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562<SEP>chunk-4baf7978b03db33c988b386914e14e36"
+    },
+    "BLOWING ROCK" : {
+      "entity_type" : "GEO",
+      "description" : "A location",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    },
+    "PICAXAR" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A film production company.",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    },
+    "EARTH" : {
+      "entity_type" : "GEO",
+      "description" : "A geographical entity mentioned in the text<SEP>The planet where humans and robots live.<SEP>The planet where the story takes place.<SEP>The third planet from the Sun",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562<SEP>chunk-4baf7978b03db33c988b386914e14e36<SEP>chunk-25ff21a8d1907a948d3375fc6a79a0e6<SEP>chunk-81443a6ecc49ebe1c1c47016d035875c"
+    },
+    "GAMERA" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A fictional monster from a series of Japanese films",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    },
+    "BRASK" : {
+      "entity_type" : "PERSON",
+      "description" : "A person mentioned in the BBC Documentaries",
+      "source_id" : "chunk-21bfd2f843f888ec6f6608b09b0983f8"
+    },
+    "BOURNE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A category mentioned in the BBC Documentaries",
+      "source_id" : "chunk-21bfd2f843f888ec6f6608b09b0983f8"
+    },
+    "SCOUTING" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A youth organization that promotes outdoor skills and leadership",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    },
+    "SCOUTING SCOUTS LEAVING" : {
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6",
+      "description" : "Some scouting groups have decided to leave",
+      "entity_type" : "UNKNOWN"
+    },
+    "THE EARTH" : {
+      "entity_type" : "GEO",
+      "description" : "A geographical location mentioned in the text.",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    },
+    "TOMMY LEE JUANES" : {
+      "entity_type" : "PERSON",
+      "description" : "A person mentioned in the text",
+      "source_id" : "chunk-81443a6ecc49ebe1c1c47016d035875c"
+    },
+    "ADVENTURE" : {
+      "entity_type" : "EVENT",
+      "description" : "A type of TV episodes",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    },
+    "BOREN" : {
+      "entity_type" : "PERSON",
+      "description" : "A person mentioned in the BBC Documentaries",
+      "source_id" : "chunk-21bfd2f843f888ec6f6608b09b0983f8"
+    },
+    "GROUNDSEL" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A educational program.",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    },
+    "INSIDE OUT FILM" : {
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6",
+      "description" : "The 2015 animated film Inside Out",
+      "entity_type" : "UNKNOWN"
+    },
+    "2008" : {
+      "entity_type" : "EVENT",
+      "description" : "An event mentioned in the text",
+      "source_id" : "chunk-81443a6ecc49ebe1c1c47016d035875c"
+    },
+    "INSIDE OUT" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A 2015 animated film by Pixar",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    },
+    "AQUARIUS RECORDS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "An organization mentioned in the text.",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    },
+    "[JON'S FAVORITES]" : {
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9",
+      "description" : "A mention of Jon and his favorites.",
+      "entity_type" : "UNKNOWN"
+    },
+    "DESTROYER OF MANKIND" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "The human population of the earth",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    },
+    "MASSACHUSETTS STATEWIDE UNDERGRADUATE RESEARCH CONFERENCE" : {
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6",
+      "description" : "The conference was held in Massachusetts",
+      "entity_type" : "UNKNOWN"
+    },
+    "JUSTICE LEAGUE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A fictional superhero team",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    },
+    "PROTECTING EARTH" : {
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6",
+      "description" : "The theme of a film about robots on Earth",
+      "entity_type" : "UNKNOWN"
+    },
+    "EDUARD ALBERT MEIER" : {
+      "entity_type" : "PERSON",
+      "description" : "A person mentioned in the text.",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    },
+    "MEXICO" : {
+      "entity_type" : "GEO",
+      "description" : "A country in North America",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    },
+    "JIM" : {
+      "entity_type" : "PERSON",
+      "description" : "A person mentioned in the text.",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    },
+    "MOST ENDANGERED VERTEBRATES ON EARTH" : {
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6",
+      "description" : "Madagascar is home to the most endangered vertebrates",
+      "entity_type" : "UNKNOWN"
+    },
+    "MEXICAN IMMIGRANTS LEAVING" : {
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6",
+      "description" : "Some Mexican immigrants choose to leave",
+      "entity_type" : "UNKNOWN"
+    },
+    "HIVE MIND" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A organization mentioned in the BBC Documentaries",
+      "source_id" : "chunk-21bfd2f843f888ec6f6608b09b0983f8"
+    },
+    "[JIM'S FAVORITES]" : {
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9",
+      "description" : "A mention of Jim and his favorites.",
+      "entity_type" : "UNKNOWN"
+    },
+    "BAD ROBOT PRODUCTIONS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A production company",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    },
+    "JAI" : {
+      "entity_type" : "PERSON",
+      "description" : "A person involved in a film",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    },
+    "OLD EARTH" : {
+      "entity_type" : "GEO",
+      "description" : "A geographic location mentioned in the BBC Documentaries",
+      "source_id" : "chunk-21bfd2f843f888ec6f6608b09b0983f8"
+    },
+    "BILLY" : {
+      "entity_type" : "PERSON",
+      "description" : "A person mentioned in the text.",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    },
+    "PIXAR" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A computer animation studio<SEP>A film production company behind WALL-E.",
+      "source_id" : "chunk-4baf7978b03db33c988b386914e14e36<SEP>chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    },
+    "JUSTICE LEAGUE VS GAMERA" : {
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6",
+      "description" : "A film featuring the Justice League fighting Gamera",
+      "entity_type" : "UNKNOWN"
+    },
+    "GAPERS BLOCK" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A Chicago-based online magazine",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    }
+  },
+  "edges" : [ {
+    "source" : "JAI",
+    "target" : "DESTROYER OF MANKIND",
+    "data" : {
+      "weight" : 3.0,
+      "description" : "Jai mentions the Destroyer of Mankind in a film",
+      "keywords" : "film, humanity",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    }
+  }, {
+    "source" : "EARTH",
+    "target" : "FLOOD",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "More than 90 percent of the living matter on earth consists of Flood",
+      "keywords" : "ecology, flood",
+      "source_id" : "chunk-81443a6ecc49ebe1c1c47016d035875c"
+    }
+  }, {
+    "source" : "MADAGASCAR",
+    "target" : "MOST ENDANGERED VERTEBRATES ON EARTH",
+    "data" : {
+      "weight" : 4.0,
+      "description" : "Madagascar is home to the most endangered vertebrates",
+      "keywords" : "conservation status",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    }
+  }, {
+    "source" : "EARTH",
+    "target" : "PROTECTING EARTH",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "The theme of a film about robots on Earth",
+      "keywords" : "environmentalism",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    }
+  }, {
+    "source" : "MEXICO",
+    "target" : "MEXICAN IMMIGRANTS LEAVING",
+    "data" : {
+      "weight" : 2.0,
+      "description" : "Some Mexican immigrants choose to leave",
+      "keywords" : "immigration",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    }
+  }, {
+    "source" : "THE EARTH",
+    "target" : "HUMANITY",
+    "data" : {
+      "weight" : 2.0,
+      "description" : "A geographical location mentioned.",
+      "keywords" : "human evolution, earth",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    }
+  }, {
+    "source" : "WALL-E",
+    "target" : "EARTH",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "WALL-E is designed to clean up an abandoned Earth.",
+      "keywords" : "environmental cleanup, robot",
+      "source_id" : "chunk-4baf7978b03db33c988b386914e14e36"
+    }
+  }, {
+    "source" : "ORION MAGAZINE",
+    "target" : "EARTH",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Orion Magazine's State of the Species article mentions the global event of Flood",
+      "keywords" : "ecology, state of the species",
+      "source_id" : "chunk-81443a6ecc49ebe1c1c47016d035875c"
+    }
+  }, {
+    "source" : "GAMERA",
+    "target" : "GAMERA VS JUSTICE LEAGUE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "A film featuring Gamera fighting the Justice League",
+      "keywords" : "superhero battle",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    }
+  }, {
+    "source" : "BRASK",
+    "target" : "BOURNE",
+    "data" : {
+      "weight" : 2.0,
+      "description" : "Brask is associated with Bourne",
+      "keywords" : "category association",
+      "source_id" : "chunk-21bfd2f843f888ec6f6608b09b0983f8"
+    }
+  }, {
+    "source" : "LIBRARY",
+    "target" : "LIBRARY RESOURCES",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "A repository of books, media, and other resources",
+      "keywords" : "information source",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    }
+  }, {
+    "source" : "GROUNDSEL",
+    "target" : "WALL·E",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Groundswell Educational Resources is a resource for learning about Wall-E.",
+      "keywords" : "education, resource",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    }
+  }, {
+    "source" : "BILLY",
+    "target" : "EDUARD ALBERT MEIER",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "A mention of Billy and Eduard Albert Meier.",
+      "keywords" : "spiritual evolution, contact reports",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    }
+  }, {
+    "source" : "PICAXAR",
+    "target" : "WALL·E",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Pixar produced the film featuring Wall-E.",
+      "keywords" : "production, collaboration",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    }
+  }, {
+    "source" : "GAPERS BLOCK",
+    "target" : "GAPERS BLOCK FILM REVIEW",
+    "data" : {
+      "weight" : 11.0,
+      "description" : "A review of a film on Gapers Block",
+      "keywords" : "film review",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    }
+  }, {
+    "source" : "ALLEN INSTITUTE FOR BRAIN SCIENCE",
+    "target" : "TOMMY LEE JUANES",
+    "data" : {
+      "weight" : 3.0,
+      "description" : "Tommy Lee Juanes is mentioned in the Allen Institute for Brain Science's 'Books I've Read'",
+      "keywords" : "brain science, book review",
+      "source_id" : "chunk-81443a6ecc49ebe1c1c47016d035875c"
+    }
+  }, {
+    "source" : "CINEMA",
+    "target" : "CINEMA INDUSTRY",
+    "data" : {
+      "weight" : 12.0,
+      "description" : "The film industry",
+      "keywords" : "film industry",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    }
+  }, {
+    "source" : "BAD ROBOT PRODUCTIONS",
+    "target" : "DESTROYER OF MANKIND",
+    "data" : {
+      "weight" : 4.0,
+      "description" : "Bad Robot Productions produces content about the Destroyer of Mankind",
+      "keywords" : "production, humanity",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    }
+  }, {
+    "source" : "ELIZABETH",
+    "target" : "ERECTALIS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "A mention of Elizabeth and erectalis.",
+      "keywords" : "grief, human evolution",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    }
+  }, {
+    "source" : "JUSTICE LEAGUE",
+    "target" : "JUSTICE LEAGUE VS GAMERA",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "A film featuring the Justice League fighting Gamera",
+      "keywords" : "superhero battle",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    }
+  }, {
+    "source" : "JON",
+    "target" : "[JON'S FAVORITES]",
+    "data" : {
+      "weight" : 3.0,
+      "description" : "A mention of Jon and his favorites.",
+      "keywords" : "favorite artists, music",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    }
+  }, {
+    "source" : "MAN",
+    "target" : "EARTH",
+    "data" : {
+      "weight" : 18.0,
+      "description" : "Humans had to leave Earth due to environmental issues.<SEP>Humans left Earth due to unknown reasons.",
+      "keywords" : "abandonment, reason<SEP>environmental degradation, human extinction",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562<SEP>chunk-4baf7978b03db33c988b386914e14e36"
+    }
+  }, {
+    "source" : "HIVE MIND",
+    "target" : "FLYNT",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Hive Mind is associated with Flynt",
+      "keywords" : "person association",
+      "source_id" : "chunk-21bfd2f843f888ec6f6608b09b0983f8"
+    }
+  }, {
+    "source" : "PIXAR",
+    "target" : "INSIDE OUT: A MASTERPIECE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The film Inside Out is a masterpiece",
+      "keywords" : "artistic achievement",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    }
+  }, {
+    "source" : "TENTH DOCTOR",
+    "target" : "BOREN",
+    "data" : {
+      "weight" : 4.0,
+      "description" : "Tenth Doctor is associated with Boren",
+      "keywords" : "person association",
+      "source_id" : "chunk-21bfd2f843f888ec6f6608b09b0983f8"
+    }
+  }, {
+    "source" : "JIM",
+    "target" : "[JIM'S FAVORITES]",
+    "data" : {
+      "weight" : 3.0,
+      "description" : "A mention of Jim and his favorites.",
+      "keywords" : "favorite artists, music",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    }
+  }, {
+    "source" : "GARY DRETZKA",
+    "target" : "MOVIE CITY NEWS",
+    "data" : {
+      "weight" : 4.0,
+      "description" : "A mention of Gary Dretzka and Movie City News.",
+      "keywords" : "Oscar nomination, foreign language film",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    }
+  }, {
+    "source" : "INSIDE OUT",
+    "target" : "INSIDE OUT FILM",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The 2015 animated film Inside Out",
+      "keywords" : "film release",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    }
+  }, {
+    "source" : "PIXAR",
+    "target" : "WALL-E",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Pixar produced the film WALL-E.",
+      "keywords" : "film production, animation studio",
+      "source_id" : "chunk-4baf7978b03db33c988b386914e14e36"
+    }
+  }, {
+    "source" : "NAVAKA114",
+    "target" : "BLOGDIAL",
+    "data" : {
+      "weight" : 2.0,
+      "description" : "Navaka114 writes in the category of blogs",
+      "keywords" : "blogging, authorship",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    }
+  }, {
+    "source" : "JAI",
+    "target" : "UT",
+    "data" : {
+      "weight" : 4.0,
+      "description" : "Jai mentions the location of UT in a film",
+      "keywords" : "film, location",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    }
+  }, {
+    "source" : "NEW",
+    "target" : "WALL-E",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "WALL-E is mentioned as the favorite film of 2008.",
+      "keywords" : "film review, favorite movie",
+      "source_id" : "chunk-4baf7978b03db33c988b386914e14e36"
+    }
+  }, {
+    "source" : "BOREN",
+    "target" : "BOURNE",
+    "data" : {
+      "weight" : 3.0,
+      "description" : "Boren is associated with Bourne",
+      "keywords" : "category association",
+      "source_id" : "chunk-21bfd2f843f888ec6f6608b09b0983f8"
+    }
+  }, {
+    "source" : "2008",
+    "target" : "ORION MAGAZINE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The global financial crash of 2008 caused by subprime mortgage crisis is mentioned in Orion Magazine's State of the Species article",
+      "keywords" : "subprime mortgage crisis, state of the species",
+      "source_id" : "chunk-81443a6ecc49ebe1c1c47016d035875c"
+    }
+  }, {
+    "source" : "SCOUTING",
+    "target" : "SCOUTING SCOUTS LEAVING",
+    "data" : {
+      "weight" : 1.0,
+      "description" : "Some scouting groups have decided to leave",
+      "keywords" : "organization change",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    }
+  }, {
+    "source" : "MOVIE CITY NEWS",
+    "target" : "AQUARIUS RECORDS",
+    "data" : {
+      "weight" : 1.0,
+      "description" : "An organization mentioned.",
+      "keywords" : "music, record label",
+      "source_id" : "chunk-db4a35d1b78d9228260c03ef6c3f2da9"
+    }
+  }, {
+    "source" : "IMDB",
+    "target" : "NO COUNTRY FOR OLD MEN",
+    "data" : {
+      "weight" : 4.0,
+      "description" : "The IMDb review is about the movie No Country for Old Men",
+      "keywords" : "movie review",
+      "source_id" : "chunk-81443a6ecc49ebe1c1c47016d035875c"
+    }
+  }, {
+    "source" : "JAI",
+    "target" : "ADVENTURE",
+    "data" : {
+      "weight" : 2.0,
+      "description" : "Jai mentions the category of adventure in a film",
+      "keywords" : "film, category",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    }
+  }, {
+    "source" : "2008",
+    "target" : "EARTH",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The global financial crash of 2008 was caused by a global event",
+      "keywords" : "global event, financial crash",
+      "source_id" : "chunk-81443a6ecc49ebe1c1c47016d035875c"
+    }
+  }, {
+    "source" : "HIVE MIND",
+    "target" : "BRASK",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Hive Mind is associated with Brask",
+      "keywords" : "person association",
+      "source_id" : "chunk-21bfd2f843f888ec6f6608b09b0983f8"
+    }
+  }, {
+    "source" : "NAVAKA114",
+    "target" : "ADVENTURE",
+    "data" : {
+      "weight" : 3.0,
+      "description" : "Navaka114 writes in the category of adventure",
+      "keywords" : "category, authorship",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    }
+  }, {
+    "source" : "J.J. ABRAMS",
+    "target" : "BAD ROBOT PRODUCTIONS",
+    "data" : {
+      "weight" : 1.0,
+      "description" : "J.J. Abrams is involved in the production of Bad Robot Productions",
+      "keywords" : "production, leadership",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    }
+  }, {
+    "source" : "HIVE MIND",
+    "target" : "OLD EARTH",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Hive Mind is associated with Old Earth",
+      "keywords" : "geographic association",
+      "source_id" : "chunk-21bfd2f843f888ec6f6608b09b0983f8"
+    }
+  }, {
+    "source" : "GOLDWYN",
+    "target" : "WALL-E",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Goldwyn Pictures was formed by a group that included Goldwyn.",
+      "keywords" : "film production, company formation",
+      "source_id" : "chunk-4baf7978b03db33c988b386914e14e36"
+    }
+  }, {
+    "source" : "TOMMY LEE JUANES",
+    "target" : "IMDB",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Tommy Lee Juanes is mentioned in an IMDb review",
+      "keywords" : "actor, review",
+      "source_id" : "chunk-81443a6ecc49ebe1c1c47016d035875c"
+    }
+  }, {
+    "source" : "NAVAKA114",
+    "target" : "DESTROYER OF MANKIND",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Navaka114 writes about the Destroyer of Mankind",
+      "keywords" : "authorship, humanity",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    }
+  }, {
+    "source" : "MASSACHUSETTS",
+    "target" : "MASSACHUSETTS STATEWIDE UNDERGRADUATE RESEARCH CONFERENCE",
+    "data" : {
+      "weight" : 3.0,
+      "description" : "The conference was held in Massachusetts",
+      "keywords" : "research conference",
+      "source_id" : "chunk-25ff21a8d1907a948d3375fc6a79a0e6"
+    }
+  }, {
+    "source" : "WALL·E",
+    "target" : "MAN",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Wall-E was built for a purpose that was forgotten by humans.",
+      "keywords" : "abandonment, purpose",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    }
+  }, {
+    "source" : "UT",
+    "target" : "BLOWING ROCK",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "UT is located in Blowing Rock",
+      "keywords" : "location, geography",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    }
+  }, {
+    "source" : "NAVAKA114",
+    "target" : "UT",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Navaka114 writes about the location of UT",
+      "keywords" : "location, authorship",
+      "source_id" : "chunk-70afe040c43d2c31e81b0aa5dbbb866b"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 69,
+    "edgeCount" : 50,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260819_043352/e1_pathrag_webis_weak/storage/pathrag/pathrag/triviaqa_465"
+  }
+}

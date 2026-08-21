@@ -1,0 +1,194 @@
+kotlin-logging: initializing... active logger factory: Slf4jLoggerFactory
+15:26:07,056 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found logback-core version 1.5.38
+15:26:07,057 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - No custom configurators were discovered as a service.
+15:26:07,057 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+15:26:07,058 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+15:26:07,062 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+15:26:07,067 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml]
+15:26:07,158 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Scan attribute set to true. Will scan for configuration file changes.
+15:26:07,159 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@179ece50 - URL [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml] is not of type file
+15:26:07,162 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "INFO" substituted for "${ROOT_LOG_LEVEL:-INFO}"
+15:26:07,162 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL:-DEBUG}"
+15:26:07,162 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_LOG_LEVEL:-TRACE}"
+15:26:07,162 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL:-TRACE}"
+15:26:07,162 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL:-ERROR}"
+15:26:07,162 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL:-ERROR}"
+15:26:07,162 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL:-ERROR}"
+15:26:07,162 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL:-DEBUG}"
+15:26:07,163 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Missing watchable .xml or .properties files.
+15:26:07,163 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Watching .xml files requires that the main configuration file is reachable as a URL
+15:26:07,163 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Main configuration file URL: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml
+15:26:07,164 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - FileWatchList= {}
+15:26:07,164 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - URLWatchList= {}
+15:26:07,166 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+15:26:07,166 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+15:26:07,171 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+15:26:07,215 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - NOTE: Writing to the console can be slow. Try to avoid logging to the 
+15:26:07,215 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - console in production environments, especially in high volume systems.
+15:26:07,215 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also https://logback.qos.ch/codes.html#slowConsole
+15:26:07,216 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL}"
+15:26:07,216 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag] to DEBUG
+15:26:07,220 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag] to false
+15:26:07,220 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag]
+15:26:07,220 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_LOG_LEVEL}"
+15:26:07,220 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.neo4j] to TRACE
+15:26:07,220 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.neo4j] to false
+15:26:07,220 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.neo4j]
+15:26:07,220 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL}"
+15:26:07,220 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.neo4j.driver] to TRACE
+15:26:07,220 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.neo4j.driver] to false
+15:26:07,220 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[org.neo4j.driver]
+15:26:07,220 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL}"
+15:26:07,220 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.memory] to DEBUG
+15:26:07,220 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.memory] to false
+15:26:07,220 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.memory]
+15:26:07,221 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL}"
+15:26:07,221 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j] to ERROR
+15:26:07,221 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j] to false
+15:26:07,221 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j]
+15:26:07,221 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+15:26:07,221 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.okhttp] to ERROR
+15:26:07,221 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.okhttp] to false
+15:26:07,221 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.okhttp]
+15:26:07,221 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+15:26:07,221 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.openai] to ERROR
+15:26:07,221 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.openai] to false
+15:26:07,221 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.openai]
+15:26:07,221 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+15:26:07,221 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [okhttp3] to ERROR
+15:26:07,221 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [okhttp3] to false
+15:26:07,221 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[okhttp3]
+15:26:07,221 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL}"
+15:26:07,221 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.ai4j.openai4j] to ERROR
+15:26:07,221 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.ai4j.openai4j] to false
+15:26:07,221 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.ai4j.openai4j]
+15:26:07,221 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "INFO" substituted for "${ROOT_LOG_LEVEL}"
+15:26:07,221 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+15:26:07,221 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+15:26:07,221 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@3cd3e762 - End of configuration.
+15:26:07,222 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@1fa121e2 - Registering current configuration as safe fallback point
+15:26:07,227 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 164 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+WARNING: --use-unified-api=false keeps 'shared.eval.MultiConditionExperimentKt' on legacy condition runners. This compatibility path is planned for deprecation; prefer --use-unified-api=true.
+Running 1 conditions on 15 samples
+Parallelism: 1
+Unified API: false
+Unified persistence SPI: false
+Data: data/causal_experiment/causal_qa_balanced_30.jsonl
+Output: eval_results/swo69_20260819_043352/e0_hipporag_causal
+
+=== Condition: hipporag_graph (HippoRAG graph retrieval) ===
+2026-08-20 15:26:07.328 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small
+2026-08-20 15:26:07.617 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/chunk_embeddings
+2026-08-20 15:26:07.618 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/entity_embeddings
+2026-08-20 15:26:07.619 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/fact_embeddings
+2026-08-20 15:26:07.798 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small
+2026-08-20 15:26:07.802 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/chunk_embeddings
+2026-08-20 15:26:07.803 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/entity_embeddings
+2026-08-20 15:26:07.804 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/fact_embeddings
+2026-08-20 15:26:07.806 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 15:26:07.806 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 15:26:08.297 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 6 new records, 0 records already exist.
+2026-08-20 15:26:08.539 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small
+2026-08-20 15:26:08.543 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/chunk_embeddings
+2026-08-20 15:26:08.543 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/entity_embeddings
+2026-08-20 15:26:08.544 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/fact_embeddings
+2026-08-20 15:26:08.546 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 15:26:08.546 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 15:26:08.553 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 6 new records, 0 records already exist.
+2026-08-20 15:26:08.579 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small
+2026-08-20 15:26:08.582 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/chunk_embeddings
+2026-08-20 15:26:08.583 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/entity_embeddings
+2026-08-20 15:26:08.584 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/fact_embeddings
+2026-08-20 15:26:08.585 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 15:26:08.585 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 15:26:08.590 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 6 new records, 0 records already exist.
+2026-08-20 15:26:08.614 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small
+2026-08-20 15:26:08.617 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/chunk_embeddings
+2026-08-20 15:26:08.618 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/entity_embeddings
+2026-08-20 15:26:08.619 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/fact_embeddings
+2026-08-20 15:26:08.620 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 15:26:08.620 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 15:26:08.624 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 6 new records, 0 records already exist.
+2026-08-20 15:26:08.647 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small
+2026-08-20 15:26:08.651 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/chunk_embeddings
+2026-08-20 15:26:08.652 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/entity_embeddings
+2026-08-20 15:26:08.652 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/fact_embeddings
+2026-08-20 15:26:08.654 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 15:26:08.654 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 15:26:08.657 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 6 new records, 0 records already exist.
+2026-08-20 15:26:08.678 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small
+2026-08-20 15:26:08.681 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/chunk_embeddings
+2026-08-20 15:26:08.682 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/entity_embeddings
+2026-08-20 15:26:08.683 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/fact_embeddings
+2026-08-20 15:26:08.685 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 15:26:08.685 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 15:26:08.688 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 6 new records, 0 records already exist.
+2026-08-20 15:26:08.709 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small
+2026-08-20 15:26:08.713 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/chunk_embeddings
+2026-08-20 15:26:08.714 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/entity_embeddings
+2026-08-20 15:26:08.715 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/fact_embeddings
+2026-08-20 15:26:08.716 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 15:26:08.716 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 15:26:08.719 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 6 new records, 0 records already exist.
+2026-08-20 15:26:08.742 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small
+2026-08-20 15:26:08.745 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/chunk_embeddings
+2026-08-20 15:26:08.746 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/entity_embeddings
+2026-08-20 15:26:08.746 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/fact_embeddings
+2026-08-20 15:26:08.747 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 15:26:08.747 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 15:26:08.750 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 6 new records, 0 records already exist.
+2026-08-20 15:26:08.772 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small
+2026-08-20 15:26:08.775 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/chunk_embeddings
+2026-08-20 15:26:08.776 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/entity_embeddings
+2026-08-20 15:26:08.777 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/fact_embeddings
+2026-08-20 15:26:08.778 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 15:26:08.778 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 15:26:08.780 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 6 new records, 0 records already exist.
+2026-08-20 15:26:08.802 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small
+2026-08-20 15:26:08.805 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/chunk_embeddings
+2026-08-20 15:26:08.806 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/entity_embeddings
+2026-08-20 15:26:08.807 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/fact_embeddings
+2026-08-20 15:26:08.808 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 15:26:08.808 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 15:26:08.810 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 6 new records, 0 records already exist.
+hipporag_graph: processed 10/15
+2026-08-20 15:26:08.838 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small
+2026-08-20 15:26:08.841 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/chunk_embeddings
+2026-08-20 15:26:08.842 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/entity_embeddings
+2026-08-20 15:26:08.843 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/fact_embeddings
+2026-08-20 15:26:08.844 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 15:26:08.844 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 15:26:08.846 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 6 new records, 0 records already exist.
+2026-08-20 15:26:08.868 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small
+2026-08-20 15:26:08.871 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/chunk_embeddings
+2026-08-20 15:26:08.872 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/entity_embeddings
+2026-08-20 15:26:08.873 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/fact_embeddings
+2026-08-20 15:26:08.874 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 15:26:08.874 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 15:26:08.876 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 6 new records, 0 records already exist.
+2026-08-20 15:26:08.898 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small
+2026-08-20 15:26:08.901 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/chunk_embeddings
+2026-08-20 15:26:08.902 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/entity_embeddings
+2026-08-20 15:26:08.902 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/fact_embeddings
+2026-08-20 15:26:08.903 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 15:26:08.903 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 15:26:08.905 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 6 new records, 0 records already exist.
+2026-08-20 15:26:08.928 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small
+2026-08-20 15:26:08.931 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/chunk_embeddings
+2026-08-20 15:26:08.931 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/entity_embeddings
+2026-08-20 15:26:08.932 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/fact_embeddings
+2026-08-20 15:26:08.933 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 15:26:08.933 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 15:26:08.935 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 6 new records, 0 records already exist.
+2026-08-20 15:26:08.958 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small
+2026-08-20 15:26:08.961 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/chunk_embeddings
+2026-08-20 15:26:08.962 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/entity_embeddings
+2026-08-20 15:26:08.963 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e0_hipporag_causal/workdirs/graph/qwen3.8:27b_text-embedding-3-small/fact_embeddings
+2026-08-20 15:26:08.964 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 15:26:08.964 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 15:26:08.965 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 6 new records, 0 records already exist.
+hipporag_graph: processed 15/15
+Wrote 15 rows -> eval_results/swo69_20260819_043352/e0_hipporag_causal/per_question/hipporag_graph.jsonl
+
+Finished. Aggregate CSV can be produced by scripts/aggregate_experiment_results.py

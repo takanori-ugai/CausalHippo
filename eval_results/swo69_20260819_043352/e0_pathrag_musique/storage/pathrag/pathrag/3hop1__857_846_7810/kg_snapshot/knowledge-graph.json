@@ -1,0 +1,949 @@
+{
+  "nodes" : {
+    "CONGO-BRAZZAVILLE" : {
+      "entity_type" : "GEO",
+      "description" : "A country in Africa with notable health challenges including malnutrition, limited physician availability, and low per-capita health expenditure.",
+      "source_id" : "chunk-9866c59e67a687bb899dc48834508b7f"
+    },
+    "PRC" : {
+      "entity_type" : "GEO",
+      "description" : "The People's Republic of China, the modern state whose State Council Information Office preserves the historical edict.",
+      "source_id" : "chunk-30b5168227c442153d60e9765f3f21c0"
+    },
+    "NYIMA" : {
+      "entity_type" : "PERSON",
+      "description" : "A scholar who co-authored with Wang an account explaining Tsongkhapa's decline due to old age and monastery construction.",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    },
+    "KARMAPA KARGYU" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A Buddhist school whose lamas received titles from the Ming dynasty but had previously declined Mongol title invitations.",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    },
+    "PHYSICIANS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Healthcare professionals; there were 20 physicians per 100,000 persons in Congo-Brazzaville in the early 2000s.",
+      "source_id" : "chunk-9866c59e67a687bb899dc48834508b7f"
+    },
+    "FRANCE" : {
+      "entity_type" : "GEO",
+      "description" : "A country with a public debt-to-GDP ratio of 98.2% at the end of Q2 2016.",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    },
+    "HOLY RELICS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Sacred objects brought by the Karmapa's agent to the Ming court, which prompted the imperial edict.",
+      "source_id" : "chunk-30b5168227c442153d60e9765f3f21c0"
+    },
+    "EDICT" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A formal imperial decree issued by the Zhengtong Emperor in 1445, addressed to the Karmapa.",
+      "source_id" : "chunk-30b5168227c442153d60e9765f3f21c0"
+    },
+    "YONGLE EMPEROR" : {
+      "entity_type" : "PERSON",
+      "description" : "Emperor of the Ming dynasty who ordered the cutting of the gigantic stele at the Yangshan Quarry.",
+      "source_id" : "chunk-94b4402fe75a600e942717ad4c8838bf"
+    },
+    "MONGOL" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A political entity that previously invited the Karmapa Kargyu to receive titles, which was declined.",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    },
+    "NAPOLEON" : {
+      "entity_type" : "PERSON",
+      "description" : "Emperor who considered Lannes a personal friend, commented on his growth from 'pygmy' to 'giant', and allowed informal address.",
+      "source_id" : "chunk-b4599d8b76545528dc444687eb6e6d46"
+    },
+    "PRIVATE EXPENDITURE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Private sector health spending category, at 1.3% of GDP in Congo-Brazzaville in 2004.",
+      "source_id" : "chunk-9866c59e67a687bb899dc48834508b7f"
+    },
+    "JE TSONGKHAPA" : {
+      "entity_type" : "PERSON",
+      "description" : "Founder of the Gelug school (1357–1419), who declined the Yongle Emperor's invitation to visit the Ming court.",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    },
+    "MING XIAOLING MAUSOLEUM" : {
+      "entity_type" : "GEO",
+      "description" : "A mausoleum associated with the Ming dynasty, located near the walled city and Yangshan Quarry.",
+      "source_id" : "chunk-94b4402fe75a600e942717ad4c8838bf"
+    },
+    "FY 2015" : {
+      "entity_type" : "EVENT",
+      "description" : "Fiscal year in which India's economy became the world's fastest growing major economy, surpassing China.",
+      "source_id" : "chunk-957e3cb0bdc766d95f840674cad21282"
+    },
+    "IMF" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "International Monetary Fund, the source of public debt data for the US, Japan, China, and India.",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    },
+    "PUBLIC EXPENDITURE HEALTH" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Government health spending category, accounting for 8.9% of GDP in Congo-Brazzaville in 2004.",
+      "source_id" : "chunk-9866c59e67a687bb899dc48834508b7f"
+    },
+    "MARSHAL OF THE EMPIRE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The highest military rank in Napoleon's Empire, held by Jean Lannes among a select group of generals.",
+      "source_id" : "chunk-b4599d8b76545528dc444687eb6e6d46"
+    },
+    "ITALY" : {
+      "entity_type" : "GEO",
+      "description" : "A country with a public debt-to-GDP ratio of 135.5% at the end of Q2 2016.",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    },
+    "PURCHASING POWER PARITY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An economic metric by which India ranks 3rd globally and has a per capita figure of $6,616 (123rd rank) as of 2016.",
+      "source_id" : "chunk-159e7f1b789d4ee89938c9ec742bc1b4"
+    },
+    "WANG" : {
+      "entity_type" : "PERSON",
+      "description" : "A scholar who, together with Nyima, wrote about the reasons for Tsongkhapa declining the Emperor's invitation.",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    },
+    "PUBLIC DEBT-TO-GDP RATIO" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A fiscal metric measuring a country's public debt relative to its gross domestic product.",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    },
+    "ECONOMIC LIBERALISATION 1991" : {
+      "entity_type" : "EVENT",
+      "description" : "The 1991 economic liberalisation policy in India that triggered 6-7% average annual GDP growth thereafter.",
+      "source_id" : "chunk-159e7f1b789d4ee89938c9ec742bc1b4"
+    },
+    "MONTEBELLO" : {
+      "entity_type" : "GEO",
+      "description" : "A place associated with Jean Lannes' noble title as 1st Duc de Montebello.",
+      "source_id" : "chunk-b4599d8b76545528dc444687eb6e6d46"
+    },
+    "EMPIRE" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Napoleon's French Empire, the political and military state to which Lannes served as a Marshal and general.",
+      "source_id" : "chunk-b4599d8b76545528dc444687eb6e6d46"
+    },
+    "THREE MAJOR MONASTERIES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A construction initiative associated with the Gelug school, cited as a reason for Tsongkhapa declining the Ming court invitation.",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    },
+    "ZHENGTONG EMPEROR" : {
+      "entity_type" : "PERSON",
+      "description" : "Emperor of the Ming Dynasty (r. 1435–1449) who issued an edict to the Karmapa in 1445 regarding holy relics.",
+      "source_id" : "chunk-30b5168227c442153d60e9765f3f21c0"
+    },
+    "FY 2017" : {
+      "entity_type" : "EVENT",
+      "description" : "Fiscal year in which India's economy again became the world's fastest growing major economy, surpassing China.",
+      "source_id" : "chunk-957e3cb0bdc766d95f840674cad21282"
+    },
+    "INDIA" : {
+      "entity_type" : "GEO",
+      "description" : "A country with a public debt level of 66.7% of GDP.<SEP>A developing country with a mixed economy, ranked 6th by nominal GDP and 3rd by PPP. Achieved 6-7% average GDP growth after 1991 liberalisation.<SEP>Country with the sixth-largest economy by nominal GDP and third-largest by PPP. Achieved 6-7% average GDP growth after 1991 liberalisation. Fastest growing major economy in FY 2015 and 2017.",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1<SEP>chunk-159e7f1b789d4ee89938c9ec742bc1b4<SEP>chunk-957e3cb0bdc766d95f840674cad21282"
+    },
+    "SIEWIERZ" : {
+      "entity_type" : "GEO",
+      "description" : "A place associated with Jean Lannes' noble title as Prince de Siewierz.",
+      "source_id" : "chunk-b4599d8b76545528dc444687eb6e6d46"
+    },
+    "WALLED CITY" : {
+      "entity_type" : "GEO",
+      "description" : "A walled city near the Yangshan Quarry, serving as a geographic reference point.",
+      "source_id" : "chunk-94b4402fe75a600e942717ad4c8838bf"
+    },
+    "KARMAPA" : {
+      "entity_type" : "PERSON",
+      "description" : "Recipient of the 1445 edict, also known as the Great Treasure Prince of Dharma; had an agent bring holy relics to the Ming court.",
+      "source_id" : "chunk-30b5168227c442153d60e9765f3f21c0"
+    },
+    "UNITED STATES" : {
+      "entity_type" : "GEO",
+      "description" : "A country with a public debt-to-GDP ratio of 104.8% in 2016 and 89.1% in Q2 2016.",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    },
+    "TAIWAN" : {
+      "entity_type" : "GEO",
+      "description" : "A region included in the overall competence ranking alongside Nanjing and Hong Kong, where Nanjing placed 8th in 2009.",
+      "source_id" : "chunk-f31aa4dbc0cd33e8e3002f4e5ed8284f"
+    },
+    "YANGSHAN QUARRY" : {
+      "entity_type" : "GEO",
+      "description" : "A quarry located 15-20 km east of the walled city, home to an abandoned gigantic stele left for 600 years.",
+      "source_id" : "chunk-94b4402fe75a600e942717ad4c8838bf"
+    },
+    "JEAN LANNES" : {
+      "entity_type" : "PERSON",
+      "description" : "1st Duc de Montebello, Prince de Siewierz (1769–1809), Marshal of the Empire, one of Napoleon's most daring and talented generals, personal friend of the emperor.",
+      "source_id" : "chunk-b4599d8b76545528dc444687eb6e6d46"
+    },
+    "CHEN QINGYING" : {
+      "entity_type" : "PERSON",
+      "description" : "A scholar who states that Tsongkhapa wrote a formal letter to decline the Emperor's invitation.",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    },
+    "GELUG SCHOOL" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A Buddhist school founded by Je Tsongkhapa, associated with efforts to build three major monasteries.",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    },
+    "HONG KONG" : {
+      "entity_type" : "GEO",
+      "description" : "A region included in the overall competence ranking alongside Nanjing and Taiwan, where Nanjing placed 8th in 2009.",
+      "source_id" : "chunk-f31aa4dbc0cd33e8e3002f4e5ed8284f"
+    },
+    "NANJING" : {
+      "entity_type" : "GEO",
+      "description" : "A city in Jiangsu, China. In 2013, GDP was RMB 801 billion (3rd in Jiangsu). GDP per capita RMB 98,174. Ranked 12th in China. Overall competence ranked 6th in mainland, 8th including Taiwan and Hong Kong (2009).",
+      "source_id" : "chunk-f31aa4dbc0cd33e8e3002f4e5ed8284f"
+    },
+    "PER CAPITA GDP" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An economic measure where India ranks 141st (nominal) and 123rd (PPP) as of 2016.",
+      "source_id" : "chunk-159e7f1b789d4ee89938c9ec742bc1b4"
+    },
+    "MALNUTRITION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A health problem affecting a large proportion of the population in Congo-Brazzaville, linked to undernourishment.",
+      "source_id" : "chunk-9866c59e67a687bb899dc48834508b7f"
+    },
+    "EUROSTAT" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "European statistical office, the source of public debt-to-GDP data for Germany, UK, France, and Italy.",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    },
+    "PPP" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Purchasing Power Parity, a measure adjusting for price differences. India ranks third largest globally and 123rd in per capita PPP.",
+      "source_id" : "chunk-957e3cb0bdc766d95f840674cad21282"
+    },
+    "MING DYNASTY" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Chinese imperial dynasty that granted titles to lamas of various Buddhist schools, including the Karmapa Kargyu.<SEP>Early Ming dynasty responsible for gigantic construction projects that incurred a huge human cost.",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068<SEP>chunk-94b4402fe75a600e942717ad4c8838bf"
+    },
+    "FY 2015 AND 2017 GROWTH MILESTONE" : {
+      "entity_type" : "EVENT",
+      "description" : "The fiscal periods when India's economy became the world's fastest growing major economy, surpassing China.",
+      "source_id" : "chunk-159e7f1b789d4ee89938c9ec742bc1b4"
+    },
+    "GERMANY" : {
+      "entity_type" : "GEO",
+      "description" : "A country with a public debt-to-GDP ratio of 70.1% at the end of Q2 2016.",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    },
+    "1991 ECONOMIC LIBERALISATION" : {
+      "entity_type" : "EVENT",
+      "description" : "A major economic reform event in India that triggered sustained 6-7% average annual GDP growth.",
+      "source_id" : "chunk-957e3cb0bdc766d95f840674cad21282"
+    },
+    "JAPAN" : {
+      "entity_type" : "GEO",
+      "description" : "A country with a public debt level of 243.2% of GDP in 2013.",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    },
+    "NOMINAL GDP" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A measure of economic output at current market prices. India ranks sixth largest globally and 141st in per capita nominal GDP.<SEP>An economic metric by which India ranks 6th globally and has a per capita figure of $1,723 (141st rank) as of 2016.",
+      "source_id" : "chunk-159e7f1b789d4ee89938c9ec742bc1b4<SEP>chunk-957e3cb0bdc766d95f840674cad21282"
+    },
+    "HIV/AIDS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A disease category with a prevalence of 2.8% among 15- to 49-year-olds as of 2012 in Congo-Brazzaville.",
+      "source_id" : "chunk-9866c59e67a687bb899dc48834508b7f"
+    },
+    "MING COURT" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "The imperial court of the Ming Dynasty where the Karmapa's agent delivered holy relics, prompting the edict.",
+      "source_id" : "chunk-30b5168227c442153d60e9765f3f21c0"
+    },
+    "CHINA" : {
+      "entity_type" : "GEO",
+      "description" : "A country with a public debt level of 22.4% of GDP.<SEP>A major economy surpassed by India in growth rate during FY 2015 and 2017.<SEP>A major global economy that was surpassed by India in terms of economic growth rate in FY 2015 and FY 2017.<SEP>The country in which Nanjing's GDP ranked 12th in 2013. National average urban unemployment rate is 4.3 percent.",
+      "source_id" : "chunk-f31aa4dbc0cd33e8e3002f4e5ed8284f<SEP>chunk-5adf9f4c35011d23d128e289edc753c1<SEP>chunk-159e7f1b789d4ee89938c9ec742bc1b4<SEP>chunk-957e3cb0bdc766d95f840674cad21282"
+    },
+    "INFORMATION OFFICE OF THE STATE COUNCIL OF THE PRC" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A government office that preserves historical documents, including the 1445 edict addressed to the Karmapa.",
+      "source_id" : "chunk-30b5168227c442153d60e9765f3f21c0"
+    },
+    "JIANGSU" : {
+      "entity_type" : "GEO",
+      "description" : "A province in China where Nanjing is located. Nanjing ranks 3rd in GDP within Jiangsu province.",
+      "source_id" : "chunk-f31aa4dbc0cd33e8e3002f4e5ed8284f"
+    },
+    "MIXED ECONOMY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A developing economic system combining market and state elements, characterizing India's economy.",
+      "source_id" : "chunk-159e7f1b789d4ee89938c9ec742bc1b4"
+    },
+    "UNITED KINGDOM" : {
+      "entity_type" : "GEO",
+      "description" : "A country with a public debt-to-GDP ratio of 89.1% at the end of Q2 2016.",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    },
+    "MING YONGLE EMPEROR" : {
+      "entity_type" : "PERSON",
+      "description" : "Emperor of the Ming dynasty who invited Je Tsongkhapa to come to the Ming court and pay tribute.",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    }
+  },
+  "edges" : [ {
+    "source" : "CHEN QINGYING",
+    "target" : "JE TSONGKHAPA",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Chen Qingying states that Tsongkhapa wrote a formal letter declining the Emperor's invitation.",
+      "keywords" : "scholarly citation, letter",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    }
+  }, {
+    "source" : "CONGO-BRAZZAVILLE",
+    "target" : "PHYSICIANS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Congo-Brazzaville had 20 physicians per 100,000 persons in the early 2000s, indicating limited medical workforce.",
+      "keywords" : "healthcare workforce, medical access",
+      "source_id" : "chunk-9866c59e67a687bb899dc48834508b7f"
+    }
+  }, {
+    "source" : "PUBLIC DEBT-TO-GDP RATIO",
+    "target" : "UNITED STATES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The US public debt-to-GDP ratio reached 104.8% in 2016.",
+      "keywords" : "fiscal metric, sovereign debt",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    }
+  }, {
+    "source" : "JEAN LANNES",
+    "target" : "MARSHAL OF THE EMPIRE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Lannes held the rank of Marshal of the Empire, the highest military distinction in Napoleon's state.",
+      "keywords" : "military rank, honor",
+      "source_id" : "chunk-b4599d8b76545528dc444687eb6e6d46"
+    }
+  }, {
+    "source" : "KARMAPA",
+    "target" : "MING COURT",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The Karmapa's agent brought holy relics to the Ming court, establishing a connection between the two.",
+      "keywords" : "diplomatic exchange, religious artifacts, tribute",
+      "source_id" : "chunk-30b5168227c442153d60e9765f3f21c0"
+    }
+  }, {
+    "source" : "INDIA",
+    "target" : "MIXED ECONOMY",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "India operates a developing mixed economy system.",
+      "keywords" : "economic system, developing nation",
+      "source_id" : "chunk-159e7f1b789d4ee89938c9ec742bc1b4"
+    }
+  }, {
+    "source" : "INDIA",
+    "target" : "NOMINAL GDP",
+    "data" : {
+      "weight" : 16.0,
+      "description" : "India is the world's 6th largest economy by nominal GDP with per capita of $1,723.<SEP>India's economy is ranked sixth largest in the world by nominal GDP, with per capita GDP of $1,723.",
+      "keywords" : "economic ranking, GDP measurement<SEP>economic ranking, GDP metric",
+      "source_id" : "chunk-159e7f1b789d4ee89938c9ec742bc1b4<SEP>chunk-957e3cb0bdc766d95f840674cad21282"
+    }
+  }, {
+    "source" : "WALLED CITY",
+    "target" : "MING XIAOLING MAUSOLEUM",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The Ming Xiaoling Mausoleum is located near the walled city.",
+      "keywords" : "geographic proximity, location",
+      "source_id" : "chunk-94b4402fe75a600e942717ad4c8838bf"
+    }
+  }, {
+    "source" : "PUBLIC EXPENDITURE HEALTH",
+    "target" : "PRIVATE EXPENDITURE",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Both represent components of total health expenditure in Congo-Brazzaville, with public spending far exceeding private.",
+      "keywords" : "health financing, spending split",
+      "source_id" : "chunk-9866c59e67a687bb899dc48834508b7f"
+    }
+  }, {
+    "source" : "WANG",
+    "target" : "NYIMA",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Wang and Nyima co-authored a work explaining Tsongkhapa's reasons for declining the invitation.",
+      "keywords" : "collaboration, scholarship",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    }
+  }, {
+    "source" : "PUBLIC DEBT-TO-GDP RATIO",
+    "target" : "ITALY",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Italy's public debt-to-GDP ratio reached 135.5% in Q2 2016.",
+      "keywords" : "fiscal metric, sovereign debt",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    }
+  }, {
+    "source" : "NANJING",
+    "target" : "TAIWAN",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Nanjing's overall competence was ranked 8th in 2009 when Taiwan was included in the comparison group.",
+      "keywords" : "competence ranking, comparative benchmark",
+      "source_id" : "chunk-f31aa4dbc0cd33e8e3002f4e5ed8284f"
+    }
+  }, {
+    "source" : "WANG",
+    "target" : "JE TSONGKHAPA",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Wang wrote about Tsongkhapa's decline citing old age, physical weakness, and monastery construction.",
+      "keywords" : "historical account, explanation",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    }
+  }, {
+    "source" : "TAIWAN",
+    "target" : "CHINA",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Taiwan is referenced in the context of mainland China rankings, indicating its relationship to the broader Chinese economic context.",
+      "keywords" : "economic context, regional comparison",
+      "source_id" : "chunk-f31aa4dbc0cd33e8e3002f4e5ed8284f"
+    }
+  }, {
+    "source" : "IMF",
+    "target" : "CHINA",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "IMF reported China's public debt level of 22.4% of GDP.",
+      "keywords" : "data source, fiscal reporting",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    }
+  }, {
+    "source" : "YANGSHAN QUARRY",
+    "target" : "MING XIAOLING MAUSOLEUM",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The Yangshan Quarry is located in proximity to the Ming Xiaoling Mausoleum.",
+      "keywords" : "geographic proximity, location",
+      "source_id" : "chunk-94b4402fe75a600e942717ad4c8838bf"
+    }
+  }, {
+    "source" : "CHINA",
+    "target" : "FY 2017",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "China was surpassed by India in economic growth rate during FY 2017.",
+      "keywords" : "growth comparison, economic shift",
+      "source_id" : "chunk-957e3cb0bdc766d95f840674cad21282"
+    }
+  }, {
+    "source" : "MARSHAL OF THE EMPIRE",
+    "target" : "EMPIRE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The rank of Marshal is defined by and tied to the political-military structure of the Empire.",
+      "keywords" : "hierarchy, state institution",
+      "source_id" : "chunk-b4599d8b76545528dc444687eb6e6d46"
+    }
+  }, {
+    "source" : "ZHENGTONG EMPEROR",
+    "target" : "EDICT",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Zhengtong Emperor authored and issued the edict in 1445.",
+      "keywords" : "authorship, imperial decree, issuance",
+      "source_id" : "chunk-30b5168227c442153d60e9765f3f21c0"
+    }
+  }, {
+    "source" : "CHINA",
+    "target" : "FY 2015",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "China was surpassed by India in economic growth rate during FY 2015.",
+      "keywords" : "growth comparison, economic shift",
+      "source_id" : "chunk-957e3cb0bdc766d95f840674cad21282"
+    }
+  }, {
+    "source" : "CONGO-BRAZZAVILLE",
+    "target" : "PRIVATE EXPENDITURE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Private health expenditure in Congo-Brazzaville was 1.3% of GDP in 2004, supplementing public spending.",
+      "keywords" : "private funding, health economics",
+      "source_id" : "chunk-9866c59e67a687bb899dc48834508b7f"
+    }
+  }, {
+    "source" : "JE TSONGKHAPA",
+    "target" : "THREE MAJOR MONASTERIES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Efforts to build three major monasteries were a reason cited for Tsongkhapa declining the Emperor's invitation.",
+      "keywords" : "construction, reason for refusal",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    }
+  }, {
+    "source" : "CONGO-BRAZZAVILLE",
+    "target" : "HIV/AIDS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "HIV/AIDS prevalence of 2.8% among 15-49-year-olds was reported in Congo-Brazzaville as of 2012.",
+      "keywords" : "disease prevalence, public health",
+      "source_id" : "chunk-9866c59e67a687bb899dc48834508b7f"
+    }
+  }, {
+    "source" : "MING YONGLE EMPEROR",
+    "target" : "MING DYNASTY",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The Yongle Emperor is a ruler of the Ming dynasty.",
+      "keywords" : "ruler, dynasty",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    }
+  }, {
+    "source" : "NYIMA",
+    "target" : "JE TSONGKHAPA",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Nyima co-wrote an account of Tsongkhapa's reasons for declining the Ming court invitation.",
+      "keywords" : "historical account, explanation",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    }
+  }, {
+    "source" : "ZHENGTONG EMPEROR",
+    "target" : "KARMAPA",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Zhengtong Emperor addressed the edict directly to the Karmapa, also titled Great Treasure Prince of Dharma.",
+      "keywords" : "imperial decree, religious authority, diplomatic address",
+      "source_id" : "chunk-30b5168227c442153d60e9765f3f21c0"
+    }
+  }, {
+    "source" : "MALNUTRITION",
+    "target" : "HIV/AIDS",
+    "data" : {
+      "weight" : 4.0,
+      "description" : "Both are significant health challenges affecting the population of Congo-Brazzaville simultaneously.",
+      "keywords" : "compounding health issues, public health burden",
+      "source_id" : "chunk-9866c59e67a687bb899dc48834508b7f"
+    }
+  }, {
+    "source" : "NANJING",
+    "target" : "HONG KONG",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Nanjing's overall competence was ranked 8th in 2009 when Hong Kong was included in the comparison group.",
+      "keywords" : "competence ranking, comparative benchmark",
+      "source_id" : "chunk-f31aa4dbc0cd33e8e3002f4e5ed8284f"
+    }
+  }, {
+    "source" : "JEAN LANNES",
+    "target" : "MONTEBELLO",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Lannes holds the noble title of 1st Duc de Montebello, linking him to this place.",
+      "keywords" : "noble title, duchy",
+      "source_id" : "chunk-b4599d8b76545528dc444687eb6e6d46"
+    }
+  }, {
+    "source" : "IMF",
+    "target" : "UNITED STATES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "IMF reported the US public debt-to-GDP ratio of 104.8% in 2016.",
+      "keywords" : "data source, fiscal reporting",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    }
+  }, {
+    "source" : "YANGSHAN QUARRY",
+    "target" : "WALLED CITY",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The Yangshan Quarry is located 15-20 km east of the walled city.",
+      "keywords" : "geographic proximity, location",
+      "source_id" : "chunk-94b4402fe75a600e942717ad4c8838bf"
+    }
+  }, {
+    "source" : "EUROSTAT",
+    "target" : "UNITED KINGDOM",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Eurostat reported the UK's public debt-to-GDP ratio of 89.1% in Q2 2016.",
+      "keywords" : "data source, fiscal reporting",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    }
+  }, {
+    "source" : "GELUG SCHOOL",
+    "target" : "THREE MAJOR MONASTERIES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The Gelug school was involved in building the three major monasteries at the time of the invitation.",
+      "keywords" : "construction, institutional development",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    }
+  }, {
+    "source" : "MING YONGLE EMPEROR",
+    "target" : "JE TSONGKHAPA",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The Yongle Emperor invited Je Tsongkhapa to come to the Ming court and pay tribute; Tsongkhapa declined.",
+      "keywords" : "imperial invitation, tribute, refusal",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    }
+  }, {
+    "source" : "EUROSTAT",
+    "target" : "ITALY",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Eurostat reported Italy's public debt-to-GDP ratio of 135.5% in Q2 2016.",
+      "keywords" : "data source, fiscal reporting",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    }
+  }, {
+    "source" : "EUROSTAT",
+    "target" : "GERMANY",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Eurostat reported Germany's public debt-to-GDP ratio of 70.1% in Q2 2016.",
+      "keywords" : "data source, fiscal reporting",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    }
+  }, {
+    "source" : "INDIA",
+    "target" : "CHINA",
+    "data" : {
+      "weight" : 17.0,
+      "description" : "India surpassed China as the world's fastest growing major economy in FY 2015 and FY 2017.<SEP>India surpassed China in economic growth rate during FY 2015 and 2017.",
+      "keywords" : "economic competition, growth surpassing",
+      "source_id" : "chunk-159e7f1b789d4ee89938c9ec742bc1b4<SEP>chunk-957e3cb0bdc766d95f840674cad21282"
+    }
+  }, {
+    "source" : "MING DYNASTY",
+    "target" : "YANGSHAN QUARRY",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The Yangshan Quarry is a monument to the huge human cost of the Ming dynasty's construction projects.",
+      "keywords" : "construction, human cost, monument",
+      "source_id" : "chunk-94b4402fe75a600e942717ad4c8838bf"
+    }
+  }, {
+    "source" : "NANJING",
+    "target" : "CHINA",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Nanjing's GDP ranked 12th in China in 2013, and its urban unemployment rate was compared to the national average.",
+      "keywords" : "national ranking, economic comparison",
+      "source_id" : "chunk-f31aa4dbc0cd33e8e3002f4e5ed8284f"
+    }
+  }, {
+    "source" : "ZHENGTONG EMPEROR",
+    "target" : "MING COURT",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Zhengtong Emperor ruled the Ming court and issued the edict from it.",
+      "keywords" : "sovereignty, imperial authority",
+      "source_id" : "chunk-30b5168227c442153d60e9765f3f21c0"
+    }
+  }, {
+    "source" : "INFORMATION OFFICE OF THE STATE COUNCIL OF THE PRC",
+    "target" : "PRC",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The Information Office is an institution of the State Council of the PRC.",
+      "keywords" : "government structure, institutional affiliation",
+      "source_id" : "chunk-30b5168227c442153d60e9765f3f21c0"
+    }
+  }, {
+    "source" : "YONGLE EMPEROR",
+    "target" : "YANGSHAN QUARRY",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "The Yongle Emperor ordered the cutting of the gigantic stele at the Yangshan Quarry.",
+      "keywords" : "imperial order, construction",
+      "source_id" : "chunk-94b4402fe75a600e942717ad4c8838bf"
+    }
+  }, {
+    "source" : "IMF",
+    "target" : "JAPAN",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "IMF reported Japan's public debt level of 243.2% of GDP in 2013.",
+      "keywords" : "data source, fiscal reporting",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    }
+  }, {
+    "source" : "CONGO-BRAZZAVILLE",
+    "target" : "MALNUTRITION",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Malnutrition is a significant problem in Congo-Brazzaville, with a large proportion of the population undernourished.",
+      "keywords" : "undernourishment, food security, health crisis",
+      "source_id" : "chunk-9866c59e67a687bb899dc48834508b7f"
+    }
+  }, {
+    "source" : "JEAN LANNES",
+    "target" : "SIEWIERZ",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Lannes holds the noble title of Prince de Siewierz, linking him to this place.",
+      "keywords" : "noble title, princedom",
+      "source_id" : "chunk-b4599d8b76545528dc444687eb6e6d46"
+    }
+  }, {
+    "source" : "NANJING",
+    "target" : "JIANGSU",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Nanjing is located in Jiangsu province and ranks 3rd in GDP among cities in Jiangsu.",
+      "keywords" : "province, economic ranking, location",
+      "source_id" : "chunk-f31aa4dbc0cd33e8e3002f4e5ed8284f"
+    }
+  }, {
+    "source" : "KARMAPA KARGYU",
+    "target" : "MONGOL",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The Karmapa Kargyu previously declined Mongol invitations to receive titles.",
+      "keywords" : "title refusal, diplomatic relations",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    }
+  }, {
+    "source" : "MING DYNASTY",
+    "target" : "MING XIAOLING MAUSOLEUM",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The Ming Xiaoling Mausoleum is a structure associated with the Ming dynasty.",
+      "keywords" : "dynastic association, mausoleum",
+      "source_id" : "chunk-94b4402fe75a600e942717ad4c8838bf"
+    }
+  }, {
+    "source" : "PUBLIC DEBT-TO-GDP RATIO",
+    "target" : "CHINA",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "China's public debt-to-GDP ratio was 22.4%, the lowest among countries listed.",
+      "keywords" : "fiscal metric, sovereign debt",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    }
+  }, {
+    "source" : "JEAN LANNES",
+    "target" : "NAPOLEON",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Lannes was one of Napoleon's most daring and talented generals and a personal friend, allowed to use the informal 'tu' instead of formal 'vous'.",
+      "keywords" : "friendship, military loyalty, informal address",
+      "source_id" : "chunk-b4599d8b76545528dc444687eb6e6d46"
+    }
+  }, {
+    "source" : "INDIA",
+    "target" : "PPP",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "India's economy is ranked third largest in the world by purchasing power parity, with per capita PPP of $6,616.",
+      "keywords" : "economic ranking, purchasing power",
+      "source_id" : "chunk-957e3cb0bdc766d95f840674cad21282"
+    }
+  }, {
+    "source" : "MING DYNASTY",
+    "target" : "YONGLE EMPEROR",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The Yongle Emperor was a ruler of the Ming dynasty during its early period.",
+      "keywords" : "rulership, dynasty",
+      "source_id" : "chunk-94b4402fe75a600e942717ad4c8838bf"
+    }
+  }, {
+    "source" : "INDIA",
+    "target" : "1991 ECONOMIC LIBERALISATION",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "After the 1991 economic liberalisation, India achieved 6-7% average annual GDP growth.",
+      "keywords" : "economic reform, growth catalyst",
+      "source_id" : "chunk-957e3cb0bdc766d95f840674cad21282"
+    }
+  }, {
+    "source" : "INDIA",
+    "target" : "FY 2015 AND 2017 GROWTH MILESTONE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "India's economy became the world's fastest growing major economy in FY 2015 and 2017.",
+      "keywords" : "growth milestone, economic leadership",
+      "source_id" : "chunk-159e7f1b789d4ee89938c9ec742bc1b4"
+    }
+  }, {
+    "source" : "EUROSTAT",
+    "target" : "FRANCE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Eurostat reported France's public debt-to-GDP ratio of 98.2% in Q2 2016.",
+      "keywords" : "data source, fiscal reporting",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    }
+  }, {
+    "source" : "CONGO-BRAZZAVILLE",
+    "target" : "PUBLIC EXPENDITURE HEALTH",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Public health expenditure in Congo-Brazzaville was 8.9% of GDP in 2004, with US$30 per capita.",
+      "keywords" : "government spending, GDP, health funding",
+      "source_id" : "chunk-9866c59e67a687bb899dc48834508b7f"
+    }
+  }, {
+    "source" : "INDIA",
+    "target" : "FY 2017",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "In FY 2017, India's economy again became the world's fastest growing major economy.",
+      "keywords" : "economic milestone, growth leadership",
+      "source_id" : "chunk-957e3cb0bdc766d95f840674cad21282"
+    }
+  }, {
+    "source" : "INDIA",
+    "target" : "PER CAPITA GDP",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "India ranks 141st in per capita nominal GDP and 123rd in PPP per capita GDP as of 2016.",
+      "keywords" : "income ranking, economic disparity",
+      "source_id" : "chunk-159e7f1b789d4ee89938c9ec742bc1b4"
+    }
+  }, {
+    "source" : "ECONOMIC LIBERALISATION 1991",
+    "target" : "FY 2015 AND 2017 GROWTH MILESTONE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The 1991 liberalisation set the foundation for India's sustained growth culminating in the 2015/2017 milestone.",
+      "keywords" : "causal link, long-term growth",
+      "source_id" : "chunk-159e7f1b789d4ee89938c9ec742bc1b4"
+    }
+  }, {
+    "source" : "NAPOLEON",
+    "target" : "EMPIRE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Napoleon was the emperor who ruled the Empire and bestowed titles and ranks upon his generals.",
+      "keywords" : "sovereignty, leadership, state",
+      "source_id" : "chunk-b4599d8b76545528dc444687eb6e6d46"
+    }
+  }, {
+    "source" : "INDIA",
+    "target" : "FY 2015",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "In FY 2015, India's economy became the world's fastest growing major economy.",
+      "keywords" : "economic milestone, growth leadership",
+      "source_id" : "chunk-957e3cb0bdc766d95f840674cad21282"
+    }
+  }, {
+    "source" : "INDIA",
+    "target" : "PURCHASING POWER PARITY",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "India is the world's 3rd largest economy by PPP with per capita of $6,616.",
+      "keywords" : "economic ranking, PPP metric",
+      "source_id" : "chunk-159e7f1b789d4ee89938c9ec742bc1b4"
+    }
+  }, {
+    "source" : "HONG KONG",
+    "target" : "CHINA",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Hong Kong is referenced alongside mainland China in Nanjing's overall competence ranking comparison.",
+      "keywords" : "economic context, regional comparison",
+      "source_id" : "chunk-f31aa4dbc0cd33e8e3002f4e5ed8284f"
+    }
+  }, {
+    "source" : "INDIA",
+    "target" : "ECONOMIC LIBERALISATION 1991",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "India achieved 6-7% average GDP growth annually following the 1991 economic liberalisation.",
+      "keywords" : "policy impact, growth acceleration",
+      "source_id" : "chunk-159e7f1b789d4ee89938c9ec742bc1b4"
+    }
+  }, {
+    "source" : "KARMAPA",
+    "target" : "EDICT",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The Karmapa is the addressee and recipient of the edict.",
+      "keywords" : "recipient, address, imperial communication",
+      "source_id" : "chunk-30b5168227c442153d60e9765f3f21c0"
+    }
+  }, {
+    "source" : "PUBLIC DEBT-TO-GDP RATIO",
+    "target" : "JAPAN",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Japan's public debt-to-GDP ratio reached 243.2% in 2013, the highest mentioned.",
+      "keywords" : "fiscal metric, sovereign debt",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    }
+  }, {
+    "source" : "KARMAPA",
+    "target" : "HOLY RELICS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The Karmapa had his agent deliver holy relics, indicating they were in his possession or under his authority.",
+      "keywords" : "possession, religious authority, sacred objects",
+      "source_id" : "chunk-30b5168227c442153d60e9765f3f21c0"
+    }
+  }, {
+    "source" : "JE TSONGKHAPA",
+    "target" : "GELUG SCHOOL",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Je Tsongkhapa is the founder of the Gelug school.",
+      "keywords" : "founder, religious institution",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    }
+  }, {
+    "source" : "JIANGSU",
+    "target" : "CHINA",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Jiangsu is a province within China, providing the regional context for Nanjing's economic standing.",
+      "keywords" : "administrative hierarchy, region",
+      "source_id" : "chunk-f31aa4dbc0cd33e8e3002f4e5ed8284f"
+    }
+  }, {
+    "source" : "MING DYNASTY",
+    "target" : "KARMAPA KARGYU",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The Ming dynasty granted titles to lamas of the Karmapa Kargyu school.",
+      "keywords" : "title granting, religious patronage",
+      "source_id" : "chunk-97933445764abb820f82b985d6eeb068"
+    }
+  }, {
+    "source" : "INFORMATION OFFICE OF THE STATE COUNCIL OF THE PRC",
+    "target" : "EDICT",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The Information Office preserves the 1445 edict of the Zhengtong Emperor.",
+      "keywords" : "preservation, archival, historical document",
+      "source_id" : "chunk-30b5168227c442153d60e9765f3f21c0"
+    }
+  }, {
+    "source" : "IMF",
+    "target" : "INDIA",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "IMF reported India's public debt level of 66.7% of GDP.",
+      "keywords" : "data source, fiscal reporting",
+      "source_id" : "chunk-5adf9f4c35011d23d128e289edc753c1"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 58,
+    "edgeCount" : 72,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260819_043352/e0_pathrag_musique/storage/pathrag/pathrag/3hop1__857_846_7810"
+  }
+}

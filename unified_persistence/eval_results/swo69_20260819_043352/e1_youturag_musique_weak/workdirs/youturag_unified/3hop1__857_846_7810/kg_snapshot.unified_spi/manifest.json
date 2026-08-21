@@ -1,0 +1,27 @@
+{
+  "manifestVersion" : 1,
+  "backendId" : "filesystem_snapshot",
+  "ragId" : null,
+  "createdAt" : "2026-08-20T07:56:01.468141128Z",
+  "graph" : [ {
+    "namespace" : "youturag_demo_graph",
+    "nodeCount" : 0,
+    "edgeCount" : 0,
+    "payloadPath" : "graph/youturag_demo_graph.json"
+  } ],
+  "vector" : [ ],
+  "kv" : [ {
+    "namespace" : "youturag_demo_files",
+    "entryCount" : 3,
+    "payloadPath" : "kv/youturag_demo_files.json"
+  }, {
+    "namespace" : "youturag_demo_metadata",
+    "entryCount" : 5,
+    "payloadPath" : "kv/youturag_demo_metadata.json"
+  } ],
+  "artifacts" : [ ],
+  "metadata" : {
+    "source" : "config/common_rag_ollama.json",
+    "unifiedPersistence" : "true"
+  }
+}

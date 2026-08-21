@@ -2,3 +2,434 @@
 === [SWO69] 09:18:36 START graphrag_e0_graphrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
 === [SWO69] run dir: eval_results/swo69_20260819_043352 (reps=1 limit=15 datasets=musique,causal,webis) ===
 === [SWO69] 10:22:45 START graphrag_e0_graphrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] run dir: eval_results/swo69_20260819_043352 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 05:44:53 START graphrag_e0_graphrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 05:49:12 END   graphrag_e0_graphrag_musique rc=0 wall=259s ===
+[analyze_kg_quality] rows=15 systems=['graphrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_graphrag_musique/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_graphrag_musique/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['graphrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_graphrag_musique/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_graphrag_musique/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 05:49:20 START lightrag_e0_lightrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 05:49:27 END   lightrag_e0_lightrag_musique rc=0 wall=7s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_lightrag_musique/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_lightrag_musique/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_lightrag_musique/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_lightrag_musique/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 05:49:31 START pathrag_e0_pathrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] run dir: eval_results/swo69_20260819_043352 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 05:49:40 SKIP  graphrag_e0_graphrag_musique (output exists) ===
+=== [SWO69] 05:49:40 SKIP  lightrag_e0_lightrag_musique (output exists) ===
+=== [SWO69] 05:49:40 START pathrag_e0_pathrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 06:03:38 END   pathrag_e0_pathrag_musique rc=0 wall=847s ===
+[analyze_kg_quality] rows=1 systems=['pathrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_pathrag_musique/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_pathrag_musique/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['pathrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_pathrag_musique/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_pathrag_musique/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:03:40 START youturag_e0_youturag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 06:05:15 END   youturag_e0_youturag_musique rc=0 wall=95s ===
+[analyze_kg_quality] rows=15 systems=['youturag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_youturag_musique/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_youturag_musique/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['youturag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_youturag_musique/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_youturag_musique/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:05:17 START hipporag_e0_hipporag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 06:05:46 END   hipporag_e0_hipporag_musique rc=0 wall=29s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_hipporag_musique/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_hipporag_musique/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_hipporag_musique/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_hipporag_musique/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:05:48 START graphrag_e0_graphrag_causal (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 06:08:47 END   graphrag_e0_graphrag_causal rc=0 wall=179s ===
+[analyze_kg_quality] rows=15 systems=['graphrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_graphrag_causal/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_graphrag_causal/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['graphrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_graphrag_causal/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_graphrag_causal/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:08:52 START lightrag_e0_lightrag_causal (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 06:08:54 END   lightrag_e0_lightrag_causal rc=0 wall=2s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_lightrag_causal/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_lightrag_causal/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_lightrag_causal/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_lightrag_causal/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:08:55 START pathrag_e0_pathrag_causal (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 06:22:47 END   pathrag_e0_pathrag_causal rc=0 wall=832s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_pathrag_causal/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_pathrag_causal/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['pathrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_pathrag_causal/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_pathrag_causal/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:22:49 START youturag_e0_youturag_causal (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 06:26:03 END   youturag_e0_youturag_causal rc=0 wall=194s ===
+[analyze_kg_quality] rows=15 systems=['youturag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_youturag_causal/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_youturag_causal/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['youturag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_youturag_causal/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_youturag_causal/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:26:06 START hipporag_e0_hipporag_causal (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 06:26:09 END   hipporag_e0_hipporag_causal rc=0 wall=3s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_hipporag_causal/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_hipporag_causal/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_hipporag_causal/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_hipporag_causal/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:26:10 START graphrag_e0_graphrag_webis (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 06:27:39 END   graphrag_e0_graphrag_webis rc=0 wall=89s ===
+[analyze_kg_quality] rows=15 systems=['graphrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_graphrag_webis/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_graphrag_webis/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['graphrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_graphrag_webis/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_graphrag_webis/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:27:43 START lightrag_e0_lightrag_webis (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 06:27:46 END   lightrag_e0_lightrag_webis rc=0 wall=3s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_lightrag_webis/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_lightrag_webis/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_lightrag_webis/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_lightrag_webis/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:27:47 START pathrag_e0_pathrag_webis (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 06:41:39 END   pathrag_e0_pathrag_webis rc=0 wall=832s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_pathrag_webis/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_pathrag_webis/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['pathrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_pathrag_webis/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_pathrag_webis/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:41:41 START youturag_e0_youturag_webis (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 06:42:48 END   youturag_e0_youturag_webis rc=0 wall=67s ===
+[analyze_kg_quality] rows=15 systems=['youturag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_youturag_webis/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_youturag_webis/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['youturag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_youturag_webis/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_youturag_webis/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:42:50 START hipporag_e0_hipporag_webis (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 06:42:53 END   hipporag_e0_hipporag_webis rc=0 wall=3s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_hipporag_webis/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_hipporag_webis/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_hipporag_webis/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_hipporag_webis/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:42:54 START graphrag_e1_graphrag_musique_mid (model_index=gemma4:e4b model_answer=gemma4:e4b) ===
+=== [SWO69] 06:44:10 END   graphrag_e1_graphrag_musique_mid rc=0 wall=76s ===
+[analyze_kg_quality] rows=15 systems=['graphrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_graphrag_musique_mid/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_graphrag_musique_mid/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['graphrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_graphrag_musique_mid/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_graphrag_musique_mid/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:44:14 START lightrag_e1_lightrag_musique_mid (model_index=gemma4:e4b model_answer=qwen3.8:27b) ===
+=== [SWO69] 06:44:17 END   lightrag_e1_lightrag_musique_mid rc=0 wall=3s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_lightrag_musique_mid/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_lightrag_musique_mid/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_lightrag_musique_mid/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_lightrag_musique_mid/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:44:18 START pathrag_e1_pathrag_musique_mid (model_index=gemma4:e4b model_answer=gemma4:e4b) ===
+=== [SWO69] 06:58:20 END   pathrag_e1_pathrag_musique_mid rc=0 wall=842s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_pathrag_musique_mid/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_pathrag_musique_mid/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['pathrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_pathrag_musique_mid/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_pathrag_musique_mid/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:58:22 START youturag_e1_youturag_musique_mid (model_index=gemma4:e4b model_answer=gemma4:e4b) ===
+=== [SWO69] 07:00:43 END   youturag_e1_youturag_musique_mid rc=0 wall=141s ===
+[analyze_kg_quality] rows=15 systems=['youturag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_youturag_musique_mid/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_youturag_musique_mid/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['youturag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_youturag_musique_mid/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_youturag_musique_mid/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:00:45 START hipporag_e1_hipporag_musique_mid (model_index=gemma4:e4b model_answer=gemma4:e4b) ===
+=== [SWO69] 07:00:51 END   hipporag_e1_hipporag_musique_mid rc=0 wall=6s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_hipporag_musique_mid/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_hipporag_musique_mid/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_hipporag_musique_mid/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_hipporag_musique_mid/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:00:53 START graphrag_e1_graphrag_causal_mid (model_index=gemma4:e4b model_answer=gemma4:e4b) ===
+=== [SWO69] 07:04:37 END   graphrag_e1_graphrag_causal_mid rc=0 wall=224s ===
+[analyze_kg_quality] rows=15 systems=['graphrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_graphrag_causal_mid/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_graphrag_causal_mid/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['graphrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_graphrag_causal_mid/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_graphrag_causal_mid/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:04:49 START lightrag_e1_lightrag_causal_mid (model_index=gemma4:e4b model_answer=qwen3.8:27b) ===
+=== [SWO69] 07:04:59 END   lightrag_e1_lightrag_causal_mid rc=0 wall=10s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_lightrag_causal_mid/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_lightrag_causal_mid/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_lightrag_causal_mid/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_lightrag_causal_mid/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:05:01 START pathrag_e1_pathrag_causal_mid (model_index=gemma4:e4b model_answer=gemma4:e4b) ===
+=== [SWO69] 07:19:34 END   pathrag_e1_pathrag_causal_mid rc=0 wall=873s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_pathrag_causal_mid/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_pathrag_causal_mid/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['pathrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_pathrag_causal_mid/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_pathrag_causal_mid/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:19:36 START youturag_e1_youturag_causal_mid (model_index=gemma4:e4b model_answer=gemma4:e4b) ===
+=== [SWO69] 07:23:06 END   youturag_e1_youturag_causal_mid rc=0 wall=210s ===
+[analyze_kg_quality] rows=15 systems=['youturag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_youturag_causal_mid/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_youturag_causal_mid/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['youturag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_youturag_causal_mid/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_youturag_causal_mid/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:23:09 START hipporag_e1_hipporag_causal_mid (model_index=gemma4:e4b model_answer=gemma4:e4b) ===
+=== [SWO69] 07:23:13 END   hipporag_e1_hipporag_causal_mid rc=0 wall=4s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_hipporag_causal_mid/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_hipporag_causal_mid/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_hipporag_causal_mid/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_hipporag_causal_mid/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:23:14 START graphrag_e1_graphrag_webis_mid (model_index=gemma4:e4b model_answer=gemma4:e4b) ===
+=== [SWO69] 07:24:46 END   graphrag_e1_graphrag_webis_mid rc=0 wall=92s ===
+[analyze_kg_quality] rows=15 systems=['graphrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_graphrag_webis_mid/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_graphrag_webis_mid/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['graphrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_graphrag_webis_mid/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_graphrag_webis_mid/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:24:56 START lightrag_e1_lightrag_webis_mid (model_index=gemma4:e4b model_answer=qwen3.8:27b) ===
+=== [SWO69] 07:25:00 END   lightrag_e1_lightrag_webis_mid rc=0 wall=4s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_lightrag_webis_mid/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_lightrag_webis_mid/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_lightrag_webis_mid/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_lightrag_webis_mid/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:25:01 START pathrag_e1_pathrag_webis_mid (model_index=gemma4:e4b model_answer=gemma4:e4b) ===
+=== [SWO69] 07:38:57 END   pathrag_e1_pathrag_webis_mid rc=0 wall=836s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_pathrag_webis_mid/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_pathrag_webis_mid/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['pathrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_pathrag_webis_mid/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_pathrag_webis_mid/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:38:59 START youturag_e1_youturag_webis_mid (model_index=gemma4:e4b model_answer=gemma4:e4b) ===
+=== [SWO69] 07:39:54 END   youturag_e1_youturag_webis_mid rc=0 wall=55s ===
+[analyze_kg_quality] rows=15 systems=['youturag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_youturag_webis_mid/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_youturag_webis_mid/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['youturag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_youturag_webis_mid/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_youturag_webis_mid/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:39:56 START hipporag_e1_hipporag_webis_mid (model_index=gemma4:e4b model_answer=gemma4:e4b) ===
+=== [SWO69] 07:39:58 END   hipporag_e1_hipporag_webis_mid rc=0 wall=2s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_hipporag_webis_mid/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_hipporag_webis_mid/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_hipporag_webis_mid/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_hipporag_webis_mid/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:39:59 START graphrag_e1_graphrag_musique_weak (model_index=llama3.2:3b model_answer=llama3.2:3b) ===
+=== [SWO69] 07:41:11 END   graphrag_e1_graphrag_musique_weak rc=0 wall=72s ===
+[analyze_kg_quality] rows=15 systems=['graphrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_graphrag_musique_weak/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_graphrag_musique_weak/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['graphrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_graphrag_musique_weak/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_graphrag_musique_weak/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:41:16 START lightrag_e1_lightrag_musique_weak (model_index=llama3.2:3b model_answer=qwen3.8:27b) ===
+=== [SWO69] 07:41:19 END   lightrag_e1_lightrag_musique_weak rc=0 wall=3s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_lightrag_musique_weak/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_lightrag_musique_weak/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_lightrag_musique_weak/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_lightrag_musique_weak/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:41:21 START pathrag_e1_pathrag_musique_weak (model_index=llama3.2:3b model_answer=llama3.2:3b) ===
+=== [SWO69] 07:55:25 END   pathrag_e1_pathrag_musique_weak rc=0 wall=844s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_pathrag_musique_weak/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_pathrag_musique_weak/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['pathrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_pathrag_musique_weak/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_pathrag_musique_weak/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:55:27 START youturag_e1_youturag_musique_weak (model_index=llama3.2:3b model_answer=llama3.2:3b) ===
+=== [SWO69] 07:56:53 END   youturag_e1_youturag_musique_weak rc=0 wall=86s ===
+[analyze_kg_quality] rows=15 systems=['youturag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_youturag_musique_weak/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_youturag_musique_weak/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['youturag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_youturag_musique_weak/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_youturag_musique_weak/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:56:58 START hipporag_e1_hipporag_musique_weak (model_index=llama3.2:3b model_answer=llama3.2:3b) ===
+=== [SWO69] 07:57:01 END   hipporag_e1_hipporag_musique_weak rc=0 wall=3s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:57:02 START graphrag_e1_graphrag_causal_weak (model_index=llama3.2:3b model_answer=llama3.2:3b) ===
+=== [SWO69] 07:59:24 END   graphrag_e1_graphrag_causal_weak rc=0 wall=142s ===
+[analyze_kg_quality] rows=15 systems=['graphrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['graphrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:59:40 START lightrag_e1_lightrag_causal_weak (model_index=llama3.2:3b model_answer=qwen3.8:27b) ===
+=== [SWO69] 07:59:44 END   lightrag_e1_lightrag_causal_weak rc=0 wall=4s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_lightrag_causal_weak/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_lightrag_causal_weak/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_lightrag_causal_weak/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_lightrag_causal_weak/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:59:46 START pathrag_e1_pathrag_causal_weak (model_index=llama3.2:3b model_answer=llama3.2:3b) ===
+=== [SWO69] 08:14:23 END   pathrag_e1_pathrag_causal_weak rc=0 wall=877s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_pathrag_causal_weak/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_pathrag_causal_weak/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['pathrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_pathrag_causal_weak/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_pathrag_causal_weak/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 08:14:24 START youturag_e1_youturag_causal_weak (model_index=llama3.2:3b model_answer=llama3.2:3b) ===
+=== [SWO69] 08:16:18 END   youturag_e1_youturag_causal_weak rc=0 wall=114s ===
+[analyze_kg_quality] rows=15 systems=['youturag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_youturag_causal_weak/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_youturag_causal_weak/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['youturag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_youturag_causal_weak/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_youturag_causal_weak/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 08:16:19 START hipporag_e1_hipporag_causal_weak (model_index=llama3.2:3b model_answer=llama3.2:3b) ===
+=== [SWO69] 08:16:22 END   hipporag_e1_hipporag_causal_weak rc=0 wall=3s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_hipporag_causal_weak/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_hipporag_causal_weak/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_hipporag_causal_weak/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_hipporag_causal_weak/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 08:16:23 START graphrag_e1_graphrag_webis_weak (model_index=llama3.2:3b model_answer=llama3.2:3b) ===
+=== [SWO69] 08:17:29 END   graphrag_e1_graphrag_webis_weak rc=0 wall=66s ===
+[analyze_kg_quality] rows=15 systems=['graphrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_graphrag_webis_weak/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_graphrag_webis_weak/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['graphrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_graphrag_webis_weak/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_graphrag_webis_weak/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 08:17:33 START lightrag_e1_lightrag_webis_weak (model_index=llama3.2:3b model_answer=qwen3.8:27b) ===
+=== [SWO69] 08:17:35 END   lightrag_e1_lightrag_webis_weak rc=0 wall=2s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_lightrag_webis_weak/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_lightrag_webis_weak/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_lightrag_webis_weak/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_lightrag_webis_weak/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 08:17:36 START pathrag_e1_pathrag_webis_weak (model_index=llama3.2:3b model_answer=llama3.2:3b) ===
+=== [SWO69] 08:26:02 END   pathrag_e0_pathrag_musique rc=0 wall=9382s ===
+[analyze_kg_quality] rows=15 systems=['pathrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_pathrag_musique/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_pathrag_musique/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['pathrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_pathrag_musique/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_pathrag_musique/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 08:26:05 SKIP  youturag_e0_youturag_musique (output exists) ===
+=== [SWO69] 08:26:05 SKIP  hipporag_e0_hipporag_musique (output exists) ===
+=== [SWO69] 08:26:05 SKIP  graphrag_e0_graphrag_causal (output exists) ===
+=== [SWO69] 08:26:05 SKIP  lightrag_e0_lightrag_causal (output exists) ===
+=== [SWO69] 08:26:05 SKIP  pathrag_e0_pathrag_causal (output exists) ===
+=== [SWO69] 08:26:05 SKIP  youturag_e0_youturag_causal (output exists) ===
+=== [SWO69] 08:26:05 SKIP  hipporag_e0_hipporag_causal (output exists) ===
+=== [SWO69] 08:26:05 SKIP  graphrag_e0_graphrag_webis (output exists) ===
+=== [SWO69] 08:26:05 SKIP  lightrag_e0_lightrag_webis (output exists) ===
+=== [SWO69] 08:26:05 SKIP  pathrag_e0_pathrag_webis (output exists) ===
+=== [SWO69] 08:26:05 SKIP  youturag_e0_youturag_webis (output exists) ===
+=== [SWO69] 08:26:05 SKIP  hipporag_e0_hipporag_webis (output exists) ===
+=== [SWO69] 08:26:05 SKIP  graphrag_e1_graphrag_musique_mid (output exists) ===
+=== [SWO69] 08:26:05 SKIP  lightrag_e1_lightrag_musique_mid (output exists) ===
+=== [SWO69] 08:26:05 SKIP  pathrag_e1_pathrag_musique_mid (output exists) ===
+=== [SWO69] 08:26:05 SKIP  youturag_e1_youturag_musique_mid (output exists) ===
+=== [SWO69] 08:26:05 SKIP  hipporag_e1_hipporag_musique_mid (output exists) ===
+=== [SWO69] 08:26:05 SKIP  graphrag_e1_graphrag_causal_mid (output exists) ===
+=== [SWO69] 08:26:05 SKIP  lightrag_e1_lightrag_causal_mid (output exists) ===
+=== [SWO69] 08:26:05 SKIP  pathrag_e1_pathrag_causal_mid (output exists) ===
+=== [SWO69] 08:26:05 SKIP  youturag_e1_youturag_causal_mid (output exists) ===
+=== [SWO69] 08:26:05 SKIP  hipporag_e1_hipporag_causal_mid (output exists) ===
+=== [SWO69] 08:26:05 SKIP  graphrag_e1_graphrag_webis_mid (output exists) ===
+=== [SWO69] 08:26:05 SKIP  lightrag_e1_lightrag_webis_mid (output exists) ===
+=== [SWO69] 08:26:05 SKIP  pathrag_e1_pathrag_webis_mid (output exists) ===
+=== [SWO69] 08:26:05 SKIP  youturag_e1_youturag_webis_mid (output exists) ===
+=== [SWO69] 08:26:05 SKIP  hipporag_e1_hipporag_webis_mid (output exists) ===
+=== [SWO69] 08:26:05 SKIP  graphrag_e1_graphrag_musique_weak (output exists) ===
+=== [SWO69] 08:26:05 SKIP  lightrag_e1_lightrag_musique_weak (output exists) ===
+=== [SWO69] 08:26:05 SKIP  pathrag_e1_pathrag_musique_weak (output exists) ===
+=== [SWO69] 08:26:05 SKIP  youturag_e1_youturag_musique_weak (output exists) ===
+=== [SWO69] 08:26:05 SKIP  hipporag_e1_hipporag_musique_weak (output exists) ===
+=== [SWO69] 08:26:05 SKIP  graphrag_e1_graphrag_causal_weak (output exists) ===
+=== [SWO69] 08:26:05 SKIP  lightrag_e1_lightrag_causal_weak (output exists) ===
+=== [SWO69] 08:26:05 SKIP  pathrag_e1_pathrag_causal_weak (output exists) ===
+=== [SWO69] 08:26:05 SKIP  youturag_e1_youturag_causal_weak (output exists) ===
+=== [SWO69] 08:26:05 SKIP  hipporag_e1_hipporag_causal_weak (output exists) ===
+=== [SWO69] 08:26:05 SKIP  graphrag_e1_graphrag_webis_weak (output exists) ===
+=== [SWO69] 08:26:05 SKIP  lightrag_e1_lightrag_webis_weak (output exists) ===
+=== [SWO69] 08:26:05 START pathrag_e1_pathrag_webis_weak (model_index=llama3.2:3b model_answer=llama3.2:3b) ===
+=== [SWO69] 08:31:35 END   pathrag_e1_pathrag_webis_weak rc=0 wall=839s ===
+[analyze_kg_quality] rows=1 systems=['pathrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_pathrag_webis_weak/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_pathrag_webis_weak/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['pathrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_pathrag_webis_weak/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_pathrag_webis_weak/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 08:31:40 START youturag_e1_youturag_webis_weak (model_index=llama3.2:3b model_answer=llama3.2:3b) ===
+=== [SWO69] 08:33:08 END   youturag_e1_youturag_webis_weak rc=0 wall=88s ===
+[analyze_kg_quality] rows=15 systems=['youturag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_youturag_webis_weak/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_youturag_webis_weak/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['youturag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_youturag_webis_weak/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_youturag_webis_weak/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 08:33:10 START hipporag_e1_hipporag_webis_weak (model_index=llama3.2:3b model_answer=llama3.2:3b) ===
+=== [SWO69] 08:33:14 END   hipporag_e1_hipporag_webis_weak rc=0 wall=4s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_hipporag_webis_weak/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e1_hipporag_webis_weak/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e1_hipporag_webis_weak/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e1_hipporag_webis_weak/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 08:33:15 SKIP e2/lightrag — no kg_snapshot under eval_results/swo69_20260819_043352/e0_lightrag_musique (run E0 first) ===
+=== [SWO69] 08:33:15 SKIP e2/hipporag — jar lacks the RAG-runner e2 hook (rebuild required, see SWO69/REBUILD.md) ===
+[analysis] merged rows=286
+[analysis] significant pairs (p<0.05): 8
+  density × rh_at_5: rs=-0.434 p=0.0000**
+  density × cic: rs=-0.369 p=0.0001**
+  er × rh_at_5: rs=-0.364 p=0.0002**
+  kgc × rh_at_5: rs=-0.364 p=0.0002**
+  er × cic: rs=-0.286 p=0.0034**
+  kgc × cic: rs=-0.286 p=0.0034**
+  rr × faithfulness: rs=-0.186 p=0.0092**
+  rr × rh_at_5: rs=-0.197 p=0.0464*
+  reg intercept: coef=0.137 p=0.0000 stdβ=None
+  reg ER: coef=0.926 p=0.0000 stdβ=1.08
+  reg RR: coef=-0.750 p=0.0000 stdβ=-0.608
+  reg Density: coef=3.736 p=0.3133 stdβ=0.282
+  reg System=pathrag: coef=-0.283 p=0.0412 stdβ=-0.509
+[analysis] wrote 7 files to /home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352/e0_aggregate/analysis
+=== [SWO69] 08:33:22 DONE mode=all ===

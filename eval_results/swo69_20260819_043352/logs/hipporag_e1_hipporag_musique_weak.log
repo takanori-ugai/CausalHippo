@@ -1,0 +1,194 @@
+kotlin-logging: initializing... active logger factory: Slf4jLoggerFactory
+16:56:59,276 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found logback-core version 1.5.38
+16:56:59,277 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - No custom configurators were discovered as a service.
+16:56:59,277 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+16:56:59,278 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+16:56:59,283 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+16:56:59,287 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml]
+16:56:59,370 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Scan attribute set to true. Will scan for configuration file changes.
+16:56:59,371 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@179ece50 - URL [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml] is not of type file
+16:56:59,373 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "INFO" substituted for "${ROOT_LOG_LEVEL:-INFO}"
+16:56:59,373 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL:-DEBUG}"
+16:56:59,373 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_LOG_LEVEL:-TRACE}"
+16:56:59,374 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL:-TRACE}"
+16:56:59,374 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL:-ERROR}"
+16:56:59,374 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL:-ERROR}"
+16:56:59,374 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL:-ERROR}"
+16:56:59,374 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL:-DEBUG}"
+16:56:59,374 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Missing watchable .xml or .properties files.
+16:56:59,374 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Watching .xml files requires that the main configuration file is reachable as a URL
+16:56:59,375 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Main configuration file URL: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml
+16:56:59,376 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - FileWatchList= {}
+16:56:59,376 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - URLWatchList= {}
+16:56:59,379 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+16:56:59,379 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+16:56:59,383 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+16:56:59,434 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - NOTE: Writing to the console can be slow. Try to avoid logging to the 
+16:56:59,434 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - console in production environments, especially in high volume systems.
+16:56:59,434 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also https://logback.qos.ch/codes.html#slowConsole
+16:56:59,434 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL}"
+16:56:59,435 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag] to DEBUG
+16:56:59,438 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag] to false
+16:56:59,438 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag]
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_LOG_LEVEL}"
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.neo4j] to TRACE
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.neo4j] to false
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.neo4j]
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL}"
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.neo4j.driver] to TRACE
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.neo4j.driver] to false
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[org.neo4j.driver]
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL}"
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.memory] to DEBUG
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.memory] to false
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.memory]
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL}"
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j] to ERROR
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j] to false
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j]
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.okhttp] to ERROR
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.okhttp] to false
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.okhttp]
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.openai] to ERROR
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.openai] to false
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.openai]
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [okhttp3] to ERROR
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [okhttp3] to false
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[okhttp3]
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL}"
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.ai4j.openai4j] to ERROR
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.ai4j.openai4j] to false
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.ai4j.openai4j]
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "INFO" substituted for "${ROOT_LOG_LEVEL}"
+16:56:59,439 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+16:56:59,439 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+16:56:59,440 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@3cd3e762 - End of configuration.
+16:56:59,440 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@1fa121e2 - Registering current configuration as safe fallback point
+16:56:59,446 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 162 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+WARNING: --use-unified-api=false keeps 'shared.eval.MultiConditionExperimentKt' on legacy condition runners. This compatibility path is planned for deprecation; prefer --use-unified-api=true.
+Running 1 conditions on 15 samples
+Parallelism: 1
+Unified API: false
+Unified persistence SPI: false
+Data: data/musique_experiment/musique_dev_balanced_30.jsonl
+Output: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak
+
+=== Condition: hipporag_graph (HippoRAG graph retrieval) ===
+2026-08-20 16:56:59.558 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small
+2026-08-20 16:56:59.812 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/chunk_embeddings
+2026-08-20 16:56:59.813 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/entity_embeddings
+2026-08-20 16:56:59.814 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/fact_embeddings
+2026-08-20 16:56:59.970 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small
+2026-08-20 16:56:59.973 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/chunk_embeddings
+2026-08-20 16:56:59.974 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/entity_embeddings
+2026-08-20 16:56:59.975 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/fact_embeddings
+2026-08-20 16:56:59.977 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 16:56:59.977 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 16:57:00.463 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 20 new records, 0 records already exist.
+2026-08-20 16:57:00.692 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small
+2026-08-20 16:57:00.696 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/chunk_embeddings
+2026-08-20 16:57:00.697 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/entity_embeddings
+2026-08-20 16:57:00.697 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/fact_embeddings
+2026-08-20 16:57:00.699 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 16:57:00.699 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 16:57:00.714 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 20 new records, 0 records already exist.
+2026-08-20 16:57:00.737 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small
+2026-08-20 16:57:00.740 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/chunk_embeddings
+2026-08-20 16:57:00.741 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/entity_embeddings
+2026-08-20 16:57:00.742 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/fact_embeddings
+2026-08-20 16:57:00.743 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 16:57:00.743 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 16:57:00.750 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 20 new records, 0 records already exist.
+2026-08-20 16:57:00.785 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small
+2026-08-20 16:57:00.788 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/chunk_embeddings
+2026-08-20 16:57:00.788 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/entity_embeddings
+2026-08-20 16:57:00.789 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/fact_embeddings
+2026-08-20 16:57:00.790 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 16:57:00.790 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 16:57:00.800 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 20 new records, 0 records already exist.
+2026-08-20 16:57:00.823 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small
+2026-08-20 16:57:00.826 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/chunk_embeddings
+2026-08-20 16:57:00.827 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/entity_embeddings
+2026-08-20 16:57:00.828 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/fact_embeddings
+2026-08-20 16:57:00.829 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 16:57:00.829 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 16:57:00.835 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 20 new records, 0 records already exist.
+2026-08-20 16:57:00.858 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small
+2026-08-20 16:57:00.861 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/chunk_embeddings
+2026-08-20 16:57:00.862 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/entity_embeddings
+2026-08-20 16:57:00.863 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/fact_embeddings
+2026-08-20 16:57:00.864 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 16:57:00.864 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 16:57:00.869 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 20 new records, 0 records already exist.
+2026-08-20 16:57:00.891 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small
+2026-08-20 16:57:00.894 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/chunk_embeddings
+2026-08-20 16:57:00.895 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/entity_embeddings
+2026-08-20 16:57:00.896 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/fact_embeddings
+2026-08-20 16:57:00.897 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 16:57:00.897 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 16:57:00.904 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 20 new records, 0 records already exist.
+2026-08-20 16:57:00.926 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small
+2026-08-20 16:57:00.929 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/chunk_embeddings
+2026-08-20 16:57:00.930 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/entity_embeddings
+2026-08-20 16:57:00.931 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/fact_embeddings
+2026-08-20 16:57:00.932 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 16:57:00.932 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 16:57:00.938 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 20 new records, 0 records already exist.
+2026-08-20 16:57:00.961 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small
+2026-08-20 16:57:00.964 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/chunk_embeddings
+2026-08-20 16:57:00.965 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/entity_embeddings
+2026-08-20 16:57:00.966 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/fact_embeddings
+2026-08-20 16:57:00.967 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 16:57:00.967 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 16:57:00.973 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 20 new records, 0 records already exist.
+2026-08-20 16:57:00.995 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small
+2026-08-20 16:57:00.998 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/chunk_embeddings
+2026-08-20 16:57:00.999 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/entity_embeddings
+2026-08-20 16:57:01.000 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/fact_embeddings
+2026-08-20 16:57:01.001 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 16:57:01.001 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 16:57:01.005 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 20 new records, 0 records already exist.
+hipporag_graph: processed 10/15
+2026-08-20 16:57:01.030 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small
+2026-08-20 16:57:01.033 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/chunk_embeddings
+2026-08-20 16:57:01.034 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/entity_embeddings
+2026-08-20 16:57:01.035 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/fact_embeddings
+2026-08-20 16:57:01.036 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 16:57:01.036 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 16:57:01.040 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 20 new records, 0 records already exist.
+2026-08-20 16:57:01.062 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small
+2026-08-20 16:57:01.065 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/chunk_embeddings
+2026-08-20 16:57:01.066 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/entity_embeddings
+2026-08-20 16:57:01.067 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/fact_embeddings
+2026-08-20 16:57:01.068 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 16:57:01.068 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 16:57:01.073 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 20 new records, 0 records already exist.
+2026-08-20 16:57:01.094 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small
+2026-08-20 16:57:01.097 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/chunk_embeddings
+2026-08-20 16:57:01.098 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/entity_embeddings
+2026-08-20 16:57:01.099 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/fact_embeddings
+2026-08-20 16:57:01.100 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 16:57:01.100 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 16:57:01.105 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 20 new records, 0 records already exist.
+2026-08-20 16:57:01.127 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small
+2026-08-20 16:57:01.130 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/chunk_embeddings
+2026-08-20 16:57:01.131 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/entity_embeddings
+2026-08-20 16:57:01.131 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/fact_embeddings
+2026-08-20 16:57:01.132 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 16:57:01.132 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 16:57:01.137 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 20 new records, 0 records already exist.
+2026-08-20 16:57:01.159 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small
+2026-08-20 16:57:01.162 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/chunk_embeddings
+2026-08-20 16:57:01.162 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/entity_embeddings
+2026-08-20 16:57:01.163 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/workdirs/graph/llama3.2:3b_text-embedding-3-small/fact_embeddings
+2026-08-20 16:57:01.164 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-20 16:57:01.164 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-20 16:57:01.168 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 20 new records, 0 records already exist.
+hipporag_graph: processed 15/15
+Wrote 15 rows -> eval_results/swo69_20260819_043352/e1_hipporag_musique_weak/per_question/hipporag_graph.jsonl
+
+Finished. Aggregate CSV can be produced by scripts/aggregate_experiment_results.py

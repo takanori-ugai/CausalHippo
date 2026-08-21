@@ -64,3 +64,16 @@
 === [swo69-continue] 2026-08-19T10:22:45Z launching: bash run_experiment_swo69.sh all (SVO69_TS=20260819_043352) ===
 === [swo69-continue] 2026-08-19T10:22:50Z run script alive (pid=1112238) ===
 === [swo69-continue] 2026-08-19T21:39:00Z walltime remaining 833s < reserve 900s — exiting; PBS kill follows, successor resumes ===
+=== [swo69-continue] 2026-08-20T05:44:52Z supervisor up (job=interactive, mode=all, run_dir=/home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352) ===
+=== [swo69-continue] 2026-08-20T05:44:52Z successor queued: job=2174461 (it will wait for us to terminate, then resume) ===
+=== [swo69-continue] 2026-08-20T05:44:53Z Ollama already up ===
+=== [swo69-continue] 2026-08-20T05:44:53Z launching: bash run_experiment_swo69.sh all (SVO69_TS=20260819_043352) ===
+=== [swo69-continue] 2026-08-20T05:44:58Z run script alive (pid=3495099) ===
+=== [swo69-continue] 2026-08-20T05:49:28Z supervisor up (job=2174461.pbs1, mode=all, run_dir=/home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352) ===
+=== [swo69-continue] 2026-08-20T05:49:28Z a swo69_batch job is already in the queue: 2174461.pbs1  — not duplicating ===
+=== [swo69-continue] 2026-08-20T05:49:28Z Ollama not responding — starting: /home/aad13623fe/bin/ollama serve ===
+=== [swo69-continue] 2026-08-20T05:49:40Z Ollama up ===
+=== [swo69-continue] 2026-08-20T05:49:40Z launching: bash run_experiment_swo69.sh all (SVO69_TS=20260819_043352) ===
+=== [swo69-continue] 2026-08-20T05:49:45Z run script alive (pid=2853818) ===
+=== [swo69-continue] 2026-08-20T08:33:52Z DONE mode=all reached — exiting cleanly (queued successor will no-op) ===
+=== [swo69-continue] 2026-08-20T08:33:52Z DONE mode=all reached — exiting cleanly (queued successor will no-op) ===

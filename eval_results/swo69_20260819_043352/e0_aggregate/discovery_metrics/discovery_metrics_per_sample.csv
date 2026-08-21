@@ -1,0 +1,676 @@
+condition,system,dataset,sample_id,has_gold,n_gold_entities,kgc,rh_at_1,rh_at_3,rh_at_5,dcr_at_1,dcr_at_3,dcr_at_5,cig,cic,cic_all,plr,f1,exact_match,support_recall_at_5,bridge_coverage_at_5,mrr_at_5,ndcg_at_5,faithfulness,error
+graphrag,graphrag,causal,Data-Complex_System_No_Direct_Link_163,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Counterfactual_Reasoning_Required_309,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Shared_Trend_No_Direct_Link_484,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Reverse_Causation_Potential_500,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Co-occurrence_No_Mechanism_37,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data_721,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Shared_Trend_No_Direct_Link_118,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Reverse_Correlation_507,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Co-occurrence_No_Mechanism_307,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Conditional_Causation_451,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Intermediary_Chain_Causation_276,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Reverse_Causation_Potential_134,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Intermediary_Chain_Causation_296,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Complex_System_No_Direct_Link_76,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Reverse_Causation_Potential_93,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__734057_88628,True,8,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,4hop1__9007_698949_157828_162309,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,4hop3__193820_466199_128875_72134,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,3hop1__857_846_7810,True,3,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,4hop1__271272_508773_85832_745702,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,3hop1__140855_2053_52946,True,3,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__75207_46837,True,3,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__66149_85990,True,2,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,4hop3__312119_132409_146285_35031,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__464479_70131,True,2,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__697729_576069,True,2,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,4hop1__836115_49925_13759_736921,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__159903_419949,True,2,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,3hop2__90098_91678_10557,True,3,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,3hop1__280834_547811_80702,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,triviaqa_465,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,naturalquestions_1109,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,gooaq_53482,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,triviaqa_163,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,msmarco_1477,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,searchqa_571,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,paq_641867,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,paq_431075,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,naturalquestions_299,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,hotpotqa_30,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,msmarco_21861,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,hotpotqa_28,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,paq_244123,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,naturalquestions_483,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,squad2_1093,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+hipporag_graph,hipporag,causal,Data-Complex_System_No_Direct_Link_163,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Counterfactual_Reasoning_Required_309,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Shared_Trend_No_Direct_Link_484,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Reverse_Causation_Potential_500,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Co-occurrence_No_Mechanism_37,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data_721,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Shared_Trend_No_Direct_Link_118,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Reverse_Correlation_507,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Co-occurrence_No_Mechanism_307,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Conditional_Causation_451,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Intermediary_Chain_Causation_276,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Reverse_Causation_Potential_134,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Intermediary_Chain_Causation_296,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Complex_System_No_Direct_Link_76,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Reverse_Causation_Potential_93,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__734057_88628,True,8,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,4hop1__9007_698949_157828_162309,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,4hop3__193820_466199_128875_72134,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,3hop1__857_846_7810,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,4hop1__271272_508773_85832_745702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,3hop1__140855_2053_52946,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__75207_46837,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__66149_85990,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,4hop3__312119_132409_146285_35031,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__464479_70131,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__697729_576069,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,4hop1__836115_49925_13759_736921,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__159903_419949,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,3hop2__90098_91678_10557,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,3hop1__280834_547811_80702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,triviaqa_465,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,naturalquestions_1109,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,gooaq_53482,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,triviaqa_163,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,msmarco_1477,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,searchqa_571,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,paq_641867,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,paq_431075,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,naturalquestions_299,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,hotpotqa_30,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,msmarco_21861,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,hotpotqa_28,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,paq_244123,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,naturalquestions_483,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,squad2_1093,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Complex_System_No_Direct_Link_163,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Counterfactual_Reasoning_Required_309,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Shared_Trend_No_Direct_Link_484,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Reverse_Causation_Potential_500,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Co-occurrence_No_Mechanism_37,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data_721,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Shared_Trend_No_Direct_Link_118,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Reverse_Correlation_507,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Co-occurrence_No_Mechanism_307,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Conditional_Causation_451,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Intermediary_Chain_Causation_276,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Reverse_Causation_Potential_134,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Intermediary_Chain_Causation_296,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Complex_System_No_Direct_Link_76,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Reverse_Causation_Potential_93,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__734057_88628,True,8,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,4hop1__9007_698949_157828_162309,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,4hop3__193820_466199_128875_72134,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,3hop1__857_846_7810,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,4hop1__271272_508773_85832_745702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,3hop1__140855_2053_52946,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__75207_46837,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__66149_85990,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,4hop3__312119_132409_146285_35031,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__464479_70131,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__697729_576069,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,4hop1__836115_49925_13759_736921,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__159903_419949,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,3hop2__90098_91678_10557,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,3hop1__280834_547811_80702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,triviaqa_465,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,naturalquestions_1109,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,gooaq_53482,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,triviaqa_163,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,msmarco_1477,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,searchqa_571,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,paq_641867,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,paq_431075,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,naturalquestions_299,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,hotpotqa_30,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,msmarco_21861,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,hotpotqa_28,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,paq_244123,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,naturalquestions_483,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,squad2_1093,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+pathrag,pathrag,causal,Data-Complex_System_No_Direct_Link_163,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Counterfactual_Reasoning_Required_309,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Shared_Trend_No_Direct_Link_484,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Reverse_Causation_Potential_500,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Co-occurrence_No_Mechanism_37,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data_721,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Shared_Trend_No_Direct_Link_118,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Reverse_Correlation_507,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Co-occurrence_No_Mechanism_307,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Conditional_Causation_451,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Intermediary_Chain_Causation_276,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Reverse_Causation_Potential_134,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Intermediary_Chain_Causation_296,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Complex_System_No_Direct_Link_76,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Reverse_Causation_Potential_93,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,2hop__734057_88628,True,8,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,inf,0.5714285714285715,0.0,0.0,0.0,0.0,0.0,0.0,
+pathrag,pathrag,musique,4hop1__9007_698949_157828_162309,True,4,0.5,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+pathrag,pathrag,musique,4hop3__193820_466199_128875_72134,True,4,0.75,0.5,0.75,0.75,0.6666666666666666,1.0,1.0,0.0,1.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+pathrag,pathrag,musique,3hop1__857_846_7810,True,3,0.6666666666666666,0.3333333333333333,0.3333333333333333,0.6666666666666666,0.5,0.5,1.0,0.0,1.0,0.0,inf,0.6666666666666665,0.0,0.0,0.0,0.0,0.0,1.0,
+pathrag,pathrag,musique,4hop1__271272_508773_85832_745702,True,4,1.0,,,,,,,0.0,,,inf,1.0,1.0,0.0,0.0,0.0,0.0,0.0,
+pathrag,pathrag,musique,3hop1__140855_2053_52946,True,3,0.3333333333333333,0.3333333333333333,0.3333333333333333,0.3333333333333333,1.0,1.0,1.0,0.0,0.0,0.0,inf,0.4,0.0,0.0,0.0,0.0,0.0,1.0,
+pathrag,pathrag,musique,2hop__75207_46837,True,3,0.0,0.0,0.0,0.0,,,,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+pathrag,pathrag,musique,2hop__66149_85990,True,2,1.0,0.0,0.5,0.5,0.0,0.5,0.5,1.0,1.0,0.0,3.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+pathrag,pathrag,musique,4hop3__312119_132409_146285_35031,True,4,0.5,0.75,0.75,0.75,1.5,1.5,1.5,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+pathrag,pathrag,musique,2hop__464479_70131,True,2,0.5,0.0,0.5,0.5,0.0,1.0,1.0,0.0,1.0,0.0,inf,0.125,0.0,0.0,0.0,0.0,0.0,0.0,
+pathrag,pathrag,musique,2hop__697729_576069,True,2,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+pathrag,pathrag,musique,4hop1__836115_49925_13759_736921,True,4,0.75,0.0,0.25,0.25,0.0,0.3333333333333333,0.3333333333333333,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+pathrag,pathrag,musique,2hop__159903_419949,True,2,0.0,0.0,0.0,0.0,,,,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+pathrag,pathrag,musique,3hop2__90098_91678_10557,True,3,0.6666666666666666,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,inf,0.6666666666666666,0.0,0.0,0.0,0.0,0.0,1.0,
+pathrag,pathrag,musique,3hop1__280834_547811_80702,True,4,0.25,0.0,0.25,0.25,0.0,1.0,1.0,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+pathrag,pathrag,webis,triviaqa_465,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,naturalquestions_1109,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,gooaq_53482,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,triviaqa_163,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,msmarco_1477,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,searchqa_571,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,paq_641867,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,paq_431075,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,naturalquestions_299,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,hotpotqa_30,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,msmarco_21861,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,hotpotqa_28,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,paq_244123,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,naturalquestions_483,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,squad2_1093,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+youturag,youturag,causal,Data-Complex_System_No_Direct_Link_163,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Counterfactual_Reasoning_Required_309,True,2,0.0,0.0,1.0,1.0,,,,,1.0,1.0,,0.03773584905660377,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Shared_Trend_No_Direct_Link_484,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Reverse_Causation_Potential_500,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.08888888888888888,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Co-occurrence_No_Mechanism_37,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data_721,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.14285714285714288,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Shared_Trend_No_Direct_Link_118,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Reverse_Correlation_507,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Co-occurrence_No_Mechanism_307,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Conditional_Causation_451,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.06666666666666667,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Intermediary_Chain_Causation_276,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.08163265306122448,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Reverse_Causation_Potential_134,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Intermediary_Chain_Causation_296,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.08888888888888888,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Complex_System_No_Direct_Link_76,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Reverse_Causation_Potential_93,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.07272727272727272,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__734057_88628,True,8,0.0,0.375,0.375,0.375,,,,0.0,1.0,1.0,inf,0.1492537313432836,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,4hop1__9007_698949_157828_162309,True,4,0.0,0.0,0.0,0.5,,,,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,4hop3__193820_466199_128875_72134,True,4,0.0,0.25,0.75,1.0,,,,0.0,1.0,1.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,3hop1__857_846_7810,True,3,0.0,0.3333333333333333,0.6666666666666666,0.6666666666666666,,,,0.0,1.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,4hop1__271272_508773_85832_745702,True,4,0.0,0.0,0.0,0.5,,,,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,3hop1__140855_2053_52946,True,3,0.0,0.6666666666666666,1.0,1.0,,,,0.0,1.0,1.0,inf,0.06666666666666667,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__75207_46837,True,3,0.0,0.3333333333333333,0.6666666666666666,0.6666666666666666,,,,0.0,1.0,1.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__66149_85990,True,2,0.0,0.0,0.0,1.0,,,,0.0,1.0,1.0,inf,0.02702702702702703,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,4hop3__312119_132409_146285_35031,True,4,0.0,0.0,0.25,0.25,,,,0.0,0.0,0.0,inf,0.031746031746031744,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__464479_70131,True,2,0.0,0.5,0.5,0.5,,,,0.0,1.0,0.0,inf,0.03125,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__697729_576069,True,2,0.0,0.0,0.5,0.5,,,,0.0,1.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,4hop1__836115_49925_13759_736921,True,4,0.0,0.5,0.5,0.75,,,,0.0,1.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__159903_419949,True,2,0.0,0.0,0.0,0.0,,,,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,3hop2__90098_91678_10557,True,3,0.0,0.0,0.3333333333333333,0.3333333333333333,,,,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,3hop1__280834_547811_80702,True,4,0.0,0.0,0.25,0.25,,,,0.0,0.0,0.0,inf,0.03278688524590164,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,triviaqa_465,False,,,,,,,,,,,,,0.026666666666666672,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,naturalquestions_1109,False,,,,,,,,,,,,,0.026666666666666665,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,gooaq_53482,False,,,,,,,,,,,,,0.9787234042553191,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,triviaqa_163,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.75,
+youturag,youturag,webis,msmarco_1477,False,,,,,,,,,,,,,0.26373626373626374,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,searchqa_571,False,,,,,,,,,,,,,0.03636363636363636,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,paq_641867,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,paq_431075,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,naturalquestions_299,False,,,,,,,,,,,,,0.06349206349206349,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,hotpotqa_30,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,msmarco_21861,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,hotpotqa_28,False,,,,,,,,,,,,,0.06349206349206349,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,paq_244123,False,,,,,,,,,,,,,0.1492537313432836,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,naturalquestions_483,False,,,,,,,,,,,,,0.19718309859154928,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,squad2_1093,False,,,,,,,,,,,,,0.03125,0.0,0.0,0.0,0.0,0.0,1.0,
+graphrag,graphrag,causal,Data-Complex_System_No_Direct_Link_163,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Counterfactual_Reasoning_Required_309,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Shared_Trend_No_Direct_Link_484,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Reverse_Causation_Potential_500,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Co-occurrence_No_Mechanism_37,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data_721,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Shared_Trend_No_Direct_Link_118,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Reverse_Correlation_507,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Co-occurrence_No_Mechanism_307,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Conditional_Causation_451,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Intermediary_Chain_Causation_276,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Reverse_Causation_Potential_134,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Intermediary_Chain_Causation_296,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Complex_System_No_Direct_Link_76,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Reverse_Causation_Potential_93,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Complex_System_No_Direct_Link_163,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Counterfactual_Reasoning_Required_309,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Shared_Trend_No_Direct_Link_484,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Reverse_Causation_Potential_500,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Co-occurrence_No_Mechanism_37,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data_721,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Shared_Trend_No_Direct_Link_118,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Reverse_Correlation_507,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Co-occurrence_No_Mechanism_307,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Conditional_Causation_451,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Intermediary_Chain_Causation_276,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Reverse_Causation_Potential_134,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Intermediary_Chain_Causation_296,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Complex_System_No_Direct_Link_76,True,2,0.0,,,,,,,,,,,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,causal,Data-Reverse_Causation_Potential_93,True,2,0.0,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__734057_88628,True,8,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,4hop1__9007_698949_157828_162309,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,4hop3__193820_466199_128875_72134,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,3hop1__857_846_7810,True,3,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,4hop1__271272_508773_85832_745702,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,3hop1__140855_2053_52946,True,3,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__75207_46837,True,3,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__66149_85990,True,2,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,4hop3__312119_132409_146285_35031,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__464479_70131,True,2,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__697729_576069,True,2,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,4hop1__836115_49925_13759_736921,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__159903_419949,True,2,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,3hop2__90098_91678_10557,True,3,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,3hop1__280834_547811_80702,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__734057_88628,True,8,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,4hop1__9007_698949_157828_162309,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,4hop3__193820_466199_128875_72134,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,3hop1__857_846_7810,True,3,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,4hop1__271272_508773_85832_745702,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,3hop1__140855_2053_52946,True,3,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__75207_46837,True,3,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__66149_85990,True,2,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,4hop3__312119_132409_146285_35031,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__464479_70131,True,2,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__697729_576069,True,2,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,4hop1__836115_49925_13759_736921,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,2hop__159903_419949,True,2,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,3hop2__90098_91678_10557,True,3,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,musique,3hop1__280834_547811_80702,True,4,0.0,,,,,,,0.0,,,inf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,triviaqa_465,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,naturalquestions_1109,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,gooaq_53482,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,triviaqa_163,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,msmarco_1477,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,searchqa_571,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,paq_641867,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,paq_431075,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,naturalquestions_299,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,hotpotqa_30,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,msmarco_21861,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,hotpotqa_28,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,paq_244123,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,naturalquestions_483,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,squad2_1093,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,triviaqa_465,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,naturalquestions_1109,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,gooaq_53482,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,triviaqa_163,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,msmarco_1477,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,searchqa_571,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,paq_641867,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,paq_431075,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,naturalquestions_299,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,hotpotqa_30,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,msmarco_21861,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,hotpotqa_28,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,paq_244123,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,naturalquestions_483,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+graphrag,graphrag,webis,squad2_1093,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+hipporag_graph,hipporag,causal,Data-Complex_System_No_Direct_Link_163,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Counterfactual_Reasoning_Required_309,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Shared_Trend_No_Direct_Link_484,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Reverse_Causation_Potential_500,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Co-occurrence_No_Mechanism_37,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data_721,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Shared_Trend_No_Direct_Link_118,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Reverse_Correlation_507,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Co-occurrence_No_Mechanism_307,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Conditional_Causation_451,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Intermediary_Chain_Causation_276,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Reverse_Causation_Potential_134,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Intermediary_Chain_Causation_296,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Complex_System_No_Direct_Link_76,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Reverse_Causation_Potential_93,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Complex_System_No_Direct_Link_163,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Counterfactual_Reasoning_Required_309,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Shared_Trend_No_Direct_Link_484,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Reverse_Causation_Potential_500,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Co-occurrence_No_Mechanism_37,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data_721,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Shared_Trend_No_Direct_Link_118,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Reverse_Correlation_507,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Co-occurrence_No_Mechanism_307,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Conditional_Causation_451,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Intermediary_Chain_Causation_276,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Reverse_Causation_Potential_134,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Intermediary_Chain_Causation_296,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Complex_System_No_Direct_Link_76,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,causal,Data-Reverse_Causation_Potential_93,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__734057_88628,True,8,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,4hop1__9007_698949_157828_162309,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,4hop3__193820_466199_128875_72134,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,3hop1__857_846_7810,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,4hop1__271272_508773_85832_745702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,3hop1__140855_2053_52946,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__75207_46837,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__66149_85990,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,4hop3__312119_132409_146285_35031,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__464479_70131,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__697729_576069,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,4hop1__836115_49925_13759_736921,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__159903_419949,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,3hop2__90098_91678_10557,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,3hop1__280834_547811_80702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__734057_88628,True,8,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,4hop1__9007_698949_157828_162309,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,4hop3__193820_466199_128875_72134,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,3hop1__857_846_7810,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,4hop1__271272_508773_85832_745702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,3hop1__140855_2053_52946,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__75207_46837,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__66149_85990,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,4hop3__312119_132409_146285_35031,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__464479_70131,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__697729_576069,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,4hop1__836115_49925_13759_736921,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,2hop__159903_419949,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,3hop2__90098_91678_10557,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,musique,3hop1__280834_547811_80702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,triviaqa_465,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,naturalquestions_1109,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,gooaq_53482,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,triviaqa_163,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,msmarco_1477,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,searchqa_571,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,paq_641867,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,paq_431075,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,naturalquestions_299,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,hotpotqa_30,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,msmarco_21861,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,hotpotqa_28,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,paq_244123,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,naturalquestions_483,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,squad2_1093,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,triviaqa_465,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,naturalquestions_1109,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,gooaq_53482,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,triviaqa_163,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,msmarco_1477,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,searchqa_571,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,paq_641867,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,paq_431075,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,naturalquestions_299,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,hotpotqa_30,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,msmarco_21861,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,hotpotqa_28,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,paq_244123,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,naturalquestions_483,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+hipporag_graph,hipporag,webis,squad2_1093,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""text-embedding-3-small\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Complex_System_No_Direct_Link_163,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Counterfactual_Reasoning_Required_309,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Shared_Trend_No_Direct_Link_484,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Reverse_Causation_Potential_500,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Co-occurrence_No_Mechanism_37,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data_721,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Shared_Trend_No_Direct_Link_118,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Reverse_Correlation_507,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Co-occurrence_No_Mechanism_307,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Conditional_Causation_451,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Intermediary_Chain_Causation_276,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Reverse_Causation_Potential_134,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Intermediary_Chain_Causation_296,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Complex_System_No_Direct_Link_76,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Reverse_Causation_Potential_93,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Complex_System_No_Direct_Link_163,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Counterfactual_Reasoning_Required_309,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Shared_Trend_No_Direct_Link_484,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Reverse_Causation_Potential_500,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Co-occurrence_No_Mechanism_37,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data_721,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Shared_Trend_No_Direct_Link_118,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Reverse_Correlation_507,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Co-occurrence_No_Mechanism_307,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Conditional_Causation_451,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Intermediary_Chain_Causation_276,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Reverse_Causation_Potential_134,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Intermediary_Chain_Causation_296,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Complex_System_No_Direct_Link_76,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,causal,Data-Reverse_Causation_Potential_93,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__734057_88628,True,8,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,4hop1__9007_698949_157828_162309,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,4hop3__193820_466199_128875_72134,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,3hop1__857_846_7810,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,4hop1__271272_508773_85832_745702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,3hop1__140855_2053_52946,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__75207_46837,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__66149_85990,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,4hop3__312119_132409_146285_35031,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__464479_70131,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__697729_576069,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,4hop1__836115_49925_13759_736921,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__159903_419949,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,3hop2__90098_91678_10557,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,3hop1__280834_547811_80702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__734057_88628,True,8,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,4hop1__9007_698949_157828_162309,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,4hop3__193820_466199_128875_72134,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,3hop1__857_846_7810,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,4hop1__271272_508773_85832_745702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,3hop1__140855_2053_52946,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__75207_46837,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__66149_85990,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,4hop3__312119_132409_146285_35031,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__464479_70131,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__697729_576069,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,4hop1__836115_49925_13759_736921,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__159903_419949,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,3hop2__90098_91678_10557,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,3hop1__280834_547811_80702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,triviaqa_465,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,naturalquestions_1109,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,gooaq_53482,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,triviaqa_163,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,msmarco_1477,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,searchqa_571,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,paq_641867,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,paq_431075,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,naturalquestions_299,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,hotpotqa_30,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,msmarco_21861,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,hotpotqa_28,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,paq_244123,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,naturalquestions_483,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,squad2_1093,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,triviaqa_465,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,naturalquestions_1109,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,gooaq_53482,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,triviaqa_163,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,msmarco_1477,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,searchqa_571,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,paq_641867,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,paq_431075,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,naturalquestions_299,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,hotpotqa_30,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,msmarco_21861,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,hotpotqa_28,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,paq_244123,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,naturalquestions_483,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,webis,squad2_1093,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+pathrag,pathrag,causal,Data-Complex_System_No_Direct_Link_163,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Counterfactual_Reasoning_Required_309,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Shared_Trend_No_Direct_Link_484,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Reverse_Causation_Potential_500,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Co-occurrence_No_Mechanism_37,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data_721,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Shared_Trend_No_Direct_Link_118,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Reverse_Correlation_507,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Co-occurrence_No_Mechanism_307,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Conditional_Causation_451,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Intermediary_Chain_Causation_276,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Reverse_Causation_Potential_134,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Intermediary_Chain_Causation_296,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Complex_System_No_Direct_Link_76,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Reverse_Causation_Potential_93,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Complex_System_No_Direct_Link_163,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Counterfactual_Reasoning_Required_309,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Shared_Trend_No_Direct_Link_484,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Reverse_Causation_Potential_500,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Co-occurrence_No_Mechanism_37,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data_721,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Shared_Trend_No_Direct_Link_118,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Reverse_Correlation_507,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Co-occurrence_No_Mechanism_307,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Conditional_Causation_451,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Intermediary_Chain_Causation_276,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Reverse_Causation_Potential_134,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Intermediary_Chain_Causation_296,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Complex_System_No_Direct_Link_76,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,causal,Data-Reverse_Causation_Potential_93,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,2hop__734057_88628,True,8,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,4hop1__9007_698949_157828_162309,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,4hop3__193820_466199_128875_72134,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,3hop1__857_846_7810,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,4hop1__271272_508773_85832_745702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,3hop1__140855_2053_52946,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,2hop__75207_46837,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,2hop__66149_85990,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,4hop3__312119_132409_146285_35031,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,2hop__464479_70131,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,2hop__697729_576069,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,4hop1__836115_49925_13759_736921,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,2hop__159903_419949,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,3hop2__90098_91678_10557,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,3hop1__280834_547811_80702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,2hop__734057_88628,True,8,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,4hop1__9007_698949_157828_162309,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,4hop3__193820_466199_128875_72134,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,3hop1__857_846_7810,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,4hop1__271272_508773_85832_745702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,3hop1__140855_2053_52946,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,2hop__75207_46837,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,2hop__66149_85990,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,4hop3__312119_132409_146285_35031,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,2hop__464479_70131,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,2hop__697729_576069,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,4hop1__836115_49925_13759_736921,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,2hop__159903_419949,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,3hop2__90098_91678_10557,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,musique,3hop1__280834_547811_80702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,triviaqa_465,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,naturalquestions_1109,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,gooaq_53482,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,triviaqa_163,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,msmarco_1477,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,searchqa_571,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,paq_641867,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,paq_431075,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,naturalquestions_299,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,hotpotqa_30,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,msmarco_21861,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,hotpotqa_28,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,paq_244123,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,naturalquestions_483,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,squad2_1093,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,triviaqa_465,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,naturalquestions_1109,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,gooaq_53482,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,triviaqa_163,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,msmarco_1477,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,searchqa_571,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,paq_641867,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,paq_431075,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,naturalquestions_299,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,hotpotqa_30,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,msmarco_21861,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,hotpotqa_28,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,paq_244123,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,naturalquestions_483,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+pathrag,pathrag,webis,squad2_1093,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Ollama embedding call failed after 12 attempts for model nomic-embed-text
+youturag,youturag,causal,Data-Complex_System_No_Direct_Link_163,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Counterfactual_Reasoning_Required_309,True,2,0.0,0.0,1.0,1.0,,,,,1.0,1.0,,0.03773584905660377,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Shared_Trend_No_Direct_Link_484,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Reverse_Causation_Potential_500,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.08888888888888888,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Co-occurrence_No_Mechanism_37,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data_721,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.14285714285714288,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Shared_Trend_No_Direct_Link_118,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Reverse_Correlation_507,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Co-occurrence_No_Mechanism_307,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Conditional_Causation_451,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.06666666666666667,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Intermediary_Chain_Causation_276,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.08163265306122448,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Reverse_Causation_Potential_134,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Intermediary_Chain_Causation_296,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.08888888888888888,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Complex_System_No_Direct_Link_76,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Reverse_Causation_Potential_93,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.07272727272727272,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Complex_System_No_Direct_Link_163,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Counterfactual_Reasoning_Required_309,True,2,0.0,0.0,1.0,1.0,,,,,1.0,1.0,,0.03773584905660377,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Shared_Trend_No_Direct_Link_484,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Reverse_Causation_Potential_500,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.08888888888888888,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Co-occurrence_No_Mechanism_37,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data_721,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.14285714285714288,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Shared_Trend_No_Direct_Link_118,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Reverse_Correlation_507,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Co-occurrence_No_Mechanism_307,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Conditional_Causation_451,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.06666666666666667,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Intermediary_Chain_Causation_276,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.08163265306122448,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Reverse_Causation_Potential_134,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Intermediary_Chain_Causation_296,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.08888888888888888,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Complex_System_No_Direct_Link_76,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,causal,Data-Reverse_Causation_Potential_93,True,2,0.0,1.0,1.0,1.0,,,,,1.0,1.0,,0.07272727272727272,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__734057_88628,True,8,0.0,0.375,0.375,0.375,,,,0.0,1.0,1.0,inf,0.1492537313432836,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,4hop1__9007_698949_157828_162309,True,4,0.0,0.0,0.0,0.5,,,,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,4hop3__193820_466199_128875_72134,True,4,0.0,0.25,0.75,1.0,,,,0.0,1.0,1.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,3hop1__857_846_7810,True,3,0.0,0.3333333333333333,0.6666666666666666,0.6666666666666666,,,,0.0,1.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,4hop1__271272_508773_85832_745702,True,4,0.0,0.0,0.0,0.5,,,,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,3hop1__140855_2053_52946,True,3,0.0,0.6666666666666666,1.0,1.0,,,,0.0,1.0,1.0,inf,0.06666666666666667,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__75207_46837,True,3,0.0,0.3333333333333333,0.6666666666666666,0.6666666666666666,,,,0.0,1.0,1.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__66149_85990,True,2,0.0,0.0,0.0,1.0,,,,0.0,1.0,1.0,inf,0.02702702702702703,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,4hop3__312119_132409_146285_35031,True,4,0.0,0.0,0.25,0.25,,,,0.0,0.0,0.0,inf,0.031746031746031744,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__464479_70131,True,2,0.0,0.5,0.5,0.5,,,,0.0,1.0,0.0,inf,0.03125,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__697729_576069,True,2,0.0,0.0,0.5,0.5,,,,0.0,1.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,4hop1__836115_49925_13759_736921,True,4,0.0,0.5,0.5,0.75,,,,0.0,1.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__159903_419949,True,2,0.0,0.0,0.0,0.0,,,,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,3hop2__90098_91678_10557,True,3,0.0,0.0,0.3333333333333333,0.3333333333333333,,,,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,3hop1__280834_547811_80702,True,4,0.0,0.0,0.25,0.25,,,,0.0,0.0,0.0,inf,0.03278688524590164,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__734057_88628,True,8,0.0,0.375,0.375,0.375,,,,0.0,1.0,1.0,inf,0.1492537313432836,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,4hop1__9007_698949_157828_162309,True,4,0.0,0.0,0.0,0.5,,,,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,4hop3__193820_466199_128875_72134,True,4,0.0,0.25,0.75,1.0,,,,0.0,1.0,1.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,3hop1__857_846_7810,True,3,0.0,0.3333333333333333,0.6666666666666666,0.6666666666666666,,,,0.0,1.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,4hop1__271272_508773_85832_745702,True,4,0.0,0.0,0.0,0.5,,,,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,3hop1__140855_2053_52946,True,3,0.0,0.6666666666666666,1.0,1.0,,,,0.0,1.0,1.0,inf,0.06666666666666667,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__75207_46837,True,3,0.0,0.3333333333333333,0.6666666666666666,0.6666666666666666,,,,0.0,1.0,1.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__66149_85990,True,2,0.0,0.0,0.0,1.0,,,,0.0,1.0,1.0,inf,0.02702702702702703,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,4hop3__312119_132409_146285_35031,True,4,0.0,0.0,0.25,0.25,,,,0.0,0.0,0.0,inf,0.031746031746031744,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__464479_70131,True,2,0.0,0.5,0.5,0.5,,,,0.0,1.0,0.0,inf,0.03125,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__697729_576069,True,2,0.0,0.0,0.5,0.5,,,,0.0,1.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,4hop1__836115_49925_13759_736921,True,4,0.0,0.5,0.5,0.75,,,,0.0,1.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,2hop__159903_419949,True,2,0.0,0.0,0.0,0.0,,,,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,3hop2__90098_91678_10557,True,3,0.0,0.0,0.3333333333333333,0.3333333333333333,,,,0.0,0.0,0.0,inf,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,musique,3hop1__280834_547811_80702,True,4,0.0,0.0,0.25,0.25,,,,0.0,0.0,0.0,inf,0.03278688524590164,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,triviaqa_465,False,,,,,,,,,,,,,0.026666666666666672,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,naturalquestions_1109,False,,,,,,,,,,,,,0.026666666666666665,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,gooaq_53482,False,,,,,,,,,,,,,0.9787234042553191,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,triviaqa_163,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.75,
+youturag,youturag,webis,msmarco_1477,False,,,,,,,,,,,,,0.26373626373626374,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,searchqa_571,False,,,,,,,,,,,,,0.03636363636363636,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,paq_641867,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,paq_431075,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,naturalquestions_299,False,,,,,,,,,,,,,0.06349206349206349,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,hotpotqa_30,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,msmarco_21861,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,hotpotqa_28,False,,,,,,,,,,,,,0.06349206349206349,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,paq_244123,False,,,,,,,,,,,,,0.1492537313432836,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,naturalquestions_483,False,,,,,,,,,,,,,0.19718309859154928,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,squad2_1093,False,,,,,,,,,,,,,0.03125,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,triviaqa_465,False,,,,,,,,,,,,,0.026666666666666672,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,naturalquestions_1109,False,,,,,,,,,,,,,0.026666666666666665,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,gooaq_53482,False,,,,,,,,,,,,,0.9787234042553191,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,triviaqa_163,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.75,
+youturag,youturag,webis,msmarco_1477,False,,,,,,,,,,,,,0.26373626373626374,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,searchqa_571,False,,,,,,,,,,,,,0.03636363636363636,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,paq_641867,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,paq_431075,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,naturalquestions_299,False,,,,,,,,,,,,,0.06349206349206349,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,hotpotqa_30,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,msmarco_21861,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,hotpotqa_28,False,,,,,,,,,,,,,0.06349206349206349,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,paq_244123,False,,,,,,,,,,,,,0.1492537313432836,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,naturalquestions_483,False,,,,,,,,,,,,,0.19718309859154928,0.0,0.0,0.0,0.0,0.0,1.0,
+youturag,youturag,webis,squad2_1093,False,,,,,,,,,,,,,0.03125,0.0,0.0,0.0,0.0,0.0,1.0,

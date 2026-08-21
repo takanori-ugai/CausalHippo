@@ -1,0 +1,62 @@
+{
+  "shared": {
+    "llmProvider": "ollama",
+    "modelName": "llama3.2:3b",
+    "embeddingModel": "nomic-embed-text",
+    "llmApiKey": null,
+    "embeddingApiKey": null,
+    "llmBaseUrl": "http://127.0.0.1:11434"
+  },
+  "unified": {
+    "useUnifiedPersistence": true,
+    "useUnifiedSpiForRetrievalAndIndex": true,
+    "persistenceBackend": "filesystem_snapshot",
+    "persistenceRootDir": "./unified_persistence",
+    "persistenceConfig": {
+      "metadata": {
+        "source": "config/common_rag_ollama.json"
+      }
+    }
+  },
+  "causalrag": {
+    "graphPath": null,
+    "indexPath": null,
+    "templateStyle": "detailed",
+    "semanticMode": "dpr",
+    "minCausalMatches": 0,
+    "ingestChunkTokenSize": 1200,
+    "ingestChunkOverlapTokenSize": 100,
+    "promptContextTokenBudget": 4000
+  },
+  "hipporag": {
+    "saveDir": "outputs",
+    "openieMode": "online",
+    "forceIndexFromScratch": false,
+    "forceOpenieFromScratch": false
+  },
+  "pathrag": {
+    "workingDir": "eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/storage/pathrag",
+    "kvStorage": "JsonKVStorage",
+    "vectorStorage": "NanoVectorDBStorage",
+    "graphStorage": "NetworkXStorage",
+    "chunkTokenSize": 1200,
+    "chunkOverlapTokenSize": 100,
+    "language": "English"
+  },
+  "lightrag": {
+    "workingDir": "eval_results/swo69_20260819_043352/e1_graphrag_causal_weak/storage/lightrag",
+    "graphStorageName": "InMemoryGraphStorage",
+    "vectorStorageName": "InMemoryVectorStorage",
+    "chunkTokenSize": 1200,
+    "chunkOverlapTokenSize": 100,
+    "entityTypes": [
+      "Person",
+      "Organization",
+      "Location",
+      "Event",
+      "Concept"
+    ],
+    "language": "English",
+    "cosineBetterThreshold": 0.2
+  }
+}

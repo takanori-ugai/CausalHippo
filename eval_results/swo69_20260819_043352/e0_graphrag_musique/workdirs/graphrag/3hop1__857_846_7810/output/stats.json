@@ -1,35 +1,35 @@
 {
     "workflows": {
         "load_input_documents": {
-            "overall": 0.042131859
+            "overall": 0.024544557
         },
         "extract_graph": {
-            "overall": 434.678566804
+            "overall": 0.445686659
         },
         "extract_claims": {
-            "overall": 609.948233659
+            "overall": 0.311075219
         },
         "summarize_descriptions": {
-            "overall": 1859.185158892
+            "overall": 0.001628584
         },
         "embed_text": {
-            "overall": 4.692082486
+            "overall": 0.29347083
         },
         "embed_graph": {
-            "overall": 9.531958536
+            "overall": 0.00250561
         },
         "build_graph": {
-            "overall": 0.016442991
+            "overall": 8.84309E-4
         },
         "community_detection": {
-            "overall": 0.029298519
+            "overall": 8.63756E-4
         },
         "community_reports": {
-            "overall": 549.689557949
+            "overall": 0.001230677
         },
         "write_outputs": {
-            "overall": 0.483403885
+            "overall": 0.116055044
         }
     },
-    "totalRuntime": 3468.298814954
+    "totalRuntime": 1.200330944
 }
