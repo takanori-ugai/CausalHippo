@@ -198,6 +198,8 @@ private data class RunConfig(
     val parallelism: Int,
     val useUnifiedApi: Boolean,
     val useUnifiedPersistence: Boolean,
+    // SWO69 E1: extraction (KG-building) LLM; null/absent = same as --llm-model.
+    val extractionLlmModel: String? = null,
     // SWO69 E2: root dir of per-sample perturbed snapshots (<root>/<sampleId>/ =
     // HippoRAG snapshot dir with working_dir/); when set, the hipporag_graph
     // condition loads the snapshot instead of building (mirrors the graph
@@ -560,9 +562,36 @@ private fun createUnifiedConditionRunner(
             sample: ExperimentSample,
             docs: List<String>,
         ): RetrievalAndAnswer {
+            val e2Snap = config.e2SnapshotRoot?.resolve(sanitizeSampleId(sample.id))
             val indexStart = System.nanoTime()
-            rag.drop()
-            rag.upsert(docs.filter { it.isNotBlank() })
+            if (e2Snap != null) {
+                require(Files.exists(e2Snap)) { "E2 snapshot not found: $e2Snap" }
+                rag.drop()
+                rag.loadGraph(e2Snap.toString())
+            } else {
+                rag.drop()
+                val cleanedDocs = docs.filter { it.isNotBlank() }
+                if (cleanedDocs.isNotEmpty()) {
+                    rag.upsert(cleanedDocs)
+                    val snapshotTarget =
+                        when (condition) {
+                            Condition.HIPPORAG_GRAPH,
+                            Condition.HIPPORAG_DPR,
+                            -> {
+                                workdirRoot.resolve("snapshots").resolve(sanitizeSampleId(sample.id)).toString()
+                            }
+
+                            else -> {
+                                workdirRoot
+                                    .resolve("snapshots")
+                                    .resolve(sanitizeSampleId(sample.id))
+                                    .resolve("kg_snapshot")
+                                    .toString()
+                            }
+                        }
+                    runCatching { rag.saveGraph(snapshotTarget) }
+                }
+            }
             val indexMs = elapsedMs(indexStart)
 
             val queryStart = System.nanoTime()
@@ -1093,7 +1122,9 @@ private fun parseArgs(args: Array<String>): RunConfig {
         opts["manifest"]?.let { Path.of(it) }
             ?: detectManifestNearData(dataPath)
 
-    // SWO69 E2 (T7): load per-sample perturbed snapshots instead of building.
+    // SWO69 E1/E2 knobs (see RunConfig).
+    val extractionLlmModel =
+        opts["extraction-llm-model"]?.takeIf { it.isNotBlank() }
     val e2SnapshotRoot =
         opts["e2-snapshot-root"]?.let { raw ->
             val path = Path.of(raw)
@@ -1117,6 +1148,7 @@ private fun parseArgs(args: Array<String>): RunConfig {
         parallelism = parallelism,
         useUnifiedApi = useUnifiedApi,
         useUnifiedPersistence = useUnifiedPersistence,
+        extractionLlmModel = extractionLlmModel,
         e2SnapshotRoot = e2SnapshotRoot,
     )
 }

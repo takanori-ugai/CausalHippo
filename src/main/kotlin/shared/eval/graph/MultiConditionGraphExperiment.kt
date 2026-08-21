@@ -527,20 +527,40 @@ private fun createUnifiedConditionRunner(
                 )
             val rag = handle.rag
             return try {
+                val e2SnapRoot = config.e2SnapshotRoot?.resolve(sanitizeSampleId(sample.id))
                 val indexStart = System.nanoTime()
-                rag.drop()
-                rag.upsert(docs.filter { it.isNotBlank() })
-                // SWO69 T1: persist a per-sample KG snapshot before finally{drop()} wipes
-                // the (mostly in-memory) stores — analysis scripts read these files.
-                val snapshotTarget =
-                    when (condition) {
-                        Condition.GRAPHRAG,
-                        Condition.YOUTURAG,
-                        -> sampleWorkdir.resolve("kg_snapshot").toString()
+                if (e2SnapRoot != null) {
+                    require(Files.exists(e2SnapRoot)) { "E2 snapshot not found: $e2SnapRoot" }
+                    rag.drop()
+                    val target =
+                        when (condition) {
+                            Condition.LIGHTRAG,
+                            Condition.PATHRAG,
+                            -> {
+                                val kgJson = e2SnapRoot.resolve("knowledge-graph.json")
+                                if (Files.exists(kgJson)) kgJson.toString() else e2SnapRoot.toString()
+                            }
 
-                        else -> sampleWorkdir.resolve("kg_snapshot/knowledge-graph.json").toString()
-                    }
-                runCatching { rag.saveGraph(snapshotTarget) }
+                            else -> {
+                                e2SnapRoot.toString()
+                            }
+                        }
+                    rag.loadGraph(target)
+                } else {
+                    rag.drop()
+                    rag.upsert(docs.filter { it.isNotBlank() })
+                    // SWO69 T1: persist a per-sample KG snapshot before finally{drop()} wipes
+                    // the (mostly in-memory) stores — analysis scripts read these files.
+                    val snapshotTarget =
+                        when (condition) {
+                            Condition.GRAPHRAG,
+                            Condition.YOUTURAG,
+                            -> sampleWorkdir.resolve("kg_snapshot").toString()
+
+                            else -> sampleWorkdir.resolve("kg_snapshot/knowledge-graph.json").toString()
+                        }
+                    runCatching { rag.saveGraph(snapshotTarget) }
+                }
                 val indexMs = elapsedMs(indexStart)
 
                 val queryText =
@@ -747,8 +767,7 @@ private fun createLightRagRunner(
         tokenIds.forEach { intArrayList.add(it) }
         tokenizerEncoding.decode(intArrayList)
     }
-    val configuredRoot = lightSettings?.workingDir?.let { Path.of(it) }
-    val workdirRoot = (configuredRoot ?: config.outputDir.resolve("workdirs")).resolve(workdirSuffix)
+    val workdirRoot = config.outputDir.resolve("workdirs").resolve(workdirSuffix)
     workdirRoot.createDirectories()
 
     return object : ConditionRunner {
@@ -944,8 +963,7 @@ private fun createPathRagRunner(
 ): ConditionRunner {
     val pathSettings = config.commonConfig?.toPathRagConfig()
     val pathRuntimeSettings = pathSettings?.toRuntimeSettingsMap() ?: emptyMap()
-    val configuredRoot = pathSettings?.workingDir?.let { Path.of(it) }
-    val workdirRoot = (configuredRoot ?: config.outputDir.resolve("workdirs")).resolve(workdirSuffix)
+    val workdirRoot = config.outputDir.resolve("workdirs").resolve(workdirSuffix)
     workdirRoot.createDirectories()
 
     return object : ConditionRunner {
@@ -970,12 +988,20 @@ private fun createPathRagRunner(
                 )
 
             return try {
+                val e2SnapRoot = config.e2SnapshotRoot?.resolve(sanitizeSampleId(sample.id))
                 val indexStart = System.nanoTime()
-                rag.clear()
-                rag.insert(docs.filter { it.isNotBlank() })
-                // SWO69 T1: persist the per-sample KG (PathRAG storage is in-memory by default).
-                runCatching {
-                    rag.saveGraph(sampleWorkdir.resolve("kg_snapshot/knowledge-graph.json").toString())
+                if (e2SnapRoot != null) {
+                    val kgJson = e2SnapRoot.resolve("knowledge-graph.json")
+                    val target = if (Files.exists(kgJson)) kgJson.toString() else e2SnapRoot.toString()
+                    require(Files.exists(Path.of(target))) { "E2 snapshot not found: $target" }
+                    rag.loadGraph(target)
+                } else {
+                    rag.clear()
+                    rag.insert(docs.filter { it.isNotBlank() })
+                    // SWO69 T1: persist the per-sample KG (PathRAG storage is in-memory by default).
+                    runCatching {
+                        rag.saveGraph(sampleWorkdir.resolve("kg_snapshot/knowledge-graph.json").toString())
+                    }
                 }
                 val indexMs = elapsedMs(indexStart)
 
