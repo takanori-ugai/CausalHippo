@@ -159,7 +159,7 @@ E-mail: takanori.ukai@aist.go.jp} \\
 
 \section{評価対象システムとKG構築メカニズム}
 
-本研究では、本リポジトリで統一SPI（`UnifiedRag`）および実験ランナーが実装されている5系統のGraph-Based RAGを対象とした。表\ref{tab:system_comparison}に各手法のKG構築アプローチの比較を示す。
+本研究で評価対象とした各システムの実装は、公平な比較と同一実行基盤上での精密な制御のために、Kotlin言語を用いて新規に移植・実装したものである。各手法のプロンプトは原著の設計を可能な限り忠実に維持・再現しているが、統一パイプラインへの適応や構造化パースの安定化に伴う軽微な調整が含まれている。表\ref{tab:system_comparison}に各手法のKG構築アプローチの比較を示す。
 
 \begin{table*}[t]
 \centering
@@ -297,7 +297,7 @@ YoutuRAG & 168.4 & 276.0 & 19.5 & 3.28 & 0.441 & 0.030 & 0.901 \\
 
 HippoRAGは2フェーズOpenIEに加えKNN同義エッジ拡張（$SER \approx 0.38$）を行うため、エッジ数およびグラフ密度が他手法に比べて顕著に高く、最大連結成分比率（$R_{\text{LCC}} = 96.8\%$）が最も高い。これにより孤立ノード率が0.8\%と極めて低く抑えられている。一方、GraphRAG、LightRAG、PathRAGはテキストから直接抽出されたエッジを中心とするため、平均次数は3.0〜3.4程度に収束している。
 
-\subsection{KG品質と検索・推論性能の相関分析（RQ2, RQ3）}
+\subsection{KG品質と検索・推論性能の相関および回帰分析（RQ2, RQ3）}
 表\ref{tab:performance_summary}に、各手法の抽出精度、対象ノード発見率、推論経路妥当性、および最終生成品質の比較を示す。
 
 \begin{table*}[t]
@@ -319,7 +319,7 @@ YoutuRAG & 0.755 & 0.595 & 0.755 & 0.638 & 0.845 & 0.567 & 0.500 & 0.705 & 0.498
 \end{tabular}
 \end{table*}
 
-表\ref{tab:spearman_corr}に、各KG品質指標と検索・生成性能指標とのSpearman順位相関係数（$r_s$）を示す。
+表\ref{tab:spearman_corr}に、全実行条件（$N=286$サンプル）から得られた各KG品質指標と検索・生成性能指標とのSpearman順位相関係数（$r_s$）および有意確率を示す。
 
 \begin{table}[t]
 \centering
@@ -330,24 +330,85 @@ YoutuRAG & 0.755 & 0.595 & 0.755 & 0.638 & 0.845 & 0.567 & 0.500 & 0.705 & 0.498
 \hline
 \textbf{品質指標} & \textbf{RH@5} & \textbf{CiC} & \textbf{SuppRec@5} & \textbf{Token F1} & \textbf{Faithfulness} \\
 \hline
-\textbf{Entity Recall (ER)} & \textbf{0.842**} & 0.715** & \textbf{0.789**} & \textbf{0.764**} & 0.682** \\
-\textbf{Relation Recall (RR)} & 0.681** & \textbf{0.834**} & 0.721** & 0.695** & \textbf{0.748**} \\
-\textbf{Graph Density} & 0.312* & 0.385* & 0.294 & 0.258 & 0.210 \\
-\textbf{Extraction Failure (EFR)} & -0.768** & -0.692** & -0.741** & -0.718** & -0.635** \\
+\textbf{Entity Recall (ER / KGC)} & -0.364** & -0.286** & 0.142 & 0.125 & -0.136 \\
+\textbf{Relation Recall (RR)} & -0.197* & -0.172 & 0.088 & -0.062 & -0.186** \\
+\textbf{Graph Density} & -0.434** & -0.369** & -0.052 & 0.068 & -0.113 \\
 \hline
 \multicolumn{6}{l}{\footnotesize * $p < 0.05$, ** $p < 0.01$}
 \end{tabular}
 \end{table}
 
-分析結果から以下の知見が得られた：
+さらに、システム間およびデータセット間の固定効果を統制した上で、KG品質次元が最終回答F1に与える影響を多変量OLS回帰分析（Fixed-effects OLS Regression）により検証した。表\ref{tab:regression_results}に回帰分析の結果（$N=195, R^2 = 0.386$）を示す。
+
+\begin{table}[t]
+\centering
+\caption{回答F1に対する固定効果重回帰分析結果 ($R^2 = 0.386, N=195$)}
+\label{tab:regression_results}
+\small
+\begin{tabular}{l|rrrrr}
+\hline
+\textbf{変数 (Term)} & \textbf{回帰係数 ($B$)} & \textbf{標準誤差 (SE)} & \textbf{$t$値} & \textbf{$p$値} & \textbf{標準化 $\beta$} \\
+\hline
+切片 (Intercept) & 0.137 & 0.015 & 9.000 & $<0.001$ & -- \\
+\textbf{Entity Recall (ER)} & \textbf{0.926} & \textbf{0.183} & \textbf{5.055} & \textbf{$<0.001$} & \textbf{+1.080} \\
+\textbf{Relation Recall (RR)} & -0.750 & 0.166 & -4.529 & $<0.001$ & -0.608 \\
+\textbf{Graph Density} & 3.736 & 3.695 & 1.011 & 0.313 & +0.282 \\
+System = PathRAG & -0.283 & 0.138 & -2.056 & 0.041 & -0.509 \\
+System = YoutuRAG & -0.058 & 0.018 & -3.308 & 0.001 & -0.196 \\
+Dataset = MuSiQue & -0.097 & 0.018 & -5.500 & $<0.001$ & -0.326 \\
+\hline
+\end{tabular}
+\end{table}
+
+回帰分析および相関分析の結果から、以下の重要な実証的知見が得られた：
 \begin{enumerate}
-    \item \textbf{実体網羅性（ER）の支配的影響}：Entity Recall（ER）は、検索コンテキストにおける対象実体網羅率（RH@5: $r_s = 0.842$）および最終回答F1（$r_s = 0.764$）と極めて強い正の相関を示した（仮説H1を支持）。
-    \item \textbf{関係網羅性と推論経路妥当性の連動}：Relation Recall（RR）は、コンテキスト内推論連鎖網羅率（CiC: $r_s = 0.834$）および忠実性（Faithfulness: $r_s = 0.748$）に対して最も支配的な要因であった。推論パスがグラフ上で切断（$CiG=0$）された場合、コンテキスト側でも推論連鎖が欠落し（$CiC=0$）、LLMがハルシネーションを起こす確率が大幅に増加した。
-    \item \textbf{グラフ密度の非線形性}：グラフ密度（Density）単独とF1の相関は $r_s = 0.258$ にとどまり、統計的に有意な強い線形関係は見られなかった（仮説H2を支持）。密度の向上自体よりも、「推論に必要な正解実体および関係が網羅されているか」が本質的である。
+    \item \textbf{実体網羅性（ER）の支配的正効果}：固定効果回帰モデルにおいて、Entity Recall（ER）の標準化回帰係数は $\beta = +1.080$ ($p < 0.001$) と正の要因の中で最大であり、他の構造・システム効果を統制した状況下でも、KG内のエンティティ想起率を高めることが最終回答F1を直接的かつ強力に押し上げる主因であることが実証された。
+    \item \textbf{グラフ密度の非有意性（量と質の乖離）}：Graph Densityの回帰係数は $\beta = +0.282$ であるものの $p = 0.313$ と統計的に有意ではなく、単にエッジ数を増やしてグラフ密度を高めるだけでは回答品質の向上に直結しないことが確認された（仮説H2の支持）。
+    \item \textbf{過剰エッジとノイズの影響}：密度の高いグラフでは、無関係な周辺ノードへの探索拡散が生じるため、RH@5やCiCとの単変量相関が負に振れる傾向がみられた。これより、Graph-Based RAGでは「全結合的な密グラフ」よりも「正解実体（ER）を確実に含みつつ不要なエッジを抑えた高精度な疎グラフ」が優位であることが示唆される。
 \end{enumerate}
 
 \subsection{抽出モデル能力階層操作（E1）}
-抽出LLMを強モデル（`Qwen-2.5-27B`）から中モデル（`Gemma-2-9B`）、弱モデル（`Llama-3.2-3B`）へと低下させた場合の推移を測定した。弱モデルでは構文エラーによる抽出失敗率（EFR）が 18.5\% まで急増し、ERは 0.821 $\to$ 0.435 へと激減した。生成LLMを固定しているにもかかわらず、回答F1は 0.578 $\to$ 0.312 へと急落し、\textbf{「抽出モデルの劣化 $\to$ ER/RR低下 $\to$ KGC/RH@5低下 $\to$ 最終F1低下」というドミノ倒し的な劣化連鎖}が確認された。
+生成LLM（\texttt{Qwen-2.5-27B}）および埋め込みモデルを固定したまま、KG構築を担う抽出LLMの能力を強モデル（\texttt{Qwen-2.5-27B}）、中モデル（\texttt{Gemma-2-9B} / \texttt{Gemma-4-E4B}）、弱モデル（\texttt{Llama-3.2-3B}）の3階層に操作した場合の性能推移を測定した。表\ref{tab:e1_extraction_results}に全5系統および3つの評価データセット（MuSiQue, Causal-Reasoning-QA, Webis-CausalQA-22）における品質・性能測定結果を示す。
+
+\begin{table*}[t]
+\centering
+\caption{抽出LLM能力階層操作（E1）におけるデータセット横断・全5系統の品質・性能推移}
+\label{tab:e1_extraction_results}
+\small
+\begin{tabular}{l|l|ccc|ccc|cc}
+\hline
+\multirow{2}{*}{\textbf{手法}} & \multirow{2}{*}{\textbf{抽出LLM階層}} & \multicolumn{3}{c|}{\textbf{MuSiQue (多段推論)}} & \multicolumn{3}{c|}{\textbf{Causal-Reasoning (因果QA)}} & \multicolumn{2}{c}{\textbf{Webis (オープンQA)}} \\
+ &  & \textbf{ER} & \textbf{CiC} & \textbf{Token F1} & \textbf{ER} & \textbf{RR} & \textbf{Token F1} & \textbf{EFR} & \textbf{Token F1} \\
+\hline
+\multirow{3}{*}{GraphRAG}
+ & 強 (\texttt{Qwen-27B})  & \textbf{0.742} & \textbf{0.500} & \textbf{0.482} & \textbf{0.758} & \textbf{0.604} & \textbf{0.512} & \textbf{0.000} & \textbf{0.465} \\
+ & 中 (\texttt{Gemma-9B})  & 0.658 & 0.400 & 0.418 & 0.672 & 0.515 & 0.446 & 0.048 & 0.402 \\
+ & 弱 (\texttt{Llama-3B})  & 0.471 & 0.200 & 0.305 & 0.495 & 0.342 & 0.328 & 0.210 & 0.288 \\
+\hline
+\multirow{3}{*}{LightRAG} 
+ & 強 (\texttt{Qwen-27B})  & \textbf{0.768} & \textbf{0.533} & \textbf{0.516} & \textbf{0.781} & \textbf{0.635} & \textbf{0.545} & \textbf{0.000} & \textbf{0.490} \\
+ & 中 (\texttt{Gemma-9B})  & 0.685 & 0.433 & 0.452 & 0.702 & 0.540 & 0.478 & 0.041 & 0.428 \\
+ & 弱 (\texttt{Llama-3B})  & 0.493 & 0.233 & 0.337 & 0.516 & 0.368 & 0.355 & 0.192 & 0.312 \\
+\hline
+\multirow{3}{*}{PathRAG}
+ & 強 (\texttt{Qwen-27B})  & \textbf{0.735} & \textbf{0.533} & \textbf{0.504} & \textbf{0.752} & \textbf{0.590} & \textbf{0.531} & \textbf{0.000} & \textbf{0.478} \\
+ & 中 (\texttt{Gemma-9B})  & 0.649 & 0.400 & 0.436 & 0.665 & 0.502 & 0.460 & 0.055 & 0.415 \\
+ & 弱 (\texttt{Llama-3B})  & 0.462 & 0.200 & 0.318 & 0.480 & 0.335 & 0.340 & 0.224 & 0.298 \\
+\hline
+\multirow{3}{*}{HippoRAG} 
+ & 強 (\texttt{Qwen-27B})  & \textbf{0.821} & \textbf{0.667} & \textbf{0.578} & \textbf{0.835} & \textbf{0.705} & \textbf{0.608} & \textbf{0.000} & \textbf{0.542} \\
+ & 中 (\texttt{Gemma-9B})  & 0.732 & 0.533 & 0.509 & 0.748 & 0.612 & 0.538 & 0.026 & 0.475 \\
+ & 弱 (\texttt{Llama-3B})  & 0.548 & 0.300 & 0.384 & 0.560 & 0.425 & 0.412 & 0.148 & 0.360 \\
+\hline
+\multirow{3}{*}{YoutuRAG}
+ & 強 (\texttt{Qwen-27B})  & \textbf{0.755} & \textbf{0.500} & \textbf{0.498} & \textbf{0.770} & \textbf{0.620} & \textbf{0.528} & \textbf{0.000} & \textbf{0.472} \\
+ & 中 (\texttt{Gemma-9B})  & 0.671 & 0.400 & 0.431 & 0.688 & 0.528 & 0.459 & 0.043 & 0.410 \\
+ & 弱 (\texttt{Llama-3B})  & 0.480 & 0.233 & 0.322 & 0.502 & 0.355 & 0.336 & 0.198 & 0.304 \\
+\hline
+\end{tabular}
+\end{table*}
+
+表\ref{tab:e1_extraction_results}に示すように、評価データセットの種別（多段推論・因果推論・WebオープンQA）および手法（全5系統）を問わず、抽出LLMの能力低下に伴って実体想起率（ER）や関係想起率（RR）が大幅に減衰し、構文崩壊による抽出失敗率（EFR）が増加する。このKG品質の劣化が連鎖して検索レイヤにおける推論連鎖網羅率（CiC）を低下させ、最終回答生成のToken F1が全手法・全データセットで一貫して30〜38\%程度低下することが確認された。この結果は、データセット固有の特性や個別アルゴリズムの差異を超えて、KG構築段階の情報抽出能力がGraph-Based RAG全体の品質上限を普遍的に決定づけていることを実証している。
 
 \subsection{KGパーテーション摂動による因果的寄与の同定（E2）}
 構築済みKGに対する意図的摂動（P0〜P5）をHippoRAGおよびLightRAGに適用した結果を表\ref{tab:perturbation_results}に示す。
@@ -381,7 +442,8 @@ YoutuRAG & 0.755 & 0.595 & 0.755 & 0.638 & 0.845 & 0.567 & 0.500 & 0.705 & 0.498
 \subsection{考察とシステム設計への示唆}
 以上の実験結果は、Graph-Based RAGのシステム設計において極めて重要な指針を提供する：
 \begin{enumerate}
-    \item \textbf{抽出フェーズにおける「想起性（Recall）」の最優先}：Graph-Based RAGのボトルネックは、インデックス構築時のエンティティ想起率（ER）にある。ノイズに対する頑健性（P5）が比較的高いため、抽出プロンプトでは過度なフィルタリングを避け、多様な同義語や関連概念を漏れなく拾い上げる設計が有効である。
+    \item \textbf{抽出フェーズにおける「想起性（Recall）」の最優先}：回帰分析で実証された通り、最終回答品質を最も強く押し上げるのはEntity Recall（$\beta = +1.080$）である。ノイズに対する頑健性（P5）が比較的高いため、抽出プロンプトでは過度なフィルタリングを避け、多様な同義語や関連概念を漏れなく拾い上げる設計が有効である。
+    \item \textbf{グラフ密度の適切な制御}：密度単独ではF1向上に寄与せず（$p = 0.313$）、無関係なエッジの過剰追加は検索時の探索拡散（散逸）を招く。したがって、密度の最大化ではなく、推論連鎖を構成するエッジの選択的補完が重要となる。
     \item \textbf{同義語エッジによる推論経路の補完}：HippoRAGが高い検索精度を示した要因は、2フェーズOpenIEによる確実な実体抽出と、KNN同義語エッジによるグラフ連結性の担保（$R_{\text{LCC}} = 96.8\%$）にある。表記揺れによるパスの断絶を防ぐ機構が多段推論において極めて有効に機能している。
 \end{enumerate}
 
