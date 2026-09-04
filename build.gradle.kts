@@ -101,7 +101,7 @@ dependencies {
     // Keep Hadoop before parquet-floor on classpath: parquet-floor bundles a stub FSDataInputStream.
     implementation("org.apache.hadoop:hadoop-client-api:3.5.0")
     runtimeOnly("org.apache.hadoop:hadoop-client-runtime:3.5.0")
-    implementation("blue.strategic.parquet:parquet-floor:2.1")
+    implementation("blue.strategic.parquet:parquet-floor:2.2")
     implementation("info.picocli:picocli:4.7.7")
     implementation("nl.cwts:networkanalysis:$networkAnalysisVersion")
     implementation("org.jetbrains.kotlinx:multik-default:0.3.1")
