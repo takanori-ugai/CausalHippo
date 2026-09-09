@@ -65,7 +65,7 @@
 \begin{flushright}
    人工知能学会第二種研究会資料 \\
    セマンティックウェブとオントロジー研究会 \\
-   SIG-SWO-069
+   SIG-SWO-069-06
    \end{flushright}
 \end{textblock*}
 
@@ -96,7 +96,7 @@ E-mail: takanori.ukai@aist.go.jp} \quad
 }
 
 \abstract{
-本研究では、GraphRAG、LightRAG、PathRAG、HippoRAG、YoutuRAGを対象に、ナレッジグラフ（KG）の品質とGraph-Based RAGの検索性能および生成品質との関係を調査した。エンティティ抽出精度、関係抽出精度、グラフ密度などのKG品質指標を整理し、それらと検索精度・回答品質との関連を比較分析した。その結果、KG品質は検索対象ノードの発見率や推論経路の妥当性と関連し、Graph-Based RAGの性能に関係する要因であることを示す。
+本稿では、LightRAGの評価結果を用いて、ナレッジグラフ（KG）の品質とGraph-Based RAGの検索性能および生成品質との関係を調査した。E0ではMuSiQue 15サンプルにおいて、ER=0.844、RR=0.589、Support Recall@5=0.611、Token F1=0.033、Faithfulness=0.472であった。E1では抽出LLMの能力を変化させ、E2ではKGへの摂動を加え、検索・生成指標の変化を比較した。
 }
 
 \pagestyle{plain}
@@ -123,7 +123,7 @@ E-mail: takanori.ukai@aist.go.jp} \quad
 \begin{enumerate}
     \item \textbf{KG品質とGraph-Based RAG性能の評価体系の構築}：エンティティ想起率（ER）、エンティティ適合率（EP）、重複実体率（DER）、関係想起率（RR）、関係適合率（RP）、抽出失敗率（EFR）、グラフ密度・トポロジー指標に加え、新たに「KG-Coverage (KGC)」「Retrieval-Hit@K (RH@K)」「Discovery Conversion Rate (DCR)」「Chain-In-Graph (CiG)」「Chain-In-Context (CiC)」といった検索対象ノード発見率・推論経路妥当性を測定する指標を導入・定式化した。
     \item \textbf{5系統のGraph-Based RAGの比較}：同一のコーパスおよび評価設定（生成LLM固定・埋め込みモデル固定）のもとで、5系統のKG構築特性と検索性能を測定・比較した。
-    \item \textbf{KG品質操作および摂動実験による寄与の検証}：抽出LLMの能力階層操作（E1）および構築済みグラフに対する意図的摂動（E2：ランダム削除、推論キー実体の選択的削除、ノイズ注入）を実施し、実体想起率（Entity Recall）と推論連鎖の連結性が性能に関係する一方、グラフ密度の「量」単独では性能向上に直結しないことを検証した。
+    \item \textbf{KG品質操作および摂動実験による寄与の検証}：抽出LLMの能力階層操作（E1）および構築済みグラフに対する意図的摂動（E2：ランダム削除、推論キー実体の選択的削除、ノイズ注入）を実施し、KG品質と回答性能の関係を検証する。
 \end{enumerate}
 
 
@@ -184,7 +184,7 @@ Xiaoら\cite{xiao2025graphragbench}は、ドメイン特化型ベンチマーク
 
 \section{評価指標体系の定式化}
 
-本研究では、KG自体の品質、中間検索レイヤにおける発見率・経路妥当性、および最終的な生成品質を統合的に評価する指標体系を構築した。
+本研究では、KGの抽出品質とグラフ構造特性、中間検索レイヤにおける発見率・経路妥当性、および最終的な生成品質を統合的に評価する指標体系を構築した。
 
 \subsection{正解基準（Gold Annotations）の定義}
 各指標を同一の基準で算出するため、データセットごとに正解実体、正解関係、および推論連鎖の参照集合を定義する。
@@ -194,8 +194,8 @@ Xiaoら\cite{xiao2025graphragbench}は、ドメイン特化型ベンチマーク
     \item \textbf{テキスト正規化・照合判定}：小文字化、冠詞除去、記号正規化、部分文字列一致、および埋め込み類似度（閾値0.85）により、抽出実体と正解実体の同値性を判定する。
 \end{itemize}
 
-\subsection{KG品質指標（KG Quality Metrics）}
-KGの抽出品質と構造特性を評価するため、以下の指標を用いる。
+\subsection{KG抽出品質指標（KG Extraction Quality Metrics）}
+正解基準および原文との一致に基づいてKGの抽出品質を評価するため、以下の指標を用いる。
 \begin{enumerate}
     \item \textbf{Entity Recall (ER)}: 正解実体集合 $E_{\text{gold}}$ のうち、構築されたKGのノード集合 $V_{\text{KG}}$ に含まれる割合：
     \begin{equation}
@@ -216,8 +216,11 @@ KGの抽出品質と構造特性を評価するため、以下の指標を用い
     \end{equation}
     さらに、同一パッセージ（段落 $p \subset T$）内に共起して出現する割合を $\text{RP}_{\text{co-occur}}$ として算出する。
     \item \textbf{Extraction Failure Rate (EFR)}: LLMの出力構文の不備によりJSONまたはスキーマのパースに失敗したチャンク数を、処理対象チャンク数で割った割合。
-    \item \textbf{グラフ構造・密度指標}: 単純無向グラフを仮定したグラフ密度（$\text{Dens} = \frac{2|E|}{|V|(|V|-1)}$）、ノード数 $|V|$、エッジ数 $|E|$、平均次数 $\bar{k}$、次数ジニ係数 $G_k$、孤立ノード率（Isolated Node Ratio: INR）、最大連結成分比率（$R_{\text{LCC}} = \frac{|V_{\text{LCC}}|}{|V|}$）。
 \end{enumerate}
+
+\subsection{グラフ構造特性指標（Graph Structural Metrics）}
+構築されたKGの規模、疎密、および連結性を記述し、手法間の構造的な差異を比較するため、以下の指標を用いる。これらは正解基準との一致を直接測るKG抽出品質指標ではない。
+単純無向グラフを仮定したグラフ密度（$\text{Dens} = \frac{2|E|}{|V|(|V|-1)}$）、ノード数 $|V|$、エッジ数 $|E|$、平均次数 $\bar{k}$、次数ジニ係数 $G_k$、孤立ノード率（Isolated Node Ratio: INR）、最大連結成分比率（$R_{\text{LCC}} = \frac{|V_{\text{LCC}}|}{|V|}$）を算出する。
 
 \subsection{検索対象ノード発見率・推論経路妥当性の新設指標}
 Graph-Based RAGの核心的プロセスである「KG上での対象実体・推論パスの捕捉」と「検索コンテキストへの引き上げ」を評価するため、以下の新設指標を導入した：
@@ -248,7 +251,7 @@ KGから取得された根拠が検索結果と最終回答にどの程度反映
 実験では、データセット、モデル、検索条件を統制した上で、ベースライン比較、抽出モデルの能力操作、構築済みKGへの摂動を順に実施する。
 
 \subsection{実験データセット}
-本実験では、推論特性の異なる以下の3つのデータセットを用いた。評価にあたっては、各データセットから無作為に抽出した30サンプル（計90サンプル）のサブセットを使用した：
+本実験では、推論特性の異なる以下の3つのデータセットを用いた。評価にあたっては、各データセットから無作為に抽出した15サンプルのサブセットを使用した：
 \begin{enumerate}
     \item \textbf{MuSiQue} \cite{trivedi2022musique}：2〜4ホップの質問分解アノテーションが付与されたマルチホップQAデータセット。多段推論連鎖（$C_{\text{gold}}$）およびブリッジ実体の検証に使用。
     \item \textbf{Causal-Reasoning-QA}：原因と結果の明示的なペア（$R_{\text{gold}}$）および真偽ラベルが付与された因果関係QAデータセット。因果エッジの抽出精度と正当性の検証に使用。
@@ -287,7 +290,7 @@ KGから取得された根拠が検索結果と最終回答にどの程度反映
 
 \begin{table*}[t]
 \centering
-\caption{5系統のGraph-Based RAGが同一コーパス（MuSiQue 30サンプル）から構築したKGの構造特性}
+\caption{5系統のGraph-Based RAGが同一コーパスから構築したKGの構造特性（E0）}
 \label{tab:kg_structure}
 \small
 %\resizebox{\textwidth}{!}{
@@ -296,7 +299,7 @@ KGから取得された根拠が検索結果と最終回答にどの程度反映
  & \textbf{$|V|$} & \textbf{$|E|$} & \textbf{$\times 10^{-3}$} & \textbf{$\bar{k}$} & \textbf{$G_k$} & \textbf{INR} & \textbf{$R_{\text{LCC}}$} \\
 \hline
 GraphRAG & 184.2 & 312.6 & 18.5 & 3.39 & 0.462 & 0.042 & 0.884 \\
-LightRAG & 152.0 & 248.4 & 21.6 & 3.27 & 0.418 & 0.021 & 0.912 \\
+LightRAG & 149.7 & 161.2 & 14.6 & 2.15 & 0.369 & 0.006 & 0.434 \\
 PathRAG  & 145.8 & 218.1 & 20.6 & 2.99 & 0.405 & 0.035 & 0.895 \\
 HippoRAG & 231.5 & 684.2 & 25.6 & 5.91 & 0.534 & 0.008 & 0.968 \\
 YoutuRAG & 168.4 & 276.0 & 19.5 & 3.28 & 0.441 & 0.030 & 0.901 \\
@@ -304,14 +307,14 @@ YoutuRAG & 168.4 & 276.0 & 19.5 & 3.28 & 0.441 & 0.030 & 0.901 \\
 %}
 \end{table*}
 
-HippoRAGは2フェーズOpenIEに加えKNN同義エッジ拡張（同義エッジ比率: Synonym Edge Ratio $\text{SER} \approx 0.38$）を行うため、エッジ数およびグラフ密度が他手法に比べて高く、最大連結成分比率（$R_{\text{LCC}} = 96.8\%$）が最も高い。これにより孤立ノード率が0.8\%と低く抑えられている。一方、GraphRAG、LightRAG、PathRAGはテキストから直接抽出されたエッジを中心とするため、平均次数は3.0〜3.4程度に収束している。
+LightRAGの実測値（MuSiQue 15サンプル）は、平均149.7ノード、161.2エッジ、グラフ密度$14.6\times10^{-3}$、平均次数2.15、次数ジニ係数0.369、最大連結成分率0.434、孤立ノード率0.006であった。グラフは平均12.1個の連結成分に分かれており、構造的に分断されている。
 
 \subsection{KG品質と検索・推論性能の相関および回帰分析（RQ2, RQ3）}
 表\ref{tab:performance_summary}に、各手法の抽出精度、対象ノード発見率、推論経路妥当性、および最終生成品質の比較を示す。
 
 \begin{table*}[t]
 \centering
-\caption{抽出精度・対象ノード発見率・推論経路妥当性・回答生成品質の総合比較（MuSiQue / Causal）}
+\caption{抽出精度・対象ノード発見率・推論経路妥当性・回答生成品質の総合比較（E0）}
 \label{tab:performance_summary}
 \small
 \resizebox{\textwidth}{!}{
@@ -320,7 +323,7 @@ HippoRAGは2フェーズOpenIEに加えKNN同義エッジ拡張（同義エッ�
  & \textbf{ER} & \textbf{EP} & \textbf{DER} & \textbf{RR} & \textbf{RP} & \textbf{KGC} & \textbf{RH@5} & \textbf{DCR} & \textbf{CiG} & \textbf{CiC} & \textbf{SuppRec@5} & \textbf{Token F1} & \textbf{Faithfulness} \\
 \hline
 GraphRAG & 0.742 & 0.915 & 0.148 & 0.581 & 0.862 & 0.742 & 0.615 & 0.829 & 0.567 & 0.500 & 0.684 & 0.482 & 0.812 \\
-LightRAG & 0.768 & 0.932 & 0.125 & 0.612 & 0.884 & 0.768 & 0.654 & 0.852 & 0.600 & 0.533 & 0.718 & 0.516 & 0.835 \\
+LightRAG & 0.844 & 0.946 & 0.177 & 0.589 & -- & 0.844 & 0.574 & 0.759 & 0.467 & 0.667 & 0.611 & 0.033 & 0.472 \\
 PathRAG  & 0.735 & 0.928 & 0.162 & 0.564 & 0.877 & 0.735 & 0.630 & 0.857 & 0.567 & 0.533 & 0.702 & 0.504 & 0.820 \\
 HippoRAG & \textbf{0.821} & \textbf{0.946} & \textbf{0.089} & \textbf{0.678} & \textbf{0.912} & \textbf{0.821} & \textbf{0.744} & \textbf{0.906} & \textbf{0.733} & \textbf{0.667} & \textbf{0.795} & \textbf{0.578} & \textbf{0.864} \\
 YoutuRAG & 0.755 & 0.920 & 0.138 & 0.595 & 0.870 & 0.755 & 0.638 & 0.845 & 0.567 & 0.500 & 0.705 & 0.498 & 0.825 \\
@@ -328,7 +331,7 @@ YoutuRAG & 0.755 & 0.920 & 0.138 & 0.595 & 0.870 & 0.755 & 0.638 & 0.845 & 0.567
 }
 \end{table*}
 
-表\ref{tab:spearman_corr}に、相関分析に使用した実行単位（$N=286$）から得られた各KG品質指標と検索・生成性能指標との相関分析結果を示す。グラフ密度や各種想起率指標などのデータ分布が正規分布に従わず、評価指標間に非線形な単調関係や外れ値の影響が存在することを考慮し、ノンパラメトリック手法であるSpearman順位相関係数（$r_s$）および有意確率を採用した。なお、回帰分析とは欠測値処理後の分析対象が異なるため、両者の $N$ は一致しない。また、表\ref{tab:performance_summary}は手法ごとの集計値、表\ref{tab:spearman_corr}は実行単位の値に基づくため、両表の傾向を単純に同一視しない。
+表\ref{tab:spearman_corr}に、E0およびE1のLightRAG実行単位（欠測値除外後、指標により$N=27$〜135）から得られた各KG品質指標と検索・生成性能指標とのSpearman順位相関係数（$r_s$）および有意確率を示す。データセット・条件をまたぐ分析では、ERとToken F1およびFaithfulness、グラフ密度とCiC、Support Recall@5およびFaithfulnessに有意な相関がみられた。
 
 \begin{table*}[t]
 \centering
@@ -340,20 +343,20 @@ YoutuRAG & 0.755 & 0.920 & 0.138 & 0.595 & 0.870 & 0.755 & 0.638 & 0.845 & 0.567
 \hline
 \textbf{品質指標} & \textbf{RH@5} & \textbf{CiC} & \textbf{SuppRec@5} & \textbf{Token F1} & \textbf{Faithfulness} \\
 \hline
-\textbf{Entity Recall (ER / KGC)} & -0.364** & -0.286** & 0.142 & 0.125 & -0.136 \\
-\textbf{Relation Recall (RR)} & -0.197* & -0.172 & 0.088 & -0.062 & -0.186** \\
-\textbf{Graph Density} & -0.434** & -0.369** & -0.052 & 0.068 & -0.113 \\
+\textbf{Entity Recall (ER / KGC)} & -0.068 & 0.110 & -0.206 & -0.219* & -0.215* \\
+\textbf{Relation Recall (RR)} & -0.324 & 0.051 & -0.178 & -0.184 & -0.148 \\
+\textbf{Graph Density} & 0.259 & 0.480** & 0.365** & 0.052 & 0.186* \\
 \hline
 \multicolumn{6}{l}{\footnotesize * $p < 0.05$, ** $p < 0.01$}
 \end{tabular}
 %}
 \end{table*}
 
-さらに、相関分析では捉えきれない「他の品質指標を統制した条件下での各品質次元の独立した寄与度」を定量化し、システムアーキテクチャの固有差やデータセットの難易度差といった交絡因子を統計的に統制するため、システムおよびデータセットのダミー変数を組み込んだ固定効果付き多変量OLS重回帰分析（Fixed-effects OLS Regression）を実施した。表\ref{tab:regression_results}に回帰分析の結果（$N=195, R^2 = 0.386$）を示す。
+補足的に、ER、RR、グラフ密度およびデータセットを説明変数とするOLS回帰を実施した。表\ref{tab:regression_results}に結果（$N=90, R^2 = 0.061$）を示す。E0およびE1のMuSiQue・Causal-Reasoningの実行単位を対象とし、システム固定効果は推定していない。
 
 \begin{table*}[t]
 \centering
-\caption{Token F1に対する固定効果重回帰分析結果 ($R^2 = 0.386, N=195$)}
+\caption{Token F1に対するOLS回帰分析結果 ($R^2 = 0.061, N=90$)}
 \label{tab:regression_results}
 \small
 %\resizebox{\textwidth}{!}{
@@ -361,34 +364,48 @@ YoutuRAG & 0.755 & 0.920 & 0.138 & 0.595 & 0.870 & 0.755 & 0.638 & 0.845 & 0.567
 \hline
 \textbf{変数 (Term)} & \textbf{回帰係数 ($B$)} & \textbf{標準誤差 (SE)} & \textbf{$t$値} & \textbf{$p$値} & \textbf{標準化 $\beta$} \\
 \hline
-切片 (Intercept) & 0.137 & 0.015 & 9.000 & $<0.001$ & -- \\
-\textbf{Entity Recall (ER)} & \textbf{0.926} & \textbf{0.183} & \textbf{5.055} & \textbf{$<0.001$} & \textbf{+1.080} \\
-\textbf{Relation Recall (RR)} & -0.750 & 0.166 & -4.529 & $<0.001$ & -0.608 \\
-\textbf{Graph Density} & 3.736 & 3.695 & 1.011 & 0.313 & +0.282 \\
-System = PathRAG & -0.283 & 0.138 & -2.056 & 0.041 & -0.509 \\
-System = YoutuRAG & -0.058 & 0.018 & -3.308 & 0.001 & -0.196 \\
-Dataset = MuSiQue & -0.097 & 0.018 & -5.500 & $<0.001$ & -0.326 \\
+切片 (Intercept) & 0.056 & 0.022 & 2.497 & 0.014 & -- \\
+\textbf{Entity Recall (ER)} & -0.032 & 0.019 & -1.688 & 0.095 & -0.221 \\
+\textbf{Relation Recall (RR)} & -0.001 & 0.008 & -0.125 & 0.900 & -0.016 \\
+\textbf{Graph Density} & 0.043 & 0.309 & 0.140 & 0.889 & 0.031 \\
+Dataset = MuSiQue & 0.003 & 0.012 & 0.267 & 0.790 & 0.061 \\
 \hline
 \end{tabular}
 %}
 \end{table*}
 
-回帰分析および相関分析の結果、ならびに表\ref{tab:performance_summary}の抽出品質指標（ER, EP, DER, RR, RP）から、以下の実証的知見が得られた：
+回帰分析および相関分析の結果、ならびに表\ref{tab:performance_summary}の抽出品質指標（ER, EP, DER, RR）から、以下の知見が得られた：
 \begin{enumerate}
-    \item \textbf{実体網羅性（ER）とToken F1の正の関連}：固定効果回帰モデルにおいて、Entity Recall（ER）の標準化回帰係数は $\beta = +1.080$ ($p < 0.001$) であった。この結果は、他の構造・システム効果を統制したとき、ERが最終回答のToken F1と正に関連することを示す。ただし、回帰分析のみから因果効果を断定することはできない。
-    \item \textbf{実体適合率（EP）と関係適合率（RP）の特性}：抽出されたノードの元文書グラウンディング率を表すEPは、全手法において 0.915〜0.946（約92〜95\%）と高水準を維持しており、LLMによるエンティティ抽出における幻覚（文書外実体の生成）は比較的低く抑えられていた。また、エッジの両端点が元文書に根拠を持つ割合を表すRPも 0.862〜0.912（約86〜91\%）であり、抽出された関係の大部分が文書根拠を持つ妥当なペアであることが確認された。HippoRAGはEP（0.946）およびRP（0.912）の双方で最も高い適合率を達成した。
-    \item \textbf{重複実体率（DER）と名寄せの差異}：同一実体の表記揺れや重複ノードの発生率を示すDERは手法間で差異が顕著であり、HippoRAGが 0.089（8.9\%）と最も重複が少なかったのに対し、PathRAG（0.162）やGraphRAG（0.148）では約15\%の重複が発生した。埋め込み類似度に基づく同義実体統合や正規化処理の有無が、グラフ内における実体の断片化防止に寄与している。
-    \item \textbf{関係想起率（RR）とToken F1の負の関連}：Relation Recall（RR）の標準化回帰係数は $\beta = -0.608$（$B=-0.750, p<0.001$）であり、ER、グラフ密度、システムおよびデータセットの効果を統制した場合、RRは回答のToken F1と負に関連した。この結果は、正解関係の想起率が高い場合でも、同時に検索に不要な関係や構造ノイズが増えると、検索候補の拡散や生成コンテキストの焦点の分散を通じて回答品質が低下する可能性を示す。ただし、RRの係数は他の品質指標を統制した条件付きの値であり、単純な相関とは異なる。ERやRRなどの品質指標間の共線性、システム固有の抽出特性、未観測の交絡の影響も考えられるため、RRの増加がToken F1の低下を直接引き起こすとは断定できない。
-    \item \textbf{グラフ密度の非有意性（量と質の乖離）}：Graph Densityの標準化係数は $\beta = +0.282$ であったものの、$p = 0.313$ と統計的に有意ではなかった。この結果から、単にエッジ数を増やすだけでは回答品質の向上につながるとはいえない（RQ4に対する「密度の量は支配的要因ではない」という結果）。
-    \item \textbf{過剰エッジとノイズの影響}：密度の高いグラフでは、無関係な周辺ノードへの探索拡散が生じるため、RH@5やCiCとの単変量相関が負に振れる傾向がみられた。これより、Graph-Based RAGでは「全結合的な密グラフ」よりも「正解実体（ER）を含みつつ不要なエッジを抑えた疎グラフ」が優位であることが示唆される。
+    \item \textbf{E0の基準値}：LightRAGのERは0.844、EPは0.946、RRは0.589であり、Token F1は0.033、Faithfulnessは0.472であった。
+    \item \textbf{相関と回帰の差異}：ERはToken F1およびFaithfulnessと弱い負の単調相関を示したが、OLS回帰ではER、RR、密度の係数はいずれも5\%水準で有意ではなかった。
+    \item \textbf{検索指標の算出}：E0ではRH@5=0.574、DCR@5=0.759、CiG=0.467、CiC=0.667、Support Recall@5=0.611を得た。
 \end{enumerate}
 
 \subsection{抽出モデル能力階層操作による影響（RQ3: E1）}
-本実験（E1）では、生成LLM（\texttt{qwen3.8:27b}）および埋め込みモデルを固定したまま、KG抽出を担うLLMをパラメータ規模（27B / 9Bクラス / 3B）に応じた3水準（強: \texttt{qwen3.8:27b}、中: \texttt{gemma4:e4b}、弱: \texttt{llama3.2:3b}）に操作し、抽出能力の違いがKG品質および最終回答品質へ及ぼす影響を測定した。表\ref{tab:e1_extraction_results}に全5系統および3つの評価データセット（MuSiQue, Causal-Reasoning-QA, Webis-CausalQA-22）における測定結果を示す。
+本実験（E1）では、抽出LLMを強（qwen3.8:27b）、中（gemma4:e4b）、弱（llama3.2:3b）の3水準に変化させた。表\ref{tab:e1_lightrag_results}にLightRAGの3データセットにおける結果を示す。LightRAG以外の旧来の結果は表\ref{tab:e1_extraction_results}に示す。
 
 \begin{table*}[t]
 \centering
-\caption{抽出LLM能力階層操作（E1）におけるデータセット横断・全5系統の品質・性能推移}
+\caption{LightRAGにおける抽出LLM能力階層操作（E1）の結果}
+\label{tab:e1_lightrag_results}
+\small
+\begin{tabular}{l|ccc|ccc|cc}
+\hline
+\textbf{抽出LLM} & \multicolumn{3}{c|}{\textbf{MuSiQue}} & \multicolumn{3}{c|}{\textbf{Causal-Reasoning}} & \multicolumn{2}{c}{\textbf{Webis}} \\
+ & \textbf{ER} & \textbf{CiC} & \textbf{Token F1} & \textbf{ER} & \textbf{RR} & \textbf{Token F1} & \textbf{Token F1} & \textbf{Faithfulness} \\
+\hline
+強 (\texttt{qwen3.8:27b}) & 0.844 & 0.667 & 0.033 & 0.967 & 0.800 & 0.027 & 0.070 & 0.574 \\
+中 (\texttt{gemma4:e4b}) & 0.867 & 0.867 & 0.036 & 1.000 & 0.933 & 0.028 & 0.068 & 0.610 \\
+弱 (\texttt{llama3.2:3b}) & 0.747 & 0.667 & 0.032 & 0.867 & 0.600 & 0.029 & 0.068 & 0.544 \\
+\hline
+\end{tabular}
+\end{table*}
+
+MuSiQueのERは中水準で0.867と強水準の0.844を上回ったが、弱水準では0.747に低下した。Causal-ReasoningではERが強・中で1.000に近く、弱で0.867となった。Webisでは抽出正解アノテーションがないためER・RR・CiCは算出していない。本データでは、抽出モデル能力と下流性能の単調な関係を一律には確認できない。
+
+\begin{table*}[t]
+\centering
+\caption{抽出LLM能力階層操作（E1）におけるLightRAG以外の旧来の品質・性能推移}
 \label{tab:e1_extraction_results}
 \small
 \resizebox{\textwidth}{!}{
@@ -401,11 +418,6 @@ Dataset = MuSiQue & -0.097 & 0.018 & -5.500 & $<0.001$ & -0.326 \\
  & 強 (\texttt{qwen3.8:27b})  & \textbf{0.742} & \textbf{0.500} & \textbf{0.482} & \textbf{0.758} & \textbf{0.604} & \textbf{0.512} & \textbf{0.000} & \textbf{0.465} \\
  & 中 (\texttt{gemma4:e4b})  & 0.658 & 0.400 & 0.418 & 0.672 & 0.515 & 0.446 & 0.048 & 0.402 \\
  & 弱 (\texttt{llama3.2:3b})  & 0.471 & 0.200 & 0.305 & 0.495 & 0.342 & 0.328 & 0.210 & 0.288 \\
-\hline
-\multirow{3}{*}{LightRAG} 
- & 強 (\texttt{qwen3.8:27b})  & \textbf{0.768} & \textbf{0.533} & \textbf{0.516} & \textbf{0.781} & \textbf{0.635} & \textbf{0.545} & \textbf{0.000} & \textbf{0.490} \\
- & 中 (\texttt{gemma4:e4b})  & 0.685 & 0.433 & 0.452 & 0.702 & 0.540 & 0.478 & 0.041 & 0.428 \\
- & 弱 (\texttt{llama3.2:3b})  & 0.493 & 0.233 & 0.337 & 0.516 & 0.368 & 0.355 & 0.192 & 0.312 \\
 \hline
 \multirow{3}{*}{PathRAG}
  & 強 (\texttt{qwen3.8:27b})  & \textbf{0.735} & \textbf{0.533} & \textbf{0.504} & \textbf{0.752} & \textbf{0.590} & \textbf{0.531} & \textbf{0.000} & \textbf{0.478} \\
@@ -426,55 +438,52 @@ Dataset = MuSiQue & -0.097 & 0.018 & -5.500 & $<0.001$ & -0.326 \\
 }
 \end{table*}
 
-表\ref{tab:e1_extraction_results}に示すように、評価データセットの種別（多段推論・因果推論・WebオープンQA）および手法（全5系統）を問わず、抽出LLMの能力低下に伴って実体想起率（ER）や関係想起率（RR）が低下し、構文上の不備による抽出失敗率（EFR）が増加する傾向がみられた。このKG品質の低下に伴い、検索レイヤにおける推論連鎖網羅率（CiC）と最終回答生成のToken F1も低下した。強モデルから弱モデルへのToken F1の低下幅は表の範囲でおおむね30〜38\%である。ただし、この結果は抽出能力と性能の関連を示すものであり、データセットや手法を超えた普遍的な因果効果を直接証明するものではない。
-
 \subsection{KG摂動実験による品質要因の寄与比較（RQ4: E2）}
-構築済みKGに対し、意図的な構造摂動（P0〜P5）を加えた際の検索・生成性能の変化を測定した。表\ref{tab:perturbation_results}に、多段推論タスク（MuSiQue）において最も高いグラフ連結性を示したHippoRAGを対象とした摂動実験結果を示す。
+構築済みKGに対し、意図的な構造摂動（P0〜P5）を加えた際の性能変化を測定した。今回のE2出力はLightRAGのMuSiQue 15サンプルを対象とし、P0を含む10条件について各15サンプルを処理した。E2ではRH@5・DCR@5を含む発見指標も算出され、構造指標と回答品質を条件間で比較できる。
 
 \begin{table*}[t]
 \centering
-\caption{KG事後摂動（E2: MuSiQue / HippoRAG）における性能変化}
+\caption{KG事後摂動（E2: MuSiQue / LightRAG）における発見・回答レベル指標}
 \label{tab:perturbation_results}
 \small
-\begin{tabular}{l|ccc|c}
+\begin{tabular}{l|r|ccccc|cc}
 \hline
-\textbf{摂動条件} & \textbf{RH@5} & \textbf{CiC} & \textbf{SuppRec@5} & \textbf{Token F1} \\
+\textbf{摂動条件} & \textbf{$N$} & \textbf{KGC} & \textbf{RH@5} & \textbf{CiG} & \textbf{CiC} & \textbf{SuppRec@5} & \textbf{Token F1} & \textbf{Faithfulness} \\
 \hline
-\textbf{P0: Control Base} & 0.744 & 0.667 & 0.795 & 0.578 \\
-\textbf{P1--30: ランダムエッジ削除 30\%} & 0.702 & 0.567 & 0.752 & 0.534 \\
-\textbf{P1--50: ランダムエッジ削除 50\%} & 0.648 & 0.467 & 0.698 & 0.485 \\
-\textbf{P2--30: ランダムノード削除 30\%} & 0.621 & 0.433 & 0.672 & 0.462 \\
-\textbf{P3: 正解キー実体の選択的削除} & \textbf{0.215} & \textbf{0.067} & \textbf{0.342} & \textbf{0.228} \\
-\textbf{P4: テキスト記述削除} & 0.710 & 0.633 & 0.741 & 0.518 \\
-\textbf{P5: 偽ノード・エッジ注入 30\%} & 0.685 & 0.533 & 0.720 & 0.505 \\
+\textbf{P0: Control Base} & 15 & 0.844 & 0.667 & 0.467 & 0.667 & 0.594 & 0.031 & 0.444 \\
+\textbf{P1--10: ランダムエッジ削除 10\%} & 15 & 0.844 & 0.667 & 0.400 & 0.667 & 0.594 & 0.028 & 0.413 \\
+\textbf{P1--30: ランダムエッジ削除 30\%} & 15 & 0.844 & 0.593 & 0.200 & 0.600 & 0.556 & 0.028 & 0.475 \\
+\textbf{P1--50: ランダムエッジ削除 50\%} & 15 & 0.844 & 0.593 & 0.067 & 0.600 & 0.572 & 0.029 & 0.502 \\
+\textbf{P2--10: ランダムノード削除 10\%} & 15 & 0.811 & 0.667 & 0.267 & 0.667 & 0.594 & 0.031 & 0.412 \\
+\textbf{P2--30: ランダムノード削除 30\%} & 15 & 0.639 & 0.563 & 0.133 & 0.533 & 0.461 & 0.025 & 0.473 \\
+\textbf{P3: 正解キー実体の選択的削除} & 15 & 0.000 & 0.500 & 0.000 & 0.533 & 0.467 & 0.024 & 0.395 \\
+\textbf{P4: テキスト記述削除} & 15 & 0.844 & 0.545 & 0.467 & 0.667 & 0.522 & 0.032 & 0.541 \\
+\textbf{P5--10: 偽ノード・エッジ注入 10\%} & 15 & 0.844 & 0.714 & 0.467 & 0.667 & 0.561 & 0.030 & 0.432 \\
+\textbf{P5--30: 偽ノード・エッジ注入 30\%} & 15 & 0.844 & 0.714 & 0.467 & 0.667 & 0.561 & 0.030 & 0.422 \\
 \hline
 \end{tabular}
 \end{table*}
 
-表\ref{tab:perturbation_results}の摂動結果から、RQ4に関して以下の実証的知見が得られた：
+表\ref{tab:perturbation_results}の摂動結果から、今回のE2出力について以下を確認できる：
 \begin{enumerate}
-    \item \textbf{推論キー実体の想起性が性能を最も強く支配（P3 vs P1, P2）}：
-    ランダムに50\%のエッジを間引いたP1（F1: 0.485）や、30\%のノードを削除したP2（F1: 0.462）における性能低下が15〜20\%程度にとどまるのに対し、推論の依存関係を担うキー実体（ブリッジ実体）を選択的に削除したP3では、推論連鎖網羅率（CiC）が 0.667 から 0.067 へ激減し、Token F1も 0.578 から 0.228 へ急落した（相対変化率 $-60.6\%$）。これにより、Graph-Based RAGの成否においては「グラフ全体のサイズや密度」よりも「推論連鎖に直結するキー実体が想起されているか（Entity Recall）」が決定的な支配要因であることが実証された。
-    \item \textbf{テキスト記述の削除による緩やかな劣化（P4）}：
-    ノードやエッジの説明テキストを全削除しトポロジー情報のみで検索を行ったP4では、CiCの低下は軽微（0.667 $\to$ 0.633）であったものの、Token F1は 0.578 から 0.518 へ低下した（$-10.4\%$）。これは、トポロジー構造が検索経路の捕捉を支える一方で、エンティティの文脈記述がLLMの正確な回答生成を補助していることを示している。
-    \item \textbf{構造ノイズに対する高い頑健性（P5）}：
-    30\%の偽ノード・偽エッジを注入したP5においても、Token F1の低下は約12.6\%（0.505）にとどまった。これは、PPR（Personalized PageRank）やベクトル類似度検索によるランキング機構が、局所的に混入したハルシネーションや無関係なノイズエッジに対して一定の頑健性（Robustness）を有していることを裏付けている。
+    \item P0およびP1〜P5の全10条件で15サンプルが完了し、完全一致率は全条件で0であった。Token F1は0.024〜0.032、Faithfulnessは0.395〜0.541の範囲であった。
+    \item KGCとCiGはP2・P3で低下し、P1ではエッジ削除率の増加に伴ってCiGが0.467から0.067へ低下した。一方、P5ではRH@5が0.714まで上昇した。
+    \item P3ではKGCとCiGが0となったが、Token F1は0.024であり、検索・生成品質の単純な一対一対応は確認できない。摂動による因果効果の断定には注意が必要である。
 \end{enumerate}
 
 \subsection{システム設計への示唆}
 以上の実験結果から、Graph-Based RAGのシステム設計に関して以下の点が示唆される：
 \begin{enumerate}
-    \item \textbf{抽出フェーズにおける「想起性（Recall）」の重視}：回帰分析では、Entity Recall（$\beta = +1.080$）が最終回答のToken F1と正に関連した。ノイズに対する頑健性（P5）が比較的高かったことも踏まえると、抽出プロンプトでは過度なフィルタリングを避け、多様な同義語や関連概念を拾い上げる設計が有効と考える。
-    \item \textbf{グラフ密度の適切な制御}：密度単独ではToken F1向上に寄与せず（$p = 0.313$）、無関係なエッジの過剰追加は検索時の探索拡散（散逸）を招く。したがって、密度の最大化ではなく、推論連鎖を構成するエッジの選択的補完が重要となる。
-    \item \textbf{同義語エッジによる推論経路の補完}：HippoRAGが高い検索精度を示した要因は、2フェーズOpenIEによる実体抽出と、KNN同義語エッジによるグラフ連結性の担保（$R_{\text{LCC}} = 96.8\%$）にある。表記揺れによるパスの断絶を防ぐ機構が多段推論において有効に機能している。
+    \item \textbf{抽出・検索・生成の分離評価}：E0ではER=0.844、RR=0.589、Support Recall@5=0.611、Token F1=0.033であり、KG品質だけで最終回答品質を説明できない。
+    \item \textbf{摂動効果の限定的評価}：E2ではKGC、RH@5、CiG、CiC、Support Recall@5、Faithfulnessを条件間で比較できるが、15サンプルという小標本であるため、因果効果の断定は避けるべきである。
 \end{enumerate}
 
 
 \section{おわりに}
 
-本研究では、5系統のGraph-Based RAG（GraphRAG, LightRAG, PathRAG, HippoRAG, YoutuRAG）を対象に、ナレッジグラフの品質が検索性能および回答生成品質へ与える影響を体系的に調査した。エンティティ抽出精度、関係抽出精度、グラフ構造指標に加え、検索対象ノード発見率（KGC, RH@K, DCR）および推論経路妥当性（CiG, CiC）を測定する評価指標系を構築・適用した。
+本稿では、LightRAGの評価結果（E0、E1およびE2）を用いて、ナレッジグラフの品質と検索・回答生成品質の関係を分析した。エンティティ抽出精度、関係抽出精度、グラフ構造指標に加え、検索対象ノード発見率（KGC, RH@K, DCR）および推論経路妥当性（CiG, CiC）を測定する評価指標系を適用した。
 
-実験の結果、エンティティ想起率（ER）および関係想起率（RR）は、対象ノード発見や推論連鎖の妥当性、さらに下流の回答品質と関連した。一方で、グラフ密度の「量」単独では性能向上に直結しなかった。さらに、事後摂動実験では、推論キー実体の欠落が他の摂動条件より大きな性能劣化をもたらすことを確認した。
+実験の結果、LightRAGのE0（15サンプル）ではER=0.844、EP=0.946、RR=0.589、Support Recall@5=0.611、Token F1=0.033、Faithfulness=0.472であった。E1では抽出LLMの変更によりMuSiQueのERは0.747〜0.867、Token F1は0.032〜0.036の範囲となった。E2では10条件を各15サンプルで完了し、P1のエッジ削除やP2・P3のノード削除によりCiGが低下した。Token F1は0.024〜0.032、Faithfulnessは0.395〜0.541であり、摂動による包括的な因果的効果は今後の課題として残る。
 
 今後の課題として、ドメインオントロジーの活用による抽出精度の向上、動的に更新されるコーパスに対する増分KG品質管理手法の開発、およびマルチモーダルGraph-Based RAGへの拡張が挙げられる。
 
