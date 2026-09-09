@@ -107,7 +107,7 @@ Graph-Based RAGでは、テキストから構築されたナレッジグラフ�
 
 \section{はじめに}
 
-大規模言語モデル（Large Language Model: LLM）の急速な発展に伴い、外部知識源から関連情報を動的に取得して回答を生成する検索拡張生成（Retrieval-Augmented Generation: RAG）\cite{lewis2020rag}が広く実用化されている。従来のNaive RAGは、テキストを固定長チャンクに分割して密ベクトル埋め込みの類似度検索を行う手法が主流であった。しかし、このアプローチでは、複数文書にまたがるエンティティ間の関係を辿る多段推論や、コーパス全体のトピック構造を俯瞰して回答を要約する質問に対して、関連チャンクの想起漏れや文脈の断片化が生じやすいという限界が指摘されている。
+大規模言語モデル（Large Language Model: LLM）の急速な発展に伴い、外部知識源から関連情報を動的に取得して回答を生成する検索拡張生成（Retrieval-Augmented Generation: RAG）\cite{lewis2020rag}が広く実用化されている。従来のNaive RAGは、テキストを固定長チャンクに分割して密ベクトル埋め込みの類似度検索を行う手法が主流であった。しかし、このアプローチでは、複数文書にまたがるエンティティ間の関係を辿る多段推論において、後続推論に必要な中間エンティティや関連チャンクの想起漏れが生じ、推論連鎖が断絶しやすい\cite{qi-etal-2019-answering,zhu-etal-2025-mitigating,sarthi2024raptor}。また、コーパス全体のトピック構造を俯瞰して回答を要約するような質問は、通常の明示的な検索タスクとは異なるため、Naive RAGでは対応が難しい\cite{edge2024graphrag}。
 
 これらの課題を克服するため、非構造化テキストコーパスから自動的にエンティティや関係を抽出してナレッジグラフ（Knowledge Graph: KG）を構築し、グラフ構造と探索アルゴリズムを検索・プロンプティングに統合した「Graph-Based RAG」が注目を集めている。先行研究として、階層的コミュニティ検出と要約を用いるGraphRAG \cite{edge2024graphrag}、低レベル（エンティティ）と高レベル（関係・テーマ）の二層インデックスを統合したLightRAG \cite{guo2024lightrag}、関係パスの探索と枝刈りを行うPathRAG \cite{chen2024pathrag}、海馬の記憶想起に着想を得てオープン情報抽出（Open Information Extraction: OpenIE）とPersonalized PageRank（PPR）を組み合わせたHippoRAG \cite{gutierrez2024hipporag}、スキーマ駆動抽出とスキーマ進化を備えたYoutuRAG \cite{dong2025youtu}などが提案されている\cite{pan2024unifying}。
 
