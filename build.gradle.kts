@@ -96,8 +96,8 @@ dependencies {
     implementation("tools.jackson.module:jackson-module-kotlin:3.2.1")
     implementation("tools.jackson.dataformat:jackson-dataformat-yaml:3.2.2")
     implementation("org.jgrapht:jgrapht-core:$jgraphtVersion")
-    implementation("org.apache.lucene:lucene-core:10.5.0")
-    implementation("org.apache.lucene:lucene-analysis-common:10.5.0")
+    implementation("org.apache.lucene:lucene-core:10.5.1")
+    implementation("org.apache.lucene:lucene-analysis-common:10.5.1")
     // Keep Hadoop before parquet-floor on classpath: parquet-floor bundles a stub FSDataInputStream.
     implementation("org.apache.hadoop:hadoop-client-api:3.5.0")
     runtimeOnly("org.apache.hadoop:hadoop-client-runtime:3.5.0")
