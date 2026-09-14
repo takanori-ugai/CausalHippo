@@ -39,9 +39,7 @@ fun main() {
         .start(wait = true)
 }
 
-/**
- * The main module of the application.
- */
+/** Configures the Ktor application and its LightRAG routes. */
 fun Application.module() {
     install(ContentNegotiation) {
         json(

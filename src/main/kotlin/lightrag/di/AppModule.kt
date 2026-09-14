@@ -28,6 +28,7 @@ data class LightRagRuntime(
     val streamingChatModel: StreamingChatModel? = null,
 )
 
+/** Creates a LightRAG runtime with synchronous and optional streaming model support. */
 fun createLightRagRuntime(
     configPath: String = resolveLightRagConfigPath(),
     configTransform: (LightRagConfig) -> LightRagConfig = { it },
@@ -181,6 +182,7 @@ private data class ChatModels(
     val streamingChatModel: StreamingChatModel?,
 )
 
+/** Resolves the model pair while preserving an already-composed [DualChatModel]. */
 private fun createChatModels(
     lightRagConfig: LightRagConfig,
     chatModelFactory: ((LightRagConfig) -> ChatModel)?,
@@ -189,10 +191,16 @@ private fun createChatModels(
     val baseChatModel = chatModelFactory?.invoke(lightRagConfig) ?: createProviderChatModel(lightRagConfig)
     val streamingChatModel =
         streamingChatModelFactory?.invoke(lightRagConfig)
+            ?: (baseChatModel as? DualChatModel)?.streamingChatModel
             ?: (baseChatModel as? StreamingChatModel)
             ?: if (chatModelFactory == null) createProviderStreamingChatModel(lightRagConfig) else null
     return ChatModels(
-        chatModel = if (streamingChatModel != null) DualChatModel(baseChatModel, streamingChatModel) else baseChatModel,
+        chatModel =
+            if (streamingChatModel != null && baseChatModel !is DualChatModel) {
+                DualChatModel(baseChatModel, streamingChatModel)
+            } else {
+                baseChatModel
+            },
         streamingChatModel = streamingChatModel,
     )
 }
