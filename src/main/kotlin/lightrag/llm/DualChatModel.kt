@@ -9,6 +9,7 @@ import dev.langchain4j.model.chat.listener.ChatModelListener
 import dev.langchain4j.model.chat.request.ChatRequest
 import dev.langchain4j.model.chat.request.ChatRequestParameters
 import dev.langchain4j.model.chat.response.ChatResponse
+import java.util.concurrent.CompletableFuture
 
 /**
  * Synchronous chat adapter paired with a separate streaming implementation.
@@ -24,6 +25,9 @@ class DualChatModel(
     override fun chat(request: ChatRequest): ChatResponse = chatModel.chat(request)
 
     override fun doChat(request: ChatRequest): ChatResponse = chatModel.doChat(request)
+
+    /** Delegates asynchronous chat execution to the wrapped synchronous model. */
+    override fun doChatAsync(request: ChatRequest): CompletableFuture<ChatResponse> = chatModel.doChatAsync(request)
 
     override fun defaultRequestParameters(): ChatRequestParameters = chatModel.defaultRequestParameters()
 

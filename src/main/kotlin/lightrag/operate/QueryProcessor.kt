@@ -165,12 +165,17 @@ class QueryProcessor(
         if (queryParam.onlyNeedPrompt) return QueryResult(content = "$sysPrompt\n\n---\n\n$query", rawData = contextResult.rawData)
 
         val cacheKeys = buildCacheKeys(queryParam, query)
-        val cached = readCachedResponse(cacheKeys.argsHash, contextResult.rawData)
+        val cached =
+            if (queryParam.stream) {
+                null
+            } else {
+                readCachedResponse(cacheKeys.argsHash, contextResult.rawData)
+            }
         if (cached != null) return cached
 
         val response =
             if (queryParam.stream) {
-                handleStreamingResponse(query, queryParam, sysPrompt, cacheKeys)
+                handleStreamingResponse(query, sysPrompt)
             } else {
                 handleNonStreamingResponse(query, queryParam, sysPrompt, cacheKeys)
             }
@@ -262,11 +267,10 @@ class QueryProcessor(
         }
     }
 
+    /** Streams a generated response without reading or writing the non-streaming cache. */
     private suspend fun handleStreamingResponse(
         query: String,
-        queryParam: QueryParam,
         sysPrompt: String,
-        cacheKeys: CacheKeys,
     ): QueryResult? {
         val streamingModel = streamingChatModel ?: (chatModel as? StreamingChatModel)
         if (streamingModel == null) {
@@ -278,7 +282,6 @@ class QueryProcessor(
         logger.trace { "UserQuery :$query" }
         val responseIterator =
             flow {
-                val fullResponse = StringBuilder()
                 val blockingQueue = java.util.concurrent.LinkedBlockingQueue<String>()
                 val finalResponse = java.util.concurrent.CompletableFuture<ChatResponse>()
 
@@ -287,7 +290,6 @@ class QueryProcessor(
                     object : StreamingChatResponseHandler {
                         override fun onPartialResponse(partialResponse: String) {
                             blockingQueue.put(partialResponse)
-                            fullResponse.append(partialResponse)
                         }
 
                         override fun onCompleteResponse(response: ChatResponse) {
@@ -308,8 +310,6 @@ class QueryProcessor(
                     emit(token)
                 }
                 finalResponse.get()
-
-                saveQueryCache(cacheKeys, fullResponse.toString(), query, queryParam)
             }
         return QueryResult(responseIterator = responseIterator, isStreaming = true)
     }

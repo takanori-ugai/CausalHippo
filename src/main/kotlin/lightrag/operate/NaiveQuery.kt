@@ -359,7 +359,12 @@ suspend fun naiveQuery(params: NaiveQueryParams): QueryResult? {
     if (params.queryParam.onlyNeedContext) return QueryResult(content = promptContext.contextContent, rawData = promptContext.rawData)
     if (params.queryParam.onlyNeedPrompt) return QueryResult(content = promptContext.promptContent, rawData = promptContext.rawData)
 
-    val cached = handleCache(params.hashingKv, promptContext.argsHash, promptContext.userQuery, params.queryParam.mode, "query")
+    val cached =
+        if (params.queryParam.stream) {
+            null
+        } else {
+            handleCache(params.hashingKv, promptContext.argsHash, promptContext.userQuery, params.queryParam.mode, "query")
+        }
     if (cached != null) return QueryResult(content = cached.first, rawData = promptContext.rawData)
 
     return if (params.queryParam.stream) {
@@ -547,6 +552,7 @@ private fun computeArgsHash(
         ).joinToString("|"),
     )
 
+/** Streams a naive-query response without reading or writing the non-streaming cache. */
 private suspend fun streamNaiveQuery(
     params: NaiveQueryParams,
     model: ChatModel,
@@ -564,7 +570,6 @@ private suspend fun streamNaiveQuery(
     logger.trace { "UserPrompt: ${promptContext.userQuery}" }
     val responseFlow =
         flow {
-            val fullResponse = StringBuilder()
             val channel = Channel<String>(Channel.UNLIMITED)
 
             streamingModel.chat(
@@ -572,7 +577,6 @@ private suspend fun streamNaiveQuery(
                 object : StreamingChatResponseHandler {
                     override fun onPartialResponse(partialResponse: String) {
                         channel.trySend(partialResponse)
-                        fullResponse.append(partialResponse)
                     }
 
                     override fun onCompleteResponse(response: ChatResponse) {
@@ -588,8 +592,6 @@ private suspend fun streamNaiveQuery(
             for (token in channel) {
                 emit(token)
             }
-
-            saveQueryCache(params, promptContext.argsHash, fullResponse.toString(), promptContext.userQuery, promptContext.maxTotalTokens)
         }
     return QueryResult(responseIterator = responseFlow, rawData = promptContext.rawData, isStreaming = true)
 }
