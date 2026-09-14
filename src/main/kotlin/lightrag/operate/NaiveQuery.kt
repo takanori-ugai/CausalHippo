@@ -66,6 +66,7 @@ data class NaiveQueryParams(
     val chatModel: ChatModel? = null,
     val tokenizer: ((String) -> List<Int>),
     val decoder: ((List<Int>) -> String),
+    val streamingChatModel: StreamingChatModel? = null,
 )
 
 // Equivalent to python's _get_vector_context
@@ -551,7 +552,10 @@ private suspend fun streamNaiveQuery(
     model: ChatModel,
     promptContext: PromptContext,
 ): QueryResult {
-    val streamingModel = model as? StreamingChatModel
+    val streamingModel =
+        params.streamingChatModel
+            ?: (params.globalConfig["llm_streaming_model"] as? StreamingChatModel)
+            ?: (model as? StreamingChatModel)
     if (streamingModel == null) {
         logger.error { "Streaming is requested but the model does not support it." }
         return QueryResult(content = "Error: Streaming not supported by model.")

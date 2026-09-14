@@ -87,5 +87,5 @@ fun Application.module() {
     configureDocumentRoutes(rag)
     configureQueryRoutes(rag)
     configureGraphRoutes(rag)
-    configureOllamaRoutes(rag, chatModel)
+    configureOllamaRoutes(rag, chatModel, runtime.streamingChatModel)
 }

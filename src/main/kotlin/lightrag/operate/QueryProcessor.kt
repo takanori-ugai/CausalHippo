@@ -137,6 +137,7 @@ class QueryProcessor(
     private val chatModel: ChatModel,
     private val hashingKv: BaseKVStorage?,
     private val globalConfig: Map<String, Any?>,
+    private val streamingChatModel: StreamingChatModel? = null,
 ) {
     /**
      * Executes a knowledge-graph-aware query, optionally streaming responses, and returns the generated result.
@@ -267,7 +268,7 @@ class QueryProcessor(
         sysPrompt: String,
         cacheKeys: CacheKeys,
     ): QueryResult? {
-        val streamingModel = chatModel as? StreamingChatModel
+        val streamingModel = streamingChatModel ?: (chatModel as? StreamingChatModel)
         if (streamingModel == null) {
             logger.error { "Streaming is requested but the model does not support it." }
             return null
