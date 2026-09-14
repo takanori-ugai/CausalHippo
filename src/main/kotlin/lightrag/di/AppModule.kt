@@ -25,6 +25,7 @@ data class LightRagRuntime(
     val ingestionService: IngestionService,
     val queryService: QueryService,
     val rag: LightRAG,
+    val streamingChatModel: StreamingChatModel? = null,
 )
 
 fun createLightRagRuntime(
@@ -38,7 +39,9 @@ fun createLightRagRuntime(
     storageManagerFactory: ((AppConfig, Map<String, Any?>) -> StorageManager)? = null,
 ): LightRagRuntime {
     val lightRagConfig = configTransform(loadLightRagConfigFromCommonJson(configPath))
-    val chatModel = createChatModel(lightRagConfig, chatModelFactory, streamingChatModelFactory)
+    val chatModels = createChatModels(lightRagConfig, chatModelFactory, streamingChatModelFactory)
+    val chatModel = chatModels.chatModel
+    val streamingChatModel = chatModels.streamingChatModel
     val embeddingModel = embeddingModelFactory?.invoke(lightRagConfig) ?: createEmbeddingModel(lightRagConfig)
 
     val appConfig =
@@ -70,6 +73,7 @@ fun createLightRagRuntime(
         QueryService(
             storageManager = storageManager,
             chatModel = chatModel,
+            streamingChatModel = streamingChatModel,
             hashingKv = appConfig.hashingKv,
             globalConfig = globalConfig,
             tokenizer = tokenizer,
@@ -86,6 +90,7 @@ fun createLightRagRuntime(
         lightRagConfig = lightRagConfig,
         appConfig = appConfig,
         chatModel = chatModel,
+        streamingChatModel = streamingChatModel,
         embeddingModel = embeddingModel,
         globalConfig = globalConfig,
         storageManager = storageManager,
@@ -171,27 +176,25 @@ fun defaultAddonConfig(lightRagConfig: LightRagConfig): AddonConfig =
         cosineBetterThreshold = lightRagConfig.addonConfig.cosineBetterThreshold,
     )
 
-private fun createChatModel(
+private data class ChatModels(
+    val chatModel: ChatModel,
+    val streamingChatModel: StreamingChatModel?,
+)
+
+private fun createChatModels(
     lightRagConfig: LightRagConfig,
     chatModelFactory: ((LightRagConfig) -> ChatModel)?,
     streamingChatModelFactory: ((LightRagConfig) -> StreamingChatModel)?,
-): ChatModel {
+): ChatModels {
     val baseChatModel = chatModelFactory?.invoke(lightRagConfig) ?: createProviderChatModel(lightRagConfig)
-    val streamingChatModel = streamingChatModelFactory?.invoke(lightRagConfig)
-
-    if (streamingChatModel != null) {
-        return if (baseChatModel is StreamingChatModel) {
-            baseChatModel
-        } else {
-            DualChatModel(baseChatModel, streamingChatModel)
-        }
-    }
-
-    if (chatModelFactory == null) {
-        return DualChatModel(baseChatModel, createProviderStreamingChatModel(lightRagConfig))
-    }
-
-    return baseChatModel
+    val streamingChatModel =
+        streamingChatModelFactory?.invoke(lightRagConfig)
+            ?: (baseChatModel as? StreamingChatModel)
+            ?: if (chatModelFactory == null) createProviderStreamingChatModel(lightRagConfig) else null
+    return ChatModels(
+        chatModel = if (streamingChatModel != null) DualChatModel(baseChatModel, streamingChatModel) else baseChatModel,
+        streamingChatModel = streamingChatModel,
+    )
 }
 
 private fun createProviderChatModel(lightRagConfig: LightRagConfig): ChatModel =

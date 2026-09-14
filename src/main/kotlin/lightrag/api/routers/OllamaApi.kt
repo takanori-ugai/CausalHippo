@@ -131,6 +131,7 @@ data class OllamaMessage(
 fun Application.configureOllamaRoutes(
     rag: LightRAG,
     chatModel: ChatModel,
+    streamingChatModel: StreamingChatModel? = null,
 ) {
     logger.info {
         "Configuring Ollama-compatible routes with chat model ${chatModel::class.simpleName} and storage ${rag.storageManager::class.simpleName}"
@@ -148,7 +149,7 @@ fun Application.configureOllamaRoutes(
 
             post("/generate") {
                 val request = call.receive<OllamaGenerateRequest>()
-                val streamingModel = chatModel as? StreamingChatModel
+                val streamingModel = streamingChatModel ?: (chatModel as? StreamingChatModel)
                 if (request.stream && streamingModel != null) {
                     call.respondTextWriter {
                         val channel = Channel<String>(Channel.UNLIMITED)
@@ -185,7 +186,7 @@ fun Application.configureOllamaRoutes(
                     request.messages.joinToString("\n") { message ->
                         "${message.role}: ${message.content}"
                     }
-                val streamingModel = chatModel as? StreamingChatModel
+                val streamingModel = streamingChatModel ?: (chatModel as? StreamingChatModel)
                 if (request.stream && streamingModel != null) {
                     call.respondTextWriter {
                         val channel = Channel<String>(Channel.UNLIMITED)

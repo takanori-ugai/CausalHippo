@@ -9,16 +9,17 @@ import dev.langchain4j.model.chat.listener.ChatModelListener
 import dev.langchain4j.model.chat.request.ChatRequest
 import dev.langchain4j.model.chat.request.ChatRequestParameters
 import dev.langchain4j.model.chat.response.ChatResponse
-import dev.langchain4j.model.chat.response.StreamingChatResponseHandler
 
 /**
- * Adapter that exposes both [ChatModel] and [StreamingChatModel] interfaces using the provided implementations.
+ * Synchronous chat adapter paired with a separate streaming implementation.
+ *
+ * LangChain4j 1.20 declares overlapping methods with incompatible return types on
+ * [ChatModel] and [StreamingChatModel], so a single JVM class cannot implement both.
  */
 class DualChatModel(
     private val chatModel: ChatModel,
-    private val streamingChatModel: StreamingChatModel,
-) : ChatModel,
-    StreamingChatModel {
+    val streamingChatModel: StreamingChatModel,
+) : ChatModel {
     // ChatModel delegate
     override fun chat(request: ChatRequest): ChatResponse = chatModel.chat(request)
 
@@ -37,25 +38,4 @@ class DualChatModel(
     override fun chat(messages: List<ChatMessage>): ChatResponse = chatModel.chat(messages)
 
     override fun supportedCapabilities(): Set<Capability> = chatModel.supportedCapabilities()
-
-    // StreamingChatModel delegate
-    override fun chat(
-        request: ChatRequest,
-        handler: StreamingChatResponseHandler,
-    ) = streamingChatModel.chat(request, handler)
-
-    override fun doChat(
-        request: ChatRequest,
-        handler: StreamingChatResponseHandler,
-    ) = streamingChatModel.doChat(request, handler)
-
-    override fun chat(
-        message: String,
-        handler: StreamingChatResponseHandler,
-    ) = streamingChatModel.chat(message, handler)
-
-    override fun chat(
-        messages: List<ChatMessage>,
-        handler: StreamingChatResponseHandler,
-    ) = streamingChatModel.chat(messages, handler)
 }

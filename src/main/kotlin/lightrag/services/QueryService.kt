@@ -1,6 +1,7 @@
 package lightrag.services
 
 import dev.langchain4j.model.chat.ChatModel
+import dev.langchain4j.model.chat.StreamingChatModel
 import io.github.oshai.kotlinlogging.KotlinLogging
 import lightrag.core.QueryParam
 import lightrag.core.QueryResult
@@ -21,6 +22,7 @@ class QueryService(
     private val globalConfig: Map<String, Any?>,
     private val tokenizer: (String) -> List<Int>,
     private val decoder: (List<Int>) -> String,
+    private val streamingChatModel: StreamingChatModel? = null,
 ) {
     private val queryProcessor =
         QueryProcessor(
@@ -29,6 +31,7 @@ class QueryService(
             relationshipsVdb = storageManager.relationshipsVdb,
             textChunksDb = storageManager.textChunks,
             chatModel = chatModel,
+            streamingChatModel = streamingChatModel,
             hashingKv = hashingKv,
             globalConfig = globalConfig,
         )
@@ -60,6 +63,7 @@ class QueryService(
                         queryParam = param,
                         globalConfig = globalConfig,
                         chatModel = chatModel,
+                        streamingChatModel = streamingChatModel,
                         hashingKv = hashingKv,
                         tokenizer = tokenizer,
                         decoder = decoder,
