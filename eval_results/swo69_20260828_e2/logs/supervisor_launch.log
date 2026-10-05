@@ -1,0 +1,475 @@
+=== [SWO69] run dir: eval_results/swo69_20260828_e2 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 05:34:39 START lightrag_e0_lightrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] run dir: eval_results/swo69_20260828_e2 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 05:35:43 START graphrag_e0_graphrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] run dir: eval_results/swo69_20260828_e2 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 07:13:45 START graphrag_e0_graphrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] run dir: eval_results/swo69_20260828_e2 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 07:16:59 START graphrag_e0_graphrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] run dir: eval_results/swo69_20260828_e2 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 07:31:21 START graphrag_e0_graphrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 23:23:09 END   graphrag_e0_graphrag_musique rc=0 wall=57108s ===
+[analyze_kg_quality] rows=12 systems=['graphrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_graphrag_musique/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_graphrag_musique/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['graphrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e0_graphrag_musique/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e0_graphrag_musique/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 23:23:16 START lightrag_e0_lightrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 00:53:55 END   lightrag_e0_lightrag_musique rc=0 wall=5439s ===
+[analyze_kg_quality] rows=15 systems=['lightrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_lightrag_musique/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_lightrag_musique/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e0_lightrag_musique/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e0_lightrag_musique/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 00:53:58 START pathrag_e0_pathrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 03:38:35 END   pathrag_e0_pathrag_musique rc=0 wall=9877s ===
+[analyze_kg_quality] rows=15 systems=['pathrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_pathrag_musique/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_pathrag_musique/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['pathrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e0_pathrag_musique/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e0_pathrag_musique/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 03:38:38 START youturag_e0_youturag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 04:41:07 END   youturag_e0_youturag_musique rc=0 wall=3749s ===
+[analyze_kg_quality] rows=15 systems=['youturag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_youturag_musique/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_youturag_musique/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['youturag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e0_youturag_musique/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e0_youturag_musique/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 04:41:09 START hipporag_e0_hipporag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 04:41:11 END   hipporag_e0_hipporag_musique rc=0 wall=2s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_hipporag_musique/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_hipporag_musique/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e0_hipporag_musique/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e0_hipporag_musique/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 04:41:12 START graphrag_e0_graphrag_causal (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 06:05:56 END   graphrag_e0_graphrag_causal rc=0 wall=5084s ===
+[analyze_kg_quality] rows=15 systems=['graphrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_graphrag_causal/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_graphrag_causal/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['graphrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e0_graphrag_causal/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e0_graphrag_causal/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:06:01 START lightrag_e0_lightrag_causal (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 06:33:39 END   lightrag_e0_lightrag_causal rc=0 wall=1658s ===
+[analyze_kg_quality] rows=15 systems=['lightrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_lightrag_causal/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_lightrag_causal/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e0_lightrag_causal/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e0_lightrag_causal/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 06:33:41 START pathrag_e0_pathrag_causal (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 07:08:02 END   pathrag_e0_pathrag_causal rc=0 wall=2061s ===
+[analyze_kg_quality] rows=15 systems=['pathrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_pathrag_causal/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_pathrag_causal/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['pathrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e0_pathrag_causal/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e0_pathrag_causal/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 07:08:04 START youturag_e0_youturag_causal (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] run dir: eval_results/swo69_20260828_e2 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 11:41:44 SKIP  graphrag_e0_graphrag_musique (output exists) ===
+=== [SWO69] 11:41:44 SKIP  lightrag_e0_lightrag_musique (output exists) ===
+=== [SWO69] 11:41:44 SKIP  pathrag_e0_pathrag_musique (output exists) ===
+=== [SWO69] 11:41:44 SKIP  youturag_e0_youturag_musique (output exists) ===
+=== [SWO69] 11:41:44 SKIP  hipporag_e0_hipporag_musique (output exists) ===
+=== [SWO69] 11:41:44 SKIP  graphrag_e0_graphrag_causal (output exists) ===
+=== [SWO69] 11:41:44 SKIP  lightrag_e0_lightrag_causal (output exists) ===
+=== [SWO69] 11:41:44 SKIP  pathrag_e0_pathrag_causal (output exists) ===
+=== [SWO69] 11:41:44 START youturag_e0_youturag_causal (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 12:11:38 END   youturag_e0_youturag_causal rc=0 wall=1794s ===
+[analyze_kg_quality] rows=15 systems=['youturag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_youturag_causal/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_youturag_causal/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['youturag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e0_youturag_causal/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e0_youturag_causal/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 12:11:40 START hipporag_e0_hipporag_causal (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 12:11:42 END   hipporag_e0_hipporag_causal rc=0 wall=2s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_hipporag_causal/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_hipporag_causal/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e0_hipporag_causal/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e0_hipporag_causal/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 12:11:43 START graphrag_e0_graphrag_webis (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 17:43:16 END   graphrag_e0_graphrag_webis rc=0 wall=19893s ===
+[analyze_kg_quality] rows=12 systems=['graphrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_graphrag_webis/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_graphrag_webis/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['graphrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e0_graphrag_webis/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e0_graphrag_webis/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 17:43:21 START lightrag_e0_lightrag_webis (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 19:34:49 END   lightrag_e0_lightrag_webis rc=0 wall=6688s ===
+[analyze_kg_quality] rows=15 systems=['lightrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_lightrag_webis/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_lightrag_webis/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e0_lightrag_webis/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e0_lightrag_webis/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 19:34:51 START pathrag_e0_pathrag_webis (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 03:22:34 END   pathrag_e0_pathrag_webis rc=0 wall=28063s ===
+[analyze_kg_quality] rows=15 systems=['pathrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_pathrag_webis/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_pathrag_webis/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['pathrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e0_pathrag_webis/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e0_pathrag_webis/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 03:22:36 START youturag_e0_youturag_webis (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 04:05:06 END   youturag_e0_youturag_webis rc=0 wall=2550s ===
+[analyze_kg_quality] rows=15 systems=['youturag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_youturag_webis/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_youturag_webis/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['youturag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e0_youturag_webis/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e0_youturag_webis/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 04:05:08 START hipporag_e0_hipporag_webis (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 04:05:11 END   hipporag_e0_hipporag_webis rc=0 wall=3s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_hipporag_webis/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e0_hipporag_webis/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e0_hipporag_webis/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e0_hipporag_webis/discovery_metrics/discovery_metrics_by_condition.csv
+[analysis] merged rows=174
+[analysis] significant pairs (p<0.05): 8
+  density × faithfulness: rs=0.424 p=0.0000**
+  er × support_recall_at_5: rs=0.392 p=0.0000**
+  kgc × support_recall_at_5: rs=0.392 p=0.0000**
+  density × f1: rs=0.314 p=0.0000**
+  density × support_recall_at_5: rs=-0.283 p=0.0002**
+  rr × support_recall_at_5: rs=0.271 p=0.0031**
+  density × rh_at_5: rs=0.381 p=0.0038**
+  density × cic: rs=0.308 p=0.0040**
+  reg intercept: coef=-0.079 p=0.2749 stdβ=None
+  reg ER: coef=0.217 p=0.0327 stdβ=0.427
+  reg RR: coef=-0.080 p=0.2433 stdβ=-0.164
+  reg Density: coef=0.081 p=0.6659 stdβ=0.149
+  reg System=lightrag: coef=-0.034 p=0.6172 stdβ=-0.066
+[analysis] wrote 7 files to /home/aad13623fe/CausalHippo/eval_results/swo69_20260828_e2/e0_aggregate/analysis
+=== [SWO69] 04:05:17 DONE mode=e0 ===
+=== [SWO69] run dir: eval_results/swo69_20260828_e2 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 09:10:09 E2  lightrag_musique_p0: perturbing 15 snapshots ===
+[perturb] lightrag p0: nodes 138->138, edges 137->137 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/2hop__159903_419949/knowledge-graph.json
+[perturb] lightrag p0: nodes 138->138, edges 144->144 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/2hop__464479_70131/knowledge-graph.json
+[perturb] lightrag p0: nodes 146->146, edges 163->163 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/2hop__66149_85990/knowledge-graph.json
+[perturb] lightrag p0: nodes 121->121, edges 118->118 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/2hop__697729_576069/knowledge-graph.json
+[perturb] lightrag p0: nodes 182->182, edges 197->197 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/2hop__734057_88628/knowledge-graph.json
+[perturb] lightrag p0: nodes 168->168, edges 169->169 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/2hop__75207_46837/knowledge-graph.json
+[perturb] lightrag p0: nodes 134->134, edges 149->149 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/3hop1__140855_2053_52946/knowledge-graph.json
+[perturb] lightrag p0: nodes 143->143, edges 148->148 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/3hop1__280834_547811_80702/knowledge-graph.json
+[perturb] lightrag p0: nodes 150->150, edges 182->182 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/3hop1__857_846_7810/knowledge-graph.json
+[perturb] lightrag p0: nodes 143->143, edges 165->165 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/3hop2__90098_91678_10557/knowledge-graph.json
+[perturb] lightrag p0: nodes 170->170, edges 192->192 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/4hop1__271272_508773_85832_745702/knowledge-graph.json
+[perturb] lightrag p0: nodes 164->164, edges 175->175 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/4hop1__836115_49925_13759_736921/knowledge-graph.json
+[perturb] lightrag p0: nodes 165->165, edges 194->194 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/4hop1__9007_698949_157828_162309/knowledge-graph.json
+[perturb] lightrag p0: nodes 113->113, edges 112->112 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/4hop3__193820_466199_128875_72134/knowledge-graph.json
+[perturb] lightrag p0: nodes 171->171, edges 173->173 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/4hop3__312119_132409_146285_35031/knowledge-graph.json
+=== [SWO69] run dir: eval_results/swo69_20260828_e2 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 09:21:15 E2  lightrag_musique_p0: perturbing 15 snapshots ===
+[perturb] lightrag p0: nodes 138->138, edges 137->137 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/2hop__159903_419949/knowledge-graph.json
+[perturb] lightrag p0: nodes 138->138, edges 144->144 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/2hop__464479_70131/knowledge-graph.json
+[perturb] lightrag p0: nodes 146->146, edges 163->163 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/2hop__66149_85990/knowledge-graph.json
+[perturb] lightrag p0: nodes 121->121, edges 118->118 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/2hop__697729_576069/knowledge-graph.json
+[perturb] lightrag p0: nodes 182->182, edges 197->197 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/2hop__734057_88628/knowledge-graph.json
+[perturb] lightrag p0: nodes 168->168, edges 169->169 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/2hop__75207_46837/knowledge-graph.json
+[perturb] lightrag p0: nodes 134->134, edges 149->149 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/3hop1__140855_2053_52946/knowledge-graph.json
+[perturb] lightrag p0: nodes 143->143, edges 148->148 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/3hop1__280834_547811_80702/knowledge-graph.json
+[perturb] lightrag p0: nodes 150->150, edges 182->182 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/3hop1__857_846_7810/knowledge-graph.json
+[perturb] lightrag p0: nodes 143->143, edges 165->165 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/3hop2__90098_91678_10557/knowledge-graph.json
+[perturb] lightrag p0: nodes 170->170, edges 192->192 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/4hop1__271272_508773_85832_745702/knowledge-graph.json
+[perturb] lightrag p0: nodes 164->164, edges 175->175 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/4hop1__836115_49925_13759_736921/knowledge-graph.json
+[perturb] lightrag p0: nodes 165->165, edges 194->194 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/4hop1__9007_698949_157828_162309/knowledge-graph.json
+[perturb] lightrag p0: nodes 113->113, edges 112->112 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/4hop3__193820_466199_128875_72134/knowledge-graph.json
+[perturb] lightrag p0: nodes 171->171, edges 173->173 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/4hop3__312119_132409_146285_35031/knowledge-graph.json
+=== [SWO69] 09:33:28 END   e2/lightrag_musique_p0 rc=0 wall=732s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 09:33:30 E2  lightrag_musique_p1_10: perturbing 15 snapshots ===
+[perturb] lightrag p1_10: nodes 138->138, edges 137->123 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/2hop__159903_419949/knowledge-graph.json
+[perturb] lightrag p1_10: nodes 138->138, edges 144->130 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/2hop__464479_70131/knowledge-graph.json
+[perturb] lightrag p1_10: nodes 146->146, edges 163->147 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/2hop__66149_85990/knowledge-graph.json
+[perturb] lightrag p1_10: nodes 121->121, edges 118->106 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/2hop__697729_576069/knowledge-graph.json
+[perturb] lightrag p1_10: nodes 182->182, edges 197->177 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/2hop__734057_88628/knowledge-graph.json
+[perturb] lightrag p1_10: nodes 168->168, edges 169->152 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/2hop__75207_46837/knowledge-graph.json
+[perturb] lightrag p1_10: nodes 134->134, edges 149->134 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/3hop1__140855_2053_52946/knowledge-graph.json
+[perturb] lightrag p1_10: nodes 143->143, edges 148->133 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/3hop1__280834_547811_80702/knowledge-graph.json
+[perturb] lightrag p1_10: nodes 150->150, edges 182->164 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/3hop1__857_846_7810/knowledge-graph.json
+[perturb] lightrag p1_10: nodes 143->143, edges 165->149 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/3hop2__90098_91678_10557/knowledge-graph.json
+[perturb] lightrag p1_10: nodes 170->170, edges 192->173 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/4hop1__271272_508773_85832_745702/knowledge-graph.json
+[perturb] lightrag p1_10: nodes 164->164, edges 175->157 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/4hop1__836115_49925_13759_736921/knowledge-graph.json
+[perturb] lightrag p1_10: nodes 165->165, edges 194->175 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/4hop1__9007_698949_157828_162309/knowledge-graph.json
+[perturb] lightrag p1_10: nodes 113->113, edges 112->101 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/4hop3__193820_466199_128875_72134/knowledge-graph.json
+[perturb] lightrag p1_10: nodes 171->171, edges 173->156 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/4hop3__312119_132409_146285_35031/knowledge-graph.json
+=== [SWO69] 09:45:09 END   e2/lightrag_musique_p1_10 rc=0 wall=698s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_10/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 09:45:10 E2  lightrag_musique_p1_30: perturbing 15 snapshots ===
+[perturb] lightrag p1_30: nodes 138->138, edges 137->96 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/2hop__159903_419949/knowledge-graph.json
+[perturb] lightrag p1_30: nodes 138->138, edges 144->101 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/2hop__464479_70131/knowledge-graph.json
+[perturb] lightrag p1_30: nodes 146->146, edges 163->114 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/2hop__66149_85990/knowledge-graph.json
+[perturb] lightrag p1_30: nodes 121->121, edges 118->83 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/2hop__697729_576069/knowledge-graph.json
+[perturb] lightrag p1_30: nodes 182->182, edges 197->138 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/2hop__734057_88628/knowledge-graph.json
+[perturb] lightrag p1_30: nodes 168->168, edges 169->118 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/2hop__75207_46837/knowledge-graph.json
+[perturb] lightrag p1_30: nodes 134->134, edges 149->104 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/3hop1__140855_2053_52946/knowledge-graph.json
+[perturb] lightrag p1_30: nodes 143->143, edges 148->104 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/3hop1__280834_547811_80702/knowledge-graph.json
+[perturb] lightrag p1_30: nodes 150->150, edges 182->127 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/3hop1__857_846_7810/knowledge-graph.json
+[perturb] lightrag p1_30: nodes 143->143, edges 165->115 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/3hop2__90098_91678_10557/knowledge-graph.json
+[perturb] lightrag p1_30: nodes 170->170, edges 192->134 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/4hop1__271272_508773_85832_745702/knowledge-graph.json
+[perturb] lightrag p1_30: nodes 164->164, edges 175->123 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/4hop1__836115_49925_13759_736921/knowledge-graph.json
+[perturb] lightrag p1_30: nodes 165->165, edges 194->136 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/4hop1__9007_698949_157828_162309/knowledge-graph.json
+[perturb] lightrag p1_30: nodes 113->113, edges 112->78 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/4hop3__193820_466199_128875_72134/knowledge-graph.json
+[perturb] lightrag p1_30: nodes 171->171, edges 173->121 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/4hop3__312119_132409_146285_35031/knowledge-graph.json
+=== [SWO69] 09:55:30 END   e2/lightrag_musique_p1_30 rc=0 wall=619s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_30/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 09:55:31 E2  lightrag_musique_p1_50: perturbing 15 snapshots ===
+[perturb] lightrag p1_50: nodes 138->138, edges 137->69 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/2hop__159903_419949/knowledge-graph.json
+[perturb] lightrag p1_50: nodes 138->138, edges 144->72 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/2hop__464479_70131/knowledge-graph.json
+[perturb] lightrag p1_50: nodes 146->146, edges 163->81 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/2hop__66149_85990/knowledge-graph.json
+[perturb] lightrag p1_50: nodes 121->121, edges 118->59 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/2hop__697729_576069/knowledge-graph.json
+[perturb] lightrag p1_50: nodes 182->182, edges 197->99 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/2hop__734057_88628/knowledge-graph.json
+[perturb] lightrag p1_50: nodes 168->168, edges 169->85 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/2hop__75207_46837/knowledge-graph.json
+[perturb] lightrag p1_50: nodes 134->134, edges 149->75 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/3hop1__140855_2053_52946/knowledge-graph.json
+[perturb] lightrag p1_50: nodes 143->143, edges 148->74 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/3hop1__280834_547811_80702/knowledge-graph.json
+[perturb] lightrag p1_50: nodes 150->150, edges 182->91 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/3hop1__857_846_7810/knowledge-graph.json
+[perturb] lightrag p1_50: nodes 143->143, edges 165->83 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/3hop2__90098_91678_10557/knowledge-graph.json
+[perturb] lightrag p1_50: nodes 170->170, edges 192->96 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/4hop1__271272_508773_85832_745702/knowledge-graph.json
+[perturb] lightrag p1_50: nodes 164->164, edges 175->87 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/4hop1__836115_49925_13759_736921/knowledge-graph.json
+[perturb] lightrag p1_50: nodes 165->165, edges 194->97 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/4hop1__9007_698949_157828_162309/knowledge-graph.json
+[perturb] lightrag p1_50: nodes 113->113, edges 112->56 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/4hop3__193820_466199_128875_72134/knowledge-graph.json
+[perturb] lightrag p1_50: nodes 171->171, edges 173->87 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/4hop3__312119_132409_146285_35031/knowledge-graph.json
+=== [SWO69] 10:05:30 END   e2/lightrag_musique_p1_50 rc=0 wall=598s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p1_50/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 10:05:31 E2  lightrag_musique_p2_10: perturbing 15 snapshots ===
+[perturb] lightrag p2_10: nodes 138->124, edges 137->114 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/2hop__159903_419949/knowledge-graph.json
+[perturb] lightrag p2_10: nodes 138->124, edges 144->114 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/2hop__464479_70131/knowledge-graph.json
+[perturb] lightrag p2_10: nodes 146->131, edges 163->128 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/2hop__66149_85990/knowledge-graph.json
+[perturb] lightrag p2_10: nodes 121->109, edges 118->97 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/2hop__697729_576069/knowledge-graph.json
+[perturb] lightrag p2_10: nodes 182->164, edges 197->148 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/2hop__734057_88628/knowledge-graph.json
+[perturb] lightrag p2_10: nodes 168->151, edges 169->144 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/2hop__75207_46837/knowledge-graph.json
+[perturb] lightrag p2_10: nodes 134->121, edges 149->126 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/3hop1__140855_2053_52946/knowledge-graph.json
+[perturb] lightrag p2_10: nodes 143->129, edges 148->120 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/3hop1__280834_547811_80702/knowledge-graph.json
+[perturb] lightrag p2_10: nodes 150->135, edges 182->146 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/3hop1__857_846_7810/knowledge-graph.json
+[perturb] lightrag p2_10: nodes 143->129, edges 165->141 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/3hop2__90098_91678_10557/knowledge-graph.json
+[perturb] lightrag p2_10: nodes 170->153, edges 192->152 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/4hop1__271272_508773_85832_745702/knowledge-graph.json
+[perturb] lightrag p2_10: nodes 164->148, edges 175->146 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/4hop1__836115_49925_13759_736921/knowledge-graph.json
+[perturb] lightrag p2_10: nodes 165->149, edges 194->165 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/4hop1__9007_698949_157828_162309/knowledge-graph.json
+[perturb] lightrag p2_10: nodes 113->102, edges 112->93 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/4hop3__193820_466199_128875_72134/knowledge-graph.json
+[perturb] lightrag p2_10: nodes 171->154, edges 173->146 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/4hop3__312119_132409_146285_35031/knowledge-graph.json
+=== [SWO69] 10:16:02 END   e2/lightrag_musique_p2_10 rc=0 wall=630s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_10/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 10:16:03 E2  lightrag_musique_p2_30: perturbing 15 snapshots ===
+[perturb] lightrag p2_30: nodes 138->97, edges 137->67 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/2hop__159903_419949/knowledge-graph.json
+[perturb] lightrag p2_30: nodes 138->97, edges 144->73 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/2hop__464479_70131/knowledge-graph.json
+[perturb] lightrag p2_30: nodes 146->102, edges 163->76 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/2hop__66149_85990/knowledge-graph.json
+[perturb] lightrag p2_30: nodes 121->85, edges 118->54 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/2hop__697729_576069/knowledge-graph.json
+[perturb] lightrag p2_30: nodes 182->127, edges 197->88 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/2hop__734057_88628/knowledge-graph.json
+[perturb] lightrag p2_30: nodes 168->118, edges 169->99 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/2hop__75207_46837/knowledge-graph.json
+[perturb] lightrag p2_30: nodes 134->94, edges 149->73 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/3hop1__140855_2053_52946/knowledge-graph.json
+[perturb] lightrag p2_30: nodes 143->100, edges 148->72 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/3hop1__280834_547811_80702/knowledge-graph.json
+[perturb] lightrag p2_30: nodes 150->105, edges 182->79 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/3hop1__857_846_7810/knowledge-graph.json
+[perturb] lightrag p2_30: nodes 143->100, edges 165->83 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/3hop2__90098_91678_10557/knowledge-graph.json
+[perturb] lightrag p2_30: nodes 170->119, edges 192->96 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/4hop1__271272_508773_85832_745702/knowledge-graph.json
+[perturb] lightrag p2_30: nodes 164->115, edges 175->80 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/4hop1__836115_49925_13759_736921/knowledge-graph.json
+[perturb] lightrag p2_30: nodes 165->115, edges 194->106 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/4hop1__9007_698949_157828_162309/knowledge-graph.json
+[perturb] lightrag p2_30: nodes 113->79, edges 112->53 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/4hop3__193820_466199_128875_72134/knowledge-graph.json
+[perturb] lightrag p2_30: nodes 171->120, edges 173->83 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/4hop3__312119_132409_146285_35031/knowledge-graph.json
+=== [SWO69] 10:25:00 END   e2/lightrag_musique_p2_30 rc=0 wall=536s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p2_30/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 10:25:01 E2  lightrag_musique_p3: perturbing 15 snapshots ===
+[perturb] lightrag p3: nodes 138->136, edges 137->133 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/2hop__159903_419949/knowledge-graph.json
+[perturb] lightrag p3: nodes 138->136, edges 144->139 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/2hop__464479_70131/knowledge-graph.json
+[perturb] lightrag p3: nodes 146->140, edges 163->146 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/2hop__66149_85990/knowledge-graph.json
+[perturb] lightrag p3: nodes 121->118, edges 118->114 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/2hop__697729_576069/knowledge-graph.json
+[perturb] lightrag p3: nodes 182->177, edges 197->187 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/2hop__734057_88628/knowledge-graph.json
+[perturb] lightrag p3: nodes 168->167, edges 169->159 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/2hop__75207_46837/knowledge-graph.json
+[perturb] lightrag p3: nodes 134->130, edges 149->138 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/3hop1__140855_2053_52946/knowledge-graph.json
+[perturb] lightrag p3: nodes 143->140, edges 148->135 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/3hop1__280834_547811_80702/knowledge-graph.json
+[perturb] lightrag p3: nodes 150->144, edges 182->157 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/3hop1__857_846_7810/knowledge-graph.json
+[perturb] lightrag p3: nodes 143->139, edges 165->148 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/3hop2__90098_91678_10557/knowledge-graph.json
+[perturb] lightrag p3: nodes 170->164, edges 192->168 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/4hop1__271272_508773_85832_745702/knowledge-graph.json
+[perturb] lightrag p3: nodes 164->159, edges 175->142 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/4hop1__836115_49925_13759_736921/knowledge-graph.json
+[perturb] lightrag p3: nodes 165->160, edges 194->172 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/4hop1__9007_698949_157828_162309/knowledge-graph.json
+[perturb] lightrag p3: nodes 113->105, edges 112->92 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/4hop3__193820_466199_128875_72134/knowledge-graph.json
+[perturb] lightrag p3: nodes 171->165, edges 173->144 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/4hop3__312119_132409_146285_35031/knowledge-graph.json
+=== [SWO69] 10:36:01 END   e2/lightrag_musique_p3 rc=0 wall=659s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p3/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 10:36:03 E2  lightrag_musique_p4: perturbing 15 snapshots ===
+[perturb] lightrag p4: nodes 138->138, edges 137->137 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/2hop__159903_419949/knowledge-graph.json
+[perturb] lightrag p4: nodes 138->138, edges 144->144 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/2hop__464479_70131/knowledge-graph.json
+[perturb] lightrag p4: nodes 146->146, edges 163->163 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/2hop__66149_85990/knowledge-graph.json
+[perturb] lightrag p4: nodes 121->121, edges 118->118 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/2hop__697729_576069/knowledge-graph.json
+[perturb] lightrag p4: nodes 182->182, edges 197->197 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/2hop__734057_88628/knowledge-graph.json
+[perturb] lightrag p4: nodes 168->168, edges 169->169 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/2hop__75207_46837/knowledge-graph.json
+[perturb] lightrag p4: nodes 134->134, edges 149->149 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/3hop1__140855_2053_52946/knowledge-graph.json
+[perturb] lightrag p4: nodes 143->143, edges 148->148 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/3hop1__280834_547811_80702/knowledge-graph.json
+[perturb] lightrag p4: nodes 150->150, edges 182->182 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/3hop1__857_846_7810/knowledge-graph.json
+[perturb] lightrag p4: nodes 143->143, edges 165->165 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/3hop2__90098_91678_10557/knowledge-graph.json
+[perturb] lightrag p4: nodes 170->170, edges 192->192 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/4hop1__271272_508773_85832_745702/knowledge-graph.json
+[perturb] lightrag p4: nodes 164->164, edges 175->175 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/4hop1__836115_49925_13759_736921/knowledge-graph.json
+[perturb] lightrag p4: nodes 165->165, edges 194->194 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/4hop1__9007_698949_157828_162309/knowledge-graph.json
+[perturb] lightrag p4: nodes 113->113, edges 112->112 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/4hop3__193820_466199_128875_72134/knowledge-graph.json
+[perturb] lightrag p4: nodes 171->171, edges 173->173 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/4hop3__312119_132409_146285_35031/knowledge-graph.json
+=== [SWO69] 10:47:37 END   e2/lightrag_musique_p4 rc=0 wall=693s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p4/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 10:47:39 E2  lightrag_musique_p5_10: perturbing 15 snapshots ===
+[perturb] lightrag p5_10: nodes 138->152, edges 137->151 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/2hop__159903_419949/knowledge-graph.json
+[perturb] lightrag p5_10: nodes 138->152, edges 144->158 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/2hop__464479_70131/knowledge-graph.json
+[perturb] lightrag p5_10: nodes 146->161, edges 163->178 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/2hop__66149_85990/knowledge-graph.json
+[perturb] lightrag p5_10: nodes 121->133, edges 118->130 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/2hop__697729_576069/knowledge-graph.json
+[perturb] lightrag p5_10: nodes 182->200, edges 197->215 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/2hop__734057_88628/knowledge-graph.json
+[perturb] lightrag p5_10: nodes 168->185, edges 169->186 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/2hop__75207_46837/knowledge-graph.json
+[perturb] lightrag p5_10: nodes 134->147, edges 149->162 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/3hop1__140855_2053_52946/knowledge-graph.json
+[perturb] lightrag p5_10: nodes 143->157, edges 148->162 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/3hop1__280834_547811_80702/knowledge-graph.json
+[perturb] lightrag p5_10: nodes 150->165, edges 182->197 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/3hop1__857_846_7810/knowledge-graph.json
+[perturb] lightrag p5_10: nodes 143->157, edges 165->179 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/3hop2__90098_91678_10557/knowledge-graph.json
+[perturb] lightrag p5_10: nodes 170->187, edges 192->209 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/4hop1__271272_508773_85832_745702/knowledge-graph.json
+[perturb] lightrag p5_10: nodes 164->180, edges 175->191 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/4hop1__836115_49925_13759_736921/knowledge-graph.json
+[perturb] lightrag p5_10: nodes 165->181, edges 194->210 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/4hop1__9007_698949_157828_162309/knowledge-graph.json
+[perturb] lightrag p5_10: nodes 113->124, edges 112->123 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/4hop3__193820_466199_128875_72134/knowledge-graph.json
+[perturb] lightrag p5_10: nodes 171->188, edges 173->190 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/4hop3__312119_132409_146285_35031/knowledge-graph.json
+=== [SWO69] 10:59:44 END   e2/lightrag_musique_p5_10 rc=0 wall=724s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_10/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 10:59:46 E2  lightrag_musique_p5_30: perturbing 15 snapshots ===
+[perturb] lightrag p5_30: nodes 138->179, edges 137->178 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/2hop__159903_419949/knowledge-graph.json
+[perturb] lightrag p5_30: nodes 138->179, edges 144->185 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/2hop__464479_70131/knowledge-graph.json
+[perturb] lightrag p5_30: nodes 146->190, edges 163->207 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/2hop__66149_85990/knowledge-graph.json
+[perturb] lightrag p5_30: nodes 121->157, edges 118->154 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/2hop__697729_576069/knowledge-graph.json
+[perturb] lightrag p5_30: nodes 182->237, edges 197->252 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/2hop__734057_88628/knowledge-graph.json
+[perturb] lightrag p5_30: nodes 168->218, edges 169->219 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/2hop__75207_46837/knowledge-graph.json
+[perturb] lightrag p5_30: nodes 134->174, edges 149->189 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/3hop1__140855_2053_52946/knowledge-graph.json
+[perturb] lightrag p5_30: nodes 143->186, edges 148->191 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/3hop1__280834_547811_80702/knowledge-graph.json
+[perturb] lightrag p5_30: nodes 150->195, edges 182->227 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/3hop1__857_846_7810/knowledge-graph.json
+[perturb] lightrag p5_30: nodes 143->186, edges 165->208 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/3hop2__90098_91678_10557/knowledge-graph.json
+[perturb] lightrag p5_30: nodes 170->221, edges 192->243 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/4hop1__271272_508773_85832_745702/knowledge-graph.json
+[perturb] lightrag p5_30: nodes 164->213, edges 175->224 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/4hop1__836115_49925_13759_736921/knowledge-graph.json
+[perturb] lightrag p5_30: nodes 165->215, edges 194->244 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/4hop1__9007_698949_157828_162309/knowledge-graph.json
+[perturb] lightrag p5_30: nodes 113->147, edges 112->146 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/4hop3__193820_466199_128875_72134/knowledge-graph.json
+[perturb] lightrag p5_30: nodes 171->222, edges 173->224 (seed=42) -> eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/4hop3__312119_132409_146285_35031/knowledge-graph.json
+=== [SWO69] 11:12:51 END   e2/lightrag_musique_p5_30 rc=0 wall=784s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p5_30/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 11:12:52 SKIP e2/hipporag — jar lacks the RAG-runner e2 hook (rebuild required, see SWO69/REBUILD.md) ===
+=== [SWO69] 11:12:52 DONE mode=e2 ===
+=== [SWO69] 11:32:49 END   e2/lightrag_musique_p0 rc=0 wall=8559s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260828_e2/e2/lightrag_musique_p0/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 11:32:52 SKIP  e2/lightrag_musique_p1_10 (output exists) ===
+=== [SWO69] 11:32:52 SKIP  e2/lightrag_musique_p1_30 (output exists) ===
+=== [SWO69] 11:32:52 SKIP  e2/lightrag_musique_p1_50 (output exists) ===
+=== [SWO69] 11:32:52 SKIP  e2/lightrag_musique_p2_10 (output exists) ===
+=== [SWO69] 11:32:52 SKIP  e2/lightrag_musique_p2_30 (output exists) ===
+=== [SWO69] 11:32:52 SKIP  e2/lightrag_musique_p3 (output exists) ===
+=== [SWO69] 11:32:52 SKIP  e2/lightrag_musique_p4 (output exists) ===
+=== [SWO69] 11:32:53 SKIP  e2/lightrag_musique_p5_10 (output exists) ===
+=== [SWO69] 11:32:53 SKIP  e2/lightrag_musique_p5_30 (output exists) ===
+=== [SWO69] 11:32:53 SKIP e2/hipporag — jar lacks the RAG-runner e2 hook (rebuild required, see SWO69/REBUILD.md) ===
+=== [SWO69] 11:32:53 DONE mode=e2 ===
+=== [SWO69] run dir: eval_results/swo69_20260828_e2 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 12:34:27 SKIP  hipporag_e0_hipporag_musique (output exists) ===
+=== [SWO69] 12:34:27 SKIP  hipporag_e0_hipporag_causal (output exists) ===
+=== [SWO69] 12:34:27 SKIP  hipporag_e0_hipporag_webis (output exists) ===
+[analysis] merged rows=174
+[analysis] significant pairs (p<0.05): 8
+  density × faithfulness: rs=0.424 p=0.0000**
+  er × support_recall_at_5: rs=0.392 p=0.0000**
+  kgc × support_recall_at_5: rs=0.392 p=0.0000**
+  density × f1: rs=0.314 p=0.0000**
+  density × support_recall_at_5: rs=-0.283 p=0.0002**
+  rr × support_recall_at_5: rs=0.271 p=0.0031**
+  density × rh_at_5: rs=0.381 p=0.0038**
+  density × cic: rs=0.308 p=0.0040**
+  reg intercept: coef=-0.079 p=0.2749 stdβ=None
+  reg ER: coef=0.217 p=0.0327 stdβ=0.427
+  reg RR: coef=-0.080 p=0.2433 stdβ=-0.164
+  reg Density: coef=0.081 p=0.6659 stdβ=0.149
+  reg System=lightrag: coef=-0.034 p=0.6172 stdβ=-0.066
+[analysis] wrote 7 files to /home/aad13623fe/CausalHippo/eval_results/swo69_20260828_e2/e0_aggregate/analysis
+/home/aad13623fe/CausalHippo/scripts/correlation_analysis.py:326: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.legend(fontsize=8)
+[e2] wrote /home/aad13623fe/CausalHippo/eval_results/swo69_20260828_e2/e2/analysis/wilcoxon_e2.csv and /home/aad13623fe/CausalHippo/eval_results/swo69_20260828_e2/e2/analysis/fig2_degradation.png (10 condition rows)
+=== [SWO69] 12:34:33 DONE mode=e0 ===
+=== [SWO69] run dir: eval_results/swo69_20260828_e2 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 12:47:37 SKIP  e2/lightrag_musique_p0 (output exists) ===
+=== [SWO69] 12:47:37 SKIP  e2/lightrag_musique_p1_10 (output exists) ===
+=== [SWO69] 12:47:37 SKIP  e2/lightrag_musique_p1_30 (output exists) ===
+=== [SWO69] 12:47:37 SKIP  e2/lightrag_musique_p1_50 (output exists) ===
+=== [SWO69] 12:47:37 SKIP  e2/lightrag_musique_p2_10 (output exists) ===
+=== [SWO69] 12:47:37 SKIP  e2/lightrag_musique_p2_30 (output exists) ===
+=== [SWO69] 12:47:37 SKIP  e2/lightrag_musique_p3 (output exists) ===
+=== [SWO69] 12:47:37 SKIP  e2/lightrag_musique_p4 (output exists) ===
+=== [SWO69] 12:47:37 SKIP  e2/lightrag_musique_p5_10 (output exists) ===
+=== [SWO69] 12:47:37 SKIP  e2/lightrag_musique_p5_30 (output exists) ===
+=== [SWO69] 12:47:37 DONE mode=e2 ===
+=== [SWO69] run dir: eval_results/swo69_20260828_e2 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 12:49:26 SKIP  e2/lightrag_musique_p0 (output exists) ===
+=== [SWO69] 12:49:26 SKIP  e2/lightrag_musique_p1_10 (output exists) ===
+=== [SWO69] 12:49:26 SKIP  e2/lightrag_musique_p1_30 (output exists) ===
+=== [SWO69] 12:49:26 SKIP  e2/lightrag_musique_p1_50 (output exists) ===
+=== [SWO69] 12:49:26 SKIP  e2/lightrag_musique_p2_10 (output exists) ===
+=== [SWO69] 12:49:26 SKIP  e2/lightrag_musique_p2_30 (output exists) ===
+=== [SWO69] 12:49:26 SKIP  e2/lightrag_musique_p3 (output exists) ===
+=== [SWO69] 12:49:26 SKIP  e2/lightrag_musique_p4 (output exists) ===
+=== [SWO69] 12:49:26 SKIP  e2/lightrag_musique_p5_10 (output exists) ===
+=== [SWO69] 12:49:26 SKIP  e2/lightrag_musique_p5_30 (output exists) ===
+=== [SWO69] 12:49:26 DONE mode=e2 ===
+=== [SWO69] run dir: eval_results/swo69_20260828_e2 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 15:01:28 SKIP e2/hipporag — jar lacks the RAG-runner e2 hook (rebuild required, see SWO69/REBUILD.md) ===
+=== [SWO69] 15:01:28 DONE mode=e2 ===

@@ -1,0 +1,521 @@
+{
+  "nodes" : [ {
+    "id" : "Miss America",
+    "entity_id" : "Miss America",
+    "entity_type" : "Event",
+    "description" : "A beauty pageant whose winners' ages are noted to show a pattern resembling murder statistics by steam, hot vapors, and hot objects.",
+    "source_id" : "c8adbda7d7887ad50b844d9a2d6905c5"
+  }, {
+    "id" : "Miss America winners",
+    "entity_id" : "Miss America winners",
+    "entity_type" : "Person",
+    "description" : "The individuals who win the Miss America pageant, whose ages are observed to increase or decrease in parallel with certain murder statistics.",
+    "source_id" : "c8adbda7d7887ad50b844d9a2d6905c5"
+  }, {
+    "id" : "Murders by steam, hot vapors, and hot objects",
+    "entity_id" : "Murders by steam, hot vapors, and hot objects",
+    "entity_type" : "Concept",
+    "description" : "A specific category of murder statistics that allegedly shows a pattern similar to the ages of Miss America winners.",
+    "source_id" : "c8adbda7d7887ad50b844d9a2d6905c5"
+  }, {
+    "id" : "Age of Miss America winners",
+    "entity_id" : "Age of Miss America winners",
+    "entity_type" : "Concept",
+    "description" : "The statistical measure of the ages of Miss America pageant winners, which is noted to align with murder statistics by steam, hot vapors, and hot objects.",
+    "source_id" : "c8adbda7d7887ad50b844d9a2d6905c5"
+  }, {
+    "id" : "Murder statistics",
+    "entity_id" : "Murder statistics",
+    "entity_type" : "Concept",
+    "description" : "Documented data on murders, including the specific category of murders by steam, hot vapors, and hot objects, whose meaning in relation to Miss America winners remains uncertain.",
+    "source_id" : "c8adbda7d7887ad50b844d9a2d6905c5"
+  }, {
+    "id" : "Phone Malfunction",
+    "entity_id" : "Phone Malfunction",
+    "entity_type" : "Event",
+    "description" : "A sudden phone malfunction experienced by several residents, occurring within minutes of a thunderstorm arriving in the area.",
+    "source_id" : "163b991c4cff066e89ae46208f0678e5"
+  }, {
+    "id" : "Thunderstorm",
+    "entity_id" : "Thunderstorm",
+    "entity_type" : "Event",
+    "description" : "A fierce thunderstorm that arrived in the area, coinciding temporally with the phone malfunction.",
+    "source_id" : "163b991c4cff066e89ae46208f0678e5"
+  }, {
+    "id" : "Server-Side Bug",
+    "entity_id" : "Server-Side Bug",
+    "entity_type" : "Concept",
+    "description" : "A software bug deployed earlier that day, identified as the actual root cause of the phone malfunction.",
+    "source_id" : "163b991c4cff066e89ae46208f0678e5"
+  }, {
+    "id" : "Technical Support",
+    "entity_id" : "Technical Support",
+    "entity_type" : "Organization",
+    "description" : "The support team that investigated the phone malfunction and determined it was caused by a server-side bug rather than external factors.",
+    "source_id" : "163b991c4cff066e89ae46208f0678e5"
+  }, {
+    "id" : "Power Surge",
+    "entity_id" : "Power Surge",
+    "entity_type" : "Concept",
+    "description" : "A suspected causal mechanism that users assumed linked the thunderstorm to the phone malfunction.",
+    "source_id" : "163b991c4cff066e89ae46208f0678e5"
+  }, {
+    "id" : "Residents",
+    "entity_id" : "Residents",
+    "entity_type" : "Person",
+    "description" : "Several residents who experienced the sudden phone malfunction and initially suspected a connection to the thunderstorm.",
+    "source_id" : "163b991c4cff066e89ae46208f0678e5"
+  }, {
+    "id" : "Jitters",
+    "entity_id" : "Jitters",
+    "entity_type" : "Concept",
+    "description" : "A physical symptom experienced by some individuals, whose true source remains uncertain despite multiple proposed causes.",
+    "source_id" : "21ade462a3e3f9882e94103ae40bd043"
+  }, {
+    "id" : "Caffeine Intake",
+    "entity_id" : "Caffeine Intake",
+    "entity_type" : "Concept",
+    "description" : "Excessive consumption of caffeine, suggested by some individuals as a potential cause of jitters.",
+    "source_id" : "21ade462a3e3f9882e94103ae40bd043"
+  }, {
+    "id" : "Work Stress",
+    "entity_id" : "Work Stress",
+    "entity_type" : "Concept",
+    "description" : "Stress originating from work, believed by some to be the underlying cause of anxiety that may lead to jitters.",
+    "source_id" : "21ade462a3e3f9882e94103ae40bd043"
+  }, {
+    "id" : "Anxiety",
+    "entity_id" : "Anxiety",
+    "entity_type" : "Concept",
+    "description" : "A mental state potentially triggered by work stress, suggested as a contributing factor to jitters.",
+    "source_id" : "21ade462a3e3f9882e94103ae40bd043"
+  }, {
+    "id" : "Lack of Sleep",
+    "entity_id" : "Lack of Sleep",
+    "entity_type" : "Concept",
+    "description" : "Insufficient sleep, suggested by some as the true factor behind the occurrence of jitters.",
+    "source_id" : "21ade462a3e3f9882e94103ae40bd043"
+  }, {
+    "id" : "Meditation",
+    "entity_id" : "Meditation",
+    "entity_type" : "Concept",
+    "description" : "A practice that many practitioners claim helps improve focus at work, often accompanied by other mindfulness techniques and careful schedule management.",
+    "source_id" : "707a300e76a0e71f35c6156b3e255b8f"
+  }, {
+    "id" : "Mindfulness techniques",
+    "entity_id" : "Mindfulness techniques",
+    "entity_type" : "Concept",
+    "description" : "Additional techniques often implemented alongside meditation by practitioners who report better focus at work.",
+    "source_id" : "707a300e76a0e71f35c6156b3e255b8f"
+  }, {
+    "id" : "Focus at work",
+    "entity_id" : "Focus at work",
+    "entity_type" : "Concept",
+    "description" : "The ability to concentrate effectively in a work environment, which may be influenced by multiple factors including meditation, schedule management, and job flexibility.",
+    "source_id" : "707a300e76a0e71f35c6156b3e255b8f"
+  }, {
+    "id" : "Schedule management",
+    "entity_id" : "Schedule management",
+    "entity_type" : "Concept",
+    "description" : "The careful management of one's schedule, often practiced by meditation practitioners as part of their approach to maintaining focus.",
+    "source_id" : "707a300e76a0e71f35c6156b3e255b8f"
+  }, {
+    "id" : "Flexible jobs",
+    "entity_id" : "Flexible jobs",
+    "entity_type" : "Concept",
+    "description" : "Employment arrangements that reduce distractions and may contribute to better concentration at work.",
+    "source_id" : "707a300e76a0e71f35c6156b3e255b8f"
+  }, {
+    "id" : "Alternative strategies",
+    "entity_id" : "Alternative strategies",
+    "entity_type" : "Concept",
+    "description" : "Different methods used by some individuals to achieve high focus without practicing meditation.",
+    "source_id" : "707a300e76a0e71f35c6156b3e255b8f"
+  }, {
+    "id" : "Multiple approaches",
+    "entity_id" : "Multiple approaches",
+    "entity_type" : "Concept",
+    "description" : "A combination of various methods and practices that may collectively contribute to an individual's ability to concentrate.",
+    "source_id" : "707a300e76a0e71f35c6156b3e255b8f"
+  }, {
+    "id" : "Art Exhibition",
+    "entity_id" : "Art Exhibition",
+    "entity_type" : "Event",
+    "description" : "A popular art exhibition that led to a significant uptick in museum visits.",
+    "source_id" : "06ef6d9f060d038966f70a16d5a1e263"
+  }, {
+    "id" : "Museum",
+    "entity_id" : "Museum",
+    "entity_type" : "Organization",
+    "description" : "A museum that experienced a significant increase in attendance during the art exhibition period.",
+    "source_id" : "06ef6d9f060d038966f70a16d5a1e263"
+  }, {
+    "id" : "Public Transportation",
+    "entity_id" : "Public Transportation",
+    "entity_type" : "Organization",
+    "description" : "The city's transit system, including buses, which experienced frequent delays and crowding during the period.",
+    "source_id" : "06ef6d9f060d038966f70a16d5a1e263"
+  }, {
+    "id" : "Regular Commuters",
+    "entity_id" : "Regular Commuters",
+    "entity_type" : "Person",
+    "description" : "Daily commuters who complained about crowded buses and longer wait times, attributing the inconvenience to the surge in museum-goers.",
+    "source_id" : "06ef6d9f060d038966f70a16d5a1e263"
+  }, {
+    "id" : "City Officials",
+    "entity_id" : "City Officials",
+    "entity_type" : "Organization",
+    "description" : "Municipal authorities who clarified that the transit delays were caused by ongoing track repairs rather than increased museum attendance.",
+    "source_id" : "06ef6d9f060d038966f70a16d5a1e263"
+  }, {
+    "id" : "Track Repairs",
+    "entity_id" : "Track Repairs",
+    "entity_type" : "Event",
+    "description" : "Ongoing infrastructure repairs on transit tracks that were the actual cause of public transportation delays.",
+    "source_id" : "06ef6d9f060d038966f70a16d5a1e263"
+  }, {
+    "id" : "Museum-goers",
+    "entity_id" : "Museum-goers",
+    "entity_type" : "Person",
+    "description" : "Visitors who attended the museum during the art exhibition, whose increased numbers were incorrectly blamed for transit issues.",
+    "source_id" : "06ef6d9f060d038966f70a16d5a1e263"
+  }, {
+    "id" : "Coffee consumption",
+    "entity_id" : "Coffee consumption",
+    "entity_type" : "Concept",
+    "description" : "The amount of coffee consumed in a city, which shows a corresponding increase with the frequency of taxi rides taken.",
+    "source_id" : "340ef47e41f971807ba8040b9edaae9a"
+  }, {
+    "id" : "Taxi rides",
+    "entity_id" : "Taxi rides",
+    "entity_type" : "Concept",
+    "description" : "The frequency of taxi rides taken in a city, which correlates with rising coffee consumption.",
+    "source_id" : "340ef47e41f971807ba8040b9edaae9a"
+  }, {
+    "id" : "Municipal statistics",
+    "entity_id" : "Municipal statistics",
+    "entity_type" : "Concept",
+    "description" : "The data reviewed that suggests a corresponding increase between coffee consumption and taxi ride frequency in a city.",
+    "source_id" : "340ef47e41f971807ba8040b9edaae9a"
+  }, {
+    "id" : "Caffeinated energy",
+    "entity_id" : "Caffeinated energy",
+    "entity_type" : "Concept",
+    "description" : "A speculated factor derived from coffee consumption that may be linked to urban mobility.",
+    "source_id" : "340ef47e41f971807ba8040b9edaae9a"
+  }, {
+    "id" : "Urban mobility",
+    "entity_id" : "Urban mobility",
+    "entity_type" : "Concept",
+    "description" : "The movement of people within a city, speculated to have a potential link with caffeinated energy.",
+    "source_id" : "340ef47e41f971807ba8040b9edaae9a"
+  }, {
+    "id" : "Taxi fares",
+    "entity_id" : "Taxi fares",
+    "entity_type" : "Concept",
+    "description" : "Fares collected from taxi rides that rise alongside increasing coffee consumption in a city.",
+    "source_id" : "340ef47e41f971807ba8040b9edaae9a"
+  } ],
+  "edges" : [ {
+    "source" : "Miss America winners",
+    "target" : "Miss America",
+    "weight" : "1.0",
+    "description" : "Miss America winners are the individuals selected as victors of the Miss America pageant.",
+    "keywords" : "win, pageant, selection",
+    "source_id" : "c8adbda7d7887ad50b844d9a2d6905c5",
+    "src_id" : "Miss America winners",
+    "tgt_id" : "Miss America"
+  }, {
+    "source" : "Miss America winners",
+    "target" : "Age of Miss America winners",
+    "weight" : "1.0",
+    "description" : "The age is a demographic attribute of the Miss America winners that is tracked over time.",
+    "keywords" : "attribute, demographic",
+    "source_id" : "c8adbda7d7887ad50b844d9a2d6905c5",
+    "src_id" : "Miss America winners",
+    "tgt_id" : "Age of Miss America winners"
+  }, {
+    "source" : "Age of Miss America winners",
+    "target" : "Murders by steam, hot vapors, and hot objects",
+    "weight" : "1.0",
+    "description" : "The ages of Miss America winners are observed to increase or decrease in parallel with the murder statistics by steam, hot vapors, and hot objects, a similarity noted by observers.",
+    "keywords" : "correlation, pattern, alignment",
+    "source_id" : "c8adbda7d7887ad50b844d9a2d6905c5",
+    "src_id" : "Age of Miss America winners",
+    "tgt_id" : "Murders by steam, hot vapors, and hot objects"
+  }, {
+    "source" : "Murders by steam, hot vapors, and hot objects",
+    "target" : "Murder statistics",
+    "weight" : "1.0",
+    "description" : "Murders by steam, hot vapors, and hot objects represent a specific category within the broader set of documented murder statistics.",
+    "keywords" : "category, subset, data",
+    "source_id" : "c8adbda7d7887ad50b844d9a2d6905c5",
+    "src_id" : "Murders by steam, hot vapors, and hot objects",
+    "tgt_id" : "Murder statistics"
+  }, {
+    "source" : "Phone Malfunction",
+    "target" : "Thunderstorm",
+    "weight" : "1.0",
+    "description" : "The phone malfunction occurred within minutes of the thunderstorm arriving, creating a misleading temporal association, though the two incidents were ultimately unrelated.",
+    "keywords" : "coincidence, temporal proximity, unrelated",
+    "source_id" : "163b991c4cff066e89ae46208f0678e5",
+    "src_id" : "Phone Malfunction",
+    "tgt_id" : "Thunderstorm"
+  }, {
+    "source" : "Phone Malfunction",
+    "target" : "Server-Side Bug",
+    "weight" : "1.0",
+    "description" : "The phone malfunction was actually caused by a server-side bug that had been deployed earlier that day.",
+    "keywords" : "caused by, root cause",
+    "source_id" : "163b991c4cff066e89ae46208f0678e5",
+    "src_id" : "Phone Malfunction",
+    "tgt_id" : "Server-Side Bug"
+  }, {
+    "source" : "Phone Malfunction",
+    "target" : "Residents",
+    "weight" : "1.0",
+    "description" : "Several residents experienced the sudden phone malfunction and initially suspected a causal link to the thunderstorm.",
+    "keywords" : "experienced, affected",
+    "source_id" : "163b991c4cff066e89ae46208f0678e5",
+    "src_id" : "Residents",
+    "tgt_id" : "Phone Malfunction"
+  }, {
+    "source" : "Thunderstorm",
+    "target" : "Power Surge",
+    "weight" : "1.0",
+    "description" : "Users assumed the thunderstorm caused a power surge that led to the phone malfunction, though this was not the actual cause.",
+    "keywords" : "suspected cause, assumption",
+    "source_id" : "163b991c4cff066e89ae46208f0678e5",
+    "src_id" : "Thunderstorm",
+    "tgt_id" : "Power Surge"
+  }, {
+    "source" : "Thunderstorm",
+    "target" : "Residents",
+    "weight" : "1.0",
+    "description" : "The coincidence of the malfunction with the storm's arrival misled residents into suspecting a causal relationship between the two events.",
+    "keywords" : "misled, false association",
+    "source_id" : "163b991c4cff066e89ae46208f0678e5",
+    "src_id" : "Residents",
+    "tgt_id" : "Thunderstorm"
+  }, {
+    "source" : "Server-Side Bug",
+    "target" : "Technical Support",
+    "weight" : "1.0",
+    "description" : "Technical Support investigated the issue and determined that the server-side bug was the true cause of the malfunction.",
+    "keywords" : "identified, diagnosed, investigation",
+    "source_id" : "163b991c4cff066e89ae46208f0678e5",
+    "src_id" : "Technical Support",
+    "tgt_id" : "Server-Side Bug"
+  }, {
+    "source" : "Caffeine Intake",
+    "target" : "Jitters",
+    "weight" : "1.0",
+    "description" : "The source of jitters remains uncertain, with caffeine intake, anxiety, and lack of sleep all proposed as potential causes.",
+    "keywords" : "uncertainty, attribution, multiple causes",
+    "source_id" : "21ade462a3e3f9882e94103ae40bd043",
+    "src_id" : "Jitters",
+    "tgt_id" : "Caffeine Intake"
+  }, {
+    "source" : "Jitters",
+    "target" : "Anxiety",
+    "weight" : "1.0",
+    "description" : "Anxiety, potentially stemming from work stress, is suggested as a contributing factor to jitters.",
+    "keywords" : "cause, symptom, mental state",
+    "source_id" : "21ade462a3e3f9882e94103ae40bd043",
+    "src_id" : "Anxiety",
+    "tgt_id" : "Jitters"
+  }, {
+    "source" : "Jitters",
+    "target" : "Lack of Sleep",
+    "weight" : "1.0",
+    "description" : "Lack of sleep is suggested by some as the true factor behind the occurrence of jitters.",
+    "keywords" : "cause, factor, sleep",
+    "source_id" : "21ade462a3e3f9882e94103ae40bd043",
+    "src_id" : "Lack of Sleep",
+    "tgt_id" : "Jitters"
+  }, {
+    "source" : "Work Stress",
+    "target" : "Anxiety",
+    "weight" : "1.0",
+    "description" : "Work stress is believed by some to be the underlying cause of anxiety.",
+    "keywords" : "cause, trigger, stress",
+    "source_id" : "21ade462a3e3f9882e94103ae40bd043",
+    "src_id" : "Work Stress",
+    "tgt_id" : "Anxiety"
+  }, {
+    "source" : "Meditation",
+    "target" : "Focus at work",
+    "weight" : "1.0",
+    "description" : "Many meditation practitioners claim to experience better focus at work as a result of their practice.",
+    "keywords" : "improvement, concentration, practice",
+    "source_id" : "707a300e76a0e71f35c6156b3e255b8f",
+    "src_id" : "Meditation",
+    "tgt_id" : "Focus at work"
+  }, {
+    "source" : "Meditation",
+    "target" : "Mindfulness techniques",
+    "weight" : "1.0",
+    "description" : "Meditation practitioners often implement other mindfulness techniques alongside their meditation practice.",
+    "keywords" : "complementary, implementation, practice",
+    "source_id" : "707a300e76a0e71f35c6156b3e255b8f",
+    "src_id" : "Meditation",
+    "tgt_id" : "Mindfulness techniques"
+  }, {
+    "source" : "Meditation",
+    "target" : "Schedule management",
+    "weight" : "1.0",
+    "description" : "Meditation practitioners often manage their schedules carefully as part of their overall approach to focus.",
+    "keywords" : "complementary, organization, routine",
+    "source_id" : "707a300e76a0e71f35c6156b3e255b8f",
+    "src_id" : "Meditation",
+    "tgt_id" : "Schedule management"
+  }, {
+    "source" : "Focus at work",
+    "target" : "Flexible jobs",
+    "weight" : "1.0",
+    "description" : "Flexible jobs reduce distractions, which may contribute to better focus at work for some individuals.",
+    "keywords" : "distraction reduction, environment, concentration",
+    "source_id" : "707a300e76a0e71f35c6156b3e255b8f",
+    "src_id" : "Flexible jobs",
+    "tgt_id" : "Focus at work"
+  }, {
+    "source" : "Focus at work",
+    "target" : "Alternative strategies",
+    "weight" : "1.0",
+    "description" : "Some individuals achieve high focus at work through different strategies without practicing meditation.",
+    "keywords" : "independent, non-meditation, concentration",
+    "source_id" : "707a300e76a0e71f35c6156b3e255b8f",
+    "src_id" : "Alternative strategies",
+    "tgt_id" : "Focus at work"
+  }, {
+    "source" : "Focus at work",
+    "target" : "Multiple approaches",
+    "weight" : "1.0",
+    "description" : "Multiple approaches, including meditation, mindfulness, schedule management, and job flexibility, may collectively contribute to an individual's ability to concentrate.",
+    "keywords" : "contribution, combination, concentration",
+    "source_id" : "707a300e76a0e71f35c6156b3e255b8f",
+    "src_id" : "Multiple approaches",
+    "tgt_id" : "Focus at work"
+  }, {
+    "source" : "Art Exhibition",
+    "target" : "Museum",
+    "weight" : "1.0",
+    "description" : "The popular art exhibition caused a significant uptick in museum visits.",
+    "keywords" : "attendance, increase, visits",
+    "source_id" : "06ef6d9f060d038966f70a16d5a1e263",
+    "src_id" : "Art Exhibition",
+    "tgt_id" : "Museum"
+  }, {
+    "source" : "Art Exhibition",
+    "target" : "Public Transportation",
+    "weight" : "1.0",
+    "description" : "The parallel rise in museum attendance and transit issues led some to draw questionable conclusions about a causal connection between the two.",
+    "keywords" : "correlation, misconception, parallel timing",
+    "source_id" : "06ef6d9f060d038966f70a16d5a1e263",
+    "src_id" : "Art Exhibition",
+    "tgt_id" : "Public Transportation"
+  }, {
+    "source" : "Regular Commuters",
+    "target" : "Public Transportation",
+    "weight" : "1.0",
+    "description" : "Regular commuters complained about crowded buses and longer wait times on the public transportation system.",
+    "keywords" : "complaints, delays, crowding",
+    "source_id" : "06ef6d9f060d038966f70a16d5a1e263",
+    "src_id" : "Regular Commuters",
+    "tgt_id" : "Public Transportation"
+  }, {
+    "source" : "Regular Commuters",
+    "target" : "Museum-goers",
+    "weight" : "1.0",
+    "description" : "Regular commuters attributed their transit inconvenience to the surge in museum-goers, though this was not the actual cause.",
+    "keywords" : "blame, attribution, inconvenience",
+    "source_id" : "06ef6d9f060d038966f70a16d5a1e263",
+    "src_id" : "Regular Commuters",
+    "tgt_id" : "Museum-goers"
+  }, {
+    "source" : "Public Transportation",
+    "target" : "Track Repairs",
+    "weight" : "1.0",
+    "description" : "Ongoing track repairs were the true cause of the frequent public transportation delays.",
+    "keywords" : "cause, delays, infrastructure",
+    "source_id" : "06ef6d9f060d038966f70a16d5a1e263",
+    "src_id" : "Track Repairs",
+    "tgt_id" : "Public Transportation"
+  }, {
+    "source" : "City Officials",
+    "target" : "Track Repairs",
+    "weight" : "1.0",
+    "description" : "City officials clarified that the transit delays were actually caused by ongoing track repairs.",
+    "keywords" : "clarification, cause, explanation",
+    "source_id" : "06ef6d9f060d038966f70a16d5a1e263",
+    "src_id" : "City Officials",
+    "tgt_id" : "Track Repairs"
+  }, {
+    "source" : "Municipal statistics",
+    "target" : "Coffee consumption",
+    "weight" : "1.0",
+    "description" : "Municipal statistics provide the data that suggests a corresponding increase in coffee consumption within a city.",
+    "keywords" : "data, correlation, review",
+    "source_id" : "340ef47e41f971807ba8040b9edaae9a",
+    "src_id" : "Municipal statistics",
+    "tgt_id" : "Coffee consumption"
+  }, {
+    "source" : "Municipal statistics",
+    "target" : "Taxi rides",
+    "weight" : "1.0",
+    "description" : "Municipal statistics provide the data that shows a corresponding increase in the frequency of taxi rides taken.",
+    "keywords" : "data, correlation, review",
+    "source_id" : "340ef47e41f971807ba8040b9edaae9a",
+    "src_id" : "Municipal statistics",
+    "tgt_id" : "Taxi rides"
+  }, {
+    "source" : "Coffee consumption",
+    "target" : "Taxi rides",
+    "weight" : "1.0",
+    "description" : "As coffee consumption rises in a city, the frequency of taxi rides taken also increases, showing a steady alignment of figures.",
+    "keywords" : "correlation, corresponding increase, alignment",
+    "source_id" : "340ef47e41f971807ba8040b9edaae9a",
+    "src_id" : "Coffee consumption",
+    "tgt_id" : "Taxi rides"
+  }, {
+    "source" : "Coffee consumption",
+    "target" : "Taxi fares",
+    "weight" : "1.0",
+    "description" : "As coffee consumption rises, taxi fares collected also increase, indicating a parallel trend.",
+    "keywords" : "correlation, rising, alignment",
+    "source_id" : "340ef47e41f971807ba8040b9edaae9a",
+    "src_id" : "Coffee consumption",
+    "tgt_id" : "Taxi fares"
+  }, {
+    "source" : "Coffee consumption",
+    "target" : "Caffeinated energy",
+    "weight" : "1.0",
+    "description" : "Coffee consumption is the source of caffeinated energy, which has been speculated to influence urban mobility.",
+    "keywords" : "source, energy, caffeine",
+    "source_id" : "340ef47e41f971807ba8040b9edaae9a",
+    "src_id" : "Coffee consumption",
+    "tgt_id" : "Caffeinated energy"
+  }, {
+    "source" : "Taxi rides",
+    "target" : "Urban mobility",
+    "weight" : "1.0",
+    "description" : "Taxi rides represent a component of urban mobility within a city.",
+    "keywords" : "component, movement, city",
+    "source_id" : "340ef47e41f971807ba8040b9edaae9a",
+    "src_id" : "Taxi rides",
+    "tgt_id" : "Urban mobility"
+  }, {
+    "source" : "Caffeinated energy",
+    "target" : "Urban mobility",
+    "weight" : "1.0",
+    "description" : "People have speculated about a potential link between caffeinated energy and urban mobility, though the connection is far from conclusive.",
+    "keywords" : "speculation, potential link, connection",
+    "source_id" : "340ef47e41f971807ba8040b9edaae9a",
+    "src_id" : "Caffeinated energy",
+    "tgt_id" : "Urban mobility"
+  } ],
+  "metadata" : {
+    "nodeCount" : 36,
+    "edgeCount" : 33
+  }
+}

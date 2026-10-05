@@ -1,0 +1,506 @@
+{
+  "nodes" : [ {
+    "id" : "Depression",
+    "entity_id" : "Depression",
+    "entity_type" : "Concept",
+    "description" : "A mental health condition characterized by prolonged low moods and worsening symptoms that affect daily functioning.",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea"
+  }, {
+    "id" : "Sleep disturbances",
+    "entity_id" : "Sleep disturbances",
+    "entity_type" : "Concept",
+    "description" : "Disrupted and erratic sleep patterns that individuals experience, often in conjunction with depressive symptoms.",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea"
+  }, {
+    "id" : "Low moods",
+    "entity_id" : "Low moods",
+    "entity_type" : "Concept",
+    "description" : "Prolonged periods of low emotional state that align with disrupted sleep patterns in individuals with depression.",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea"
+  }, {
+    "id" : "Depressive symptoms",
+    "entity_id" : "Depressive symptoms",
+    "entity_type" : "Concept",
+    "description" : "Worsening manifestations of depression that correlate with increasingly erratic sleep patterns.",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea"
+  }, {
+    "id" : "Mood",
+    "entity_id" : "Mood",
+    "entity_type" : "Concept",
+    "description" : "The emotional state of an individual, which has a noted relationship with sleep quality.",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea"
+  }, {
+    "id" : "Sleep",
+    "entity_id" : "Sleep",
+    "entity_type" : "Concept",
+    "description" : "The biological process of rest that can become disrupted and erratic, particularly in the context of depression.",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea"
+  }, {
+    "id" : "Neighborhood residents",
+    "entity_id" : "Neighborhood residents",
+    "entity_type" : "Person",
+    "description" : "Residents in a neighborhood who observed the correlation between sprinkler activation and the lush appearance of the grass in the yard.",
+    "source_id" : "ef25acf1202d81389ff836f8c76fa666"
+  }, {
+    "id" : "Sprinkler system",
+    "entity_id" : "Sprinkler system",
+    "entity_type" : "Concept",
+    "description" : "A watering system that activates at scheduled intervals each week, coinciding with the grass appearing greener.",
+    "source_id" : "ef25acf1202d81389ff836f8c76fa666"
+  }, {
+    "id" : "Grass",
+    "entity_id" : "Grass",
+    "entity_type" : "Concept",
+    "description" : "The grass in the yard that appeared especially lush and green shortly after the sprinkler system ran, following a familiar visual pattern.",
+    "source_id" : "ef25acf1202d81389ff836f8c76fa666"
+  }, {
+    "id" : "The yard",
+    "entity_id" : "The yard",
+    "entity_type" : "Location",
+    "description" : "The area where the grass is located and where the sprinkler system operates at scheduled intervals.",
+    "source_id" : "ef25acf1202d81389ff836f8c76fa666"
+  }, {
+    "id" : "Old Alarm Clock",
+    "entity_id" : "Old Alarm Clock",
+    "entity_type" : "Concept",
+    "description" : "A persistent alarm clock that rings every morning, serving as a reminder for the family to wake up. Its absence was speculated upon by family members.",
+    "source_id" : "ba6c0224d070e15b133e5fc36ec86124"
+  }, {
+    "id" : "Bedroom",
+    "entity_id" : "Bedroom",
+    "entity_type" : "Location",
+    "description" : "The room where the old alarm clock is located and where family members wake up each morning.",
+    "source_id" : "ba6c0224d070e15b133e5fc36ec86124"
+  }, {
+    "id" : "Family Members",
+    "entity_id" : "Family Members",
+    "entity_type" : "Person",
+    "description" : "The people who wake up to the alarm clock each morning. Some complained about the early hour while others were grateful for the reminder. They speculated about whether mornings would be the same without the alarm clock.",
+    "source_id" : "ba6c0224d070e15b133e5fc36ec86124"
+  }, {
+    "id" : "Morning Routine",
+    "entity_id" : "Morning Routine",
+    "entity_type" : "Event",
+    "description" : "The daily routine of waking up to the alarm clock that went unquestioned for years among the family members.",
+    "source_id" : "ba6c0224d070e15b133e5fc36ec86124"
+  }, {
+    "id" : "Teenagers",
+    "entity_id" : "Teenagers",
+    "entity_type" : "Concept",
+    "description" : "A demographic group whose daily screen time is frequently noted as rising.",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b"
+  }, {
+    "id" : "Screen time",
+    "entity_id" : "Screen time",
+    "entity_type" : "Concept",
+    "description" : "The daily duration of screen usage, which is increasing among teenagers and students.",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b"
+  }, {
+    "id" : "Eye strain",
+    "entity_id" : "Eye strain",
+    "entity_type" : "Concept",
+    "description" : "A visual discomfort experienced by students during classes, reported in increasing numbers.",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b"
+  }, {
+    "id" : "Students",
+    "entity_id" : "Students",
+    "entity_type" : "Concept",
+    "description" : "A group of learners who report experiencing eye strain during classes.",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b"
+  }, {
+    "id" : "Educational institutions",
+    "entity_id" : "Educational institutions",
+    "entity_type" : "Organization",
+    "description" : "Institutions that introduce brief digital breaks in response to screen-related issues among students.",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b"
+  }, {
+    "id" : "Digital breaks",
+    "entity_id" : "Digital breaks",
+    "entity_type" : "Concept",
+    "description" : "Brief pauses from digital device usage introduced by educational institutions to mitigate screen-related effects.",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b"
+  }, {
+    "id" : "Opticians",
+    "entity_id" : "Opticians",
+    "entity_type" : "Organization",
+    "description" : "Eye care professionals who report a slight increase in appointments.",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b"
+  }, {
+    "id" : "Schools",
+    "entity_id" : "Schools",
+    "entity_type" : "Organization",
+    "description" : "Various educational establishments where the trend of increased screen time and related effects appears uniform.",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b"
+  }, {
+    "id" : "Local Book Fair",
+    "entity_id" : "Local Book Fair",
+    "entity_type" : "Organization",
+    "description" : "A local book fair whose attendance numbers have increased significantly this year and which has responded by hosting climbing-themed readings.",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2"
+  }, {
+    "id" : "Indoor Climbing Gym",
+    "entity_id" : "Indoor Climbing Gym",
+    "entity_type" : "Organization",
+    "description" : "An indoor climbing gym whose memberships have increased significantly this year.",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2"
+  }, {
+    "id" : "Residents",
+    "entity_id" : "Residents",
+    "entity_type" : "Person",
+    "description" : "Local residents who are speculated to be adopting a more engaged and active lifestyle overall, reflected in increased book fair attendance and climbing gym memberships.",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2"
+  }, {
+    "id" : "Climbing-themed readings",
+    "entity_id" : "Climbing-themed readings",
+    "entity_type" : "Event",
+    "description" : "Readings hosted by the local book fair that incorporate a climbing theme as a response to the trend of increased climbing gym memberships.",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2"
+  }, {
+    "id" : "Active Lifestyle",
+    "entity_id" : "Active Lifestyle",
+    "entity_type" : "Concept",
+    "description" : "A more engaged and active lifestyle that residents are speculated to be adopting, encompassing both reading and climbing activities.",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2"
+  }, {
+    "id" : "Book Reading",
+    "entity_id" : "Book Reading",
+    "entity_type" : "Concept",
+    "description" : "The activity of reading books, which has seen increased participation as reflected in higher book fair attendance.",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2"
+  }, {
+    "id" : "Climbing",
+    "entity_id" : "Climbing",
+    "entity_type" : "Concept",
+    "description" : "The physical activity of climbing, which has seen increased participation as reflected in higher indoor climbing gym memberships.",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2"
+  }, {
+    "id" : "Bookstore sales",
+    "entity_id" : "Bookstore sales",
+    "entity_type" : "Concept",
+    "description" : "Sales of books that are observed to be strong in months when local coffee shop seating shortages are most pronounced.",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b"
+  }, {
+    "id" : "Coffee shop seating shortages",
+    "entity_id" : "Coffee shop seating shortages",
+    "entity_type" : "Concept",
+    "description" : "Shortages of available seating in local coffee shops that are most pronounced during certain months.",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b"
+  }, {
+    "id" : "Community members",
+    "entity_id" : "Community members",
+    "entity_type" : "Organization",
+    "description" : "Local residents who observed the correlation between bookstore sales and coffee shop seating shortages and proposed explanations for the link.",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b"
+  }, {
+    "id" : "Reading habits",
+    "entity_id" : "Reading habits",
+    "entity_type" : "Concept",
+    "description" : "Increased reading behavior that some suggest drives people to linger longer in coffee shops.",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b"
+  }, {
+    "id" : "Colder weather",
+    "entity_id" : "Colder weather",
+    "entity_type" : "Concept",
+    "description" : "A weather condition that pushes people indoors and could reasonably increase both reading and coffee shop patronage simultaneously, acting as a confounding factor.",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b"
+  }, {
+    "id" : "Coffee shop patronage",
+    "entity_id" : "Coffee shop patronage",
+    "entity_type" : "Concept",
+    "description" : "The act of visiting and spending time in coffee shops, which may be increased by colder weather and longer reading sessions.",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b"
+  } ],
+  "edges" : [ {
+    "source" : "Depression",
+    "target" : "Sleep disturbances",
+    "weight" : "1.0",
+    "description" : "People experiencing depression often mention ongoing sleep disturbances as a common accompanying issue.",
+    "keywords" : "association, co-occurrence, symptom",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea",
+    "src_id" : "Depression",
+    "tgt_id" : "Sleep disturbances"
+  }, {
+    "source" : "Depression",
+    "target" : "Low moods",
+    "weight" : "1.0",
+    "description" : "Depression is characterized by prolonged low moods that individuals experience over time.",
+    "keywords" : "characteristic, manifestation, symptom",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea",
+    "src_id" : "Depression",
+    "tgt_id" : "Low moods"
+  }, {
+    "source" : "Sleep disturbances",
+    "target" : "Low moods",
+    "weight" : "1.0",
+    "description" : "Disrupted sleep patterns tend to align with prolonged low moods in individuals.",
+    "keywords" : "alignment, correlation, pattern",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea",
+    "src_id" : "Sleep disturbances",
+    "tgt_id" : "Low moods"
+  }, {
+    "source" : "Sleep disturbances",
+    "target" : "Depressive symptoms",
+    "weight" : "1.0",
+    "description" : "As depressive symptoms worsen, sleep becomes more erratic, indicating a progressive relationship.",
+    "keywords" : "worsening, escalation, erratic",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea",
+    "src_id" : "Depressive symptoms",
+    "tgt_id" : "Sleep disturbances"
+  }, {
+    "source" : "Mood",
+    "target" : "Sleep",
+    "weight" : "1.0",
+    "description" : "The relationship between mood and sleep remains a subject of ongoing conversation and observation.",
+    "keywords" : "relationship, interaction, discussion",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea",
+    "src_id" : "Mood",
+    "tgt_id" : "Sleep"
+  }, {
+    "source" : "Neighborhood residents",
+    "target" : "Sprinkler system",
+    "weight" : "1.0",
+    "description" : "Neighborhood residents observed the activation of the sprinkler system and noted its scheduled weekly intervals.",
+    "keywords" : "observation, activation, noticed",
+    "source_id" : "ef25acf1202d81389ff836f8c76fa666",
+    "src_id" : "Neighborhood residents",
+    "tgt_id" : "Sprinkler system"
+  }, {
+    "source" : "Neighborhood residents",
+    "target" : "Grass",
+    "weight" : "1.0",
+    "description" : "Neighborhood residents observed the visual transformation of the grass following a familiar pattern whenever the sprinklers ran, with some attributing it to the time of year and others to the sprinklers.",
+    "keywords" : "observation, pattern, visual transformation",
+    "source_id" : "ef25acf1202d81389ff836f8c76fa666",
+    "src_id" : "Neighborhood residents",
+    "tgt_id" : "Grass"
+  }, {
+    "source" : "Sprinkler system",
+    "target" : "Grass",
+    "weight" : "1.0",
+    "description" : "The activation of the sprinkler system coincided with the grass appearing especially lush and green shortly afterward.",
+    "keywords" : "causation, lushness, correlation",
+    "source_id" : "ef25acf1202d81389ff836f8c76fa666",
+    "src_id" : "Sprinkler system",
+    "tgt_id" : "Grass"
+  }, {
+    "source" : "Sprinkler system",
+    "target" : "The yard",
+    "weight" : "1.0",
+    "description" : "The sprinkler system operates in the yard, activating at scheduled intervals to water the grass.",
+    "keywords" : "operates in, waters",
+    "source_id" : "ef25acf1202d81389ff836f8c76fa666",
+    "src_id" : "Sprinkler system",
+    "tgt_id" : "The yard"
+  }, {
+    "source" : "Grass",
+    "target" : "The yard",
+    "weight" : "1.0",
+    "description" : "The grass is situated in the yard where the sprinkler system operates.",
+    "keywords" : "located in, situated",
+    "source_id" : "ef25acf1202d81389ff836f8c76fa666",
+    "src_id" : "Grass",
+    "tgt_id" : "The yard"
+  }, {
+    "source" : "Old Alarm Clock",
+    "target" : "Bedroom",
+    "weight" : "1.0",
+    "description" : "The old alarm clock is located in the bedroom, where its persistent ring fills the space every morning.",
+    "keywords" : "located, situated",
+    "source_id" : "ba6c0224d070e15b133e5fc36ec86124",
+    "src_id" : "Old Alarm Clock",
+    "tgt_id" : "Bedroom"
+  }, {
+    "source" : "Old Alarm Clock",
+    "target" : "Family Members",
+    "weight" : "1.0",
+    "description" : "The old alarm clock rings every morning to wake up the family members, prompting some to complain and others to be grateful.",
+    "keywords" : "wakes, reminds, triggers",
+    "source_id" : "ba6c0224d070e15b133e5fc36ec86124",
+    "src_id" : "Old Alarm Clock",
+    "tgt_id" : "Family Members"
+  }, {
+    "source" : "Old Alarm Clock",
+    "target" : "Morning Routine",
+    "weight" : "1.0",
+    "description" : "The old alarm clock initiated and anchored the morning routine, which went unquestioned for years.",
+    "keywords" : "initiates, anchors, defines",
+    "source_id" : "ba6c0224d070e15b133e5fc36ec86124",
+    "src_id" : "Old Alarm Clock",
+    "tgt_id" : "Morning Routine"
+  }, {
+    "source" : "Family Members",
+    "target" : "Morning Routine",
+    "weight" : "1.0",
+    "description" : "The family members followed the morning routine for years without questioning it and speculated about whether mornings would be the same without the alarm clock.",
+    "keywords" : "follows, maintains, speculates",
+    "source_id" : "ba6c0224d070e15b133e5fc36ec86124",
+    "src_id" : "Family Members",
+    "tgt_id" : "Morning Routine"
+  }, {
+    "source" : "Teenagers",
+    "target" : "Screen time",
+    "weight" : "1.0",
+    "description" : "The rise in daily screen time among teenagers is frequently noted as a growing trend.",
+    "keywords" : "rise, daily usage, noted",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b",
+    "src_id" : "Teenagers",
+    "tgt_id" : "Screen time"
+  }, {
+    "source" : "Screen time",
+    "target" : "Eye strain",
+    "weight" : "1.0",
+    "description" : "The rise in daily screen time is associated with an increase in students reporting eye strain during classes.",
+    "keywords" : "correlation, impact, association",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b",
+    "src_id" : "Screen time",
+    "tgt_id" : "Eye strain"
+  }, {
+    "source" : "Screen time",
+    "target" : "Schools",
+    "weight" : "1.0",
+    "description" : "The trend of increased screen time and its effects appears uniform across various schools.",
+    "keywords" : "uniform trend, various schools",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b",
+    "src_id" : "Schools",
+    "tgt_id" : "Screen time"
+  }, {
+    "source" : "Screen time",
+    "target" : "Digital breaks",
+    "weight" : "1.0",
+    "description" : "Digital breaks are introduced as a countermeasure to the rising daily screen time among students.",
+    "keywords" : "mitigation, countermeasure, response",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b",
+    "src_id" : "Digital breaks",
+    "tgt_id" : "Screen time"
+  }, {
+    "source" : "Students",
+    "target" : "Eye strain",
+    "weight" : "1.0",
+    "description" : "More students mention experiencing eye strain during classes, indicating a growing concern.",
+    "keywords" : "experience, classes, increase",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b",
+    "src_id" : "Students",
+    "tgt_id" : "Eye strain"
+  }, {
+    "source" : "Eye strain",
+    "target" : "Opticians",
+    "weight" : "1.0",
+    "description" : "Opticians report a slight increase in appointments, likely linked to the rise in eye strain among students.",
+    "keywords" : "appointments, increase, reporting",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b",
+    "src_id" : "Opticians",
+    "tgt_id" : "Eye strain"
+  }, {
+    "source" : "Educational institutions",
+    "target" : "Digital breaks",
+    "weight" : "1.0",
+    "description" : "Educational institutions introduce brief digital breaks as a measure to address screen-related issues.",
+    "keywords" : "introduce, mitigation, response",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b",
+    "src_id" : "Educational institutions",
+    "tgt_id" : "Digital breaks"
+  }, {
+    "source" : "Residents",
+    "target" : "Local Book Fair",
+    "weight" : "1.0",
+    "description" : "Residents have shown significantly increased attendance at the local book fair this year.",
+    "keywords" : "attendance, increase, participation",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2",
+    "src_id" : "Residents",
+    "tgt_id" : "Local Book Fair"
+  }, {
+    "source" : "Residents",
+    "target" : "Indoor Climbing Gym",
+    "weight" : "1.0",
+    "description" : "Residents have shown significantly increased memberships at the indoor climbing gym this year.",
+    "keywords" : "membership, increase, participation",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2",
+    "src_id" : "Residents",
+    "tgt_id" : "Indoor Climbing Gym"
+  }, {
+    "source" : "Residents",
+    "target" : "Active Lifestyle",
+    "weight" : "1.0",
+    "description" : "Residents are speculated to be adopting a more engaged and active lifestyle overall, as evidenced by increased participation in both reading and climbing.",
+    "keywords" : "adoption, speculation, lifestyle change",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2",
+    "src_id" : "Residents",
+    "tgt_id" : "Active Lifestyle"
+  }, {
+    "source" : "Local Book Fair",
+    "target" : "Climbing-themed readings",
+    "weight" : "1.0",
+    "description" : "The local book fair has responded to the climbing trend by hosting climbing-themed readings.",
+    "keywords" : "hosting, response, thematic event",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2",
+    "src_id" : "Local Book Fair",
+    "tgt_id" : "Climbing-themed readings"
+  }, {
+    "source" : "Book Reading",
+    "target" : "Climbing",
+    "weight" : "1.0",
+    "description" : "There is no evidence to suggest that climbing inspires more book reading, despite the simultaneous increase in both activities.",
+    "keywords" : "no causal link, speculation, correlation",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2",
+    "src_id" : "Climbing",
+    "tgt_id" : "Book Reading"
+  }, {
+    "source" : "Community members",
+    "target" : "Bookstore sales",
+    "weight" : "1.0",
+    "description" : "Community members observed that bookstore sales are strong in months when coffee shop seating shortages are most pronounced.",
+    "keywords" : "observation, correlation",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b",
+    "src_id" : "Community members",
+    "tgt_id" : "Bookstore sales"
+  }, {
+    "source" : "Bookstore sales",
+    "target" : "Coffee shop seating shortages",
+    "weight" : "1.0",
+    "description" : "Bookstore sales and coffee shop seating shortages are observed to peak in the same months, suggesting a possible link.",
+    "keywords" : "temporal correlation, co-occurrence",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b",
+    "src_id" : "Bookstore sales",
+    "tgt_id" : "Coffee shop seating shortages"
+  }, {
+    "source" : "Bookstore sales",
+    "target" : "Colder weather",
+    "weight" : "1.0",
+    "description" : "Colder weather acts as a confounding variable that could explain the apparent link between bookstore sales and coffee shop seating shortages without a direct causal relationship.",
+    "keywords" : "confounding factor, spurious correlation",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b",
+    "src_id" : "Colder weather",
+    "tgt_id" : "Bookstore sales"
+  }, {
+    "source" : "Reading habits",
+    "target" : "Coffee shop patronage",
+    "weight" : "1.0",
+    "description" : "Some suggest that increased reading habits drive people to linger longer in coffee shops, thereby increasing patronage.",
+    "keywords" : "causation, lingering, behavior",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b",
+    "src_id" : "Reading habits",
+    "tgt_id" : "Coffee shop patronage"
+  }, {
+    "source" : "Reading habits",
+    "target" : "Colder weather",
+    "weight" : "1.0",
+    "description" : "Colder weather pushes people indoors, which could reasonably increase reading habits at the same time.",
+    "keywords" : "confounding, indoor activity, increase",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b",
+    "src_id" : "Colder weather",
+    "tgt_id" : "Reading habits"
+  }, {
+    "source" : "Coffee shop patronage",
+    "target" : "Colder weather",
+    "weight" : "1.0",
+    "description" : "Colder weather pushes people indoors, which could reasonably increase coffee shop patronage at the same time.",
+    "keywords" : "confounding, indoor activity, increase",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b",
+    "src_id" : "Colder weather",
+    "tgt_id" : "Coffee shop patronage"
+  } ],
+  "metadata" : {
+    "nodeCount" : 35,
+    "edgeCount" : 32
+  }
+}

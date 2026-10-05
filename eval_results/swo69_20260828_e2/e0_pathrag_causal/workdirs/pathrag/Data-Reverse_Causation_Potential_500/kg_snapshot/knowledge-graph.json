@@ -1,0 +1,596 @@
+{
+  "nodes" : {
+    "CERTAIN DISTRICTS" : {
+      "entity_type" : "GEO",
+      "description" : "Geographic areas where increased respiratory issues, higher air pollution, and limited healthcare access have been reported.",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    },
+    "CITIES" : {
+      "entity_type" : "GEO",
+      "description" : "Growing urban areas that tout new transit projects and demand more transportation options.",
+      "source_id" : "chunk-aa6b724c2f747a445d4d1b2d0c68b25f"
+    },
+    "FLUCTUATIONS IN STATIC ELECTRICITY INDOORS" : {
+      "entity_type" : "EVENT",
+      "description" : "The observed phenomenon of changing static electricity levels indoors, with reports growing over time.",
+      "source_id" : "chunk-a5a906502378bbda13469b87d5a7cfde"
+    },
+    "SMOKING" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A health behavior with higher rates in the affected neighborhoods, acting as a confounding factor.",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    },
+    "THE STREET" : {
+      "entity_type" : "GEO",
+      "description" : "The street where the smell of pastries wafts, serving as the connection point between the bakery and passersby.",
+      "source_id" : "chunk-a0ce85463f79cf90666d2babe62073c3"
+    },
+    "PASTRIES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Baked goods produced in the bakery whose inviting smell wafts through the street in the morning.",
+      "source_id" : "chunk-a0ce85463f79cf90666d2babe62073c3"
+    },
+    "POINT OF CONTENTION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The ongoing debate among observers regarding the precise cause of the static electricity changes.",
+      "source_id" : "chunk-a5a906502378bbda13469b87d5a7cfde"
+    },
+    "AIR POLLUTION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An environmental factor with higher readings observed in the districts, correlated with respiratory issues.",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    },
+    "HEALTHCARE ACCESS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Limited availability of medical services in the affected neighborhoods, influencing overall resident health.",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    },
+    "CITY PLANNERS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Professionals who observe and note the relationship between public transportation and urban development.",
+      "source_id" : "chunk-aa6b724c2f747a445d4d1b2d0c68b25f"
+    },
+    "ALLERGY SEASONS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Periods of elevated allergens not accounted for as a variable in local surveys.",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    },
+    "AIR QUALITY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Deteriorating environmental condition in the districts that residents are concerned about for its health impact.",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    },
+    "THE NEIGHBOR" : {
+      "entity_type" : "PERSON",
+      "description" : "A resident whose lawn sprinklers start early in the morning, initiating the recurring wet-sidewalk pattern.",
+      "source_id" : "chunk-2ab8df0f44b6faee0a233fa99ab833a2"
+    },
+    "PUBLIC TRANSPORTATION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An expanded transit system associated with rapid urban development and demanded by growing areas.",
+      "source_id" : "chunk-aa6b724c2f747a445d4d1b2d0c68b25f"
+    },
+    "RESPIRATORY ISSUES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A health condition category whose reports have increased in the affected districts alongside air pollution.",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    },
+    "PROPERTY PRICE INCREASE" : {
+      "entity_type" : "EVENT",
+      "description" : "A rise in property prices within the uptown neighborhood, coinciding with new business openings.",
+      "source_id" : "chunk-9a520131dc27e23fb1da979117040d1d"
+    },
+    "STATIC ELECTRICITY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An indoor physical phenomenon experiencing fluctuations, with reports growing alongside humidity levels.",
+      "source_id" : "chunk-a5a906502378bbda13469b87d5a7cfde"
+    },
+    "URBAN DEVELOPMENT" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Rapid growth and development in cities, linked to public transportation expansion in a potentially bidirectional manner.",
+      "source_id" : "chunk-aa6b724c2f747a445d4d1b2d0c68b25f"
+    },
+    "UPTOWN NEIGHBORHOOD" : {
+      "entity_type" : "GEO",
+      "description" : "A neighborhood where multiple coffee shops have opened and property prices have increased over the past year.",
+      "source_id" : "chunk-9a520131dc27e23fb1da979117040d1d"
+    },
+    "COFFEE SHOPS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A type of commercial establishment whose influx is believed to increase area desirability and drive up costs.",
+      "source_id" : "chunk-9a520131dc27e23fb1da979117040d1d"
+    },
+    "HUMIDITY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An environmental factor experiencing recent rises, correlated with increased reports of static electricity fluctuations indoors.",
+      "source_id" : "chunk-a5a906502378bbda13469b87d5a7cfde"
+    },
+    "JOGGERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Individuals who jog on the sidewalk and must slow their pace to avoid slipping on wet surfaces.",
+      "source_id" : "chunk-2ab8df0f44b6faee0a233fa99ab833a2"
+    },
+    "PASSERSBY" : {
+      "entity_type" : "PERSON",
+      "description" : "People walking along the street who are drawn to peek inside the bakery upon smelling the pastries.",
+      "source_id" : "chunk-a0ce85463f79cf90666d2babe62073c3"
+    },
+    "COFFEE SHOP OPENINGS" : {
+      "entity_type" : "EVENT",
+      "description" : "The reported influx of new coffee shop establishments in the uptown area over the past year.",
+      "source_id" : "chunk-9a520131dc27e23fb1da979117040d1d"
+    },
+    "THE BAKERY" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A bakery whose oven emits a warm glow early in the morning, producing the smell of pastries that draws in nearby people.",
+      "source_id" : "chunk-a0ce85463f79cf90666d2babe62073c3"
+    },
+    "AIR CONDITIONING" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An environmental adjustment implemented indoors, potentially contributing to observed changes in static electricity.",
+      "source_id" : "chunk-a5a906502378bbda13469b87d5a7cfde"
+    },
+    "LOCAL SURVEYS" : {
+      "entity_type" : "EVENT",
+      "description" : "Surveys conducted in the districts that failed to control for seasonal changes and allergy seasons.",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    },
+    "TRANSIT PROJECTS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "New transportation infrastructure projects highlighted by growing cities as part of urban growth.",
+      "source_id" : "chunk-aa6b724c2f747a445d4d1b2d0c68b25f"
+    },
+    "RESIDENTS" : {
+      "entity_type" : "PERSON",
+      "description" : "Local community members who often comment on the inviting smell from the bakery as part of their mornings.<SEP>Local inhabitants of the uptown neighborhood who speculate on the link between coffee shops and rising costs.<SEP>People living in the affected districts who have voiced concerns about health impacts from deteriorating air quality.",
+      "source_id" : "chunk-a0ce85463f79cf90666d2babe62073c3<SEP>chunk-9a520131dc27e23fb1da979117040d1d<SEP>chunk-61863b1c295678024ce9d4b05b45ed3c"
+    },
+    "BROADER ECONOMIC TRENDS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Macro-level economic forces that may explain the coinciding developments of new openings and price increases.",
+      "source_id" : "chunk-9a520131dc27e23fb1da979117040d1d"
+    },
+    "THE NEIGHBORHOOD" : {
+      "entity_type" : "GEO",
+      "description" : "The local area where the sprinkler-and-wet-sidewalk sequence is a familiar, recurring sight.",
+      "source_id" : "chunk-2ab8df0f44b6faee0a233fa99ab833a2"
+    },
+    "NEW CARPETING" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A home feature that some attribute as the cause of the observed changes in static electricity.",
+      "source_id" : "chunk-a5a906502378bbda13469b87d5a7cfde"
+    },
+    "THE SPRINKLER SEQUENCE" : {
+      "entity_type" : "EVENT",
+      "description" : "A recurring pattern of sprinklers running early in the morning, wetting the sidewalk, and becoming an expected daily occurrence.",
+      "source_id" : "chunk-2ab8df0f44b6faee0a233fa99ab833a2"
+    },
+    "THE MORNING BAKING" : {
+      "entity_type" : "EVENT",
+      "description" : "A choreographed morning routine involving the oven's warm glow and the resulting scent of pastries, cherished by residents.",
+      "source_id" : "chunk-a0ce85463f79cf90666d2babe62073c3"
+    },
+    "THE PEOPLE" : {
+      "entity_type" : "PERSON",
+      "description" : "Residents of the neighborhood who come to expect wet sidewalks whenever the sprinklers run.",
+      "source_id" : "chunk-2ab8df0f44b6faee0a233fa99ab833a2"
+    },
+    "SEASONAL CHANGES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Environmental and climatic variations not controlled for in local health surveys.",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    }
+  },
+  "edges" : [ {
+    "source" : "HUMIDITY",
+    "target" : "FLUCTUATIONS IN STATIC ELECTRICITY INDOORS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The number of reports of static electricity fluctuations seems to grow with humidity levels.",
+      "keywords" : "report correlation, rising trend",
+      "source_id" : "chunk-a5a906502378bbda13469b87d5a7cfde"
+    }
+  }, {
+    "source" : "CERTAIN DISTRICTS",
+    "target" : "HEALTHCARE ACCESS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The neighborhoods in these districts have limited access to healthcare services.",
+      "keywords" : "service gap, healthcare inequality",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "HEALTHCARE ACCESS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Residents in the affected districts face limited access to healthcare, affecting their overall health outcomes.",
+      "keywords" : "healthcare barrier, access limitation",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "PASTRIES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Residents cherish and comment on the inviting smell of the pastries as part of their mornings.",
+      "keywords" : "enjoyment, sensory experience, tradition",
+      "source_id" : "chunk-a0ce85463f79cf90666d2babe62073c3"
+    }
+  }, {
+    "source" : "THE BAKERY",
+    "target" : "PASTRIES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The bakery is the source that produces the pastries whose smell is noted by people.",
+      "keywords" : "production, source",
+      "source_id" : "chunk-a0ce85463f79cf90666d2babe62073c3"
+    }
+  }, {
+    "source" : "THE BAKERY",
+    "target" : "THE STREET",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The bakery is situated on the street, and its oven's glow and pastry smell extend into it.",
+      "keywords" : "location, proximity, atmosphere",
+      "source_id" : "chunk-a0ce85463f79cf90666d2babe62073c3"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "RESPIRATORY ISSUES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Residents in the districts have reported increased cases of respiratory issues.",
+      "keywords" : "health impact, symptom reports, incidence",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    }
+  }, {
+    "source" : "PROPERTY PRICE INCREASE",
+    "target" : "UPTOWN NEIGHBORHOOD",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Property prices have risen in the same vicinity where coffee shops are opening.",
+      "keywords" : "location, real estate, cost increase",
+      "source_id" : "chunk-9a520131dc27e23fb1da979117040d1d"
+    }
+  }, {
+    "source" : "NEW CARPETING",
+    "target" : "STATIC ELECTRICITY",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Some observers attribute the static electricity fluctuations to new carpeting installed indoors.",
+      "keywords" : "attribution, cause, home feature",
+      "source_id" : "chunk-a5a906502378bbda13469b87d5a7cfde"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "AIR QUALITY",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Residents have voiced concerns about the apparent health impact of deteriorating air quality.",
+      "keywords" : "public concern, environmental health",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    }
+  }, {
+    "source" : "HUMIDITY",
+    "target" : "POINT OF CONTENTION",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Humidity's role in the changes is part of the ongoing debate about the precise culprit.",
+      "keywords" : "debate, causation, uncertainty",
+      "source_id" : "chunk-a5a906502378bbda13469b87d5a7cfde"
+    }
+  }, {
+    "source" : "THE NEIGHBORHOOD",
+    "target" : "THE SPRINKLER SEQUENCE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The neighborhood is the setting where the sprinkler sequence is a familiar, recurring sight.",
+      "keywords" : "locality, routine, community",
+      "source_id" : "chunk-2ab8df0f44b6faee0a233fa99ab833a2"
+    }
+  }, {
+    "source" : "LOCAL SURVEYS",
+    "target" : "CERTAIN DISTRICTS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Local surveys were conducted in these districts to assess health conditions and air quality impacts.",
+      "keywords" : "data collection, regional assessment",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    }
+  }, {
+    "source" : "CITIES",
+    "target" : "TRANSIT PROJECTS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Growing cities tout new transit projects as part of their development narrative.",
+      "keywords" : "infrastructure, promotion, growth",
+      "source_id" : "chunk-aa6b724c2f747a445d4d1b2d0c68b25f"
+    }
+  }, {
+    "source" : "COFFEE SHOP OPENINGS",
+    "target" : "UPTOWN NEIGHBORHOOD",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Multiple new coffee shop establishments have been reported in the uptown neighborhood.",
+      "keywords" : "location, business growth",
+      "source_id" : "chunk-9a520131dc27e23fb1da979117040d1d"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "PROPERTY PRICE INCREASE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Residents link the rise in costs to the presence of new coffee shops.",
+      "keywords" : "causation, speculation, cost pressure",
+      "source_id" : "chunk-9a520131dc27e23fb1da979117040d1d"
+    }
+  }, {
+    "source" : "THE BAKERY",
+    "target" : "THE MORNING BAKING",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The bakery is the origin of the choreographed morning baking event involving the oven's glow and scent.",
+      "keywords" : "initiation, routine, timing",
+      "source_id" : "chunk-a0ce85463f79cf90666d2babe62073c3"
+    }
+  }, {
+    "source" : "AIR CONDITIONING",
+    "target" : "POINT OF CONTENTION",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Air conditioning as a contributing factor is part of the unresolved discussion.",
+      "keywords" : "debate, environmental factor, uncertainty",
+      "source_id" : "chunk-a5a906502378bbda13469b87d5a7cfde"
+    }
+  }, {
+    "source" : "CITY PLANNERS",
+    "target" : "URBAN DEVELOPMENT",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "City planners frequently note and study the patterns of rapid urban development.",
+      "keywords" : "planning, observation, growth",
+      "source_id" : "chunk-aa6b724c2f747a445d4d1b2d0c68b25f"
+    }
+  }, {
+    "source" : "LOCAL SURVEYS",
+    "target" : "ALLERGY SEASONS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Allergy seasons were not controlled for in the local surveys, limiting their interpretive validity.",
+      "keywords" : "methodological gap, confounding factor",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "COFFEE SHOPS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Residents speculate that the influx of coffee shops makes the area more desirable.",
+      "keywords" : "speculation, desirability, local opinion",
+      "source_id" : "chunk-9a520131dc27e23fb1da979117040d1d"
+    }
+  }, {
+    "source" : "COFFEE SHOPS",
+    "target" : "PROPERTY PRICE INCREASE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The influx of coffee shops is speculated to drive up property costs by increasing area appeal.",
+      "keywords" : "correlation, desirability, cost impact",
+      "source_id" : "chunk-9a520131dc27e23fb1da979117040d1d"
+    }
+  }, {
+    "source" : "PASSERSBY",
+    "target" : "THE BAKERY",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Passersby are drawn to peek inside the bakery after smelling the pastries wafting from it.",
+      "keywords" : "attraction, curiosity, engagement",
+      "source_id" : "chunk-a0ce85463f79cf90666d2babe62073c3"
+    }
+  }, {
+    "source" : "BROADER ECONOMIC TRENDS",
+    "target" : "PROPERTY PRICE INCREASE",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Macro-level economic forces may independently explain the rise in property prices.",
+      "keywords" : "macro economics, underlying cause",
+      "source_id" : "chunk-9a520131dc27e23fb1da979117040d1d"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "THE BAKERY",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Residents frequently comment on the inviting smell that emanates from the bakery's oven.",
+      "keywords" : "community, appreciation, daily routine",
+      "source_id" : "chunk-a0ce85463f79cf90666d2babe62073c3"
+    }
+  }, {
+    "source" : "COFFEE SHOP OPENINGS",
+    "target" : "PROPERTY PRICE INCREASE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Both events occurred simultaneously in the same area, leading to debate over causation vs. coincidence.",
+      "keywords" : "temporal correlation, coincidence, causation debate",
+      "source_id" : "chunk-9a520131dc27e23fb1da979117040d1d"
+    }
+  }, {
+    "source" : "PUBLIC TRANSPORTATION",
+    "target" : "URBAN DEVELOPMENT",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Expanded public transportation is associated with rapid urban development, with unclear causality direction.",
+      "keywords" : "causality, correlation, infrastructure",
+      "source_id" : "chunk-aa6b724c2f747a445d4d1b2d0c68b25f"
+    }
+  }, {
+    "source" : "PASTRIES",
+    "target" : "THE STREET",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The smell of pastries wafts through the street, drawing people to the bakery.",
+      "keywords" : "scent, dispersal, public space",
+      "source_id" : "chunk-a0ce85463f79cf90666d2babe62073c3"
+    }
+  }, {
+    "source" : "LOCAL SURVEYS",
+    "target" : "SEASONAL CHANGES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Local surveys failed to control for seasonal changes as a variable in assessing health impacts.",
+      "keywords" : "methodological gap, uncontrolled variable",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    }
+  }, {
+    "source" : "THE NEIGHBOR",
+    "target" : "THE SPRINKLER SEQUENCE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The neighbor's lawn sprinklers initiate the recurring sequence that becomes a familiar sight.",
+      "keywords" : "initiation, cause, sprinklers",
+      "source_id" : "chunk-2ab8df0f44b6faee0a233fa99ab833a2"
+    }
+  }, {
+    "source" : "AIR CONDITIONING",
+    "target" : "STATIC ELECTRICITY",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Air conditioning adjustments were implemented and may contribute to the observed static electricity changes.",
+      "keywords" : "environmental adjustment, potential cause",
+      "source_id" : "chunk-a5a906502378bbda13469b87d5a7cfde"
+    }
+  }, {
+    "source" : "THE PEOPLE",
+    "target" : "THE SPRINKLER SEQUENCE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The people have learned to expect wet sidewalks whenever the sprinklers run, showing habituation.",
+      "keywords" : "expectation, habituation, routine",
+      "source_id" : "chunk-2ab8df0f44b6faee0a233fa99ab833a2"
+    }
+  }, {
+    "source" : "URBAN DEVELOPMENT",
+    "target" : "TRANSIT PROJECTS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Urban development drives the introduction of new transit projects as cities grow.",
+      "keywords" : "infrastructure growth, development cycle",
+      "source_id" : "chunk-aa6b724c2f747a445d4d1b2d0c68b25f"
+    }
+  }, {
+    "source" : "JOGGERS",
+    "target" : "THE SPRINKLER SEQUENCE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Joggers are directly affected by the sequence, slowing their pace on the wet sidewalk to avoid slipping.",
+      "keywords" : "caution, impact, physical activity",
+      "source_id" : "chunk-2ab8df0f44b6faee0a233fa99ab833a2"
+    }
+  }, {
+    "source" : "CITIES",
+    "target" : "PUBLIC TRANSPORTATION",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Areas experiencing urban development might demand more public transportation options.",
+      "keywords" : "demand, urban growth, transit needs",
+      "source_id" : "chunk-aa6b724c2f747a445d4d1b2d0c68b25f"
+    }
+  }, {
+    "source" : "BROADER ECONOMIC TRENDS",
+    "target" : "COFFEE SHOP OPENINGS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Broader economic trends may be the underlying driver behind new coffee shop openings.",
+      "keywords" : "macro economics, underlying cause",
+      "source_id" : "chunk-9a520131dc27e23fb1da979117040d1d"
+    }
+  }, {
+    "source" : "HUMIDITY",
+    "target" : "STATIC ELECTRICITY",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Rises in humidity are correlated with increased fluctuations in indoor static electricity.",
+      "keywords" : "correlation, environmental factor, static buildup",
+      "source_id" : "chunk-a5a906502378bbda13469b87d5a7cfde"
+    }
+  }, {
+    "source" : "AIR POLLUTION",
+    "target" : "AIR QUALITY",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Higher air pollution readings contribute to the overall deterioration of air quality in the districts.",
+      "keywords" : "environmental degradation, pollution levels",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    }
+  }, {
+    "source" : "JOGGERS",
+    "target" : "THE NEIGHBORHOOD",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Joggers are active within the neighborhood, encountering the wet sidewalk caused by the sprinklers.",
+      "keywords" : "activity, locality",
+      "source_id" : "chunk-2ab8df0f44b6faee0a233fa99ab833a2"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "CERTAIN DISTRICTS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Residents live in the affected districts and are directly impacted by local environmental and health conditions.",
+      "keywords" : "residence, exposure, community",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    }
+  }, {
+    "source" : "THE NEIGHBOR",
+    "target" : "THE NEIGHBORHOOD",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "The neighbor is a resident within the neighborhood where the sprinkler sequence occurs.",
+      "keywords" : "residency, location",
+      "source_id" : "chunk-2ab8df0f44b6faee0a233fa99ab833a2"
+    }
+  }, {
+    "source" : "NEW CARPETING",
+    "target" : "POINT OF CONTENTION",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Attributing the changes to new carpeting is one of the contested explanations.",
+      "keywords" : "disagreement, attribution, contention",
+      "source_id" : "chunk-a5a906502378bbda13469b87d5a7cfde"
+    }
+  }, {
+    "source" : "RESPIRATORY ISSUES",
+    "target" : "AIR POLLUTION",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Reports of respiratory issues have increased alongside higher air pollution readings in the same areas.",
+      "keywords" : "correlation, environmental health, pollution",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    }
+  }, {
+    "source" : "CERTAIN DISTRICTS",
+    "target" : "SMOKING",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The neighborhoods within these districts have higher rates of smoking as a confounding health factor.",
+      "keywords" : "risk factor, behavior, confounding variable",
+      "source_id" : "chunk-61863b1c295678024ce9d4b05b45ed3c"
+    }
+  }, {
+    "source" : "CITY PLANNERS",
+    "target" : "PUBLIC TRANSPORTATION",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "City planners note that expanded public transportation is associated with rapid urban development.",
+      "keywords" : "observation, association, transit",
+      "source_id" : "chunk-aa6b724c2f747a445d4d1b2d0c68b25f"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 36,
+    "edgeCount" : 45,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Reverse_Causation_Potential_500"
+  }
+}

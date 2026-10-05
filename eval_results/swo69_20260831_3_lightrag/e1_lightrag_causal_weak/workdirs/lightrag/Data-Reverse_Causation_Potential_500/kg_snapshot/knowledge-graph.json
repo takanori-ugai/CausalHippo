@@ -1,0 +1,335 @@
+{
+  "nodes" : [ {
+    "id" : "Public Transportation",
+    "entity_id" : "Public Transportation",
+    "entity_type" : "Concept",
+    "description" : "Expanded public transportation in cities",
+    "source_id" : "aa6b724c2f747a445d4d1b2d0c68b25f"
+  }, {
+    "id" : "Urban Development",
+    "entity_id" : "Urban Development",
+    "entity_type" : "Concept",
+    "description" : "Rapid growth and expansion of cities",
+    "source_id" : "aa6b724c2f747a445d4d1b2d0c68b25f"
+  }, {
+    "id" : "City",
+    "entity_id" : "City",
+    "entity_type" : "Location",
+    "description" : "Urban area with a defined boundary",
+    "source_id" : "aa6b724c2f747a445d4d1b2d0c68b25f"
+  }, {
+    "id" : "Transit Project",
+    "entity_id" : "Transit Project",
+    "entity_type" : "Event",
+    "description" : "New public transportation infrastructure",
+    "source_id" : "aa6b724c2f747a445d4d1b2d0c68b25f"
+  }, {
+    "id" : "bakery",
+    "entity_id" : "bakery",
+    "entity_type" : "Organization",
+    "description" : "A bakery that emits a warm glow from its oven",
+    "source_id" : "a0ce85463f79cf90666d2babe62073c3"
+  }, {
+    "id" : "oven",
+    "entity_id" : "oven",
+    "entity_type" : "Concept",
+    "description" : "A device that emits a warm glow",
+    "source_id" : "a0ce85463f79cf90666d2babe62073c3"
+  }, {
+    "id" : "pastries",
+    "entity_id" : "pastries",
+    "entity_type" : "Concept",
+    "description" : "Food items baked in the oven",
+    "source_id" : "a0ce85463f79cf90666d2babe62073c3"
+  }, {
+    "id" : "street",
+    "entity_id" : "street",
+    "entity_type" : "Location",
+    "description" : "A public area where the bakery is located",
+    "source_id" : "a0ce85463f79cf90666d2babe62073c3"
+  }, {
+    "id" : "Uptown Neighborhood",
+    "entity_id" : "Uptown Neighborhood",
+    "entity_type" : "Location",
+    "description" : "A neighborhood in the city",
+    "source_id" : "9a520131dc27e23fb1da979117040d1d"
+  }, {
+    "id" : "Coffee Shops",
+    "entity_id" : "Coffee Shops",
+    "entity_type" : "Concept",
+    "description" : "Businesses serving coffee",
+    "source_id" : "9a520131dc27e23fb1da979117040d1d"
+  }, {
+    "id" : "Property Prices",
+    "entity_id" : "Property Prices",
+    "entity_type" : "Concept",
+    "description" : "The cost of real estate",
+    "source_id" : "9a520131dc27e23fb1da979117040d1d"
+  }, {
+    "id" : "Residents",
+    "entity_id" : "Residents",
+    "entity_type" : "Person",
+    "description" : "People living in the neighborhood",
+    "source_id" : "9a520131dc27e23fb1da979117040d1d"
+  }, {
+    "id" : "Observers",
+    "entity_id" : "Observers",
+    "entity_type" : "Person",
+    "description" : "People who are watching the situation",
+    "source_id" : "9a520131dc27e23fb1da979117040d1d"
+  }, {
+    "id" : "Static Electricity",
+    "entity_id" : "Static Electricity",
+    "entity_type" : "Concept",
+    "description" : "A phenomenon caused by the buildup of electric charges",
+    "source_id" : "a5a906502378bbda13469b87d5a7cfde"
+  }, {
+    "id" : "Humidity",
+    "entity_id" : "Humidity",
+    "entity_type" : "Concept",
+    "description" : "The amount of moisture in the air",
+    "source_id" : "a5a906502378bbda13469b87d5a7cfde"
+  }, {
+    "id" : "Air Conditioning",
+    "entity_id" : "Air Conditioning",
+    "entity_type" : "Organization",
+    "description" : "A system used to control temperature and humidity",
+    "source_id" : "a5a906502378bbda13469b87d5a7cfde"
+  }, {
+    "id" : "Carpeting",
+    "entity_id" : "Carpeting",
+    "entity_type" : "Organization",
+    "description" : "A type of flooring made from woven or tufted fibers",
+    "source_id" : "a5a906502378bbda13469b87d5a7cfde"
+  }, {
+    "id" : "Respiratory Issues",
+    "entity_id" : "Respiratory Issues",
+    "entity_type" : "Concept",
+    "description" : "Reports of respiratory issues in certain districts",
+    "source_id" : "61863b1c295678024ce9d4b05b45ed3c"
+  }, {
+    "id" : "Air Pollution",
+    "entity_id" : "Air Pollution",
+    "entity_type" : "Concept",
+    "description" : "Higher air pollution readings in certain districts",
+    "source_id" : "61863b1c295678024ce9d4b05b45ed3c"
+  }, {
+    "id" : "Smoking",
+    "entity_id" : "Smoking",
+    "entity_type" : "Concept",
+    "description" : "Higher rates of smoking in certain neighborhoods",
+    "source_id" : "61863b1c295678024ce9d4b05b45ed3c"
+  }, {
+    "id" : "Healthcare",
+    "entity_id" : "Healthcare",
+    "entity_type" : "Organization",
+    "description" : "Limited access to healthcare in certain neighborhoods",
+    "source_id" : "61863b1c295678024ce9d4b05b45ed3c"
+  }, {
+    "id" : "Seasonal Changes",
+    "entity_id" : "Seasonal Changes",
+    "entity_type" : "Concept",
+    "description" : "Seasonal changes not controlled for in local surveys",
+    "source_id" : "61863b1c295678024ce9d4b05b45ed3c"
+  }, {
+    "id" : "Allergy Seasons",
+    "entity_id" : "Allergy Seasons",
+    "entity_type" : "Concept",
+    "description" : "Allergy seasons not controlled for in local surveys",
+    "source_id" : "61863b1c295678024ce9d4b05b45ed3c"
+  }, {
+    "id" : "Sprinklers",
+    "entity_id" : "Sprinklers",
+    "entity_type" : "Organization",
+    "description" : "The neighbor's lawn sprinklers",
+    "source_id" : "2ab8df0f44b6faee0a233fa99ab833a2"
+  }, {
+    "id" : "Sidewalk",
+    "entity_id" : "Sidewalk",
+    "entity_type" : "Location",
+    "description" : "The sidewalk in the neighborhood",
+    "source_id" : "2ab8df0f44b6faee0a233fa99ab833a2"
+  }, {
+    "id" : "Joggers",
+    "entity_id" : "Joggers",
+    "entity_type" : "Person",
+    "description" : "People jogging in the neighborhood",
+    "source_id" : "2ab8df0f44b6faee0a233fa99ab833a2"
+  } ],
+  "edges" : [ {
+    "source" : "Public Transportation",
+    "target" : "Urban Development",
+    "weight" : "1.0",
+    "description" : "Growing cities often demand more public transportation options",
+    "keywords" : "growth, expansion, development",
+    "source_id" : "aa6b724c2f747a445d4d1b2d0c68b25f",
+    "src_id" : "Urban Development",
+    "tgt_id" : "Public Transportation"
+  }, {
+    "source" : "Public Transportation",
+    "target" : "Transit Project",
+    "weight" : "1.0",
+    "description" : "Public transportation is often associated with new transit projects",
+    "keywords" : "infrastructure, expansion",
+    "source_id" : "aa6b724c2f747a445d4d1b2d0c68b25f",
+    "src_id" : "Public Transportation",
+    "tgt_id" : "Transit Project"
+  }, {
+    "source" : "Urban Development",
+    "target" : "Transit Project",
+    "weight" : "1.0",
+    "description" : "Urban development is often linked to new transit projects",
+    "keywords" : "growth, expansion",
+    "source_id" : "aa6b724c2f747a445d4d1b2d0c68b25f",
+    "src_id" : "Urban Development",
+    "tgt_id" : "Transit Project"
+  }, {
+    "source" : "oven",
+    "target" : "bakery",
+    "weight" : "1.0",
+    "description" : "The oven is a part of the bakery",
+    "keywords" : "warm glow, inviting smell",
+    "source_id" : "a0ce85463f79cf90666d2babe62073c3",
+    "src_id" : "oven",
+    "tgt_id" : "bakery"
+  }, {
+    "source" : "oven",
+    "target" : "pastries",
+    "weight" : "1.0",
+    "description" : "The oven is used to bake pastries",
+    "keywords" : "baked goods",
+    "source_id" : "a0ce85463f79cf90666d2babe62073c3",
+    "src_id" : "oven",
+    "tgt_id" : "pastries"
+  }, {
+    "source" : "bakery",
+    "target" : "street",
+    "weight" : "1.0",
+    "description" : "The bakery is a part of the morning routine of the residents",
+    "keywords" : "morning routine",
+    "source_id" : "a0ce85463f79cf90666d2babe62073c3",
+    "src_id" : "bakery",
+    "tgt_id" : "street"
+  }, {
+    "source" : "Uptown Neighborhood",
+    "target" : "Coffee Shops",
+    "weight" : "1.0",
+    "description" : "The presence of coffee shops in the neighborhood",
+    "keywords" : "new businesses, economic growth",
+    "source_id" : "9a520131dc27e23fb1da979117040d1d",
+    "src_id" : "Uptown Neighborhood",
+    "tgt_id" : "Coffee Shops"
+  }, {
+    "source" : "Uptown Neighborhood",
+    "target" : "Property Prices",
+    "weight" : "1.0",
+    "description" : "The effect of coffee shops on property prices",
+    "keywords" : "increased costs, rising prices",
+    "source_id" : "9a520131dc27e23fb1da979117040d1d",
+    "src_id" : "Uptown Neighborhood",
+    "tgt_id" : "Property Prices"
+  }, {
+    "source" : "Uptown Neighborhood",
+    "target" : "Residents",
+    "weight" : "1.0",
+    "description" : "The perception of the neighborhood by residents",
+    "keywords" : "desirability, attractiveness",
+    "source_id" : "9a520131dc27e23fb1da979117040d1d",
+    "src_id" : "Residents",
+    "tgt_id" : "Uptown Neighborhood"
+  }, {
+    "source" : "Uptown Neighborhood",
+    "target" : "Observers",
+    "weight" : "1.0",
+    "description" : "The explanation for the observed relationship",
+    "keywords" : "coincidence, economic trends",
+    "source_id" : "9a520131dc27e23fb1da979117040d1d",
+    "src_id" : "Observers",
+    "tgt_id" : "Uptown Neighborhood"
+  }, {
+    "source" : "Static Electricity",
+    "target" : "Humidity",
+    "weight" : "1.0",
+    "description" : "The buildup of electric charges is influenced by humidity levels",
+    "keywords" : "electric charges, moisture",
+    "source_id" : "a5a906502378bbda13469b87d5a7cfde",
+    "src_id" : "Static Electricity",
+    "tgt_id" : "Humidity"
+  }, {
+    "source" : "Static Electricity",
+    "target" : "Carpeting",
+    "weight" : "1.0",
+    "description" : "Carpeting can contribute to the buildup of static electricity",
+    "keywords" : "electric charges, friction",
+    "source_id" : "a5a906502378bbda13469b87d5a7cfde",
+    "src_id" : "Carpeting",
+    "tgt_id" : "Static Electricity"
+  }, {
+    "source" : "Humidity",
+    "target" : "Air Conditioning",
+    "weight" : "1.0",
+    "description" : "Air conditioning systems often adjust humidity levels",
+    "keywords" : "temperature, moisture",
+    "source_id" : "a5a906502378bbda13469b87d5a7cfde",
+    "src_id" : "Air Conditioning",
+    "tgt_id" : "Humidity"
+  }, {
+    "source" : "Respiratory Issues",
+    "target" : "Air Pollution",
+    "weight" : "1.0",
+    "description" : "Reports of respiratory issues linked to higher air pollution readings",
+    "keywords" : "health impact, air quality",
+    "source_id" : "61863b1c295678024ce9d4b05b45ed3c",
+    "src_id" : "Respiratory Issues",
+    "tgt_id" : "Air Pollution"
+  }, {
+    "source" : "Air Pollution",
+    "target" : "Healthcare",
+    "weight" : "1.0",
+    "description" : "Higher air pollution readings linked to limited access to healthcare",
+    "keywords" : "health impact, air quality",
+    "source_id" : "61863b1c295678024ce9d4b05b45ed3c",
+    "src_id" : "Air Pollution",
+    "tgt_id" : "Healthcare"
+  }, {
+    "source" : "Healthcare",
+    "target" : "Smoking",
+    "weight" : "1.0",
+    "description" : "Higher rates of smoking linked to limited access to healthcare",
+    "keywords" : "health impact, smoking rates",
+    "source_id" : "61863b1c295678024ce9d4b05b45ed3c",
+    "src_id" : "Smoking",
+    "tgt_id" : "Healthcare"
+  }, {
+    "source" : "Seasonal Changes",
+    "target" : "Allergy Seasons",
+    "weight" : "1.0",
+    "description" : "Seasonal changes and allergy seasons not controlled for in local surveys",
+    "keywords" : "uncontrolled variables",
+    "source_id" : "61863b1c295678024ce9d4b05b45ed3c",
+    "src_id" : "Seasonal Changes",
+    "tgt_id" : "Allergy Seasons"
+  }, {
+    "source" : "Sprinklers",
+    "target" : "Sidewalk",
+    "weight" : "1.0",
+    "description" : "The sprinklers create wet sidewalks",
+    "keywords" : "water droplets, wet surface",
+    "source_id" : "2ab8df0f44b6faee0a233fa99ab833a2",
+    "src_id" : "Sprinklers",
+    "tgt_id" : "Sidewalk"
+  }, {
+    "source" : "Sidewalk",
+    "target" : "Joggers",
+    "weight" : "1.0",
+    "description" : "The wet sidewalks pose a risk to joggers",
+    "keywords" : "wet surface, slippery",
+    "source_id" : "2ab8df0f44b6faee0a233fa99ab833a2",
+    "src_id" : "Sidewalk",
+    "tgt_id" : "Joggers"
+  } ],
+  "metadata" : {
+    "nodeCount" : 26,
+    "edgeCount" : 19
+  }
+}

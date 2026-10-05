@@ -1,0 +1,118 @@
+{
+  "nodes" : {
+    "EIGHT CLASSES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The classification system under Chinese industry standards that groups the wood species according to their properties.",
+      "source_id" : "chunk-1958f28bc7d6638856a297fbf017187a"
+    },
+    "CHINESE INDUSTRY STANDARDS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Regulatory framework that classifies the wood species into eight distinct classes for furniture and carving purposes.",
+      "source_id" : "chunk-1958f28bc7d6638856a297fbf017187a"
+    },
+    "CHINESE FURNITURE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Furniture made from specific woods, dimensionally stable, hardwearing, rot and insect resistant, built with joinery and doweling alone without glue or nails.",
+      "source_id" : "chunk-1958f28bc7d6638856a297fbf017187a"
+    },
+    "CHINA" : {
+      "entity_type" : "GEO",
+      "description" : "Geographic and cultural origin of the wood species, traditional joinery techniques, and the hongmu furniture market.",
+      "source_id" : "chunk-1958f28bc7d6638856a297fbf017187a"
+    },
+    "THE WOODS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Wood species high in oils and resins, highly fragrant when new, dense, tough, dimensionally stable, and resistant to rot and insects.",
+      "source_id" : "chunk-1958f28bc7d6638856a297fbf017187a"
+    },
+    "HONGMU FURNITURE (紅木家具)" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Market term literally meaning 'rosewood furniture,' referring to furniture and carving made from the eight classes of wood defined by industry standards.",
+      "source_id" : "chunk-1958f28bc7d6638856a297fbf017187a"
+    },
+    "OVERLOGGING" : {
+      "entity_type" : "EVENT",
+      "description" : "Excessive harvesting of wood species for furniture production, causing most species to become threatened or endangered.",
+      "source_id" : "chunk-1958f28bc7d6638856a297fbf017187a"
+    }
+  },
+  "edges" : [ {
+    "source" : "CHINA",
+    "target" : "CHINESE FURNITURE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "China is the cultural and geographic origin of the traditional furniture-making techniques and wood species.",
+      "keywords" : "origin, cultural heritage",
+      "source_id" : "chunk-1958f28bc7d6638856a297fbf017187a"
+    }
+  }, {
+    "source" : "CHINESE INDUSTRY STANDARDS",
+    "target" : "CHINA",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The industry standards originate from and apply to the Chinese market and wood trade.",
+      "keywords" : "regional regulation, governance",
+      "source_id" : "chunk-1958f28bc7d6638856a297fbf017187a"
+    }
+  }, {
+    "source" : "OVERLOGGING",
+    "target" : "HONGMU FURNITURE (紅木家具)",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Demand for hongmu furniture drives the overlogging that threatens the wood species.",
+      "keywords" : "demand-driven depletion, market pressure",
+      "source_id" : "chunk-1958f28bc7d6638856a297fbf017187a"
+    }
+  }, {
+    "source" : "HONGMU FURNITURE (紅木家具)",
+    "target" : "CHINESE FURNITURE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Hongmu furniture is the specific market term used to refer to Chinese furniture made from the classified wood species.",
+      "keywords" : "terminology, market naming",
+      "source_id" : "chunk-1958f28bc7d6638856a297fbf017187a"
+    }
+  }, {
+    "source" : "OVERLOGGING",
+    "target" : "THE WOODS",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Overlogging for furniture has caused most of the wood species to become threatened or endangered.",
+      "keywords" : "depletion, conservation threat",
+      "source_id" : "chunk-1958f28bc7d6638856a297fbf017187a"
+    }
+  }, {
+    "source" : "CHINESE INDUSTRY STANDARDS",
+    "target" : "EIGHT CLASSES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Chinese industry standards define and group the wood species into eight distinct classes.",
+      "keywords" : "classification, regulation",
+      "source_id" : "chunk-1958f28bc7d6638856a297fbf017187a"
+    }
+  }, {
+    "source" : "EIGHT CLASSES",
+    "target" : "THE WOODS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The eight classes are a formal grouping of the wood species based on their physical properties.",
+      "keywords" : "categorization, wood properties",
+      "source_id" : "chunk-1958f28bc7d6638856a297fbf017187a"
+    }
+  }, {
+    "source" : "HONGMU FURNITURE (紅木家具)",
+    "target" : "EIGHT CLASSES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Furniture referred to as hongmu is made specifically from the woods within the eight classes.",
+      "keywords" : "material sourcing, product definition",
+      "source_id" : "chunk-1958f28bc7d6638856a297fbf017187a"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 7,
+    "edgeCount" : 8,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_webis/workdirs/pathrag/paq_641867"
+  }
+}

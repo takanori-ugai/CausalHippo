@@ -1,0 +1,686 @@
+{
+  "nodes" : {
+    "NEIGHBORHOODS" : {
+      "entity_type" : "GEO",
+      "description" : "Geographic areas where active pet vaccination campaigns are conducted and rabies cases are rarely observed.",
+      "source_id" : "chunk-f35888e60b642e472bb1cc229302be6f"
+    },
+    "REGULAR PATRONS" : {
+      "entity_type" : "PERSON",
+      "description" : "Library patrons who noticed and pointed out a possible link between reading habits and stormy weather.",
+      "source_id" : "chunk-c3f93a1015618e0b27fcb2267ed23a65"
+    },
+    "POWER OUTAGE" : {
+      "entity_type" : "EVENT",
+      "description" : "A power failure occurring in the neighborhood, caused by grid maintenance and unrelated to owl behavior.",
+      "source_id" : "chunk-68c134359bb350633603714901148382"
+    },
+    "LOCAL LIBRARIANS" : {
+      "entity_type" : "PERSON",
+      "description" : "Staff at the local library who joked about rain being a good motivator for readers.",
+      "source_id" : "chunk-c3f93a1015618e0b27fcb2267ed23a65"
+    },
+    "MEDICAL EXPERTS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Advisors who acknowledge the complexity of jet lag solutions and advise caution to affected individuals.",
+      "source_id" : "chunk-3b8c43933c47d42365ddc7402665a5bb"
+    },
+    "ONE SPRING" : {
+      "entity_type" : "EVENT",
+      "description" : "The season during which the correlation between book borrowing and thunderstorms was observed.",
+      "source_id" : "chunk-c3f93a1015618e0b27fcb2267ed23a65"
+    },
+    "RABIES CASES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A category of disease occurrences that are rarely found in neighborhoods with active vaccination campaigns.",
+      "source_id" : "chunk-f35888e60b642e472bb1cc229302be6f"
+    },
+    "BREAK TIMES" : {
+      "entity_type" : "EVENT",
+      "description" : "Recurring intervals during the workday when employees gather to discuss social media use.",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    },
+    "SLEEP PATTERNS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Circadian sleep cycles that are disrupted as a consequence of jet lag from frequent travel.",
+      "source_id" : "chunk-3b8c43933c47d42365ddc7402665a5bb"
+    },
+    "RESTAURANT RESERVATIONS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A business activity/trend that sees increased demand, particularly during holidays, often alongside floral shopping.",
+      "source_id" : "chunk-08a19d6ef0c7150e7d81aec93813e534"
+    },
+    "TEAMS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Distinct groups within the office across which productivity levels have been observed to fluctuate.",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    },
+    "FAMILIES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A demographic group that participates in both floral shopping and restaurant dining simultaneously.",
+      "source_id" : "chunk-08a19d6ef0c7150e7d81aec93813e534"
+    },
+    "COLLEAGUES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Workplace peers who have noticed recurring travel-related problems among business professionals.",
+      "source_id" : "chunk-3b8c43933c47d42365ddc7402665a5bb"
+    },
+    "EATING HABITS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Regular meal schedules and dietary routines that are disrupted by jet lag.",
+      "source_id" : "chunk-3b8c43933c47d42365ddc7402665a5bb"
+    },
+    "NEIGHBORHOOD" : {
+      "entity_type" : "GEO",
+      "description" : "The residential area where residents observe the owl and experience power outages.",
+      "source_id" : "chunk-68c134359bb350633603714901148382"
+    },
+    "CITY REPORTS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Official reports in which veterinarians note the correlation between vaccination campaigns and rabies cases.",
+      "source_id" : "chunk-f35888e60b642e472bb1cc229302be6f"
+    },
+    "MANAGEMENT" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "The office management body that has been discussing fluctuating productivity levels across different teams.",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    },
+    "PRODUCTIVITY LEVELS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The fluctuating measure of work output and task completion discussed by management and attributed to various factors.",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    },
+    "ACTIVE CAMPAIGNS FOR VACCINATING PETS" : {
+      "entity_type" : "EVENT",
+      "description" : "Pet vaccination campaigns that are associated with a reduced occurrence of rabies cases in neighborhoods.",
+      "source_id" : "chunk-f35888e60b642e472bb1cc229302be6f"
+    },
+    "OWL" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An animal whose hooting in the neighborhood coincides with power outages; its activity is driven by biological hunting cycles.",
+      "source_id" : "chunk-68c134359bb350633603714901148382"
+    },
+    "GRID MAINTENANCE" : {
+      "entity_type" : "EVENT",
+      "description" : "The actual, unrelated cause of the power failures experienced by residents.",
+      "source_id" : "chunk-68c134359bb350633603714901148382"
+    },
+    "THUNDERSTORMS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Weather events whose frequency increased in tandem with book borrowing during the spring.",
+      "source_id" : "chunk-c3f93a1015618e0b27fcb2267ed23a65"
+    },
+    "FREQUENT TRAVEL" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Recurring travel activity that causes jet lag, sleep disruption, and productivity fluctuations.",
+      "source_id" : "chunk-3b8c43933c47d42365ddc7402665a5bb"
+    },
+    "FLORAL SHOP SALES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A business activity/trend that sees increased demand, particularly during holidays, often alongside dining out.",
+      "source_id" : "chunk-08a19d6ef0c7150e7d81aec93813e534"
+    },
+    "PET OWNERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Individuals who own pets and are said to enjoy peace of mind in neighborhoods with vaccination campaigns.",
+      "source_id" : "chunk-f35888e60b642e472bb1cc229302be6f"
+    },
+    "HOLIDAYS" : {
+      "entity_type" : "EVENT",
+      "description" : "Recurring occasions that drive simultaneous increases in both floral shop sales and restaurant reservations.",
+      "source_id" : "chunk-08a19d6ef0c7150e7d81aec93813e534"
+    },
+    "COUPLES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A demographic group that participates in both floral shopping and restaurant dining simultaneously.",
+      "source_id" : "chunk-08a19d6ef0c7150e7d81aec93813e534"
+    },
+    "JET LAG" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A medical condition experienced by frequent travelers, disrupting sleep patterns and eating habits.",
+      "source_id" : "chunk-3b8c43933c47d42365ddc7402665a5bb"
+    },
+    "VETERINARIANS" : {
+      "entity_type" : "PERSON",
+      "description" : "Medical professionals who observe and note the pattern of reduced rabies in city reports.",
+      "source_id" : "chunk-f35888e60b642e472bb1cc229302be6f"
+    },
+    "THE LIBRARY" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A local library where book borrowing activity was observed to increase during thunderstorm weeks in spring.",
+      "source_id" : "chunk-c3f93a1015618e0b27fcb2267ed23a65"
+    },
+    "RESIDENTS" : {
+      "entity_type" : "PERSON",
+      "description" : "People in a neighborhood who observed owl hooting coinciding with power outages and formed a causal association.",
+      "source_id" : "chunk-68c134359bb350633603714901148382"
+    },
+    "BUSINESS PROFESSIONALS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A group of professionals who engage in frequent travel and experience jet lag, disrupted sleep, and fluctuating productivity.",
+      "source_id" : "chunk-3b8c43933c47d42365ddc7402665a5bb"
+    },
+    "PROJECT STRUCTURES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "New organizational or workflow frameworks cited as an alternative explanation for productivity changes.",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    },
+    "FLORAL SHOPS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A business sector that experiences seasonal sales increases, particularly around holidays, and notices annual patterns.",
+      "source_id" : "chunk-08a19d6ef0c7150e7d81aec93813e534"
+    },
+    "EMPLOYEES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Workers in the office who discuss social media use during breaks and whose task completion varies with feed-checking frequency.",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    },
+    "RESTAURANTS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A business sector that experiences increased reservation demand, particularly around holidays, and notices annual patterns.",
+      "source_id" : "chunk-08a19d6ef0c7150e7d81aec93813e534"
+    },
+    "ASSUMPTION OF CAUSALITY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A mistaken belief that the power outage causes the owl to hoot, based solely on temporal overlap.",
+      "source_id" : "chunk-68c134359bb350633603714901148382"
+    },
+    "OFFICE" : {
+      "entity_type" : "GEO",
+      "description" : "The workplace location where employees gather, discuss social media, and carry out their tasks.",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    },
+    "PRODUCTIVITY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Work output and efficiency that fluctuates depending on the trip schedule of business professionals.",
+      "source_id" : "chunk-3b8c43933c47d42365ddc7402665a5bb"
+    },
+    "SOCIAL MEDIA" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A digital platform and recurring topic of discussion among employees, potentially linked to reduced work output.",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    },
+    "READING HABITS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The pattern of book borrowing that was speculated to correlate with stormy weather.",
+      "source_id" : "chunk-c3f93a1015618e0b27fcb2267ed23a65"
+    },
+    "STRAY ANIMAL CONTROL" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A category of activity suggested as an alternative explanation for the observed rabies pattern.",
+      "source_id" : "chunk-f35888e60b642e472bb1cc229302be6f"
+    },
+    "HUNTING CYCLE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The biological pattern governing owl activity, entirely independent of power outages.",
+      "source_id" : "chunk-68c134359bb350633603714901148382"
+    },
+    "SEASONAL TRENDS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A category of temporal factors pointed to as another possible explanation for rabies case variation.",
+      "source_id" : "chunk-f35888e60b642e472bb1cc229302be6f"
+    },
+    "THE AREA" : {
+      "entity_type" : "GEO",
+      "description" : "The local area where thunderstorm frequency increased and the library is situated.",
+      "source_id" : "chunk-c3f93a1015618e0b27fcb2267ed23a65"
+    }
+  },
+  "edges" : [ {
+    "source" : "JET LAG",
+    "target" : "EATING HABITS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Jet lag disrupts regular eating habits and meal schedules.",
+      "keywords" : "disruption, dietary routine, meals",
+      "source_id" : "chunk-3b8c43933c47d42365ddc7402665a5bb"
+    }
+  }, {
+    "source" : "POWER OUTAGE",
+    "target" : "NEIGHBORHOOD",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The power outage affects the neighborhood where residents live.",
+      "keywords" : "affected area, infrastructure",
+      "source_id" : "chunk-68c134359bb350633603714901148382"
+    }
+  }, {
+    "source" : "NEIGHBORHOODS",
+    "target" : "RABIES CASES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Neighborhoods with vaccination campaigns rarely face rabies cases.",
+      "keywords" : "geographic correlation, disease frequency",
+      "source_id" : "chunk-f35888e60b642e472bb1cc229302be6f"
+    }
+  }, {
+    "source" : "MANAGEMENT",
+    "target" : "PRODUCTIVITY LEVELS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Management has been discussing and monitoring fluctuating productivity levels over recent months.",
+      "keywords" : "monitoring, oversight, concern",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    }
+  }, {
+    "source" : "VETERINARIANS",
+    "target" : "CITY REPORTS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Veterinarians note and reference the rabies pattern documented in city reports.",
+      "keywords" : "observation, documentation",
+      "source_id" : "chunk-f35888e60b642e472bb1cc229302be6f"
+    }
+  }, {
+    "source" : "POWER OUTAGE",
+    "target" : "ASSUMPTION OF CAUSALITY",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The timing of power outages relative to owl hooting creates the illusion of a causal link.",
+      "keywords" : "correlation, false causation",
+      "source_id" : "chunk-68c134359bb350633603714901148382"
+    }
+  }, {
+    "source" : "FLORAL SHOPS",
+    "target" : "FLORAL SHOP SALES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Floral shops are the businesses that generate the sales trend noticed annually.",
+      "keywords" : "business sector, revenue, annual pattern",
+      "source_id" : "chunk-08a19d6ef0c7150e7d81aec93813e534"
+    }
+  }, {
+    "source" : "LOCAL LIBRARIANS",
+    "target" : "THE LIBRARY",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Librarians work at the library and commented humorously on the observed reading pattern.",
+      "keywords" : "staff, commentary",
+      "source_id" : "chunk-c3f93a1015618e0b27fcb2267ed23a65"
+    }
+  }, {
+    "source" : "PROJECT STRUCTURES",
+    "target" : "PRODUCTIVITY LEVELS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "New project structures are cited as an alternative explanation for the observed changes in productivity.",
+      "keywords" : "alternative cause, organizational change",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    }
+  }, {
+    "source" : "COLLEAGUES",
+    "target" : "BUSINESS PROFESSIONALS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Colleagues have noticed the recurring problems experienced by business professionals due to travel.",
+      "keywords" : "observation, workplace, recurring issues",
+      "source_id" : "chunk-3b8c43933c47d42365ddc7402665a5bb"
+    }
+  }, {
+    "source" : "MANAGEMENT",
+    "target" : "TEAMS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Management tracks and discusses productivity fluctuations across the different teams in the office.",
+      "keywords" : "oversight, team performance",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    }
+  }, {
+    "source" : "SOCIAL MEDIA",
+    "target" : "BREAK TIMES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Social media is the primary recurring topic of discussion among employees during break times.",
+      "keywords" : "discussion topic, recurring mention",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    }
+  }, {
+    "source" : "REGULAR PATRONS",
+    "target" : "LOCAL LIBRARIANS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Patrons and librarians shared the same library setting and both engaged in discussions about the pattern.",
+      "keywords" : "discussion, shared observation",
+      "source_id" : "chunk-c3f93a1015618e0b27fcb2267ed23a65"
+    }
+  }, {
+    "source" : "MEDICAL EXPERTS",
+    "target" : "JET LAG",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Medical experts advise caution regarding jet lag but acknowledge that solutions are not simple.",
+      "keywords" : "advice, caution, complexity",
+      "source_id" : "chunk-3b8c43933c47d42365ddc7402665a5bb"
+    }
+  }, {
+    "source" : "FREQUENT TRAVEL",
+    "target" : "JET LAG",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Frequent travel across time zones is the primary trigger for episodes of jet lag.",
+      "keywords" : "causation, time zones, disruption",
+      "source_id" : "chunk-3b8c43933c47d42365ddc7402665a5bb"
+    }
+  }, {
+    "source" : "FLORAL SHOP SALES",
+    "target" : "RESTAURANT RESERVATIONS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The two activities show a close association that invites speculation about a deeper connection beyond mere timing.",
+      "keywords" : "correlation, co-occurrence, speculation",
+      "source_id" : "chunk-08a19d6ef0c7150e7d81aec93813e534"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "ASSUMPTION OF CAUSALITY",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Residents form a false causal belief based on the repeated temporal overlap of owl hooting and power outages.",
+      "keywords" : "cognitive bias, timing artifact",
+      "source_id" : "chunk-68c134359bb350633603714901148382"
+    }
+  }, {
+    "source" : "PET OWNERS",
+    "target" : "ACTIVE CAMPAIGNS FOR VACCINATING PETS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Pet owners benefit from active vaccination campaigns by enjoying peace of mind.",
+      "keywords" : "benefit, public health",
+      "source_id" : "chunk-f35888e60b642e472bb1cc229302be6f"
+    }
+  }, {
+    "source" : "SEASONAL TRENDS",
+    "target" : "RABIES CASES",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Seasonal trends are pointed to as another possible factor influencing rabies case occurrence.",
+      "keywords" : "temporal variation, alternative explanation",
+      "source_id" : "chunk-f35888e60b642e472bb1cc229302be6f"
+    }
+  }, {
+    "source" : "VETERINARIANS",
+    "target" : "RABIES CASES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Veterinarians are the ones observing and reporting on the pattern of rabies cases.",
+      "keywords" : "medical observation, reporting",
+      "source_id" : "chunk-f35888e60b642e472bb1cc229302be6f"
+    }
+  }, {
+    "source" : "EMPLOYEES",
+    "target" : "BREAK TIMES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Employees use break times as an occasion to discuss and check social media feeds.",
+      "keywords" : "recurring activity, social interaction",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    }
+  }, {
+    "source" : "BUSINESS PROFESSIONALS",
+    "target" : "FREQUENT TRAVEL",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Business professionals engage in frequent travel, which is the root cause of their recurring health issues.",
+      "keywords" : "travel, occupation, cause",
+      "source_id" : "chunk-3b8c43933c47d42365ddc7402665a5bb"
+    }
+  }, {
+    "source" : "COUPLES",
+    "target" : "RESTAURANT RESERVATIONS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Couples make restaurant reservations as one of their simultaneous holiday activities.",
+      "keywords" : "consumer behavior, participation, demand",
+      "source_id" : "chunk-08a19d6ef0c7150e7d81aec93813e534"
+    }
+  }, {
+    "source" : "SOCIAL MEDIA",
+    "target" : "PRODUCTIVITY LEVELS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Social media use is suspected to have a subtle negative effect on employees' work output and task completion.",
+      "keywords" : "impact, distraction, work output",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "POWER OUTAGE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Residents notice the power outage and mistakenly link it to the owl's hooting behavior.",
+      "keywords" : "misattribution, perception",
+      "source_id" : "chunk-68c134359bb350633603714901148382"
+    }
+  }, {
+    "source" : "EMPLOYEES",
+    "target" : "OFFICE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Employees work in the office where social media discussions take place during breaks.",
+      "keywords" : "workplace, presence",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    }
+  }, {
+    "source" : "THUNDERSTORMS",
+    "target" : "THE AREA",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Thunderstorms occurred with increased frequency in the local area during the spring.",
+      "keywords" : "weather, location",
+      "source_id" : "chunk-c3f93a1015618e0b27fcb2267ed23a65"
+    }
+  }, {
+    "source" : "OWL",
+    "target" : "NEIGHBORHOOD",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "The owl is present and audible in the residents' neighborhood.",
+      "keywords" : "location, presence",
+      "source_id" : "chunk-68c134359bb350633603714901148382"
+    }
+  }, {
+    "source" : "HOLIDAYS",
+    "target" : "RESTAURANT RESERVATIONS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Holidays are a key driver that causes restaurant reservations to rise significantly.",
+      "keywords" : "seasonal demand, reservations, occasions",
+      "source_id" : "chunk-08a19d6ef0c7150e7d81aec93813e534"
+    }
+  }, {
+    "source" : "ONE SPRING",
+    "target" : "THE LIBRARY",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "The spring season marks the time period when the library's borrowing activity was observed to change.",
+      "keywords" : "time period, observation",
+      "source_id" : "chunk-c3f93a1015618e0b27fcb2267ed23a65"
+    }
+  }, {
+    "source" : "REGULAR PATRONS",
+    "target" : "READING HABITS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Patrons identified and pointed out the pattern in reading habits correlating with weather.",
+      "keywords" : "observation, pattern recognition",
+      "source_id" : "chunk-c3f93a1015618e0b27fcb2267ed23a65"
+    }
+  }, {
+    "source" : "FAMILIES",
+    "target" : "RESTAURANT RESERVATIONS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Families make restaurant reservations as one of their simultaneous holiday activities.",
+      "keywords" : "consumer behavior, participation, demand",
+      "source_id" : "chunk-08a19d6ef0c7150e7d81aec93813e534"
+    }
+  }, {
+    "source" : "LOCAL LIBRARIANS",
+    "target" : "READING HABITS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Librarians joked about rain motivating readers, relating weather to reading habits.",
+      "keywords" : "humor, motivation",
+      "source_id" : "chunk-c3f93a1015618e0b27fcb2267ed23a65"
+    }
+  }, {
+    "source" : "EMPLOYEES",
+    "target" : "SOCIAL MEDIA",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Employees frequently check their social media feeds, and those who do so most tend to complete fewer tasks by day's end.",
+      "keywords" : "usage, work output, correlation",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    }
+  }, {
+    "source" : "REGULAR PATRONS",
+    "target" : "THE LIBRARY",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Regular patrons borrow books from the library and noticed the seasonal borrowing pattern.",
+      "keywords" : "patron activity, borrowing",
+      "source_id" : "chunk-c3f93a1015618e0b27fcb2267ed23a65"
+    }
+  }, {
+    "source" : "NEIGHBORHOODS",
+    "target" : "ACTIVE CAMPAIGNS FOR VACCINATING PETS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Neighborhoods that have active vaccination campaigns for pets rarely experience rabies cases.",
+      "keywords" : "vaccination, geographic association",
+      "source_id" : "chunk-f35888e60b642e472bb1cc229302be6f"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "OWL",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Residents observe the owl hooting in their neighborhood and begin associating its calls with power outages.",
+      "keywords" : "observation, association",
+      "source_id" : "chunk-68c134359bb350633603714901148382"
+    }
+  }, {
+    "source" : "ACTIVE CAMPAIGNS FOR VACCINATING PETS",
+    "target" : "RABIES CASES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Active vaccination campaigns are correlated with a reduced frequency of rabies cases.",
+      "keywords" : "correlation, disease prevention",
+      "source_id" : "chunk-f35888e60b642e472bb1cc229302be6f"
+    }
+  }, {
+    "source" : "OWL",
+    "target" : "HUNTING CYCLE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The owl's hooting and activity are governed by its natural hunting cycle, independent of external events.",
+      "keywords" : "biology, natural behavior",
+      "source_id" : "chunk-68c134359bb350633603714901148382"
+    }
+  }, {
+    "source" : "JET LAG",
+    "target" : "SLEEP PATTERNS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Jet lag directly disrupts normal sleep patterns and circadian rhythms.",
+      "keywords" : "disruption, circadian rhythm, sleep",
+      "source_id" : "chunk-3b8c43933c47d42365ddc7402665a5bb"
+    }
+  }, {
+    "source" : "FAMILIES",
+    "target" : "FLORAL SHOP SALES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Families partake in floral shopping as one of their simultaneous holiday activities.",
+      "keywords" : "consumer behavior, participation, demand",
+      "source_id" : "chunk-08a19d6ef0c7150e7d81aec93813e534"
+    }
+  }, {
+    "source" : "READING HABITS",
+    "target" : "THUNDERSTORMS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "A speculative link was implied between reading habits and stormy weather as both shifted in tandem.",
+      "keywords" : "correlation, speculation",
+      "source_id" : "chunk-c3f93a1015618e0b27fcb2267ed23a65"
+    }
+  }, {
+    "source" : "COUPLES",
+    "target" : "FLORAL SHOP SALES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Couples partake in floral shopping as one of their simultaneous holiday activities.",
+      "keywords" : "consumer behavior, participation, demand",
+      "source_id" : "chunk-08a19d6ef0c7150e7d81aec93813e534"
+    }
+  }, {
+    "source" : "HOLIDAYS",
+    "target" : "FLORAL SHOP SALES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Holidays are a key driver that causes floral shop sales to increase significantly.",
+      "keywords" : "seasonal demand, sales increase, occasions",
+      "source_id" : "chunk-08a19d6ef0c7150e7d81aec93813e534"
+    }
+  }, {
+    "source" : "STRAY ANIMAL CONTROL",
+    "target" : "RABIES CASES",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Stray animal control is suggested as an alternative factor that may explain the rabies pattern.",
+      "keywords" : "alternative explanation, animal management",
+      "source_id" : "chunk-f35888e60b642e472bb1cc229302be6f"
+    }
+  }, {
+    "source" : "RESTAURANTS",
+    "target" : "RESTAURANT RESERVATIONS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Restaurants are the businesses that receive the reservation demand noticed annually.",
+      "keywords" : "business sector, bookings, annual pattern",
+      "source_id" : "chunk-08a19d6ef0c7150e7d81aec93813e534"
+    }
+  }, {
+    "source" : "FREQUENT TRAVEL",
+    "target" : "PRODUCTIVITY",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Productivity fluctuates depending on the trip schedule, showing a direct link between travel and work output.",
+      "keywords" : "work output, schedule, fluctuation",
+      "source_id" : "chunk-3b8c43933c47d42365ddc7402665a5bb"
+    }
+  }, {
+    "source" : "SLEEP PATTERNS",
+    "target" : "PRODUCTIVITY",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Disrupted sleep patterns contribute to fluctuating productivity levels.",
+      "keywords" : "causation, performance, fatigue",
+      "source_id" : "chunk-3b8c43933c47d42365ddc7402665a5bb"
+    }
+  }, {
+    "source" : "EMPLOYEES",
+    "target" : "TEAMS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Employees are organized into different teams whose collective output is being measured.",
+      "keywords" : "grouping, collective work",
+      "source_id" : "chunk-ba8554248fecb8f30fe5cf47f3ab927f"
+    }
+  }, {
+    "source" : "POWER OUTAGE",
+    "target" : "GRID MAINTENANCE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The power outage is caused by unrelated grid maintenance, not by the owl's activity.",
+      "keywords" : "causation, infrastructure",
+      "source_id" : "chunk-68c134359bb350633603714901148382"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 45,
+    "edgeCount" : 50,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Intermediary_Chain_Causation_276"
+  }
+}

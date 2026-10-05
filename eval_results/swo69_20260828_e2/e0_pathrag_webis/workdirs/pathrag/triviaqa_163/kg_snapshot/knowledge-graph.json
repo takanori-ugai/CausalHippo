@@ -1,0 +1,179 @@
+{
+  "nodes" : {
+    "UNIVERSITY OF OSLO" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "An academic institution that claimed black rats may not have been to blame for numerous outbreaks of the bubonic plague.",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6"
+    },
+    "BULLETIN DAILY" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A daily publication that reported on plague outbreaks, the Black Death, and related historical and scientific topics.",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6"
+    },
+    "CLIMATE CHANGE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A topic referenced as a supposed man-made cause of cyclones in Oklahoma.",
+      "source_id" : "chunk-f90ea2aa647e1b88dc7ba53e49f19748"
+    },
+    "BLACK DEATH" : {
+      "entity_type" : "EVENT",
+      "description" : "A devastating historical plague event of the Middle Ages, also known as the Bubonic Plague, with outbreaks across Europe.<SEP>A historical pandemic event associated with bubonic plague that impacted populations.",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6<SEP>chunk-f90ea2aa647e1b88dc7ba53e49f19748"
+    },
+    "MIDDLE AGES" : {
+      "entity_type" : "EVENT",
+      "description" : "A historical period in which the Black Death and periodic plague outbreaks occurred across Europe.",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6"
+    },
+    "CYCLONES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A type of severe weather phenomenon claimed to be linked to man-made climate change in Oklahoma.",
+      "source_id" : "chunk-f90ea2aa647e1b88dc7ba53e49f19748"
+    },
+    "BUBONIC PLAGUE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A category of plague disease, historically linked to black rats, with numerous outbreaks across Europe.<SEP>A type of infectious bacterial disease identified in relation to the Black Death.",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6<SEP>chunk-f90ea2aa647e1b88dc7ba53e49f19748"
+    },
+    "WESTERN COMMUNICATIONS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Publisher of the Bulletin Daily Paper, responsible for the print edition dated February 25, 2015.",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6"
+    },
+    "EUROPE" : {
+      "entity_type" : "GEO",
+      "description" : "A region where periodic outbreaks of plague occurred until the Middle Ages.",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6"
+    },
+    "LONDON" : {
+      "entity_type" : "GEO",
+      "description" : "A city where the Black Death had a notable effect on risk of mortality, referenced in historical research.",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6"
+    },
+    "ADVNT BIOTECHNOLOGIES" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A biotechnology company that reported on a plague victim and related research.",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6"
+    },
+    "OKLAHOMA" : {
+      "entity_type" : "GEO",
+      "description" : "A U.S. state referenced in the context of cyclone events.",
+      "source_id" : "chunk-f90ea2aa647e1b88dc7ba53e49f19748"
+    }
+  },
+  "edges" : [ {
+    "source" : "UNIVERSITY OF OSLO",
+    "target" : "BUBONIC PLAGUE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The University of Oslo claimed black rats may not have been to blame for numerous bubonic plague outbreaks.",
+      "keywords" : "research, scientific claim",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6"
+    }
+  }, {
+    "source" : "ADVNT BIOTECHNOLOGIES",
+    "target" : "BUBONIC PLAGUE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "AdVnt Biotechnologies reported on a plague victim in relation to the Bubonic Plague.",
+      "keywords" : "reporting, biotechnology",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6"
+    }
+  }, {
+    "source" : "BLACK DEATH",
+    "target" : "LONDON",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The Black Death had a significant effect on risk of mortality in London.",
+      "keywords" : "mortality, historical impact",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6"
+    }
+  }, {
+    "source" : "BLACK DEATH",
+    "target" : "EUROPE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Periodic outbreaks of plague, including the Black Death, occurred across Europe.",
+      "keywords" : "plague outbreaks, regional spread",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6"
+    }
+  }, {
+    "source" : "BULLETIN DAILY",
+    "target" : "BLACK DEATH",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The Bulletin Daily reported on the Black Death and its effects on mortality in London.",
+      "keywords" : "reporting, historical research",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6"
+    }
+  }, {
+    "source" : "BLACK DEATH",
+    "target" : "MIDDLE AGES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The Black Death was a major event during the Middle Ages.",
+      "keywords" : "historical period, temporal context",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6"
+    }
+  }, {
+    "source" : "BUBONIC PLAGUE",
+    "target" : "EUROPE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Numerous outbreaks of the bubonic plague occurred across Europe.",
+      "keywords" : "epidemic spread, geographic impact",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6"
+    }
+  }, {
+    "source" : "CYCLONES",
+    "target" : "OKLAHOMA",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Cyclones are referenced as occurring in Oklahoma.",
+      "keywords" : "weather, location, natural phenomenon",
+      "source_id" : "chunk-f90ea2aa647e1b88dc7ba53e49f19748"
+    }
+  }, {
+    "source" : "BLACK DEATH",
+    "target" : "BUBONIC PLAGUE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The Black Death is a historical manifestation of bubonic plague.",
+      "keywords" : "disease, pandemic, historical event",
+      "source_id" : "chunk-f90ea2aa647e1b88dc7ba53e49f19748"
+    }
+  }, {
+    "source" : "WESTERN COMMUNICATIONS",
+    "target" : "BULLETIN DAILY",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Western Communications is the publisher of the Bulletin Daily Paper.",
+      "keywords" : "publisher, publication",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6"
+    }
+  }, {
+    "source" : "BUBONIC PLAGUE",
+    "target" : "BLACK DEATH",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "The Bubonic Plague is also known as the Black Death and is similar in nature.",
+      "keywords" : "synonym, disease classification",
+      "source_id" : "chunk-3c39a0549d31fefb4fef422c68a932b6"
+    }
+  }, {
+    "source" : "CYCLONES",
+    "target" : "CLIMATE CHANGE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Cyclones were claimed to be caused by man-made climate change.",
+      "keywords" : "causation, weather attribution, climate",
+      "source_id" : "chunk-f90ea2aa647e1b88dc7ba53e49f19748"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 12,
+    "edgeCount" : 12,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_webis/workdirs/pathrag/triviaqa_163"
+  }
+}

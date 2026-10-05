@@ -1,0 +1,211 @@
+{
+  "nodes" : {
+    "OUTDOOR TEMPERATURE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An environmental factor playing a role in energy usage and bill variations.",
+      "source_id" : "chunk-90bd80aead2aa144e67711d491ff9025"
+    },
+    "FINANCIAL CHANGES" : {
+      "entity_type" : "EVENT",
+      "description" : "Changes in household finances whose actual underlying cause remains under consideration.",
+      "source_id" : "chunk-90bd80aead2aa144e67711d491ff9025"
+    },
+    "APPLIANCE EFFICIENCY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A factor considered alongside outdoor temperature in explaining changes in energy consumption.",
+      "source_id" : "chunk-90bd80aead2aa144e67711d491ff9025"
+    },
+    "HOME IMPROVEMENT" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The broader domain of home renovation and enhancement, speculated to be influenced by ambient temperature.",
+      "source_id" : "chunk-0543ea2743b8701ea486acf0a9ee7318"
+    },
+    "RESIDENTS" : {
+      "entity_type" : "PERSON",
+      "description" : "Individuals who reported changes in their monthly energy bills and attributed them to new devices.",
+      "source_id" : "chunk-90bd80aead2aa144e67711d491ff9025"
+    },
+    "SUMMER BOOMS" : {
+      "entity_type" : "EVENT",
+      "description" : "Seasonal periods characterized by heightened home improvement enthusiasm and increased permit approvals.",
+      "source_id" : "chunk-0543ea2743b8701ea486acf0a9ee7318"
+    },
+    "HOME RENOVATION PERMITS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Permits for home renovation whose approval rates frequently climb during months with higher local temperature averages.",
+      "source_id" : "chunk-0543ea2743b8701ea486acf0a9ee7318"
+    },
+    "STATISTICAL REVIEWS" : {
+      "entity_type" : "EVENT",
+      "description" : "Analytical assessments demonstrating the correlation between temperature averages and home renovation permit approvals.",
+      "source_id" : "chunk-0543ea2743b8701ea486acf0a9ee7318"
+    },
+    "CONSTRUCTION ACTIVITY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Building and renovation work whose drivers are fundamentally separate from temperature fluctuations, despite temporal alignment.",
+      "source_id" : "chunk-0543ea2743b8701ea486acf0a9ee7318"
+    },
+    "MONTHLY ENERGY BILLS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Financial metric showing reported changes following the installation of new air conditioning units.",
+      "source_id" : "chunk-90bd80aead2aa144e67711d491ff9025"
+    },
+    "HOUSEHOLDS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Many households that recently installed modern air conditioning units and experienced changes in energy bills.",
+      "source_id" : "chunk-90bd80aead2aa144e67711d491ff9025"
+    },
+    "AMBIENT TEMPERATURE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Local temperature averages and fluctuations that show temporal correlation with home improvement and construction activity.",
+      "source_id" : "chunk-0543ea2743b8701ea486acf0a9ee7318"
+    },
+    "MODERN AIR CONDITIONING UNITS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Newly installed appliances attributed by some as the cause of financial changes in energy costs.",
+      "source_id" : "chunk-90bd80aead2aa144e67711d491ff9025"
+    }
+  },
+  "edges" : [ {
+    "source" : "STATISTICAL REVIEWS",
+    "target" : "AMBIENT TEMPERATURE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Statistical reviews analyze and document the relationship between temperature averages and construction-related activity.",
+      "keywords" : "data analysis, temperature correlation, findings",
+      "source_id" : "chunk-0543ea2743b8701ea486acf0a9ee7318"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "MODERN AIR CONDITIONING UNITS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Some residents attribute their financial changes directly to the new air conditioning devices.",
+      "keywords" : "attribution, blame",
+      "source_id" : "chunk-90bd80aead2aa144e67711d491ff9025"
+    }
+  }, {
+    "source" : "MODERN AIR CONDITIONING UNITS",
+    "target" : "MONTHLY ENERGY BILLS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The new air conditioning units are attributed as a potential cause of energy bill changes.",
+      "keywords" : "causation, energy consumption",
+      "source_id" : "chunk-90bd80aead2aa144e67711d491ff9025"
+    }
+  }, {
+    "source" : "STATISTICAL REVIEWS",
+    "target" : "HOME RENOVATION PERMITS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Statistical reviews demonstrate that home renovation permit approvals climb during warmer months.",
+      "keywords" : "data analysis, approval trends, evidence",
+      "source_id" : "chunk-0543ea2743b8701ea486acf0a9ee7318"
+    }
+  }, {
+    "source" : "FINANCIAL CHANGES",
+    "target" : "MODERN AIR CONDITIONING UNITS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The financial changes are linked to the new devices, though the actual reason remains under consideration.",
+      "keywords" : "causation, uncertainty",
+      "source_id" : "chunk-90bd80aead2aa144e67711d491ff9025"
+    }
+  }, {
+    "source" : "HOUSEHOLDS",
+    "target" : "MODERN AIR CONDITIONING UNITS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Households recently installed modern air conditioning units, initiating the observed changes.",
+      "keywords" : "installation, adoption",
+      "source_id" : "chunk-90bd80aead2aa144e67711d491ff9025"
+    }
+  }, {
+    "source" : "APPLIANCE EFFICIENCY",
+    "target" : "MONTHLY ENERGY BILLS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Appliance efficiency is a factor that influences the level of energy bills.",
+      "keywords" : "efficiency, cost impact",
+      "source_id" : "chunk-90bd80aead2aa144e67711d491ff9025"
+    }
+  }, {
+    "source" : "SUMMER BOOMS",
+    "target" : "HOME IMPROVEMENT",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Summer booms are characterized by heightened home improvement enthusiasm and activity levels.",
+      "keywords" : "seasonal peak, enthusiasm, industry activity",
+      "source_id" : "chunk-0543ea2743b8701ea486acf0a9ee7318"
+    }
+  }, {
+    "source" : "HOME RENOVATION PERMITS",
+    "target" : "AMBIENT TEMPERATURE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Permit approvals frequently climb during months with higher local temperature averages, suggesting a temporal correlation.",
+      "keywords" : "correlation, seasonal trend, temperature effect",
+      "source_id" : "chunk-0543ea2743b8701ea486acf0a9ee7318"
+    }
+  }, {
+    "source" : "HOME RENOVATION PERMITS",
+    "target" : "SUMMER BOOMS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The connection between permit approvals and temperature is especially notable during summer booms.",
+      "keywords" : "seasonal peak, permit surge, summer activity",
+      "source_id" : "chunk-0543ea2743b8701ea486acf0a9ee7318"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "MONTHLY ENERGY BILLS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Residents reported changes in their monthly energy bills following the AC installation.",
+      "keywords" : "reporting, financial impact",
+      "source_id" : "chunk-90bd80aead2aa144e67711d491ff9025"
+    }
+  }, {
+    "source" : "OUTDOOR TEMPERATURE",
+    "target" : "MONTHLY ENERGY BILLS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Outdoor temperature is an environmental factor affecting energy consumption and bills.",
+      "keywords" : "environmental factor, energy demand",
+      "source_id" : "chunk-90bd80aead2aa144e67711d491ff9025"
+    }
+  }, {
+    "source" : "HOME IMPROVEMENT",
+    "target" : "CONSTRUCTION ACTIVITY",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Home improvement is the broader domain encompassing the construction activity discussed in the reviews.",
+      "keywords" : "domain relationship, industry scope, renovation",
+      "source_id" : "chunk-0543ea2743b8701ea486acf0a9ee7318"
+    }
+  }, {
+    "source" : "HOUSEHOLDS",
+    "target" : "RESIDENTS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Households are composed of the residents who report and experience the changes.",
+      "keywords" : "composition, reporting",
+      "source_id" : "chunk-90bd80aead2aa144e67711d491ff9025"
+    }
+  }, {
+    "source" : "CONSTRUCTION ACTIVITY",
+    "target" : "AMBIENT TEMPERATURE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The drivers behind construction activity and temperature fluctuations are fundamentally separate, despite temporal alignment.",
+      "keywords" : "causal independence, temporal coincidence, separate drivers",
+      "source_id" : "chunk-0543ea2743b8701ea486acf0a9ee7318"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 13,
+    "edgeCount" : 15,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Complex_System_No_Direct_Link_163"
+  }
+}

@@ -1,0 +1,1994 @@
+{
+  "nodes" : [ {
+    "id" : "Adiabatic Heating and Cooling",
+    "entity_id" : "Adiabatic Heating and Cooling",
+    "entity_type" : "Concept",
+    "description" : "A process where air rises and cools, causing moisture to condense and form clouds.",
+    "source_id" : "e4cba56782bfd9055a807f299fbe86c2"
+  }, {
+    "id" : "Orographic Precipitation",
+    "entity_id" : "Orographic Precipitation",
+    "entity_type" : "Concept",
+    "description" : "Precipitation caused by surface winds forced to rise against mountains.",
+    "source_id" : "acd3ef24f7ea418ba1612d4da2e0c954"
+  }, {
+    "id" : "Orographic Precipitation Definition",
+    "entity_id" : "Orographic Precipitation Definition",
+    "entity_type" : "Concept",
+    "description" : "A type of precipitation that occurs when moist air is forced to rise over a mountain, causing it to cool and condense.",
+    "source_id" : "e4cba56782bfd9055a807f299fbe86c2"
+  }, {
+    "id" : "Extratropical Cyclones",
+    "entity_id" : "Extratropical Cyclones",
+    "entity_type" : "Event",
+    "description" : "A type of storm that forms outside of the tropics and is characterized by low pressure and precipitation.",
+    "source_id" : "e4cba56782bfd9055a807f299fbe86c2"
+  }, {
+    "id" : "Mount Shasta",
+    "entity_id" : "Mount Shasta",
+    "entity_type" : "Location",
+    "description" : "A mountain in California, USA, known for its snowfall and orographic precipitation.",
+    "source_id" : "e4cba56782bfd9055a807f299fbe86c2"
+  }, {
+    "id" : "Orographic Rainfall",
+    "entity_id" : "Orographic Rainfall",
+    "entity_type" : "Concept",
+    "description" : "A type of rainfall that occurs when air is forced to rise over a mountain or hill",
+    "source_id" : "82a506e1fba7f115ddeea2f496d5d0c6"
+  }, {
+    "id" : "Convectional Rainfall",
+    "entity_id" : "Convectional Rainfall",
+    "entity_type" : "Concept",
+    "description" : "Rainfall that occurs when warm air rises and cools, causing the water vapor to condense",
+    "source_id" : "7c49c3da8d21a27d3073117447204d0e"
+  }, {
+    "id" : "Relief Rainfall",
+    "entity_id" : "Relief Rainfall",
+    "entity_type" : "Concept",
+    "description" : "Rainfall that occurs when moist air is forced to rise over mountains and hills, resulting in increased precipitation",
+    "source_id" : "7c49c3da8d21a27d3073117447204d0e"
+  }, {
+    "id" : "Frontal Rainfall",
+    "entity_id" : "Frontal Rainfall",
+    "entity_type" : "Concept",
+    "description" : "Rainfall that occurs when a cold front or warm front moves into an area, bringing moist air with it",
+    "source_id" : "7c49c3da8d21a27d3073117447204d0e"
+  }, {
+    "id" : "Mountain Rainfall",
+    "entity_id" : "Mountain Rainfall",
+    "entity_type" : "Location",
+    "description" : "Rainfall that occurs in mountainous regions, often resulting in high levels of precipitation",
+    "source_id" : "7c49c3da8d21a27d3073117447204d0e"
+  }, {
+    "id" : "Sea Winds",
+    "entity_id" : "Sea Winds",
+    "entity_type" : "Concept",
+    "description" : "Winds that blow from the sea towards the land, often bringing moist air with them",
+    "source_id" : "7c49c3da8d21a27d3073117447204d0e"
+  }, {
+    "id" : "Air Masses",
+    "entity_id" : "Air Masses",
+    "entity_type" : "Concept",
+    "description" : "Moist air masses that are caused to rise pseudoadiabatically over orography.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "Warm Air Mass",
+    "entity_id" : "Warm Air Mass",
+    "entity_type" : "Concept",
+    "description" : "A type of air mass that is warm and humid",
+    "source_id" : "7c49c3da8d21a27d3073117447204d0e"
+  }, {
+    "id" : "Cold Air Mass",
+    "entity_id" : "Cold Air Mass",
+    "entity_type" : "Concept",
+    "description" : "A type of air mass that is cold and dry",
+    "source_id" : "7c49c3da8d21a27d3073117447204d0e"
+  }, {
+    "id" : "Precipitation",
+    "entity_id" : "Precipitation",
+    "entity_type" : "Concept",
+    "description" : "The formation of water droplets in the atmosphere that fall to the ground",
+    "source_id" : "277bbba41c1c26a4b2e5fe9acc30c72d"
+  }, {
+    "id" : "Baroclinic Wave Activity",
+    "entity_id" : "Baroclinic Wave Activity",
+    "entity_type" : "Concept",
+    "description" : "A type of wave that occurs in the atmosphere when there is a significant difference in air pressure",
+    "source_id" : "337d5773f9e2c36fe0bc850a3e2efddd"
+  }, {
+    "id" : "Thermal Convection",
+    "entity_id" : "Thermal Convection",
+    "entity_type" : "Concept",
+    "description" : "The movement of heat through a fluid, such as air, causing it to rise or sink",
+    "source_id" : "337d5773f9e2c36fe0bc850a3e2efddd"
+  }, {
+    "id" : "Humid Air",
+    "entity_id" : "Humid Air",
+    "entity_type" : "Concept",
+    "description" : "Air that contains a high amount of moisture",
+    "source_id" : "337d5773f9e2c36fe0bc850a3e2efddd"
+  }, {
+    "id" : "Weather Systems",
+    "entity_id" : "Weather Systems",
+    "entity_type" : "Concept",
+    "description" : "Large-scale atmospheric phenomena that produce weather",
+    "source_id" : "337d5773f9e2c36fe0bc850a3e2efddd"
+  }, {
+    "id" : "Front Range",
+    "entity_id" : "Front Range",
+    "entity_type" : "Location",
+    "description" : "A region in the western United States known for its mountainous terrain",
+    "source_id" : "0ff29ceebdd52483dce87ca57559d58d"
+  }, {
+    "id" : "Chinook-Wind",
+    "entity_id" : "Chinook-Wind",
+    "entity_type" : "Person",
+    "description" : "A young girl named in a story about mountain climate",
+    "source_id" : "0ff29ceebdd52483dce87ca57559d58d"
+  }, {
+    "id" : "Oros",
+    "entity_id" : "Oros",
+    "entity_type" : "Concept",
+    "description" : "Greek word for mountain",
+    "source_id" : "8d97447d9730d1394c236bbbfd8819a3"
+  }, {
+    "id" : "Oriri",
+    "entity_id" : "Oriri",
+    "entity_type" : "Concept",
+    "description" : "The Latin word for rise",
+    "source_id" : "0ff29ceebdd52483dce87ca57559d58d"
+  }, {
+    "id" : "Orographic Lift",
+    "entity_id" : "Orographic Lift",
+    "entity_type" : "Concept",
+    "description" : "The rising movement of air over mountains",
+    "source_id" : "0ff29ceebdd52483dce87ca57559d58d"
+  }, {
+    "id" : "Plate Tectonics",
+    "entity_id" : "Plate Tectonics",
+    "entity_type" : "Concept",
+    "description" : "The theory that the Earth's crust is divided into plates that move and interact",
+    "source_id" : "0ff29ceebdd52483dce87ca57559d58d"
+  }, {
+    "id" : "Oceanic Plate",
+    "entity_id" : "Oceanic Plate",
+    "entity_type" : "Location",
+    "description" : "A large, continuous section of the Earth's crust",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26"
+  }, {
+    "id" : "Volcanic Neck",
+    "entity_id" : "Volcanic Neck",
+    "entity_type" : "Location",
+    "description" : "A landform created by volcanic activity",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26"
+  }, {
+    "id" : "Mountain",
+    "entity_id" : "Mountain",
+    "entity_type" : "Location",
+    "description" : "A natural elevation of the Earth",
+    "source_id" : "0c49eefb33d62ebcb61957c2ca583d5d"
+  }, {
+    "id" : "Wind",
+    "entity_id" : "Wind",
+    "entity_type" : "Concept",
+    "description" : "The movement of air in the atmosphere",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26"
+  }, {
+    "id" : "Moisture-Filled Clouds",
+    "entity_id" : "Moisture-Filled Clouds",
+    "entity_type" : "Concept",
+    "description" : "Clouds that contain high amounts of water vapor",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26"
+  }, {
+    "id" : "Water Vapour",
+    "entity_id" : "Water Vapour",
+    "entity_type" : "Concept",
+    "description" : "A gas that forms when water evaporates",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26"
+  }, {
+    "id" : "Greek Word for Mountains",
+    "entity_id" : "Greek Word for Mountains",
+    "entity_type" : "Concept",
+    "description" : "The word OROS, meaning mountains in Greek",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26"
+  }, {
+    "id" : "Orographic Rain",
+    "entity_id" : "Orographic Rain",
+    "entity_type" : "Concept",
+    "description" : "Rain that forms when moist air rises over mountains",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26"
+  }, {
+    "id" : "Nimbo-Stratus Clouds",
+    "entity_id" : "Nimbo-Stratus Clouds",
+    "entity_type" : "Concept",
+    "description" : "A type of cloud that produces orographic rain",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26"
+  }, {
+    "id" : "Rivers",
+    "entity_id" : "Rivers",
+    "entity_type" : "Location",
+    "description" : "Natural flowing bodies of water",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26"
+  }, {
+    "id" : "Bay",
+    "entity_id" : "Bay",
+    "entity_type" : "Location",
+    "description" : "A body of water partially enclosed by land",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26"
+  }, {
+    "id" : "Orographic Effect",
+    "entity_id" : "Orographic Effect",
+    "entity_type" : "Concept",
+    "description" : "The phenomenon where air temperature drops as it rises over a mountain, resulting in precipitation.",
+    "source_id" : "acd3ef24f7ea418ba1612d4da2e0c954"
+  }, {
+    "id" : "High Knob Landform",
+    "entity_id" : "High Knob Landform",
+    "entity_type" : "Location",
+    "description" : "A mountainous region in the High Knob Massif, where orographic precipitation occurs.",
+    "source_id" : "acd3ef24f7ea418ba1612d4da2e0c954"
+  }, {
+    "id" : "Albany",
+    "entity_id" : "Albany",
+    "entity_type" : "Location",
+    "description" : "A city located on the leeward side of the High Knob Massif, where precipitation can occur in the form of snow or rain.",
+    "source_id" : "acd3ef24f7ea418ba1612d4da2e0c954"
+  }, {
+    "id" : "Kentucky",
+    "entity_id" : "Kentucky",
+    "entity_type" : "Location",
+    "description" : "A state in the United States",
+    "source_id" : "b96748c0ebf890a928863c06416390bb"
+  }, {
+    "id" : "Malaysia",
+    "entity_id" : "Malaysia",
+    "entity_type" : "Location",
+    "description" : "A country in Southeast Asia",
+    "source_id" : "b96748c0ebf890a928863c06416390bb"
+  }, {
+    "id" : "Tropical Depression 5",
+    "entity_id" : "Tropical Depression 5",
+    "entity_type" : "Event",
+    "description" : "A tropical cyclone",
+    "source_id" : "b96748c0ebf890a928863c06416390bb"
+  }, {
+    "id" : "Hugion Oros Peninsula",
+    "entity_id" : "Hugion Oros Peninsula",
+    "entity_type" : "Location",
+    "description" : "A peninsula in Greece",
+    "source_id" : "b96748c0ebf890a928863c06416390bb"
+  }, {
+    "id" : "Mt. Atnos",
+    "entity_id" : "Mt. Atnos",
+    "entity_type" : "Location",
+    "description" : "A mountain in Greece",
+    "source_id" : "b96748c0ebf890a928863c06416390bb"
+  }, {
+    "id" : "Hopkins",
+    "entity_id" : "Hopkins",
+    "entity_type" : "Person",
+    "description" : "Instructor at GEOG 1111 Study Guide (2013-14 Hopkins)",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780"
+  }, {
+    "id" : "European Theater",
+    "entity_id" : "European Theater",
+    "entity_type" : "Location",
+    "description" : "Weather Orientation (ETWO) region",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780"
+  }, {
+    "id" : "Harz",
+    "entity_id" : "Harz",
+    "entity_type" : "Location",
+    "description" : "Mountain range in Germany",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780"
+  }, {
+    "id" : "Taunus",
+    "entity_id" : "Taunus",
+    "entity_type" : "Location",
+    "description" : "Mountain range in Germany",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780"
+  }, {
+    "id" : "Eifel",
+    "entity_id" : "Eifel",
+    "entity_type" : "Location",
+    "description" : "Mountain range in Germany",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780"
+  }, {
+    "id" : "Hunsrütick",
+    "entity_id" : "Hunsrütick",
+    "entity_type" : "Location",
+    "description" : "Mountain range in Germany",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780"
+  }, {
+    "id" : "Atlantic",
+    "entity_id" : "Atlantic",
+    "entity_type" : "Location",
+    "description" : "Ocean",
+    "source_id" : "1a2e781f9db6c6eed996003998001561"
+  }, {
+    "id" : "Jet Stream",
+    "entity_id" : "Jet Stream",
+    "entity_type" : "Concept",
+    "description" : "High-altitude wind current",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780"
+  }, {
+    "id" : "Orographic Effects",
+    "entity_id" : "Orographic Effects",
+    "entity_type" : "Concept",
+    "description" : "Weather phenomenon caused by mountain ranges",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780"
+  }, {
+    "id" : "Freezing Rain Precipitation",
+    "entity_id" : "Freezing Rain Precipitation",
+    "entity_type" : "Concept",
+    "description" : "Type of precipitation",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780"
+  }, {
+    "id" : "Lightning",
+    "entity_id" : "Lightning",
+    "entity_type" : "Concept",
+    "description" : "Electrical discharge in the atmosphere",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780"
+  }, {
+    "id" : "Clear Air Turbulence",
+    "entity_id" : "Clear Air Turbulence",
+    "entity_type" : "Concept",
+    "description" : "Weather phenomenon",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780"
+  }, {
+    "id" : "Sea Surface Temperature",
+    "entity_id" : "Sea Surface Temperature",
+    "entity_type" : "Concept",
+    "description" : "Temperature of the ocean surface",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780"
+  }, {
+    "id" : "Desert",
+    "entity_id" : "Desert",
+    "entity_type" : "Concept",
+    "description" : "A region of low rainfall",
+    "source_id" : "0c49eefb33d62ebcb61957c2ca583d5d"
+  }, {
+    "id" : "Orographic",
+    "entity_id" : "Orographic",
+    "entity_type" : "Concept",
+    "description" : "Precipitation resulting from the interaction of air masses and mountains",
+    "source_id" : "0c49eefb33d62ebcb61957c2ca583d5d"
+  }, {
+    "id" : "Tropics",
+    "entity_id" : "Tropics",
+    "entity_type" : "Location",
+    "description" : "The region near the Earth",
+    "source_id" : "0c49eefb33d62ebcb61957c2ca583d5d"
+  }, {
+    "id" : "Canada",
+    "entity_id" : "Canada",
+    "entity_type" : "Location",
+    "description" : "A country in North America",
+    "source_id" : "0c49eefb33d62ebcb61957c2ca583d5d"
+  }, {
+    "id" : "Earth",
+    "entity_id" : "Earth",
+    "entity_type" : "Location",
+    "description" : "The third planet from the sun in our solar system",
+    "source_id" : "277bbba41c1c26a4b2e5fe9acc30c72d"
+  }, {
+    "id" : "Palace of the Governors",
+    "entity_id" : "Palace of the Governors",
+    "entity_type" : "Location",
+    "description" : "A building in the heart of the area",
+    "source_id" : "0d7303f5690f6b3fc72a2ef4aeeb9df3"
+  }, {
+    "id" : "Lassen National Forest",
+    "entity_id" : "Lassen National Forest",
+    "entity_type" : "Location",
+    "description" : "A forest in the heart of the region",
+    "source_id" : "0d7303f5690f6b3fc72a2ef4aeeb9df3"
+  }, {
+    "id" : "Iberian Peninsula",
+    "entity_id" : "Iberian Peninsula",
+    "entity_type" : "Location",
+    "description" : "A region in Europe",
+    "source_id" : "0d7303f5690f6b3fc72a2ef4aeeb9df3"
+  }, {
+    "id" : "Wladimir Kppen",
+    "entity_id" : "Wladimir Kppen",
+    "entity_type" : "Person",
+    "description" : "A scientist who developed a climate classification system",
+    "source_id" : "0d7303f5690f6b3fc72a2ef4aeeb9df3"
+  }, {
+    "id" : "Rotation",
+    "entity_id" : "Rotation",
+    "entity_type" : "Concept",
+    "description" : "A phenomenon that gives rise to winds",
+    "source_id" : "82a506e1fba7f115ddeea2f496d5d0c6"
+  }, {
+    "id" : "Rainfall",
+    "entity_id" : "Rainfall",
+    "entity_type" : "Event",
+    "description" : "A natural event that occurs during certain weather conditions",
+    "source_id" : "82a506e1fba7f115ddeea2f496d5d0c6"
+  }, {
+    "id" : "Mud flows",
+    "entity_id" : "Mud flows",
+    "entity_type" : "Concept",
+    "description" : "A natural phenomenon that occurs during heavy rainfall",
+    "source_id" : "82a506e1fba7f115ddeea2f496d5d0c6"
+  }, {
+    "id" : "Air Trajectories",
+    "entity_id" : "Air Trajectories",
+    "entity_type" : "Concept",
+    "description" : "The path that air takes as it moves through the atmosphere",
+    "source_id" : "82a506e1fba7f115ddeea2f496d5d0c6"
+  }, {
+    "id" : "Vapour transport",
+    "entity_id" : "Vapour transport",
+    "entity_type" : "Concept",
+    "description" : "The movement of water vapour through the atmosphere",
+    "source_id" : "82a506e1fba7f115ddeea2f496d5d0c6"
+  }, {
+    "id" : "Air pollution",
+    "entity_id" : "Air pollution",
+    "entity_type" : "Concept",
+    "description" : "The release of pollutants into the atmosphere",
+    "source_id" : "82a506e1fba7f115ddeea2f496d5d0c6"
+  }, {
+    "id" : "Advection",
+    "entity_id" : "Advection",
+    "entity_type" : "Concept",
+    "description" : "The movement of air from one place to another",
+    "source_id" : "82a506e1fba7f115ddeea2f496d5d0c6"
+  }, {
+    "id" : "Moisture",
+    "entity_id" : "Moisture",
+    "entity_type" : "Concept",
+    "description" : "A substance that is a liquid at room temperature",
+    "source_id" : "277bbba41c1c26a4b2e5fe9acc30c72d"
+  }, {
+    "id" : "Greece",
+    "entity_id" : "Greece",
+    "entity_type" : "Location",
+    "description" : "A country located in southeastern Europe",
+    "source_id" : "277bbba41c1c26a4b2e5fe9acc30c72d"
+  }, {
+    "id" : "Athens",
+    "entity_id" : "Athens",
+    "entity_type" : "Location",
+    "description" : "A city located in Greece",
+    "source_id" : "82a506e1fba7f115ddeea2f496d5d0c6"
+  }, {
+    "id" : "Lesvos",
+    "entity_id" : "Lesvos",
+    "entity_type" : "Location",
+    "description" : "An island located off the coast of Greece",
+    "source_id" : "82a506e1fba7f115ddeea2f496d5d0c6"
+  }, {
+    "id" : "Lake Grdsjn",
+    "entity_id" : "Lake Grdsjn",
+    "entity_type" : "Location",
+    "description" : "A lake in the region with poor acid soil over cracked bedrock",
+    "source_id" : "6019f8e176c6415586b71e0b99a4cb51"
+  }, {
+    "id" : "Red Sea",
+    "entity_id" : "Red Sea",
+    "entity_type" : "Location",
+    "description" : "A body of water with mangroves that expanded by 12% over 41 years",
+    "source_id" : "6019f8e176c6415586b71e0b99a4cb51"
+  }, {
+    "id" : "Jay",
+    "entity_id" : "Jay",
+    "entity_type" : "Person",
+    "description" : "A bird species easily identified during the summer",
+    "source_id" : "6019f8e176c6415586b71e0b99a4cb51"
+  }, {
+    "id" : "HAWC Observatory",
+    "entity_id" : "HAWC Observatory",
+    "entity_type" : "Location",
+    "description" : "An extensive air-shower array composed of various components",
+    "source_id" : "1f85ecfa7475a1568c895a58d65ac9f5"
+  }, {
+    "id" : "Monteverde",
+    "entity_id" : "Monteverde",
+    "entity_type" : "Location",
+    "description" : "A region in Costa Rica with significant orographic precipitation",
+    "source_id" : "1f85ecfa7475a1568c895a58d65ac9f5"
+  }, {
+    "id" : "WorldWideScience.org",
+    "entity_id" : "WorldWideScience.org",
+    "entity_type" : "Organization",
+    "description" : "A platform providing access to scientific knowledge and resources",
+    "source_id" : "1f85ecfa7475a1568c895a58d65ac9f5"
+  }, {
+    "id" : "Robert E. Gabler",
+    "entity_id" : "Robert E. Gabler",
+    "entity_type" : "Person",
+    "description" : "An author of the book \"Essentials of Physical Geography\"",
+    "source_id" : "1f85ecfa7475a1568c895a58d65ac9f5"
+  }, {
+    "id" : "James F.",
+    "entity_id" : "James F.",
+    "entity_type" : "Person",
+    "description" : "An author of the book \"Essentials of Physical Geography\"",
+    "source_id" : "1f85ecfa7475a1568c895a58d65ac9f5"
+  }, {
+    "id" : "Ribamod",
+    "entity_id" : "Ribamod",
+    "entity_type" : "Organization",
+    "description" : "EU Bookshop",
+    "source_id" : "1a2e781f9db6c6eed996003998001561"
+  }, {
+    "id" : "EU",
+    "entity_id" : "EU",
+    "entity_type" : "Organization",
+    "description" : "European Union",
+    "source_id" : "1a2e781f9db6c6eed996003998001561"
+  }, {
+    "id" : "Europa",
+    "entity_id" : "Europa",
+    "entity_type" : "Location",
+    "description" : "Continental region",
+    "source_id" : "1a2e781f9db6c6eed996003998001561"
+  }, {
+    "id" : "India",
+    "entity_id" : "India",
+    "entity_type" : "Location",
+    "description" : "Country",
+    "source_id" : "1a2e781f9db6c6eed996003998001561"
+  }, {
+    "id" : "Kadapa",
+    "entity_id" : "Kadapa",
+    "entity_type" : "Location",
+    "description" : "City",
+    "source_id" : "1a2e781f9db6c6eed996003998001561"
+  }, {
+    "id" : "Palembang",
+    "entity_id" : "Palembang",
+    "entity_type" : "Location",
+    "description" : "City",
+    "source_id" : "1a2e781f9db6c6eed996003998001561"
+  }, {
+    "id" : "Universitas PGRI Palembang",
+    "entity_id" : "Universitas PGRI Palembang",
+    "entity_type" : "Organization",
+    "description" : "University",
+    "source_id" : "1a2e781f9db6c6eed996003998001561"
+  }, {
+    "id" : "Iasta",
+    "entity_id" : "Iasta",
+    "entity_type" : "Organization",
+    "description" : "Proceedings",
+    "source_id" : "1a2e781f9db6c6eed996003998001561"
+  }, {
+    "id" : "Physical Geography",
+    "entity_id" : "Physical Geography",
+    "entity_type" : "Concept",
+    "description" : "Branch of geography",
+    "source_id" : "1a2e781f9db6c6eed996003998001561"
+  }, {
+    "id" : "Air masses",
+    "entity_id" : "Air masses",
+    "entity_type" : "Concept",
+    "description" : "Weather phenomenon",
+    "source_id" : "1a2e781f9db6c6eed996003998001561"
+  }, {
+    "id" : "Climates",
+    "entity_id" : "Climates",
+    "entity_type" : "Concept",
+    "description" : "Weather patterns",
+    "source_id" : "1a2e781f9db6c6eed996003998001561"
+  }, {
+    "id" : "Condensation",
+    "entity_id" : "Condensation",
+    "entity_type" : "Concept",
+    "description" : "The process by which water vapor in the air is changed into liquid water",
+    "source_id" : "fee759031ac8ea8106370ed826b64029"
+  }, {
+    "id" : "Air",
+    "entity_id" : "Air",
+    "entity_type" : "Concept",
+    "description" : "The invisible gaseous substance surrounding the earth",
+    "source_id" : "277bbba41c1c26a4b2e5fe9acc30c72d"
+  }, {
+    "id" : "Thessaloniki",
+    "entity_id" : "Thessaloniki",
+    "entity_type" : "Location",
+    "description" : "A city located in northern Greece",
+    "source_id" : "277bbba41c1c26a4b2e5fe9acc30c72d"
+  }, {
+    "id" : "Genesis",
+    "entity_id" : "Genesis",
+    "entity_type" : "Concept",
+    "description" : "Greek word for origin or creation",
+    "source_id" : "8d97447d9730d1394c236bbbfd8819a3"
+  }, {
+    "id" : "Zugspitze",
+    "entity_id" : "Zugspitze",
+    "entity_type" : "Location",
+    "description" : "The highest mountain in Germany",
+    "source_id" : "0ae0d4588b42b275314626652e934444"
+  }, {
+    "id" : "Westerlies",
+    "entity_id" : "Westerlies",
+    "entity_type" : "Concept",
+    "description" : "Wind pattern in the Alps",
+    "source_id" : "8d97447d9730d1394c236bbbfd8819a3"
+  }, {
+    "id" : "Wiener-Neustadter Hut",
+    "entity_id" : "Wiener-Neustadter Hut",
+    "entity_type" : "Location",
+    "description" : "A hut on the Zugspitze",
+    "source_id" : "0ae0d4588b42b275314626652e934444"
+  }, {
+    "id" : "Orographic rise",
+    "entity_id" : "Orographic rise",
+    "entity_type" : "Concept",
+    "description" : "A rise in temperature with altitude due to the compression of air",
+    "source_id" : "0ae0d4588b42b275314626652e934444"
+  }, {
+    "id" : "Fold mountains",
+    "entity_id" : "Fold mountains",
+    "entity_type" : "Location",
+    "description" : "Mountain ranges formed by the folding of the Earth's crust",
+    "source_id" : "0ae0d4588b42b275314626652e934444"
+  }, {
+    "id" : "Orogenic",
+    "entity_id" : "Orogenic",
+    "entity_type" : "Concept",
+    "description" : "Relating to the formation of mountains through tectonic forces",
+    "source_id" : "0ae0d4588b42b275314626652e934444"
+  }, {
+    "id" : "Caractrisation physico-chimique",
+    "entity_id" : "Caractrisation physico-chimique",
+    "entity_type" : "Concept",
+    "description" : "Physical and chemical characterization",
+    "source_id" : "0ae0d4588b42b275314626652e934444"
+  }, {
+    "id" : "Trois ans de thse",
+    "entity_id" : "Trois ans de thse",
+    "entity_type" : "Event",
+    "description" : "Three years of thesis",
+    "source_id" : "0ae0d4588b42b275314626652e934444"
+  }, {
+    "id" : "Oros and Simoneit",
+    "entity_id" : "Oros and Simoneit",
+    "entity_type" : "Person",
+    "description" : "Authors of a book",
+    "source_id" : "0ae0d4588b42b275314626652e934444"
+  }, {
+    "id" : "C34",
+    "entity_id" : "C34",
+    "entity_type" : "Concept",
+    "description" : "A reference to a specific chemical reaction",
+    "source_id" : "0ae0d4588b42b275314626652e934444"
+  }, {
+    "id" : "Greek word",
+    "entity_id" : "Greek word",
+    "entity_type" : "Concept",
+    "description" : "A word from ancient Greek meaning mountain building",
+    "source_id" : "0ae0d4588b42b275314626652e934444"
+  }, {
+    "id" : "Ivano-Frankivsk region",
+    "entity_id" : "Ivano-Frankivsk region",
+    "entity_type" : "Location",
+    "description" : "A geographical region in West Ukraine",
+    "source_id" : "fee759031ac8ea8106370ed826b64029"
+  }, {
+    "id" : "West Ukraine",
+    "entity_id" : "West Ukraine",
+    "entity_type" : "Location",
+    "description" : "A geographical region in Ukraine",
+    "source_id" : "fee759031ac8ea8106370ed826b64029"
+  }, {
+    "id" : "Geological fold",
+    "entity_id" : "Geological fold",
+    "entity_type" : "Concept",
+    "description" : "A geological formation created by tectonic forces",
+    "source_id" : "fee759031ac8ea8106370ed826b64029"
+  }, {
+    "id" : "Orographic effect",
+    "entity_id" : "Orographic effect",
+    "entity_type" : "Concept",
+    "description" : "The effect of air rising over mountains",
+    "source_id" : "fee759031ac8ea8106370ed826b64029"
+  }, {
+    "id" : "Pressure Belts",
+    "entity_id" : "Pressure Belts",
+    "entity_type" : "Concept",
+    "description" : "Bands of air pressure in the atmosphere",
+    "source_id" : "fee759031ac8ea8106370ed826b64029"
+  }, {
+    "id" : "Planetary Winds",
+    "entity_id" : "Planetary Winds",
+    "entity_type" : "Concept",
+    "description" : "Winds caused by the movement of the Earth",
+    "source_id" : "fee759031ac8ea8106370ed826b64029"
+  }, {
+    "id" : "Hot local winds",
+    "entity_id" : "Hot local winds",
+    "entity_type" : "Concept",
+    "description" : "Local winds that are warmer than the surrounding air",
+    "source_id" : "fee759031ac8ea8106370ed826b64029"
+  }, {
+    "id" : "Cold local winds",
+    "entity_id" : "Cold local winds",
+    "entity_type" : "Concept",
+    "description" : "Local winds that are colder than the surrounding air",
+    "source_id" : "fee759031ac8ea8106370ed826b64029"
+  }, {
+    "id" : "Weather and climate",
+    "entity_id" : "Weather and climate",
+    "entity_type" : "Concept",
+    "description" : "The state of the atmosphere at a particular place and time",
+    "source_id" : "fee759031ac8ea8106370ed826b64029"
+  }, {
+    "id" : "Humidity and precipitation",
+    "entity_id" : "Humidity and precipitation",
+    "entity_type" : "Concept",
+    "description" : "The amount of water vapor in the air and the amount of rain or snow that falls",
+    "source_id" : "fee759031ac8ea8106370ed826b64029"
+  }, {
+    "id" : "Thesis",
+    "entity_id" : "Thesis",
+    "entity_type" : "Concept",
+    "description" : "A formal written document that presents research or arguments",
+    "source_id" : "fee759031ac8ea8106370ed826b64029"
+  }, {
+    "id" : "Cuisine",
+    "entity_id" : "Cuisine",
+    "entity_type" : "Concept",
+    "description" : "The art of cooking and preparing food",
+    "source_id" : "fee759031ac8ea8106370ed826b64029"
+  }, {
+    "id" : "Road trip",
+    "entity_id" : "Road trip",
+    "entity_type" : "Concept",
+    "description" : "A trip by car or other vehicle, often for pleasure or adventure",
+    "source_id" : "fee759031ac8ea8106370ed826b64029"
+  }, {
+    "id" : "Scientific Associates",
+    "entity_id" : "Scientific Associates",
+    "entity_type" : "Organization",
+    "description" : "A group of scientists who work together on a project or research",
+    "source_id" : "fee759031ac8ea8106370ed826b64029"
+  }, {
+    "id" : "International Conference on the World Climate Research Programme",
+    "entity_id" : "International Conference on the World Climate Research Programme",
+    "entity_type" : "Event",
+    "description" : "A conference where scientists and researchers discuss and present their research on climate change",
+    "source_id" : "fee759031ac8ea8106370ed826b64029"
+  }, {
+    "id" : "Orography",
+    "entity_id" : "Orography",
+    "entity_type" : "Location",
+    "description" : "The orography of a region, including mountains and hills.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "Falkland Islands",
+    "entity_id" : "Falkland Islands",
+    "entity_type" : "Location",
+    "description" : "A group of islands in the South Atlantic Ocean.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "Central Brazil",
+    "entity_id" : "Central Brazil",
+    "entity_type" : "Location",
+    "description" : "The central region of Brazil, a country in South America.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "Indonesia",
+    "entity_id" : "Indonesia",
+    "entity_type" : "Location",
+    "description" : "An island country in Southeast Asia.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "University of Toronto",
+    "entity_id" : "University of Toronto",
+    "entity_type" : "Organization",
+    "description" : "A university located in Toronto, Canada.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "500 Millibar Heights",
+    "entity_id" : "500 Millibar Heights",
+    "entity_type" : "Concept",
+    "description" : "A measure of atmospheric pressure.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "Flow Characteristics",
+    "entity_id" : "Flow Characteristics",
+    "entity_type" : "Concept",
+    "description" : "The characteristics of air flow in the atmosphere.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "Precipitation Events",
+    "entity_id" : "Precipitation Events",
+    "entity_type" : "Concept",
+    "description" : "The occurrence of rain or snow in a specific area.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "Mesothermal Climates",
+    "entity_id" : "Mesothermal Climates",
+    "entity_type" : "Concept",
+    "description" : "A type of climate characterized by moderate temperatures.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "Moist Air",
+    "entity_id" : "Moist Air",
+    "entity_type" : "Concept",
+    "description" : "Air that contains a high amount of moisture.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "Pseudoadiabatic Rise",
+    "entity_id" : "Pseudoadiabatic Rise",
+    "entity_type" : "Concept",
+    "description" : "The process by which air rises rapidly due to its own heat.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "Dipole Pattern",
+    "entity_id" : "Dipole Pattern",
+    "entity_type" : "Concept",
+    "description" : "A pattern of atmospheric circulation characterized by two areas of high and low pressure.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "Secondary Precipitation Maximum",
+    "entity_id" : "Secondary Precipitation Maximum",
+    "entity_type" : "Concept",
+    "description" : "A secondary peak in precipitation that occurs in a specific region.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "Forest Oros",
+    "entity_id" : "Forest Oros",
+    "entity_type" : "Location",
+    "description" : "A forested region with orographic features.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "Rough Geological Map",
+    "entity_id" : "Rough Geological Map",
+    "entity_type" : "Concept",
+    "description" : "A map that shows the geological features of an area in a rough and simplified way.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "Geological Map",
+    "entity_id" : "Geological Map",
+    "entity_type" : "Concept",
+    "description" : "A map that shows the geological features of an area in detail.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "Rainfall Charts",
+    "entity_id" : "Rainfall Charts",
+    "entity_type" : "Concept",
+    "description" : "Graphs that show the amount of rainfall in a specific area over time.",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd"
+  }, {
+    "id" : "South Atlantic Ocean",
+    "entity_id" : "South Atlantic Ocean",
+    "entity_type" : "Location",
+    "description" : "A large body of water in the southern hemisphere",
+    "source_id" : "370b7a99de46735476b4e6a3d5a58ce5"
+  }, {
+    "id" : "Pacific Ocean",
+    "entity_id" : "Pacific Ocean",
+    "entity_type" : "Location",
+    "description" : "A large body of water in the western hemisphere",
+    "source_id" : "370b7a99de46735476b4e6a3d5a58ce5"
+  }, {
+    "id" : "Serra do Mar",
+    "entity_id" : "Serra do Mar",
+    "entity_type" : "Location",
+    "description" : "A mountain range in Brazil",
+    "source_id" : "370b7a99de46735476b4e6a3d5a58ce5"
+  }, {
+    "id" : "Trojan Horse",
+    "entity_id" : "Trojan Horse",
+    "entity_type" : "Concept",
+    "description" : "A legendary statue from Greek mythology",
+    "source_id" : "370b7a99de46735476b4e6a3d5a58ce5"
+  }, {
+    "id" : "Google",
+    "entity_id" : "Google",
+    "entity_type" : "Organization",
+    "description" : "A multinational technology company",
+    "source_id" : "370b7a99de46735476b4e6a3d5a58ce5"
+  }, {
+    "id" : "NTSB",
+    "entity_id" : "NTSB",
+    "entity_type" : "Organization",
+    "description" : "A US government agency responsible for aviation safety",
+    "source_id" : "370b7a99de46735476b4e6a3d5a58ce5"
+  }, {
+    "id" : "Europe",
+    "entity_id" : "Europe",
+    "entity_type" : "Location",
+    "description" : "The continent where the solvency problems are located",
+    "source_id" : "3faf7d13ea9f71824c54abe4380d30cb"
+  }, {
+    "id" : "Africa",
+    "entity_id" : "Africa",
+    "entity_type" : "Location",
+    "description" : "The continent where the insurgency is taking place",
+    "source_id" : "3faf7d13ea9f71824c54abe4380d30cb"
+  }, {
+    "id" : "University",
+    "entity_id" : "University",
+    "entity_type" : "Concept",
+    "description" : "An institution of higher learning",
+    "source_id" : "3faf7d13ea9f71824c54abe4380d30cb"
+  }, {
+    "id" : "Insurgency",
+    "entity_id" : "Insurgency",
+    "entity_type" : "Concept",
+    "description" : "A violent uprising against a government",
+    "source_id" : "3faf7d13ea9f71824c54abe4380d30cb"
+  }, {
+    "id" : "Fixture",
+    "entity_id" : "Fixture",
+    "entity_type" : "Concept",
+    "description" : "A permanent structure or installation",
+    "source_id" : "3faf7d13ea9f71824c54abe4380d30cb"
+  } ],
+  "edges" : [ {
+    "source" : "Adiabatic Heating and Cooling",
+    "target" : "Orographic Precipitation",
+    "weight" : "1.0",
+    "description" : "The process of adiabatic heating and cooling causes air to rise, cool, and condense, resulting in orographic precipitation.",
+    "keywords" : "air rising, cooling, condensation",
+    "source_id" : "e4cba56782bfd9055a807f299fbe86c2",
+    "src_id" : "Adiabatic Heating and Cooling",
+    "tgt_id" : "Orographic Precipitation"
+  }, {
+    "source" : "Orographic Precipitation",
+    "target" : "Mount Shasta",
+    "weight" : "1.0",
+    "description" : "Orographic precipitation occurs when moist air is forced to rise over a mountain barrier, such as Mount Shasta.",
+    "keywords" : "mountain barrier, moist air",
+    "source_id" : "e4cba56782bfd9055a807f299fbe86c2",
+    "src_id" : "Orographic Precipitation",
+    "tgt_id" : "Mount Shasta"
+  }, {
+    "source" : "Orographic Precipitation",
+    "target" : "Extratropical Cyclones",
+    "weight" : "1.0",
+    "description" : "Orographic precipitation is often associated with extratropical cyclones, which form outside of the tropics and are characterized by low pressure and precipitation.",
+    "keywords" : "precipitation, mountain",
+    "source_id" : "e4cba56782bfd9055a807f299fbe86c2",
+    "src_id" : "Orographic Precipitation",
+    "tgt_id" : "Extratropical Cyclones"
+  }, {
+    "source" : "Orographic Precipitation",
+    "target" : "Precipitation",
+    "weight" : "1.0",
+    "description" : "Precipitation that occurs when air is forced to rise over a mountain or hill",
+    "keywords" : "mountains, hills, air rising",
+    "source_id" : "337d5773f9e2c36fe0bc850a3e2efddd",
+    "src_id" : "Precipitation",
+    "tgt_id" : "Orographic Precipitation"
+  }, {
+    "source" : "Orographic Precipitation",
+    "target" : "Orographic Effect",
+    "weight" : "1.0",
+    "description" : "The phenomenon where air temperature drops as it rises over a mountain, resulting in precipitation.",
+    "keywords" : "mountain, precipitation, air temperature",
+    "source_id" : "acd3ef24f7ea418ba1612d4da2e0c954",
+    "src_id" : "Orographic Precipitation",
+    "tgt_id" : "Orographic Effect"
+  }, {
+    "source" : "Orographic Precipitation",
+    "target" : "High Knob Landform",
+    "weight" : "1.0",
+    "description" : "The region where orographic precipitation occurs due to the forced rise of air over the mountain.",
+    "keywords" : "mountain, precipitation, orographic effect",
+    "source_id" : "acd3ef24f7ea418ba1612d4da2e0c954",
+    "src_id" : "Orographic Precipitation",
+    "tgt_id" : "High Knob Landform"
+  }, {
+    "source" : "Orographic Precipitation",
+    "target" : "Albany",
+    "weight" : "1.0",
+    "description" : "The city where precipitation can occur in the form of snow or rain due to its location on the leeward side of the mountain.",
+    "keywords" : "mountain, precipitation, leeward side",
+    "source_id" : "acd3ef24f7ea418ba1612d4da2e0c954",
+    "src_id" : "Orographic Precipitation",
+    "tgt_id" : "Albany"
+  }, {
+    "source" : "Orographic Rainfall",
+    "target" : "Mountain Rainfall",
+    "weight" : "1.0",
+    "description" : "Orographic rainfall occurs when moist air is forced to rise over mountains and hills, resulting in increased precipitation",
+    "keywords" : "mountains, precipitation",
+    "source_id" : "7c49c3da8d21a27d3073117447204d0e",
+    "src_id" : "Orographic Rainfall",
+    "tgt_id" : "Mountain Rainfall"
+  }, {
+    "source" : "Orographic Rainfall",
+    "target" : "Relief Rainfall",
+    "weight" : "1.0",
+    "description" : "Relief rainfall occurs when moist air is forced to rise over mountains and hills, resulting in increased precipitation",
+    "keywords" : "mountains, hills",
+    "source_id" : "7c49c3da8d21a27d3073117447204d0e",
+    "src_id" : "Relief Rainfall",
+    "tgt_id" : "Orographic Rainfall"
+  }, {
+    "source" : "Orographic Rainfall",
+    "target" : "Air Trajectories",
+    "weight" : "1.0",
+    "description" : "Orographic rainfall is influenced by air trajectories",
+    "keywords" : "Mountain, Hill",
+    "source_id" : "82a506e1fba7f115ddeea2f496d5d0c6",
+    "src_id" : "Orographic Rainfall",
+    "tgt_id" : "Air Trajectories"
+  }, {
+    "source" : "Mountain Rainfall",
+    "target" : "Sea Winds",
+    "weight" : "1.0",
+    "description" : "Mountain rainfall occurs in mountainous regions, often resulting in high levels of precipitation",
+    "keywords" : "mountains, precipitation",
+    "source_id" : "7c49c3da8d21a27d3073117447204d0e",
+    "src_id" : "Mountain Rainfall",
+    "tgt_id" : "Sea Winds"
+  }, {
+    "source" : "Convectional Rainfall",
+    "target" : "Air Masses",
+    "weight" : "1.0",
+    "description" : "Convectional rainfall occurs when warm air rises and cools, causing the water vapor to condense",
+    "keywords" : "warm air, cold air",
+    "source_id" : "7c49c3da8d21a27d3073117447204d0e",
+    "src_id" : "Convectional Rainfall",
+    "tgt_id" : "Air Masses"
+  }, {
+    "source" : "Air Masses",
+    "target" : "Frontal Rainfall",
+    "weight" : "1.0",
+    "description" : "Air masses play a crucial role in determining the type of rainfall that occurs in an area",
+    "keywords" : "cold air, warm air",
+    "source_id" : "7c49c3da8d21a27d3073117447204d0e",
+    "src_id" : "Air Masses",
+    "tgt_id" : "Frontal Rainfall"
+  }, {
+    "source" : "Air Masses",
+    "target" : "Orography",
+    "weight" : "1.0",
+    "description" : "Air masses rise over orography, causing changes in atmospheric circulation.",
+    "keywords" : "pseudoadiabatic rise, moisture, atmospheric circulation",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd",
+    "src_id" : "Air Masses",
+    "tgt_id" : "Orography"
+  }, {
+    "source" : "Sea Winds",
+    "target" : "Warm Air Mass",
+    "weight" : "1.0",
+    "description" : "Sea winds bring warm air from the sea towards the land, often resulting in increased precipitation",
+    "keywords" : "sea, warm air",
+    "source_id" : "7c49c3da8d21a27d3073117447204d0e",
+    "src_id" : "Sea Winds",
+    "tgt_id" : "Warm Air Mass"
+  }, {
+    "source" : "Precipitation",
+    "target" : "Humid Air",
+    "weight" : "1.0",
+    "description" : "Air that contains a high amount of moisture",
+    "keywords" : "moisture, water vapor",
+    "source_id" : "337d5773f9e2c36fe0bc850a3e2efddd",
+    "src_id" : "Humid Air",
+    "tgt_id" : "Precipitation"
+  }, {
+    "source" : "Precipitation",
+    "target" : "Vapour transport",
+    "weight" : "1.0",
+    "description" : "Vapour transport is related to precipitation",
+    "keywords" : "Water vapour, Clouds",
+    "source_id" : "82a506e1fba7f115ddeea2f496d5d0c6",
+    "src_id" : "Vapour transport",
+    "tgt_id" : "Precipitation"
+  }, {
+    "source" : "Precipitation",
+    "target" : "Moisture",
+    "weight" : "1.0",
+    "description" : "The formation of precipitation from moisture",
+    "keywords" : "water droplets, falling rain",
+    "source_id" : "277bbba41c1c26a4b2e5fe9acc30c72d",
+    "src_id" : "Moisture",
+    "tgt_id" : "Precipitation"
+  }, {
+    "source" : "Baroclinic Wave Activity",
+    "target" : "Weather Systems",
+    "weight" : "1.0",
+    "description" : "A type of wave that occurs in the atmosphere when there is a significant difference in air pressure",
+    "keywords" : "atmospheric pressure, wave movement",
+    "source_id" : "337d5773f9e2c36fe0bc850a3e2efddd",
+    "src_id" : "Baroclinic Wave Activity",
+    "tgt_id" : "Weather Systems"
+  }, {
+    "source" : "Baroclinic Wave Activity",
+    "target" : "Thermal Convection",
+    "weight" : "1.0",
+    "description" : "The movement of heat through a fluid, such as air, causing it to rise or sink",
+    "keywords" : "heat, fluid movement",
+    "source_id" : "337d5773f9e2c36fe0bc850a3e2efddd",
+    "src_id" : "Thermal Convection",
+    "tgt_id" : "Baroclinic Wave Activity"
+  }, {
+    "source" : "Front Range",
+    "target" : "Oros",
+    "weight" : "1.0",
+    "description" : "The Front Range is a mountainous region",
+    "keywords" : "mountain, terrain",
+    "source_id" : "0ff29ceebdd52483dce87ca57559d58d",
+    "src_id" : "Front Range",
+    "tgt_id" : "Oros"
+  }, {
+    "source" : "Front Range",
+    "target" : "Plate Tectonics",
+    "weight" : "1.0",
+    "description" : "Plate tectonics affects the Front Range",
+    "keywords" : "plates, movement",
+    "source_id" : "0ff29ceebdd52483dce87ca57559d58d",
+    "src_id" : "Plate Tectonics",
+    "tgt_id" : "Front Range"
+  }, {
+    "source" : "Oros",
+    "target" : "Oriri",
+    "weight" : "1.0",
+    "description" : "The word oros refers to a mountain",
+    "keywords" : "rise, mountain",
+    "source_id" : "0ff29ceebdd52483dce87ca57559d58d",
+    "src_id" : "Oros",
+    "tgt_id" : "Oriri"
+  }, {
+    "source" : "Oros",
+    "target" : "Orographic Lift",
+    "weight" : "1.0",
+    "description" : "Orographic lift occurs over mountains",
+    "keywords" : "air movement, mountain",
+    "source_id" : "0ff29ceebdd52483dce87ca57559d58d",
+    "src_id" : "Orographic Lift",
+    "tgt_id" : "Oros"
+  }, {
+    "source" : "Oros",
+    "target" : "Chinook-Wind",
+    "weight" : "1.0",
+    "description" : "Chinook-Wind is named after a mountain",
+    "keywords" : "mountain, story",
+    "source_id" : "0ff29ceebdd52483dce87ca57559d58d",
+    "src_id" : "Oros",
+    "tgt_id" : "Chinook-Wind"
+  }, {
+    "source" : "Oros",
+    "target" : "Lake Grdsjn",
+    "weight" : "1.0",
+    "description" : "The build-up of dead moss causes the bog to rise",
+    "keywords" : "orographic precipitation, acid soil",
+    "source_id" : "6019f8e176c6415586b71e0b99a4cb51",
+    "src_id" : "Lake Grdsjn",
+    "tgt_id" : "Oros"
+  }, {
+    "source" : "Oros",
+    "target" : "Genesis",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "8d97447d9730d1394c236bbbfd8819a3",
+    "src_id" : "Oros",
+    "tgt_id" : "Genesis"
+  }, {
+    "source" : "Oceanic Plate",
+    "target" : "Volcanic Neck",
+    "weight" : "1.0",
+    "description" : "The convergence of oceanic plates causes one plate to sink beneath the other, resulting in volcanic activity",
+    "keywords" : "plate tectonics, volcanic activity",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26",
+    "src_id" : "Oceanic Plate",
+    "tgt_id" : "Volcanic Neck"
+  }, {
+    "source" : "Volcanic Neck",
+    "target" : "Mountain",
+    "weight" : "1.0",
+    "description" : "Lava rises and erupts, leaving a mountain that forms",
+    "keywords" : "lava eruption, mountain formation",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26",
+    "src_id" : "Volcanic Neck",
+    "tgt_id" : "Mountain"
+  }, {
+    "source" : "Mountain",
+    "target" : "Desert",
+    "weight" : "1.0",
+    "description" : "Deserts are formed by the interaction of hot, dry air and mountains",
+    "keywords" : "hot, dry air",
+    "source_id" : "0c49eefb33d62ebcb61957c2ca583d5d",
+    "src_id" : "Desert",
+    "tgt_id" : "Mountain"
+  }, {
+    "source" : "Mountain",
+    "target" : "Orographic",
+    "weight" : "1.0",
+    "description" : "Orographic precipitation occurs when air masses interact with mountains",
+    "keywords" : "precipitation, air masses",
+    "source_id" : "0c49eefb33d62ebcb61957c2ca583d5d",
+    "src_id" : "Mountain",
+    "tgt_id" : "Orographic"
+  }, {
+    "source" : "Wind",
+    "target" : "Moisture-Filled Clouds",
+    "weight" : "1.0",
+    "description" : "Wind pushes air and moisture-filled clouds up mountain slopes",
+    "keywords" : "air movement, cloud formation",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26",
+    "src_id" : "Wind",
+    "tgt_id" : "Moisture-Filled Clouds"
+  }, {
+    "source" : "Moisture-Filled Clouds",
+    "target" : "Water Vapour",
+    "weight" : "1.0",
+    "description" : "Moisture-filled clouds contain water vapour that evaporates",
+    "keywords" : "evaporation, water cycle",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26",
+    "src_id" : "Moisture-Filled Clouds",
+    "tgt_id" : "Water Vapour"
+  }, {
+    "source" : "Water Vapour",
+    "target" : "Greek Word for Mountains",
+    "weight" : "1.0",
+    "description" : "Water vapour forms when water evaporates, and is related to the Greek word for mountains",
+    "keywords" : "water cycle, atmospheric science",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26",
+    "src_id" : "Water Vapour",
+    "tgt_id" : "Greek Word for Mountains"
+  }, {
+    "source" : "Greek Word for Mountains",
+    "target" : "Orographic Rain",
+    "weight" : "1.0",
+    "description" : "The Greek word for mountains is related to orographic rain",
+    "keywords" : "mountain formation, cloud types",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26",
+    "src_id" : "Greek Word for Mountains",
+    "tgt_id" : "Orographic Rain"
+  }, {
+    "source" : "Orographic Rain",
+    "target" : "Nimbo-Stratus Clouds",
+    "weight" : "1.0",
+    "description" : "Orographic rain forms when moist air rises over mountains, and is related to nimbo-stratus clouds",
+    "keywords" : "cloud types, orographic rain formation",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26",
+    "src_id" : "Orographic Rain",
+    "tgt_id" : "Nimbo-Stratus Clouds"
+  }, {
+    "source" : "Rivers",
+    "target" : "Bay",
+    "weight" : "1.0",
+    "description" : "Rivers flow into bays, which are part of aquatic ecosystems",
+    "keywords" : "water flow, aquatic ecosystems",
+    "source_id" : "f922f231e99639f72dca0bd5156a7e26",
+    "src_id" : "Rivers",
+    "tgt_id" : "Bay"
+  }, {
+    "source" : "Kentucky",
+    "target" : "Tropical Depression 5",
+    "weight" : "1.0",
+    "description" : "The tropical depression affects the state",
+    "keywords" : "weather, storm",
+    "source_id" : "b96748c0ebf890a928863c06416390bb",
+    "src_id" : "Tropical Depression 5",
+    "tgt_id" : "Kentucky"
+  }, {
+    "source" : "Kentucky",
+    "target" : "Mt. Atnos",
+    "weight" : "1.0",
+    "description" : "The mountain is located in the state",
+    "keywords" : "weather, mountain",
+    "source_id" : "b96748c0ebf890a928863c06416390bb",
+    "src_id" : "Mt. Atnos",
+    "tgt_id" : "Kentucky"
+  }, {
+    "source" : "Malaysia",
+    "target" : "IUCN Portals",
+    "weight" : "1.0",
+    "description" : "The country is involved in conservation efforts",
+    "keywords" : "conservation, environment",
+    "source_id" : "b96748c0ebf890a928863c06416390bb",
+    "src_id" : "Malaysia",
+    "tgt_id" : "IUCN Portals"
+  }, {
+    "source" : "Hugion Oros Peninsula",
+    "target" : "Mt. Atnos",
+    "weight" : "1.0",
+    "description" : "The peninsula is home to the mountain",
+    "keywords" : "geography, mountain",
+    "source_id" : "b96748c0ebf890a928863c06416390bb",
+    "src_id" : "Hugion Oros Peninsula",
+    "tgt_id" : "Mt. Atnos"
+  }, {
+    "source" : "Hopkins",
+    "target" : "GEOG 1111 Study Guide (2013-14 Hopkins)",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780",
+    "src_id" : "Hopkins",
+    "tgt_id" : "GEOG 1111 Study Guide (2013-14 Hopkins)"
+  }, {
+    "source" : "European Theater",
+    "target" : "Weather Orientation (ETWO)",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780",
+    "src_id" : "European Theater",
+    "tgt_id" : "Weather Orientation (ETWO)"
+  }, {
+    "source" : "Harz",
+    "target" : "Taunus",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780",
+    "src_id" : "Harz",
+    "tgt_id" : "Taunus"
+  }, {
+    "source" : "Harz",
+    "target" : "Eifel",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780",
+    "src_id" : "Harz",
+    "tgt_id" : "Eifel"
+  }, {
+    "source" : "Harz",
+    "target" : "Hunsrütick",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780",
+    "src_id" : "Harz",
+    "tgt_id" : "Hunsrütick"
+  }, {
+    "source" : "Atlantic",
+    "target" : "Jet Stream",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780",
+    "src_id" : "Atlantic",
+    "tgt_id" : "Jet Stream"
+  }, {
+    "source" : "Atlantic",
+    "target" : "Europa",
+    "weight" : "1.0",
+    "description" : "Oceanic relationship",
+    "keywords" : "Ocean",
+    "source_id" : "1a2e781f9db6c6eed996003998001561",
+    "src_id" : "Europa",
+    "tgt_id" : "Atlantic"
+  }, {
+    "source" : "Atlantic",
+    "target" : "India",
+    "weight" : "1.0",
+    "description" : "Oceanic relationship",
+    "keywords" : "Ocean",
+    "source_id" : "1a2e781f9db6c6eed996003998001561",
+    "src_id" : "Atlantic",
+    "tgt_id" : "India"
+  }, {
+    "source" : "Jet Stream",
+    "target" : "Orographic Effects",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780",
+    "src_id" : "Jet Stream",
+    "tgt_id" : "Orographic Effects"
+  }, {
+    "source" : "Orographic Effects",
+    "target" : "Freezing Rain Precipitation",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780",
+    "src_id" : "Orographic Effects",
+    "tgt_id" : "Freezing Rain Precipitation"
+  }, {
+    "source" : "Freezing Rain Precipitation",
+    "target" : "Lightning",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780",
+    "src_id" : "Freezing Rain Precipitation",
+    "tgt_id" : "Lightning"
+  }, {
+    "source" : "Lightning",
+    "target" : "Clear Air Turbulence",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780",
+    "src_id" : "Lightning",
+    "tgt_id" : "Clear Air Turbulence"
+  }, {
+    "source" : "Clear Air Turbulence",
+    "target" : "Sea Surface Temperature",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "ef69d9783e9395e9b0e61b05462c8780",
+    "src_id" : "Clear Air Turbulence",
+    "tgt_id" : "Sea Surface Temperature"
+  }, {
+    "source" : "Desert",
+    "target" : "Tropics",
+    "weight" : "1.0",
+    "description" : "The tropics push hot, moist air into the desert regions",
+    "keywords" : "hot, moist air",
+    "source_id" : "0c49eefb33d62ebcb61957c2ca583d5d",
+    "src_id" : "Tropics",
+    "tgt_id" : "Desert"
+  }, {
+    "source" : "Canada",
+    "target" : "Earth",
+    "weight" : "1.0",
+    "description" : "The book is printed in Canada",
+    "keywords" : "printed in",
+    "source_id" : "0c49eefb33d62ebcb61957c2ca583d5d",
+    "src_id" : "Earth",
+    "tgt_id" : "Canada"
+  }, {
+    "source" : "Earth",
+    "target" : "Air",
+    "weight" : "1.0",
+    "description" : "The gravitational force causing air to rush towards the earth",
+    "keywords" : "atmosphere, gravity",
+    "source_id" : "277bbba41c1c26a4b2e5fe9acc30c72d",
+    "src_id" : "Air",
+    "tgt_id" : "Earth"
+  }, {
+    "source" : "Earth",
+    "target" : "Greece",
+    "weight" : "1.0",
+    "description" : "The location of the earth in relation to Greece",
+    "keywords" : "location, geography",
+    "source_id" : "277bbba41c1c26a4b2e5fe9acc30c72d",
+    "src_id" : "Earth",
+    "tgt_id" : "Greece"
+  }, {
+    "source" : "Palace of the Governors",
+    "target" : "Lassen National Forest",
+    "weight" : "1.0",
+    "description" : "The Palace of the Governors is located near the Lassen National Forest",
+    "keywords" : "geographical feature, location",
+    "source_id" : "0d7303f5690f6b3fc72a2ef4aeeb9df3",
+    "src_id" : "Palace of the Governors",
+    "tgt_id" : "Lassen National Forest"
+  }, {
+    "source" : "Lassen National Forest",
+    "target" : "Iberian Peninsula",
+    "weight" : "1.0",
+    "description" : "The Lassen National Forest is located in the Iberian Peninsula",
+    "keywords" : "geographical feature, region",
+    "source_id" : "0d7303f5690f6b3fc72a2ef4aeeb9df3",
+    "src_id" : "Lassen National Forest",
+    "tgt_id" : "Iberian Peninsula"
+  }, {
+    "source" : "Wladimir Kppen",
+    "target" : "climate classification system",
+    "weight" : "1.0",
+    "description" : "Wladimir Kppen developed a climate classification system",
+    "keywords" : "scientist, classification system",
+    "source_id" : "0d7303f5690f6b3fc72a2ef4aeeb9df3",
+    "src_id" : "Wladimir Kppen",
+    "tgt_id" : "climate classification system"
+  }, {
+    "source" : "Rotation",
+    "target" : "Winds",
+    "weight" : "1.0",
+    "description" : "The rotation gives rise to winds",
+    "keywords" : "Wind speed, Wind direction",
+    "source_id" : "82a506e1fba7f115ddeea2f496d5d0c6",
+    "src_id" : "Rotation",
+    "tgt_id" : "Winds"
+  }, {
+    "source" : "Rainfall",
+    "target" : "Mud flows",
+    "weight" : "1.0",
+    "description" : "During rainfall, mud flows are common in hilly regions",
+    "keywords" : "Heavy rainfall, Mudslides",
+    "source_id" : "82a506e1fba7f115ddeea2f496d5d0c6",
+    "src_id" : "Rainfall",
+    "tgt_id" : "Mud flows"
+  }, {
+    "source" : "Air pollution",
+    "target" : "Advection",
+    "weight" : "1.0",
+    "description" : "Air pollution is affected by advection",
+    "keywords" : "Pollutants, Air movement",
+    "source_id" : "82a506e1fba7f115ddeea2f496d5d0c6",
+    "src_id" : "Air pollution",
+    "tgt_id" : "Advection"
+  }, {
+    "source" : "Advection",
+    "target" : "Moisture",
+    "weight" : "1.0",
+    "description" : "Advection is related to moisture",
+    "keywords" : "Air movement, Water vapour",
+    "source_id" : "82a506e1fba7f115ddeea2f496d5d0c6",
+    "src_id" : "Advection",
+    "tgt_id" : "Moisture"
+  }, {
+    "source" : "Moisture",
+    "target" : "Condensation",
+    "weight" : "1.0",
+    "description" : "The process of moisture changing into condensation",
+    "keywords" : "water vapor, liquid water",
+    "source_id" : "277bbba41c1c26a4b2e5fe9acc30c72d",
+    "src_id" : "Moisture",
+    "tgt_id" : "Condensation"
+  }, {
+    "source" : "Red Sea",
+    "target" : "Mangroves",
+    "weight" : "1.0",
+    "description" : "Mangroves expanded by 12% over the 41 years from 1972 to",
+    "keywords" : "expansion, 12%",
+    "source_id" : "6019f8e176c6415586b71e0b99a4cb51",
+    "src_id" : "Red Sea",
+    "tgt_id" : "Mangroves"
+  }, {
+    "source" : "Red Sea",
+    "target" : "Jay",
+    "weight" : "1.0",
+    "description" : "The jay is one of the most easily identified species during the summer",
+    "keywords" : "identification, summer",
+    "source_id" : "6019f8e176c6415586b71e0b99a4cb51",
+    "src_id" : "Red Sea",
+    "tgt_id" : "Jay"
+  }, {
+    "source" : "HAWC Observatory",
+    "target" : "Monteverde",
+    "weight" : "1.0",
+    "description" : "The HAWC Observatory is located in Monteverde, where it affects orographic precipitation",
+    "keywords" : "orographic precipitation, water resources",
+    "source_id" : "1f85ecfa7475a1568c895a58d65ac9f5",
+    "src_id" : "HAWC Observatory",
+    "tgt_id" : "Monteverde"
+  }, {
+    "source" : "HAWC Observatory",
+    "target" : "WorldWideScience.org",
+    "weight" : "1.0",
+    "description" : "WorldWideScience.org provides access to scientific knowledge and resources related to the HAWC Observatory",
+    "keywords" : "scientific knowledge, resources",
+    "source_id" : "1f85ecfa7475a1568c895a58d65ac9f5",
+    "src_id" : "WorldWideScience.org",
+    "tgt_id" : "HAWC Observatory"
+  }, {
+    "source" : "HAWC Observatory",
+    "target" : "Robert E. Gabler",
+    "weight" : "1.0",
+    "description" : "Robert E. Gabler's book \"Essentials of Physical Geography\" discusses the HAWC Observatory and air showers",
+    "keywords" : "physical geography, air showers",
+    "source_id" : "1f85ecfa7475a1568c895a58d65ac9f5",
+    "src_id" : "Robert E. Gabler",
+    "tgt_id" : "HAWC Observatory"
+  }, {
+    "source" : "HAWC Observatory",
+    "target" : "James F.",
+    "weight" : "1.0",
+    "description" : "James F.'s book \"Essentials of Physical Geography\" discusses the HAWC Observatory and air showers",
+    "keywords" : "physical geography, air showers",
+    "source_id" : "1f85ecfa7475a1568c895a58d65ac9f5",
+    "src_id" : "James F.",
+    "tgt_id" : "HAWC Observatory"
+  }, {
+    "source" : "Ribamod",
+    "target" : "EU",
+    "weight" : "1.0",
+    "description" : "EU Bookshop organization",
+    "keywords" : "EU Bookshop",
+    "source_id" : "1a2e781f9db6c6eed996003998001561",
+    "src_id" : "Ribamod",
+    "tgt_id" : "EU"
+  }, {
+    "source" : "EU",
+    "target" : "Europa",
+    "weight" : "1.0",
+    "description" : "European Union continental region",
+    "keywords" : "European Union",
+    "source_id" : "1a2e781f9db6c6eed996003998001561",
+    "src_id" : "EU",
+    "tgt_id" : "Europa"
+  }, {
+    "source" : "India",
+    "target" : "Kadapa",
+    "weight" : "1.0",
+    "description" : "City relationship",
+    "keywords" : "City",
+    "source_id" : "1a2e781f9db6c6eed996003998001561",
+    "src_id" : "India",
+    "tgt_id" : "Kadapa"
+  }, {
+    "source" : "Kadapa",
+    "target" : "Palembang",
+    "weight" : "1.0",
+    "description" : "City relationship",
+    "keywords" : "City",
+    "source_id" : "1a2e781f9db6c6eed996003998001561",
+    "src_id" : "Kadapa",
+    "tgt_id" : "Palembang"
+  }, {
+    "source" : "Palembang",
+    "target" : "Universitas PGRI Palembang",
+    "weight" : "1.0",
+    "description" : "University relationship",
+    "keywords" : "University",
+    "source_id" : "1a2e781f9db6c6eed996003998001561",
+    "src_id" : "Palembang",
+    "tgt_id" : "Universitas PGRI Palembang"
+  }, {
+    "source" : "Universitas PGRI Palembang",
+    "target" : "Iasta",
+    "weight" : "1.0",
+    "description" : "Proceedings relationship",
+    "keywords" : "Proceedings",
+    "source_id" : "1a2e781f9db6c6eed996003998001561",
+    "src_id" : "Universitas PGRI Palembang",
+    "tgt_id" : "Iasta"
+  }, {
+    "source" : "Iasta",
+    "target" : "Physical Geography",
+    "weight" : "1.0",
+    "description" : "Branch of geography relationship",
+    "keywords" : "Branch of geography",
+    "source_id" : "1a2e781f9db6c6eed996003998001561",
+    "src_id" : "Iasta",
+    "tgt_id" : "Physical Geography"
+  }, {
+    "source" : "Physical Geography",
+    "target" : "Air masses",
+    "weight" : "1.0",
+    "description" : "Weather phenomenon relationship",
+    "keywords" : "Weather phenomenon",
+    "source_id" : "1a2e781f9db6c6eed996003998001561",
+    "src_id" : "Physical Geography",
+    "tgt_id" : "Air masses"
+  }, {
+    "source" : "Physical Geography",
+    "target" : "Climates",
+    "weight" : "1.0",
+    "description" : "Weather patterns relationship",
+    "keywords" : "Weather patterns",
+    "source_id" : "1a2e781f9db6c6eed996003998001561",
+    "src_id" : "Physical Geography",
+    "tgt_id" : "Climates"
+  }, {
+    "source" : "Condensation",
+    "target" : "Humidity and precipitation",
+    "weight" : "1.0",
+    "description" : "Humidity and precipitation are key factors in the process of condensation",
+    "keywords" : "atmosphere, water vapor",
+    "source_id" : "fee759031ac8ea8106370ed826b64029",
+    "src_id" : "Humidity and precipitation",
+    "tgt_id" : "Condensation"
+  }, {
+    "source" : "Greece",
+    "target" : "Thessaloniki",
+    "weight" : "1.0",
+    "description" : "The location of Thessaloniki in relation to Greece",
+    "keywords" : "city, location",
+    "source_id" : "277bbba41c1c26a4b2e5fe9acc30c72d",
+    "src_id" : "Greece",
+    "tgt_id" : "Thessaloniki"
+  }, {
+    "source" : "Zugspitze",
+    "target" : "Westerlies",
+    "weight" : "1.0",
+    "description" : "Mountain that affects wind pattern",
+    "keywords" : "heavy precipitation, moist air masses",
+    "source_id" : "8d97447d9730d1394c236bbbfd8819a3",
+    "src_id" : "Zugspitze",
+    "tgt_id" : "Westerlies"
+  }, {
+    "source" : "Zugspitze",
+    "target" : "Zugspitze",
+    "weight" : "1.0",
+    "description" : "Mountain with west summit",
+    "keywords" : "",
+    "source_id" : "8d97447d9730d1394c236bbbfd8819a3",
+    "src_id" : "Zugspitze",
+    "tgt_id" : "Zugspitze"
+  }, {
+    "source" : "Zugspitze",
+    "target" : "Wiener-Neustadter Hut",
+    "weight" : "1.0",
+    "description" : "A hut located on the Zugspitze",
+    "keywords" : "mountain, hut, location",
+    "source_id" : "0ae0d4588b42b275314626652e934444",
+    "src_id" : "Zugspitze",
+    "tgt_id" : "Wiener-Neustadter Hut"
+  }, {
+    "source" : "Zugspitze",
+    "target" : "Fold mountains",
+    "weight" : "1.0",
+    "description" : "The Zugspitze is part of a fold mountain range",
+    "keywords" : "mountain range, geological formation",
+    "source_id" : "0ae0d4588b42b275314626652e934444",
+    "src_id" : "Zugspitze",
+    "tgt_id" : "Fold mountains"
+  }, {
+    "source" : "Zugspitze",
+    "target" : "Orogenic",
+    "weight" : "1.0",
+    "description" : "The Zugspitze was formed through orogenic processes",
+    "keywords" : "mountain building, tectonic forces",
+    "source_id" : "0ae0d4588b42b275314626652e934444",
+    "src_id" : "Zugspitze",
+    "tgt_id" : "Orogenic"
+  }, {
+    "source" : "Zugspitze",
+    "target" : "Caractrisation physico-chimique",
+    "weight" : "1.0",
+    "description" : "The Zugspitze can be characterized physically and chemically",
+    "keywords" : "physical and chemical characterization, mountain",
+    "source_id" : "0ae0d4588b42b275314626652e934444",
+    "src_id" : "Zugspitze",
+    "tgt_id" : "Caractrisation physico-chimique"
+  }, {
+    "source" : "Zugspitze",
+    "target" : "Trois ans de thse",
+    "weight" : "1.0",
+    "description" : "The Zugspitze is the subject of a three-year thesis",
+    "keywords" : "thesis, research, mountain",
+    "source_id" : "0ae0d4588b42b275314626652e934444",
+    "src_id" : "Zugspitze",
+    "tgt_id" : "Trois ans de thse"
+  }, {
+    "source" : "Zugspitze",
+    "target" : "Oros and Simoneit",
+    "weight" : "1.0",
+    "description" : "The Zugspitze is mentioned in a book by Oros and Simoneit",
+    "keywords" : "authors, book, mountain",
+    "source_id" : "0ae0d4588b42b275314626652e934444",
+    "src_id" : "Zugspitze",
+    "tgt_id" : "Oros and Simoneit"
+  }, {
+    "source" : "Zugspitze",
+    "target" : "C34",
+    "weight" : "1.0",
+    "description" : "The Zugspitze is related to a specific chemical reaction",
+    "keywords" : "chemical reaction, mountain",
+    "source_id" : "0ae0d4588b42b275314626652e934444",
+    "src_id" : "Zugspitze",
+    "tgt_id" : "C34"
+  }, {
+    "source" : "Zugspitze",
+    "target" : "Greek word",
+    "weight" : "1.0",
+    "description" : "The Zugspitze is named after a Greek word meaning mountain building",
+    "keywords" : "mountain building, word",
+    "source_id" : "0ae0d4588b42b275314626652e934444",
+    "src_id" : "Zugspitze",
+    "tgt_id" : "Greek word"
+  }, {
+    "source" : "Ivano-Frankivsk region",
+    "target" : "Geological fold",
+    "weight" : "1.0",
+    "description" : "The Ivano-Frankivsk region is known for its geological folds",
+    "keywords" : "geology, geography",
+    "source_id" : "fee759031ac8ea8106370ed826b64029",
+    "src_id" : "Ivano-Frankivsk region",
+    "tgt_id" : "Geological fold"
+  }, {
+    "source" : "Orographic effect",
+    "target" : "Pressure Belts",
+    "weight" : "1.0",
+    "description" : "The orographic effect plays a role in shaping the pressure belts",
+    "keywords" : "atmosphere, weather",
+    "source_id" : "fee759031ac8ea8106370ed826b64029",
+    "src_id" : "Orographic effect",
+    "tgt_id" : "Pressure Belts"
+  }, {
+    "source" : "Planetary Winds",
+    "target" : "Hot local winds",
+    "weight" : "1.0",
+    "description" : "Planetary winds can lead to the formation of hot local winds",
+    "keywords" : "atmosphere, climate",
+    "source_id" : "fee759031ac8ea8106370ed826b64029",
+    "src_id" : "Planetary Winds",
+    "tgt_id" : "Hot local winds"
+  }, {
+    "source" : "Cold local winds",
+    "target" : "Weather and climate",
+    "weight" : "1.0",
+    "description" : "Cold local winds are an important factor in shaping the weather and climate",
+    "keywords" : "atmosphere, temperature",
+    "source_id" : "fee759031ac8ea8106370ed826b64029",
+    "src_id" : "Cold local winds",
+    "tgt_id" : "Weather and climate"
+  }, {
+    "source" : "Thesis",
+    "target" : "Scientific Associates",
+    "weight" : "1.0",
+    "description" : "A thesis is often written by a scientist as part of their research and collaboration with scientific associates",
+    "keywords" : "research, academia",
+    "source_id" : "fee759031ac8ea8106370ed826b64029",
+    "src_id" : "Thesis",
+    "tgt_id" : "Scientific Associates"
+  }, {
+    "source" : "Scientific Associates",
+    "target" : "International Conference on the World Climate Research Programme",
+    "weight" : "1.0",
+    "description" : "The international conference brings together scientific associates to discuss and present their research on climate change",
+    "keywords" : "climate change, research",
+    "source_id" : "fee759031ac8ea8106370ed826b64029",
+    "src_id" : "International Conference on the World Climate Research Programme",
+    "tgt_id" : "Scientific Associates"
+  }, {
+    "source" : "Cuisine",
+    "target" : "Road trip",
+    "weight" : "1.0",
+    "description" : "Cuisine is often a key part of a road trip, with many travelers enjoying local food and drink",
+    "keywords" : "food, travel",
+    "source_id" : "fee759031ac8ea8106370ed826b64029",
+    "src_id" : "Cuisine",
+    "tgt_id" : "Road trip"
+  }, {
+    "source" : "Falkland Islands",
+    "target" : "Central Brazil",
+    "weight" : "1.0",
+    "description" : "The Falkland Islands have a unique geological feature that affects the climate and precipitation in Central Brazil.",
+    "keywords" : "geological features, climate, precipitation",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd",
+    "src_id" : "Falkland Islands",
+    "tgt_id" : "Central Brazil"
+  }, {
+    "source" : "Indonesia",
+    "target" : "University of Toronto",
+    "weight" : "1.0",
+    "description" : "Indonesia is the focus of research at the University of Toronto, particularly in the areas of climate and precipitation.",
+    "keywords" : "climate, precipitation, research",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd",
+    "src_id" : "Indonesia",
+    "tgt_id" : "University of Toronto"
+  }, {
+    "source" : "500 Millibar Heights",
+    "target" : "Flow Characteristics",
+    "weight" : "1.0",
+    "description" : "The 500 millibar height is a measure of atmospheric pressure that affects air flow.",
+    "keywords" : "atmospheric pressure, air flow",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd",
+    "src_id" : "500 Millibar Heights",
+    "tgt_id" : "Flow Characteristics"
+  }, {
+    "source" : "Precipitation Events",
+    "target" : "Mesothermal Climates",
+    "weight" : "1.0",
+    "description" : "Precipitation events occur in mesothermal climates, which are characterized by moderate temperatures.",
+    "keywords" : "rain, snow, temperature",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd",
+    "src_id" : "Precipitation Events",
+    "tgt_id" : "Mesothermal Climates"
+  }, {
+    "source" : "Moist Air",
+    "target" : "Pseudoadiabatic Rise",
+    "weight" : "1.0",
+    "description" : "Moist air masses rise pseudoadiabatically, causing changes in atmospheric circulation.",
+    "keywords" : "heat, moisture, atmospheric circulation",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd",
+    "src_id" : "Moist Air",
+    "tgt_id" : "Pseudoadiabatic Rise"
+  }, {
+    "source" : "Dipole Pattern",
+    "target" : "Secondary Precipitation Maximum",
+    "weight" : "1.0",
+    "description" : "The dipole pattern of atmospheric circulation leads to a secondary precipitation maximum in a specific region.",
+    "keywords" : "atmospheric circulation, precipitation, climate",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd",
+    "src_id" : "Dipole Pattern",
+    "tgt_id" : "Secondary Precipitation Maximum"
+  }, {
+    "source" : "Forest Oros",
+    "target" : "Rough Geological Map",
+    "weight" : "1.0",
+    "description" : "The forest oros region has rough geological features that affect the climate and precipitation.",
+    "keywords" : "geological features, climate, precipitation",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd",
+    "src_id" : "Forest Oros",
+    "tgt_id" : "Rough Geological Map"
+  }, {
+    "source" : "Geological Map",
+    "target" : "Rainfall Charts",
+    "weight" : "1.0",
+    "description" : "The geological map shows the features that affect the rainfall charts in a specific region.",
+    "keywords" : "geological features, climate, precipitation",
+    "source_id" : "27b69e607cd77f708b66345fb0a7b0dd",
+    "src_id" : "Geological Map",
+    "tgt_id" : "Rainfall Charts"
+  }, {
+    "source" : "South Atlantic Ocean",
+    "target" : "Serra do Mar",
+    "weight" : "1.0",
+    "description" : "The ocean's moisture affects the mountain range's climate",
+    "keywords" : "geology, climate",
+    "source_id" : "370b7a99de46735476b4e6a3d5a58ce5",
+    "src_id" : "South Atlantic Ocean",
+    "tgt_id" : "Serra do Mar"
+  }, {
+    "source" : "Trojan Horse",
+    "target" : "Google",
+    "weight" : "1.0",
+    "description" : "The statue's legend has been referenced in modern technology",
+    "keywords" : "technology, history",
+    "source_id" : "370b7a99de46735476b4e6a3d5a58ce5",
+    "src_id" : "Trojan Horse",
+    "tgt_id" : "Google"
+  }, {
+    "source" : "Google",
+    "target" : "NTSB",
+    "weight" : "1.0",
+    "description" : "The agency's conclusions have been influenced by technological advancements",
+    "keywords" : "aviation safety, technology",
+    "source_id" : "370b7a99de46735476b4e6a3d5a58ce5",
+    "src_id" : "NTSB",
+    "tgt_id" : "Google"
+  }, {
+    "source" : "NTSB",
+    "target" : "Google Mobile",
+    "weight" : "1.0",
+    "description" : "The agency's conclusions have been influenced by the app's technology",
+    "keywords" : "aviation safety, technology",
+    "source_id" : "370b7a99de46735476b4e6a3d5a58ce5",
+    "src_id" : "NTSB",
+    "tgt_id" : "Google Mobile"
+  }, {
+    "source" : "Google Mobile",
+    "target" : "Visual flight rules",
+    "weight" : "1.0",
+    "description" : "The rules require pilots to use technology to avoid collisions",
+    "keywords" : "aviation safety, technology",
+    "source_id" : "370b7a99de46735476b4e6a3d5a58ce5",
+    "src_id" : "Visual flight rules",
+    "tgt_id" : "Google Mobile"
+  }, {
+    "source" : "Europe",
+    "target" : "solvency problems",
+    "weight" : "1.0",
+    "description" : "Europe is experiencing solvency problems",
+    "keywords" : "",
+    "source_id" : "3faf7d13ea9f71824c54abe4380d30cb",
+    "src_id" : "Europe",
+    "tgt_id" : "solvency problems"
+  }, {
+    "source" : "Africa",
+    "target" : "insurgency",
+    "weight" : "1.0",
+    "description" : "The insurgency in Africa is a major issue",
+    "keywords" : "",
+    "source_id" : "3faf7d13ea9f71824c54abe4380d30cb",
+    "src_id" : "Africa",
+    "tgt_id" : "insurgency"
+  }, {
+    "source" : "Africa",
+    "target" : "Insurgency",
+    "weight" : "1.0",
+    "description" : "The insurgency in Africa is a major issue",
+    "keywords" : "",
+    "source_id" : "3faf7d13ea9f71824c54abe4380d30cb",
+    "src_id" : "Insurgency",
+    "tgt_id" : "Africa"
+  }, {
+    "source" : "University",
+    "target" : "education",
+    "weight" : "1.0",
+    "description" : "The university is a place of education",
+    "keywords" : "",
+    "source_id" : "3faf7d13ea9f71824c54abe4380d30cb",
+    "src_id" : "University",
+    "tgt_id" : "education"
+  }, {
+    "source" : "Fixture",
+    "target" : "installation",
+    "weight" : "1.0",
+    "description" : "The fixture is a type of installation",
+    "keywords" : "",
+    "source_id" : "3faf7d13ea9f71824c54abe4380d30cb",
+    "src_id" : "Fixture",
+    "tgt_id" : "installation"
+  } ],
+  "metadata" : {
+    "nodeCount" : 154,
+    "edgeCount" : 118
+  }
+}

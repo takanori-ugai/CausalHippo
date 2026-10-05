@@ -1,0 +1,356 @@
+{
+  "nodes" : [ {
+    "id" : "tech sector",
+    "entity_id" : "tech sector",
+    "entity_type" : "Concept",
+    "description" : "The segment of the economy that deals with the development and sale of technology-related products and services.",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b"
+  }, {
+    "id" : "coffee sales",
+    "entity_id" : "coffee sales",
+    "entity_type" : "Concept",
+    "description" : "The retail sales of coffee and other coffee-related products.",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b"
+  }, {
+    "id" : "cafe culture",
+    "entity_id" : "cafe culture",
+    "entity_type" : "Concept",
+    "description" : "The social and cultural aspects of cafes, including their role in community life and their impact on local economies.",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b"
+  }, {
+    "id" : "earnings calls",
+    "entity_id" : "earnings calls",
+    "entity_type" : "Event",
+    "description" : "A conference call between a company's management and investors to discuss the company's financial performance and future prospects.",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b"
+  }, {
+    "id" : "broader economic optimism",
+    "entity_id" : "broader economic optimism",
+    "entity_type" : "Concept",
+    "description" : "A general feeling of confidence and positivity about the state of the economy, which can influence consumer behavior and business decisions.",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b"
+  }, {
+    "id" : "Dandelion",
+    "entity_id" : "Dandelion",
+    "entity_type" : "Concept",
+    "description" : "A type of flowering plant",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040"
+  }, {
+    "id" : "Commuting",
+    "entity_id" : "Commuting",
+    "entity_type" : "Concept",
+    "description" : "The act of traveling to and from work",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040"
+  }, {
+    "id" : "Remote work policy",
+    "entity_id" : "Remote work policy",
+    "entity_type" : "Concept",
+    "description" : "A flexible work arrangement allowing employees to work from home",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040"
+  }, {
+    "id" : "Urban park",
+    "entity_id" : "Urban park",
+    "entity_type" : "Location",
+    "description" : "A public area in a city, often with green spaces",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040"
+  }, {
+    "id" : "Garden enthusiast",
+    "entity_id" : "Garden enthusiast",
+    "entity_type" : "Person",
+    "description" : "A person who has a strong interest in gardening",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040"
+  }, {
+    "id" : "University",
+    "entity_id" : "University",
+    "entity_type" : "Organization",
+    "description" : "Institution where students are enrolled",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf"
+  }, {
+    "id" : "Coffee Shops",
+    "entity_id" : "Coffee Shops",
+    "entity_type" : "Location",
+    "description" : "Businesses that sell coffee",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf"
+  }, {
+    "id" : "Students",
+    "entity_id" : "Students",
+    "entity_type" : "Person",
+    "description" : "Individuals enrolled in university",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf"
+  }, {
+    "id" : "Shipping Delay",
+    "entity_id" : "Shipping Delay",
+    "entity_type" : "Event",
+    "description" : "Unforeseen interruption in the delivery of goods",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf"
+  }, {
+    "id" : "Major Supplier",
+    "entity_id" : "Major Supplier",
+    "entity_type" : "Organization",
+    "description" : "Company that provides goods to coffee shops",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf"
+  }, {
+    "id" : "City",
+    "entity_id" : "City",
+    "entity_type" : "Location",
+    "description" : "The city where the heavy rainfall occurred",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b"
+  }, {
+    "id" : "Drains",
+    "entity_id" : "Drains",
+    "entity_type" : "Infrastructure",
+    "description" : "The system responsible for handling rainwater",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b"
+  }, {
+    "id" : "Neighborhoods",
+    "entity_id" : "Neighborhoods",
+    "entity_type" : "Location",
+    "description" : "The areas within the city where flooding occurred",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b"
+  }, {
+    "id" : "Local Government",
+    "entity_id" : "Local Government",
+    "entity_type" : "Organization",
+    "description" : "The authority responsible for the city's infrastructure",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b"
+  }, {
+    "id" : "Bicycle Sales",
+    "entity_id" : "Bicycle Sales",
+    "entity_type" : "Concept",
+    "description" : "The increase in sales of bicycles",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c"
+  }, {
+    "id" : "Remote Work",
+    "entity_id" : "Remote Work",
+    "entity_type" : "Concept",
+    "description" : "The practice of working from home",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c"
+  }, {
+    "id" : "Cycling Campaign",
+    "entity_id" : "Cycling Campaign",
+    "entity_type" : "Event",
+    "description" : "A citywide initiative to promote cycling",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c"
+  }, {
+    "id" : "Bike Lane Infrastructure",
+    "entity_id" : "Bike Lane Infrastructure",
+    "entity_type" : "Location",
+    "description" : "The physical infrastructure for cycling",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c"
+  }, {
+    "id" : "Leisure Time",
+    "entity_id" : "Leisure Time",
+    "entity_type" : "Concept",
+    "description" : "Free time available for recreational activities",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c"
+  }, {
+    "id" : "Coast",
+    "entity_id" : "Coast",
+    "entity_type" : "Location",
+    "description" : "The shoreline where the cool breeze originates",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6"
+  }, {
+    "id" : "Ocean",
+    "entity_id" : "Ocean",
+    "entity_type" : "Location",
+    "description" : "The source of the cool breeze",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6"
+  }, {
+    "id" : "Grasses",
+    "entity_id" : "Grasses",
+    "entity_type" : "Location",
+    "description" : "The tall vegetation along the shore",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6"
+  }, {
+    "id" : "People",
+    "entity_id" : "People",
+    "entity_type" : "Person",
+    "description" : "Individuals who stop to enjoy the refreshing air",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6"
+  } ],
+  "edges" : [ {
+    "source" : "tech sector",
+    "target" : "coffee sales",
+    "weight" : "1.0",
+    "description" : "Both the tech sector and coffee sales are influenced by broader economic trends, such as economic growth and consumer spending.",
+    "keywords" : "economic growth, consumer spending",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b",
+    "src_id" : "tech sector",
+    "tgt_id" : "coffee sales"
+  }, {
+    "source" : "tech sector",
+    "target" : "broader economic optimism",
+    "weight" : "1.0",
+    "description" : "Broader economic optimism can lead to increased investment and job creation in the tech sector.",
+    "keywords" : "increased investment, job creation",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b",
+    "src_id" : "broader economic optimism",
+    "tgt_id" : "tech sector"
+  }, {
+    "source" : "coffee sales",
+    "target" : "cafe culture",
+    "weight" : "1.0",
+    "description" : "Coffee sales can contribute to the growth of cafe culture by attracting more customers and increasing customer loyalty.",
+    "keywords" : "increased foot traffic, customer loyalty",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b",
+    "src_id" : "coffee sales",
+    "tgt_id" : "cafe culture"
+  }, {
+    "source" : "coffee sales",
+    "target" : "broader economic optimism",
+    "weight" : "1.0",
+    "description" : "Broader economic optimism can lead to increased consumer spending and economic growth, which can in turn boost coffee sales.",
+    "keywords" : "increased consumer spending, economic growth",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b",
+    "src_id" : "broader economic optimism",
+    "tgt_id" : "coffee sales"
+  }, {
+    "source" : "cafe culture",
+    "target" : "earnings calls",
+    "weight" : "1.0",
+    "description" : "Managers may encourage coffee breaks during earnings calls as a way to build team morale and foster a sense of community.",
+    "keywords" : "coffee breaks, team building",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b",
+    "src_id" : "earnings calls",
+    "tgt_id" : "cafe culture"
+  }, {
+    "source" : "Dandelion",
+    "target" : "Urban park",
+    "weight" : "1.0",
+    "description" : "Dandelions are often found in urban parks",
+    "keywords" : "flourishing, growth",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040",
+    "src_id" : "Dandelion",
+    "tgt_id" : "Urban park"
+  }, {
+    "source" : "Dandelion",
+    "target" : "Garden enthusiast",
+    "weight" : "1.0",
+    "description" : "Some garden enthusiasts have noted the growth of dandelions",
+    "keywords" : "hypothesis, observation",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040",
+    "src_id" : "Garden enthusiast",
+    "tgt_id" : "Dandelion"
+  }, {
+    "source" : "Commuting",
+    "target" : "Remote work policy",
+    "weight" : "1.0",
+    "description" : "There is a perceived link between remote work and dandelion growth",
+    "keywords" : "correlation, coincidence",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040",
+    "src_id" : "Remote work policy",
+    "tgt_id" : "Commuting"
+  }, {
+    "source" : "University",
+    "target" : "Coffee Shops",
+    "weight" : "1.0",
+    "description" : "Students returning to university causing coffee shortages",
+    "keywords" : "Rush of new faces, Depleted supplies",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf",
+    "src_id" : "Coffee Shops",
+    "tgt_id" : "University"
+  }, {
+    "source" : "Coffee Shops",
+    "target" : "Major Supplier",
+    "weight" : "1.0",
+    "description" : "Shipping delay affecting coffee supplies",
+    "keywords" : "Shipping delay, Empty shelves",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf",
+    "src_id" : "Coffee Shops",
+    "tgt_id" : "Major Supplier"
+  }, {
+    "source" : "Coffee Shops",
+    "target" : "Shipping Delay",
+    "weight" : "1.0",
+    "description" : "Shipping delay causing coffee shortages",
+    "keywords" : "Empty shelves, Disruption in supply",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf",
+    "src_id" : "Shipping Delay",
+    "tgt_id" : "Coffee Shops"
+  }, {
+    "source" : "City",
+    "target" : "Drains",
+    "weight" : "1.0",
+    "description" : "The city's drains are overwhelmed due to heavy rainfall",
+    "keywords" : "rainfall, flooding, infrastructure",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b",
+    "src_id" : "City",
+    "tgt_id" : "Drains"
+  }, {
+    "source" : "City",
+    "target" : "Neighborhoods",
+    "weight" : "1.0",
+    "description" : "Flooded streets in the city's neighborhoods cause traffic delays",
+    "keywords" : "flooded streets, traffic delays",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b",
+    "src_id" : "City",
+    "tgt_id" : "Neighborhoods"
+  }, {
+    "source" : "Drains",
+    "target" : "Local Government",
+    "weight" : "1.0",
+    "description" : "The local government advises caution due to concerns about the drains' condition",
+    "keywords" : "infrastructure, maintenance",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b",
+    "src_id" : "Local Government",
+    "tgt_id" : "Drains"
+  }, {
+    "source" : "Remote Work",
+    "target" : "Bicycle Sales",
+    "weight" : "1.0",
+    "description" : "Remote work is speculated to lead to more leisure time for cycling",
+    "keywords" : "leisure time, cycling",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c",
+    "src_id" : "Remote Work",
+    "tgt_id" : "Bicycle Sales"
+  }, {
+    "source" : "Remote Work",
+    "target" : "Neighborhood Conversations",
+    "weight" : "1.0",
+    "description" : "The narrative that remote work drives bicycle sales is common in neighborhood conversations",
+    "keywords" : "bicycle sales, cycling",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c",
+    "src_id" : "Neighborhood Conversations",
+    "tgt_id" : "Remote Work"
+  }, {
+    "source" : "Bicycle Sales",
+    "target" : "Market Analysis",
+    "weight" : "1.0",
+    "description" : "Market analysis attributes the increase in bicycle sales to a successful cycling campaign and improved bike lane infrastructure",
+    "keywords" : "cycling campaign, bike lane infrastructure",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c",
+    "src_id" : "Market Analysis",
+    "tgt_id" : "Bicycle Sales"
+  }, {
+    "source" : "Coast",
+    "target" : "Ocean",
+    "weight" : "1.0",
+    "description" : "The ocean's arrival is felt along the coast",
+    "keywords" : "cool breeze, ocean air",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6",
+    "src_id" : "Coast",
+    "tgt_id" : "Ocean"
+  }, {
+    "source" : "Coast",
+    "target" : "Grasses",
+    "weight" : "1.0",
+    "description" : "The grasses' movement creates waves",
+    "keywords" : "swaying, waves",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6",
+    "src_id" : "Coast",
+    "tgt_id" : "Grasses"
+  }, {
+    "source" : "Grasses",
+    "target" : "People",
+    "weight" : "1.0",
+    "description" : "The grasses' movement attracts people",
+    "keywords" : "refreshing air, invigorated landscape",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6",
+    "src_id" : "Grasses",
+    "tgt_id" : "People"
+  } ],
+  "metadata" : {
+    "nodeCount" : 28,
+    "edgeCount" : 20
+  }
+}

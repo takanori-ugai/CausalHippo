@@ -1,0 +1,790 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Acetonitrile",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Water",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Methanol",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Water",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Acetonitrile",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Method development",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Binary mixtures",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Method development",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ternary mixtures",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Method development",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Acetonitrile",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Binary mixtures",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Acetonitrile",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ternary mixtures",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Water",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Binary mixtures",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Water",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ternary mixtures",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Methanol",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Binary mixtures",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Methanol",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ternary mixtures",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Selectivity options",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Method development",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Acetonitrile",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "comparable_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Methanol",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Binary mixtures",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ternary mixtures",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "UV cutoff",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Acetonitrile",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Viscosity",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Acetonitrile",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Viscosity",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Methanol",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Boiling point",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Acetonitrile",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Acetonitrile",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "18",
+      "members" : [ "Acetonitrile", "Binary mixtures", "Boiling point", "Methanol", "Method development", "Selectivity options", "Ternary mixtures", "UV cutoff", "Viscosity", "Water" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Binary mixtures",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "18",
+      "members" : [ "Acetonitrile", "Binary mixtures", "Boiling point", "Methanol", "Method development", "Selectivity options", "Ternary mixtures", "UV cutoff", "Viscosity", "Water" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Boiling point",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "18",
+      "members" : [ "Acetonitrile", "Binary mixtures", "Boiling point", "Methanol", "Method development", "Selectivity options", "Ternary mixtures", "UV cutoff", "Viscosity", "Water" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Methanol",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "18",
+      "members" : [ "Acetonitrile", "Binary mixtures", "Boiling point", "Methanol", "Method development", "Selectivity options", "Ternary mixtures", "UV cutoff", "Viscosity", "Water" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Method development",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "18",
+      "members" : [ "Acetonitrile", "Binary mixtures", "Boiling point", "Methanol", "Method development", "Selectivity options", "Ternary mixtures", "UV cutoff", "Viscosity", "Water" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Selectivity options",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "18",
+      "members" : [ "Acetonitrile", "Binary mixtures", "Boiling point", "Methanol", "Method development", "Selectivity options", "Ternary mixtures", "UV cutoff", "Viscosity", "Water" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ternary mixtures",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "18",
+      "members" : [ "Acetonitrile", "Binary mixtures", "Boiling point", "Methanol", "Method development", "Selectivity options", "Ternary mixtures", "UV cutoff", "Viscosity", "Water" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "UV cutoff",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "18",
+      "members" : [ "Acetonitrile", "Binary mixtures", "Boiling point", "Methanol", "Method development", "Selectivity options", "Ternary mixtures", "UV cutoff", "Viscosity", "Water" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Viscosity",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "18",
+      "members" : [ "Acetonitrile", "Binary mixtures", "Boiling point", "Methanol", "Method development", "Selectivity options", "Ternary mixtures", "UV cutoff", "Viscosity", "Water" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Water",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "18",
+      "members" : [ "Acetonitrile", "Binary mixtures", "Boiling point", "Methanol", "Method development", "Selectivity options", "Ternary mixtures", "UV cutoff", "Viscosity", "Water" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Acetonitrile",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Acetonitrile"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Acetonitrile",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Acetonitrile"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Acetonitrile"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "18",
+      "members" : [ "Acetonitrile", "Binary mixtures", "Boiling point", "Methanol", "Method development", "Selectivity options", "Ternary mixtures", "UV cutoff", "Viscosity", "Water" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Methanol",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Methanol"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Methanol",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Methanol"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Methanol"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "18",
+      "members" : [ "Acetonitrile", "Binary mixtures", "Boiling point", "Methanol", "Method development", "Selectivity options", "Ternary mixtures", "UV cutoff", "Viscosity", "Water" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ternary mixtures",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Ternary mixtures"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ternary mixtures",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Ternary mixtures"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Ternary mixtures"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "18",
+      "members" : [ "Acetonitrile", "Binary mixtures", "Boiling point", "Methanol", "Method development", "Selectivity options", "Ternary mixtures", "UV cutoff", "Viscosity", "Water" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Binary mixtures",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Binary mixtures"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Binary mixtures",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Binary mixtures"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Binary mixtures"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "18",
+      "members" : [ "Acetonitrile", "Binary mixtures", "Boiling point", "Methanol", "Method development", "Selectivity options", "Ternary mixtures", "UV cutoff", "Viscosity", "Water" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Method development",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Method development"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Method development",
+      "chunk id" : "vMTZYnZz",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Method development"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Method development"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "18",
+      "members" : [ "Acetonitrile", "Binary mixtures", "Boiling point", "Methanol", "Method development", "Selectivity options", "Ternary mixtures", "UV cutoff", "Viscosity", "Water" ]
+    }
+  }
+} ]

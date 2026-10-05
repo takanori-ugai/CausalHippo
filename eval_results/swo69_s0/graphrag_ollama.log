@@ -1,0 +1,1199 @@
+kotlin-logging: initializing... active logger factory: Slf4jLoggerFactory
+16:02:58,659 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found logback-core version 1.5.38
+16:02:58,659 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - No custom configurators were discovered as a service.
+16:02:58,660 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+16:02:58,660 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+16:02:58,664 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+16:02:58,680 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml]
+16:02:59,164 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Scan attribute set to true. Will scan for configuration file changes.
+16:02:59,165 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@15de0b3c - URL [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml] is not of type file
+16:02:59,176 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "INFO" substituted for "${ROOT_LOG_LEVEL:-INFO}"
+16:02:59,176 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL:-DEBUG}"
+16:02:59,176 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_LOG_LEVEL:-TRACE}"
+16:02:59,176 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL:-TRACE}"
+16:02:59,176 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL:-ERROR}"
+16:02:59,176 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL:-ERROR}"
+16:02:59,177 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL:-ERROR}"
+16:02:59,177 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL:-DEBUG}"
+16:02:59,179 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Missing watchable .xml or .properties files.
+16:02:59,179 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Watching .xml files requires that the main configuration file is reachable as a URL
+16:02:59,179 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Main configuration file URL: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml
+16:02:59,180 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - FileWatchList= {}
+16:02:59,180 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - URLWatchList= {}
+16:02:59,182 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+16:02:59,182 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+16:02:59,189 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+16:02:59,318 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - NOTE: Writing to the console can be slow. Try to avoid logging to the 
+16:02:59,318 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - console in production environments, especially in high volume systems.
+16:02:59,318 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also https://logback.qos.ch/codes.html#slowConsole
+16:02:59,323 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL}"
+16:02:59,324 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag] to DEBUG
+16:02:59,335 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag] to false
+16:02:59,335 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag]
+16:02:59,335 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_LOG_LEVEL}"
+16:02:59,335 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.neo4j] to TRACE
+16:02:59,335 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.neo4j] to false
+16:02:59,335 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.neo4j]
+16:02:59,335 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL}"
+16:02:59,335 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.neo4j.driver] to TRACE
+16:02:59,335 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.neo4j.driver] to false
+16:02:59,335 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[org.neo4j.driver]
+16:02:59,335 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL}"
+16:02:59,335 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.memory] to DEBUG
+16:02:59,335 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.memory] to false
+16:02:59,335 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.memory]
+16:02:59,335 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL}"
+16:02:59,335 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j] to ERROR
+16:02:59,335 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j] to false
+16:02:59,335 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j]
+16:02:59,335 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+16:02:59,336 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.okhttp] to ERROR
+16:02:59,336 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.okhttp] to false
+16:02:59,336 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.okhttp]
+16:02:59,336 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+16:02:59,336 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.openai] to ERROR
+16:02:59,336 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.openai] to false
+16:02:59,336 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.openai]
+16:02:59,336 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+16:02:59,336 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [okhttp3] to ERROR
+16:02:59,336 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [okhttp3] to false
+16:02:59,336 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[okhttp3]
+16:02:59,336 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL}"
+16:02:59,336 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.ai4j.openai4j] to ERROR
+16:02:59,336 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.ai4j.openai4j] to false
+16:02:59,336 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.ai4j.openai4j]
+16:02:59,336 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "INFO" substituted for "${ROOT_LOG_LEVEL}"
+16:02:59,336 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+16:02:59,336 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+16:02:59,336 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@3857f613 - End of configuration.
+16:02:59,337 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@198b6731 - Registering current configuration as safe fallback point
+16:02:59,360 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 677 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+WARNING: --use-unified-api=false keeps 'shared.eval.graph.MultiConditionGraphExperimentKt' on legacy condition runners. This compatibility path is planned for deprecation; prefer --use-unified-api=true.
+Running 1 conditions on 1 samples
+Parallelism: 1
+Unified API: false
+Unified persistence SPI: false
+Data: data/musique_experiment/musique_dev_balanced_30.jsonl
+Output: eval_results/swo69_s0/graphrag_ollama
+
+=== Condition: graphrag (GraphRAG (com/microsoft/graphrag)) ===
+2026-08-18 16:03:48.507 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:04:34.991 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:05:21.441 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:06:07.778 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:06:54.094 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:07:40.492 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:08:26.794 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:09:13.167 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:09:59.568 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:10:46.033 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:11:32.450 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:12:18.930 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:13:05.218 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:13:51.663 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:14:38.091 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:15:24.436 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:16:10.906 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:16:57.361 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:17:43.760 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:18:30.140 [DefaultDispatcher-worker-1] WARN  c.m.g.index.ExtractGraphWorkflow - Graph extraction chat failed: HTTP connect timed out
+2026-08-18 16:19:16.630 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:20:02.941 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:20:49.338 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:21:35.702 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:22:22.165 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:23:08.620 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:23:55.009 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:24:41.374 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:25:27.773 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:26:14.191 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:27:00.674 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:27:47.209 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:28:33.769 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:29:20.219 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:30:06.675 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:30:53.037 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:31:39.427 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:32:25.781 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:33:12.115 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:33:58.442 [DefaultDispatcher-worker-1] WARN  c.m.graphrag.index.ClaimsWorkflow - Claim extraction chat failed: HTTP connect timed out
+2026-08-18 16:33:58.778 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 1/20
+2026-08-18 16:34:45.234 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: Jay Johnston (born October 22, 1968) is an America...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:34:45.238 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 2/20
+2026-08-18 16:35:31.600 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: Frank Ross (John Pickard) is murdered by his hired...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:35:31.600 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 3/20
+2026-08-18 16:36:18.009 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: Stefan Langwieder (born January 8, 1987) is a Germ...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:36:18.010 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 4/20
+2026-08-18 16:37:04.348 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: Rooster Cogburn is a 1975 American Western adventu...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:37:04.349 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 5/20
+2026-08-18 16:37:50.816 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: Jim Clancy, played by David Conrad is Melinda's (J...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:37:50.816 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/20
+2026-08-18 16:38:37.205 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: True Grit is a 1969 American western film. It is t...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:38:37.205 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 7/20
+2026-08-18 16:39:23.545 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: The seventh and final season of the HBO supernatur...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:39:23.546 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 8/20
+2026-08-18 16:40:10.004 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: Robert Milton Young, usually known as Robert M. Yo...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:40:10.005 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 9/20
+2026-08-18 16:40:56.312 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: Shane Joseph (born July 23, 1981 in Brooks, Albert...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:40:56.313 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 10/20
+2026-08-18 16:41:42.683 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: True Grit is a 2010 American Revisionist Western f...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:41:42.683 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 11/20
+2026-08-18 16:42:29.102 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: To keep the show going, Lorne Michaels upgraded ma...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:42:29.103 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 12/20
+2026-08-18 16:43:15.480 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: Granger is a city in Williamson County, Texas, Uni...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:43:15.480 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 13/20
+2026-08-18 16:44:01.891 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: Daniel Tupou (born 17 June 1991) is a professional...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:44:01.892 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 14/20
+2026-08-18 16:44:48.380 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: The Liberals are descended from the mid-19th centu...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:44:48.380 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 15/20
+2026-08-18 16:45:34.805 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: Christopher Kennedy Masterson (born January 22, 19...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:45:34.805 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 16/20
+2026-08-18 16:46:21.191 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: Prospero Gallinari (1 January 1951 – 14 January 20...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:46:21.192 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 17/20
+2026-08-18 16:47:07.680 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: On January 14, 2015, John Krasinski was cast in th...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:47:07.681 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 18/20
+2026-08-18 16:47:54.026 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: Luddington has worked mainly in the United States....
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:47:54.027 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 19/20
+2026-08-18 16:48:40.433 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: The 2018 NRL Grand Final was the conclusive and pr...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:48:40.434 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 20/20
+2026-08-18 16:49:26.804 [DefaultDispatcher-worker-3] WARN  c.m.graphrag.index.EmbedWorkflow - Embedding failed for text: Dooley Wilson as Sam. He was one of the few Americ...
+dev.langchain4j.exception.TimeoutException: HTTP connect timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.openai.internal.SyncRequestExecutor.execute(SyncRequestExecutor.java:31)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.executeRaw(RequestExecutor.java:61)
+	at dev.langchain4j.model.openai.internal.RequestExecutor.execute(RequestExecutor.java:54)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.lambda$embedTexts$0(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.embedTexts(OpenAiEmbeddingModel.java:194)
+	at dev.langchain4j.model.openai.OpenAiEmbeddingModel.doEmbed(OpenAiEmbeddingModel.java:143)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:85)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:241)
+	at dev.langchain4j.model.embedding.EmbeddingModel.embed(EmbeddingModel.java:228)
+	at com.microsoft.graphrag.index.EmbedWorkflow.embed(EmbedWorkflow.kt:84)
+	at com.microsoft.graphrag.index.EmbedWorkflow.access$embed(EmbedWorkflow.kt:17)
+	at com.microsoft.graphrag.index.EmbedWorkflow$embedChunks$2.invokeSuspend(EmbedWorkflow.kt:42)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:945)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 26 common frames omitted
+Caused by: java.net.http.HttpConnectTimeoutException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:585)
+	at java.net.http/jdk.internal.net.http.MultiExchange.getExceptionalCF(MultiExchange.java:532)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:452)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at java.net.http/jdk.internal.net.http.Exchange.checkCancelled(Exchange.java:335)
+	at java.net.http/jdk.internal.net.http.Exchange.cancel(Exchange.java:298)
+	at java.net.http/jdk.internal.net.http.MultiExchange.cancel(MultiExchange.java:265)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectTimerEvent.handle(PlainHttpConnection.java:103)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1780)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1378)
+Caused by: java.net.ConnectException: HTTP connect timed out
+	at java.net.http/jdk.internal.net.http.MultiExchange.toTimeoutException(MultiExchange.java:586)
+	... 12 common frames omitted
+2026-08-18 16:49:26.824 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 20/20 (done)
+2026-08-18 16:49:26.837 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 0/0 (done)
+2026-08-18 16:49:27.736 [DefaultDispatcher-worker-2] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new compressor [.snappy]
+2026-08-18 16:49:28.585 [DefaultDispatcher-worker-1] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2026-08-18 16:49:28.819 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 20 records.
+2026-08-18 16:49:28.832 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-18 16:49:28.879 [DefaultDispatcher-worker-1] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2026-08-18 16:49:28.881 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 49 ms. row count = 20
+2026-08-18 16:49:28.970 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 0 records.
+2026-08-18 16:49:28.980 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 0 records.
+2026-08-18 16:49:28.998 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 0 records.
+2026-08-18 16:49:29.007 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 0 records.
+2026-08-18 16:49:29.020 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 0 records.
+2026-08-18 16:49:29.043 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 0 records.
+2026-08-18 16:49:29.053 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 0 records.
+2026-08-18 16:50:15.599 [DefaultDispatcher-worker-2] WARN  c.m.g.q.BasicSearchContextBuilder - Embedding failed for basic search (dev.langchain4j.exception.TimeoutException: HTTP connect timed out)
+2026-08-18 16:50:52.615 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found placeholder platform from: cpu-linux-x86_64:2.7.1
+2026-08-18 16:50:54.539 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - PyTorch graph executor optimizer is enabled, this may impact your inference latency and throughput. See: https://docs.djl.ai/master/docs/development/inference_performance_optimization.html#graph-executor-optimization
+2026-08-18 16:50:54.586 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - Number of inter-op threads is 96
+2026-08-18 16:50:54.587 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - Number of intra-op threads is 16
+2026-08-18 16:50:55.765 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found matching platform from: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/native/lib/tokenizers.properties
+2026-08-18 16:51:04.145 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (13, 384)
+2026-08-18 16:51:04.146 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-18 16:51:07.360 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (3, 384)
+2026-08-18 16:51:07.360 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-18 16:51:16.308 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (3, 384)
+2026-08-18 16:51:16.308 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-18 16:51:22.814 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (6, 384)
+2026-08-18 16:51:22.814 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-18 16:51:29.849 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-18 16:51:29.850 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-18 16:51:31.237 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-18 16:51:31.237 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-18 16:51:48.045 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (3, 384)
+2026-08-18 16:51:48.045 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+graphrag: processed 1/1
+Wrote 1 rows -> eval_results/swo69_s0/graphrag_ollama/per_question/graphrag.jsonl
+
+Finished. Aggregate CSV can be produced by scripts/aggregate_experiment_results.py

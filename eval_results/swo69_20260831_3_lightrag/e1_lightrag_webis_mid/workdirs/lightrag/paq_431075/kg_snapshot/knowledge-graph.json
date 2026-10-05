@@ -1,0 +1,158 @@
+{
+  "nodes" : [ {
+    "id" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "entity_id" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "entity_type" : "Event",
+    "description" : "A mixed martial arts event held on October 10, 2006.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Ultimate Fighting Championship",
+    "entity_id" : "Ultimate Fighting Championship",
+    "entity_type" : "Organization",
+    "description" : "The organization responsible for hosting the mixed martial arts event.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Tito Ortiz",
+    "entity_id" : "Tito Ortiz",
+    "entity_type" : "Person",
+    "description" : "A mixed martial artist who featured in the main event.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Ken Shamrock",
+    "entity_id" : "Ken Shamrock",
+    "entity_type" : "Person",
+    "description" : "A mixed martial artist who featured in the main event.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Seminole Hard Rock Hotel and Casino",
+    "entity_id" : "Seminole Hard Rock Hotel and Casino",
+    "entity_type" : "Location",
+    "description" : "The venue where the event took place.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Hollywood, Florida",
+    "entity_id" : "Hollywood, Florida",
+    "entity_type" : "Location",
+    "description" : "The city and state where the event was held.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Spike TV",
+    "entity_id" : "Spike TV",
+    "entity_type" : "Organization",
+    "description" : "The television channel that broadcast the event.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "United States",
+    "entity_id" : "United States",
+    "entity_type" : "Location",
+    "description" : "A country where the event was broadcast.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Canada",
+    "entity_id" : "Canada",
+    "entity_type" : "Location",
+    "description" : "A country where the event was broadcast.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "UFC 61",
+    "entity_id" : "UFC 61",
+    "entity_type" : "Event",
+    "description" : "A previous mixed martial arts event where Tito Ortiz and Ken Shamrock met.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  } ],
+  "edges" : [ {
+    "source" : "Ultimate Fighting Championship",
+    "target" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "weight" : "1.0",
+    "description" : "The Ultimate Fighting Championship organized the event.",
+    "keywords" : "hosted, organized",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Ultimate Fighting Championship",
+    "tgt_id" : "Ortiz vs. Shamrock 3: The Final Chapter"
+  }, {
+    "source" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "target" : "Seminole Hard Rock Hotel and Casino",
+    "weight" : "1.0",
+    "description" : "The event took place at the Seminole Hard Rock Hotel and Casino.",
+    "keywords" : "location, venue",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "tgt_id" : "Seminole Hard Rock Hotel and Casino"
+  }, {
+    "source" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "target" : "Hollywood, Florida",
+    "weight" : "1.0",
+    "description" : "The event was held in Hollywood, Florida.",
+    "keywords" : "location",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "tgt_id" : "Hollywood, Florida"
+  }, {
+    "source" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "target" : "Spike TV",
+    "weight" : "1.0",
+    "description" : "The event was broadcast live on Spike TV.",
+    "keywords" : "broadcast, aired",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "tgt_id" : "Spike TV"
+  }, {
+    "source" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "target" : "United States",
+    "weight" : "1.0",
+    "description" : "The event was broadcast in the United States.",
+    "keywords" : "broadcast, region",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "tgt_id" : "United States"
+  }, {
+    "source" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "target" : "Canada",
+    "weight" : "1.0",
+    "description" : "The event was broadcast in Canada.",
+    "keywords" : "broadcast, region",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "tgt_id" : "Canada"
+  }, {
+    "source" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "target" : "Tito Ortiz",
+    "weight" : "1.0",
+    "description" : "Tito Ortiz was a main event participant in the event.",
+    "keywords" : "participant, featured",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Tito Ortiz",
+    "tgt_id" : "Ortiz vs. Shamrock 3: The Final Chapter"
+  }, {
+    "source" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "target" : "Ken Shamrock",
+    "weight" : "1.0",
+    "description" : "Ken Shamrock was a main event participant in the event.",
+    "keywords" : "participant, featured",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Ken Shamrock",
+    "tgt_id" : "Ortiz vs. Shamrock 3: The Final Chapter"
+  }, {
+    "source" : "Tito Ortiz",
+    "target" : "Ken Shamrock",
+    "weight" : "1.0",
+    "description" : "Tito Ortiz defeated Ken Shamrock via technical knockout at UFC 61.",
+    "keywords" : "defeated, victory",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Tito Ortiz",
+    "tgt_id" : "Ken Shamrock"
+  }, {
+    "source" : "Tito Ortiz",
+    "target" : "UFC 61",
+    "weight" : "1.0",
+    "description" : "Tito Ortiz and Ken Shamrock previously met at this event.",
+    "keywords" : "participant, met at",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Tito Ortiz",
+    "tgt_id" : "UFC 61"
+  } ],
+  "metadata" : {
+    "nodeCount" : 10,
+    "edgeCount" : 10
+  }
+}

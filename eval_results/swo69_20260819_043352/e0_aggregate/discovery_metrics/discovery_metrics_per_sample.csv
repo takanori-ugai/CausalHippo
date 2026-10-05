@@ -104,21 +104,21 @@ lightrag,lightrag,causal,Data-Reverse_Causation_Potential_134,True,2,,,,,,,,,,,,
 lightrag,lightrag,causal,Data-Intermediary_Chain_Causation_296,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
 lightrag,lightrag,causal,Data-Complex_System_No_Direct_Link_76,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
 lightrag,lightrag,causal,Data-Reverse_Causation_Potential_93,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
-lightrag,lightrag,musique,2hop__734057_88628,True,8,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
-lightrag,lightrag,musique,4hop1__9007_698949_157828_162309,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
-lightrag,lightrag,musique,4hop3__193820_466199_128875_72134,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
-lightrag,lightrag,musique,3hop1__857_846_7810,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
-lightrag,lightrag,musique,4hop1__271272_508773_85832_745702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
-lightrag,lightrag,musique,3hop1__140855_2053_52946,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
-lightrag,lightrag,musique,2hop__75207_46837,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
-lightrag,lightrag,musique,2hop__66149_85990,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
-lightrag,lightrag,musique,4hop3__312119_132409_146285_35031,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
-lightrag,lightrag,musique,2hop__464479_70131,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
-lightrag,lightrag,musique,2hop__697729_576069,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
-lightrag,lightrag,musique,4hop1__836115_49925_13759_736921,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
-lightrag,lightrag,musique,2hop__159903_419949,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
-lightrag,lightrag,musique,3hop2__90098_91678_10557,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
-lightrag,lightrag,musique,3hop1__280834_547811_80702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
+lightrag,lightrag,musique,2hop__734057_88628,True,8,0.75,,,,,,,1.0,,,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,java.net.ConnectException
+lightrag,lightrag,musique,4hop1__9007_698949_157828_162309,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,java.net.ConnectException
+lightrag,lightrag,musique,4hop3__193820_466199_128875_72134,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,java.net.ConnectException
+lightrag,lightrag,musique,3hop1__857_846_7810,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,java.net.ConnectException
+lightrag,lightrag,musique,4hop1__271272_508773_85832_745702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,java.net.ConnectException
+lightrag,lightrag,musique,3hop1__140855_2053_52946,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,java.net.ConnectException
+lightrag,lightrag,musique,2hop__75207_46837,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,java.net.ConnectException
+lightrag,lightrag,musique,2hop__66149_85990,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,java.net.ConnectException
+lightrag,lightrag,musique,4hop3__312119_132409_146285_35031,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,java.net.ConnectException
+lightrag,lightrag,musique,2hop__464479_70131,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,java.net.ConnectException
+lightrag,lightrag,musique,2hop__697729_576069,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,java.net.ConnectException
+lightrag,lightrag,musique,4hop1__836115_49925_13759_736921,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,java.net.ConnectException
+lightrag,lightrag,musique,2hop__159903_419949,True,2,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,java.net.ConnectException
+lightrag,lightrag,musique,3hop2__90098_91678_10557,True,3,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,java.net.ConnectException
+lightrag,lightrag,musique,3hop1__280834_547811_80702,True,4,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,java.net.ConnectException
 lightrag,lightrag,webis,triviaqa_465,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
 lightrag,lightrag,webis,naturalquestions_1109,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"
 lightrag,lightrag,webis,gooaq_53482,False,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"{""error"":""model \""nomic-embed-text\"" not found, try pulling it first""}"

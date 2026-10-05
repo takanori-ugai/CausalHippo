@@ -1,0 +1,32 @@
+{
+  "run_dir": "eval_results/_t1test",
+  "systems": {
+    "graphrag": {
+      "n_snapshots": 1
+    },
+    "lightrag": {
+      "n_snapshots": 1
+    },
+    "pathrag": {
+      "n_snapshots": 3
+    },
+    "youturag": {
+      "n_snapshots": 1
+    },
+    "hipporag": {
+      "n_snapshots": 1
+    }
+  },
+  "rows_written": 6,
+  "skipped": [
+    [
+      "pathrag",
+      "Data-Complex_System_No_Direct_Link_164",
+      "no matching dataset row"
+    ]
+  ],
+  "outputs": [
+    "eval_results/_t1test/kg_quality/kg_quality_per_sample.csv",
+    "eval_results/_t1test/kg_quality/kg_quality_by_system.csv"
+  ]
+}

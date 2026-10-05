@@ -1,0 +1,536 @@
+{
+  "nodes" : [ {
+    "id" : "Thyroid",
+    "entity_id" : "Thyroid",
+    "entity_type" : "Organ",
+    "description" : "The organ whose hormones control the rate of filtration work in the kidneys.",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24"
+  }, {
+    "id" : "Kidney",
+    "entity_id" : "Kidney",
+    "entity_type" : "Organ",
+    "description" : "The organ whose function is controlled by thyroid hormones and is involved in filtration work.",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24"
+  }, {
+    "id" : "Thyroid hormones",
+    "entity_id" : "Thyroid hormones",
+    "entity_type" : "Concept",
+    "description" : "Hormones that control the rate of filtration work performed by the kidneys.",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d"
+  }, {
+    "id" : "Glomerular filtration rate (GFR)",
+    "entity_id" : "Glomerular filtration rate (GFR)",
+    "entity_type" : "Concept",
+    "description" : "A measure of the rate at which blood is filtered by the kidneys.",
+    "source_id" : "ec9cdf8e7a8e196959323514835ca3e6"
+  }, {
+    "id" : "CKD",
+    "entity_id" : "CKD",
+    "entity_type" : "Disease",
+    "description" : "Chronic Kidney Disease, a condition associated with TSH elevations.",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24"
+  }, {
+    "id" : "Hypothyroidism",
+    "entity_id" : "Hypothyroidism",
+    "entity_type" : "Concept",
+    "description" : "A condition characterized by an underactive thyroid gland, which can be caused by Hashimoto's disease.",
+    "source_id" : "ce2f6b20ebffd7f21d010b95dfd54b9d"
+  }, {
+    "id" : "Leptin problems",
+    "entity_id" : "Leptin problems",
+    "entity_type" : "Concept",
+    "description" : "Issues related to the hormone leptin.",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d"
+  }, {
+    "id" : "Testosterone",
+    "entity_id" : "Testosterone",
+    "entity_type" : "Concept",
+    "description" : "A hormone whose levels are lowered by leptin problems, leading to loss of sexual function.",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24"
+  }, {
+    "id" : "Kidneys",
+    "entity_id" : "Kidneys",
+    "entity_type" : "Concept",
+    "description" : "The organs responsible for filtration work and the activation of thyroid hormones.",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b"
+  }, {
+    "id" : "Thyroid function",
+    "entity_id" : "Thyroid function",
+    "entity_type" : "Concept",
+    "description" : "The proper operation of the thyroid gland, which is linked to kidney function.",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b"
+  }, {
+    "id" : "Kidney function",
+    "entity_id" : "Kidney function",
+    "entity_type" : "Concept",
+    "description" : "The ability of the kidneys to perform filtration work, which is linked to the risk of subclinical hypothyroidism.",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b"
+  }, {
+    "id" : "Chronic kidney disease (CKD)",
+    "entity_id" : "Chronic kidney disease (CKD)",
+    "entity_type" : "Concept",
+    "description" : "A long-term condition affecting kidney health.",
+    "source_id" : "45d18a0cd428e6e39aa5a372062a47d2"
+  }, {
+    "id" : "Subclinical hypothyroidism",
+    "entity_id" : "Subclinical hypothyroidism",
+    "entity_type" : "Concept",
+    "description" : "A condition whose risk increases as kidney function decreases.",
+    "source_id" : "75e06229872fca26d2b20718082423a9"
+  }, {
+    "id" : "Clinical Journal of the American Society of Nephrology (CJASN)",
+    "entity_id" : "Clinical Journal of the American Society of Nephrology (CJASN)",
+    "entity_type" : "Organization",
+    "description" : "A publication where a study regarding CKD and thyroid function was reported.",
+    "source_id" : "45d18a0cd428e6e39aa5a372062a47d2"
+  }, {
+    "id" : "Adrenal problems",
+    "entity_id" : "Adrenal problems",
+    "entity_type" : "Concept",
+    "description" : "Problems related to the adrenal glands, which are correlated with kidney issues.",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b"
+  }, {
+    "id" : "Stress intolerance",
+    "entity_id" : "Stress intolerance",
+    "entity_type" : "Concept",
+    "description" : "A condition that is correlated with kidney and adrenal problems.",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b"
+  }, {
+    "id" : "Electrolyte imbalance",
+    "entity_id" : "Electrolyte imbalance",
+    "entity_type" : "Concept",
+    "description" : "A condition characterized by low salt in the blood.",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b"
+  }, {
+    "id" : "Creatinine",
+    "entity_id" : "Creatinine",
+    "entity_type" : "Concept",
+    "description" : "A substance whose elevation can indicate kidney issues.",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b"
+  }, {
+    "id" : "Proteins",
+    "entity_id" : "Proteins",
+    "entity_type" : "Concept",
+    "description" : "Proteins that can be lost in the urine.",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b"
+  }, {
+    "id" : "Liver",
+    "entity_id" : "Liver",
+    "entity_type" : "Concept",
+    "description" : "The main organ responsible for performing the function of converting T4 to T3.",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b"
+  }, {
+    "id" : "T4",
+    "entity_id" : "T4",
+    "entity_type" : "Concept",
+    "description" : "A form of thyroid hormone that is converted to T3.",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b"
+  }, {
+    "id" : "T3",
+    "entity_id" : "T3",
+    "entity_type" : "Concept",
+    "description" : "A form of thyroid hormone that is activated by the kidneys.",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b"
+  }, {
+    "id" : "Thyroid problems",
+    "entity_id" : "Thyroid problems",
+    "entity_type" : "Concept",
+    "description" : "A progression of issues affecting the thyroid gland.",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d"
+  }, {
+    "id" : "Kidney problems",
+    "entity_id" : "Kidney problems",
+    "entity_type" : "Concept",
+    "description" : "Issues related to the filtration work of the kidneys.",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d"
+  }, {
+    "id" : "Cardiovascular problems",
+    "entity_id" : "Cardiovascular problems",
+    "entity_type" : "Concept",
+    "description" : "Difficult-to-manage issues related to the heart and circulation, including poor blood pressure control.",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d"
+  }, {
+    "id" : "Thyroid dysfunction",
+    "entity_id" : "Thyroid dysfunction",
+    "entity_type" : "Concept",
+    "description" : "A condition affecting the thyroid gland, which impacts renal physiology.",
+    "source_id" : "75e06229872fca26d2b20718082423a9"
+  }, {
+    "id" : "Kidney disease",
+    "entity_id" : "Kidney disease",
+    "entity_type" : "Concept",
+    "description" : "A condition affecting the kidney, which can lead to thyroid dysfunction.",
+    "source_id" : "75e06229872fca26d2b20718082423a9"
+  }, {
+    "id" : "Renal physiology",
+    "entity_id" : "Renal physiology",
+    "entity_type" : "Concept",
+    "description" : "The physiological processes of the kidney that can be affected by thyroid dysfunction.",
+    "source_id" : "75e06229872fca26d2b20718082423a9"
+  }, {
+    "id" : "Interplay between thyroid and the kidney",
+    "entity_id" : "Interplay between thyroid and the kidney",
+    "entity_type" : "Concept",
+    "description" : "The mutual relationship and interaction between the functions of the thyroid and the kidney.",
+    "source_id" : "75e06229872fca26d2b20718082423a9"
+  }, {
+    "id" : "Leptin resistance",
+    "entity_id" : "Leptin resistance",
+    "entity_type" : "Concept",
+    "description" : "A health issue situated between kidney and thyroid problems, which is linked to testosterone reduction.",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24"
+  }, {
+    "id" : "Adrenaline resistance",
+    "entity_id" : "Adrenaline resistance",
+    "entity_type" : "Concept",
+    "description" : "A health issue described by the text, related to leptin resistance.",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24"
+  }, {
+    "id" : "TSH elevations",
+    "entity_id" : "TSH elevations",
+    "entity_type" : "Concept",
+    "description" : "Elevations in Thyroid Stimulating Hormone that are common in CKD.",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24"
+  }, {
+    "id" : "Heart problems",
+    "entity_id" : "Heart problems",
+    "entity_type" : "Disease",
+    "description" : "A general category of health issues mentioned in relation to the discussed mechanisms.",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24"
+  }, {
+    "id" : "Hashimoto's disease",
+    "entity_id" : "Hashimoto's disease",
+    "entity_type" : "Concept",
+    "description" : "A disease that may be associated with increased risks of heart disease and can cause hypothyroidism.",
+    "source_id" : "ce2f6b20ebffd7f21d010b95dfd54b9d"
+  }, {
+    "id" : "Heart disease",
+    "entity_id" : "Heart disease",
+    "entity_type" : "Concept",
+    "description" : "A health condition that may have an increased risk associated with Hashimoto's disease.",
+    "source_id" : "ce2f6b20ebffd7f21d010b95dfd54b9d"
+  }, {
+    "id" : "Low-density lipoprotein (LDL) cholesterol",
+    "entity_id" : "Low-density lipoprotein (LDL) cholesterol",
+    "entity_type" : "Concept",
+    "description" : "A type of cholesterol, often called 'bad cholesterol,' whose high levels can occur in people with hypothyroidism.",
+    "source_id" : "ce2f6b20ebffd7f21d010b95dfd54b9d"
+  }, {
+    "id" : "Goiter",
+    "entity_id" : "Goiter",
+    "entity_type" : "Concept",
+    "description" : "A health problem that can result from untreated hypothyroidism.",
+    "source_id" : "ce2f6b20ebffd7f21d010b95dfd54b9d"
+  } ],
+  "edges" : [ {
+    "source" : "Thyroid",
+    "target" : "Kidney",
+    "weight" : "1.0",
+    "description" : "Thyroid hormones control the rate at which the kidneys perform filtration work, meaning impaired thyroid function similarly impairs kidney function.",
+    "keywords" : "Controls, Filtration, Impairment",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24",
+    "src_id" : "Thyroid",
+    "tgt_id" : "Kidney"
+  }, {
+    "source" : "Thyroid",
+    "target" : "Leptin resistance",
+    "weight" : "1.0",
+    "description" : "Leptin resistance is associated with thyroid problems.",
+    "keywords" : "Associated with, Problem",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24",
+    "src_id" : "Leptin resistance",
+    "tgt_id" : "Thyroid"
+  }, {
+    "source" : "Kidney",
+    "target" : "Thyroid hormones",
+    "weight" : "1.0",
+    "description" : "Thyroid hormones affect the development and physiology of the kidney.",
+    "keywords" : "Affects, Development, Physiology",
+    "source_id" : "ec9cdf8e7a8e196959323514835ca3e6",
+    "src_id" : "Thyroid hormones",
+    "tgt_id" : "Kidney"
+  }, {
+    "source" : "Kidney",
+    "target" : "Subclinical hypothyroidism",
+    "weight" : "1.0",
+    "description" : "Lower kidney function increases the risk of subclinical hypothyroidism.",
+    "keywords" : "low function, increased risk",
+    "source_id" : "75e06229872fca26d2b20718082423a9",
+    "src_id" : "Kidney",
+    "tgt_id" : "Subclinical hypothyroidism"
+  }, {
+    "source" : "Kidney",
+    "target" : "Leptin resistance",
+    "weight" : "1.0",
+    "description" : "Leptin resistance is associated with kidney problems.",
+    "keywords" : "Associated with, Problem",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24",
+    "src_id" : "Leptin resistance",
+    "tgt_id" : "Kidney"
+  }, {
+    "source" : "Thyroid hormones",
+    "target" : "Glomerular filtration rate (GFR)",
+    "weight" : "1.0",
+    "description" : "Thyroid hormones have effects that increase the renal blood flow and the glomerular filtration rate (GFR).",
+    "keywords" : "Increases, Renal Effect",
+    "source_id" : "ec9cdf8e7a8e196959323514835ca3e6",
+    "src_id" : "Thyroid hormones",
+    "tgt_id" : "Glomerular filtration rate (GFR)"
+  }, {
+    "source" : "Thyroid hormones",
+    "target" : "Kidneys",
+    "weight" : "1.0",
+    "description" : "Thyroid hormones control the rate at which the kidneys perform their filtration work.",
+    "keywords" : "control, filtration work",
+    "source_id" : "45d18a0cd428e6e39aa5a372062a47d2",
+    "src_id" : "Thyroid hormones",
+    "tgt_id" : "Kidneys"
+  }, {
+    "source" : "Thyroid hormones",
+    "target" : "Kidney function",
+    "weight" : "1.0",
+    "description" : "Thyroid hormones control the rate at which the kidneys perform filtration work.",
+    "keywords" : "controls rate",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b",
+    "src_id" : "Thyroid hormones",
+    "tgt_id" : "Kidney function"
+  }, {
+    "source" : "Thyroid hormones",
+    "target" : "Kidney problems",
+    "weight" : "1.0",
+    "description" : "Thyroid hormones control the rate at which the kidneys perform their filtration work.",
+    "keywords" : "Control, Regulates",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d",
+    "src_id" : "Thyroid hormones",
+    "tgt_id" : "Kidney problems"
+  }, {
+    "source" : "TSH elevations",
+    "target" : "CKD",
+    "weight" : "1.0",
+    "description" : "TSH elevations are commonly observed in Chronic Kidney Disease (CKD).",
+    "keywords" : "Common in",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24",
+    "src_id" : "TSH elevations",
+    "tgt_id" : "CKD"
+  }, {
+    "source" : "CKD",
+    "target" : "Subclinical hypothyroidism",
+    "weight" : "1.0",
+    "description" : "The presence of subclinical hypothyroidism might be a risk factor for progressive kidney disease in patients with CKD.",
+    "keywords" : "Risk factor, Associated with",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d",
+    "src_id" : "Subclinical hypothyroidism",
+    "tgt_id" : "CKD"
+  }, {
+    "source" : "Thyroid problems",
+    "target" : "Kidney problems",
+    "weight" : "2.0",
+    "description" : "If thyroid function is impaired, kidney function is similarly impaired.",
+    "keywords" : "Progression, Leads to, Impairment, Correlation",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d<|#|>c20f8b380a79988bf86df36370a5799d",
+    "src_id" : "Thyroid problems",
+    "tgt_id" : "Kidney problems"
+  }, {
+    "source" : "Thyroid problems",
+    "target" : "Cardiovascular problems",
+    "weight" : "1.0",
+    "description" : "A progression of thyroid problems leads directly to cardiovascular problems.",
+    "keywords" : "Progression, Leads to",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d",
+    "src_id" : "Thyroid problems",
+    "tgt_id" : "Cardiovascular problems"
+  }, {
+    "source" : "Kidney problems",
+    "target" : "Adrenal problems",
+    "weight" : "1.0",
+    "description" : "Kidney problems are correlated with adrenal problems.",
+    "keywords" : "correlation",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b",
+    "src_id" : "Kidney problems",
+    "tgt_id" : "Adrenal problems"
+  }, {
+    "source" : "Kidney problems",
+    "target" : "Stress intolerance",
+    "weight" : "1.0",
+    "description" : "Kidney problems are correlated with stress intolerance.",
+    "keywords" : "correlation",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b",
+    "src_id" : "Kidney problems",
+    "tgt_id" : "Stress intolerance"
+  }, {
+    "source" : "Kidney problems",
+    "target" : "Hypothyroidism",
+    "weight" : "1.0",
+    "description" : "Severe hypothyroidism can cause reduced heart function, which can lead to progressively worsening kidney function.",
+    "keywords" : "Causes, Worsening",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d",
+    "src_id" : "Hypothyroidism",
+    "tgt_id" : "Kidney problems"
+  }, {
+    "source" : "Leptin problems",
+    "target" : "Testosterone",
+    "weight" : "1.0",
+    "description" : "Leptin problems lower the levels of testosterone.",
+    "keywords" : "Lower, Causes",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d",
+    "src_id" : "Leptin problems",
+    "tgt_id" : "Testosterone"
+  }, {
+    "source" : "Testosterone",
+    "target" : "Sex drive",
+    "weight" : "1.0",
+    "description" : "Lower testosterone levels cause a drop in sex drive in both sexes.",
+    "keywords" : "causes drop",
+    "source_id" : "45d18a0cd428e6e39aa5a372062a47d2",
+    "src_id" : "Testosterone",
+    "tgt_id" : "Sex drive"
+  }, {
+    "source" : "Testosterone",
+    "target" : "Leptin resistance",
+    "weight" : "1.0",
+    "description" : "Leptin problems lower testosterone levels, which can cause a drop in sex drive and loss of sexual function.",
+    "keywords" : "Lowers, Causes",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24",
+    "src_id" : "Leptin resistance",
+    "tgt_id" : "Testosterone"
+  }, {
+    "source" : "Kidneys",
+    "target" : "T3",
+    "weight" : "1.0",
+    "description" : "The kidneys activate thyroid hormones by converting T4 to T3.",
+    "keywords" : "activates, converts",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b",
+    "src_id" : "Kidneys",
+    "tgt_id" : "T3"
+  }, {
+    "source" : "Thyroid function",
+    "target" : "Kidney function",
+    "weight" : "1.0",
+    "description" : "If thyroid function is impaired, kidney function is similarly impaired.",
+    "keywords" : "impaired, impaired",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b",
+    "src_id" : "Thyroid function",
+    "tgt_id" : "Kidney function"
+  }, {
+    "source" : "Kidney function",
+    "target" : "Subclinical hypothyroidism",
+    "weight" : "1.0",
+    "description" : "A lower kidney function increases the risk of subclinical hypothyroidism.",
+    "keywords" : "lower function, higher risk",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b",
+    "src_id" : "Kidney function",
+    "tgt_id" : "Subclinical hypothyroidism"
+  }, {
+    "source" : "Chronic kidney disease (CKD)",
+    "target" : "Subclinical hypothyroidism",
+    "weight" : "1.0",
+    "description" : "Many patients with CKD have mild reductions in thyroid function, known as subclinical hypothyroidism.",
+    "keywords" : "prevalence, associated with",
+    "source_id" : "45d18a0cd428e6e39aa5a372062a47d2",
+    "src_id" : "Chronic kidney disease (CKD)",
+    "tgt_id" : "Subclinical hypothyroidism"
+  }, {
+    "source" : "Chronic kidney disease (CKD)",
+    "target" : "Study",
+    "weight" : "1.0",
+    "description" : "A study published in the Clinical Journal of the American Society of Nephrology reported on the prevalence of subclinical hypothyroidism in CKD patients.",
+    "keywords" : "reported, prevalence",
+    "source_id" : "45d18a0cd428e6e39aa5a372062a47d2",
+    "src_id" : "Study",
+    "tgt_id" : "Chronic kidney disease (CKD)"
+  }, {
+    "source" : "Liver",
+    "target" : "T4",
+    "weight" : "1.0",
+    "description" : "The liver is the main organ that performs the function of converting T4 to T3.",
+    "keywords" : "main organ, performs function",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b",
+    "src_id" : "Liver",
+    "tgt_id" : "T4"
+  }, {
+    "source" : "Hypothyroidism",
+    "target" : "Hashimoto's disease",
+    "weight" : "1.0",
+    "description" : "Hashimoto's disease can cause hypothyroidism.",
+    "keywords" : "Cause, association",
+    "source_id" : "ce2f6b20ebffd7f21d010b95dfd54b9d",
+    "src_id" : "Hashimoto's disease",
+    "tgt_id" : "Hypothyroidism"
+  }, {
+    "source" : "Hypothyroidism",
+    "target" : "Low-density lipoprotein (LDL) cholesterol",
+    "weight" : "1.0",
+    "description" : "Hypothyroidism can lead to high levels of LDL cholesterol.",
+    "keywords" : "High levels, occurrence",
+    "source_id" : "ce2f6b20ebffd7f21d010b95dfd54b9d",
+    "src_id" : "Hypothyroidism",
+    "tgt_id" : "Low-density lipoprotein (LDL) cholesterol"
+  }, {
+    "source" : "Hypothyroidism",
+    "target" : "Goiter",
+    "weight" : "1.0",
+    "description" : "Untreated hypothyroidism can result in goiter.",
+    "keywords" : "Leads to, health problem",
+    "source_id" : "ce2f6b20ebffd7f21d010b95dfd54b9d",
+    "src_id" : "Hypothyroidism",
+    "tgt_id" : "Goiter"
+  }, {
+    "source" : "Thyroid dysfunction",
+    "target" : "Renal physiology",
+    "weight" : "1.0",
+    "description" : "Thyroid dysfunction affects the renal physiology and development.",
+    "keywords" : "affects, development",
+    "source_id" : "75e06229872fca26d2b20718082423a9",
+    "src_id" : "Thyroid dysfunction",
+    "tgt_id" : "Renal physiology"
+  }, {
+    "source" : "Thyroid dysfunction",
+    "target" : "Kidney disease",
+    "weight" : "1.0",
+    "description" : "Kidney disease can result in thyroid dysfunction.",
+    "keywords" : "results in",
+    "source_id" : "75e06229872fca26d2b20718082423a9",
+    "src_id" : "Kidney disease",
+    "tgt_id" : "Thyroid dysfunction"
+  }, {
+    "source" : "Interplay between thyroid and the kidney",
+    "target" : "Disease states",
+    "weight" : "1.0",
+    "description" : "There are various mechanisms of interaction between the kidney and thyroid functions in disease states.",
+    "keywords" : "mechanisms of interaction, functional alterations, structural correlates",
+    "source_id" : "75e06229872fca26d2b20718082423a9",
+    "src_id" : "Interplay between thyroid and the kidney",
+    "tgt_id" : "Disease states"
+  }, {
+    "source" : "Disorders of the thyroid and kidney",
+    "target" : "Common etiological factors",
+    "weight" : "1.0",
+    "description" : "Disorders of the thyroid and kidney may co-exist with common etiological factors.",
+    "keywords" : "co-exist with",
+    "source_id" : "75e06229872fca26d2b20718082423a9",
+    "src_id" : "Disorders of the thyroid and kidney",
+    "tgt_id" : "Common etiological factors"
+  }, {
+    "source" : "Leptin resistance",
+    "target" : "Adrenaline resistance",
+    "weight" : "1.0",
+    "description" : "Leptin resistance is linked to a health issue called adrenaline resistance.",
+    "keywords" : "Related to, Health Issue",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24",
+    "src_id" : "Leptin resistance",
+    "tgt_id" : "Adrenaline resistance"
+  }, {
+    "source" : "Hashimoto's disease",
+    "target" : "Heart disease",
+    "weight" : "1.0",
+    "description" : "Hashimoto's disease is associated with an increased risk of heart disease.",
+    "keywords" : "Increased risk, association",
+    "source_id" : "ce2f6b20ebffd7f21d010b95dfd54b9d",
+    "src_id" : "Hashimoto's disease",
+    "tgt_id" : "Heart disease"
+  } ],
+  "metadata" : {
+    "nodeCount" : 37,
+    "edgeCount" : 34
+  }
+}

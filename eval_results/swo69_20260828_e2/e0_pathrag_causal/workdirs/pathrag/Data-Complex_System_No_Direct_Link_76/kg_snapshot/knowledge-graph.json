@@ -1,0 +1,480 @@
+{
+  "nodes" : {
+    "NEIGHBORHOODS" : {
+      "entity_type" : "GEO",
+      "description" : "Several areas within the city where flooded streets and traffic delays have been reported.",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    },
+    "SHOP STAFF" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Employees at the coffee shops who commented on the rush of new faces.",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    },
+    "MAJOR FIRMS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Several major firms whose employees reported increased visits to nearby cafes during the observed period.",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    },
+    "MAJOR SUPPLIER" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A supplier whose shipping delay contributed to empty shelves at coffee shops.",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    },
+    "COFFEE SHORTAGES" : {
+      "entity_type" : "EVENT",
+      "description" : "Unexpected depletion of coffee supplies at multiple shops, initially attributed to students.",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    },
+    "EARNINGS CALLS" : {
+      "entity_type" : "EVENT",
+      "description" : "Corporate financial reporting events during which managers reportedly encouraged coffee breaks, linking work and café culture.",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    },
+    "LOCAL GOVERNMENT" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "The governmental body that advised caution while commuting in response to the flooding.",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    },
+    "MANAGERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Managers at major firms cited as encouraging coffee breaks during earnings calls, potentially boosting café traffic.",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    },
+    "TECH SECTOR" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The technology stock market sector where prices began to climb during the observed quarter.",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    },
+    "FLOODED STREETS" : {
+      "entity_type" : "EVENT",
+      "description" : "Streets in several neighborhoods flooded due to heavy rainfall, leading to traffic delays.",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    },
+    "THE CITY" : {
+      "entity_type" : "GEO",
+      "description" : "A city experiencing heavy rainfall, overwhelmed drains, and flooded streets in recent times.<SEP>An unnamed city where café culture is being discussed in relation to broader economic and market trends.",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b<SEP>chunk-a57a3cf2e1d3407624f511690043079b"
+    },
+    "ECONOMIC OPTIMISM" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The broader economic sentiment identified as the common driver behind both the tech sector rise and the coffee sales uptick.",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    },
+    "HEAVY RAINFALL" : {
+      "entity_type" : "EVENT",
+      "description" : "A recent weather event that overwhelmed drainage systems and caused widespread flooding.",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    },
+    "COFFEE SHOPS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Several shops that reported unexpected coffee shortages following the return of students.",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    },
+    "COAST" : {
+      "entity_type" : "GEO",
+      "description" : "The coastal area where the scene unfolds, adjacent to the ocean and lined with tall grasses.",
+      "source_id" : "chunk-01246fa19262b4c1f2c452e0eff353f6"
+    },
+    "OCEAN" : {
+      "entity_type" : "GEO",
+      "description" : "The body of water that generates the cool breeze felt along the shore.",
+      "source_id" : "chunk-01246fa19262b4c1f2c452e0eff353f6"
+    },
+    "ANALYSTS" : {
+      "entity_type" : "PERSON",
+      "description" : "Financial analysts who observed the unusual parallel trend between tech stock prices and local coffee sales over the past quarter.",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    },
+    "SUMMER BREAK" : {
+      "entity_type" : "EVENT",
+      "description" : "The period of academic leave that preceded the resumption of university lectures.",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    },
+    "STREET CONDITIONS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Ongoing road and drainage conditions that many wonder are becoming a regular occurrence.",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    },
+    "COOL BREEZE ARRIVAL" : {
+      "entity_type" : "EVENT",
+      "description" : "The arrival of a cool breeze from the ocean that invigorates the landscape and is felt by onlookers.",
+      "source_id" : "chunk-01246fa19262b4c1f2c452e0eff353f6"
+    },
+    "STUDENTS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Returning students who were mistakenly assumed responsible for depleted coffee supplies.",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    },
+    "RESIDENTS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Local inhabitants who noted overwhelmed drains and are concerned about recurring street conditions.",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    },
+    "GRASSES RIPPLING" : {
+      "entity_type" : "EVENT",
+      "description" : "The swaying and rhythmic rippling of tall grasses along the shore, creating wave-like movements.",
+      "source_id" : "chunk-01246fa19262b4c1f2c452e0eff353f6"
+    },
+    "NATURAL PATTERNS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The rhythmic visual patterns formed by grasses and landscape that draw the attention of observers.",
+      "source_id" : "chunk-01246fa19262b4c1f2c452e0eff353f6"
+    },
+    "SHIPPING DELAY" : {
+      "entity_type" : "EVENT",
+      "description" : "A delay from a major supplier that actually explained the empty shelves, coinciding with student return.",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    },
+    "INFRASTRUCTURE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The city's drainage and road systems that residents believe have not changed much over the years.",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    },
+    "PEOPLE" : {
+      "entity_type" : "PERSON",
+      "description" : "General individuals and passersby who stop to enjoy the refreshing air and observe natural patterns.",
+      "source_id" : "chunk-01246fa19262b4c1f2c452e0eff353f6"
+    },
+    "UNIVERSITY" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "An institution where lectures resumed after summer break, associated with returning students.",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    },
+    "COFFEE SALES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Local coffee sales that experienced a notable uptick, paralleling the rise in tech sector stock prices.",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    }
+  },
+  "edges" : [ {
+    "source" : "COOL BREEZE ARRIVAL",
+    "target" : "PEOPLE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "People stop to enjoy the refreshing air brought by the cool breeze arriving at the shore.",
+      "keywords" : "sensory experience, enjoyment",
+      "source_id" : "chunk-01246fa19262b4c1f2c452e0eff353f6"
+    }
+  }, {
+    "source" : "TECH SECTOR",
+    "target" : "COFFEE SALES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The parallel rise between tech stocks and coffee sales stirred speculation about a causal link.",
+      "keywords" : "correlation, speculation",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    }
+  }, {
+    "source" : "STUDENTS",
+    "target" : "UNIVERSITY",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Students are associated with the university where lectures resumed after summer break.",
+      "keywords" : "academic return, institution",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    }
+  }, {
+    "source" : "HEAVY RAINFALL",
+    "target" : "THE CITY",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Heavy rainfall has directly affected the city, overwhelming its drainage systems.",
+      "keywords" : "weather event, impact, flooding",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    }
+  }, {
+    "source" : "SUMMER BREAK",
+    "target" : "UNIVERSITY",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Summer break marked the period before university lectures resumed.",
+      "keywords" : "academic calendar, timing",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    }
+  }, {
+    "source" : "ANALYSTS",
+    "target" : "TECH SECTOR",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Analysts observed the unusual trend of climbing stock prices in the tech sector.",
+      "keywords" : "observation, market trend",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    }
+  }, {
+    "source" : "GRASSES RIPPLING",
+    "target" : "NATURAL PATTERNS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The rippling motion of the grasses creates the rhythmic visual patterns observed by people.",
+      "keywords" : "cause and effect, visual rhythm",
+      "source_id" : "chunk-01246fa19262b4c1f2c452e0eff353f6"
+    }
+  }, {
+    "source" : "STUDENTS",
+    "target" : "SUMMER BREAK",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Students returned after the summer break, coinciding with the coffee shortages.",
+      "keywords" : "return, temporal coincidence",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    }
+  }, {
+    "source" : "COFFEE SHORTAGES",
+    "target" : "SHIPPING DELAY",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The concurrence of both events created a misleading impression of causality.",
+      "keywords" : "false causality, coincidence",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    }
+  }, {
+    "source" : "ANALYSTS",
+    "target" : "COFFEE SALES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Analysts noted the notable uptick in local coffee sales occurring alongside the tech sector rise.",
+      "keywords" : "observation, parallel trend",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    }
+  }, {
+    "source" : "OCEAN",
+    "target" : "COOL BREEZE ARRIVAL",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The ocean is the source from which the cool breeze originates and arrives at the shore.",
+      "keywords" : "weather, source, airflow",
+      "source_id" : "chunk-01246fa19262b4c1f2c452e0eff353f6"
+    }
+  }, {
+    "source" : "MANAGERS",
+    "target" : "EARNINGS CALLS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Managers reportedly encouraged coffee breaks during earnings calls, providing anecdotal evidence linking work and café visits.",
+      "keywords" : "anecdotal evidence, workplace habits",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    }
+  }, {
+    "source" : "THE CITY",
+    "target" : "COFFEE SALES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The city's café culture is the local context in which coffee sales and economic sentiment intersect.",
+      "keywords" : "local economy, café culture",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    }
+  }, {
+    "source" : "COAST",
+    "target" : "GRASSES RIPPLING",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The tall grasses grow along the shore of the coast and ripple in response to the breeze.",
+      "keywords" : "location, vegetation, movement",
+      "source_id" : "chunk-01246fa19262b4c1f2c452e0eff353f6"
+    }
+  }, {
+    "source" : "STUDENTS",
+    "target" : "COFFEE SHOPS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Students' return was assumed to be the cause of coffee shortages at the shops.",
+      "keywords" : "misattributed causality, demand increase",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    }
+  }, {
+    "source" : "FLOODED STREETS",
+    "target" : "STREET CONDITIONS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Flooded streets are a manifestation of the broader street conditions residents are questioning.",
+      "keywords" : "recurring issue, road safety",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    }
+  }, {
+    "source" : "NATURAL PATTERNS",
+    "target" : "PEOPLE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The natural patterns draw the attention of passersby and invite them to observe.",
+      "keywords" : "observation, attraction, engagement",
+      "source_id" : "chunk-01246fa19262b4c1f2c452e0eff353f6"
+    }
+  }, {
+    "source" : "COFFEE SHOPS",
+    "target" : "COFFEE SHORTAGES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The coffee shops were the locations where the shortages were reported and experienced.",
+      "keywords" : "reporting, affected location",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    }
+  }, {
+    "source" : "TECH SECTOR",
+    "target" : "THE CITY",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Improved tech market performance is speculated to be boosting the city's café culture.",
+      "keywords" : "economic spillover, café culture",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    }
+  }, {
+    "source" : "HEAVY RAINFALL",
+    "target" : "FLOODED STREETS",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Heavy rainfall is the primary cause of the flooded streets in the city.",
+      "keywords" : "cause and effect, flooding",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    }
+  }, {
+    "source" : "SHIPPING DELAY",
+    "target" : "COFFEE SHORTAGES",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "The shipping delay was the actual cause of the coffee shortages, not the students.",
+      "keywords" : "true cause, supply disruption",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "THE CITY",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Residents live in the city and are directly affected by the flooding and infrastructure issues.",
+      "keywords" : "local impact, community",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    }
+  }, {
+    "source" : "MAJOR SUPPLIER",
+    "target" : "SHIPPING DELAY",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The major supplier experienced a shipping delay that caused empty shelves.",
+      "keywords" : "supply chain, delay",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    }
+  }, {
+    "source" : "ECONOMIC OPTIMISM",
+    "target" : "TECH SECTOR",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The tech sector's price climb may be a response to broader economic optimism rather than independent causation.",
+      "keywords" : "common driver, market sentiment",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    }
+  }, {
+    "source" : "FLOODED STREETS",
+    "target" : "NEIGHBORHOODS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Flooded streets are occurring in several neighborhoods, causing traffic delays.",
+      "keywords" : "location, traffic delays",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    }
+  }, {
+    "source" : "MAJOR FIRMS",
+    "target" : "THE CITY",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Major firms are located in the city where employees visit nearby cafes.",
+      "keywords" : "location, employee behavior",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    }
+  }, {
+    "source" : "SHOP STAFF",
+    "target" : "COFFEE SHOPS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Shop staff work at the coffee shops and observed the rush of new faces.",
+      "keywords" : "employment, observation",
+      "source_id" : "chunk-2f8c9a6b4c69d53c433c30b28462cbaf"
+    }
+  }, {
+    "source" : "INFRASTRUCTURE",
+    "target" : "THE CITY",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The infrastructure is part of the city and has been criticized for not improving over the years.",
+      "keywords" : "urban systems, stagnation",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    }
+  }, {
+    "source" : "MANAGERS",
+    "target" : "COFFEE SALES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Managers' encouragement of coffee breaks may have contributed to the uptick in coffee sales.",
+      "keywords" : "causal speculation, consumer behavior",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    }
+  }, {
+    "source" : "ECONOMIC OPTIMISM",
+    "target" : "COFFEE SALES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The coffee sales uptick may also be responding to broader economic optimism rather than the tech sector directly.",
+      "keywords" : "common driver, consumer confidence",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    }
+  }, {
+    "source" : "INFRASTRUCTURE",
+    "target" : "STREET CONDITIONS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Aging infrastructure is believed to be a contributing factor to the recurring street conditions.",
+      "keywords" : "root cause, systemic issue",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "INFRASTRUCTURE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Residents believe the city's infrastructure has not changed much, contributing to recurring flooding.",
+      "keywords" : "public concern, aging systems",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    }
+  }, {
+    "source" : "COAST",
+    "target" : "COOL BREEZE ARRIVAL",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The breeze is felt along the coast, where its arrival is noticeable and refreshing.",
+      "keywords" : "location, sensation, proximity",
+      "source_id" : "chunk-01246fa19262b4c1f2c452e0eff353f6"
+    }
+  }, {
+    "source" : "LOCAL GOVERNMENT",
+    "target" : "FLOODED STREETS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The local government advised caution while commuting due to the flooded streets.",
+      "keywords" : "advisory, public safety",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    }
+  }, {
+    "source" : "LOCAL GOVERNMENT",
+    "target" : "THE CITY",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The local government serves the city and issued advisories regarding the flooded conditions.",
+      "keywords" : "governance, public advisory",
+      "source_id" : "chunk-a57a3cf2e1d3407624f511690043079b"
+    }
+  }, {
+    "source" : "MAJOR FIRMS",
+    "target" : "EARNINGS CALLS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Managers at major firms conduct earnings calls, during which coffee breaks were reportedly encouraged.",
+      "keywords" : "corporate events, workplace culture",
+      "source_id" : "chunk-e9c25d69e303fcb52f2d8bbb97c5347b"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 29,
+    "edgeCount" : 36,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Complex_System_No_Direct_Link_76"
+  }
+}

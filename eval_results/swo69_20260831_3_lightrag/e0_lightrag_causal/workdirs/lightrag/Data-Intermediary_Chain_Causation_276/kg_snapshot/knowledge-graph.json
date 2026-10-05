@@ -1,0 +1,641 @@
+{
+  "nodes" : [ {
+    "id" : "Business professionals",
+    "entity_id" : "Business professionals",
+    "entity_type" : "Person",
+    "description" : "Professionals who engage in frequent travel and often experience jet lag, disrupted sleep patterns, and fluctuating productivity.",
+    "source_id" : "3b8c43933c47d42365ddc7402665a5bb"
+  }, {
+    "id" : "Jet lag",
+    "entity_id" : "Jet lag",
+    "entity_type" : "Concept",
+    "description" : "A condition experienced by frequent travelers that disrupts sleep patterns and eating habits, causing recurring problems.",
+    "source_id" : "3b8c43933c47d42365ddc7402665a5bb"
+  }, {
+    "id" : "Sleep patterns",
+    "entity_id" : "Sleep patterns",
+    "entity_type" : "Concept",
+    "description" : "Regular sleep cycles that are disrupted by frequent travel and jet lag.",
+    "source_id" : "3b8c43933c47d42365ddc7402665a5bb"
+  }, {
+    "id" : "Eating habits",
+    "entity_id" : "Eating habits",
+    "entity_type" : "Concept",
+    "description" : "Regular dietary routines that are disrupted by frequent travel and jet lag.",
+    "source_id" : "3b8c43933c47d42365ddc7402665a5bb"
+  }, {
+    "id" : "Productivity",
+    "entity_id" : "Productivity",
+    "entity_type" : "Concept",
+    "description" : "Work output and performance that fluctuates depending on the trip schedule of business professionals.",
+    "source_id" : "3b8c43933c47d42365ddc7402665a5bb"
+  }, {
+    "id" : "Medical experts",
+    "entity_id" : "Medical experts",
+    "entity_type" : "Person",
+    "description" : "Healthcare professionals who advise caution regarding jet lag but acknowledge that solutions are not simple.",
+    "source_id" : "3b8c43933c47d42365ddc7402665a5bb"
+  }, {
+    "id" : "Colleagues",
+    "entity_id" : "Colleagues",
+    "entity_type" : "Person",
+    "description" : "Work associates who have noticed the recurring problems experienced by business professionals due to frequent travel.",
+    "source_id" : "3b8c43933c47d42365ddc7402665a5bb"
+  }, {
+    "id" : "Frequent travel",
+    "entity_id" : "Frequent travel",
+    "entity_type" : "Concept",
+    "description" : "Regular business travel that leads to jet lag, disrupted routines, and fluctuating productivity.",
+    "source_id" : "3b8c43933c47d42365ddc7402665a5bb"
+  }, {
+    "id" : "Neighborhoods",
+    "entity_id" : "Neighborhoods",
+    "entity_type" : "Location",
+    "description" : "Residential areas that have active campaigns for vaccinating pets and rarely experience rabies cases.",
+    "source_id" : "f35888e60b642e472bb1cc229302be6f"
+  }, {
+    "id" : "Pet Vaccination Campaigns",
+    "entity_id" : "Pet Vaccination Campaigns",
+    "entity_type" : "Event",
+    "description" : "Active organized efforts in neighborhoods to vaccinate pets against diseases such as rabies.",
+    "source_id" : "f35888e60b642e472bb1cc229302be6f"
+  }, {
+    "id" : "Rabies",
+    "entity_id" : "Rabies",
+    "entity_type" : "Concept",
+    "description" : "A disease that is rarely observed in neighborhoods with active pet vaccination campaigns.",
+    "source_id" : "f35888e60b642e472bb1cc229302be6f"
+  }, {
+    "id" : "Veterinarians",
+    "entity_id" : "Veterinarians",
+    "entity_type" : "Person",
+    "description" : "Medical professionals who note the pattern between vaccination campaigns and reduced rabies cases in city reports.",
+    "source_id" : "f35888e60b642e472bb1cc229302be6f"
+  }, {
+    "id" : "City Reports",
+    "entity_id" : "City Reports",
+    "entity_type" : "Concept",
+    "description" : "Official documents in which veterinarians record and note the observed pattern of reduced rabies cases.",
+    "source_id" : "f35888e60b642e472bb1cc229302be6f"
+  }, {
+    "id" : "Stray Animal Control",
+    "entity_id" : "Stray Animal Control",
+    "entity_type" : "Concept",
+    "description" : "An alternative factor suggested as a possible explanation for reduced rabies cases in neighborhoods.",
+    "source_id" : "f35888e60b642e472bb1cc229302be6f"
+  }, {
+    "id" : "Seasonal Trends",
+    "entity_id" : "Seasonal Trends",
+    "entity_type" : "Concept",
+    "description" : "Another alternative factor pointed to as a possible explanation for the observed pattern in rabies cases.",
+    "source_id" : "f35888e60b642e472bb1cc229302be6f"
+  }, {
+    "id" : "Pet Owners",
+    "entity_id" : "Pet Owners",
+    "entity_type" : "Person",
+    "description" : "Individuals who own pets and enjoy peace of mind due to active vaccination campaigns in their neighborhoods.",
+    "source_id" : "f35888e60b642e472bb1cc229302be6f"
+  }, {
+    "id" : "Employees",
+    "entity_id" : "Employees",
+    "entity_type" : "Person",
+    "description" : "Workers in the office who discuss social media use during break times and check their feeds, with some completing fewer tasks by the end of the day.",
+    "source_id" : "ba8554248fecb8f30fe5cf47f3ab927f"
+  }, {
+    "id" : "Social Media",
+    "entity_id" : "Social Media",
+    "entity_type" : "Concept",
+    "description" : "Digital platforms whose use during work hours is frequently mentioned and suspected of having subtle negative effects on work output.",
+    "source_id" : "ba8554248fecb8f30fe5cf47f3ab927f"
+  }, {
+    "id" : "Management",
+    "entity_id" : "Management",
+    "entity_type" : "Organization",
+    "description" : "The leadership group that has been discussing fluctuating productivity levels across different teams over recent months.",
+    "source_id" : "ba8554248fecb8f30fe5cf47f3ab927f"
+  }, {
+    "id" : "Productivity Levels",
+    "entity_id" : "Productivity Levels",
+    "entity_type" : "Concept",
+    "description" : "The fluctuating work output metric observed across different teams, which has been a subject of management discussion.",
+    "source_id" : "ba8554248fecb8f30fe5cf47f3ab927f"
+  }, {
+    "id" : "Teams",
+    "entity_id" : "Teams",
+    "entity_type" : "Organization",
+    "description" : "Different groups within the office that experience varying levels of productivity.",
+    "source_id" : "ba8554248fecb8f30fe5cf47f3ab927f"
+  }, {
+    "id" : "Project Structures",
+    "entity_id" : "Project Structures",
+    "entity_type" : "Concept",
+    "description" : "New organizational or workflow structures that some employees attribute the changes in productivity to, as an alternative explanation to social media use.",
+    "source_id" : "ba8554248fecb8f30fe5cf47f3ab927f"
+  }, {
+    "id" : "Work Output",
+    "entity_id" : "Work Output",
+    "entity_type" : "Concept",
+    "description" : "The number of tasks completed by employees by the end of the day, which appears to decrease for those who check social media feeds more frequently.",
+    "source_id" : "ba8554248fecb8f30fe5cf47f3ab927f"
+  }, {
+    "id" : "Floral shops",
+    "entity_id" : "Floral shops",
+    "entity_type" : "Organization",
+    "description" : "Businesses that sell flowers, whose sales increase during holidays and are part of a pattern noticed annually.",
+    "source_id" : "08a19d6ef0c7150e7d81aec93813e534"
+  }, {
+    "id" : "Restaurants",
+    "entity_id" : "Restaurants",
+    "entity_type" : "Organization",
+    "description" : "Businesses that receive increased reservations during holidays and are part of a pattern noticed annually.",
+    "source_id" : "08a19d6ef0c7150e7d81aec93813e534"
+  }, {
+    "id" : "Holidays",
+    "entity_id" : "Holidays",
+    "entity_type" : "Event",
+    "description" : "Occasions during which both floral shop sales and restaurant reservations rise simultaneously.",
+    "source_id" : "08a19d6ef0c7150e7d81aec93813e534"
+  }, {
+    "id" : "Couples",
+    "entity_id" : "Couples",
+    "entity_type" : "Concept",
+    "description" : "People who partake in both floral shopping and dining out simultaneously during holidays.",
+    "source_id" : "08a19d6ef0c7150e7d81aec93813e534"
+  }, {
+    "id" : "Families",
+    "entity_id" : "Families",
+    "entity_type" : "Concept",
+    "description" : "People who partake in both floral shopping and dining out simultaneously during holidays.",
+    "source_id" : "08a19d6ef0c7150e7d81aec93813e534"
+  }, {
+    "id" : "Floral shop sales",
+    "entity_id" : "Floral shop sales",
+    "entity_type" : "Concept",
+    "description" : "Revenue generated by floral shops that increases during holidays alongside restaurant reservations.",
+    "source_id" : "08a19d6ef0c7150e7d81aec93813e534"
+  }, {
+    "id" : "Restaurant reservations",
+    "entity_id" : "Restaurant reservations",
+    "entity_type" : "Concept",
+    "description" : "Bookings made at restaurants that rise during holidays alongside floral shop sales.",
+    "source_id" : "08a19d6ef0c7150e7d81aec93813e534"
+  }, {
+    "id" : "Library",
+    "entity_id" : "Library",
+    "entity_type" : "Location",
+    "description" : "A local library where books are borrowed by patrons and where librarians work.",
+    "source_id" : "c3f93a1015618e0b27fcb2267ed23a65"
+  }, {
+    "id" : "Thunderstorms",
+    "entity_id" : "Thunderstorms",
+    "entity_type" : "Event",
+    "description" : "Weather events in the area whose frequency increased during the same weeks that book borrowing numbers climbed.",
+    "source_id" : "c3f93a1015618e0b27fcb2267ed23a65"
+  }, {
+    "id" : "Regular patrons",
+    "entity_id" : "Regular patrons",
+    "entity_type" : "Person",
+    "description" : "Library users who noticed and pointed out the apparent pattern between book borrowing and thunderstorm frequency.",
+    "source_id" : "c3f93a1015618e0b27fcb2267ed23a65"
+  }, {
+    "id" : "Local librarians",
+    "entity_id" : "Local librarians",
+    "entity_type" : "Person",
+    "description" : "Staff at the local library who joked about rain being a good motivator for readers.",
+    "source_id" : "c3f93a1015618e0b27fcb2267ed23a65"
+  }, {
+    "id" : "Book borrowing",
+    "entity_id" : "Book borrowing",
+    "entity_type" : "Concept",
+    "description" : "The act of borrowing books from the library, which appeared to increase during weeks with more frequent thunderstorms.",
+    "source_id" : "c3f93a1015618e0b27fcb2267ed23a65"
+  }, {
+    "id" : "Reading habits",
+    "entity_id" : "Reading habits",
+    "entity_type" : "Concept",
+    "description" : "The behavior of reading, which regular patrons linked to stormy weather conditions.",
+    "source_id" : "c3f93a1015618e0b27fcb2267ed23a65"
+  }, {
+    "id" : "Stormy weather",
+    "entity_id" : "Stormy weather",
+    "entity_type" : "Concept",
+    "description" : "Weather conditions associated with increased thunderstorm frequency, which patrons and librarians connected to reading motivation.",
+    "source_id" : "c3f93a1015618e0b27fcb2267ed23a65"
+  }, {
+    "id" : "Residents",
+    "entity_id" : "Residents",
+    "entity_type" : "Person",
+    "description" : "People living in a neighborhood who noticed a temporal pattern between owl hooting and power outages, leading them to associate the two events.",
+    "source_id" : "68c134359bb350633603714901148382"
+  }, {
+    "id" : "Owl",
+    "entity_id" : "Owl",
+    "entity_type" : "Concept",
+    "description" : "A bird whose hooting in the neighborhood is observed to begin soon after power outages, though its activity is actually driven by its hunting cycle.",
+    "source_id" : "68c134359bb350633603714901148382"
+  }, {
+    "id" : "Power Outage",
+    "entity_id" : "Power Outage",
+    "entity_type" : "Event",
+    "description" : "A failure of electrical supply in the neighborhood, caused by unrelated grid maintenance rather than any connection to owl activity.",
+    "source_id" : "68c134359bb350633603714901148382"
+  }, {
+    "id" : "Hunting Cycle",
+    "entity_id" : "Hunting Cycle",
+    "entity_type" : "Concept",
+    "description" : "The natural biological rhythm governing the owl's activity and calling behavior, which is independent of external factors like darkness from power failures.",
+    "source_id" : "68c134359bb350633603714901148382"
+  }, {
+    "id" : "Grid Maintenance",
+    "entity_id" : "Grid Maintenance",
+    "entity_type" : "Event",
+    "description" : "Scheduled or necessary work on the electrical grid that is the actual cause of the power outages observed in the neighborhood.",
+    "source_id" : "68c134359bb350633603714901148382"
+  }, {
+    "id" : "False Causality",
+    "entity_id" : "False Causality",
+    "entity_type" : "Concept",
+    "description" : "The mistaken assumption of a causal link between two events that merely overlap in time, in this case the owl's hooting and the power outage.",
+    "source_id" : "68c134359bb350633603714901148382"
+  }, {
+    "id" : "Neighborhood",
+    "entity_id" : "Neighborhood",
+    "entity_type" : "Location",
+    "description" : "The residential area where residents observe the owl hooting and experience power outages.",
+    "source_id" : "68c134359bb350633603714901148382"
+  } ],
+  "edges" : [ {
+    "source" : "Business professionals",
+    "target" : "Frequent travel",
+    "weight" : "1.0",
+    "description" : "Business professionals engage in frequent travel as part of their work.",
+    "keywords" : "engagement, travel, work",
+    "source_id" : "3b8c43933c47d42365ddc7402665a5bb",
+    "src_id" : "Business professionals",
+    "tgt_id" : "Frequent travel"
+  }, {
+    "source" : "Business professionals",
+    "target" : "Productivity",
+    "weight" : "1.0",
+    "description" : "The productivity of business professionals fluctuates depending on their trip schedule.",
+    "keywords" : "fluctuation, work, schedule",
+    "source_id" : "3b8c43933c47d42365ddc7402665a5bb",
+    "src_id" : "Business professionals",
+    "tgt_id" : "Productivity"
+  }, {
+    "source" : "Business professionals",
+    "target" : "Colleagues",
+    "weight" : "1.0",
+    "description" : "Colleagues have noticed the recurring problems experienced by business professionals due to frequent travel.",
+    "keywords" : "observation, workplace, problems",
+    "source_id" : "3b8c43933c47d42365ddc7402665a5bb",
+    "src_id" : "Colleagues",
+    "tgt_id" : "Business professionals"
+  }, {
+    "source" : "Frequent travel",
+    "target" : "Jet lag",
+    "weight" : "1.0",
+    "description" : "Frequent travel causes episodes of jet lag in business professionals.",
+    "keywords" : "cause, disruption, travel",
+    "source_id" : "3b8c43933c47d42365ddc7402665a5bb",
+    "src_id" : "Frequent travel",
+    "tgt_id" : "Jet lag"
+  }, {
+    "source" : "Jet lag",
+    "target" : "Sleep patterns",
+    "weight" : "1.0",
+    "description" : "Jet lag disrupts the regular sleep patterns of affected individuals.",
+    "keywords" : "disruption, sleep, health",
+    "source_id" : "3b8c43933c47d42365ddc7402665a5bb",
+    "src_id" : "Jet lag",
+    "tgt_id" : "Sleep patterns"
+  }, {
+    "source" : "Jet lag",
+    "target" : "Eating habits",
+    "weight" : "1.0",
+    "description" : "Jet lag disrupts the regular eating habits of affected individuals.",
+    "keywords" : "disruption, diet, health",
+    "source_id" : "3b8c43933c47d42365ddc7402665a5bb",
+    "src_id" : "Jet lag",
+    "tgt_id" : "Eating habits"
+  }, {
+    "source" : "Jet lag",
+    "target" : "Medical experts",
+    "weight" : "1.0",
+    "description" : "Medical experts advise caution regarding jet lag but admit that solutions are not simple.",
+    "keywords" : "advice, caution, treatment",
+    "source_id" : "3b8c43933c47d42365ddc7402665a5bb",
+    "src_id" : "Medical experts",
+    "tgt_id" : "Jet lag"
+  }, {
+    "source" : "Neighborhoods",
+    "target" : "Pet Vaccination Campaigns",
+    "weight" : "1.0",
+    "description" : "Neighborhoods feature active campaigns for vaccinating pets, which is associated with fewer rabies cases.",
+    "keywords" : "active campaigns, vaccination, pets",
+    "source_id" : "f35888e60b642e472bb1cc229302be6f",
+    "src_id" : "Neighborhoods",
+    "tgt_id" : "Pet Vaccination Campaigns"
+  }, {
+    "source" : "Neighborhoods",
+    "target" : "Rabies",
+    "weight" : "1.0",
+    "description" : "Neighborhoods with active pet vaccination campaigns rarely experience rabies cases.",
+    "keywords" : "rarely face, disease, reduced cases",
+    "source_id" : "f35888e60b642e472bb1cc229302be6f",
+    "src_id" : "Neighborhoods",
+    "tgt_id" : "Rabies"
+  }, {
+    "source" : "Pet Vaccination Campaigns",
+    "target" : "Pet Owners",
+    "weight" : "1.0",
+    "description" : "Pet owners enjoy peace of mind as a result of active vaccination campaigns in their neighborhoods.",
+    "keywords" : "peace of mind, benefit, vaccination",
+    "source_id" : "f35888e60b642e472bb1cc229302be6f",
+    "src_id" : "Pet Owners",
+    "tgt_id" : "Pet Vaccination Campaigns"
+  }, {
+    "source" : "Rabies",
+    "target" : "Stray Animal Control",
+    "weight" : "1.0",
+    "description" : "Stray animal control is suggested as an alternative possibility explaining the reduced rabies cases.",
+    "keywords" : "alternative explanation, stray animals, disease reduction",
+    "source_id" : "f35888e60b642e472bb1cc229302be6f",
+    "src_id" : "Stray Animal Control",
+    "tgt_id" : "Rabies"
+  }, {
+    "source" : "Rabies",
+    "target" : "Seasonal Trends",
+    "weight" : "1.0",
+    "description" : "Seasonal trends are pointed to as another possible factor explaining the observed pattern in rabies cases.",
+    "keywords" : "alternative explanation, seasonal variation, disease",
+    "source_id" : "f35888e60b642e472bb1cc229302be6f",
+    "src_id" : "Seasonal Trends",
+    "tgt_id" : "Rabies"
+  }, {
+    "source" : "Veterinarians",
+    "target" : "City Reports",
+    "weight" : "1.0",
+    "description" : "Veterinarians note the observed pattern of reduced rabies cases in city reports.",
+    "keywords" : "note, pattern, documentation",
+    "source_id" : "f35888e60b642e472bb1cc229302be6f",
+    "src_id" : "Veterinarians",
+    "tgt_id" : "City Reports"
+  }, {
+    "source" : "Employees",
+    "target" : "Social Media",
+    "weight" : "1.0",
+    "description" : "Employees frequently discuss and check social media feeds during break times in the office.",
+    "keywords" : "usage, break time, feeds",
+    "source_id" : "ba8554248fecb8f30fe5cf47f3ab927f",
+    "src_id" : "Employees",
+    "tgt_id" : "Social Media"
+  }, {
+    "source" : "Employees",
+    "target" : "Teams",
+    "weight" : "1.0",
+    "description" : "Employees are organized into different teams within the office, each experiencing varying productivity levels.",
+    "keywords" : "membership, grouping, work",
+    "source_id" : "ba8554248fecb8f30fe5cf47f3ab927f",
+    "src_id" : "Employees",
+    "tgt_id" : "Teams"
+  }, {
+    "source" : "Social Media",
+    "target" : "Work Output",
+    "weight" : "1.0",
+    "description" : "Employees who check social media feeds most often tend to complete fewer tasks by the end of the day, suggesting a subtle negative effect on work output.",
+    "keywords" : "correlation, reduced tasks, subtle effects",
+    "source_id" : "ba8554248fecb8f30fe5cf47f3ab927f",
+    "src_id" : "Social Media",
+    "tgt_id" : "Work Output"
+  }, {
+    "source" : "Management",
+    "target" : "Productivity Levels",
+    "weight" : "1.0",
+    "description" : "Management has been talking about fluctuating productivity levels across different teams over recent months.",
+    "keywords" : "discussion, fluctuation, monitoring",
+    "source_id" : "ba8554248fecb8f30fe5cf47f3ab927f",
+    "src_id" : "Management",
+    "tgt_id" : "Productivity Levels"
+  }, {
+    "source" : "Management",
+    "target" : "Teams",
+    "weight" : "1.0",
+    "description" : "Management discusses and monitors productivity levels across different teams within the office.",
+    "keywords" : "oversight, cross-team, productivity",
+    "source_id" : "ba8554248fecb8f30fe5cf47f3ab927f",
+    "src_id" : "Management",
+    "tgt_id" : "Teams"
+  }, {
+    "source" : "Productivity Levels",
+    "target" : "Project Structures",
+    "weight" : "1.0",
+    "description" : "Some employees attribute the changes in productivity levels to new project structures rather than social media use.",
+    "keywords" : "alternative explanation, attribution, changes",
+    "source_id" : "ba8554248fecb8f30fe5cf47f3ab927f",
+    "src_id" : "Project Structures",
+    "tgt_id" : "Productivity Levels"
+  }, {
+    "source" : "Holidays",
+    "target" : "Floral shop sales",
+    "weight" : "1.0",
+    "description" : "Floral shop sales go up during holidays, forming a recurring annual pattern.",
+    "keywords" : "increase, seasonal, correlation",
+    "source_id" : "08a19d6ef0c7150e7d81aec93813e534",
+    "src_id" : "Holidays",
+    "tgt_id" : "Floral shop sales"
+  }, {
+    "source" : "Holidays",
+    "target" : "Restaurant reservations",
+    "weight" : "1.0",
+    "description" : "Restaurant reservations rise during holidays, forming a recurring annual pattern.",
+    "keywords" : "increase, seasonal, correlation",
+    "source_id" : "08a19d6ef0c7150e7d81aec93813e534",
+    "src_id" : "Holidays",
+    "tgt_id" : "Restaurant reservations"
+  }, {
+    "source" : "Floral shop sales",
+    "target" : "Restaurant reservations",
+    "weight" : "1.0",
+    "description" : "The close association between floral shop sales and restaurant reservations invites speculation about a deeper connection beyond mere timing.",
+    "keywords" : "association, correlation, speculation",
+    "source_id" : "08a19d6ef0c7150e7d81aec93813e534",
+    "src_id" : "Floral shop sales",
+    "tgt_id" : "Restaurant reservations"
+  }, {
+    "source" : "Couples",
+    "target" : "Floral shops",
+    "weight" : "1.0",
+    "description" : "Couples partake in purchasing from floral shops as part of holiday activities.",
+    "keywords" : "purchasing, participation, simultaneous",
+    "source_id" : "08a19d6ef0c7150e7d81aec93813e534",
+    "src_id" : "Couples",
+    "tgt_id" : "Floral shops"
+  }, {
+    "source" : "Couples",
+    "target" : "Restaurants",
+    "weight" : "1.0",
+    "description" : "Couples partake in dining at restaurants as part of holiday activities.",
+    "keywords" : "dining, participation, simultaneous",
+    "source_id" : "08a19d6ef0c7150e7d81aec93813e534",
+    "src_id" : "Couples",
+    "tgt_id" : "Restaurants"
+  }, {
+    "source" : "Floral shops",
+    "target" : "Families",
+    "weight" : "1.0",
+    "description" : "Families partake in purchasing from floral shops as part of holiday activities.",
+    "keywords" : "purchasing, participation, simultaneous",
+    "source_id" : "08a19d6ef0c7150e7d81aec93813e534",
+    "src_id" : "Families",
+    "tgt_id" : "Floral shops"
+  }, {
+    "source" : "Floral shops",
+    "target" : "Restaurants",
+    "weight" : "1.0",
+    "description" : "Businesses in both the floral and restaurant sectors notice the simultaneous rise in activity annually.",
+    "keywords" : "pattern, annual, sector",
+    "source_id" : "08a19d6ef0c7150e7d81aec93813e534",
+    "src_id" : "Floral shops",
+    "tgt_id" : "Restaurants"
+  }, {
+    "source" : "Restaurants",
+    "target" : "Families",
+    "weight" : "1.0",
+    "description" : "Families partake in dining at restaurants as part of holiday activities.",
+    "keywords" : "dining, participation, simultaneous",
+    "source_id" : "08a19d6ef0c7150e7d81aec93813e534",
+    "src_id" : "Families",
+    "tgt_id" : "Restaurants"
+  }, {
+    "source" : "Regular patrons",
+    "target" : "Library",
+    "weight" : "1.0",
+    "description" : "Regular patrons borrow books from the library and are its primary users.",
+    "keywords" : "borrowing, usage, patrons",
+    "source_id" : "c3f93a1015618e0b27fcb2267ed23a65",
+    "src_id" : "Regular patrons",
+    "tgt_id" : "Library"
+  }, {
+    "source" : "Regular patrons",
+    "target" : "Thunderstorms",
+    "weight" : "1.0",
+    "description" : "Regular patrons noticed and pointed out an apparent pattern between book borrowing and the frequency of thunderstorms.",
+    "keywords" : "correlation, observation, pattern",
+    "source_id" : "c3f93a1015618e0b27fcb2267ed23a65",
+    "src_id" : "Regular patrons",
+    "tgt_id" : "Thunderstorms"
+  }, {
+    "source" : "Library",
+    "target" : "Local librarians",
+    "weight" : "1.0",
+    "description" : "Local librarians work at the library and interact with patrons.",
+    "keywords" : "staff, employment, work",
+    "source_id" : "c3f93a1015618e0b27fcb2267ed23a65",
+    "src_id" : "Local librarians",
+    "tgt_id" : "Library"
+  }, {
+    "source" : "Library",
+    "target" : "Book borrowing",
+    "weight" : "1.0",
+    "description" : "Book borrowing is the primary activity that takes place at the library.",
+    "keywords" : "activity, location, service",
+    "source_id" : "c3f93a1015618e0b27fcb2267ed23a65",
+    "src_id" : "Book borrowing",
+    "tgt_id" : "Library"
+  }, {
+    "source" : "Thunderstorms",
+    "target" : "Book borrowing",
+    "weight" : "1.0",
+    "description" : "The number of books borrowed appeared to climb during weeks when thunderstorm frequency also increased, suggesting a possible correlation.",
+    "keywords" : "correlation, co-occurrence, seasonal",
+    "source_id" : "c3f93a1015618e0b27fcb2267ed23a65",
+    "src_id" : "Book borrowing",
+    "tgt_id" : "Thunderstorms"
+  }, {
+    "source" : "Local librarians",
+    "target" : "Reading habits",
+    "weight" : "1.0",
+    "description" : "Local librarians joked that rain is a good motivator for readers, linking weather to reading behavior.",
+    "keywords" : "motivation, humor, rain",
+    "source_id" : "c3f93a1015618e0b27fcb2267ed23a65",
+    "src_id" : "Local librarians",
+    "tgt_id" : "Reading habits"
+  }, {
+    "source" : "Reading habits",
+    "target" : "Stormy weather",
+    "weight" : "1.0",
+    "description" : "Regular patrons implied a possible link between reading habits and stormy weather, leading to speculative discussions.",
+    "keywords" : "link, association, speculation",
+    "source_id" : "c3f93a1015618e0b27fcb2267ed23a65",
+    "src_id" : "Reading habits",
+    "tgt_id" : "Stormy weather"
+  }, {
+    "source" : "Residents",
+    "target" : "Owl",
+    "weight" : "1.0",
+    "description" : "Residents in the neighborhood noticed the owl hooting and began associating its calls with the occurrence of power outages.",
+    "keywords" : "observation, association, hooting",
+    "source_id" : "68c134359bb350633603714901148382",
+    "src_id" : "Residents",
+    "tgt_id" : "Owl"
+  }, {
+    "source" : "Residents",
+    "target" : "Power Outage",
+    "weight" : "1.0",
+    "description" : "Residents observed that the owl's hooting tends to start soon after a power outage occurs in their neighborhood.",
+    "keywords" : "observation, timing, correlation",
+    "source_id" : "68c134359bb350633603714901148382",
+    "src_id" : "Residents",
+    "tgt_id" : "Power Outage"
+  }, {
+    "source" : "Residents",
+    "target" : "False Causality",
+    "weight" : "1.0",
+    "description" : "Residents made assumptions of causality between the owl's hooting and the power outage, believing darkness must attract or prompt the owl's calls.",
+    "keywords" : "assumption, misattribution, belief",
+    "source_id" : "68c134359bb350633603714901148382",
+    "src_id" : "Residents",
+    "tgt_id" : "False Causality"
+  }, {
+    "source" : "Residents",
+    "target" : "Neighborhood",
+    "weight" : "1.0",
+    "description" : "Residents live in the neighborhood where they observe both the owl hooting and the power outages.",
+    "keywords" : "residence, location, community",
+    "source_id" : "68c134359bb350633603714901148382",
+    "src_id" : "Residents",
+    "tgt_id" : "Neighborhood"
+  }, {
+    "source" : "Owl",
+    "target" : "Hunting Cycle",
+    "weight" : "1.0",
+    "description" : "Research shows that the owl's activity and calling behavior are governed by its natural hunting cycle, not by external darkness.",
+    "keywords" : "activity, biological rhythm, causation",
+    "source_id" : "68c134359bb350633603714901148382",
+    "src_id" : "Owl",
+    "tgt_id" : "Hunting Cycle"
+  }, {
+    "source" : "Owl",
+    "target" : "False Causality",
+    "weight" : "1.0",
+    "description" : "The perceived causal link between the owl's hooting and power outages is merely an artifact of repeated temporal overlap, not a genuine causal relationship.",
+    "keywords" : "temporal overlap, artifact, timing",
+    "source_id" : "68c134359bb350633603714901148382",
+    "src_id" : "False Causality",
+    "tgt_id" : "Owl"
+  }, {
+    "source" : "Power Outage",
+    "target" : "Grid Maintenance",
+    "weight" : "1.0",
+    "description" : "The power outages are caused by unrelated grid maintenance, with no connection to the owl's behavior.",
+    "keywords" : "cause, electrical failure, maintenance",
+    "source_id" : "68c134359bb350633603714901148382",
+    "src_id" : "Power Outage",
+    "tgt_id" : "Grid Maintenance"
+  } ],
+  "metadata" : {
+    "nodeCount" : 44,
+    "edgeCount" : 41
+  }
+}

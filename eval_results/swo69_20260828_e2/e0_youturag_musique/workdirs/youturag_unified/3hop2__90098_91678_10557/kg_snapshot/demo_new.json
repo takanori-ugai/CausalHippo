@@ -1,0 +1,3857 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Battle of Prague",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thirty Years' War",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Battle of Prague",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bohemia",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Battle of Prague",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Peace of Westphalia",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Swedes",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Battle of Prague",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Swedes",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "arrives_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bohemia",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "art collection",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rudolph II, Holy Roman Emperor",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "art collection",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Prague Castle",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "art collection",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sweden",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Elbe",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bohemia",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "barges",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Swedes",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "barges",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Elbe",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rudolph II, Holy Roman Emperor",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Prague Castle",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Anne of Bohemia",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Queen of England",
+      "chunk id" : "7WIPFrhR"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Anne of Bohemia",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "King Richard II",
+      "chunk id" : "7WIPFrhR"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Anne of Bohemia",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "House of Luxembourg",
+      "chunk id" : "7WIPFrhR"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Anne of Bohemia",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charles IV",
+      "chunk id" : "7WIPFrhR"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Anne of Bohemia",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Elizabeth of Pomerania",
+      "chunk id" : "7WIPFrhR"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Anne of Bohemia",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "England",
+      "chunk id" : "7WIPFrhR"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charles IV",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Emperor",
+      "chunk id" : "7WIPFrhR"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charles IV",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "King of Bohemia",
+      "chunk id" : "7WIPFrhR"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charles IV",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bohemia",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Elizabeth of Pomerania",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pomerania",
+      "chunk id" : "7WIPFrhR"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "King Richard II",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "England",
+      "chunk id" : "7WIPFrhR"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Anne of Bohemia",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "marriage to King Richard II",
+      "chunk id" : "7WIPFrhR"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charlemagne",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "King of the Franks",
+      "chunk id" : "CAMtYlDJ"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charlemagne",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "King of the Lombards",
+      "chunk id" : "CAMtYlDJ"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charlemagne",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Emperor",
+      "chunk id" : "7WIPFrhR"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charlemagne",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "western and central Europe",
+      "chunk id" : "CAMtYlDJ"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charlemagne",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "early Middle Ages",
+      "chunk id" : "CAMtYlDJ"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Carolingian Empire",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charlemagne",
+      "chunk id" : "CAMtYlDJ"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Carolingian Empire",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Frankish state",
+      "chunk id" : "CAMtYlDJ"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Western Roman Empire",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Carolingian Empire",
+      "chunk id" : "CAMtYlDJ"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Paschal III",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charlemagne",
+      "chunk id" : "CAMtYlDJ"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charlemagne",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Carolingian Empire",
+      "chunk id" : "CAMtYlDJ"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "House of Luxembourg",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "royal family",
+      "chunk id" : "wob8NubH"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "House of Luxembourg",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "House of Luxembourg",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bohemia",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "House of Luxembourg",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hungary",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "House of Luxembourg",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "House of Wittelsbach",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "House of Wittelsbach",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "House of Wittelsbach",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "House of Luxembourg",
+      "chunk id" : "7WIPFrhR"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bohemia",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hungary",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Carolingian Empire",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Europe",
+      "chunk id" : "pcKqq1d9"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charlemagne",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Carolingian Empire",
+      "chunk id" : "CAMtYlDJ"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Frankish state",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Carolingian Empire",
+      "chunk id" : "CAMtYlDJ"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charlemagne",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Europe",
+      "chunk id" : "pcKqq1d9"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Palermo",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Phoenicians",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Palermo",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Carthage",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Palermo",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Roman Republic",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Palermo",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Roman Empire",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Palermo",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Byzantine Empire",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Palermo",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Panormus",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Palermo",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Balarm",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Palermo",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Emirate of Sicily",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Palermo",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kingdom of Sicily",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Palermo",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kingdom of Sicily",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Frederick II",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Conrad IV",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kingdom of the Two Sicilies",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kingdom of Naples",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kingdom of the Two Sicilies",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Italian unification",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Emirate of Sicily",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sicily",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kingdom of Sicily",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sicily",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ziz",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Palermo",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Panormus",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Palermo",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Francis II",
+      "chunk id" : "yo4bTLKq",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Coronation of the Holy Roman Emperor",
+      "chunk id" : "yo4bTLKq",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Francis II",
+      "chunk id" : "yo4bTLKq",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Habsburg emperors",
+      "chunk id" : "yo4bTLKq",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charlemagne",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Imperial Double-headed Reichsadler",
+      "chunk id" : "yo4bTLKq",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Habsburg emperors",
+      "chunk id" : "yo4bTLKq",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Habsburg emperors",
+      "chunk id" : "yo4bTLKq",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Emperor of the Holy Roman Empire",
+      "chunk id" : "yo4bTLKq",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Francis II",
+      "chunk id" : "yo4bTLKq",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charlemagne",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Coronation of the Holy Roman Emperor",
+      "chunk id" : "yo4bTLKq",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Emperor of the Holy Roman Empire",
+      "chunk id" : "yo4bTLKq",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Maria Theresa of Naples and Sicily",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empress",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Maria Theresa of Naples and Sicily",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Empress of Austria",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Maria Theresa of Naples and Sicily",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Francis II, Holy Roman Emperor",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Maria Theresa of Naples and Sicily",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ferdinand IV & III of Naples and Sicily",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Maria Theresa of Naples and Sicily",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Marie Caroline of Austria",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ferdinand IV & III of Naples and Sicily",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Naples and Sicily",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Marie Caroline of Austria",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Austria",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Francis II, Holy Roman Emperor",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ferdinand IV & III of Naples and Sicily",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ferdinand I of the Two Sicilies",
+      "chunk id" : "oB44O2ar"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ferdinand I of the Two Sicilies",
+      "chunk id" : "oB44O2ar"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Two Sicilies",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saint Cunigunde of Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saint Henry II",
+      "chunk id" : "9CeO8R24"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saint Cunigunde of Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Empress of the Holy Roman Empire",
+      "chunk id" : "9CeO8R24"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saint Cunigunde of Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Roman Catholic saint",
+      "chunk id" : "9CeO8R24"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saint Cunigunde of Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Patroness of Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saint Cunigunde of Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Patroness of Lithuania",
+      "chunk id" : "9CeO8R24"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saint Cunigunde of Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "OSB",
+      "chunk id" : "9CeO8R24"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saint Henry II",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Emperor",
+      "chunk id" : "7WIPFrhR"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saint Cunigunde of Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "interim Regency after 1024",
+      "chunk id" : "9CeO8R24"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saint Cunigunde of Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saint Cunigunde of Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lithuania",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saint Cunigunde of Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Anne of Bohemia",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Austria",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Balarm",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bohemia",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Byzantine Empire",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Carolingian Empire",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Carthage",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charlemagne",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charles IV",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Conrad IV",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Coronation of the Holy Roman Emperor",
+      "chunk id" : "yo4bTLKq",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Elbe",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Elizabeth of Pomerania",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Emirate of Sicily",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Emperor of the Holy Roman Empire",
+      "chunk id" : "yo4bTLKq",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Empress of Austria",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Empress of the Holy Roman Empire",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "England",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Europe",
+      "chunk id" : "pcKqq1d9"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ferdinand I of the Two Sicilies",
+      "chunk id" : "oB44O2ar"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ferdinand IV & III of Naples and Sicily",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Francis II",
+      "chunk id" : "yo4bTLKq",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Francis II, Holy Roman Emperor",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Frankish state",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Frederick II",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Habsburg emperors",
+      "chunk id" : "yo4bTLKq",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Emperor",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empress",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "House of Luxembourg",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "House of Wittelsbach",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hungary",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Imperial Double-headed Reichsadler",
+      "chunk id" : "yo4bTLKq",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "King Richard II",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "King of Bohemia",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "King of the Franks",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "King of the Lombards",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kingdom of Sicily",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lithuania",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Maria Theresa of Naples and Sicily",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Marie Caroline of Austria",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Naples and Sicily",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "OSB",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Palermo",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Panormus",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Paschal III",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Patroness of Lithuania",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Patroness of Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Peace of Westphalia",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Phoenicians",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pomerania",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Queen of England",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Roman Catholic saint",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Roman Empire",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Roman Republic",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saint Cunigunde of Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saint Henry II",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sicily",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Swedes",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Battle of Prague",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thirty Years' War",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Two Sicilies",
+      "chunk id" : "oB44O2ar",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Western Roman Empire",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ziz",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "barges",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "early Middle Ages",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "interim Regency after 1024",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "marriage to King Richard II",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "royal family",
+      "chunk id" : "wob8NubH"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "western and central Europe",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Holy Roman Empire"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Holy Roman Empire",
+      "chunk id" : "wob8NubH",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Holy Roman Empire"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Holy Roman Empire"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charlemagne",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Charlemagne"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charlemagne",
+      "chunk id" : "CAMtYlDJ"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Charlemagne"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Charlemagne"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Palermo",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Palermo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Palermo",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Palermo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Palermo"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saint Cunigunde of Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Saint Cunigunde of Luxembourg"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saint Cunigunde of Luxembourg",
+      "chunk id" : "9CeO8R24"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Saint Cunigunde of Luxembourg"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Saint Cunigunde of Luxembourg"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "House of Luxembourg",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "House of Luxembourg"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "House of Luxembourg",
+      "chunk id" : "7WIPFrhR"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "House of Luxembourg"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "House of Luxembourg"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 71 members",
+      "community_id" : "community_1",
+      "node_count" : "71",
+      "edge_count" : "90",
+      "members" : [ "Anne of Bohemia", "Austria", "Balarm", "Bohemia", "Byzantine Empire", "Carolingian Empire", "Carthage", "Charlemagne", "Charles IV", "Conrad IV", "Coronation of the Holy Roman Emperor", "Elbe", "Elizabeth of Pomerania", "Emirate of Sicily", "Emperor of the Holy Roman Empire", "Empress of Austria", "Empress of the Holy Roman Empire", "England", "Europe", "Ferdinand I of the Two Sicilies", "Ferdinand IV & III of Naples and Sicily", "Francis II", "Francis II, Holy Roman Emperor", "Frankish state", "Frederick II", "Habsburg emperors", "Holy Roman Emperor", "Holy Roman Empire", "Holy Roman Empress", "House of Luxembourg", "House of Wittelsbach", "Hungary", "Imperial Double-headed Reichsadler", "King Richard II", "King of Bohemia", "King of the Franks", "King of the Lombards", "Kingdom of Sicily", "Lithuania", "Luxembourg", "Maria Theresa of Naples and Sicily", "Marie Caroline of Austria", "Naples and Sicily", "OSB", "Palermo", "Panormus", "Paschal III", "Patroness of Lithuania", "Patroness of Luxembourg", "Peace of Westphalia", "Phoenicians", "Pomerania", "Queen of England", "Roman Catholic saint", "Roman Empire", "Roman Republic", "Saint Cunigunde of Luxembourg", "Saint Henry II", "Sicily", "Swedes", "The Battle of Prague", "Thirty Years' War", "Two Sicilies", "Western Roman Empire", "Ziz", "barges", "early Middle Ages", "interim Regency after 1024", "marriage to King Richard II", "royal family", "western and central Europe" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Prague Castle",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 4 members",
+      "community_id" : "community_2",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "Prague Castle", "Rudolph II, Holy Roman Emperor", "Sweden", "art collection" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rudolph II, Holy Roman Emperor",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 4 members",
+      "community_id" : "community_2",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "Prague Castle", "Rudolph II, Holy Roman Emperor", "Sweden", "art collection" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sweden",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 4 members",
+      "community_id" : "community_2",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "Prague Castle", "Rudolph II, Holy Roman Emperor", "Sweden", "art collection" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "art collection",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 4 members",
+      "community_id" : "community_2",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "Prague Castle", "Rudolph II, Holy Roman Emperor", "Sweden", "art collection" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "art collection",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "art collection"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "art collection",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "art collection"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "art collection"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 4 members",
+      "community_id" : "community_2",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "Prague Castle", "Rudolph II, Holy Roman Emperor", "Sweden", "art collection" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rudolph II, Holy Roman Emperor",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Rudolph II, Holy Roman Emperor"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rudolph II, Holy Roman Emperor",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Rudolph II, Holy Roman Emperor"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Rudolph II, Holy Roman Emperor"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 4 members",
+      "community_id" : "community_2",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "Prague Castle", "Rudolph II, Holy Roman Emperor", "Sweden", "art collection" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Prague Castle",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Prague Castle"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Prague Castle",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Prague Castle"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Prague Castle"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 4 members",
+      "community_id" : "community_2",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "Prague Castle", "Rudolph II, Holy Roman Emperor", "Sweden", "art collection" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sweden",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sweden"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sweden",
+      "chunk id" : "ww7qQA_Z",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sweden"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sweden"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 4 members",
+      "community_id" : "community_2",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "Prague Castle", "Rudolph II, Holy Roman Emperor", "Sweden", "art collection" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Italian unification",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 3 members",
+      "community_id" : "community_3",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Italian unification", "Kingdom of Naples", "Kingdom of the Two Sicilies" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kingdom of Naples",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 3 members",
+      "community_id" : "community_3",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Italian unification", "Kingdom of Naples", "Kingdom of the Two Sicilies" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kingdom of the Two Sicilies",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 3 members",
+      "community_id" : "community_3",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Italian unification", "Kingdom of Naples", "Kingdom of the Two Sicilies" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kingdom of the Two Sicilies",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kingdom of the Two Sicilies"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kingdom of the Two Sicilies",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kingdom of the Two Sicilies"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kingdom of the Two Sicilies"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 3 members",
+      "community_id" : "community_3",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Italian unification", "Kingdom of Naples", "Kingdom of the Two Sicilies" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kingdom of Naples",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kingdom of Naples"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kingdom of Naples",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kingdom of Naples"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kingdom of Naples"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 3 members",
+      "community_id" : "community_3",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Italian unification", "Kingdom of Naples", "Kingdom of the Two Sicilies" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Italian unification",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Italian unification"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Italian unification",
+      "chunk id" : "AxoQW7dl",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Italian unification"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Italian unification"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 3 members",
+      "community_id" : "community_3",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Italian unification", "Kingdom of Naples", "Kingdom of the Two Sicilies" ]
+    }
+  }
+} ]

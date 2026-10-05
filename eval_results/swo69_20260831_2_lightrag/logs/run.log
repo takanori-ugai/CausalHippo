@@ -1,0 +1,27 @@
+=== [SWO69] run dir: eval_results/swo69_20260831_2_lightrag (reps=1 limit=15 datasets=musique) ===
+=== [SWO69] 06:06:54 START lightrag_e0_lightrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 07:33:25 END   lightrag_e0_lightrag_musique rc=0 wall=5191s ===
+=== [SWO69] 07:33:37 DONE mode=e0 ===
+=== [SWO69] run dir: eval_results/swo69_20260831_2_lightrag (reps=1 limit=15 datasets=musique) ===
+=== [SWO69] 07:33:37 E2  lightrag_musique_p0: perturbing 15 snapshots ===
+=== [SWO69] 07:45:51 END   e2/lightrag_musique_p0 rc=0 wall=733s ===
+=== [SWO69] 07:45:52 E2  lightrag_musique_p1_10: perturbing 15 snapshots ===
+=== [SWO69] 07:58:05 END   e2/lightrag_musique_p1_10 rc=0 wall=732s ===
+=== [SWO69] 07:58:07 E2  lightrag_musique_p1_30: perturbing 15 snapshots ===
+=== [SWO69] 08:09:20 END   e2/lightrag_musique_p1_30 rc=0 wall=672s ===
+=== [SWO69] 08:09:22 E2  lightrag_musique_p1_50: perturbing 15 snapshots ===
+=== [SWO69] 08:20:00 END   e2/lightrag_musique_p1_50 rc=0 wall=637s ===
+=== [SWO69] 08:20:02 E2  lightrag_musique_p2_10: perturbing 15 snapshots ===
+=== [SWO69] 08:31:09 END   e2/lightrag_musique_p2_10 rc=0 wall=666s ===
+=== [SWO69] 08:31:10 E2  lightrag_musique_p2_30: perturbing 15 snapshots ===
+=== [SWO69] 08:40:27 END   e2/lightrag_musique_p2_30 rc=0 wall=556s ===
+=== [SWO69] 08:40:28 E2  lightrag_musique_p3: perturbing 15 snapshots ===
+=== [SWO69] 08:51:44 END   e2/lightrag_musique_p3 rc=0 wall=675s ===
+=== [SWO69] 08:51:45 E2  lightrag_musique_p4: perturbing 15 snapshots ===
+=== [SWO69] 09:03:30 END   e2/lightrag_musique_p4 rc=0 wall=704s ===
+=== [SWO69] 09:03:31 E2  lightrag_musique_p5_10: perturbing 15 snapshots ===
+=== [SWO69] 09:15:53 END   e2/lightrag_musique_p5_10 rc=0 wall=741s ===
+=== [SWO69] 09:15:54 E2  lightrag_musique_p5_30: perturbing 15 snapshots ===
+=== [SWO69] 09:29:36 END   e2/lightrag_musique_p5_30 rc=0 wall=821s ===
+=== [SWO69] 09:29:38 SKIP e2/hipporag — no snapshots dir under eval_results/swo69_20260831_2_lightrag/e0_hipporag_musique ===
+=== [SWO69] 09:29:38 DONE mode=e2 ===

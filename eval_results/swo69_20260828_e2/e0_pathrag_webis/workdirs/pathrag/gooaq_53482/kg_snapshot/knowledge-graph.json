@@ -1,0 +1,127 @@
+{
+  "nodes" : {
+    "METHOD DEVELOPMENT" : {
+      "entity_type" : "EVENT",
+      "description" : "The process of optimizing chromatographic or analytical methods by varying solvent mixtures to achieve desired selectivity.",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    },
+    "METHANOL" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A solvent that forms highly viscous mixtures with water at certain concentrations, making it less ideal than acetonitrile in some applications.",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    },
+    "BINARY MIXTURES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Two-component solvent mixtures, typically of an organic solvent with water, used to achieve selectivity options in method development.",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    },
+    "TERNARY MIXTURES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Three-component solvent mixtures used alongside binary mixtures to produce a wide range of selectivity options.",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    },
+    "ACETONITRILE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A solvent often preferred in method development due to its low UV cutoff, lower viscosity, and higher boiling point compared to alternatives.",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    },
+    "SELECTIVITY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A separation property that can be tuned across a wide range by using different binary and ternary solvent mixtures with water.",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    },
+    "WATER" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A solvent used in binary and ternary mixtures with organic solvents to achieve a range of selectivity options during method development.",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    }
+  },
+  "edges" : [ {
+    "source" : "METHANOL",
+    "target" : "WATER",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Methanol forms highly viscous mixtures with water at certain concentrations, a known limitation.",
+      "keywords" : "viscosity issue, concentration-dependent",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    }
+  }, {
+    "source" : "METHANOL",
+    "target" : "METHOD DEVELOPMENT",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Methanol is used in method development but is limited by high viscosity when mixed with water at certain concentrations.",
+      "keywords" : "solvent limitation, viscosity issue",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    }
+  }, {
+    "source" : "TERNARY MIXTURES",
+    "target" : "SELECTIVITY",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Ternary mixtures of solvents with water extend the range of selectivity options available in method development.",
+      "keywords" : "selectivity range, multi-solvent system",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    }
+  }, {
+    "source" : "ACETONITRILE",
+    "target" : "METHANOL",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Acetonitrile is preferred over methanol due to lower viscosity and higher boiling point in aqueous mixtures.",
+      "keywords" : "solvent comparison, viscosity, boiling point",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    }
+  }, {
+    "source" : "ACETONITRILE",
+    "target" : "METHOD DEVELOPMENT",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Acetonitrile is often used in method development due to favorable properties like low UV cutoff and lower viscosity.",
+      "keywords" : "solvent preference, method optimization",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    }
+  }, {
+    "source" : "ACETONITRILE",
+    "target" : "WATER",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Acetonitrile forms mixtures with water, producing lower viscosity compared to methanol-water mixtures.",
+      "keywords" : "solvent-water interaction, viscosity",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    }
+  }, {
+    "source" : "WATER",
+    "target" : "METHOD DEVELOPMENT",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Water is a key component in solvent mixtures used during method development to achieve selectivity options.",
+      "keywords" : "solvent component, mixture formation",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    }
+  }, {
+    "source" : "BINARY MIXTURES",
+    "target" : "SELECTIVITY",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Binary mixtures of solvents with water produce a range of selectivity options during method development.",
+      "keywords" : "selectivity tuning, solvent pairing",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    }
+  }, {
+    "source" : "METHOD DEVELOPMENT",
+    "target" : "SELECTIVITY",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Method development aims to produce a wide range of selectivity options through varying solvent compositions.",
+      "keywords" : "optimization goal, separation performance",
+      "source_id" : "chunk-ec599ae26b9585e5241c6ab844bc0b32"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 7,
+    "edgeCount" : 9,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_webis/workdirs/pathrag/gooaq_53482"
+  }
+}

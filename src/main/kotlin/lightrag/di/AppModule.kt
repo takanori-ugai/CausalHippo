@@ -200,6 +200,7 @@ private fun createProviderChatModel(lightRagConfig: LightRagConfig): ChatModel =
         modelName = activeChatModelName(lightRagConfig),
         baseUrl = activeBaseUrl(lightRagConfig),
         apiKey = activeApiKey(lightRagConfig),
+        timeout = providerTimeoutSeconds(normalizedProvider(lightRagConfig)),
     )
 
 private fun createProviderStreamingChatModel(lightRagConfig: LightRagConfig): StreamingChatModel =
@@ -208,6 +209,7 @@ private fun createProviderStreamingChatModel(lightRagConfig: LightRagConfig): St
         modelName = activeChatModelName(lightRagConfig),
         baseUrl = activeBaseUrl(lightRagConfig),
         apiKey = activeApiKey(lightRagConfig),
+        timeout = providerTimeoutSeconds(normalizedProvider(lightRagConfig)),
     )
 
 private fun createEmbeddingModel(lightRagConfig: LightRagConfig): EmbeddingModel =
@@ -216,7 +218,23 @@ private fun createEmbeddingModel(lightRagConfig: LightRagConfig): EmbeddingModel
         modelName = activeEmbeddingModelName(lightRagConfig),
         baseUrl = activeBaseUrl(lightRagConfig),
         apiKey = activeApiKey(lightRagConfig),
+        timeout = providerTimeoutSeconds(normalizedProvider(lightRagConfig)),
     )
+
+/**
+ * Ollama generation can take longer than the 60-second LangChain4j default on
+ * a shared GPU, especially for the 27B model. Keep the normal provider
+ * default unchanged, while allowing offline runs to opt into a longer window.
+ */
+private fun providerTimeoutSeconds(provider: String): Long {
+    if (provider != "ollama") return 60
+
+    return System
+        .getenv("OLLAMA_TIMEOUT_SECONDS")
+        ?.toLongOrNull()
+        ?.takeIf { it > 0 }
+        ?: 300
+}
 
 private fun normalizedProvider(lightRagConfig: LightRagConfig): String = lightRagConfig.provider.trim().lowercase()
 

@@ -1,0 +1,460 @@
+kotlin-logging: initializing... active logger factory: Slf4jLoggerFactory
+00:25:53,470 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found logback-core version 1.5.38
+00:25:53,472 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - No custom configurators were discovered as a service.
+00:25:53,472 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+00:25:53,473 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+00:25:53,478 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+00:25:53,483 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml]
+00:25:53,832 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Scan attribute set to true. Will scan for configuration file changes.
+00:25:53,862 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@15de0b3c - URL [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml] is not of type file
+00:25:53,879 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "INFO" substituted for "${ROOT_LOG_LEVEL:-INFO}"
+00:25:53,879 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL:-DEBUG}"
+00:25:53,879 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_LOG_LEVEL:-TRACE}"
+00:25:53,879 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL:-TRACE}"
+00:25:53,879 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL:-ERROR}"
+00:25:53,879 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL:-ERROR}"
+00:25:53,879 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL:-ERROR}"
+00:25:53,879 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL:-DEBUG}"
+00:25:53,884 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Missing watchable .xml or .properties files.
+00:25:53,884 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Watching .xml files requires that the main configuration file is reachable as a URL
+00:25:53,884 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Main configuration file URL: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml
+00:25:53,890 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - FileWatchList= {}
+00:25:53,891 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - URLWatchList= {}
+00:25:53,926 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+00:25:53,926 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+00:25:53,953 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+00:25:54,057 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - NOTE: Writing to the console can be slow. Try to avoid logging to the 
+00:25:54,057 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - console in production environments, especially in high volume systems.
+00:25:54,057 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also https://logback.qos.ch/codes.html#slowConsole
+00:25:54,058 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL}"
+00:25:54,059 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag] to DEBUG
+00:25:54,064 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag] to false
+00:25:54,064 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag]
+00:25:54,064 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_LOG_LEVEL}"
+00:25:54,064 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.neo4j] to TRACE
+00:25:54,064 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.neo4j] to false
+00:25:54,064 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.neo4j]
+00:25:54,064 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL}"
+00:25:54,064 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.neo4j.driver] to TRACE
+00:25:54,064 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.neo4j.driver] to false
+00:25:54,065 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[org.neo4j.driver]
+00:25:54,065 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL}"
+00:25:54,065 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.memory] to DEBUG
+00:25:54,068 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.memory] to false
+00:25:54,068 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.memory]
+00:25:54,068 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL}"
+00:25:54,068 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j] to ERROR
+00:25:54,068 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j] to false
+00:25:54,068 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j]
+00:25:54,068 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+00:25:54,068 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.okhttp] to ERROR
+00:25:54,068 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.okhttp] to false
+00:25:54,068 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.okhttp]
+00:25:54,068 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+00:25:54,068 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.openai] to ERROR
+00:25:54,068 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.openai] to false
+00:25:54,068 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.openai]
+00:25:54,068 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+00:25:54,069 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [okhttp3] to ERROR
+00:25:54,069 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [okhttp3] to false
+00:25:54,069 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[okhttp3]
+00:25:54,069 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL}"
+00:25:54,069 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.ai4j.openai4j] to ERROR
+00:25:54,069 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.ai4j.openai4j] to false
+00:25:54,069 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.ai4j.openai4j]
+00:25:54,069 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "INFO" substituted for "${ROOT_LOG_LEVEL}"
+00:25:54,069 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+00:25:54,069 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+00:25:54,069 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@3857f613 - End of configuration.
+00:25:54,078 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@198b6731 - Registering current configuration as safe fallback point
+00:25:54,098 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 605 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+WARNING: --use-unified-api=false keeps 'shared.eval.graph.MultiConditionGraphExperimentKt' on legacy condition runners. This compatibility path is planned for deprecation; prefer --use-unified-api=true.
+Running 1 conditions on 1 samples
+Parallelism: 1
+Unified API: false
+Unified persistence SPI: false
+Data: data/musique_experiment/musique_dev_balanced_30.jsonl
+Output: eval_results/swo69_s0/pathrag_llama3b
+
+=== Condition: pathrag (PathRAG (pathrag)) ===
+2026-08-19 00:25:58.083 [DefaultDispatcher-worker-1] INFO  PathRAG-Operate - Extracting entities for 20 chunks via LLM.
+2026-08-19 00:26:12.112 [DefaultDispatcher-worker-32] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-e6df81744de420038452a3169110ad64: Unexpected JSON token at offset 0: Expected start of the object '{', but had 'p' instead at path: $
+JSON input: python
+import re
+import json
+
+.....
+2026-08-19 00:27:26.221 [DefaultDispatcher-worker-21] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-9bc82d34cf13211c56c0ff71de0a6ab2: Unexpected JSON token at offset 296: Encountered an unknown key 'entity_name_upper' at path: $.entities[2]
+Use 'ignoreUnknownKeys = true' in 'Json {}' builder or '@JsonIgnoreUnknownKeys' annotation to ignore unknown keys.
+JSON input: ....."entity_name": "JOHN WAYNE", "entity_name_upper": "JOHN WAYN.....
+2026-08-19 00:28:59.829 [DefaultDispatcher-worker-16] WARN  PathRAG-LLM - Ollama chat attempt 1 failed for model llama3.2:3b
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.guardrail.SynchronousChatExecutor.execute(SynchronousChatExecutor.java:32)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.executeInternal(AbstractChatExecutor.java:66)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.execute(AbstractChatExecutor.java:52)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:333)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:162)
+	at pathrag.llm.$Proxy11.chat(Unknown Source)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invokeSuspend(Llm.kt:214)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt.retryWithBackoff(Llm.kt:446)
+	at pathrag.llm.LlmKt.access$retryWithBackoff(Llm.kt:1)
+	at pathrag.llm.LlmKt$ollamaComplete$2.invokeSuspend(Llm.kt:211)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 31 common frames omitted
+2026-08-19 00:28:59.843 [DefaultDispatcher-worker-11] WARN  PathRAG-LLM - Ollama chat attempt 1 failed for model llama3.2:3b
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.guardrail.SynchronousChatExecutor.execute(SynchronousChatExecutor.java:32)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.executeInternal(AbstractChatExecutor.java:66)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.execute(AbstractChatExecutor.java:52)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:333)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:162)
+	at pathrag.llm.$Proxy11.chat(Unknown Source)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invokeSuspend(Llm.kt:214)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt.retryWithBackoff(Llm.kt:446)
+	at pathrag.llm.LlmKt.access$retryWithBackoff(Llm.kt:1)
+	at pathrag.llm.LlmKt$ollamaComplete$2.invokeSuspend(Llm.kt:211)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 31 common frames omitted
+2026-08-19 00:28:59.903 [DefaultDispatcher-worker-7] WARN  PathRAG-LLM - Ollama chat attempt 1 failed for model llama3.2:3b
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.guardrail.SynchronousChatExecutor.execute(SynchronousChatExecutor.java:32)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.executeInternal(AbstractChatExecutor.java:66)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.execute(AbstractChatExecutor.java:52)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:333)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:162)
+	at pathrag.llm.$Proxy11.chat(Unknown Source)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invokeSuspend(Llm.kt:214)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt.retryWithBackoff(Llm.kt:446)
+	at pathrag.llm.LlmKt.access$retryWithBackoff(Llm.kt:1)
+	at pathrag.llm.LlmKt$ollamaComplete$2.invokeSuspend(Llm.kt:211)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 31 common frames omitted
+2026-08-19 00:28:59.918 [DefaultDispatcher-worker-13] WARN  PathRAG-LLM - Ollama chat attempt 1 failed for model llama3.2:3b
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.guardrail.SynchronousChatExecutor.execute(SynchronousChatExecutor.java:32)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.executeInternal(AbstractChatExecutor.java:66)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.execute(AbstractChatExecutor.java:52)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:333)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:162)
+	at pathrag.llm.$Proxy11.chat(Unknown Source)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invokeSuspend(Llm.kt:214)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt.retryWithBackoff(Llm.kt:446)
+	at pathrag.llm.LlmKt.access$retryWithBackoff(Llm.kt:1)
+	at pathrag.llm.LlmKt$ollamaComplete$2.invokeSuspend(Llm.kt:211)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 31 common frames omitted
+2026-08-19 00:28:59.945 [DefaultDispatcher-worker-15] WARN  PathRAG-LLM - Ollama chat attempt 1 failed for model llama3.2:3b
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.guardrail.SynchronousChatExecutor.execute(SynchronousChatExecutor.java:32)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.executeInternal(AbstractChatExecutor.java:66)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.execute(AbstractChatExecutor.java:52)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:333)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:162)
+	at pathrag.llm.$Proxy11.chat(Unknown Source)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invokeSuspend(Llm.kt:214)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt.retryWithBackoff(Llm.kt:446)
+	at pathrag.llm.LlmKt.access$retryWithBackoff(Llm.kt:1)
+	at pathrag.llm.LlmKt$ollamaComplete$2.invokeSuspend(Llm.kt:211)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 31 common frames omitted
+2026-08-19 00:28:59.945 [DefaultDispatcher-worker-9] WARN  PathRAG-LLM - Ollama chat attempt 1 failed for model llama3.2:3b
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.guardrail.SynchronousChatExecutor.execute(SynchronousChatExecutor.java:32)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.executeInternal(AbstractChatExecutor.java:66)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.execute(AbstractChatExecutor.java:52)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:333)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:162)
+	at pathrag.llm.$Proxy11.chat(Unknown Source)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invokeSuspend(Llm.kt:214)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt.retryWithBackoff(Llm.kt:446)
+	at pathrag.llm.LlmKt.access$retryWithBackoff(Llm.kt:1)
+	at pathrag.llm.LlmKt$ollamaComplete$2.invokeSuspend(Llm.kt:211)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 31 common frames omitted
+2026-08-19 00:29:00.068 [DefaultDispatcher-worker-4] WARN  PathRAG-LLM - Ollama chat attempt 1 failed for model llama3.2:3b
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.guardrail.SynchronousChatExecutor.execute(SynchronousChatExecutor.java:32)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.executeInternal(AbstractChatExecutor.java:66)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.execute(AbstractChatExecutor.java:52)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:333)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:162)
+	at pathrag.llm.$Proxy11.chat(Unknown Source)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invokeSuspend(Llm.kt:214)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt.retryWithBackoff(Llm.kt:446)
+	at pathrag.llm.LlmKt.access$retryWithBackoff(Llm.kt:1)
+	at pathrag.llm.LlmKt$ollamaComplete$2.invokeSuspend(Llm.kt:211)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 31 common frames omitted
+2026-08-19 00:29:00.069 [DefaultDispatcher-worker-2] WARN  PathRAG-LLM - Ollama chat attempt 1 failed for model llama3.2:3b
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.guardrail.SynchronousChatExecutor.execute(SynchronousChatExecutor.java:32)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.executeInternal(AbstractChatExecutor.java:66)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.execute(AbstractChatExecutor.java:52)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:333)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:162)
+	at pathrag.llm.$Proxy11.chat(Unknown Source)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invokeSuspend(Llm.kt:214)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt.retryWithBackoff(Llm.kt:446)
+	at pathrag.llm.LlmKt.access$retryWithBackoff(Llm.kt:1)
+	at pathrag.llm.LlmKt$ollamaComplete$2.invokeSuspend(Llm.kt:211)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 31 common frames omitted
+2026-08-19 00:29:13.389 [DefaultDispatcher-worker-5] WARN  PathRAG-LLM - Ollama chat attempt 1 failed for model llama3.2:3b
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.guardrail.SynchronousChatExecutor.execute(SynchronousChatExecutor.java:32)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.executeInternal(AbstractChatExecutor.java:66)
+	at dev.langchain4j.guardrail.AbstractChatExecutor.execute(AbstractChatExecutor.java:52)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:333)
+	at dev.langchain4j.service.DefaultAiServices$1.invoke(DefaultAiServices.java:162)
+	at pathrag.llm.$Proxy11.chat(Unknown Source)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invokeSuspend(Llm.kt:214)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt$ollamaComplete$2$result$1.invoke(Llm.kt)
+	at pathrag.llm.LlmKt.retryWithBackoff(Llm.kt:446)
+	at pathrag.llm.LlmKt.access$retryWithBackoff(Llm.kt:1)
+	at pathrag.llm.LlmKt$ollamaComplete$2.invokeSuspend(Llm.kt:211)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 31 common frames omitted
+2026-08-19 00:29:28.539 [DefaultDispatcher-worker-10] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-dc7d03debcacc034548de9a68cff404c: Unexpected JSON token at offset 0: Expected start of the object '{', but had 'p' instead at path: $
+JSON input: python
+import re
+from collecti.....
+2026-08-19 00:30:58.350 [DefaultDispatcher-worker-2] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-cfed1a016bd61e33cf5d93d138404eb7: Expected end of the array ']', but had 'EOF' instead at path: $.entities
+JSON input: .....son who appeared in the Fashion Police Halloween special." }
+2026-08-19 00:31:56.639 [DefaultDispatcher-worker-1] INFO  PathRAG - Saved graph snapshot to 'eval_results/swo69_s0/pathrag_llama3b/storage/pathrag/pathrag/2hop__734057_88628/kg_snapshot/knowledge-graph.json' with 102 nodes and 94 edges.
+2026-08-19 00:32:07.778 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found placeholder platform from: cu128-linux-x86_64:2.7.1
+Warning: BertScore computation failed, defaulting to 0.0. Cause: Failed to load PyTorch native library
+2026-08-19 00:32:07.839 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found placeholder platform from: cu128-linux-x86_64:2.7.1
+2026-08-19 00:32:07.871 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found placeholder platform from: cu128-linux-x86_64:2.7.1
+2026-08-19 00:32:07.888 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found placeholder platform from: cu128-linux-x86_64:2.7.1
+2026-08-19 00:32:07.898 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found placeholder platform from: cu128-linux-x86_64:2.7.1
+2026-08-19 00:32:07.907 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found placeholder platform from: cu128-linux-x86_64:2.7.1
+2026-08-19 00:32:07.915 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found placeholder platform from: cu128-linux-x86_64:2.7.1
+pathrag: processed 1/1
+Wrote 1 rows -> eval_results/swo69_s0/pathrag_llama3b/per_question/pathrag.jsonl
+
+Finished. Aggregate CSV can be produced by scripts/aggregate_experiment_results.py

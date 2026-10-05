@@ -1,0 +1,5259 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Michael J. Fox Show",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "NBC",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Michael J. Fox Show",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "U.S.",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Michael J. Fox Show",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2014 Winter Olympics",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "NBC",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Michael J. Fox Show",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2014 Winter Olympics",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "official cancellation of The Michael J. Fox Show",
+      "chunk id" : "scjp42Wk"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Michael J. Fox Show",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2014 Winter Olympics",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Slumgullion Pass",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mountain pass",
+      "chunk id" : "x9ZzFFnD"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Slumgullion Pass",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "southwestern Colorado",
+      "chunk id" : "x9ZzFFnD"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Slumgullion Pass",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lake City",
+      "chunk id" : "x9ZzFFnD"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "State Highway 149",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Slumgullion Pass",
+      "chunk id" : "x9ZzFFnD"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "State Highway 149",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Colorado",
+      "chunk id" : "x9ZzFFnD"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lake City",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Colorado",
+      "chunk id" : "x9ZzFFnD"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "North side",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Slumgullion Pass",
+      "chunk id" : "x9ZzFFnD"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Snowplows",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Slumgullion Pass",
+      "chunk id" : "x9ZzFFnD"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Smallville",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Chloe Sullivan",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Chloe Sullivan",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Smallville High",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Smallville High Torch",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Inquisitor",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Daily Planet",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Smallville High Torch",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Smallville High",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Clark Kent",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Clark Kent",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season four",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season six",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season seven",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season eight",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season nine",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season ten",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Chloe Sullivan",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Smallville",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Smallville High",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Smallville",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Inquisitor",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Smallville",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season four",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season six",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season six",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season seven",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season seven",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season eight",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season eight",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season nine",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season nine",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season ten",
+      "chunk id" : "TqCMaSUo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Meet the Barkers",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "MTV",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Travis Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "blink-182",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Travis Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shanna Moakler",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Alabama Luella Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Travis Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Alabama Luella Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shanna Moakler",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Landon Asher Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Travis Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Landon Asher Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shanna Moakler",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Atiana Cecelia De La Hoya",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Oscar De La Hoya",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Atiana Cecelia De La Hoya",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shanna Moakler",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Travis Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Meet the Barkers",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shanna Moakler",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Meet the Barkers",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Alabama Luella Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Meet the Barkers",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Landon Asher Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Meet the Barkers",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Atiana Cecelia De La Hoya",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Meet the Barkers",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Travis Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "person",
+      "chunk id" : "wyBjZbjc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "blink-182",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "organization",
+      "chunk id" : "wyBjZbjc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "MTV",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "organization",
+      "chunk id" : "wyBjZbjc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Meet the Barkers",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "creative_work",
+      "chunk id" : "wyBjZbjc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill air disaster",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "27 February 1958",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "G-AICS",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Silver City Airways",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "G-AICS",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill air disaster",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "G-AICS",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "arrives_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Manchester",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "G-AICS",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Isle of Man",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "G-AICS",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Manchester",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "England",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "England",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill transmitting station",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill transmitting station",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Independent Television Authority",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rivington Moor",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "comparable_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill air disaster",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bolivian highland peasants",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "indigenous language, culture, customs, communal organization",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bolivian highland peasants",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "resisted",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dissolution of communal landholdings",
+      "chunk id" : "3WZIgO60"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bolivian highland peasants",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "empowered caciques",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Indigenous revolts",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1953",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "National Revolutionary Movement government",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "self-identification as indigenous",
+      "chunk id" : "3WZIgO60"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "National Revolutionary Movement government",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "campesinos",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Katarista movement",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1970s",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Katarista movement",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ethnic and class militancy",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lowland indigenous peoples",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "east",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lowland indigenous peoples",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1990 March for Territory and Dignity",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1990 March for Territory and Dignity",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "CIDOB confederation",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1990 March for Territory and Dignity",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "national government",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "national government",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ILO Convention 169",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "national government",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "recognizing and titling indigenous territories",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1994 Law of Popular Participation",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "national government",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1994 Law of Popular Participation",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "grassroots territorial organizations",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "grassroots territorial organizations",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "state",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "grassroots territorial organizations",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "rights to govern local areas",
+      "chunk id" : "3WZIgO60"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Spanish conquest",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "post-independence period",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Chloe Sullivan",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Clark Kent",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Daily Planet",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Inquisitor",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season eight",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season four",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season nine",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season seven",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season six",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season ten",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Smallville",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Smallville High",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Smallville High Torch",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Lois"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lois",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Lois"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Lois"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Smallville",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Smallville"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Smallville",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Smallville"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Smallville"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Smallville High",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Smallville High"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Smallville High",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Smallville High"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Smallville High"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season seven",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Season seven"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season seven",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Season seven"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Season seven"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season eight",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Season eight"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Season eight",
+      "chunk id" : "TqCMaSUo"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Season eight"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Season eight"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "24",
+      "members" : [ "Chloe Sullivan", "Clark Kent", "Daily Planet", "Inquisitor", "Lois", "Season eight", "Season four", "Season nine", "Season seven", "Season six", "Season ten", "Smallville", "Smallville High", "Smallville High Torch" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Alabama Luella Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Atiana Cecelia De La Hoya",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Landon Asher Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "MTV",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Meet the Barkers",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Oscar De La Hoya",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shanna Moakler",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Travis Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "blink-182",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "creative_work",
+      "chunk id" : "wyBjZbjc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "organization",
+      "chunk id" : "wyBjZbjc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "person",
+      "chunk id" : "wyBjZbjc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Meet the Barkers",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Meet the Barkers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Meet the Barkers",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Meet the Barkers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Meet the Barkers"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Travis Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Travis Barker"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Travis Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Travis Barker"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Travis Barker"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shanna Moakler",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Shanna Moakler"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shanna Moakler",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Shanna Moakler"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Shanna Moakler"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Atiana Cecelia De La Hoya",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Atiana Cecelia De La Hoya"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Atiana Cecelia De La Hoya",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Atiana Cecelia De La Hoya"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Atiana Cecelia De La Hoya"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Alabama Luella Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Alabama Luella Barker"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Alabama Luella Barker",
+      "chunk id" : "wyBjZbjc",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Alabama Luella Barker"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Alabama Luella Barker"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "18",
+      "members" : [ "Alabama Luella Barker", "Atiana Cecelia De La Hoya", "Landon Asher Barker", "MTV", "Meet the Barkers", "Oscar De La Hoya", "Shanna Moakler", "Travis Barker", "blink-182", "creative_work", "organization", "person" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1990 March for Territory and Dignity",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "10",
+      "members" : [ "1990 March for Territory and Dignity", "1994 Law of Popular Participation", "CIDOB confederation", "ILO Convention 169", "Lowland indigenous peoples", "east", "grassroots territorial organizations", "national government", "recognizing and titling indigenous territories", "rights to govern local areas", "state" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1994 Law of Popular Participation",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "10",
+      "members" : [ "1990 March for Territory and Dignity", "1994 Law of Popular Participation", "CIDOB confederation", "ILO Convention 169", "Lowland indigenous peoples", "east", "grassroots territorial organizations", "national government", "recognizing and titling indigenous territories", "rights to govern local areas", "state" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "CIDOB confederation",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "10",
+      "members" : [ "1990 March for Territory and Dignity", "1994 Law of Popular Participation", "CIDOB confederation", "ILO Convention 169", "Lowland indigenous peoples", "east", "grassroots territorial organizations", "national government", "recognizing and titling indigenous territories", "rights to govern local areas", "state" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ILO Convention 169",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "10",
+      "members" : [ "1990 March for Territory and Dignity", "1994 Law of Popular Participation", "CIDOB confederation", "ILO Convention 169", "Lowland indigenous peoples", "east", "grassroots territorial organizations", "national government", "recognizing and titling indigenous territories", "rights to govern local areas", "state" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lowland indigenous peoples",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "10",
+      "members" : [ "1990 March for Territory and Dignity", "1994 Law of Popular Participation", "CIDOB confederation", "ILO Convention 169", "Lowland indigenous peoples", "east", "grassroots territorial organizations", "national government", "recognizing and titling indigenous territories", "rights to govern local areas", "state" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "east",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "10",
+      "members" : [ "1990 March for Territory and Dignity", "1994 Law of Popular Participation", "CIDOB confederation", "ILO Convention 169", "Lowland indigenous peoples", "east", "grassroots territorial organizations", "national government", "recognizing and titling indigenous territories", "rights to govern local areas", "state" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "grassroots territorial organizations",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "10",
+      "members" : [ "1990 March for Territory and Dignity", "1994 Law of Popular Participation", "CIDOB confederation", "ILO Convention 169", "Lowland indigenous peoples", "east", "grassroots territorial organizations", "national government", "recognizing and titling indigenous territories", "rights to govern local areas", "state" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "national government",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "10",
+      "members" : [ "1990 March for Territory and Dignity", "1994 Law of Popular Participation", "CIDOB confederation", "ILO Convention 169", "Lowland indigenous peoples", "east", "grassroots territorial organizations", "national government", "recognizing and titling indigenous territories", "rights to govern local areas", "state" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "recognizing and titling indigenous territories",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "10",
+      "members" : [ "1990 March for Territory and Dignity", "1994 Law of Popular Participation", "CIDOB confederation", "ILO Convention 169", "Lowland indigenous peoples", "east", "grassroots territorial organizations", "national government", "recognizing and titling indigenous territories", "rights to govern local areas", "state" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "rights to govern local areas",
+      "chunk id" : "3WZIgO60"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "10",
+      "members" : [ "1990 March for Territory and Dignity", "1994 Law of Popular Participation", "CIDOB confederation", "ILO Convention 169", "Lowland indigenous peoples", "east", "grassroots territorial organizations", "national government", "recognizing and titling indigenous territories", "rights to govern local areas", "state" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "state",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "10",
+      "members" : [ "1990 March for Territory and Dignity", "1994 Law of Popular Participation", "CIDOB confederation", "ILO Convention 169", "Lowland indigenous peoples", "east", "grassroots territorial organizations", "national government", "recognizing and titling indigenous territories", "rights to govern local areas", "state" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "national government",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "national government"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "national government",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "national government"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "national government"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "10",
+      "members" : [ "1990 March for Territory and Dignity", "1994 Law of Popular Participation", "CIDOB confederation", "ILO Convention 169", "Lowland indigenous peoples", "east", "grassroots territorial organizations", "national government", "recognizing and titling indigenous territories", "rights to govern local areas", "state" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1990 March for Territory and Dignity",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "1990 March for Territory and Dignity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1990 March for Territory and Dignity",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "1990 March for Territory and Dignity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "1990 March for Territory and Dignity"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "10",
+      "members" : [ "1990 March for Territory and Dignity", "1994 Law of Popular Participation", "CIDOB confederation", "ILO Convention 169", "Lowland indigenous peoples", "east", "grassroots territorial organizations", "national government", "recognizing and titling indigenous territories", "rights to govern local areas", "state" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "grassroots territorial organizations",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "grassroots territorial organizations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "grassroots territorial organizations",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "grassroots territorial organizations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "grassroots territorial organizations"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "10",
+      "members" : [ "1990 March for Territory and Dignity", "1994 Law of Popular Participation", "CIDOB confederation", "ILO Convention 169", "Lowland indigenous peoples", "east", "grassroots territorial organizations", "national government", "recognizing and titling indigenous territories", "rights to govern local areas", "state" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1994 Law of Popular Participation",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "1994 Law of Popular Participation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1994 Law of Popular Participation",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "1994 Law of Popular Participation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "1994 Law of Popular Participation"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "10",
+      "members" : [ "1990 March for Territory and Dignity", "1994 Law of Popular Participation", "CIDOB confederation", "ILO Convention 169", "Lowland indigenous peoples", "east", "grassroots territorial organizations", "national government", "recognizing and titling indigenous territories", "rights to govern local areas", "state" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lowland indigenous peoples",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Lowland indigenous peoples"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lowland indigenous peoples",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Lowland indigenous peoples"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Lowland indigenous peoples"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "10",
+      "members" : [ "1990 March for Territory and Dignity", "1994 Law of Popular Participation", "CIDOB confederation", "ILO Convention 169", "Lowland indigenous peoples", "east", "grassroots territorial organizations", "national government", "recognizing and titling indigenous territories", "rights to govern local areas", "state" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "27 February 1958",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 11 members",
+      "community_id" : "community_4",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "27 February 1958", "England", "G-AICS", "Independent Television Authority", "Isle of Man", "Manchester", "Rivington Moor", "Silver City Airways", "Winter Hill", "Winter Hill air disaster", "Winter Hill transmitting station" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "England",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 11 members",
+      "community_id" : "community_4",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "27 February 1958", "England", "G-AICS", "Independent Television Authority", "Isle of Man", "Manchester", "Rivington Moor", "Silver City Airways", "Winter Hill", "Winter Hill air disaster", "Winter Hill transmitting station" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "G-AICS",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 11 members",
+      "community_id" : "community_4",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "27 February 1958", "England", "G-AICS", "Independent Television Authority", "Isle of Man", "Manchester", "Rivington Moor", "Silver City Airways", "Winter Hill", "Winter Hill air disaster", "Winter Hill transmitting station" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Independent Television Authority",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 11 members",
+      "community_id" : "community_4",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "27 February 1958", "England", "G-AICS", "Independent Television Authority", "Isle of Man", "Manchester", "Rivington Moor", "Silver City Airways", "Winter Hill", "Winter Hill air disaster", "Winter Hill transmitting station" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Isle of Man",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 11 members",
+      "community_id" : "community_4",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "27 February 1958", "England", "G-AICS", "Independent Television Authority", "Isle of Man", "Manchester", "Rivington Moor", "Silver City Airways", "Winter Hill", "Winter Hill air disaster", "Winter Hill transmitting station" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Manchester",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 11 members",
+      "community_id" : "community_4",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "27 February 1958", "England", "G-AICS", "Independent Television Authority", "Isle of Man", "Manchester", "Rivington Moor", "Silver City Airways", "Winter Hill", "Winter Hill air disaster", "Winter Hill transmitting station" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rivington Moor",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 11 members",
+      "community_id" : "community_4",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "27 February 1958", "England", "G-AICS", "Independent Television Authority", "Isle of Man", "Manchester", "Rivington Moor", "Silver City Airways", "Winter Hill", "Winter Hill air disaster", "Winter Hill transmitting station" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Silver City Airways",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 11 members",
+      "community_id" : "community_4",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "27 February 1958", "England", "G-AICS", "Independent Television Authority", "Isle of Man", "Manchester", "Rivington Moor", "Silver City Airways", "Winter Hill", "Winter Hill air disaster", "Winter Hill transmitting station" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 11 members",
+      "community_id" : "community_4",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "27 February 1958", "England", "G-AICS", "Independent Television Authority", "Isle of Man", "Manchester", "Rivington Moor", "Silver City Airways", "Winter Hill", "Winter Hill air disaster", "Winter Hill transmitting station" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill air disaster",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 11 members",
+      "community_id" : "community_4",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "27 February 1958", "England", "G-AICS", "Independent Television Authority", "Isle of Man", "Manchester", "Rivington Moor", "Silver City Airways", "Winter Hill", "Winter Hill air disaster", "Winter Hill transmitting station" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill transmitting station",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 11 members",
+      "community_id" : "community_4",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "27 February 1958", "England", "G-AICS", "Independent Television Authority", "Isle of Man", "Manchester", "Rivington Moor", "Silver City Airways", "Winter Hill", "Winter Hill air disaster", "Winter Hill transmitting station" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Winter Hill"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Winter Hill"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Winter Hill"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 11 members",
+      "community_id" : "community_4",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "27 February 1958", "England", "G-AICS", "Independent Television Authority", "Isle of Man", "Manchester", "Rivington Moor", "Silver City Airways", "Winter Hill", "Winter Hill air disaster", "Winter Hill transmitting station" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "G-AICS",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "G-AICS"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "G-AICS",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "G-AICS"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "G-AICS"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 11 members",
+      "community_id" : "community_4",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "27 February 1958", "England", "G-AICS", "Independent Television Authority", "Isle of Man", "Manchester", "Rivington Moor", "Silver City Airways", "Winter Hill", "Winter Hill air disaster", "Winter Hill transmitting station" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill air disaster",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Winter Hill air disaster"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill air disaster",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Winter Hill air disaster"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Winter Hill air disaster"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 11 members",
+      "community_id" : "community_4",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "27 February 1958", "England", "G-AICS", "Independent Television Authority", "Isle of Man", "Manchester", "Rivington Moor", "Silver City Airways", "Winter Hill", "Winter Hill air disaster", "Winter Hill transmitting station" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill transmitting station",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Winter Hill transmitting station"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Winter Hill transmitting station",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Winter Hill transmitting station"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Winter Hill transmitting station"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 11 members",
+      "community_id" : "community_4",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "27 February 1958", "England", "G-AICS", "Independent Television Authority", "Isle of Man", "Manchester", "Rivington Moor", "Silver City Airways", "Winter Hill", "Winter Hill air disaster", "Winter Hill transmitting station" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "England",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "England"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "England",
+      "chunk id" : "_zLsqXM9",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "England"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "England"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 11 members",
+      "community_id" : "community_4",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "27 February 1958", "England", "G-AICS", "Independent Television Authority", "Isle of Man", "Manchester", "Rivington Moor", "Silver City Airways", "Winter Hill", "Winter Hill air disaster", "Winter Hill transmitting station" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Colorado",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "Colorado", "Lake City", "North side", "Slumgullion Pass", "Snowplows", "State Highway 149", "mountain pass", "southwestern Colorado" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lake City",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "Colorado", "Lake City", "North side", "Slumgullion Pass", "Snowplows", "State Highway 149", "mountain pass", "southwestern Colorado" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "North side",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "Colorado", "Lake City", "North side", "Slumgullion Pass", "Snowplows", "State Highway 149", "mountain pass", "southwestern Colorado" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Slumgullion Pass",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "Colorado", "Lake City", "North side", "Slumgullion Pass", "Snowplows", "State Highway 149", "mountain pass", "southwestern Colorado" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Snowplows",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "Colorado", "Lake City", "North side", "Slumgullion Pass", "Snowplows", "State Highway 149", "mountain pass", "southwestern Colorado" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "State Highway 149",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "Colorado", "Lake City", "North side", "Slumgullion Pass", "Snowplows", "State Highway 149", "mountain pass", "southwestern Colorado" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mountain pass",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "Colorado", "Lake City", "North side", "Slumgullion Pass", "Snowplows", "State Highway 149", "mountain pass", "southwestern Colorado" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "southwestern Colorado",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "Colorado", "Lake City", "North side", "Slumgullion Pass", "Snowplows", "State Highway 149", "mountain pass", "southwestern Colorado" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Slumgullion Pass",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Slumgullion Pass"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Slumgullion Pass",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Slumgullion Pass"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Slumgullion Pass"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "Colorado", "Lake City", "North side", "Slumgullion Pass", "Snowplows", "State Highway 149", "mountain pass", "southwestern Colorado" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Colorado",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Colorado"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Colorado",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Colorado"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Colorado"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "Colorado", "Lake City", "North side", "Slumgullion Pass", "Snowplows", "State Highway 149", "mountain pass", "southwestern Colorado" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "State Highway 149",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "State Highway 149"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "State Highway 149",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "State Highway 149"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "State Highway 149"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "Colorado", "Lake City", "North side", "Slumgullion Pass", "Snowplows", "State Highway 149", "mountain pass", "southwestern Colorado" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lake City",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Lake City"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lake City",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Lake City"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Lake City"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "Colorado", "Lake City", "North side", "Slumgullion Pass", "Snowplows", "State Highway 149", "mountain pass", "southwestern Colorado" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "southwestern Colorado",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "southwestern Colorado"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "southwestern Colorado",
+      "chunk id" : "x9ZzFFnD"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "southwestern Colorado"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "southwestern Colorado"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "Colorado", "Lake City", "North side", "Slumgullion Pass", "Snowplows", "State Highway 149", "mountain pass", "southwestern Colorado" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2014 Winter Olympics",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "2014 Winter Olympics", "NBC", "The Michael J. Fox Show", "U.S.", "official cancellation of The Michael J. Fox Show" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "NBC",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "2014 Winter Olympics", "NBC", "The Michael J. Fox Show", "U.S.", "official cancellation of The Michael J. Fox Show" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Michael J. Fox Show",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "2014 Winter Olympics", "NBC", "The Michael J. Fox Show", "U.S.", "official cancellation of The Michael J. Fox Show" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "U.S.",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "2014 Winter Olympics", "NBC", "The Michael J. Fox Show", "U.S.", "official cancellation of The Michael J. Fox Show" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "official cancellation of The Michael J. Fox Show",
+      "chunk id" : "scjp42Wk"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "2014 Winter Olympics", "NBC", "The Michael J. Fox Show", "U.S.", "official cancellation of The Michael J. Fox Show" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Michael J. Fox Show",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "The Michael J. Fox Show"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Michael J. Fox Show",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "The Michael J. Fox Show"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "The Michael J. Fox Show"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "2014 Winter Olympics", "NBC", "The Michael J. Fox Show", "U.S.", "official cancellation of The Michael J. Fox Show" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2014 Winter Olympics",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "2014 Winter Olympics"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2014 Winter Olympics",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "2014 Winter Olympics"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "2014 Winter Olympics"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "2014 Winter Olympics", "NBC", "The Michael J. Fox Show", "U.S.", "official cancellation of The Michael J. Fox Show" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "NBC",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "NBC"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "NBC",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "NBC"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "NBC"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "2014 Winter Olympics", "NBC", "The Michael J. Fox Show", "U.S.", "official cancellation of The Michael J. Fox Show" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "official cancellation of The Michael J. Fox Show",
+      "chunk id" : "scjp42Wk"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "official cancellation of The Michael J. Fox Show"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "official cancellation of The Michael J. Fox Show",
+      "chunk id" : "scjp42Wk"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "official cancellation of The Michael J. Fox Show"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "official cancellation of The Michael J. Fox Show"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "2014 Winter Olympics", "NBC", "The Michael J. Fox Show", "U.S.", "official cancellation of The Michael J. Fox Show" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "U.S.",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "U.S."
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "U.S.",
+      "chunk id" : "scjp42Wk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "U.S."
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "U.S."
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "2014 Winter Olympics", "NBC", "The Michael J. Fox Show", "U.S.", "official cancellation of The Michael J. Fox Show" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bolivian highland peasants",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Bolivian highland peasants", "dissolution of communal landholdings", "empowered caciques", "indigenous language, culture, customs, communal organization" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dissolution of communal landholdings",
+      "chunk id" : "3WZIgO60"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Bolivian highland peasants", "dissolution of communal landholdings", "empowered caciques", "indigenous language, culture, customs, communal organization" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "empowered caciques",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Bolivian highland peasants", "dissolution of communal landholdings", "empowered caciques", "indigenous language, culture, customs, communal organization" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "indigenous language, culture, customs, communal organization",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Bolivian highland peasants", "dissolution of communal landholdings", "empowered caciques", "indigenous language, culture, customs, communal organization" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bolivian highland peasants",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Bolivian highland peasants"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bolivian highland peasants",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Bolivian highland peasants"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Bolivian highland peasants"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Bolivian highland peasants", "dissolution of communal landholdings", "empowered caciques", "indigenous language, culture, customs, communal organization" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "empowered caciques",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "empowered caciques"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "empowered caciques",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "empowered caciques"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "empowered caciques"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Bolivian highland peasants", "dissolution of communal landholdings", "empowered caciques", "indigenous language, culture, customs, communal organization" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "indigenous language, culture, customs, communal organization",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "indigenous language, culture, customs, communal organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "indigenous language, culture, customs, communal organization",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "indigenous language, culture, customs, communal organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "indigenous language, culture, customs, communal organization"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Bolivian highland peasants", "dissolution of communal landholdings", "empowered caciques", "indigenous language, culture, customs, communal organization" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dissolution of communal landholdings",
+      "chunk id" : "3WZIgO60"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "dissolution of communal landholdings"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dissolution of communal landholdings",
+      "chunk id" : "3WZIgO60"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "dissolution of communal landholdings"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "dissolution of communal landholdings"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Bolivian highland peasants", "dissolution of communal landholdings", "empowered caciques", "indigenous language, culture, customs, communal organization" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1970s",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "1970s", "Katarista movement", "ethnic and class militancy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Katarista movement",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "1970s", "Katarista movement", "ethnic and class militancy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ethnic and class militancy",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "1970s", "Katarista movement", "ethnic and class militancy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Katarista movement",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Katarista movement"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Katarista movement",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Katarista movement"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Katarista movement"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "1970s", "Katarista movement", "ethnic and class militancy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ethnic and class militancy",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "ethnic and class militancy"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ethnic and class militancy",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "ethnic and class militancy"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "ethnic and class militancy"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "1970s", "Katarista movement", "ethnic and class militancy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1970s",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "1970s"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1970s",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "1970s"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "1970s"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "1970s", "Katarista movement", "ethnic and class militancy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "National Revolutionary Movement government",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "National Revolutionary Movement government", "campesinos", "self-identification as indigenous" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "campesinos",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "National Revolutionary Movement government", "campesinos", "self-identification as indigenous" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "self-identification as indigenous",
+      "chunk id" : "3WZIgO60"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "National Revolutionary Movement government", "campesinos", "self-identification as indigenous" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "National Revolutionary Movement government",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "National Revolutionary Movement government"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "National Revolutionary Movement government",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "National Revolutionary Movement government"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "National Revolutionary Movement government"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "National Revolutionary Movement government", "campesinos", "self-identification as indigenous" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "campesinos",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "campesinos"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "campesinos",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "campesinos"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "campesinos"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "National Revolutionary Movement government", "campesinos", "self-identification as indigenous" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "self-identification as indigenous",
+      "chunk id" : "3WZIgO60"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "self-identification as indigenous"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "self-identification as indigenous",
+      "chunk id" : "3WZIgO60"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "self-identification as indigenous"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "self-identification as indigenous"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "National Revolutionary Movement government", "campesinos", "self-identification as indigenous" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1953",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "1953", "Indigenous revolts" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Indigenous revolts",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "1953", "Indigenous revolts" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1953",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "1953"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "1953",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "1953"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "1953"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "1953", "Indigenous revolts" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Indigenous revolts",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Indigenous revolts"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Indigenous revolts",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Indigenous revolts"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Indigenous revolts"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "1953", "Indigenous revolts" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Spanish conquest",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 2 members",
+      "community_id" : "community_11",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Spanish conquest", "post-independence period" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "post-independence period",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 2 members",
+      "community_id" : "community_11",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Spanish conquest", "post-independence period" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "post-independence period",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "post-independence period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "post-independence period",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "post-independence period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "post-independence period"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 2 members",
+      "community_id" : "community_11",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Spanish conquest", "post-independence period" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Spanish conquest",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Spanish conquest"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Spanish conquest",
+      "chunk id" : "3WZIgO60",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Spanish conquest"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Spanish conquest"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 2 members",
+      "community_id" : "community_11",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Spanish conquest", "post-independence period" ]
+    }
+  }
+} ]

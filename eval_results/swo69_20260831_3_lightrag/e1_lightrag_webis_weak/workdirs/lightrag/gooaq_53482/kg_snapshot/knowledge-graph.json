@@ -1,0 +1,53 @@
+{
+  "nodes" : [ {
+    "id" : "Acetonitrile",
+    "entity_id" : "Acetonitrile",
+    "entity_type" : "Concept",
+    "description" : "A solvent used in chromatography due to its low UV cutoff, lower viscosity, and higher boiling point.",
+    "source_id" : "ec599ae26b9585e5241c6ab844bc0b32"
+  }, {
+    "id" : "Methanol",
+    "entity_id" : "Methanol",
+    "entity_type" : "Concept",
+    "description" : "A solvent used in chromatography, but forms highly viscous mixtures with water at certain concentrations.",
+    "source_id" : "ec599ae26b9585e5241c6ab844bc0b32"
+  }, {
+    "id" : "Water",
+    "entity_id" : "Water",
+    "entity_type" : "Concept",
+    "description" : "A solvent used in chromatography, often mixed with other solvents to achieve desired selectivity.",
+    "source_id" : "ec599ae26b9585e5241c6ab844bc0b32"
+  } ],
+  "edges" : [ {
+    "source" : "Acetonitrile",
+    "target" : "Methanol",
+    "weight" : "1.0",
+    "description" : "Acetonitrile and methanol can be mixed to achieve desired viscosity and selectivity in chromatography.",
+    "keywords" : "viscosity, selectivity",
+    "source_id" : "ec599ae26b9585e5241c6ab844bc0b32",
+    "src_id" : "Acetonitrile",
+    "tgt_id" : "Methanol"
+  }, {
+    "source" : "Acetonitrile",
+    "target" : "Water",
+    "weight" : "1.0",
+    "description" : "Acetonitrile and water can be mixed to achieve higher boiling point and desired selectivity in chromatography.",
+    "keywords" : "boiling point, selectivity",
+    "source_id" : "ec599ae26b9585e5241c6ab844bc0b32",
+    "src_id" : "Acetonitrile",
+    "tgt_id" : "Water"
+  }, {
+    "source" : "Methanol",
+    "target" : "Water",
+    "weight" : "1.0",
+    "description" : "Methanol and water can be mixed to achieve highly viscous mixtures and desired selectivity in chromatography.",
+    "keywords" : "viscosity, selectivity",
+    "source_id" : "ec599ae26b9585e5241c6ab844bc0b32",
+    "src_id" : "Methanol",
+    "tgt_id" : "Water"
+  } ],
+  "metadata" : {
+    "nodeCount" : 3,
+    "edgeCount" : 3
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "nodes" : {
+    "IMDB" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Online platform hosting reviews and ratings for the WALL-E film.",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    },
+    "EARTH" : {
+      "entity_type" : "GEO",
+      "description" : "The planet from which mankind departed in the WALL-E storyline, leaving a robot to manage waste for hundreds of years.",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    },
+    "PIXAR" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Animation studio that produced the WALL-E film in 2008, described as an 'animation giant' that hit the box office.",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    },
+    "RIVERRUN INTERNATIONAL FILM FESTIVAL" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A film festival that screened shorts related to the WALL-E theme of mankind searching for uninhabited land.",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    },
+    "ENVIRONMENTAL STUDIES RESOURCES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An academic LibGuides collection that features the WALL-E film as a resource for environmental studies.",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    },
+    "BROTHERSJUDD BLOG" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A blog that archived discussion about the WALL-E film in its June 2008 archives, including the release date.",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    },
+    "GROUNDWELL EDUCATIONAL" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "An educational entity associated with the WALL-E film, referenced in the context of its environmental themes.",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    },
+    "WALL-E" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A 2008 animated film about a waste management robot left alone on Earth after mankind departed. Produced by Pixar.",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    }
+  },
+  "edges" : [ {
+    "source" : "BROTHERSJUDD BLOG",
+    "target" : "PIXAR",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The blog specifically references Pixar as the 'animation giant' behind the WALL-E release.",
+      "keywords" : "studio reference, box office, commentary",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    }
+  }, {
+    "source" : "BROTHERSJUDD BLOG",
+    "target" : "WALL-E",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The blog archived commentary on WALL-E's release on June 30, 2008, discussing Pixar's gamble on the robot film.",
+      "keywords" : "blog, review, release date",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    }
+  }, {
+    "source" : "GROUNDWELL EDUCATIONAL",
+    "target" : "WALL-E",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Groundswell Educational is associated with the WALL-E film in an educational context.",
+      "keywords" : "education, film association",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    }
+  }, {
+    "source" : "IMDB",
+    "target" : "WALL-E",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "IMDb hosts reviews and ratings for the WALL-E film, serving as a reference point for audiences.",
+      "keywords" : "reviews, ratings, platform",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    }
+  }, {
+    "source" : "RIVERRUN INTERNATIONAL FILM FESTIVAL",
+    "target" : "WALL-E",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "The festival screened shorts connected to the WALL-E narrative of mankind searching for uninhabited land.",
+      "keywords" : "film festival, screening, thematic connection",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    }
+  }, {
+    "source" : "PIXAR",
+    "target" : "WALL-E",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Pixar produced the WALL-E film in 2008, gambling on a robot protagonist as its next major release.",
+      "keywords" : "production, animation, film release",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    }
+  }, {
+    "source" : "WALL-E",
+    "target" : "EARTH",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The WALL-E storyline is set on Earth after mankind departed, leaving the robot to manage waste for centuries.",
+      "keywords" : "setting, planet, narrative",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    }
+  }, {
+    "source" : "ENVIRONMENTAL STUDIES RESOURCES",
+    "target" : "WALL-E",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The environmental studies LibGuides features WALL-E as an educational film resource on environmental themes.",
+      "keywords" : "education, environmental theme, academic resource",
+      "source_id" : "chunk-cec2910bfd19a61b0f769fb71fc5c562"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 8,
+    "edgeCount" : 8,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_webis/workdirs/pathrag/triviaqa_465"
+  }
+}

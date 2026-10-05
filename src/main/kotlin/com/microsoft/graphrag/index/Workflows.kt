@@ -6,6 +6,7 @@ import dev.langchain4j.model.chat.Capability.RESPONSE_FORMAT_JSON_SCHEMA
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
+import java.time.Duration
 import java.time.Instant
 
 /**
@@ -394,8 +395,23 @@ private fun defaultChatModel(): dev.langchain4j.model.openai.OpenAiChatModel {
             .modelName(openAiModelName("gpt-4o-mini", "OPENAI_MODEL", "LLM_MODEL"))
             .supportedCapabilities(RESPONSE_FORMAT_JSON_SCHEMA)
             .strictJsonSchema(true)
+            .timeout(Duration.ofSeconds(openAiTimeoutSeconds()))
+            .maxRetries(openAiMaxRetries())
     openAiBaseUrl()?.let { builder.baseUrl(it) }
     return builder.build()
+}
+
+private fun openAiTimeoutSeconds(): Long {
+    val isOllama = openAiBaseUrl()?.contains(":11434") == true
+    val name = if (isOllama) "OLLAMA_TIMEOUT_SECONDS" else "OPENAI_TIMEOUT_SECONDS"
+    val default = if (isOllama) 300L else 120L
+    return System.getenv(name)?.toLongOrNull()?.takeIf { it > 0 } ?: default
+}
+
+private fun openAiMaxRetries(): Int {
+    val isOllama = openAiBaseUrl()?.contains(":11434") == true
+    val name = if (isOllama) "OLLAMA_CLIENT_MAX_RETRIES" else "OPENAI_CLIENT_MAX_RETRIES"
+    return System.getenv(name)?.toIntOrNull()?.coerceIn(0, 10) ?: 3
 }
 
 /**

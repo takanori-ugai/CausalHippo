@@ -1,0 +1,278 @@
+kotlin-logging: initializing... active logger factory: Slf4jLoggerFactory
+20:41:45,704 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found logback-core version 1.5.38
+20:41:45,705 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - No custom configurators were discovered as a service.
+20:41:45,705 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+20:41:45,706 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+20:41:45,709 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+20:41:45,713 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml]
+20:41:45,891 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Scan attribute set to true. Will scan for configuration file changes.
+20:41:45,892 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@15de0b3c - URL [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml] is not of type file
+20:41:45,895 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "INFO" substituted for "${ROOT_LOG_LEVEL:-INFO}"
+20:41:45,895 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL:-DEBUG}"
+20:41:45,895 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_LOG_LEVEL:-TRACE}"
+20:41:45,895 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL:-TRACE}"
+20:41:45,895 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL:-ERROR}"
+20:41:45,895 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL:-ERROR}"
+20:41:45,895 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL:-ERROR}"
+20:41:45,895 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL:-DEBUG}"
+20:41:45,895 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Missing watchable .xml or .properties files.
+20:41:45,895 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Watching .xml files requires that the main configuration file is reachable as a URL
+20:41:45,895 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Main configuration file URL: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml
+20:41:45,896 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - FileWatchList= {}
+20:41:45,896 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - URLWatchList= {}
+20:41:45,898 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+20:41:45,898 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+20:41:45,901 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+20:41:45,937 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - NOTE: Writing to the console can be slow. Try to avoid logging to the 
+20:41:45,937 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - console in production environments, especially in high volume systems.
+20:41:45,937 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also https://logback.qos.ch/codes.html#slowConsole
+20:41:45,938 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL}"
+20:41:45,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag] to DEBUG
+20:41:45,941 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag] to false
+20:41:45,941 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag]
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_LOG_LEVEL}"
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.neo4j] to TRACE
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.neo4j] to false
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.neo4j]
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL}"
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.neo4j.driver] to TRACE
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.neo4j.driver] to false
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[org.neo4j.driver]
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL}"
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.memory] to DEBUG
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.memory] to false
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.memory]
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL}"
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j] to ERROR
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j] to false
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j]
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.okhttp] to ERROR
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.okhttp] to false
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.okhttp]
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.openai] to ERROR
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.openai] to false
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.openai]
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [okhttp3] to ERROR
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [okhttp3] to false
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[okhttp3]
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL}"
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.ai4j.openai4j] to ERROR
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.ai4j.openai4j] to false
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.ai4j.openai4j]
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "INFO" substituted for "${ROOT_LOG_LEVEL}"
+20:41:45,942 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+20:41:45,942 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@3857f613 - End of configuration.
+20:41:45,943 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@198b6731 - Registering current configuration as safe fallback point
+20:41:45,947 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 237 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+Running 1 conditions on 15 samples
+Parallelism: 1
+Unified API: true
+Unified persistence SPI: false
+Data: data/causal_experiment/causal_qa_balanced_30.jsonl
+Output: eval_results/swo69_20260828_e2/e0_youturag_causal
+
+=== Condition: youturag (YoutuRAG (com/youtu/graphrag, unified adapter)) ===
+2026-08-29 20:41:46.632 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_abda30c8.json
+2026-08-29 20:43:32.974 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 207 relation(s) and 6 chunk(s)
+Aug 29, 2026 8:43:33 PM org.apache.lucene.internal.vectorization.VectorizationProvider lookup
+WARNING: Java vector incubator module is not readable. For optimal vector performance, pass '--add-modules jdk.incubator.vector' to enable Vector API.
+2026-08-29 20:43:33.414 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 207 triples and 6 chunks
+2026-08-29 20:43:39.495 [DefaultDispatcher-worker-5] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0898
+2026-08-29 20:43:39.530 [DefaultDispatcher-worker-6] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1336
+2026-08-29 20:44:06.632 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-29 20:44:10.869 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found placeholder platform from: cu128-linux-x86_64:2.7.1
+2026-08-29 20:44:21.790 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - PyTorch graph executor optimizer is enabled, this may impact your inference latency and throughput. See: https://docs.djl.ai/master/docs/development/inference_performance_optimization.html#graph-executor-optimization
+2026-08-29 20:44:21.805 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - Number of inter-op threads is 96
+2026-08-29 20:44:21.805 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - Number of intra-op threads is 16
+2026-08-29 20:44:22.848 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found matching platform from: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/native/lib/tokenizers.properties
+2026-08-29 20:44:28.024 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:44:28.025 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:44:29.404 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:44:29.404 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:44:30.493 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 20:44:30.493 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:44:31.608 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:44:31.608 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:44:32.737 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:44:32.737 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:44:32.786 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_abda30c8.json
+2026-08-29 20:46:01.546 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 244 relation(s) and 6 chunk(s)
+2026-08-29 20:46:01.957 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 244 triples and 6 chunks
+2026-08-29 20:46:07.743 [DefaultDispatcher-worker-3] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0165
+2026-08-29 20:46:07.743 [DefaultDispatcher-worker-13] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0152
+2026-08-29 20:46:26.470 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-29 20:46:27.843 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (7, 384)
+2026-08-29 20:46:27.844 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (105, 384)
+2026-08-29 20:46:27.885 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_abda30c8.json
+2026-08-29 20:47:54.890 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 228 relation(s) and 6 chunk(s)
+2026-08-29 20:47:55.347 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 228 triples and 6 chunks
+2026-08-29 20:48:01.813 [DefaultDispatcher-worker-3] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0198
+2026-08-29 20:48:01.815 [DefaultDispatcher-worker-7] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0219
+2026-08-29 20:48:01.829 [DefaultDispatcher-worker-12] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0354
+2026-08-29 20:48:22.006 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-29 20:48:23.437 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:48:23.437 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:48:24.524 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:48:24.525 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:48:25.603 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 20:48:25.603 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:48:26.687 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:48:26.687 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:48:27.885 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:48:27.885 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:48:27.930 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_abda30c8.json
+2026-08-29 20:49:49.190 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 175 relation(s) and 6 chunk(s)
+2026-08-29 20:49:49.401 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 175 triples and 6 chunks
+2026-08-29 20:49:56.215 [DefaultDispatcher-worker-8] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0049
+2026-08-29 20:49:56.231 [DefaultDispatcher-worker-4] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0193
+2026-08-29 20:50:22.655 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-29 20:50:24.124 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:50:24.124 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:50:24.165 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_abda30c8.json
+2026-08-29 20:51:39.284 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 205 relation(s) and 6 chunk(s)
+2026-08-29 20:51:39.428 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 205 triples and 6 chunks
+2026-08-29 20:51:46.675 [DefaultDispatcher-worker-6] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0419
+2026-08-29 20:51:46.723 [DefaultDispatcher-worker-7] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0901
+2026-08-29 20:52:07.826 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-29 20:52:10.973 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:52:10.973 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (97, 384)
+2026-08-29 20:52:12.295 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:52:12.295 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (97, 384)
+2026-08-29 20:52:13.577 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 20:52:13.577 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (97, 384)
+2026-08-29 20:52:14.742 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:52:14.742 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (97, 384)
+2026-08-29 20:52:15.944 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:52:15.944 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (97, 384)
+2026-08-29 20:52:15.985 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_abda30c8.json
+2026-08-29 20:53:31.982 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 236 relation(s) and 6 chunk(s)
+2026-08-29 20:53:32.127 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 236 triples and 6 chunks
+2026-08-29 20:53:39.627 [DefaultDispatcher-worker-2] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0194
+2026-08-29 20:53:39.627 [DefaultDispatcher-worker-7] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0203
+2026-08-29 20:54:06.012 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-29 20:54:07.728 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (9, 384)
+2026-08-29 20:54:07.728 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:54:07.786 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_abda30c8.json
+2026-08-29 20:55:32.052 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 264 relation(s) and 6 chunk(s)
+2026-08-29 20:55:32.235 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 264 triples and 6 chunks
+2026-08-29 20:55:39.011 [DefaultDispatcher-worker-5] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0103
+2026-08-29 20:55:39.079 [DefaultDispatcher-worker-13] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0782
+2026-08-29 20:55:39.087 [DefaultDispatcher-worker-2] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0867
+2026-08-29 20:56:07.372 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-29 20:56:08.577 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:56:08.577 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:56:09.691 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:56:09.691 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:56:10.847 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 20:56:10.847 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:56:12.077 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:56:12.077 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:56:13.286 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:56:13.286 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:56:13.317 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_abda30c8.json
+2026-08-29 20:57:37.153 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 249 relation(s) and 6 chunk(s)
+2026-08-29 20:57:37.247 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 249 triples and 6 chunks
+2026-08-29 20:57:47.146 [DefaultDispatcher-worker-7] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1793
+2026-08-29 20:57:47.146 [DefaultDispatcher-worker-2] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1798
+2026-08-29 20:57:47.174 [DefaultDispatcher-worker-11] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.2069
+2026-08-29 20:58:07.965 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-29 20:58:09.533 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:58:09.533 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:58:10.705 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:58:10.705 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:58:11.872 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 20:58:11.872 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:58:13.144 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:58:13.145 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:58:14.437 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 20:58:14.437 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 20:58:14.464 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_abda30c8.json
+2026-08-29 20:59:38.721 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 236 relation(s) and 6 chunk(s)
+2026-08-29 20:59:38.896 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 236 triples and 6 chunks
+2026-08-29 20:59:45.390 [DefaultDispatcher-worker-3] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0136
+2026-08-29 20:59:45.394 [DefaultDispatcher-worker-14] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0182
+2026-08-29 21:00:03.551 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-29 21:00:05.095 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 21:00:05.095 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (92, 384)
+2026-08-29 21:00:06.490 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 21:00:06.490 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (92, 384)
+2026-08-29 21:00:07.993 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 21:00:07.993 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (92, 384)
+2026-08-29 21:00:09.245 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 21:00:09.246 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (92, 384)
+2026-08-29 21:00:10.523 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 21:00:10.523 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (92, 384)
+2026-08-29 21:00:10.558 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_abda30c8.json
+2026-08-29 21:01:33.305 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 203 relation(s) and 6 chunk(s)
+2026-08-29 21:01:33.429 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 203 triples and 6 chunks
+2026-08-29 21:01:40.810 [DefaultDispatcher-worker-9] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0346
+2026-08-29 21:01:40.836 [DefaultDispatcher-worker-12] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0622
+2026-08-29 21:02:02.339 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-29 21:02:04.916 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 21:02:04.916 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (96, 384)
+youturag: processed 10/15
+2026-08-29 21:02:04.981 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_abda30c8.json
+2026-08-29 21:03:37.807 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 242 relation(s) and 6 chunk(s)
+2026-08-29 21:03:37.871 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 242 triples and 6 chunks
+2026-08-29 21:03:44.488 [DefaultDispatcher-worker-7] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0447
+2026-08-29 21:03:44.508 [DefaultDispatcher-worker-12] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0647
+2026-08-29 21:04:08.976 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-29 21:04:10.630 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 21:04:10.630 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (102, 384)
+2026-08-29 21:04:10.689 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_abda30c8.json
+2026-08-29 21:05:26.499 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 257 relation(s) and 6 chunk(s)
+2026-08-29 21:05:26.736 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 257 triples and 6 chunks
+2026-08-29 21:05:33.557 [DefaultDispatcher-worker-12] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0038
+2026-08-29 21:05:33.591 [DefaultDispatcher-worker-15] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0383
+2026-08-29 21:05:52.333 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-29 21:05:53.712 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 21:05:53.712 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (78, 384)
+2026-08-29 21:05:54.827 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 21:05:54.827 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (78, 384)
+2026-08-29 21:05:56.053 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 21:05:56.053 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (78, 384)
+2026-08-29 21:05:57.198 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 21:05:57.198 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (78, 384)
+2026-08-29 21:05:58.371 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 21:05:58.371 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (78, 384)
+2026-08-29 21:05:58.397 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_abda30c8.json
+2026-08-29 21:07:25.236 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 250 relation(s) and 6 chunk(s)
+2026-08-29 21:07:25.574 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 250 triples and 6 chunks
+2026-08-29 21:07:33.587 [DefaultDispatcher-worker-15] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0429
+2026-08-29 21:07:33.606 [DefaultDispatcher-worker-3] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0627
+2026-08-29 21:07:58.963 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-29 21:08:00.271 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 21:08:00.271 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-29 21:08:00.293 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_abda30c8.json
+2026-08-29 21:09:13.844 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 288 relation(s) and 6 chunk(s)
+2026-08-29 21:09:13.913 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 288 triples and 6 chunks
+2026-08-29 21:09:21.344 [DefaultDispatcher-worker-9] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0486
+2026-08-29 21:09:21.352 [DefaultDispatcher-worker-3] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0575
+2026-08-29 21:09:43.096 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 1 triples and 5 chunks
+2026-08-29 21:09:44.653 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 21:09:44.654 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (118, 384)
+2026-08-29 21:09:45.799 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 21:09:45.799 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (118, 384)
+2026-08-29 21:09:46.939 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 21:09:46.939 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (118, 384)
+2026-08-29 21:09:48.127 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 21:09:48.127 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (118, 384)
+2026-08-29 21:09:49.364 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 21:09:49.364 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (118, 384)
+2026-08-29 21:09:49.389 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_abda30c8.json
+2026-08-29 21:11:04.054 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 187 relation(s) and 6 chunk(s)
+2026-08-29 21:11:04.236 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 187 triples and 6 chunks
+2026-08-29 21:11:10.876 [DefaultDispatcher-worker-14] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0186
+2026-08-29 21:11:10.908 [DefaultDispatcher-worker-4] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0503
+2026-08-29 21:11:33.642 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-29 21:11:35.077 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (6, 384)
+2026-08-29 21:11:35.077 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+youturag: processed 15/15
+Wrote 15 rows -> eval_results/swo69_20260828_e2/e0_youturag_causal/per_question/youturag.jsonl
+
+Finished. Aggregate CSV can be produced by scripts/aggregate_experiment_results.py

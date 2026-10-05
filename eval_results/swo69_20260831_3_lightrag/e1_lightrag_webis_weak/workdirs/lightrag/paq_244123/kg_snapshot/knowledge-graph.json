@@ -1,0 +1,101 @@
+{
+  "nodes" : [ {
+    "id" : "President of Azerbaijan",
+    "entity_id" : "President of Azerbaijan",
+    "entity_type" : "Person",
+    "description" : "The head of state of Azerbaijan",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Azerbaijan",
+    "entity_id" : "Azerbaijan",
+    "entity_type" : "Location",
+    "description" : "The country where the reform was implemented",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Judicial system",
+    "entity_id" : "Judicial system",
+    "entity_type" : "Concept",
+    "description" : "The system of courts in Azerbaijan",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Courts",
+    "entity_id" : "Courts",
+    "entity_type" : "Location",
+    "description" : "The institutions where justice is served",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Regions",
+    "entity_id" : "Regions",
+    "entity_type" : "Location",
+    "description" : "The areas where the courts are located",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Appeal courts",
+    "entity_id" : "Appeal courts",
+    "entity_type" : "Concept",
+    "description" : "The courts that hear appeals",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Chambers",
+    "entity_id" : "Chambers",
+    "entity_type" : "Concept",
+    "description" : "The divisions within the appeal courts",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Decree",
+    "entity_id" : "Decree",
+    "entity_type" : "Concept",
+    "description" : "The official document that established the new judicial system",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  } ],
+  "edges" : [ {
+    "source" : "President of Azerbaijan",
+    "target" : "Judicial system",
+    "weight" : "1.0",
+    "description" : "The President signed the system, leading to the reform",
+    "keywords" : "reform, judicial reform",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "President of Azerbaijan",
+    "tgt_id" : "Judicial system"
+  }, {
+    "source" : "Judicial system",
+    "target" : "Courts",
+    "weight" : "1.0",
+    "description" : "The judicial system led to the establishment of new courts",
+    "keywords" : "establishment, new courts",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Judicial system",
+    "tgt_id" : "Courts"
+  }, {
+    "source" : "Judicial system",
+    "target" : "Decree",
+    "weight" : "1.0",
+    "description" : "The Decree led to the establishment of a new judicial system",
+    "keywords" : "establishment, new judicial system",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Decree",
+    "tgt_id" : "Judicial system"
+  }, {
+    "source" : "Courts",
+    "target" : "Regions",
+    "weight" : "1.0",
+    "description" : "The courts were expanded to include new appeal courts in regions",
+    "keywords" : "expansion, new appeal courts",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Courts",
+    "tgt_id" : "Regions"
+  }, {
+    "source" : "Regions",
+    "target" : "Appeal courts",
+    "weight" : "1.0",
+    "description" : "The regions led to the establishment of appeal courts with 4 chambers",
+    "keywords" : "establishment, 4 chambers",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Regions",
+    "tgt_id" : "Appeal courts"
+  } ],
+  "metadata" : {
+    "nodeCount" : 8,
+    "edgeCount" : 5
+  }
+}

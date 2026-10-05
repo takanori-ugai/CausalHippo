@@ -735,7 +735,7 @@ class QueryProcessor(
                     (entry["chunks"] as? List<*>)?.mapNotNull { it as? String } ?: emptyList()
                 }.distinct()
 
-        return textChunksDb.getByIds(allChunkIds)
+        return getTextChunksByIds(allChunkIds)
     }
 
     private suspend fun findRelatedTextUnitFromRelations(
@@ -777,6 +777,19 @@ class QueryProcessor(
                     (entry["chunks"] as? List<*>)?.mapNotNull { it as? String } ?: emptyList()
                 }.distinct()
 
-        return textChunksDb.getByIds(allChunkIds)
+        return getTextChunksByIds(allChunkIds)
     }
+
+    /**
+     * Loads text chunks while retaining the KV-storage key as `id`.
+     * BaseKVStorage returns only the stored value, not its key; callers need
+     * the key for stable de-duplication when combining entity and relation
+     * references.
+     */
+    private suspend fun getTextChunksByIds(ids: List<String>): List<Map<String, Any>> =
+        ids.distinct().mapNotNull { id ->
+            textChunksDb.getById(id)?.toMutableMap()?.apply {
+                put("id", id)
+            }
+        }
 }

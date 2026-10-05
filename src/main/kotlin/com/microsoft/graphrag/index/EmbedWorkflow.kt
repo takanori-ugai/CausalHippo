@@ -8,6 +8,7 @@ import dev.langchain4j.model.output.Response
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.time.Duration
 
 /**
  * Generates embeddings for document chunks and entities.
@@ -43,6 +44,9 @@ class EmbedWorkflow(
                     TextEmbedding(chunkId = chunk.id, vector = vector)
                 }
             ticker.done()
+            check(results.size == chunks.size) {
+                "Text embedding incomplete: ${results.size}/${chunks.size} chunks succeeded"
+            }
             results
         }
 
@@ -69,6 +73,9 @@ class EmbedWorkflow(
                     EntityEmbedding(entityId = entity.id, vector = vector)
                 }
             ticker.done()
+            check(results.size == entities.size) {
+                "Entity embedding incomplete: ${results.size}/${entities.size} entities succeeded"
+            }
             results
         }
 
@@ -119,6 +126,21 @@ fun defaultEmbeddingModel(
             .builder()
             .apiKey(apiKey)
             .modelName(modelName)
+            .timeout(Duration.ofSeconds(openAiTimeoutSeconds()))
+            .maxRetries(openAiMaxRetries())
     openAiBaseUrl()?.let { builder.baseUrl(it) }
     return builder.build()
+}
+
+private fun openAiTimeoutSeconds(): Long {
+    val isOllama = openAiBaseUrl()?.contains(":11434") == true
+    val name = if (isOllama) "OLLAMA_TIMEOUT_SECONDS" else "OPENAI_TIMEOUT_SECONDS"
+    val default = if (isOllama) 300L else 120L
+    return System.getenv(name)?.toLongOrNull()?.takeIf { it > 0 } ?: default
+}
+
+private fun openAiMaxRetries(): Int {
+    val isOllama = openAiBaseUrl()?.contains(":11434") == true
+    val name = if (isOllama) "OLLAMA_CLIENT_MAX_RETRIES" else "OPENAI_CLIENT_MAX_RETRIES"
+    return System.getenv(name)?.toIntOrNull()?.coerceIn(0, 10) ?: 3
 }

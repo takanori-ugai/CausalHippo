@@ -1,0 +1,527 @@
+{
+  "nodes" : [ {
+    "id" : "Startup",
+    "entity_id" : "Startup",
+    "entity_type" : "Organization",
+    "description" : "The workplace where the employees are located.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Employees",
+    "entity_id" : "Employees",
+    "entity_type" : "Concept",
+    "description" : "Individuals working at the startup.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Caffeine intake",
+    "entity_id" : "Caffeine intake",
+    "entity_type" : "Concept",
+    "description" : "The increased consumption of caffeine by the employees.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Project sprints",
+    "entity_id" : "Project sprints",
+    "entity_type" : "Event",
+    "description" : "Defined periods of work within the startup.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Heightened alertness",
+    "entity_id" : "Heightened alertness",
+    "entity_type" : "Concept",
+    "description" : "A state of increased wakefulness noticed by the individuals.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Working hours",
+    "entity_id" : "Working hours",
+    "entity_type" : "Concept",
+    "description" : "The consistent duration of work.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Pressure",
+    "entity_id" : "Pressure",
+    "entity_type" : "Concept",
+    "description" : "The consistent level of work stress.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Beverage choice",
+    "entity_id" : "Beverage choice",
+    "entity_type" : "Concept",
+    "description" : "The fluctuating selection of drinks.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Coincidence",
+    "entity_id" : "Coincidence",
+    "entity_type" : "Concept",
+    "description" : "The idea that the observed pattern is random.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Recurring pattern",
+    "entity_id" : "Recurring pattern",
+    "entity_type" : "Concept",
+    "description" : "The observed, non-random cycle of events.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Break rooms",
+    "entity_id" : "Break rooms",
+    "entity_type" : "Location",
+    "description" : "Areas where discussions take place.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "City's cafés",
+    "entity_id" : "City's cafés",
+    "entity_type" : "Location",
+    "description" : "The location from which data regarding sales was collected.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Coffee sales",
+    "entity_id" : "Coffee sales",
+    "entity_type" : "Concept",
+    "description" : "The volume of coffee sold, which is observed over a decade.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Increased rainfall",
+    "entity_id" : "Increased rainfall",
+    "entity_type" : "Concept",
+    "description" : "Weeks characterized by higher levels of rain.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Patrons",
+    "entity_id" : "Patrons",
+    "entity_type" : "Person",
+    "description" : "Customers of the city's cafés.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Gloomy weather",
+    "entity_id" : "Gloomy weather",
+    "entity_type" : "Concept",
+    "description" : "Weather conditions that are suggested to influence mood.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Warm beverage",
+    "entity_id" : "Warm beverage",
+    "entity_type" : "Concept",
+    "description" : "A type of drink that patrons are suggested to prefer during gloomy weather.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Bustling mornings",
+    "entity_id" : "Bustling mornings",
+    "entity_type" : "Concept",
+    "description" : "Periods of high activity noted in the city.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Wet forecasts",
+    "entity_id" : "Wet forecasts",
+    "entity_type" : "Concept",
+    "description" : "Predictions of rain.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Young adults",
+    "entity_id" : "Young adults",
+    "entity_type" : "Concept",
+    "description" : "A demographic group frequently associated with high social media use.",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "Social media use",
+    "entity_id" : "Social media use",
+    "entity_type" : "Concept",
+    "description" : "The habit of engaging with social media platforms.",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "Self-esteem",
+    "entity_id" : "Self-esteem",
+    "entity_type" : "Concept",
+    "description" : "A measure of an individual's self-worth.",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "Self-image",
+    "entity_id" : "Self-image",
+    "entity_type" : "Concept",
+    "description" : "An individual's perception of themselves.",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "Digital habits",
+    "entity_id" : "Digital habits",
+    "entity_type" : "Concept",
+    "description" : "Patterns of behavior related to digital technology use.",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "Self-perception",
+    "entity_id" : "Self-perception",
+    "entity_type" : "Concept",
+    "description" : "The way an individual views themselves.",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "Cafeteria",
+    "entity_id" : "Cafeteria",
+    "entity_type" : "Location",
+    "description" : "The location where new desserts were introduced.",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "New Desserts",
+    "entity_id" : "New Desserts",
+    "entity_type" : "Concept",
+    "description" : "Desserts that were introduced into the cafeteria.",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "Sugar Intake",
+    "entity_id" : "Sugar Intake",
+    "entity_type" : "Concept",
+    "description" : "The increase in sugar consumption noticed by many people.",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "Coworkers",
+    "entity_id" : "Coworkers",
+    "entity_type" : "Person",
+    "description" : "A group of people who mentioned experiencing mood swings.",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "Mood Swings",
+    "entity_id" : "Mood Swings",
+    "entity_type" : "Concept",
+    "description" : "The symptom experienced by some coworkers.",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "Workload",
+    "entity_id" : "Workload",
+    "entity_type" : "Concept",
+    "description" : "A change in work demands cited as a potential cause.",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "Dietary Effects",
+    "entity_id" : "Dietary Effects",
+    "entity_type" : "Concept",
+    "description" : "The influence of diet speculated to be the cause of symptoms.",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "Eating Habits",
+    "entity_id" : "Eating Habits",
+    "entity_type" : "Concept",
+    "description" : "The topic of common conversations during lunch.",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "Solar Eclipse",
+    "entity_id" : "Solar Eclipse",
+    "entity_type" : "Event",
+    "description" : "A highly anticipated astronomical event that occurred on the morning.",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Financial Markets",
+    "entity_id" : "Financial Markets",
+    "entity_type" : "Concept",
+    "description" : "The system of commerce that opened with unexpected volatility.",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Stock Market Crash",
+    "entity_id" : "Stock Market Crash",
+    "entity_type" : "Event",
+    "description" : "A significant decline in the stock market that made headlines by noon.",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Analysts",
+    "entity_id" : "Analysts",
+    "entity_type" : "Person",
+    "description" : "Individuals who compared charts on television.",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Public Attention",
+    "entity_id" : "Public Attention",
+    "entity_type" : "Concept",
+    "description" : "The focus of the public regarding the alignment of rare events.",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Road construction projects",
+    "entity_id" : "Road construction projects",
+    "entity_type" : "Concept",
+    "description" : "The commencement of building roads.",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Local restaurant revenues",
+    "entity_id" : "Local restaurant revenues",
+    "entity_type" : "Concept",
+    "description" : "The income generated by local restaurants.",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Detours",
+    "entity_id" : "Detours",
+    "entity_type" : "Concept",
+    "description" : "Alternate routes taken due to construction.",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Restaurateurs",
+    "entity_id" : "Restaurateurs",
+    "entity_type" : "Person",
+    "description" : "Individuals who operate or work in local restaurants.",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Community forums",
+    "entity_id" : "Community forums",
+    "entity_type" : "Organization",
+    "description" : "Platforms where community members discuss local issues.",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Traffic patterns",
+    "entity_id" : "Traffic patterns",
+    "entity_type" : "Concept",
+    "description" : "The typical flow and movement of vehicles in an area.",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Dining trends",
+    "entity_id" : "Dining trends",
+    "entity_type" : "Concept",
+    "description" : "Shifts or patterns in how people eat out.",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Urban economists",
+    "entity_id" : "Urban economists",
+    "entity_type" : "Person",
+    "description" : "Economists who specialize in urban areas.",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  } ],
+  "edges" : [ {
+    "source" : "Employees",
+    "target" : "Caffeine intake",
+    "weight" : "1.0",
+    "description" : "Employees often increase their caffeine intake during project sprints.",
+    "keywords" : "Increased consumption, during",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Employees",
+    "tgt_id" : "Caffeine intake"
+  }, {
+    "source" : "Project sprints",
+    "target" : "Heightened alertness",
+    "weight" : "1.0",
+    "description" : "Individuals notice heightened alertness during project sprints.",
+    "keywords" : "Leads to, noticed during",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Project sprints",
+    "tgt_id" : "Heightened alertness"
+  }, {
+    "source" : "Project sprints",
+    "target" : "Beverage choice",
+    "weight" : "1.0",
+    "description" : "The beverage choice fluctuates during the project sprints.",
+    "keywords" : "Fluctuates during",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Beverage choice",
+    "tgt_id" : "Project sprints"
+  }, {
+    "source" : "Working hours",
+    "target" : "Pressure",
+    "weight" : "1.0",
+    "description" : "Working hours and pressure are noted to remain consistent.",
+    "keywords" : "Remain consistent",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Working hours",
+    "tgt_id" : "Pressure"
+  }, {
+    "source" : "Coincidence",
+    "target" : "Recurring pattern",
+    "weight" : "1.0",
+    "description" : "Some people consider the event a coincidence, while others note a recurring pattern.",
+    "keywords" : "Contrasting views, considered vs noted",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Coincidence",
+    "tgt_id" : "Recurring pattern"
+  }, {
+    "source" : "Recurring pattern",
+    "target" : "Break rooms",
+    "weight" : "1.0",
+    "description" : "The connection regarding the recurring pattern is sometimes discussed in break rooms.",
+    "keywords" : "Discussed in",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Recurring pattern",
+    "tgt_id" : "Break rooms"
+  }, {
+    "source" : "Increased rainfall",
+    "target" : "Coffee sales",
+    "weight" : "1.0",
+    "description" : "It remains unclear if there is a direct causal tie between coffee sales and increased rainfall.",
+    "keywords" : "Causality, Uncertainty",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2",
+    "src_id" : "Coffee sales",
+    "tgt_id" : "Increased rainfall"
+  }, {
+    "source" : "Gloomy weather",
+    "target" : "Warm beverage",
+    "weight" : "1.0",
+    "description" : "Patrons have suggested that gloomy weather puts them in the mood for a warm beverage.",
+    "keywords" : "Mood influence, Suggestion",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2",
+    "src_id" : "Gloomy weather",
+    "tgt_id" : "Warm beverage"
+  }, {
+    "source" : "Bustling mornings",
+    "target" : "Wet forecasts",
+    "weight" : "1.0",
+    "description" : "Bustling mornings have been noted to coincide with wet forecasts.",
+    "keywords" : "Coincidence, Correlation",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2",
+    "src_id" : "Bustling mornings",
+    "tgt_id" : "Wet forecasts"
+  }, {
+    "source" : "Social media use",
+    "target" : "Self-esteem",
+    "weight" : "1.0",
+    "description" : "High social media use is frequently reported to be associated with lower self-esteem among young adults.",
+    "keywords" : "Correlation, Negative impact",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7",
+    "src_id" : "Social media use",
+    "tgt_id" : "Self-esteem"
+  }, {
+    "source" : "Feeling less confident",
+    "target" : "Scrolling",
+    "weight" : "1.0",
+    "description" : "Individuals may describe increasing scrolling when they feel less confident.",
+    "keywords" : "Behavioral trigger, Increase",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7",
+    "src_id" : "Feeling less confident",
+    "tgt_id" : "Scrolling"
+  }, {
+    "source" : "Spending time online",
+    "target" : "Self-image",
+    "weight" : "1.0",
+    "description" : "Time spent online can cause changes in an individual's self-image.",
+    "keywords" : "Impact, Change",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7",
+    "src_id" : "Spending time online",
+    "tgt_id" : "Self-image"
+  }, {
+    "source" : "Digital habits",
+    "target" : "Self-perception",
+    "weight" : "1.0",
+    "description" : "There is an intricate relationship between digital habits and self-perception, which is noted to be complex and not always linear.",
+    "keywords" : "Relationship, Influence",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7",
+    "src_id" : "Digital habits",
+    "tgt_id" : "Self-perception"
+  }, {
+    "source" : "New Desserts",
+    "target" : "Sugar Intake",
+    "weight" : "1.0",
+    "description" : "The introduction of new desserts led to an increase in sugar intake.",
+    "keywords" : "introduction, increase",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "New Desserts",
+    "tgt_id" : "Sugar Intake"
+  }, {
+    "source" : "New Desserts",
+    "target" : "Mood Swings",
+    "weight" : "1.0",
+    "description" : "The new desserts are speculated to be related to the occurrence of mood swings.",
+    "keywords" : "speculation, dietary link",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "New Desserts",
+    "tgt_id" : "Mood Swings"
+  }, {
+    "source" : "Mood Swings",
+    "target" : "Workload",
+    "weight" : "1.0",
+    "description" : "Some people attribute the mood swings to changes in workload.",
+    "keywords" : "potential cause, attribution",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "Workload",
+    "tgt_id" : "Mood Swings"
+  }, {
+    "source" : "Mood Swings",
+    "target" : "Dietary Effects",
+    "weight" : "1.0",
+    "description" : "Others speculate that dietary effects are the cause of the mood swings.",
+    "keywords" : "speculation, cause",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "Dietary Effects",
+    "tgt_id" : "Mood Swings"
+  }, {
+    "source" : "Eating Habits",
+    "target" : "Lunch",
+    "weight" : "1.0",
+    "description" : "Conversations about eating habits are common during lunch.",
+    "keywords" : "common topic, discussion",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "Eating Habits",
+    "tgt_id" : "Lunch"
+  }, {
+    "source" : "Solar Eclipse",
+    "target" : "Financial Markets",
+    "weight" : "1.0",
+    "description" : "The solar eclipse coincided with unexpected volatility in the financial markets.",
+    "keywords" : "Volatility, Timing",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c",
+    "src_id" : "Solar Eclipse",
+    "tgt_id" : "Financial Markets"
+  }, {
+    "source" : "Solar Eclipse",
+    "target" : "Stock Market Crash",
+    "weight" : "1.0",
+    "description" : "The stock market crash occurred coincidentally as the solar eclipse reached its peak.",
+    "keywords" : "Coincidence, Peak",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c",
+    "src_id" : "Solar Eclipse",
+    "tgt_id" : "Stock Market Crash"
+  }, {
+    "source" : "Solar Eclipse",
+    "target" : "Public Attention",
+    "weight" : "1.0",
+    "description" : "The alignment of the solar eclipse captured public attention.",
+    "keywords" : "Alignment, Capture",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c",
+    "src_id" : "Solar Eclipse",
+    "tgt_id" : "Public Attention"
+  }, {
+    "source" : "Analysts",
+    "target" : "Charts",
+    "weight" : "1.0",
+    "description" : "Analysts compared charts while viewing the events.",
+    "keywords" : "Comparison, Analysis",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c",
+    "src_id" : "Analysts",
+    "tgt_id" : "Charts"
+  }, {
+    "source" : "Road construction projects",
+    "target" : "Local restaurant revenues",
+    "weight" : "1.0",
+    "description" : "The onset of road construction projects is often associated with an increase in local restaurant revenues.",
+    "keywords" : "Aligns with, Increase",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Road construction projects",
+    "tgt_id" : "Local restaurant revenues"
+  }, {
+    "source" : "Local restaurant revenues",
+    "target" : "Restaurateurs",
+    "weight" : "1.0",
+    "description" : "Restaurateurs notice the coincidence and adjust their operating hours accordingly.",
+    "keywords" : "Notice, Adjust",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Restaurateurs",
+    "tgt_id" : "Local restaurant revenues"
+  }, {
+    "source" : "Detours",
+    "target" : "Unfamiliar neighborhoods",
+    "weight" : "1.0",
+    "description" : "Detours are speculated to be bringing new customers to unfamiliar neighborhoods.",
+    "keywords" : "Bringing, Customers",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Detours",
+    "tgt_id" : "Unfamiliar neighborhoods"
+  }, {
+    "source" : "Community forums",
+    "target" : "Dining trends",
+    "weight" : "1.0",
+    "description" : "Community forums discuss whether traffic patterns are influencing dining trends.",
+    "keywords" : "Discuss, Influence",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Community forums",
+    "tgt_id" : "Dining trends"
+  }, {
+    "source" : "Urban economists",
+    "target" : "Relationship",
+    "weight" : "1.0",
+    "description" : "Urban economists suggest that the relationship between the factors discussed is not straightforward.",
+    "keywords" : "Suggest, Not straightforward",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Urban economists",
+    "tgt_id" : "Relationship"
+  } ],
+  "metadata" : {
+    "nodeCount" : 46,
+    "edgeCount" : 27
+  }
+}

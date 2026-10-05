@@ -1,0 +1,339 @@
+kotlin-logging: initializing... active logger factory: Slf4jLoggerFactory
+16:57:14,491 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found logback-core version 1.5.38
+16:57:14,492 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - No custom configurators were discovered as a service.
+16:57:14,492 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+16:57:14,493 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+16:57:14,497 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+16:57:14,502 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml]
+16:57:14,875 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Scan attribute set to true. Will scan for configuration file changes.
+16:57:14,876 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@179ece50 - URL [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml] is not of type file
+16:57:14,879 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "INFO" substituted for "${ROOT_LOG_LEVEL:-INFO}"
+16:57:14,879 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL:-DEBUG}"
+16:57:14,879 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_LOG_LEVEL:-TRACE}"
+16:57:14,879 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL:-TRACE}"
+16:57:14,879 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL:-ERROR}"
+16:57:14,879 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL:-ERROR}"
+16:57:14,886 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL:-ERROR}"
+16:57:14,886 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL:-DEBUG}"
+16:57:14,888 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Missing watchable .xml or .properties files.
+16:57:14,888 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Watching .xml files requires that the main configuration file is reachable as a URL
+16:57:14,890 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Main configuration file URL: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml
+16:57:14,901 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - FileWatchList= {}
+16:57:14,901 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - URLWatchList= {}
+16:57:14,918 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+16:57:14,918 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+16:57:14,940 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+16:57:15,085 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - NOTE: Writing to the console can be slow. Try to avoid logging to the 
+16:57:15,085 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - console in production environments, especially in high volume systems.
+16:57:15,085 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also https://logback.qos.ch/codes.html#slowConsole
+16:57:15,087 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL}"
+16:57:15,087 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag] to DEBUG
+16:57:15,093 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag] to false
+16:57:15,093 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag]
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_LOG_LEVEL}"
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.neo4j] to TRACE
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.neo4j] to false
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.neo4j]
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL}"
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.neo4j.driver] to TRACE
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.neo4j.driver] to false
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[org.neo4j.driver]
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL}"
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.memory] to DEBUG
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.memory] to false
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.memory]
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL}"
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j] to ERROR
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j] to false
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j]
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.okhttp] to ERROR
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.okhttp] to false
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.okhttp]
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.openai] to ERROR
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.openai] to false
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.openai]
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [okhttp3] to ERROR
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [okhttp3] to false
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[okhttp3]
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL}"
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.ai4j.openai4j] to ERROR
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.ai4j.openai4j] to false
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.ai4j.openai4j]
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "INFO" substituted for "${ROOT_LOG_LEVEL}"
+16:57:15,094 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+16:57:15,094 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+16:57:15,095 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@3cd3e762 - End of configuration.
+16:57:15,095 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@1fa121e2 - Registering current configuration as safe fallback point
+16:57:15,147 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 602 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+WARNING: --use-unified-api=false keeps 'shared.eval.MultiConditionExperimentKt' on legacy condition runners. This compatibility path is planned for deprecation; prefer --use-unified-api=true.
+Running 1 conditions on 1 samples
+Parallelism: 1
+Unified API: false
+Unified persistence SPI: false
+Data: data/musique_experiment/musique_dev_balanced_30.jsonl
+Output: eval_results/swo69_s0/hipporag_gemma
+
+=== Condition: hipporag_graph (HippoRAG graph retrieval) ===
+2026-08-18 16:57:15.300 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_s0/hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text
+2026-08-18 16:57:15.481 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_s0/hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/chunk_embeddings
+2026-08-18 16:57:15.482 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_s0/hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/entity_embeddings
+2026-08-18 16:57:15.483 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_s0/hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/fact_embeddings
+2026-08-18 16:57:15.601 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_s0/hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text
+2026-08-18 16:57:15.603 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_s0/hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/chunk_embeddings
+2026-08-18 16:57:15.604 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_s0/hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/entity_embeddings
+2026-08-18 16:57:15.605 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_s0/hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/fact_embeddings
+2026-08-18 16:57:15.607 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-18 16:57:15.607 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-18 16:57:15.913 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 20 new records, 0 records already exist.
+2026-08-18 16:57:20.247 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Saving new records.
+2026-08-18 16:57:20.503 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Saved 20 records to eval_results/swo69_s0/hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-18 17:03:21.562 [DefaultDispatcher-worker-1] WARN  h.informationextraction.OpenIE - Triple extraction failed for chunk chunk-89e289f19aaf7b4a8e998ee0ba6dde07
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:107)
+	at hipporag.llm.LangChainChatLLM.chat(LangChainChatLLM.kt:37)
+	at hipporag.llm.LangChainChatLLM.infer(LangChainChatLLM.kt:22)
+	at hipporag.informationextraction.OpenIE.tripleExtraction(OpenIE.kt:113)
+	at hipporag.informationextraction.OpenIE.batchOpenie(OpenIE.kt:137)
+	at hipporag.HippoRag.index(HippoRag.kt:278)
+	at hipporag.HippoRAG.aupsert(HippoRAG.kt:63)
+	at hipporag.HippoRAG$upsert$2.invokeSuspend(HippoRAG.kt:56)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:256)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:54)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlockingImpl(Builders.kt:30)
+	at kotlinx.coroutines.BuildersKt.runBlockingImpl(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK(Builders.concurrent.kt:172)
+	at kotlinx.coroutines.BuildersKt.runBlockingK(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK$default(Builders.concurrent.kt:157)
+	at kotlinx.coroutines.BuildersKt.runBlockingK$default(Unknown Source)
+	at hipporag.HippoRAG.upsert(HippoRAG.kt:56)
+	at shared.eval.MultiConditionExperimentKt$createHippoRunner$1.run(MultiConditionExperiment.kt:844)
+	at shared.eval.MultiConditionExperimentKt.runConditionForSample(MultiConditionExperiment.kt:389)
+	at shared.eval.MultiConditionExperimentKt.access$runConditionForSample(MultiConditionExperiment.kt:1)
+	at shared.eval.MultiConditionExperimentKt$runConditionForSamples$2$resultsByWorker$1$1.invokeSuspend(MultiConditionExperiment.kt:311)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 42 common frames omitted
+2026-08-18 17:07:18.008 [DefaultDispatcher-worker-1] WARN  h.informationextraction.OpenIE - Triple extraction failed for chunk chunk-92dd9d0f17127b47d503dd783fb7a69a
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:107)
+	at hipporag.llm.LangChainChatLLM.chat(LangChainChatLLM.kt:37)
+	at hipporag.llm.LangChainChatLLM.infer(LangChainChatLLM.kt:22)
+	at hipporag.informationextraction.OpenIE.tripleExtraction(OpenIE.kt:113)
+	at hipporag.informationextraction.OpenIE.batchOpenie(OpenIE.kt:137)
+	at hipporag.HippoRag.index(HippoRag.kt:278)
+	at hipporag.HippoRAG.aupsert(HippoRAG.kt:63)
+	at hipporag.HippoRAG$upsert$2.invokeSuspend(HippoRAG.kt:56)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:256)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:54)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlockingImpl(Builders.kt:30)
+	at kotlinx.coroutines.BuildersKt.runBlockingImpl(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK(Builders.concurrent.kt:172)
+	at kotlinx.coroutines.BuildersKt.runBlockingK(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK$default(Builders.concurrent.kt:157)
+	at kotlinx.coroutines.BuildersKt.runBlockingK$default(Unknown Source)
+	at hipporag.HippoRAG.upsert(HippoRAG.kt:56)
+	at shared.eval.MultiConditionExperimentKt$createHippoRunner$1.run(MultiConditionExperiment.kt:844)
+	at shared.eval.MultiConditionExperimentKt.runConditionForSample(MultiConditionExperiment.kt:389)
+	at shared.eval.MultiConditionExperimentKt.access$runConditionForSample(MultiConditionExperiment.kt:1)
+	at shared.eval.MultiConditionExperimentKt$runConditionForSamples$2$resultsByWorker$1$1.invokeSuspend(MultiConditionExperiment.kt:311)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 42 common frames omitted
+2026-08-18 17:28:23.470 [DefaultDispatcher-worker-1] WARN  h.informationextraction.OpenIE - Triple extraction failed for chunk chunk-cfed1a016bd61e33cf5d93d138404eb7
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:107)
+	at hipporag.llm.LangChainChatLLM.chat(LangChainChatLLM.kt:37)
+	at hipporag.llm.LangChainChatLLM.infer(LangChainChatLLM.kt:22)
+	at hipporag.informationextraction.OpenIE.tripleExtraction(OpenIE.kt:113)
+	at hipporag.informationextraction.OpenIE.batchOpenie(OpenIE.kt:137)
+	at hipporag.HippoRag.index(HippoRag.kt:278)
+	at hipporag.HippoRAG.aupsert(HippoRAG.kt:63)
+	at hipporag.HippoRAG$upsert$2.invokeSuspend(HippoRAG.kt:56)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:256)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:54)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlockingImpl(Builders.kt:30)
+	at kotlinx.coroutines.BuildersKt.runBlockingImpl(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK(Builders.concurrent.kt:172)
+	at kotlinx.coroutines.BuildersKt.runBlockingK(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK$default(Builders.concurrent.kt:157)
+	at kotlinx.coroutines.BuildersKt.runBlockingK$default(Unknown Source)
+	at hipporag.HippoRAG.upsert(HippoRAG.kt:56)
+	at shared.eval.MultiConditionExperimentKt$createHippoRunner$1.run(MultiConditionExperiment.kt:844)
+	at shared.eval.MultiConditionExperimentKt.runConditionForSample(MultiConditionExperiment.kt:389)
+	at shared.eval.MultiConditionExperimentKt.access$runConditionForSample(MultiConditionExperiment.kt:1)
+	at shared.eval.MultiConditionExperimentKt$runConditionForSamples$2$resultsByWorker$1$1.invokeSuspend(MultiConditionExperiment.kt:311)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 42 common frames omitted
+2026-08-18 17:38:18.117 [DefaultDispatcher-worker-1] WARN  h.informationextraction.OpenIE - Triple extraction failed for chunk chunk-dc7d03debcacc034548de9a68cff404c
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:107)
+	at hipporag.llm.LangChainChatLLM.chat(LangChainChatLLM.kt:37)
+	at hipporag.llm.LangChainChatLLM.infer(LangChainChatLLM.kt:22)
+	at hipporag.informationextraction.OpenIE.tripleExtraction(OpenIE.kt:113)
+	at hipporag.informationextraction.OpenIE.batchOpenie(OpenIE.kt:137)
+	at hipporag.HippoRag.index(HippoRag.kt:278)
+	at hipporag.HippoRAG.aupsert(HippoRAG.kt:63)
+	at hipporag.HippoRAG$upsert$2.invokeSuspend(HippoRAG.kt:56)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:256)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:54)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlockingImpl(Builders.kt:30)
+	at kotlinx.coroutines.BuildersKt.runBlockingImpl(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK(Builders.concurrent.kt:172)
+	at kotlinx.coroutines.BuildersKt.runBlockingK(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK$default(Builders.concurrent.kt:157)
+	at kotlinx.coroutines.BuildersKt.runBlockingK$default(Unknown Source)
+	at hipporag.HippoRAG.upsert(HippoRAG.kt:56)
+	at shared.eval.MultiConditionExperimentKt$createHippoRunner$1.run(MultiConditionExperiment.kt:844)
+	at shared.eval.MultiConditionExperimentKt.runConditionForSample(MultiConditionExperiment.kt:389)
+	at shared.eval.MultiConditionExperimentKt.access$runConditionForSample(MultiConditionExperiment.kt:1)
+	at shared.eval.MultiConditionExperimentKt$runConditionForSamples$2$resultsByWorker$1$1.invokeSuspend(MultiConditionExperiment.kt:311)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:798)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 42 common frames omitted
+2026-08-18 17:38:18.231 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - OpenIE results saved to eval_results/swo69_s0/hipporag_gemma/workdirs/graph/openie_results_ner_gemma4:e4b.json
+2026-08-18 17:38:18.273 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding Entities
+2026-08-18 17:38:18.331 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 144 new records, 0 records already exist.
+2026-08-18 17:38:30.366 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Saving new records.
+2026-08-18 17:38:30.464 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Saved 144 records to eval_results/swo69_s0/hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-18 17:38:30.464 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding Facts
+2026-08-18 17:38:30.475 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 128 new records, 0 records already exist.
+2026-08-18 17:38:35.765 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Saving new records.
+2026-08-18 17:38:35.824 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Saved 128 records to eval_results/swo69_s0/hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-18 17:38:35.824 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Constructing Graph
+2026-08-18 17:38:35.824 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-18 17:38:35.893 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Connecting passage nodes to phrase nodes.
+2026-08-18 17:38:35.901 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Found 20 new chunks to save into graph.
+2026-08-18 17:38:35.933 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Expanding graph with synonymy edges
+2026-08-18 17:38:35.934 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing KNN retrieval for each phrase nodes (144).
+2026-08-18 17:38:36.641 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Graph construction completed!
+2026-08-18 17:38:36.641 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - {num_phrase_nodes=144, num_passage_nodes=20, num_total_nodes=164, num_extracted_triples=128, num_triples_with_passage_node=153, num_synonymy_triples=122, num_total_triples=403}
+2026-08-18 17:38:36.642 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 164 nodes, 403 edges
+2026-08-18 17:38:36.682 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-18 17:38:36.691 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-18 17:38:36.691 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-18 17:38:36.691 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-18 17:38:36.713 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-18 17:38:36.875 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-18 17:38:52.104 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 164 nodes and total weight 1.987910
+2026-08-18 17:38:52.108 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 15.42s
+2026-08-18 17:38:52.108 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 15.17s
+2026-08-18 17:38:52.108 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.00s
+2026-08-18 17:38:52.108 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.25s
+2026-08-18 17:39:10.174 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found placeholder platform from: cpu-linux-x86_64:2.7.1
+2026-08-18 17:39:12.351 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - PyTorch graph executor optimizer is enabled, this may impact your inference latency and throughput. See: https://docs.djl.ai/master/docs/development/inference_performance_optimization.html#graph-executor-optimization
+2026-08-18 17:39:12.420 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - Number of inter-op threads is 96
+2026-08-18 17:39:12.420 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - Number of intra-op threads is 16
+2026-08-18 17:41:24.860 [DefaultDispatcher-worker-1] WARN  ai.djl.repository.zoo.ModelZoo - Failed to download Huggingface model zoo index: CV.ZERO_SHOT_IMAGE_CLASSIFICATION
+2026-08-18 17:43:35.932 [DefaultDispatcher-worker-1] WARN  ai.djl.repository.zoo.ModelZoo - Failed to download Huggingface model zoo index: CV.ZERO_SHOT_OBJECT_DETECTION
+2026-08-18 17:45:47.003 [DefaultDispatcher-worker-1] WARN  ai.djl.repository.zoo.ModelZoo - Failed to download Huggingface model zoo index: NLP.FILL_MASK
+2026-08-18 17:47:58.126 [DefaultDispatcher-worker-1] WARN  ai.djl.repository.zoo.ModelZoo - Failed to download Huggingface model zoo index: NLP.QUESTION_ANSWER
+2026-08-18 17:50:09.147 [DefaultDispatcher-worker-1] WARN  ai.djl.repository.zoo.ModelZoo - Failed to download Huggingface model zoo index: NLP.TEXT_CLASSIFICATION
+2026-08-18 17:52:20.219 [DefaultDispatcher-worker-1] WARN  ai.djl.repository.zoo.ModelZoo - Failed to download Huggingface model zoo index: NLP.TEXT_EMBEDDING
+2026-08-18 17:54:31.292 [DefaultDispatcher-worker-1] WARN  ai.djl.repository.zoo.ModelZoo - Failed to download Huggingface model zoo index: NLP.TOKEN_CLASSIFICATION
+2026-08-18 17:56:42.364 [DefaultDispatcher-worker-1] WARN  ai.djl.repository.zoo.ModelZoo - Failed to download Huggingface model zoo index: NLP.ZERO_SHOT_CLASSIFICATION
+Warning: BertScore computation failed, defaulting to 0.0. Cause: Connection timed out
+hipporag_graph: processed 1/1
+Wrote 1 rows -> eval_results/swo69_s0/hipporag_gemma/per_question/hipporag_graph.jsonl
+
+Finished. Aggregate CSV can be produced by scripts/aggregate_experiment_results.py

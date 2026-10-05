@@ -1,0 +1,4288 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "movie theater attendance",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "citywide energy consumption",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "movie theater attendance",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "comparable_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "citywide energy consumption",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Local analysts",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "movie theater attendance",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Local analysts",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "citywide energy consumption",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "patrons",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cinemas",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electricity usage",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cinemas",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "movie theater attendance",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "This winter",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "citywide energy consumption",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "This winter",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "movie theater attendance",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "colder months",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "citywide energy consumption",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "colder months",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "musician",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "performance",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "piano",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "musician",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "piano",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "auditorium",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "notes",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "performance",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "notes",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "musician",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "audience",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "auditorium",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "audience",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "performance",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "performance",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "auditorium",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "applause",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "performance",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "notes",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "audience",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spotlight",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "performance",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "weekly farmers' market",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "downtown",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "commuters",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bus delays",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bus delays",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "several routes",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "several routes",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "downtown",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "riders",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bus delays",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "transit authority",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "transit authority",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ongoing events in the city",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minor traffic accident",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "nearby street",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minor traffic accident",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bus delays",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "weekly farmers' market",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bus delays",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "families",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "common allergens",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "common allergens",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "homes",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "children",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "allergic reactions",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "allergen removal",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reduced reactions",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Medical interventions",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "allergic reactions",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "allergen removal",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reduced reactions",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "children",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "allergen removal",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "gourmet burger restaurant",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local brewery",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "gourmet burger restaurant",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "larger movement toward unique local food and beverage experiences",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local brewery",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "larger movement toward unique local food and beverage experiences",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "burger trend",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "brewery partnerships",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "food critics",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "burger trend",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "food critics",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "brewery partnerships",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "gourmet burger restaurant",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local brewery",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "burger trend",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "brewery partnerships",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Employees",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "High workload",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Deadlines",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "High workload",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Employees",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Increased irritability",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Employees",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Personal matters",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Employees",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Short tempers",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Coffee breaks",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Coping mechanism",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Small talk",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Coping mechanism",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Coffee breaks",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Employees",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Small talk",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Employees",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Demands of the job",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Professional life",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Workload",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mood changes",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Increased irritability",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mood changes",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Coffee breaks",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "Coffee breaks", "Coping mechanism", "Deadlines", "Employees", "High workload", "Increased irritability", "Mood changes", "Personal matters", "Short tempers", "Small talk", "Workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Coping mechanism",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "Coffee breaks", "Coping mechanism", "Deadlines", "Employees", "High workload", "Increased irritability", "Mood changes", "Personal matters", "Short tempers", "Small talk", "Workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Deadlines",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "Coffee breaks", "Coping mechanism", "Deadlines", "Employees", "High workload", "Increased irritability", "Mood changes", "Personal matters", "Short tempers", "Small talk", "Workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Employees",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "Coffee breaks", "Coping mechanism", "Deadlines", "Employees", "High workload", "Increased irritability", "Mood changes", "Personal matters", "Short tempers", "Small talk", "Workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "High workload",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "Coffee breaks", "Coping mechanism", "Deadlines", "Employees", "High workload", "Increased irritability", "Mood changes", "Personal matters", "Short tempers", "Small talk", "Workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Increased irritability",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "Coffee breaks", "Coping mechanism", "Deadlines", "Employees", "High workload", "Increased irritability", "Mood changes", "Personal matters", "Short tempers", "Small talk", "Workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mood changes",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "Coffee breaks", "Coping mechanism", "Deadlines", "Employees", "High workload", "Increased irritability", "Mood changes", "Personal matters", "Short tempers", "Small talk", "Workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Personal matters",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "Coffee breaks", "Coping mechanism", "Deadlines", "Employees", "High workload", "Increased irritability", "Mood changes", "Personal matters", "Short tempers", "Small talk", "Workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Short tempers",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "Coffee breaks", "Coping mechanism", "Deadlines", "Employees", "High workload", "Increased irritability", "Mood changes", "Personal matters", "Short tempers", "Small talk", "Workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Small talk",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "Coffee breaks", "Coping mechanism", "Deadlines", "Employees", "High workload", "Increased irritability", "Mood changes", "Personal matters", "Short tempers", "Small talk", "Workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Workload",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "Coffee breaks", "Coping mechanism", "Deadlines", "Employees", "High workload", "Increased irritability", "Mood changes", "Personal matters", "Short tempers", "Small talk", "Workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Employees",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Employees"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Employees",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Employees"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Employees"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "Coffee breaks", "Coping mechanism", "Deadlines", "Employees", "High workload", "Increased irritability", "Mood changes", "Personal matters", "Short tempers", "Small talk", "Workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Increased irritability",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Increased irritability"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Increased irritability",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Increased irritability"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Increased irritability"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "Coffee breaks", "Coping mechanism", "Deadlines", "Employees", "High workload", "Increased irritability", "Mood changes", "Personal matters", "Short tempers", "Small talk", "Workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Coping mechanism",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Coping mechanism"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Coping mechanism",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Coping mechanism"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Coping mechanism"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "Coffee breaks", "Coping mechanism", "Deadlines", "Employees", "High workload", "Increased irritability", "Mood changes", "Personal matters", "Short tempers", "Small talk", "Workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "High workload",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "High workload"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "High workload",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "High workload"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "High workload"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "Coffee breaks", "Coping mechanism", "Deadlines", "Employees", "High workload", "Increased irritability", "Mood changes", "Personal matters", "Short tempers", "Small talk", "Workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mood changes",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Mood changes"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mood changes",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Mood changes"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Mood changes"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "Coffee breaks", "Coping mechanism", "Deadlines", "Employees", "High workload", "Increased irritability", "Mood changes", "Personal matters", "Short tempers", "Small talk", "Workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "applause",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 8 members",
+      "community_id" : "community_2",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "applause", "audience", "auditorium", "musician", "notes", "performance", "piano", "spotlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "audience",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 8 members",
+      "community_id" : "community_2",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "applause", "audience", "auditorium", "musician", "notes", "performance", "piano", "spotlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "auditorium",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 8 members",
+      "community_id" : "community_2",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "applause", "audience", "auditorium", "musician", "notes", "performance", "piano", "spotlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "musician",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 8 members",
+      "community_id" : "community_2",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "applause", "audience", "auditorium", "musician", "notes", "performance", "piano", "spotlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "notes",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 8 members",
+      "community_id" : "community_2",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "applause", "audience", "auditorium", "musician", "notes", "performance", "piano", "spotlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "performance",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 8 members",
+      "community_id" : "community_2",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "applause", "audience", "auditorium", "musician", "notes", "performance", "piano", "spotlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "piano",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 8 members",
+      "community_id" : "community_2",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "applause", "audience", "auditorium", "musician", "notes", "performance", "piano", "spotlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spotlight",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 8 members",
+      "community_id" : "community_2",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "applause", "audience", "auditorium", "musician", "notes", "performance", "piano", "spotlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "performance",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "performance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "performance",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "performance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "performance"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 8 members",
+      "community_id" : "community_2",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "applause", "audience", "auditorium", "musician", "notes", "performance", "piano", "spotlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "musician",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "musician"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "musician",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "musician"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "musician"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 8 members",
+      "community_id" : "community_2",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "applause", "audience", "auditorium", "musician", "notes", "performance", "piano", "spotlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "audience",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "audience"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "audience",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "audience"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "audience"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 8 members",
+      "community_id" : "community_2",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "applause", "audience", "auditorium", "musician", "notes", "performance", "piano", "spotlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "notes",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "notes"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "notes",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "notes"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "notes"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 8 members",
+      "community_id" : "community_2",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "applause", "audience", "auditorium", "musician", "notes", "performance", "piano", "spotlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "auditorium",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "auditorium"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "auditorium",
+      "chunk id" : "Cy_qrQxN",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "auditorium"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "auditorium"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 8 members",
+      "community_id" : "community_2",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "applause", "audience", "auditorium", "musician", "notes", "performance", "piano", "spotlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bus delays",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 8 members",
+      "community_id" : "community_3",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "bus delays", "commuters", "downtown", "minor traffic accident", "nearby street", "riders", "several routes", "weekly farmers' market" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "commuters",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 8 members",
+      "community_id" : "community_3",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "bus delays", "commuters", "downtown", "minor traffic accident", "nearby street", "riders", "several routes", "weekly farmers' market" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "downtown",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 8 members",
+      "community_id" : "community_3",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "bus delays", "commuters", "downtown", "minor traffic accident", "nearby street", "riders", "several routes", "weekly farmers' market" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minor traffic accident",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 8 members",
+      "community_id" : "community_3",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "bus delays", "commuters", "downtown", "minor traffic accident", "nearby street", "riders", "several routes", "weekly farmers' market" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "nearby street",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 8 members",
+      "community_id" : "community_3",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "bus delays", "commuters", "downtown", "minor traffic accident", "nearby street", "riders", "several routes", "weekly farmers' market" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "riders",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 8 members",
+      "community_id" : "community_3",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "bus delays", "commuters", "downtown", "minor traffic accident", "nearby street", "riders", "several routes", "weekly farmers' market" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "several routes",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 8 members",
+      "community_id" : "community_3",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "bus delays", "commuters", "downtown", "minor traffic accident", "nearby street", "riders", "several routes", "weekly farmers' market" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "weekly farmers' market",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 8 members",
+      "community_id" : "community_3",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "bus delays", "commuters", "downtown", "minor traffic accident", "nearby street", "riders", "several routes", "weekly farmers' market" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bus delays",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bus delays"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bus delays",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bus delays"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bus delays"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 8 members",
+      "community_id" : "community_3",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "bus delays", "commuters", "downtown", "minor traffic accident", "nearby street", "riders", "several routes", "weekly farmers' market" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "weekly farmers' market",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "weekly farmers' market"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "weekly farmers' market",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "weekly farmers' market"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "weekly farmers' market"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 8 members",
+      "community_id" : "community_3",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "bus delays", "commuters", "downtown", "minor traffic accident", "nearby street", "riders", "several routes", "weekly farmers' market" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minor traffic accident",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "minor traffic accident"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minor traffic accident",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "minor traffic accident"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "minor traffic accident"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 8 members",
+      "community_id" : "community_3",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "bus delays", "commuters", "downtown", "minor traffic accident", "nearby street", "riders", "several routes", "weekly farmers' market" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "several routes",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "several routes"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "several routes",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "several routes"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "several routes"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 8 members",
+      "community_id" : "community_3",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "bus delays", "commuters", "downtown", "minor traffic accident", "nearby street", "riders", "several routes", "weekly farmers' market" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "downtown",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "downtown"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "downtown",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "downtown"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "downtown"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 8 members",
+      "community_id" : "community_3",
+      "node_count" : "8",
+      "edge_count" : "8",
+      "members" : [ "bus delays", "commuters", "downtown", "minor traffic accident", "nearby street", "riders", "several routes", "weekly farmers' market" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "gourmet burger restaurant",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "gourmet burger restaurant", "larger movement toward unique local food and beverage experiences", "local brewery", "ongoing events in the city", "the city", "transit authority" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "larger movement toward unique local food and beverage experiences",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "gourmet burger restaurant", "larger movement toward unique local food and beverage experiences", "local brewery", "ongoing events in the city", "the city", "transit authority" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local brewery",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "gourmet burger restaurant", "larger movement toward unique local food and beverage experiences", "local brewery", "ongoing events in the city", "the city", "transit authority" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ongoing events in the city",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "gourmet burger restaurant", "larger movement toward unique local food and beverage experiences", "local brewery", "ongoing events in the city", "the city", "transit authority" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "gourmet burger restaurant", "larger movement toward unique local food and beverage experiences", "local brewery", "ongoing events in the city", "the city", "transit authority" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "transit authority",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "gourmet burger restaurant", "larger movement toward unique local food and beverage experiences", "local brewery", "ongoing events in the city", "the city", "transit authority" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "gourmet burger restaurant",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "gourmet burger restaurant"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "gourmet burger restaurant",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "gourmet burger restaurant"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "gourmet burger restaurant"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "gourmet burger restaurant", "larger movement toward unique local food and beverage experiences", "local brewery", "ongoing events in the city", "the city", "transit authority" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local brewery",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local brewery"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local brewery",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local brewery"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local brewery"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "gourmet burger restaurant", "larger movement toward unique local food and beverage experiences", "local brewery", "ongoing events in the city", "the city", "transit authority" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the city"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the city"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the city"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "gourmet burger restaurant", "larger movement toward unique local food and beverage experiences", "local brewery", "ongoing events in the city", "the city", "transit authority" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "larger movement toward unique local food and beverage experiences",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "larger movement toward unique local food and beverage experiences"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "larger movement toward unique local food and beverage experiences",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "larger movement toward unique local food and beverage experiences"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "larger movement toward unique local food and beverage experiences"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "gourmet burger restaurant", "larger movement toward unique local food and beverage experiences", "local brewery", "ongoing events in the city", "the city", "transit authority" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "transit authority",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "transit authority"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "transit authority",
+      "chunk id" : "L02y1eXo",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "transit authority"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "transit authority"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "gourmet burger restaurant", "larger movement toward unique local food and beverage experiences", "local brewery", "ongoing events in the city", "the city", "transit authority" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Local analysts",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "8",
+      "members" : [ "Local analysts", "This winter", "citywide energy consumption", "colder months", "movie theater attendance" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "This winter",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "8",
+      "members" : [ "Local analysts", "This winter", "citywide energy consumption", "colder months", "movie theater attendance" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "citywide energy consumption",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "8",
+      "members" : [ "Local analysts", "This winter", "citywide energy consumption", "colder months", "movie theater attendance" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "colder months",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "8",
+      "members" : [ "Local analysts", "This winter", "citywide energy consumption", "colder months", "movie theater attendance" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "movie theater attendance",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "8",
+      "members" : [ "Local analysts", "This winter", "citywide energy consumption", "colder months", "movie theater attendance" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "citywide energy consumption",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "citywide energy consumption"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "citywide energy consumption",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "citywide energy consumption"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "citywide energy consumption"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "8",
+      "members" : [ "Local analysts", "This winter", "citywide energy consumption", "colder months", "movie theater attendance" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "movie theater attendance",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "movie theater attendance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "movie theater attendance",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "movie theater attendance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "movie theater attendance"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "8",
+      "members" : [ "Local analysts", "This winter", "citywide energy consumption", "colder months", "movie theater attendance" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "colder months",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "colder months"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "colder months",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "colder months"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "colder months"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "8",
+      "members" : [ "Local analysts", "This winter", "citywide energy consumption", "colder months", "movie theater attendance" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "This winter",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "This winter"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "This winter",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "This winter"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "This winter"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "8",
+      "members" : [ "Local analysts", "This winter", "citywide energy consumption", "colder months", "movie theater attendance" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Local analysts",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Local analysts"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Local analysts",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Local analysts"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Local analysts"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "8",
+      "members" : [ "Local analysts", "This winter", "citywide energy consumption", "colder months", "movie theater attendance" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Medical interventions",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Medical interventions", "allergen removal", "allergic reactions", "children", "reduced reactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "allergen removal",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Medical interventions", "allergen removal", "allergic reactions", "children", "reduced reactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "allergic reactions",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Medical interventions", "allergen removal", "allergic reactions", "children", "reduced reactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "children",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Medical interventions", "allergen removal", "allergic reactions", "children", "reduced reactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reduced reactions",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Medical interventions", "allergen removal", "allergic reactions", "children", "reduced reactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "allergen removal",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "allergen removal"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "allergen removal",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "allergen removal"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "allergen removal"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Medical interventions", "allergen removal", "allergic reactions", "children", "reduced reactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "allergic reactions",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "allergic reactions"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "allergic reactions",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "allergic reactions"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "allergic reactions"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Medical interventions", "allergen removal", "allergic reactions", "children", "reduced reactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reduced reactions",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "reduced reactions"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reduced reactions",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "reduced reactions"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "reduced reactions"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Medical interventions", "allergen removal", "allergic reactions", "children", "reduced reactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "children",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "children"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "children",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "children"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "children"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Medical interventions", "allergen removal", "allergic reactions", "children", "reduced reactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Medical interventions",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Medical interventions"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Medical interventions",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Medical interventions"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Medical interventions"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Medical interventions", "allergen removal", "allergic reactions", "children", "reduced reactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "brewery partnerships",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "4",
+      "members" : [ "brewery partnerships", "burger trend", "food critics" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "burger trend",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "4",
+      "members" : [ "brewery partnerships", "burger trend", "food critics" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "food critics",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "4",
+      "members" : [ "brewery partnerships", "burger trend", "food critics" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "brewery partnerships",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "brewery partnerships"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "brewery partnerships",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "brewery partnerships"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "brewery partnerships"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "4",
+      "members" : [ "brewery partnerships", "burger trend", "food critics" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "burger trend",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "burger trend"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "burger trend",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "burger trend"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "burger trend"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "4",
+      "members" : [ "brewery partnerships", "burger trend", "food critics" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "food critics",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "food critics"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "food critics",
+      "chunk id" : "nsqIjuDg",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "food critics"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "food critics"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "4",
+      "members" : [ "brewery partnerships", "burger trend", "food critics" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cinemas",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "cinemas", "electricity usage", "patrons" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electricity usage",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "cinemas", "electricity usage", "patrons" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "patrons",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "cinemas", "electricity usage", "patrons" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cinemas",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "cinemas"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cinemas",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "cinemas"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "cinemas"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "cinemas", "electricity usage", "patrons" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "patrons",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "patrons"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "patrons",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "patrons"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "patrons"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "cinemas", "electricity usage", "patrons" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electricity usage",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "electricity usage"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electricity usage",
+      "chunk id" : "m6Uz6pch",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "electricity usage"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "electricity usage"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "cinemas", "electricity usage", "patrons" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "common allergens",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "common allergens", "families", "homes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "families",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "common allergens", "families", "homes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "homes",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "common allergens", "families", "homes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "common allergens",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "common allergens"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "common allergens",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "common allergens"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "common allergens"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "common allergens", "families", "homes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "homes",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "homes"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "homes",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "homes"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "homes"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "common allergens", "families", "homes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "families",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "families"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "families",
+      "chunk id" : "6ongskPL",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "families"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "families"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "common allergens", "families", "homes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Demands of the job",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Demands of the job", "Professional life" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Professional life",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Demands of the job", "Professional life" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Demands of the job",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Demands of the job"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Demands of the job",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Demands of the job"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Demands of the job"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Demands of the job", "Professional life" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Professional life",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Professional life"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Professional life",
+      "chunk id" : "jZkUawLx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Professional life"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Professional life"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Demands of the job", "Professional life" ]
+    }
+  }
+} ]

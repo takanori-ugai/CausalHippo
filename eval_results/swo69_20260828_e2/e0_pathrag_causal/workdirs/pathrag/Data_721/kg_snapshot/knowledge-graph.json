@@ -1,0 +1,416 @@
+{
+  "nodes" : {
+    "JITTERS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A physical symptom or condition experienced by individuals; the source of the jitters remains uncertain in this context.",
+      "source_id" : "chunk-21ade462a3e3f9882e94103ae40bd043"
+    },
+    "SERVER-SIDE BUG" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A software bug deployed earlier that day, identified as the actual cause of the phone malfunction.",
+      "source_id" : "chunk-163b991c4cff066e89ae46208f0678e5"
+    },
+    "FOCUS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The ability to concentrate at work, claimed to be enhanced by meditation, mindfulness, and other approaches.",
+      "source_id" : "chunk-707a300e76a0e71f35c6156b3e255b8f"
+    },
+    "MURDERS BY STEAM, HOT VAPORS, AND HOT OBJECTS" : {
+      "entity_type" : "EVENT",
+      "description" : "Homicides committed using steam, hot vapors, or hot objects, tracked in statistical data showing pattern correlation.",
+      "source_id" : "chunk-c8adbda7d7887ad50b844d9a2d6905c5"
+    },
+    "FLEXIBLE JOBS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Employment arrangements that reduce distractions and contribute to the ability to concentrate.",
+      "source_id" : "chunk-707a300e76a0e71f35c6156b3e255b8f"
+    },
+    "MEDITATION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A practice that many practitioners claim improves focus and concentration at work.",
+      "source_id" : "chunk-707a300e76a0e71f35c6156b3e255b8f"
+    },
+    "ART EXHIBITION" : {
+      "entity_type" : "EVENT",
+      "description" : "A popular art exhibition that caused a significant uptick in museum visits during the period in question.",
+      "source_id" : "chunk-06ef6d9f060d038966f70a16d5a1e263"
+    },
+    "STRATEGIES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Various approaches, distinct from meditation, used by some individuals to achieve high focus.",
+      "source_id" : "chunk-707a300e76a0e71f35c6156b3e255b8f"
+    },
+    "STEAM, HOT VAPORS, AND HOT OBJECTS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Methods of killing that define a specific subset of murder statistics referenced in the text.",
+      "source_id" : "chunk-c8adbda7d7887ad50b844d9a2d6905c5"
+    },
+    "WORK STRESS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A factor related to occupational pressure, identified as a potential root cause of anxiety and jitters.",
+      "source_id" : "chunk-21ade462a3e3f9882e94103ae40bd043"
+    },
+    "TRACK REPAIRS" : {
+      "entity_type" : "EVENT",
+      "description" : "Ongoing maintenance work on transit tracks that was the actual cause of public transportation delays.",
+      "source_id" : "chunk-06ef6d9f060d038966f70a16d5a1e263"
+    },
+    "THUNDERSTORM" : {
+      "entity_type" : "EVENT",
+      "description" : "A fierce thunderstorm that arrived in the area, coinciding in timing with the phone malfunction but unrelated to it.",
+      "source_id" : "chunk-163b991c4cff066e89ae46208f0678e5"
+    },
+    "MISS AMERICA" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "The pageant/competition whose winners' ages are being statistically compared to murder data in documented records.",
+      "source_id" : "chunk-c8adbda7d7887ad50b844d9a2d6905c5"
+    },
+    "PHONE MALFUNCTION" : {
+      "entity_type" : "EVENT",
+      "description" : "A sudden malfunction affecting several residents' phones, caused by a server-side bug deployed earlier that day.",
+      "source_id" : "chunk-163b991c4cff066e89ae46208f0678e5"
+    },
+    "REGULAR COMMUTERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Individuals who regularly use public transit and complained about crowded buses and longer wait times.",
+      "source_id" : "chunk-06ef6d9f060d038966f70a16d5a1e263"
+    },
+    "ANXIETY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A psychological condition attributed to work stress, proposed as a possible cause of jitters.",
+      "source_id" : "chunk-21ade462a3e3f9882e94103ae40bd043"
+    },
+    "TECHNICAL SUPPORT" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "The organization that investigated the phone malfunction and determined the root cause was a server-side bug.",
+      "source_id" : "chunk-163b991c4cff066e89ae46208f0678e5"
+    },
+    "SOME INDIVIDUALS" : {
+      "entity_type" : "PERSON",
+      "description" : "A group of people who notice jitters and are affected by various potential causes such as caffeine, stress, and sleep deprivation.",
+      "source_id" : "chunk-21ade462a3e3f9882e94103ae40bd043"
+    },
+    "MISS AMERICA WINNERS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A group of individuals whose ages show an observed statistical correlation with homicide statistics.",
+      "source_id" : "chunk-c8adbda7d7887ad50b844d9a2d6905c5"
+    },
+    "MINDFULNESS TECHNIQUES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Additional practices often implemented alongside meditation to support focus and concentration.",
+      "source_id" : "chunk-707a300e76a0e71f35c6156b3e255b8f"
+    },
+    "MUSEUM" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "The institution that experienced a surge in attendance, particularly during the popular art exhibition.",
+      "source_id" : "chunk-06ef6d9f060d038966f70a16d5a1e263"
+    },
+    "RESIDENTS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Several users whose phones experienced the sudden malfunction and who suspected a causal link to the thunderstorm.",
+      "source_id" : "chunk-163b991c4cff066e89ae46208f0678e5"
+    },
+    "TRANSPORTATION DELAYS" : {
+      "entity_type" : "EVENT",
+      "description" : "Frequent public transportation delays including crowded buses and longer wait times affecting commuters.",
+      "source_id" : "chunk-06ef6d9f060d038966f70a16d5a1e263"
+    },
+    "CITY OFFICIALS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Municipal authority that clarified transit delays were caused by ongoing track repairs, not museum-goers.",
+      "source_id" : "chunk-06ef6d9f060d038966f70a16d5a1e263"
+    },
+    "POWER SURGE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A suspected cause that users assumed was responsible for the malfunction, but was ultimately unrelated.",
+      "source_id" : "chunk-163b991c4cff066e89ae46208f0678e5"
+    },
+    "CAFFEINE INTAKE" : {
+      "entity_type" : "EVENT",
+      "description" : "The act of excessive caffeine consumption, suggested as a potential cause of jitters after certain periods.",
+      "source_id" : "chunk-21ade462a3e3f9882e94103ae40bd043"
+    },
+    "LACK OF SLEEP" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A condition suggested as the true factor behind jitters, though the source remains uncertain.",
+      "source_id" : "chunk-21ade462a3e3f9882e94103ae40bd043"
+    }
+  },
+  "edges" : [ {
+    "source" : "PHONE MALFUNCTION",
+    "target" : "THUNDERSTORM",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The malfunction coincided with the thunderstorm's arrival, leading residents to falsely suspect a causal relationship.",
+      "keywords" : "coincidence, false causality, timing",
+      "source_id" : "chunk-163b991c4cff066e89ae46208f0678e5"
+    }
+  }, {
+    "source" : "SOME INDIVIDUALS",
+    "target" : "WORK STRESS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Some individuals experience work stress that may contribute to their anxiety and jitters.",
+      "keywords" : "occupation, stress exposure",
+      "source_id" : "chunk-21ade462a3e3f9882e94103ae40bd043"
+    }
+  }, {
+    "source" : "CAFFEINE INTAKE",
+    "target" : "JITTERS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Excessive caffeine intake is identified as a potential cause of the jitters experienced by individuals.",
+      "keywords" : "causation, caffeine, symptom trigger",
+      "source_id" : "chunk-21ade462a3e3f9882e94103ae40bd043"
+    }
+  }, {
+    "source" : "CITY OFFICIALS",
+    "target" : "TRACK REPAIRS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "City officials identified ongoing track repairs as the actual cause of the transportation delays.",
+      "keywords" : "official clarification, root cause, maintenance",
+      "source_id" : "chunk-06ef6d9f060d038966f70a16d5a1e263"
+    }
+  }, {
+    "source" : "MISS AMERICA WINNERS",
+    "target" : "MURDERS BY STEAM, HOT VAPORS, AND HOT OBJECTS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The ages of Miss America winners show a noted statistical correlation with the number of these homicides.",
+      "keywords" : "statistical correlation, pattern alignment, documented data",
+      "source_id" : "chunk-c8adbda7d7887ad50b844d9a2d6905c5"
+    }
+  }, {
+    "source" : "SOME INDIVIDUALS",
+    "target" : "CAFFEINE INTAKE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Some individuals engage in excessive caffeine intake, leading to observed jitters.",
+      "keywords" : "behavior, consumption, effect",
+      "source_id" : "chunk-21ade462a3e3f9882e94103ae40bd043"
+    }
+  }, {
+    "source" : "STRATEGIES",
+    "target" : "MEDITATION",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Strategies are presented as an alternative to meditation for achieving high focus.",
+      "keywords" : "alternative, contrast",
+      "source_id" : "chunk-707a300e76a0e71f35c6156b3e255b8f"
+    }
+  }, {
+    "source" : "TRACK REPAIRS",
+    "target" : "TRANSPORTATION DELAYS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The ongoing track repairs were the true cause of the frequent public transportation delays.",
+      "keywords" : "causation, infrastructure, delay cause",
+      "source_id" : "chunk-06ef6d9f060d038966f70a16d5a1e263"
+    }
+  }, {
+    "source" : "FLEXIBLE JOBS",
+    "target" : "FOCUS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Flexible jobs reduce distractions, contributing to individuals' ability to concentrate.",
+      "keywords" : "work environment, reduced distractions",
+      "source_id" : "chunk-707a300e76a0e71f35c6156b3e255b8f"
+    }
+  }, {
+    "source" : "ART EXHIBITION",
+    "target" : "TRANSPORTATION DELAYS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "The parallel timing of the exhibition and transit delays led some to draw questionable conclusions about a causal connection.",
+      "keywords" : "correlation, questionable causation, public perception",
+      "source_id" : "chunk-06ef6d9f060d038966f70a16d5a1e263"
+    }
+  }, {
+    "source" : "SOME INDIVIDUALS",
+    "target" : "JITTERS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Some individuals notice and experience jitters as a symptom after various triggers.",
+      "keywords" : "symptom, experience, observation",
+      "source_id" : "chunk-21ade462a3e3f9882e94103ae40bd043"
+    }
+  }, {
+    "source" : "MINDFULNESS TECHNIQUES",
+    "target" : "FOCUS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Mindfulness techniques are often implemented alongside meditation to support better focus.",
+      "keywords" : "complementary practices, concentration",
+      "source_id" : "chunk-707a300e76a0e71f35c6156b3e255b8f"
+    }
+  }, {
+    "source" : "REGULAR COMMUTERS",
+    "target" : "MUSEUM",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Commuters incorrectly attributed their transit inconvenience to the surge in museum-goers from the art exhibition.",
+      "keywords" : "misattribution, blame, museum-goers",
+      "source_id" : "chunk-06ef6d9f060d038966f70a16d5a1e263"
+    }
+  }, {
+    "source" : "CITY OFFICIALS",
+    "target" : "TRANSPORTATION DELAYS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "City officials publicly clarified the true cause of the delays, pushing back on public misconceptions.",
+      "keywords" : "public communication, clarification, misinformation",
+      "source_id" : "chunk-06ef6d9f060d038966f70a16d5a1e263"
+    }
+  }, {
+    "source" : "MISS AMERICA WINNERS",
+    "target" : "MISS AMERICA",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The winners are representatives of the Miss America pageant, whose age data is being analyzed.",
+      "keywords" : "pageant, winners, age data",
+      "source_id" : "chunk-c8adbda7d7887ad50b844d9a2d6905c5"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "THUNDERSTORM",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Residents in the area experienced the malfunction just as the fierce thunderstorm arrived, reinforcing false suspicion.",
+      "keywords" : "proximity, timing, misperception",
+      "source_id" : "chunk-163b991c4cff066e89ae46208f0678e5"
+    }
+  }, {
+    "source" : "SERVER-SIDE BUG",
+    "target" : "PHONE MALFUNCTION",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "The server-side bug deployed earlier that day was the actual root cause of the phone malfunction.",
+      "keywords" : "root cause, software defect, causation",
+      "source_id" : "chunk-163b991c4cff066e89ae46208f0678e5"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "PHONE MALFUNCTION",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Several residents experienced the sudden phone malfunction and were the affected users in this incident.",
+      "keywords" : "affected users, experience, impact",
+      "source_id" : "chunk-163b991c4cff066e89ae46208f0678e5"
+    }
+  }, {
+    "source" : "MURDERS BY STEAM, HOT VAPORS, AND HOT OBJECTS",
+    "target" : "STEAM, HOT VAPORS, AND HOT OBJECTS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "These murders are specifically defined and categorized by the use of steam, hot vapors, or hot objects as the method.",
+      "keywords" : "method of killing, classification, causality",
+      "source_id" : "chunk-c8adbda7d7887ad50b844d9a2d6905c5"
+    }
+  }, {
+    "source" : "MEDITATION",
+    "target" : "FOCUS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Practitioners claim that meditation leads to better focus and concentration at work.",
+      "keywords" : "improvement, concentration, practice",
+      "source_id" : "chunk-707a300e76a0e71f35c6156b3e255b8f"
+    }
+  }, {
+    "source" : "STRATEGIES",
+    "target" : "FOCUS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Some individuals achieve high focus through different strategies rather than meditation.",
+      "keywords" : "alternative approaches, concentration",
+      "source_id" : "chunk-707a300e76a0e71f35c6156b3e255b8f"
+    }
+  }, {
+    "source" : "LACK OF SLEEP",
+    "target" : "JITTERS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Lack of sleep is suggested as the true underlying factor behind the jitters.",
+      "keywords" : "causation, sleep deprivation, root cause",
+      "source_id" : "chunk-21ade462a3e3f9882e94103ae40bd043"
+    }
+  }, {
+    "source" : "TECHNICAL SUPPORT",
+    "target" : "SERVER-SIDE BUG",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Technical support identified the server-side bug as the true cause behind the reported malfunction.",
+      "keywords" : "identification, root cause analysis",
+      "source_id" : "chunk-163b991c4cff066e89ae46208f0678e5"
+    }
+  }, {
+    "source" : "ART EXHIBITION",
+    "target" : "MUSEUM",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The popular art exhibition was the catalyst for the significant uptick in museum visits and attendance.",
+      "keywords" : "exhibition, attendance surge, museum visits",
+      "source_id" : "chunk-06ef6d9f060d038966f70a16d5a1e263"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "POWER SURGE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Residents assumed a power surge related to the storm caused their phone issues, a belief later disproven.",
+      "keywords" : "misattribution, assumption, belief",
+      "source_id" : "chunk-163b991c4cff066e89ae46208f0678e5"
+    }
+  }, {
+    "source" : "ANXIETY",
+    "target" : "JITTERS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Anxiety, stemming from work stress, is proposed as a possible cause of the jitters.",
+      "keywords" : "causation, anxiety, symptom link",
+      "source_id" : "chunk-21ade462a3e3f9882e94103ae40bd043"
+    }
+  }, {
+    "source" : "REGULAR COMMUTERS",
+    "target" : "TRANSPORTATION DELAYS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Commuters directly experienced the delays, complaining about crowded buses and longer wait times.",
+      "keywords" : "complaints, inconvenience, daily commuting",
+      "source_id" : "chunk-06ef6d9f060d038966f70a16d5a1e263"
+    }
+  }, {
+    "source" : "TECHNICAL SUPPORT",
+    "target" : "PHONE MALFUNCTION",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Technical support investigated the malfunction and determined it was unrelated to the storm, caused by a server bug.",
+      "keywords" : "investigation, diagnosis, resolution",
+      "source_id" : "chunk-163b991c4cff066e89ae46208f0678e5"
+    }
+  }, {
+    "source" : "WORK STRESS",
+    "target" : "ANXIETY",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Work stress is believed to be the cause of anxiety in some individuals.",
+      "keywords" : "causation, stress, psychological effect",
+      "source_id" : "chunk-21ade462a3e3f9882e94103ae40bd043"
+    }
+  }, {
+    "source" : "MEDITATION",
+    "target" : "MINDFULNESS TECHNIQUES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "People who meditate often also implement other mindfulness techniques as part of a combined approach.",
+      "keywords" : "complementary practices, holistic approach",
+      "source_id" : "chunk-707a300e76a0e71f35c6156b3e255b8f"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 27,
+    "edgeCount" : 30,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data_721"
+  }
+}

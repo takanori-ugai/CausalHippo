@@ -1,0 +1,4515 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "People",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Depression",
+      "chunk id" : "F3r9-GSp"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Depression",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sleep disturbances",
+      "chunk id" : "F3r9-GSp"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sleep disturbances",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Low moods",
+      "chunk id" : "F3r9-GSp"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Depressive symptoms",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sleep",
+      "chunk id" : "F3r9-GSp"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mood",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sleep",
+      "chunk id" : "F3r9-GSp"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "People",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sleep disturbances",
+      "chunk id" : "F3r9-GSp"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Friends",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Loved ones",
+      "chunk id" : "F3r9-GSp"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Depression",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sleep patterns",
+      "chunk id" : "F3r9-GSp"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sprinkler system",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "grass",
+      "chunk id" : "xfN2YwsF"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "grass",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "yard",
+      "chunk id" : "xfN2YwsF"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "yard",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "xfN2YwsF"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood residents",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sprinkler system",
+      "chunk id" : "xfN2YwsF"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood residents",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "grass",
+      "chunk id" : "xfN2YwsF"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "small talk",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sprinkler system",
+      "chunk id" : "xfN2YwsF"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "small talk",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "grass",
+      "chunk id" : "xfN2YwsF"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sprinkler system",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood residents",
+      "chunk id" : "xfN2YwsF"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sprinkler system",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "grass greening",
+      "chunk id" : "xfN2YwsF"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "alarm clock",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bedroom",
+      "chunk id" : "JpYD07QY"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "alarm clock",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "family members",
+      "chunk id" : "JpYD07QY"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "family members",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the routine",
+      "chunk id" : "JpYD07QY"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the routine",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "alarm clock",
+      "chunk id" : "JpYD07QY"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mornings",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the routine",
+      "chunk id" : "JpYD07QY"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the routine",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "years",
+      "chunk id" : "JpYD07QY"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "teenagers",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "daily screen time",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "eye strain",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "eye strain",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "classes",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "digital breaks",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Educational institutions",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Opticians",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "appointments",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the trend",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schools",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schools",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Educational institutions",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "eye strain",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "appointments",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local book fair",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "indoor climbing gym",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local book fair",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "indoor climbing gym",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "book fairs",
+      "chunk id" : "XnpsVe1X"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "climbing-themed readings",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "climbing-themed readings",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "book fair",
+      "chunk id" : "XnpsVe1X"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reading more books",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "climbing",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "climbing",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "book reading",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "engaged and active lifestyle",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local book fair",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "This year",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "indoor climbing gym",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "This year",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bookstore sales",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seating shortages",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reading habits",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shop patronage",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "colder weather",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reading habits",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "colder weather",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shop patronage",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community members",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bookstore sales",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community members",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seating shortages",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bookstore sales",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "months",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seating shortages",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local coffee shop",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "colder weather",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "apparent link between bookstore sales and seating shortages",
+      "chunk id" : "KR46o6Dw"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "grass",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "9",
+      "members" : [ "grass", "grass greening", "neighborhood", "neighborhood residents", "small talk", "sprinkler system", "yard" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "grass greening",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "9",
+      "members" : [ "grass", "grass greening", "neighborhood", "neighborhood residents", "small talk", "sprinkler system", "yard" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "9",
+      "members" : [ "grass", "grass greening", "neighborhood", "neighborhood residents", "small talk", "sprinkler system", "yard" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood residents",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "9",
+      "members" : [ "grass", "grass greening", "neighborhood", "neighborhood residents", "small talk", "sprinkler system", "yard" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "small talk",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "9",
+      "members" : [ "grass", "grass greening", "neighborhood", "neighborhood residents", "small talk", "sprinkler system", "yard" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sprinkler system",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "9",
+      "members" : [ "grass", "grass greening", "neighborhood", "neighborhood residents", "small talk", "sprinkler system", "yard" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "yard",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "9",
+      "members" : [ "grass", "grass greening", "neighborhood", "neighborhood residents", "small talk", "sprinkler system", "yard" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sprinkler system",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sprinkler system"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sprinkler system",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sprinkler system"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sprinkler system"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "9",
+      "members" : [ "grass", "grass greening", "neighborhood", "neighborhood residents", "small talk", "sprinkler system", "yard" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "grass",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "grass"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "grass",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "grass"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "grass"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "9",
+      "members" : [ "grass", "grass greening", "neighborhood", "neighborhood residents", "small talk", "sprinkler system", "yard" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood residents",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "neighborhood residents"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood residents",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "neighborhood residents"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "neighborhood residents"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "9",
+      "members" : [ "grass", "grass greening", "neighborhood", "neighborhood residents", "small talk", "sprinkler system", "yard" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "small talk",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "small talk"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "small talk",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "small talk"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "small talk"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "9",
+      "members" : [ "grass", "grass greening", "neighborhood", "neighborhood residents", "small talk", "sprinkler system", "yard" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "yard",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "yard"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "yard",
+      "chunk id" : "xfN2YwsF"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "yard"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "yard"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "9",
+      "members" : [ "grass", "grass greening", "neighborhood", "neighborhood residents", "small talk", "sprinkler system", "yard" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "alarm clock",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 6 members",
+      "community_id" : "community_2",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "alarm clock", "bedroom", "family members", "mornings", "the routine", "years" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bedroom",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 6 members",
+      "community_id" : "community_2",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "alarm clock", "bedroom", "family members", "mornings", "the routine", "years" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "family members",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 6 members",
+      "community_id" : "community_2",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "alarm clock", "bedroom", "family members", "mornings", "the routine", "years" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mornings",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 6 members",
+      "community_id" : "community_2",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "alarm clock", "bedroom", "family members", "mornings", "the routine", "years" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the routine",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 6 members",
+      "community_id" : "community_2",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "alarm clock", "bedroom", "family members", "mornings", "the routine", "years" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "years",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 6 members",
+      "community_id" : "community_2",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "alarm clock", "bedroom", "family members", "mornings", "the routine", "years" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the routine",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the routine"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the routine",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the routine"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the routine"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 6 members",
+      "community_id" : "community_2",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "alarm clock", "bedroom", "family members", "mornings", "the routine", "years" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "alarm clock",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "alarm clock"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "alarm clock",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "alarm clock"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "alarm clock"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 6 members",
+      "community_id" : "community_2",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "alarm clock", "bedroom", "family members", "mornings", "the routine", "years" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "family members",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "family members"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "family members",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "family members"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "family members"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 6 members",
+      "community_id" : "community_2",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "alarm clock", "bedroom", "family members", "mornings", "the routine", "years" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mornings",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "mornings"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mornings",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "mornings"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "mornings"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 6 members",
+      "community_id" : "community_2",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "alarm clock", "bedroom", "family members", "mornings", "the routine", "years" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bedroom",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bedroom"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bedroom",
+      "chunk id" : "JpYD07QY"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bedroom"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bedroom"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 6 members",
+      "community_id" : "community_2",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "alarm clock", "bedroom", "family members", "mornings", "the routine", "years" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Depression",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Depression", "Low moods", "People", "Sleep disturbances", "Sleep patterns" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Low moods",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Depression", "Low moods", "People", "Sleep disturbances", "Sleep patterns" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "People",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Depression", "Low moods", "People", "Sleep disturbances", "Sleep patterns" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sleep disturbances",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Depression", "Low moods", "People", "Sleep disturbances", "Sleep patterns" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sleep patterns",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Depression", "Low moods", "People", "Sleep disturbances", "Sleep patterns" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Depression",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Depression"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Depression",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Depression"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Depression"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Depression", "Low moods", "People", "Sleep disturbances", "Sleep patterns" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sleep disturbances",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sleep disturbances"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sleep disturbances",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sleep disturbances"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sleep disturbances"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Depression", "Low moods", "People", "Sleep disturbances", "Sleep patterns" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "People",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "People"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "People",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "People"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "People"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Depression", "Low moods", "People", "Sleep disturbances", "Sleep patterns" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sleep patterns",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sleep patterns"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sleep patterns",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sleep patterns"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sleep patterns"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Depression", "Low moods", "People", "Sleep disturbances", "Sleep patterns" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Low moods",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Low moods"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Low moods",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Low moods"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Low moods"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "Depression", "Low moods", "People", "Sleep disturbances", "Sleep patterns" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Opticians",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Opticians", "appointments", "classes", "eye strain", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "appointments",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Opticians", "appointments", "classes", "eye strain", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "classes",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Opticians", "appointments", "classes", "eye strain", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "eye strain",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Opticians", "appointments", "classes", "eye strain", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Opticians", "appointments", "classes", "eye strain", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "eye strain",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "eye strain"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "eye strain",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "eye strain"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "eye strain"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Opticians", "appointments", "classes", "eye strain", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "appointments",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "appointments"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "appointments",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "appointments"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "appointments"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Opticians", "appointments", "classes", "eye strain", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Opticians",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Opticians"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Opticians",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Opticians"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Opticians"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Opticians", "appointments", "classes", "eye strain", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "students"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "students"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "students"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Opticians", "appointments", "classes", "eye strain", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "classes",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "classes"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "classes",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "classes"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "classes"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Opticians", "appointments", "classes", "eye strain", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "This year",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "This year", "engaged and active lifestyle", "indoor climbing gym", "local book fair", "residents" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "engaged and active lifestyle",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "This year", "engaged and active lifestyle", "indoor climbing gym", "local book fair", "residents" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "indoor climbing gym",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "This year", "engaged and active lifestyle", "indoor climbing gym", "local book fair", "residents" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local book fair",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "This year", "engaged and active lifestyle", "indoor climbing gym", "local book fair", "residents" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "This year", "engaged and active lifestyle", "indoor climbing gym", "local book fair", "residents" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local book fair",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local book fair"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local book fair",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local book fair"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local book fair"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "This year", "engaged and active lifestyle", "indoor climbing gym", "local book fair", "residents" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "indoor climbing gym",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "indoor climbing gym"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "indoor climbing gym",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "indoor climbing gym"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "indoor climbing gym"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "This year", "engaged and active lifestyle", "indoor climbing gym", "local book fair", "residents" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "residents"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "residents"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "residents"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "This year", "engaged and active lifestyle", "indoor climbing gym", "local book fair", "residents" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "This year",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "This year"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "This year",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "This year"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "This year"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "This year", "engaged and active lifestyle", "indoor climbing gym", "local book fair", "residents" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "engaged and active lifestyle",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "engaged and active lifestyle"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "engaged and active lifestyle",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "engaged and active lifestyle"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "engaged and active lifestyle"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "This year", "engaged and active lifestyle", "indoor climbing gym", "local book fair", "residents" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bookstore sales",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "bookstore sales", "community members", "local coffee shop", "months", "seating shortages" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community members",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "bookstore sales", "community members", "local coffee shop", "months", "seating shortages" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local coffee shop",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "bookstore sales", "community members", "local coffee shop", "months", "seating shortages" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "months",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "bookstore sales", "community members", "local coffee shop", "months", "seating shortages" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seating shortages",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "bookstore sales", "community members", "local coffee shop", "months", "seating shortages" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bookstore sales",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bookstore sales"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bookstore sales",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bookstore sales"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bookstore sales"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "bookstore sales", "community members", "local coffee shop", "months", "seating shortages" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seating shortages",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "seating shortages"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seating shortages",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "seating shortages"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "seating shortages"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "bookstore sales", "community members", "local coffee shop", "months", "seating shortages" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community members",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "community members"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community members",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "community members"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "community members"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "bookstore sales", "community members", "local coffee shop", "months", "seating shortages" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local coffee shop",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local coffee shop"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local coffee shop",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local coffee shop"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local coffee shop"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "bookstore sales", "community members", "local coffee shop", "months", "seating shortages" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "months",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "months"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "months",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "months"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "months"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "bookstore sales", "community members", "local coffee shop", "months", "seating shortages" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Educational institutions",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Educational institutions", "digital breaks", "schools", "the trend" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "digital breaks",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Educational institutions", "digital breaks", "schools", "the trend" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schools",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Educational institutions", "digital breaks", "schools", "the trend" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the trend",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Educational institutions", "digital breaks", "schools", "the trend" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Educational institutions",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Educational institutions"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Educational institutions",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Educational institutions"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Educational institutions"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Educational institutions", "digital breaks", "schools", "the trend" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schools",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "schools"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schools",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "schools"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "schools"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Educational institutions", "digital breaks", "schools", "the trend" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "digital breaks",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "digital breaks"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "digital breaks",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "digital breaks"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "digital breaks"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Educational institutions", "digital breaks", "schools", "the trend" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the trend",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the trend"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the trend",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the trend"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the trend"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Educational institutions", "digital breaks", "schools", "the trend" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "apparent link between bookstore sales and seating shortages",
+      "chunk id" : "KR46o6Dw"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 4 members",
+      "community_id" : "community_8",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "apparent link between bookstore sales and seating shortages", "coffee shop patronage", "colder weather", "reading habits" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shop patronage",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 4 members",
+      "community_id" : "community_8",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "apparent link between bookstore sales and seating shortages", "coffee shop patronage", "colder weather", "reading habits" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "colder weather",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 4 members",
+      "community_id" : "community_8",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "apparent link between bookstore sales and seating shortages", "coffee shop patronage", "colder weather", "reading habits" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reading habits",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 4 members",
+      "community_id" : "community_8",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "apparent link between bookstore sales and seating shortages", "coffee shop patronage", "colder weather", "reading habits" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "colder weather",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "colder weather"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "colder weather",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "colder weather"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "colder weather"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 4 members",
+      "community_id" : "community_8",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "apparent link between bookstore sales and seating shortages", "coffee shop patronage", "colder weather", "reading habits" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reading habits",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "reading habits"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reading habits",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "reading habits"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "reading habits"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 4 members",
+      "community_id" : "community_8",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "apparent link between bookstore sales and seating shortages", "coffee shop patronage", "colder weather", "reading habits" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shop patronage",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coffee shop patronage"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shop patronage",
+      "chunk id" : "KR46o6Dw",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coffee shop patronage"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coffee shop patronage"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 4 members",
+      "community_id" : "community_8",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "apparent link between bookstore sales and seating shortages", "coffee shop patronage", "colder weather", "reading habits" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "apparent link between bookstore sales and seating shortages",
+      "chunk id" : "KR46o6Dw"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "apparent link between bookstore sales and seating shortages"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "apparent link between bookstore sales and seating shortages",
+      "chunk id" : "KR46o6Dw"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "apparent link between bookstore sales and seating shortages"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "apparent link between bookstore sales and seating shortages"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 4 members",
+      "community_id" : "community_8",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "apparent link between bookstore sales and seating shortages", "coffee shop patronage", "colder weather", "reading habits" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Depressive symptoms",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Depressive symptoms", "Mood", "Sleep" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mood",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Depressive symptoms", "Mood", "Sleep" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sleep",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Depressive symptoms", "Mood", "Sleep" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sleep",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sleep"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sleep",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sleep"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sleep"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Depressive symptoms", "Mood", "Sleep" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Depressive symptoms",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Depressive symptoms"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Depressive symptoms",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Depressive symptoms"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Depressive symptoms"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Depressive symptoms", "Mood", "Sleep" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mood",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Mood"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mood",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Mood"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Mood"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Depressive symptoms", "Mood", "Sleep" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "book fair",
+      "chunk id" : "XnpsVe1X"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 3 members",
+      "community_id" : "community_10",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "book fair", "book fairs", "climbing-themed readings" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "book fairs",
+      "chunk id" : "XnpsVe1X"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 3 members",
+      "community_id" : "community_10",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "book fair", "book fairs", "climbing-themed readings" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "climbing-themed readings",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 3 members",
+      "community_id" : "community_10",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "book fair", "book fairs", "climbing-themed readings" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "climbing-themed readings",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "climbing-themed readings"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "climbing-themed readings",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "climbing-themed readings"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "climbing-themed readings"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 3 members",
+      "community_id" : "community_10",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "book fair", "book fairs", "climbing-themed readings" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "book fair",
+      "chunk id" : "XnpsVe1X"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "book fair"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "book fair",
+      "chunk id" : "XnpsVe1X"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "book fair"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "book fair"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 3 members",
+      "community_id" : "community_10",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "book fair", "book fairs", "climbing-themed readings" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "book fairs",
+      "chunk id" : "XnpsVe1X"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "book fairs"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "book fairs",
+      "chunk id" : "XnpsVe1X"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "book fairs"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "book fairs"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 3 members",
+      "community_id" : "community_10",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "book fair", "book fairs", "climbing-themed readings" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "book reading",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 3 members",
+      "community_id" : "community_11",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "book reading", "climbing", "reading more books" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "climbing",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 3 members",
+      "community_id" : "community_11",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "book reading", "climbing", "reading more books" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reading more books",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 3 members",
+      "community_id" : "community_11",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "book reading", "climbing", "reading more books" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "climbing",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "climbing"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "climbing",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "climbing"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "climbing"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 3 members",
+      "community_id" : "community_11",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "book reading", "climbing", "reading more books" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "book reading",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "book reading"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "book reading",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "book reading"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "book reading"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 3 members",
+      "community_id" : "community_11",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "book reading", "climbing", "reading more books" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reading more books",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "reading more books"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reading more books",
+      "chunk id" : "XnpsVe1X",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "reading more books"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "reading more books"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 3 members",
+      "community_id" : "community_11",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "book reading", "climbing", "reading more books" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Friends",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_12",
+      "description" : "Community of 2 members",
+      "community_id" : "community_12",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Friends", "Loved ones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Loved ones",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_12",
+      "description" : "Community of 2 members",
+      "community_id" : "community_12",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Friends", "Loved ones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Loved ones",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Loved ones"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Loved ones",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Loved ones"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Loved ones"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_12",
+      "description" : "Community of 2 members",
+      "community_id" : "community_12",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Friends", "Loved ones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Friends",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Friends"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Friends",
+      "chunk id" : "F3r9-GSp"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Friends"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Friends"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_12",
+      "description" : "Community of 2 members",
+      "community_id" : "community_12",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Friends", "Loved ones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "daily screen time",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_13",
+      "description" : "Community of 2 members",
+      "community_id" : "community_13",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "daily screen time", "teenagers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "teenagers",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_13",
+      "description" : "Community of 2 members",
+      "community_id" : "community_13",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "daily screen time", "teenagers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "teenagers",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "teenagers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "teenagers",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "teenagers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "teenagers"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_13",
+      "description" : "Community of 2 members",
+      "community_id" : "community_13",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "daily screen time", "teenagers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "daily screen time",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "daily screen time"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "daily screen time",
+      "chunk id" : "ign2zvoO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "daily screen time"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "daily screen time"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_13",
+      "description" : "Community of 2 members",
+      "community_id" : "community_13",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "daily screen time", "teenagers" ]
+    }
+  }
+} ]

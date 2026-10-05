@@ -1,0 +1,401 @@
+{
+  "nodes" : [ {
+    "id" : "Caffeine Intake",
+    "entity_id" : "Caffeine Intake",
+    "entity_type" : "Concept",
+    "description" : "Increased consumption of caffeine among employees during project sprints",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Project Sprints",
+    "entity_id" : "Project Sprints",
+    "entity_type" : "Event",
+    "description" : "Short-term work periods often occurring during intense project phases",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Break Rooms",
+    "entity_id" : "Break Rooms",
+    "entity_type" : "Location",
+    "description" : "Areas within the office where employees gather to take breaks",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "coffee sales",
+    "entity_id" : "coffee sales",
+    "entity_type" : "Concept",
+    "description" : "The quantity of coffee sold in the city's cafés",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "rainfall",
+    "entity_id" : "rainfall",
+    "entity_type" : "Concept",
+    "description" : "The amount of precipitation in the city",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "patrons",
+    "entity_id" : "patrons",
+    "entity_type" : "Person",
+    "description" : "Individuals who visit and purchase coffee in the city's cafés",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "weather",
+    "entity_id" : "weather",
+    "entity_type" : "Concept",
+    "description" : "The atmospheric conditions in the city",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "morning",
+    "entity_id" : "morning",
+    "entity_type" : "Concept",
+    "description" : "The time of day between sunrise and noon",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "forecast",
+    "entity_id" : "forecast",
+    "entity_type" : "Concept",
+    "description" : "The predicted weather conditions in the city",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Young Adults",
+    "entity_id" : "Young Adults",
+    "entity_type" : "Person",
+    "description" : "Individuals in the age group of young adulthood",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "Social Media",
+    "entity_id" : "Social Media",
+    "entity_type" : "Concept",
+    "description" : "A platform for sharing information and connecting with others",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "Self-Esteem",
+    "entity_id" : "Self-Esteem",
+    "entity_type" : "Concept",
+    "description" : "A person's overall sense of worth and confidence",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "Digital Habits",
+    "entity_id" : "Digital Habits",
+    "entity_type" : "Concept",
+    "description" : "Regular patterns of behavior related to technology use",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "Self-Image",
+    "entity_id" : "Self-Image",
+    "entity_type" : "Concept",
+    "description" : "A person's perception of themselves",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "sugar intake",
+    "entity_id" : "sugar intake",
+    "entity_type" : "Concept",
+    "description" : "The amount of sugar consumed",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "mood swings",
+    "entity_id" : "mood swings",
+    "entity_type" : "Concept",
+    "description" : "Changes in emotional state",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "workload",
+    "entity_id" : "workload",
+    "entity_type" : "Concept",
+    "description" : "Amount of work to be done",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "dietary effects",
+    "entity_id" : "dietary effects",
+    "entity_type" : "Concept",
+    "description" : "Effects of food on health",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "eating habits",
+    "entity_id" : "eating habits",
+    "entity_type" : "Concept",
+    "description" : "Regular patterns of food consumption",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "Solar Eclipse",
+    "entity_id" : "Solar Eclipse",
+    "entity_type" : "Event",
+    "description" : "A rare celestial event where the moon passes between the Earth and the sun",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Stock Market",
+    "entity_id" : "Stock Market",
+    "entity_type" : "Organization",
+    "description" : "A financial market where stocks are traded",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Financial Markets",
+    "entity_id" : "Financial Markets",
+    "entity_type" : "Location",
+    "description" : "A place where financial transactions take place",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Eclipse Glasses",
+    "entity_id" : "Eclipse Glasses",
+    "entity_type" : "Concept",
+    "description" : "Special glasses used to view solar eclipses safely",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Stock Tickers",
+    "entity_id" : "Stock Tickers",
+    "entity_type" : "Concept",
+    "description" : "Electronic devices displaying stock prices",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Analysts",
+    "entity_id" : "Analysts",
+    "entity_type" : "Person",
+    "description" : "Experts who analyze financial data and make predictions",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Television",
+    "entity_id" : "Television",
+    "entity_type" : "Location",
+    "description" : "A device for receiving visual information",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Road Construction Projects",
+    "entity_id" : "Road Construction Projects",
+    "entity_type" : "Event",
+    "description" : "The initiation of road construction projects",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Local Restaurant Revenues",
+    "entity_id" : "Local Restaurant Revenues",
+    "entity_type" : "Concept",
+    "description" : "The amount of money earned by local restaurants",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Detours",
+    "entity_id" : "Detours",
+    "entity_type" : "Concept",
+    "description" : "Temporary rerouting of traffic",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Restaurateurs",
+    "entity_id" : "Restaurateurs",
+    "entity_type" : "Person",
+    "description" : "Restaurant owners or managers",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Community Forums",
+    "entity_id" : "Community Forums",
+    "entity_type" : "Location",
+    "description" : "Online discussion platforms for community members",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Traffic Patterns",
+    "entity_id" : "Traffic Patterns",
+    "entity_type" : "Concept",
+    "description" : "The movement of vehicles in a particular area",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Urban Economists",
+    "entity_id" : "Urban Economists",
+    "entity_type" : "Person",
+    "description" : "Experts who study the economy of cities",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Dining Trends",
+    "entity_id" : "Dining Trends",
+    "entity_type" : "Concept",
+    "description" : "The current styles or preferences of eating out",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  } ],
+  "edges" : [ {
+    "source" : "Caffeine Intake",
+    "target" : "Project Sprints",
+    "weight" : "1.0",
+    "description" : "Increased caffeine intake is often associated with heightened alertness during project sprints",
+    "keywords" : "work productivity, focus",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Caffeine Intake",
+    "tgt_id" : "Project Sprints"
+  }, {
+    "source" : "Caffeine Intake",
+    "target" : "Break Rooms",
+    "weight" : "1.0",
+    "description" : "The connection between caffeine intake and project sprints is sometimes discussed in break rooms",
+    "keywords" : "social interaction, beverage choice",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Break Rooms",
+    "tgt_id" : "Caffeine Intake"
+  }, {
+    "source" : "coffee sales",
+    "target" : "rainfall",
+    "weight" : "1.0",
+    "description" : "There is a correlation between coffee sales and rainfall",
+    "keywords" : "increased, sales",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2",
+    "src_id" : "coffee sales",
+    "tgt_id" : "rainfall"
+  }, {
+    "source" : "patrons",
+    "target" : "weather",
+    "weight" : "1.0",
+    "description" : "Patrons' mood is influenced by the weather",
+    "keywords" : "mood, warm beverage",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2",
+    "src_id" : "patrons",
+    "tgt_id" : "weather"
+  }, {
+    "source" : "morning",
+    "target" : "forecast",
+    "weight" : "1.0",
+    "description" : "Mornings with high activity coincide with wet forecasts",
+    "keywords" : "bustling, wet",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2",
+    "src_id" : "morning",
+    "tgt_id" : "forecast"
+  }, {
+    "source" : "Young Adults",
+    "target" : "Social Media",
+    "weight" : "1.0",
+    "description" : "Young adults with high social media use report lower self-esteem",
+    "keywords" : "social media use, self-esteem",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7",
+    "src_id" : "Young Adults",
+    "tgt_id" : "Social Media"
+  }, {
+    "source" : "Young Adults",
+    "target" : "Digital Habits",
+    "weight" : "2.0",
+    "description" : "Young adults with high digital habits report lower self-esteem",
+    "keywords" : "digital habits, self-esteem, digital habits, self-esteem",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7<|#|>d55323a083157e2f3f37321475d4f1c7",
+    "src_id" : "Young Adults",
+    "tgt_id" : "Digital Habits"
+  }, {
+    "source" : "Young Adults",
+    "target" : "Self-Image",
+    "weight" : "1.0",
+    "description" : "Young adults' self-image changes after spending time online",
+    "keywords" : "self-image, social media",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7",
+    "src_id" : "Young Adults",
+    "tgt_id" : "Self-Image"
+  }, {
+    "source" : "sugar intake",
+    "target" : "mood swings",
+    "weight" : "1.0",
+    "description" : "Some people experience mood swings after consuming more sugar",
+    "keywords" : "increased sugar consumption, emotional changes",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "sugar intake",
+    "tgt_id" : "mood swings"
+  }, {
+    "source" : "sugar intake",
+    "target" : "eating habits",
+    "weight" : "1.0",
+    "description" : "Eating habits can influence sugar intake",
+    "keywords" : "regular consumption, sugar intake",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "eating habits",
+    "tgt_id" : "sugar intake"
+  }, {
+    "source" : "mood swings",
+    "target" : "workload",
+    "weight" : "1.0",
+    "description" : "Changes in workload can cause mood swings",
+    "keywords" : "stress, emotional strain",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "workload",
+    "tgt_id" : "mood swings"
+  }, {
+    "source" : "mood swings",
+    "target" : "dietary effects",
+    "weight" : "1.0",
+    "description" : "Some people believe that dietary effects can cause mood swings",
+    "keywords" : "food impact, emotional response",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "dietary effects",
+    "tgt_id" : "mood swings"
+  }, {
+    "source" : "Solar Eclipse",
+    "target" : "Financial Markets",
+    "weight" : "1.0",
+    "description" : "The solar eclipse caused unexpected volatility in financial markets",
+    "keywords" : "Volatility, Market Crash",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c",
+    "src_id" : "Solar Eclipse",
+    "tgt_id" : "Financial Markets"
+  }, {
+    "source" : "Solar Eclipse",
+    "target" : "Analysts",
+    "weight" : "1.0",
+    "description" : "Some analysts speculated about the coincidence of the solar eclipse and the market crash",
+    "keywords" : "Coincidence, Timing",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c",
+    "src_id" : "Solar Eclipse",
+    "tgt_id" : "Analysts"
+  }, {
+    "source" : "Financial Markets",
+    "target" : "Stock Market",
+    "weight" : "1.0",
+    "description" : "The financial market crash made headlines during the solar eclipse",
+    "keywords" : "Crash, Headlines",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c",
+    "src_id" : "Financial Markets",
+    "tgt_id" : "Stock Market"
+  }, {
+    "source" : "Analysts",
+    "target" : "Television",
+    "weight" : "1.0",
+    "description" : "Analysts compared charts and stock tickers on television during the eclipse",
+    "keywords" : "Charts, Stock Tickers",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c",
+    "src_id" : "Analysts",
+    "tgt_id" : "Television"
+  }, {
+    "source" : "Road Construction Projects",
+    "target" : "Local Restaurant Revenues",
+    "weight" : "1.0",
+    "description" : "The initiation of road construction projects often leads to an increase in local restaurant revenues",
+    "keywords" : "increase, revenue",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Road Construction Projects",
+    "tgt_id" : "Local Restaurant Revenues"
+  }, {
+    "source" : "Local Restaurant Revenues",
+    "target" : "Detours",
+    "weight" : "1.0",
+    "description" : "Detours are believed to bring new customers to unfamiliar neighborhoods, leading to an increase in local restaurant revenues",
+    "keywords" : "new customers, unfamiliar neighborhoods",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Detours",
+    "tgt_id" : "Local Restaurant Revenues"
+  }, {
+    "source" : "Local Restaurant Revenues",
+    "target" : "Restaurateurs",
+    "weight" : "1.0",
+    "description" : "Restaurateurs adjust their hours in response to the increase in local restaurant revenues",
+    "keywords" : "adjustment, hours",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Restaurateurs",
+    "tgt_id" : "Local Restaurant Revenues"
+  }, {
+    "source" : "Community Forums",
+    "target" : "Traffic Patterns",
+    "weight" : "1.0",
+    "description" : "Community forums discuss whether traffic patterns influence dining trends",
+    "keywords" : "influence, dining trends",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Community Forums",
+    "tgt_id" : "Traffic Patterns"
+  }, {
+    "source" : "Traffic Patterns",
+    "target" : "Urban Economists",
+    "weight" : "1.0",
+    "description" : "Urban economists suggest that the relationship between traffic patterns and dining trends is not straightforward",
+    "keywords" : "straightforward, relationship",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Urban Economists",
+    "tgt_id" : "Traffic Patterns"
+  } ],
+  "metadata" : {
+    "nodeCount" : 34,
+    "edgeCount" : 21
+  }
+}

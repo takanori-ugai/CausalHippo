@@ -1,0 +1,592 @@
+{
+  "nodes" : {
+    "LOCALS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Local residents who may be becoming more community-minded due to park improvements.<SEP>People in the local area who half-jokingly attribute new car purchases to a taste for finer things.",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436<SEP>chunk-5149f1b37d6ab917be3530d301f0812d"
+    },
+    "PEOPLE IN THE OFFICE" : {
+      "entity_type" : "PERSON",
+      "description" : "A group of office workers who committed to daily exercise routines and reported better health outcomes over several months.",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    },
+    "ENERGY LEVELS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A measure of vitality and physical state that remained high among those who adopted daily exercise routines.",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    },
+    "EPISODES OF ILLNESS" : {
+      "entity_type" : "EVENT",
+      "description" : "Health incidents among office workers; fewer reported by those who exercised, more by those who did not.",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    },
+    "USED CAR SALES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A business activity that experienced a notable increase, coinciding with rising wine tasting event popularity.",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436"
+    },
+    "CITY LIBRARY" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A public library that announced an influx of new memberships following local community improvements.",
+      "source_id" : "chunk-5149f1b37d6ab917be3530d301f0812d"
+    },
+    "FAMILIES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Households in the village that have widely adopted mosquito nets in their homes.",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    },
+    "INDUSTRY OBSERVERS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A group of analysts who speculate about a possible shared clientele between wine and car markets.",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436"
+    },
+    "DOG PARK RENOVATIONS" : {
+      "entity_type" : "EVENT",
+      "description" : "Significant renovations to dog parks that preceded the observed increase in library memberships.",
+      "source_id" : "chunk-5149f1b37d6ab917be3530d301f0812d"
+    },
+    "NEW MEMBERSHIPS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An influx of new library memberships coinciding with local park improvements and possible population growth.",
+      "source_id" : "chunk-5149f1b37d6ab917be3530d301f0812d"
+    },
+    "NET USAGE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The practice of using mosquito nets, linked to disease prevalence.",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    },
+    "DAILY EXERCISE ROUTINES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The adopted habit of regular physical exercise that correlated with improved health and energy levels.",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    },
+    "CLIMATE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An environmental factor allegedly shifted, affecting mosquito populations.",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    },
+    "BREAKFAST SKIPPING" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A behavioral habit of not eating breakfast, anecdotally linked to concentration issues.",
+      "source_id" : "chunk-9699c3cac8ef8902098b4bad207a7f14"
+    },
+    "CIVIC INITIATIVES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Unrelated civic projects that may also contribute to the observed community trends.",
+      "source_id" : "chunk-5149f1b37d6ab917be3530d301f0812d"
+    },
+    "ELDERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Village elders who claim the climate has shifted, making it less favorable for mosquitoes.",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    },
+    "CLASSROOMS" : {
+      "entity_type" : "GEO",
+      "description" : "Physical locations where anecdotal evidence about student behavior and concentration is gathered.",
+      "source_id" : "chunk-9699c3cac8ef8902098b4bad207a7f14"
+    },
+    "POPULATION GROWTH" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A demographic trend proposed as an alternative explanation for the uptick in library memberships.",
+      "source_id" : "chunk-5149f1b37d6ab917be3530d301f0812d"
+    },
+    "NEW CAR PURCHASES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A business activity that some locals associate with a desire for finer things, linked to wine culture.",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436"
+    },
+    "MOSQUITO NETS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Nets widely adopted by families in the village for malaria prevention.",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    },
+    "DISEASE PREVALENCE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The measured occurrence of malaria, linked to net usage.",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    },
+    "SHARED CLIENTELE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A speculated group of customers who might patronize both wine tasting events and car dealerships.",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436"
+    },
+    "CONCENTRATION DIFFICULTIES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Reported challenges in focus among students, possibly associated with skipping breakfast.",
+      "source_id" : "chunk-9699c3cac8ef8902098b4bad207a7f14"
+    },
+    "DEALERSHIPS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Business entities that report brisk business during similar months to vineyards, involved in car sales.",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436"
+    },
+    "STUDENTS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A group of learners who may skip breakfast and report concentration difficulties.",
+      "source_id" : "chunk-9699c3cac8ef8902098b4bad207a7f14"
+    },
+    "LIFESTYLE HABITS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Unrelated daily routines that some educators attribute as alternative explanations for student difficulties.",
+      "source_id" : "chunk-9699c3cac8ef8902098b4bad207a7f14"
+    },
+    "THE OFFICE" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "The workplace where the observation of differing health outcomes among workers took place.",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    },
+    "PARENT-TEACHER MEETINGS" : {
+      "entity_type" : "EVENT",
+      "description" : "Discussions between parents and educators where the breakfast-concentration association is debated.",
+      "source_id" : "chunk-9699c3cac8ef8902098b4bad207a7f14"
+    },
+    "VINEYARDS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Business entities associated with wine that report brisk business during similar months to dealerships.",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436"
+    },
+    "WINE TASTING EVENTS" : {
+      "entity_type" : "EVENT",
+      "description" : "Events that became more popular, showing a perceived correlation with increased used car sales in the same period.",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436"
+    },
+    "EDUCATORS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Teachers who observe patterns in student behavior and hold varying opinions on breakfast-skipping links.",
+      "source_id" : "chunk-9699c3cac8ef8902098b4bad207a7f14"
+    },
+    "PEERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Office workers who did not adopt exercise habits and seemed to fall ill more often than their exercising counterparts.",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    },
+    "MALARIA" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A disease whose prevalence is being tracked and whose reduction is discussed.",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    },
+    "HEALTH SURVEYS" : {
+      "entity_type" : "EVENT",
+      "description" : "Surveys indicating a stable trend in malaria cases each year.",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    },
+    "MOSQUITOES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Insects affected by climate change and mosquito net usage.",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    },
+    "THE VILLAGE" : {
+      "entity_type" : "GEO",
+      "description" : "A village where families reside, mosquito nets are adopted, and malaria trends are observed.",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    },
+    "SICK DAYS" : {
+      "entity_type" : "EVENT",
+      "description" : "Work absences due to illness, reported as relatively rare among the exercise group but more frequent among peers.",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    }
+  },
+  "edges" : [ {
+    "source" : "CIVIC INITIATIVES",
+    "target" : "NEW MEMBERSHIPS",
+    "data" : {
+      "weight" : 4.0,
+      "description" : "Unrelated civic initiatives may also be contributing to the observed uptick in memberships.",
+      "keywords" : "civic engagement, concurrent improvements",
+      "source_id" : "chunk-5149f1b37d6ab917be3530d301f0812d"
+    }
+  }, {
+    "source" : "PEOPLE IN THE OFFICE",
+    "target" : "ENERGY LEVELS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Their energy levels remained high as a result of or in association with the exercise routines.",
+      "keywords" : "vitality, sustained energy",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    }
+  }, {
+    "source" : "DEALERSHIPS",
+    "target" : "VINEYARDS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Both dealerships and vineyards report brisk business during similar months, suggesting seasonal overlap.",
+      "keywords" : "seasonal alignment, brisk business, shared timing",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436"
+    }
+  }, {
+    "source" : "EDUCATORS",
+    "target" : "BREAKFAST SKIPPING",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Educators observe and form opinions about the breakfast-skipping pattern among students.",
+      "keywords" : "observation, opinion",
+      "source_id" : "chunk-9699c3cac8ef8902098b4bad207a7f14"
+    }
+  }, {
+    "source" : "DOG PARK RENOVATIONS",
+    "target" : "LOCALS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The new parks may be encouraging locals to become more community-minded and engaged.",
+      "keywords" : "community engagement, behavioral change, parks",
+      "source_id" : "chunk-5149f1b37d6ab917be3530d301f0812d"
+    }
+  }, {
+    "source" : "USED CAR SALES",
+    "target" : "DEALERSHIPS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Used car sales are conducted by dealerships, which are the primary organizations in the car market.",
+      "keywords" : "business activity, market role, sales channel",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436"
+    }
+  }, {
+    "source" : "WINE TASTING EVENTS",
+    "target" : "VINEYARDS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Wine tasting events are hosted at or associated with vineyards as the source of the product.",
+      "keywords" : "hosting, product source, business connection",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436"
+    }
+  }, {
+    "source" : "LOCALS",
+    "target" : "NEW CAR PURCHASES",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Locals half-jokingly attribute new car purchases to a taste for finer things, linking wine culture to car buying.",
+      "keywords" : "anecdotal attribution, lifestyle, culture",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436"
+    }
+  }, {
+    "source" : "WINE TASTING EVENTS",
+    "target" : "USED CAR SALES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Data shows a perceived correlation between rising wine tasting event popularity and increased used car sales.",
+      "keywords" : "correlation, trend alignment, data",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436"
+    }
+  }, {
+    "source" : "PARENT-TEACHER MEETINGS",
+    "target" : "CONCENTRATION DIFFICULTIES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The association involving concentration difficulties is a topic discussed during these meetings.",
+      "keywords" : "discussion, debate",
+      "source_id" : "chunk-9699c3cac8ef8902098b4bad207a7f14"
+    }
+  }, {
+    "source" : "PEOPLE IN THE OFFICE",
+    "target" : "DAILY EXERCISE ROUTINES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The office workers committed to adopting and maintaining daily exercise routines.",
+      "keywords" : "adoption, commitment, habit",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    }
+  }, {
+    "source" : "PEOPLE IN THE OFFICE",
+    "target" : "SICK DAYS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Sick days were relatively rare among those who adopted the exercise routines.",
+      "keywords" : "work absence, reduced frequency",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    }
+  }, {
+    "source" : "STUDENTS",
+    "target" : "BREAKFAST SKIPPING",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Students are the individuals who may skip breakfast and are the subject of observed patterns.",
+      "keywords" : "behavior, subject",
+      "source_id" : "chunk-9699c3cac8ef8902098b4bad207a7f14"
+    }
+  }, {
+    "source" : "CLASSROOMS",
+    "target" : "STUDENTS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Classrooms are the settings where evidence about student behavior and difficulties is collected.",
+      "keywords" : "setting, evidence collection",
+      "source_id" : "chunk-9699c3cac8ef8902098b4bad207a7f14"
+    }
+  }, {
+    "source" : "ELDERS",
+    "target" : "CLIMATE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Elders claim the climate has shifted, making it less favorable for mosquitoes.",
+      "keywords" : "attribution, environmental change",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    }
+  }, {
+    "source" : "SHARED CLIENTELE",
+    "target" : "DEALERSHIPS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The speculated shared clientele potentially includes customers who visit dealerships for car purchases.",
+      "keywords" : "customer base, speculation, cross-market",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436"
+    }
+  }, {
+    "source" : "LOCALS",
+    "target" : "NEW MEMBERSHIPS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Locals are the group joining the library, driving the membership influx.",
+      "keywords" : "membership growth, local participation",
+      "source_id" : "chunk-5149f1b37d6ab917be3530d301f0812d"
+    }
+  }, {
+    "source" : "STUDENTS",
+    "target" : "CONCENTRATION DIFFICULTIES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Students report or exhibit concentration difficulties.",
+      "keywords" : "symptoms, reporting",
+      "source_id" : "chunk-9699c3cac8ef8902098b4bad207a7f14"
+    }
+  }, {
+    "source" : "PEERS",
+    "target" : "THE OFFICE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The peers are fellow office workers who did not adopt the exercise habits.",
+      "keywords" : "workplace, contrast group",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    }
+  }, {
+    "source" : "DAILY EXERCISE ROUTINES",
+    "target" : "ENERGY LEVELS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The exercise routines were linked to maintaining high energy levels over the observation period.",
+      "keywords" : "vitality, physical performance",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    }
+  }, {
+    "source" : "PEOPLE IN THE OFFICE",
+    "target" : "THE OFFICE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The group of workers are employed at the office where the health observation occurred.",
+      "keywords" : "workplace, employment",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    }
+  }, {
+    "source" : "INDUSTRY OBSERVERS",
+    "target" : "SHARED CLIENTELE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Industry observers speculate that dealerships and vineyards may share a common customer base.",
+      "keywords" : "speculation, customer overlap, market analysis",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436"
+    }
+  }, {
+    "source" : "ELDERS",
+    "target" : "THE VILLAGE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Elders are residents of the village who offer local perspectives on climate and malaria.",
+      "keywords" : "local knowledge, community voices",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    }
+  }, {
+    "source" : "LOCALS",
+    "target" : "CITY LIBRARY",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Locals are joining the library as a result of increased community-mindedness.",
+      "keywords" : "community participation, library usage",
+      "source_id" : "chunk-5149f1b37d6ab917be3530d301f0812d"
+    }
+  }, {
+    "source" : "HEALTH SURVEYS",
+    "target" : "MALARIA",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Health surveys indicate a stable trend in malaria cases each year.",
+      "keywords" : "monitoring, tracking, trends",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    }
+  }, {
+    "source" : "NET USAGE",
+    "target" : "MOSQUITOES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Net usage is a factor affecting mosquito exposure and biting rates.",
+      "keywords" : "prevention, protection",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    }
+  }, {
+    "source" : "SHARED CLIENTELE",
+    "target" : "VINEYARDS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The speculated shared clientele potentially includes customers who patronize vineyards for wine experiences.",
+      "keywords" : "customer base, speculation, cross-market",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436"
+    }
+  }, {
+    "source" : "POPULATION GROWTH",
+    "target" : "NEW MEMBERSHIPS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Population growth is proposed as a potential alternative explanation for the membership increase.",
+      "keywords" : "demographic trend, alternative explanation",
+      "source_id" : "chunk-5149f1b37d6ab917be3530d301f0812d"
+    }
+  }, {
+    "source" : "CLIMATE",
+    "target" : "MOSQUITOES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "A shifted climate is said to make conditions less favorable for mosquitoes.",
+      "keywords" : "environmental impact, population change",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    }
+  }, {
+    "source" : "DAILY EXERCISE ROUTINES",
+    "target" : "EPISODES OF ILLNESS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Adopting exercise routines correlated with fewer episodes of illness among office workers.",
+      "keywords" : "correlation, health benefit",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    }
+  }, {
+    "source" : "INDUSTRY OBSERVERS",
+    "target" : "WINE TASTING EVENTS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Industry observers comment on the rising popularity of wine tasting events and its possible market impact.",
+      "keywords" : "market commentary, trend observation, analysis",
+      "source_id" : "chunk-a5c480b72285ba9101d3817723ef2436"
+    }
+  }, {
+    "source" : "BREAKFAST SKIPPING",
+    "target" : "CONCENTRATION DIFFICULTIES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Anecdotal evidence from classrooms suggests an overlap between skipping breakfast and concentration issues.",
+      "keywords" : "correlation, anecdotal evidence",
+      "source_id" : "chunk-9699c3cac8ef8902098b4bad207a7f14"
+    }
+  }, {
+    "source" : "HEALTH SURVEYS",
+    "target" : "THE VILLAGE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Health surveys are conducted in the village to track malaria trends.",
+      "keywords" : "data collection, local health",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    }
+  }, {
+    "source" : "FAMILIES",
+    "target" : "THE VILLAGE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Families reside in the village where mosquito nets are used and malaria is tracked.",
+      "keywords" : "residence, community",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    }
+  }, {
+    "source" : "DOG PARK RENOVATIONS",
+    "target" : "CITY LIBRARY",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The renovations preceded the library's announcement of new memberships, inviting speculation about a causal link.",
+      "keywords" : "temporal correlation, speculation, community improvement",
+      "source_id" : "chunk-5149f1b37d6ab917be3530d301f0812d"
+    }
+  }, {
+    "source" : "PEERS",
+    "target" : "EPISODES OF ILLNESS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Those who did not exercise seemed to fall ill more often than the exercise group.",
+      "keywords" : "increased illness, lack of exercise",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    }
+  }, {
+    "source" : "NET USAGE",
+    "target" : "DISEASE PREVALENCE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The link between net usage and disease prevalence is seldom directly addressed.",
+      "keywords" : "causality, correlation, health impact",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    }
+  }, {
+    "source" : "EDUCATORS",
+    "target" : "LIFESTYLE HABITS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Some educators attribute observed issues to unrelated lifestyle habits rather than breakfast skipping.",
+      "keywords" : "alternative explanation, attribution",
+      "source_id" : "chunk-9699c3cac8ef8902098b4bad207a7f14"
+    }
+  }, {
+    "source" : "DOG PARK RENOVATIONS",
+    "target" : "NEW MEMBERSHIPS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "The timing of renovations and membership growth has invited speculation about a causal relationship, though no direct link is established.",
+      "keywords" : "speculation, temporal correlation, no direct link",
+      "source_id" : "chunk-5149f1b37d6ab917be3530d301f0812d"
+    }
+  }, {
+    "source" : "FAMILIES",
+    "target" : "MOSQUITO NETS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Families in the village have widely adopted mosquito nets in their homes.",
+      "keywords" : "adoption, prevention, household",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    }
+  }, {
+    "source" : "DAILY EXERCISE ROUTINES",
+    "target" : "SICK DAYS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Regular exercise was associated with a reduction in sick days taken by workers.",
+      "keywords" : "productivity, reduced absence",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    }
+  }, {
+    "source" : "MALARIA",
+    "target" : "MOSQUITOES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Malaria transmission is linked to mosquito populations.",
+      "keywords" : "disease vector, transmission",
+      "source_id" : "chunk-ce46902417c5a96e4c1984d75b0dbacf"
+    }
+  }, {
+    "source" : "EDUCATORS",
+    "target" : "PARENT-TEACHER MEETINGS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Educators participate in parent-teacher meetings where the breakfast-concentration link is discussed.",
+      "keywords" : "participation, discussion",
+      "source_id" : "chunk-9699c3cac8ef8902098b4bad207a7f14"
+    }
+  }, {
+    "source" : "PEOPLE IN THE OFFICE",
+    "target" : "EPISODES OF ILLNESS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The exercising group reported fewer episodes of illness compared to their non-exercising peers.",
+      "keywords" : "health outcome, reduced illness",
+      "source_id" : "chunk-d9e7b9ce668f53a7b4900765a13c85ef"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 37,
+    "edgeCount" : 44,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Reverse_Correlation_507"
+  }
+}

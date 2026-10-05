@@ -1,0 +1,449 @@
+{
+  "nodes" : {
+    "COFFEE BREAKS" : {
+      "entity_type" : "EVENT",
+      "description" : "A recurring workplace event used by employees as a coping mechanism for stress and irritability.",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    },
+    "SMALL TALK" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A form of casual social interaction used as a coping mechanism alongside coffee breaks.",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    },
+    "IRRITABILITY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An observed increase in irritability among employees, typically attributed to personal matters rather than workload.",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    },
+    "MEDICAL INTERVENTIONS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A potential contributing factor to the reduction in allergic reactions, though uncertain.",
+      "source_id" : "chunk-e2a1a81c7ed0a22f760bab108fabb72c"
+    },
+    "ELECTRICITY USAGE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Energy consumption that rises during colder months. Speculated by some to be affected by cinema attendance, but actually independent.",
+      "source_id" : "chunk-8851925f56d1e88041d2db63182885da"
+    },
+    "CITYWIDE ENERGY CONSUMPTION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A metric showing an uptick during winter. Rises independently from movie theater attendance for its own reasons related to colder months.",
+      "source_id" : "chunk-8851925f56d1e88041d2db63182885da"
+    },
+    "TRANSIT AUTHORITY" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "The public transit organization that issued announcements referencing ongoing events in the city.",
+      "source_id" : "chunk-16ddb4ef210358a60f86e4d3c5ebe2b1"
+    },
+    "WEEKLY FARMERS' MARKET" : {
+      "entity_type" : "EVENT",
+      "description" : "A recurring market event that opened downtown, which riders mistakenly blamed for disrupting bus schedules.",
+      "source_id" : "chunk-16ddb4ef210358a60f86e4d3c5ebe2b1"
+    },
+    "DEADLINES" : {
+      "entity_type" : "EVENT",
+      "description" : "Time-bound pressures that contribute to increased workload and stress among employees.",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    },
+    "FAMILIES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Groups that remove common allergens from their homes to reduce children's allergic reactions.",
+      "source_id" : "chunk-e2a1a81c7ed0a22f760bab108fabb72c"
+    },
+    "WINTER" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The season during which both movie theater attendance and citywide energy consumption increase, though for independent reasons.",
+      "source_id" : "chunk-8851925f56d1e88041d2db63182885da"
+    },
+    "REDUCED REACTIONS" : {
+      "entity_type" : "EVENT",
+      "description" : "The observed decrease in allergic reactions in children following allergen removal.",
+      "source_id" : "chunk-e2a1a81c7ed0a22f760bab108fabb72c"
+    },
+    "ALLERGENS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Common allergens present in homes that are removed to mitigate allergic reactions.",
+      "source_id" : "chunk-e2a1a81c7ed0a22f760bab108fabb72c"
+    },
+    "THE MUSICIAN" : {
+      "entity_type" : "PERSON",
+      "description" : "A musician who performs on piano, pressing keys to produce melodious notes under a spotlight.",
+      "source_id" : "chunk-8f2f08c4afffbc146bdaf758c61fb941"
+    },
+    "MINOR TRAFFIC ACCIDENT" : {
+      "entity_type" : "EVENT",
+      "description" : "A minor accident on a nearby street that was the actual root cause of the bus delays.",
+      "source_id" : "chunk-16ddb4ef210358a60f86e4d3c5ebe2b1"
+    },
+    "LOCAL ANALYSTS" : {
+      "entity_type" : "PERSON",
+      "description" : "A group of analysts who identified the timing similarity between movie theater attendance and citywide energy consumption, suggesting a possible connection.",
+      "source_id" : "chunk-8851925f56d1e88041d2db63182885da"
+    },
+    "CHILDREN" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Individuals who experience fewer allergic reactions following allergen removal in their homes.",
+      "source_id" : "chunk-e2a1a81c7ed0a22f760bab108fabb72c"
+    },
+    "MOOD CHANGES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Potential psychological effects of workload that are not openly acknowledged or discussed.",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    },
+    "DOWNTOWN" : {
+      "entity_type" : "GEO",
+      "description" : "The urban area where the farmers' market took place and through which several bus routes pass.",
+      "source_id" : "chunk-16ddb4ef210358a60f86e4d3c5ebe2b1"
+    },
+    "THE AUDIENCE" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A collective group of people who watched the performance and were captivated by it.",
+      "source_id" : "chunk-8f2f08c4afffbc146bdaf758c61fb941"
+    },
+    "WORKLOAD" : {
+      "entity_type" : "CATEGORY",
+      "description" : "High job demands that increase as deadlines approach and potentially contribute to mood changes.",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    },
+    "EMPLOYEES" : {
+      "entity_type" : "PERSON",
+      "description" : "A group of workers managing high workload, experiencing irritability, and using social coping mechanisms to deal with stress.",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    },
+    "MOVIE THEATER ATTENDANCE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A metric showing marked growth during winter, with an influx of patrons at cinemas. Rises for independent reasons tied to colder months.",
+      "source_id" : "chunk-8851925f56d1e88041d2db63182885da"
+    },
+    "THE AUDITORIUM" : {
+      "entity_type" : "GEO",
+      "description" : "The location where the musical performance takes place and melodious notes fill the space.",
+      "source_id" : "chunk-8f2f08c4afffbc146bdaf758c61fb941"
+    },
+    "ALLERGIC REACTIONS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Medical reactions in children that are observed to decrease after allergen removal.",
+      "source_id" : "chunk-e2a1a81c7ed0a22f760bab108fabb72c"
+    },
+    "THE PERFORMANCE" : {
+      "entity_type" : "EVENT",
+      "description" : "A captivating piano performance that resonated deeply with the audience, ending with applause.",
+      "source_id" : "chunk-8f2f08c4afffbc146bdaf758c61fb941"
+    },
+    "BUS DELAYS" : {
+      "entity_type" : "EVENT",
+      "description" : "Unexpected delays on several bus routes passing through downtown, attributed by riders to the farmers' market.",
+      "source_id" : "chunk-16ddb4ef210358a60f86e4d3c5ebe2b1"
+    },
+    "ALLERGEN REMOVAL" : {
+      "entity_type" : "EVENT",
+      "description" : "The practice of removing common allergens from homes, linked to reduced allergic reactions.",
+      "source_id" : "chunk-e2a1a81c7ed0a22f760bab108fabb72c"
+    },
+    "PROFESSIONAL LIFE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The broader accepted context in which job demands and workplace stress are normalized.",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    },
+    "CINEMAS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Movie theaters experiencing an influx of patrons during colder months, with speculated (but unproven) impact on electricity usage.",
+      "source_id" : "chunk-8851925f56d1e88041d2db63182885da"
+    }
+  },
+  "edges" : [ {
+    "source" : "EMPLOYEES",
+    "target" : "WORKLOAD",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Employees are the ones managing and being affected by the high workload.",
+      "keywords" : "job demands, stress",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    }
+  }, {
+    "source" : "WORKLOAD",
+    "target" : "MOOD CHANGES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The possibility that workload contributes to mood changes is not openly addressed.",
+      "keywords" : "causal link, denial, psychological impact",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    }
+  }, {
+    "source" : "BUS DELAYS",
+    "target" : "DOWNTOWN",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The bus delays occurred on several routes passing through the downtown area.",
+      "keywords" : "route impact, geography",
+      "source_id" : "chunk-16ddb4ef210358a60f86e4d3c5ebe2b1"
+    }
+  }, {
+    "source" : "THE AUDIENCE",
+    "target" : "THE AUDITORIUM",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The audience is gathered in the auditorium to watch the performance.",
+      "keywords" : "venue, gathering, attendance",
+      "source_id" : "chunk-8f2f08c4afffbc146bdaf758c61fb941"
+    }
+  }, {
+    "source" : "EMPLOYEES",
+    "target" : "PROFESSIONAL LIFE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Employees accept job demands as part of professional life, normalizing the stress.",
+      "keywords" : "normalization, acceptance, professional norms",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    }
+  }, {
+    "source" : "LOCAL ANALYSTS",
+    "target" : "CITYWIDE ENERGY CONSUMPTION",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Local analysts noted the uptick in citywide energy consumption and its temporal overlap with theater attendance.",
+      "keywords" : "analysis, observation, energy trends",
+      "source_id" : "chunk-8851925f56d1e88041d2db63182885da"
+    }
+  }, {
+    "source" : "IRRITABILITY",
+    "target" : "MOOD CHANGES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Irritability is a specific manifestation of broader mood changes that go unaddressed.",
+      "keywords" : "behavioral indicator, psychological effect",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    }
+  }, {
+    "source" : "WEEKLY FARMERS' MARKET",
+    "target" : "BUS DELAYS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Riders mistakenly attributed the bus delays to the farmers' market disrupting normal schedules.",
+      "keywords" : "perceived cause, rider complaints",
+      "source_id" : "chunk-16ddb4ef210358a60f86e4d3c5ebe2b1"
+    }
+  }, {
+    "source" : "ALLERGENS",
+    "target" : "ALLERGIC REACTIONS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Common allergens are the underlying cause of the allergic reactions experienced by children.",
+      "keywords" : "cause, trigger",
+      "source_id" : "chunk-e2a1a81c7ed0a22f760bab108fabb72c"
+    }
+  }, {
+    "source" : "MEDICAL INTERVENTIONS",
+    "target" : "REDUCED REACTIONS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Medical interventions could be an additional factor contributing to reduced allergic reactions.",
+      "keywords" : "contributing factor, uncertainty",
+      "source_id" : "chunk-e2a1a81c7ed0a22f760bab108fabb72c"
+    }
+  }, {
+    "source" : "WEEKLY FARMERS' MARKET",
+    "target" : "DOWNTOWN",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The farmers' market was held in the downtown area, where it affected local traffic and bus routes.",
+      "keywords" : "location, event hosting",
+      "source_id" : "chunk-16ddb4ef210358a60f86e4d3c5ebe2b1"
+    }
+  }, {
+    "source" : "CINEMAS",
+    "target" : "MOVIE THEATER ATTENDANCE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Cinemas are the establishments where the growth in movie theater attendance is realized through influx of patrons.",
+      "keywords" : "patron influx, establishments, attendance",
+      "source_id" : "chunk-8851925f56d1e88041d2db63182885da"
+    }
+  }, {
+    "source" : "LOCAL ANALYSTS",
+    "target" : "MOVIE THEATER ATTENDANCE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Local analysts observed the marked growth in movie theater attendance and its timing correlation with energy consumption.",
+      "keywords" : "analysis, observation, attendance growth",
+      "source_id" : "chunk-8851925f56d1e88041d2db63182885da"
+    }
+  }, {
+    "source" : "THE MUSICIAN",
+    "target" : "THE AUDITORIUM",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The musician performs in the auditorium, with the spotlight shining on them while playing.",
+      "keywords" : "location, stage, performance venue",
+      "source_id" : "chunk-8f2f08c4afffbc146bdaf758c61fb941"
+    }
+  }, {
+    "source" : "WORKLOAD",
+    "target" : "IRRITABILITY",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Workload potentially contributes to increased irritability, though this is not openly acknowledged.",
+      "keywords" : "stress response, unaddressed cause",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    }
+  }, {
+    "source" : "CHILDREN",
+    "target" : "ALLERGIC REACTIONS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Children experience fewer allergic reactions as a result of allergen removal in their environment.",
+      "keywords" : "health outcome, reduction",
+      "source_id" : "chunk-e2a1a81c7ed0a22f760bab108fabb72c"
+    }
+  }, {
+    "source" : "THE MUSICIAN",
+    "target" : "THE PERFORMANCE",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "The musician is the performer who executes the piano performance, pressing keys to create melodious notes.",
+      "keywords" : "performance, piano, execution",
+      "source_id" : "chunk-8f2f08c4afffbc146bdaf758c61fb941"
+    }
+  }, {
+    "source" : "TRANSIT AUTHORITY",
+    "target" : "BUS DELAYS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The transit authority made announcements referencing the ongoing situation and the delays affecting riders.",
+      "keywords" : "announcements, public information",
+      "source_id" : "chunk-16ddb4ef210358a60f86e4d3c5ebe2b1"
+    }
+  }, {
+    "source" : "FAMILIES",
+    "target" : "CHILDREN",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Children belong to the families where allergen removal is practiced.",
+      "keywords" : "membership, household",
+      "source_id" : "chunk-e2a1a81c7ed0a22f760bab108fabb72c"
+    }
+  }, {
+    "source" : "EMPLOYEES",
+    "target" : "DEADLINES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Employees manage high workload as deadlines approach, creating pressure and stress.",
+      "keywords" : "time pressure, workload management",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    }
+  }, {
+    "source" : "CINEMAS",
+    "target" : "ELECTRICITY USAGE",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Some speculated that the influx of patrons at cinemas might be affecting electricity usage, though this was disproven.",
+      "keywords" : "speculation, unproven causal link, electricity",
+      "source_id" : "chunk-8851925f56d1e88041d2db63182885da"
+    }
+  }, {
+    "source" : "THE PERFORMANCE",
+    "target" : "THE AUDITORIUM",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The performance takes place in the auditorium, filling the space with melodious notes.",
+      "keywords" : "venue, acoustic space, event location",
+      "source_id" : "chunk-8f2f08c4afffbc146bdaf758c61fb941"
+    }
+  }, {
+    "source" : "COFFEE BREAKS",
+    "target" : "SMALL TALK",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Coffee breaks and small talk are jointly used as complementary coping mechanisms.",
+      "keywords" : "coping strategies, social interaction",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    }
+  }, {
+    "source" : "MOVIE THEATER ATTENDANCE",
+    "target" : "WINTER",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Movie theater attendance experiences marked growth during the winter season, rising for independent seasonal reasons.",
+      "keywords" : "seasonal trend, growth, colder months",
+      "source_id" : "chunk-8851925f56d1e88041d2db63182885da"
+    }
+  }, {
+    "source" : "EMPLOYEES",
+    "target" : "SMALL TALK",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Employees engage in small talk as a social coping mechanism alongside coffee breaks.",
+      "keywords" : "social coping, workplace interaction",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    }
+  }, {
+    "source" : "CITYWIDE ENERGY CONSUMPTION",
+    "target" : "WINTER",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Citywide energy consumption sees an uptick during winter, rising independently for its own seasonal reasons.",
+      "keywords" : "seasonal trend, consumption, colder months",
+      "source_id" : "chunk-8851925f56d1e88041d2db63182885da"
+    }
+  }, {
+    "source" : "EMPLOYEES",
+    "target" : "COFFEE BREAKS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Employees use coffee breaks as a coping mechanism to manage workplace stress.",
+      "keywords" : "coping strategy, stress relief",
+      "source_id" : "chunk-322995e2dac0c7361cba4637afe5b495"
+    }
+  }, {
+    "source" : "FAMILIES",
+    "target" : "ALLERGEN REMOVAL",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Families are the agents who actively remove common allergens from their homes.",
+      "keywords" : "agent, removal action",
+      "source_id" : "chunk-e2a1a81c7ed0a22f760bab108fabb72c"
+    }
+  }, {
+    "source" : "MOVIE THEATER ATTENDANCE",
+    "target" : "CITYWIDE ENERGY CONSUMPTION",
+    "data" : {
+      "weight" : 4.0,
+      "description" : "The two metrics coincided in timing during winter, leading to speculation of a connection, but they actually rise for independent reasons.",
+      "keywords" : "coincidence, spurious correlation, independent causes",
+      "source_id" : "chunk-8851925f56d1e88041d2db63182885da"
+    }
+  }, {
+    "source" : "MINOR TRAFFIC ACCIDENT",
+    "target" : "BUS DELAYS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The minor traffic accident was the actual root cause of the unexpected bus delays, not the market.",
+      "keywords" : "root cause, misattribution",
+      "source_id" : "chunk-16ddb4ef210358a60f86e4d3c5ebe2b1"
+    }
+  }, {
+    "source" : "ALLERGEN REMOVAL",
+    "target" : "REDUCED REACTIONS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The alignment between allergen removal and reduced reactions is noted, though the main influence remains uncertain.",
+      "keywords" : "correlation, causality uncertainty",
+      "source_id" : "chunk-e2a1a81c7ed0a22f760bab108fabb72c"
+    }
+  }, {
+    "source" : "THE AUDIENCE",
+    "target" : "THE PERFORMANCE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The audience is captivated by the performance, with every note resonating deeply, and applause awaits at the end.",
+      "keywords" : "captivation, applause, engagement",
+      "source_id" : "chunk-8f2f08c4afffbc146bdaf758c61fb941"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 30,
+    "edgeCount" : 32,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Co-occurrence_No_Mechanism_307"
+  }
+}

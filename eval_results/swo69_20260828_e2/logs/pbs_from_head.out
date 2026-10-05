@@ -1,0 +1,833 @@
+=== [SWO69] run dir: eval_results/swo69_20260831_hipporag (reps=1 limit=15 datasets=musique) ===
+=== [SWO69] 04:27:09 SKIP e2/lightrag — no kg_snapshot under eval_results/swo69_20260831_hipporag/e0_lightrag_musique (run E0 first) ===
+=== [SWO69] 04:27:10 E2  hipporag_musique_p0: perturbing 15 snapshots ===
+[perturb] hipporag p0: nodes 184->184, edges 495->495 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/2hop__159903_419949/working_dir/graph.json
+[perturb] hipporag p0: nodes 234->234, edges 637->637 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/2hop__464479_70131/working_dir/graph.json
+[perturb] hipporag p0: nodes 226->226, edges 638->638 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/2hop__66149_85990/working_dir/graph.json
+[perturb] hipporag p0: nodes 186->186, edges 492->492 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/2hop__697729_576069/working_dir/graph.json
+[perturb] hipporag p0: nodes 268->268, edges 788->788 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/2hop__734057_88628/working_dir/graph.json
+[perturb] hipporag p0: nodes 232->232, edges 631->631 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/2hop__75207_46837/working_dir/graph.json
+[perturb] hipporag p0: nodes 204->204, edges 615->615 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/3hop1__140855_2053_52946/working_dir/graph.json
+[perturb] hipporag p0: nodes 229->229, edges 649->649 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/3hop1__280834_547811_80702/working_dir/graph.json
+[perturb] hipporag p0: nodes 248->248, edges 746->746 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/3hop1__857_846_7810/working_dir/graph.json
+[perturb] hipporag p0: nodes 239->239, edges 711->711 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/3hop2__90098_91678_10557/working_dir/graph.json
+[perturb] hipporag p0: nodes 241->241, edges 770->770 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/4hop1__271272_508773_85832_745702/working_dir/graph.json
+[perturb] hipporag p0: nodes 209->209, edges 593->593 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/4hop1__836115_49925_13759_736921/working_dir/graph.json
+[perturb] hipporag p0: nodes 205->205, edges 631->631 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/4hop1__9007_698949_157828_162309/working_dir/graph.json
+[perturb] hipporag p0: nodes 161->161, edges 457->457 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/4hop3__193820_466199_128875_72134/working_dir/graph.json
+[perturb] hipporag p0: nodes 233->233, edges 662->662 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/4hop3__312119_132409_146285_35031/working_dir/graph.json
+[GIN] 2026/08/31 - 13:27:20 | 200 |  4.535992719s |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:27:20 | 200 |   50.493003ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:27:37 | 200 |  16.81889092s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:27:42 | 200 |  4.949679848s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:28:08 | 200 |  142.206317ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:28:08 | 200 |    69.10934ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:28:17 | 200 |  9.139918586s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:28:40 | 200 | 22.123713225s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:28:42 | 200 |   37.577254ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:28:42 | 200 |   59.333957ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:28:47 | 200 |  5.169511389s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:29:06 | 200 | 18.955388817s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:29:08 | 200 |   54.025986ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:29:08 | 200 |   52.504548ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:29:13 | 200 |  5.373532166s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:29:21 | 200 |  7.803959227s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:29:23 | 200 |   45.977443ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:29:23 | 200 |   65.806166ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:29:28 | 200 |  4.555938456s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:29:44 | 200 | 16.121268215s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:29:46 | 200 |    78.44912ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:29:46 | 200 |   93.501881ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:29:51 | 200 |  5.437974533s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:29:57 | 200 |  5.785086933s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:29:59 | 200 |   56.186617ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:29:59 | 200 |   43.947865ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:30:05 | 200 |  5.289385197s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:30:11 | 200 |  6.282034334s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:30:14 | 200 |   37.221456ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:30:15 | 200 |   125.96316ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:30:20 | 200 |  5.167945344s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:30:27 | 200 |  7.282242417s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:30:29 | 200 |   67.925491ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:30:29 | 200 |   66.618429ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:30:37 | 200 |  7.424106988s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:30:43 | 200 |  6.144552718s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:30:45 | 200 |   42.929468ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:30:45 | 200 |   56.619942ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:30:51 | 200 |  5.982461201s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:30:55 | 200 |  3.838629643s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:30:57 | 200 |   35.684545ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:30:57 | 200 |   47.339432ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:31:01 | 200 |  3.841950201s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:31:07 | 200 |  6.231869385s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:31:09 | 200 |   36.401748ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:31:09 | 200 |   57.727192ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:31:16 | 200 |  7.784678597s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:31:40 | 200 | 23.823688601s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:31:42 | 200 |   37.235287ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:31:42 | 200 |   65.154034ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:31:49 | 200 |  6.618877244s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:31:58 | 200 |  9.184428727s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:32:00 | 200 |   57.472864ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:32:00 | 200 |   73.604051ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:32:07 | 200 |  6.254781226s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:32:16 | 200 |  9.763670455s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:32:18 | 200 |   69.912267ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:32:19 | 200 |   46.466727ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:32:24 | 200 |  5.799084257s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:32:29 | 200 |  4.369710367s |       127.0.0.1 | POST     "/api/chat"
+=== [SWO69] 04:32:33 END   e2/hipporag_musique_p0 rc=0 wall=320s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p0/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 04:32:35 E2  hipporag_musique_p1_10: perturbing 15 snapshots ===
+[perturb] hipporag p1_10: nodes 184->184, edges 495->445 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/2hop__159903_419949/working_dir/graph.json
+[perturb] hipporag p1_10: nodes 234->234, edges 637->573 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/2hop__464479_70131/working_dir/graph.json
+[perturb] hipporag p1_10: nodes 226->226, edges 638->574 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/2hop__66149_85990/working_dir/graph.json
+[perturb] hipporag p1_10: nodes 186->186, edges 492->443 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/2hop__697729_576069/working_dir/graph.json
+[perturb] hipporag p1_10: nodes 268->268, edges 788->709 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/2hop__734057_88628/working_dir/graph.json
+[perturb] hipporag p1_10: nodes 232->232, edges 631->568 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/2hop__75207_46837/working_dir/graph.json
+[perturb] hipporag p1_10: nodes 204->204, edges 615->553 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/3hop1__140855_2053_52946/working_dir/graph.json
+[perturb] hipporag p1_10: nodes 229->229, edges 649->584 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/3hop1__280834_547811_80702/working_dir/graph.json
+[perturb] hipporag p1_10: nodes 248->248, edges 746->671 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/3hop1__857_846_7810/working_dir/graph.json
+[perturb] hipporag p1_10: nodes 239->239, edges 711->640 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/3hop2__90098_91678_10557/working_dir/graph.json
+[perturb] hipporag p1_10: nodes 241->241, edges 770->693 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/4hop1__271272_508773_85832_745702/working_dir/graph.json
+[perturb] hipporag p1_10: nodes 209->209, edges 593->534 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/4hop1__836115_49925_13759_736921/working_dir/graph.json
+[perturb] hipporag p1_10: nodes 205->205, edges 631->568 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/4hop1__9007_698949_157828_162309/working_dir/graph.json
+[perturb] hipporag p1_10: nodes 161->161, edges 457->411 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/4hop3__193820_466199_128875_72134/working_dir/graph.json
+[perturb] hipporag p1_10: nodes 233->233, edges 662->596 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/4hop3__312119_132409_146285_35031/working_dir/graph.json
+[GIN] 2026/08/31 - 13:32:39 | 200 |   39.266397ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:32:40 | 200 |   43.362611ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:32:44 | 200 |  4.241126572s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:32:49 | 200 |  5.166860994s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:33:06 | 200 |   74.327135ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:33:06 | 200 |   60.198969ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:33:16 | 200 | 10.142003347s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:33:37 | 200 | 21.154966883s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:33:39 | 200 |   40.406002ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:33:39 | 200 |   53.180623ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:33:45 | 200 |  5.454558751s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:34:03 | 200 | 18.276539157s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:34:05 | 200 |    44.06123ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:34:05 | 200 |   43.977844ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:34:10 | 200 |  5.380664955s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:34:18 | 200 |  8.005073368s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:34:20 | 200 |   47.861472ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:34:20 | 200 |   45.503263ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:34:25 | 200 |  4.457118292s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:34:41 | 200 | 15.713976594s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:34:43 | 200 |   58.866652ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:34:43 | 200 |   72.546461ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:34:48 | 200 |  5.416271949s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:34:54 | 200 |  5.646532877s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:34:56 | 200 |    60.32311ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:34:56 | 200 |    42.35274ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:35:00 | 200 |  4.701290776s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:35:06 | 200 |   5.98344419s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:35:10 | 200 |   38.502025ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:35:10 | 200 |   82.792592ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:35:14 | 200 |  4.034229252s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:35:21 | 200 |  6.937725856s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:35:23 | 200 |   43.741702ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:35:24 | 200 |   61.144486ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:35:31 | 200 |  6.995592705s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:35:36 | 200 |  5.888309435s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:35:38 | 200 |   35.574672ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:35:38 | 200 |   55.528264ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:35:44 | 200 |  5.173953469s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:35:47 | 200 |  3.497530416s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:35:49 | 200 |   54.233579ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:35:49 | 200 |   63.253891ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:35:53 | 200 |  3.475312152s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:35:59 | 200 |  5.924254838s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:36:01 | 200 |   58.181466ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:36:01 | 200 |   97.583738ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:36:08 | 200 |  7.253067062s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:36:32 | 200 | 23.658360797s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:36:34 | 200 |    53.04886ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:36:34 | 200 |   44.129576ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:36:41 | 200 |  6.879070056s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:36:50 | 200 |  9.279893299s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:36:52 | 200 |   43.186194ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:36:52 | 200 |   62.083549ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:36:58 | 200 |  6.251517623s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:37:10 | 200 | 11.265761512s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:37:12 | 200 |   95.616799ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:37:12 | 200 |   52.461871ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:37:18 | 200 |  6.176551294s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:37:22 | 200 |  4.576641255s |       127.0.0.1 | POST     "/api/chat"
+=== [SWO69] 04:37:26 END   e2/hipporag_musique_p1_10 rc=0 wall=288s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_10/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 04:37:28 E2  hipporag_musique_p1_30: perturbing 15 snapshots ===
+[perturb] hipporag p1_30: nodes 184->184, edges 495->347 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/2hop__159903_419949/working_dir/graph.json
+[perturb] hipporag p1_30: nodes 234->234, edges 637->446 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/2hop__464479_70131/working_dir/graph.json
+[perturb] hipporag p1_30: nodes 226->226, edges 638->447 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/2hop__66149_85990/working_dir/graph.json
+[perturb] hipporag p1_30: nodes 186->186, edges 492->344 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/2hop__697729_576069/working_dir/graph.json
+[perturb] hipporag p1_30: nodes 268->268, edges 788->552 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/2hop__734057_88628/working_dir/graph.json
+[perturb] hipporag p1_30: nodes 232->232, edges 631->442 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/2hop__75207_46837/working_dir/graph.json
+[perturb] hipporag p1_30: nodes 204->204, edges 615->431 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/3hop1__140855_2053_52946/working_dir/graph.json
+[perturb] hipporag p1_30: nodes 229->229, edges 649->454 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/3hop1__280834_547811_80702/working_dir/graph.json
+[perturb] hipporag p1_30: nodes 248->248, edges 746->522 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/3hop1__857_846_7810/working_dir/graph.json
+[perturb] hipporag p1_30: nodes 239->239, edges 711->498 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/3hop2__90098_91678_10557/working_dir/graph.json
+[perturb] hipporag p1_30: nodes 241->241, edges 770->539 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/4hop1__271272_508773_85832_745702/working_dir/graph.json
+[perturb] hipporag p1_30: nodes 209->209, edges 593->415 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/4hop1__836115_49925_13759_736921/working_dir/graph.json
+[perturb] hipporag p1_30: nodes 205->205, edges 631->442 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/4hop1__9007_698949_157828_162309/working_dir/graph.json
+[perturb] hipporag p1_30: nodes 161->161, edges 457->320 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/4hop3__193820_466199_128875_72134/working_dir/graph.json
+[perturb] hipporag p1_30: nodes 233->233, edges 662->463 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/4hop3__312119_132409_146285_35031/working_dir/graph.json
+[GIN] 2026/08/31 - 13:37:32 | 200 |  106.224172ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:37:32 | 200 |   59.457363ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:37:37 | 200 |  4.373630235s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:37:42 | 200 |  5.354861402s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:37:59 | 200 |   67.365825ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:37:59 | 200 |   49.680575ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:38:10 | 200 |  10.52473343s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:38:31 | 200 | 21.273746411s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:38:33 | 200 |    36.81676ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:38:33 | 200 |   72.782581ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:38:39 | 200 |  5.569891833s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:38:57 | 200 | 18.259920166s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:38:59 | 200 |   50.549775ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:38:59 | 200 |  106.323615ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:39:04 | 200 |  5.340488121s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:39:13 | 200 |  8.317586091s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:39:15 | 200 |   76.753637ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:39:15 | 200 |   63.644622ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:39:19 | 200 |   4.51421875s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:39:35 | 200 | 16.144479012s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:39:37 | 200 |    36.79032ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:39:38 | 200 |  101.990992ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:39:43 | 200 |  5.436684597s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:39:49 | 200 |  5.924281738s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:39:51 | 200 |   37.144119ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:39:51 | 200 |   43.480722ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:39:56 | 200 |  4.875355956s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:40:02 | 200 |   6.54695535s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:40:05 | 200 |   41.544153ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:40:06 | 200 |  113.458911ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:40:10 | 200 |  4.027763613s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:40:17 | 200 |  7.181230212s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:40:19 | 200 |   62.106697ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:40:19 | 200 |  102.707897ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:40:26 | 200 |  6.949625398s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:40:32 | 200 |  5.983103203s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:40:34 | 200 |   53.747864ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:40:34 | 200 |  148.692976ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:40:39 | 200 |  5.613125922s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:40:43 | 200 |  3.871330746s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:40:45 | 200 |   53.026919ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:40:45 | 200 |  111.856355ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:40:49 | 200 |  3.340805303s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:40:55 | 200 |  6.354444624s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:40:57 | 200 |   38.948625ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:40:57 | 200 |  101.337026ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:41:05 | 200 |   7.57766791s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:41:28 | 200 | 23.293187133s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:41:30 | 200 |   50.867565ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:41:30 | 200 |   67.489788ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:41:36 | 200 |  6.740607624s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:41:46 | 200 |  9.163383609s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:41:47 | 200 |   59.319636ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:41:48 | 200 |   65.905917ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:41:54 | 200 |  6.387896834s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:42:04 | 200 | 10.091970599s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:42:06 | 200 |   37.938508ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:42:06 | 200 |   56.564267ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:42:12 | 200 |  5.809522143s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:42:17 | 200 |  4.750472538s |       127.0.0.1 | POST     "/api/chat"
+=== [SWO69] 04:42:21 END   e2/hipporag_musique_p1_30 rc=0 wall=290s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_30/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 04:42:22 E2  hipporag_musique_p1_50: perturbing 15 snapshots ===
+[perturb] hipporag p1_50: nodes 184->184, edges 495->247 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/2hop__159903_419949/working_dir/graph.json
+[perturb] hipporag p1_50: nodes 234->234, edges 637->319 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/2hop__464479_70131/working_dir/graph.json
+[perturb] hipporag p1_50: nodes 226->226, edges 638->319 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/2hop__66149_85990/working_dir/graph.json
+[perturb] hipporag p1_50: nodes 186->186, edges 492->246 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/2hop__697729_576069/working_dir/graph.json
+[perturb] hipporag p1_50: nodes 268->268, edges 788->394 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/2hop__734057_88628/working_dir/graph.json
+[perturb] hipporag p1_50: nodes 232->232, edges 631->315 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/2hop__75207_46837/working_dir/graph.json
+[perturb] hipporag p1_50: nodes 204->204, edges 615->307 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/3hop1__140855_2053_52946/working_dir/graph.json
+[perturb] hipporag p1_50: nodes 229->229, edges 649->325 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/3hop1__280834_547811_80702/working_dir/graph.json
+[perturb] hipporag p1_50: nodes 248->248, edges 746->373 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/3hop1__857_846_7810/working_dir/graph.json
+[perturb] hipporag p1_50: nodes 239->239, edges 711->355 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/3hop2__90098_91678_10557/working_dir/graph.json
+[perturb] hipporag p1_50: nodes 241->241, edges 770->385 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/4hop1__271272_508773_85832_745702/working_dir/graph.json
+[perturb] hipporag p1_50: nodes 209->209, edges 593->297 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/4hop1__836115_49925_13759_736921/working_dir/graph.json
+[perturb] hipporag p1_50: nodes 205->205, edges 631->315 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/4hop1__9007_698949_157828_162309/working_dir/graph.json
+[perturb] hipporag p1_50: nodes 161->161, edges 457->229 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/4hop3__193820_466199_128875_72134/working_dir/graph.json
+[perturb] hipporag p1_50: nodes 233->233, edges 662->331 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/4hop3__312119_132409_146285_35031/working_dir/graph.json
+[GIN] 2026/08/31 - 13:42:26 | 200 |    60.50871ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:42:26 | 200 |   50.576287ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:42:31 | 200 |  4.264669089s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:42:36 | 200 |  5.341883442s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:42:57 | 200 |  245.259986ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:42:57 | 200 |   68.617342ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:43:07 | 200 |  10.00204287s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:43:29 | 200 | 21.420707702s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:43:30 | 200 |   54.492836ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:43:31 | 200 |   42.470656ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:43:36 | 200 |  5.267030603s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:43:54 | 200 | 18.149176177s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:43:56 | 200 |    38.27657ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:43:56 | 200 |   87.660728ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:44:01 | 200 |  5.092085461s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:44:09 | 200 |  7.864243635s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:44:11 | 200 |   43.467644ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:44:11 | 200 |   95.003248ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:44:15 | 200 |  4.452452904s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:44:31 | 200 | 15.629879521s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:44:33 | 200 |   37.574034ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:44:33 | 200 |     48.6808ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:44:38 | 200 |  5.411472696s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:44:44 | 200 |  5.738614499s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:44:46 | 200 |   58.840506ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:44:46 | 200 |   52.022413ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:44:51 | 200 |  4.590605622s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:44:57 | 200 |  6.026810116s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:45:00 | 200 |   58.409198ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:45:00 | 200 |   87.609196ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:45:04 | 200 |  4.161938489s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:45:11 | 200 |  7.046365012s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:45:13 | 200 |   84.142862ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:45:13 | 200 |   86.828792ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:45:20 | 200 |  6.822304585s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:45:26 | 200 |   5.98632454s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:45:28 | 200 |   70.672384ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:45:28 | 200 |   82.213769ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:45:34 | 200 |  5.420906117s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:45:37 | 200 |  3.543267655s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:45:40 | 200 |   47.713628ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:45:40 | 200 |   64.803228ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:45:43 | 200 |  3.391518827s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:45:50 | 200 |  6.318045865s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:45:52 | 200 |   55.559891ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:45:52 | 200 |   93.130183ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:45:59 | 200 |  7.612371976s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:46:22 | 200 |  22.76718555s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:46:24 | 200 |   62.967469ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:46:24 | 200 |    45.69755ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:46:31 | 200 |  6.722073389s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:46:40 | 200 |  9.661113816s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:46:42 | 200 |   67.249997ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:46:42 | 200 |   98.435272ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:46:49 | 200 |  6.587847741s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:46:59 | 200 | 10.125205778s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:47:01 | 200 |   52.280029ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:47:02 | 200 |  120.400244ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:47:07 | 200 |  5.915228862s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:47:12 | 200 |  4.563252818s |       127.0.0.1 | POST     "/api/chat"
+=== [SWO69] 04:47:16 END   e2/hipporag_musique_p1_50 rc=0 wall=291s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p1_50/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 04:47:18 E2  hipporag_musique_p2_10: perturbing 15 snapshots ===
+[perturb] hipporag p2_10: nodes 184->166, edges 495->433 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/2hop__159903_419949/working_dir/graph.json
+[perturb] hipporag p2_10: nodes 234->211, edges 637->522 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/2hop__464479_70131/working_dir/graph.json
+[perturb] hipporag p2_10: nodes 226->203, edges 638->526 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/2hop__66149_85990/working_dir/graph.json
+[perturb] hipporag p2_10: nodes 186->167, edges 492->394 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/2hop__697729_576069/working_dir/graph.json
+[perturb] hipporag p2_10: nodes 268->241, edges 788->602 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/2hop__734057_88628/working_dir/graph.json
+[perturb] hipporag p2_10: nodes 232->209, edges 631->523 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/2hop__75207_46837/working_dir/graph.json
+[perturb] hipporag p2_10: nodes 204->184, edges 615->459 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/3hop1__140855_2053_52946/working_dir/graph.json
+[perturb] hipporag p2_10: nodes 229->206, edges 649->514 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/3hop1__280834_547811_80702/working_dir/graph.json
+[perturb] hipporag p2_10: nodes 248->223, edges 746->617 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/3hop1__857_846_7810/working_dir/graph.json
+[perturb] hipporag p2_10: nodes 239->215, edges 711->498 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/3hop2__90098_91678_10557/working_dir/graph.json
+[perturb] hipporag p2_10: nodes 241->217, edges 770->620 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/4hop1__271272_508773_85832_745702/working_dir/graph.json
+[perturb] hipporag p2_10: nodes 209->188, edges 593->459 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/4hop1__836115_49925_13759_736921/working_dir/graph.json
+[perturb] hipporag p2_10: nodes 205->185, edges 631->448 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/4hop1__9007_698949_157828_162309/working_dir/graph.json
+[perturb] hipporag p2_10: nodes 161->145, edges 457->374 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/4hop3__193820_466199_128875_72134/working_dir/graph.json
+[perturb] hipporag p2_10: nodes 233->210, edges 662->538 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/4hop3__312119_132409_146285_35031/working_dir/graph.json
+[GIN] 2026/08/31 - 13:47:22 | 200 |   57.084984ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:47:22 | 200 |  114.413481ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:47:27 | 200 |  4.436638511s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:47:32 | 200 |  5.245387896s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:47:49 | 200 |   63.398719ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:47:49 | 200 |   85.134634ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:47:59 | 200 | 10.555493101s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:48:20 | 200 | 21.202513153s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:48:22 | 200 |   47.077104ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:48:22 | 200 |  148.086092ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:48:28 | 200 |  5.296917016s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:48:46 | 200 | 18.216643369s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:48:48 | 200 |   44.410439ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:48:48 | 200 |  146.970548ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:48:53 | 200 |  5.221698649s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:49:02 | 200 |  8.239006408s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:49:03 | 200 |   55.942077ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:49:03 | 200 |   67.221941ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:49:08 | 200 |  4.428831068s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:49:24 | 200 | 15.932762899s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:49:26 | 200 |   35.904254ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:49:26 | 200 |   48.912122ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:49:31 | 200 |  5.498265213s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:49:37 | 200 |  5.557831549s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:49:39 | 200 |   42.802221ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:49:39 | 200 |   66.292167ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:49:44 | 200 |  4.716563918s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:49:50 | 200 |   6.30299823s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:49:54 | 200 |   56.796957ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:49:54 | 200 |  126.364687ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:49:58 | 200 |  4.002969019s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:50:05 | 200 |  7.056811777s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:50:07 | 200 |   51.991726ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:50:07 | 200 |  126.194521ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:50:14 | 200 |  6.700080092s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:50:20 | 200 |   5.93533147s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:50:22 | 200 |   46.010287ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:50:22 | 200 |   52.385308ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:50:27 | 200 |   5.28492858s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:50:31 | 200 |   3.56101865s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:50:33 | 200 |   45.205598ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:50:33 | 200 |   82.348141ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:50:36 | 200 |  3.427562452s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:50:42 | 200 |  6.056798925s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:50:44 | 200 |   55.169617ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:50:45 | 200 |  198.970149ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:50:53 | 200 |  8.488993079s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:51:17 | 200 | 24.290421557s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:51:19 | 200 |   37.575543ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:51:19 | 200 |   68.145638ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:51:26 | 200 |  6.932317757s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:51:36 | 200 |  9.513121077s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:51:38 | 200 |   41.554288ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:51:38 | 200 |   59.569482ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:51:44 | 200 |  6.174164104s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:51:54 | 200 | 10.255689212s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:51:56 | 200 |   40.480491ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:51:56 | 200 |   77.373203ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:52:02 | 200 |  5.835552466s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:52:07 | 200 |  4.700039813s |       127.0.0.1 | POST     "/api/chat"
+=== [SWO69] 04:52:11 END   e2/hipporag_musique_p2_10 rc=0 wall=290s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_10/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 04:52:12 E2  hipporag_musique_p2_30: perturbing 15 snapshots ===
+[perturb] hipporag p2_30: nodes 184->129, edges 495->264 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/2hop__159903_419949/working_dir/graph.json
+[perturb] hipporag p2_30: nodes 234->164, edges 637->317 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/2hop__464479_70131/working_dir/graph.json
+[perturb] hipporag p2_30: nodes 226->158, edges 638->334 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/2hop__66149_85990/working_dir/graph.json
+[perturb] hipporag p2_30: nodes 186->130, edges 492->237 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/2hop__697729_576069/working_dir/graph.json
+[perturb] hipporag p2_30: nodes 268->188, edges 788->404 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/2hop__734057_88628/working_dir/graph.json
+[perturb] hipporag p2_30: nodes 232->162, edges 631->288 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/2hop__75207_46837/working_dir/graph.json
+[perturb] hipporag p2_30: nodes 204->143, edges 615->288 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/3hop1__140855_2053_52946/working_dir/graph.json
+[perturb] hipporag p2_30: nodes 229->160, edges 649->260 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/3hop1__280834_547811_80702/working_dir/graph.json
+[perturb] hipporag p2_30: nodes 248->174, edges 746->390 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/3hop1__857_846_7810/working_dir/graph.json
+[perturb] hipporag p2_30: nodes 239->167, edges 711->321 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/3hop2__90098_91678_10557/working_dir/graph.json
+[perturb] hipporag p2_30: nodes 241->169, edges 770->371 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/4hop1__271272_508773_85832_745702/working_dir/graph.json
+[perturb] hipporag p2_30: nodes 209->146, edges 593->228 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/4hop1__836115_49925_13759_736921/working_dir/graph.json
+[perturb] hipporag p2_30: nodes 205->143, edges 631->252 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/4hop1__9007_698949_157828_162309/working_dir/graph.json
+[perturb] hipporag p2_30: nodes 161->113, edges 457->218 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/4hop3__193820_466199_128875_72134/working_dir/graph.json
+[perturb] hipporag p2_30: nodes 233->163, edges 662->309 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/4hop3__312119_132409_146285_35031/working_dir/graph.json
+[GIN] 2026/08/31 - 13:52:16 | 200 |   36.790124ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:52:16 | 200 |   72.095352ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:52:21 | 200 |  4.344093313s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:52:26 | 200 |  5.502122115s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:52:47 | 200 |   77.260602ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:52:47 | 200 |   64.818531ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:52:57 | 200 | 10.086837563s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:53:19 | 200 | 21.926341388s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:53:21 | 200 |   79.174739ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:53:21 | 200 |   50.597178ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:53:26 | 200 |  5.270347503s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:53:45 | 200 | 18.562753638s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:53:47 | 200 |   42.841697ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:53:47 | 200 |   90.502548ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:53:52 | 200 |  5.236554885s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:54:00 | 200 |  8.058367003s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:54:02 | 200 |   50.812311ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:54:02 | 200 |   54.911372ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:54:07 | 200 |  4.619419745s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:54:23 | 200 | 16.220987585s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:54:25 | 200 |   36.320193ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:54:25 | 200 |   76.145107ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:54:31 | 200 |  5.481608578s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:54:36 | 200 |  5.414524177s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:54:38 | 200 |   47.733589ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:54:38 | 200 |   97.636143ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:54:43 | 200 |  4.812635679s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:54:50 | 200 |  6.372391841s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:54:53 | 200 |   35.688718ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:54:53 | 200 |    118.3715ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:54:57 | 200 |  4.176007475s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:55:05 | 200 |  7.340624097s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:55:07 | 200 |   48.684838ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:55:07 | 200 |   72.392604ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:55:14 | 200 |   6.82719522s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:55:20 | 200 |  6.064909061s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:55:22 | 200 |   38.692487ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:55:22 | 200 |   61.470145ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:55:27 | 200 |  5.400783771s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:55:31 | 200 |  3.777842941s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:55:33 | 200 |   61.253869ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:55:33 | 200 |   58.743976ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:55:37 | 200 |   3.40359504s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:55:43 | 200 |  6.360832383s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:55:45 | 200 |    37.53769ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:55:45 | 200 |   181.18064ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:55:52 | 200 |  7.301416634s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:56:15 | 200 | 22.765727561s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:56:17 | 200 |   62.406373ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:56:17 | 200 |  114.891964ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:56:24 | 200 |  6.631646245s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:56:33 | 200 |  9.259674075s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:56:35 | 200 |   44.628035ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:56:36 | 200 |  184.342616ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:56:42 | 200 |   6.14604339s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:56:52 | 200 |  9.850155521s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:56:54 | 200 |   46.167518ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:56:54 | 200 |   94.568677ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:57:00 | 200 |  5.981806548s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:57:04 | 200 |  4.335344511s |       127.0.0.1 | POST     "/api/chat"
+=== [SWO69] 04:57:08 END   e2/hipporag_musique_p2_30 rc=0 wall=293s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p2_30/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 04:57:10 E2  hipporag_musique_p3: perturbing 15 snapshots ===
+[perturb] hipporag p3: nodes 184->180, edges 495->466 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/2hop__159903_419949/working_dir/graph.json
+[perturb] hipporag p3: nodes 234->228, edges 637->593 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/2hop__464479_70131/working_dir/graph.json
+[perturb] hipporag p3: nodes 226->220, edges 638->580 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/2hop__66149_85990/working_dir/graph.json
+[perturb] hipporag p3: nodes 186->181, edges 492->461 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/2hop__697729_576069/working_dir/graph.json
+[perturb] hipporag p3: nodes 268->255, edges 788->614 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/2hop__734057_88628/working_dir/graph.json
+[perturb] hipporag p3: nodes 232->225, edges 631->542 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/2hop__75207_46837/working_dir/graph.json
+[perturb] hipporag p3: nodes 204->193, edges 615->518 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/3hop1__140855_2053_52946/working_dir/graph.json
+[perturb] hipporag p3: nodes 229->220, edges 649->588 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/3hop1__280834_547811_80702/working_dir/graph.json
+[perturb] hipporag p3: nodes 248->232, edges 746->574 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/3hop1__857_846_7810/working_dir/graph.json
+[perturb] hipporag p3: nodes 239->231, edges 711->589 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/3hop2__90098_91678_10557/working_dir/graph.json
+[perturb] hipporag p3: nodes 241->228, edges 770->605 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/4hop1__271272_508773_85832_745702/working_dir/graph.json
+[perturb] hipporag p3: nodes 209->196, edges 593->470 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/4hop1__836115_49925_13759_736921/working_dir/graph.json
+[perturb] hipporag p3: nodes 205->194, edges 631->505 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/4hop1__9007_698949_157828_162309/working_dir/graph.json
+[perturb] hipporag p3: nodes 161->149, edges 457->359 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/4hop3__193820_466199_128875_72134/working_dir/graph.json
+[perturb] hipporag p3: nodes 233->218, edges 662->497 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/4hop3__312119_132409_146285_35031/working_dir/graph.json
+[GIN] 2026/08/31 - 13:57:14 | 200 |   45.897735ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:57:15 | 200 |    62.82057ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:57:19 | 200 |  4.575585277s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:57:25 | 200 |  5.296904607s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:57:42 | 200 |   80.129376ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:57:42 | 200 |   76.403208ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:57:53 | 200 | 10.757155974s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:58:15 | 200 | 22.394087404s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:58:17 | 200 |   53.049362ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:58:17 | 200 |   87.197548ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:58:23 | 200 |  5.572450351s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:58:41 | 200 | 18.602887981s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:58:43 | 200 |   82.325185ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:58:43 | 200 |   62.579092ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:58:49 | 200 |  5.483993073s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:58:57 | 200 |  8.099994445s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:58:59 | 200 |   47.419585ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:58:59 | 200 |    53.47115ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:59:03 | 200 |  4.643102288s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:59:20 | 200 | 16.153297451s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:59:21 | 200 |   54.736968ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:59:22 | 200 |   72.959124ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:59:27 | 200 |    5.5138639s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:59:33 | 200 |   5.81074388s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:59:35 | 200 |   38.971606ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:59:35 | 200 |  105.744075ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:59:40 | 200 |  4.956820671s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:59:47 | 200 |  6.596521951s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 13:59:50 | 200 |   36.976693ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:59:50 | 200 |   55.038484ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 13:59:54 | 200 |  4.020936292s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:00:01 | 200 |  7.196079747s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:00:03 | 200 |   62.519057ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:00:03 | 200 |   44.152158ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:00:10 | 200 |  6.768552667s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:00:16 | 200 |  6.097245764s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:00:18 | 200 |   43.263939ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:00:18 | 200 |   69.345834ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:00:24 | 200 |  5.423837676s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:00:28 | 200 |  3.931790977s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:00:29 | 200 |   41.289496ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:00:30 | 200 |   94.193179ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:00:33 | 200 |  3.473609298s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:00:40 | 200 |   6.56647056s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:00:42 | 200 |  179.597676ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:00:42 | 200 |    60.84401ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:00:50 | 200 |  7.611572559s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:01:14 | 200 | 24.104962843s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:01:16 | 200 |   54.764406ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:01:16 | 200 |   90.447904ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:01:23 | 200 |  6.921022904s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:01:32 | 200 |  9.158791594s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:01:34 | 200 |   38.013241ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:01:34 | 200 |   63.881035ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:01:41 | 200 |  6.473110841s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:01:50 | 200 |  9.948620387s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:01:53 | 200 |   36.504578ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:01:53 | 200 |   72.250321ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:01:58 | 200 |  5.813971892s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:02:03 | 200 |  4.413174734s |       127.0.0.1 | POST     "/api/chat"
+=== [SWO69] 05:02:07 END   e2/hipporag_musique_p3 rc=0 wall=294s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 05:02:08 E2  hipporag_musique_p4: perturbing 15 snapshots ===
+[perturb] hipporag p4: nodes 184->184, edges 495->495 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/2hop__159903_419949/working_dir/graph.json
+[perturb] hipporag p4: nodes 234->234, edges 637->637 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/2hop__464479_70131/working_dir/graph.json
+[perturb] hipporag p4: nodes 226->226, edges 638->638 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/2hop__66149_85990/working_dir/graph.json
+[perturb] hipporag p4: nodes 186->186, edges 492->492 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/2hop__697729_576069/working_dir/graph.json
+[perturb] hipporag p4: nodes 268->268, edges 788->788 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/2hop__734057_88628/working_dir/graph.json
+[perturb] hipporag p4: nodes 232->232, edges 631->631 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/2hop__75207_46837/working_dir/graph.json
+[perturb] hipporag p4: nodes 204->204, edges 615->615 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/3hop1__140855_2053_52946/working_dir/graph.json
+[perturb] hipporag p4: nodes 229->229, edges 649->649 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/3hop1__280834_547811_80702/working_dir/graph.json
+[perturb] hipporag p4: nodes 248->248, edges 746->746 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/3hop1__857_846_7810/working_dir/graph.json
+[perturb] hipporag p4: nodes 239->239, edges 711->711 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/3hop2__90098_91678_10557/working_dir/graph.json
+[perturb] hipporag p4: nodes 241->241, edges 770->770 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/4hop1__271272_508773_85832_745702/working_dir/graph.json
+[perturb] hipporag p4: nodes 209->209, edges 593->593 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/4hop1__836115_49925_13759_736921/working_dir/graph.json
+[perturb] hipporag p4: nodes 205->205, edges 631->631 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/4hop1__9007_698949_157828_162309/working_dir/graph.json
+[perturb] hipporag p4: nodes 161->161, edges 457->457 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/4hop3__193820_466199_128875_72134/working_dir/graph.json
+[perturb] hipporag p4: nodes 233->233, edges 662->662 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/4hop3__312119_132409_146285_35031/working_dir/graph.json
+[GIN] 2026/08/31 - 14:02:12 | 200 |   53.135948ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:02:13 | 200 |   63.889662ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:02:17 | 200 |  4.418204073s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:02:23 | 200 |  5.293971085s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:02:39 | 200 |   95.574723ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:02:39 | 200 |   99.785826ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:02:49 | 200 |  9.719622252s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:03:10 | 200 | 21.345866248s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:03:12 | 200 |   41.407803ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:03:12 | 200 |   59.029084ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:03:18 | 200 |   5.45038185s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:03:35 | 200 | 17.597686196s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:03:38 | 200 |   36.021287ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:03:38 | 200 |  100.316361ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:03:43 | 200 |  5.156609599s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:03:51 | 200 |  8.113222884s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:03:53 | 200 |   77.135279ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:03:53 | 200 |   75.892839ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:03:57 | 200 |  4.436428475s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:04:13 | 200 | 15.656534267s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:04:15 | 200 |   55.668327ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:04:15 | 200 |    61.37401ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:04:21 | 200 |  5.422719502s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:04:26 | 200 |  5.695848477s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:04:28 | 200 |    37.00658ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:04:28 | 200 |   60.377874ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:04:33 | 200 |   4.68652075s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:04:39 | 200 |  6.279774468s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:04:43 | 200 |   37.971654ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:04:43 | 200 |   80.591237ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:04:47 | 200 |  4.045415733s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:04:54 | 200 |  7.248713049s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:04:56 | 200 |   37.341438ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:04:56 | 200 |   80.726823ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:05:03 | 200 |  6.727130748s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:05:09 | 200 |  5.967226135s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:05:11 | 200 |   34.814393ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:05:11 | 200 |  104.004342ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:05:16 | 200 |  5.343864884s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:05:20 | 200 |  3.659175259s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:05:22 | 200 |   39.483728ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:05:22 | 200 |    62.23638ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:05:26 | 200 |  3.348439939s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:05:32 | 200 |  6.119572588s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:05:34 | 200 |   63.532831ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:05:34 | 200 |     72.0969ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:05:41 | 200 |  7.389340623s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:06:03 | 200 | 22.452569415s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:06:05 | 200 |   40.354774ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:06:06 | 200 |   82.287047ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:06:12 | 200 |  6.927773392s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:06:22 | 200 |  9.601613499s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:06:24 | 200 |   35.762579ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:06:24 | 200 |   45.913572ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:06:31 | 200 |  6.513372978s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:06:41 | 200 | 10.160276131s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:06:43 | 200 |   79.310752ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:06:43 | 200 |    101.6244ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:06:49 | 200 |  5.784277124s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:06:54 | 200 |  4.773556668s |       127.0.0.1 | POST     "/api/chat"
+=== [SWO69] 05:06:58 END   e2/hipporag_musique_p4 rc=0 wall=287s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p4/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 05:06:59 E2  hipporag_musique_p5_10: perturbing 15 snapshots ===
+[perturb] hipporag p5_10: nodes 184->202, edges 495->513 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/2hop__159903_419949/working_dir/graph.json
+[perturb] hipporag p5_10: nodes 234->257, edges 637->660 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/2hop__464479_70131/working_dir/graph.json
+[perturb] hipporag p5_10: nodes 226->249, edges 638->661 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/2hop__66149_85990/working_dir/graph.json
+[perturb] hipporag p5_10: nodes 186->205, edges 492->511 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/2hop__697729_576069/working_dir/graph.json
+[perturb] hipporag p5_10: nodes 268->295, edges 788->815 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/2hop__734057_88628/working_dir/graph.json
+[perturb] hipporag p5_10: nodes 232->255, edges 631->654 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/2hop__75207_46837/working_dir/graph.json
+[perturb] hipporag p5_10: nodes 204->224, edges 615->635 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/3hop1__140855_2053_52946/working_dir/graph.json
+[perturb] hipporag p5_10: nodes 229->252, edges 649->672 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/3hop1__280834_547811_80702/working_dir/graph.json
+[perturb] hipporag p5_10: nodes 248->273, edges 746->771 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/3hop1__857_846_7810/working_dir/graph.json
+[perturb] hipporag p5_10: nodes 239->263, edges 711->735 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/3hop2__90098_91678_10557/working_dir/graph.json
+[perturb] hipporag p5_10: nodes 241->265, edges 770->794 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/4hop1__271272_508773_85832_745702/working_dir/graph.json
+[perturb] hipporag p5_10: nodes 209->230, edges 593->614 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/4hop1__836115_49925_13759_736921/working_dir/graph.json
+[perturb] hipporag p5_10: nodes 205->225, edges 631->651 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/4hop1__9007_698949_157828_162309/working_dir/graph.json
+[perturb] hipporag p5_10: nodes 161->177, edges 457->473 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/4hop3__193820_466199_128875_72134/working_dir/graph.json
+[perturb] hipporag p5_10: nodes 233->256, edges 662->685 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/4hop3__312119_132409_146285_35031/working_dir/graph.json
+[GIN] 2026/08/31 - 14:07:03 | 200 |   48.782235ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:07:04 | 200 |     64.3147ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:07:08 | 200 |  4.222076868s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:07:13 | 200 |   5.28977123s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:07:30 | 200 |    93.93518ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:07:30 | 200 |   60.570818ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:07:40 | 200 | 10.134614398s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:08:01 | 200 | 21.296752776s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:08:03 | 200 |  122.899419ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:08:04 | 200 |    59.14865ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:08:09 | 200 |   5.59523104s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:08:28 | 200 | 18.492688481s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:08:30 | 200 |   45.748496ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:08:30 | 200 |   71.521014ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:08:35 | 200 |  5.396178646s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:08:43 | 200 |  7.958966089s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:08:45 | 200 |   71.524375ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:08:45 | 200 |  151.648944ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:08:50 | 200 |  4.537293562s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:09:06 | 200 | 15.842438748s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:09:08 | 200 |   35.821621ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:09:08 | 200 |   39.242761ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:09:13 | 200 |  5.370803259s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:09:19 | 200 |  5.749467047s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:09:21 | 200 |   35.958603ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:09:21 | 200 |   56.170389ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:09:26 | 200 |  4.818861195s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:09:32 | 200 |  6.088301149s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:09:35 | 200 |   48.203961ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:09:35 | 200 |  125.437929ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:09:39 | 200 |   4.08364731s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:09:46 | 200 |  7.000744977s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:09:48 | 200 |   37.527235ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:09:48 | 200 |   175.02532ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:09:55 | 200 |  6.782769758s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:10:01 | 200 |  6.130770836s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:10:03 | 200 |    37.37936ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:10:03 | 200 |    57.42503ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:10:09 | 200 |  5.426601269s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:10:12 | 200 |   3.47445485s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:10:14 | 200 |   67.673271ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:10:15 | 200 |   50.414214ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:10:18 | 200 |    3.4471225s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:10:24 | 200 |  6.032123028s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:10:26 | 200 |   49.284536ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:10:26 | 200 |   40.333772ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:10:34 | 200 |  7.451141609s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:10:57 | 200 | 22.977528734s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:10:58 | 200 |   48.291621ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:10:59 | 200 |  136.639213ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:11:05 | 200 |  6.794008396s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:11:15 | 200 |  9.486963488s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:11:17 | 200 |   40.561973ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:11:17 | 200 |   48.535938ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:11:23 | 200 |  6.114459598s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:11:33 | 200 | 10.124648531s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:11:35 | 200 |   54.790727ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:11:35 | 200 |     84.6766ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:11:41 | 200 |  6.023543506s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:11:46 | 200 |  4.448367607s |       127.0.0.1 | POST     "/api/chat"
+=== [SWO69] 05:11:50 END   e2/hipporag_musique_p5_10 rc=0 wall=288s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_10/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 05:11:51 E2  hipporag_musique_p5_30: perturbing 15 snapshots ===
+[perturb] hipporag p5_30: nodes 184->239, edges 495->550 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/2hop__159903_419949/working_dir/graph.json
+[perturb] hipporag p5_30: nodes 234->304, edges 637->707 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/2hop__464479_70131/working_dir/graph.json
+[perturb] hipporag p5_30: nodes 226->294, edges 638->706 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/2hop__66149_85990/working_dir/graph.json
+[perturb] hipporag p5_30: nodes 186->242, edges 492->548 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/2hop__697729_576069/working_dir/graph.json
+[perturb] hipporag p5_30: nodes 268->348, edges 788->868 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/2hop__734057_88628/working_dir/graph.json
+[perturb] hipporag p5_30: nodes 232->302, edges 631->701 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/2hop__75207_46837/working_dir/graph.json
+[perturb] hipporag p5_30: nodes 204->265, edges 615->676 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/3hop1__140855_2053_52946/working_dir/graph.json
+[perturb] hipporag p5_30: nodes 229->298, edges 649->718 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/3hop1__280834_547811_80702/working_dir/graph.json
+[perturb] hipporag p5_30: nodes 248->322, edges 746->820 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/3hop1__857_846_7810/working_dir/graph.json
+[perturb] hipporag p5_30: nodes 239->311, edges 711->783 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/3hop2__90098_91678_10557/working_dir/graph.json
+[perturb] hipporag p5_30: nodes 241->313, edges 770->842 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/4hop1__271272_508773_85832_745702/working_dir/graph.json
+[perturb] hipporag p5_30: nodes 209->272, edges 593->656 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/4hop1__836115_49925_13759_736921/working_dir/graph.json
+[perturb] hipporag p5_30: nodes 205->267, edges 631->693 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/4hop1__9007_698949_157828_162309/working_dir/graph.json
+[perturb] hipporag p5_30: nodes 161->209, edges 457->505 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/4hop3__193820_466199_128875_72134/working_dir/graph.json
+[perturb] hipporag p5_30: nodes 233->303, edges 662->732 (seed=42) -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/4hop3__312119_132409_146285_35031/working_dir/graph.json
+[GIN] 2026/08/31 - 14:11:55 | 200 |   39.183329ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:11:56 | 200 |   65.736568ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:12:00 | 200 |    4.2208039s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:12:05 | 200 |  5.354471941s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:12:23 | 200 |  229.818248ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:12:24 | 200 |   98.254428ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:12:33 | 200 |  9.919724244s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:12:56 | 200 | 22.675650384s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:12:58 | 200 |   49.435514ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:12:58 | 200 |   101.52393ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:13:04 | 200 |  5.956262001s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:13:23 | 200 | 18.777363624s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:13:25 | 200 |   35.454808ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:13:25 | 200 |   49.812444ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:13:30 | 200 |  5.265928864s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:13:39 | 200 |  8.419631077s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:13:41 | 200 |   64.513334ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:13:41 | 200 |    99.46466ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:13:45 | 200 |  4.591873069s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:14:02 | 200 | 16.157150416s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:14:04 | 200 |   58.819457ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:14:04 | 200 |   48.026454ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:14:09 | 200 |  5.554454751s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:14:15 | 200 |  5.699253518s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:14:17 | 200 |   46.722185ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:14:17 | 200 |  111.595199ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:14:22 | 200 |  4.909724481s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:14:28 | 200 |  6.425703138s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:14:32 | 200 |   56.344255ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:14:32 | 200 |   95.813555ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:14:36 | 200 |  3.908535943s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:14:43 | 200 |  7.261746672s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:14:45 | 200 |   36.894153ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:14:45 | 200 |   78.404023ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:14:52 | 200 |   6.79541175s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:14:59 | 200 |  6.400181971s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:15:00 | 200 |   34.405963ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:15:01 | 200 |   64.987028ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:15:06 | 200 |  5.588444453s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:15:10 | 200 |  3.796644392s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:15:12 | 200 |   58.304761ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:15:12 | 200 |    56.60593ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:15:15 | 200 |  3.444031355s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:15:22 | 200 |  6.078268379s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:15:23 | 200 |   73.706123ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:15:24 | 200 |   76.494603ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:15:31 | 200 |  7.653154972s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:15:55 | 200 | 23.804821297s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:15:57 | 200 |   52.909517ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:15:57 | 200 |   53.525766ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:16:04 | 200 |  6.823148696s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:16:13 | 200 |  9.259160331s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:16:15 | 200 |   46.206635ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:16:15 | 200 |   86.850003ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:16:22 | 200 |  6.435472522s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:16:32 | 200 | 10.262512254s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:16:34 | 200 |   42.786835ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:16:34 | 200 |   58.613687ms |       127.0.0.1 | POST     "/api/embed"
+[GIN] 2026/08/31 - 14:16:40 | 200 |  5.997178618s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/08/31 - 14:16:45 | 200 |  4.435016236s |       127.0.0.1 | POST     "/api/chat"
+=== [SWO69] 05:16:49 END   e2/hipporag_musique_p5_30 rc=0 wall=295s ===
+[analyze_kg_quality] rows=0 systems=[] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['hipporag_graph'] skipped=0
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p5_30/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 05:16:50 DONE mode=e2 ===

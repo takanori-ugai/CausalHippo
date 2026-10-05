@@ -1,0 +1,356 @@
+{
+  "nodes" : [ {
+    "id" : "Depression",
+    "entity_id" : "Depression",
+    "entity_type" : "Concept",
+    "description" : "A mental health condition characterized by persistent feelings of sadness and loss of interest.",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea"
+  }, {
+    "id" : "Sleep Disturbance",
+    "entity_id" : "Sleep Disturbance",
+    "entity_type" : "Concept",
+    "description" : "A disruption in normal sleep patterns, leading to difficulty sleeping or staying asleep.",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea"
+  }, {
+    "id" : "Low Mood",
+    "entity_id" : "Low Mood",
+    "entity_type" : "Concept",
+    "description" : "A persistent feeling of sadness, hopelessness, or despair.",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea"
+  }, {
+    "id" : "Mood",
+    "entity_id" : "Mood",
+    "entity_type" : "Concept",
+    "description" : "A person's emotional state, ranging from happiness to sadness.",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea"
+  }, {
+    "id" : "Sleep",
+    "entity_id" : "Sleep",
+    "entity_type" : "Concept",
+    "description" : "The state of being asleep.",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea"
+  }, {
+    "id" : "Sprinkler System",
+    "entity_id" : "Sprinkler System",
+    "entity_type" : "Concept",
+    "description" : "The system responsible for watering the yard",
+    "source_id" : "ef25acf1202d81389ff836f8c76fa666"
+  }, {
+    "id" : "Grass",
+    "entity_id" : "Grass",
+    "entity_type" : "Concept",
+    "description" : "The vegetation in the yard",
+    "source_id" : "ef25acf1202d81389ff836f8c76fa666"
+  }, {
+    "id" : "Neighborhood Residents",
+    "entity_id" : "Neighborhood Residents",
+    "entity_type" : "Person",
+    "description" : "The people living in the surrounding area",
+    "source_id" : "ef25acf1202d81389ff836f8c76fa666"
+  }, {
+    "id" : "Alarm Clock",
+    "entity_id" : "Alarm Clock",
+    "entity_type" : "Concept",
+    "description" : "An old alarm clock used to wake people up",
+    "source_id" : "ba6c0224d070e15b133e5fc36ec86124"
+  }, {
+    "id" : "Bedroom",
+    "entity_id" : "Bedroom",
+    "entity_type" : "Location",
+    "description" : "A room where people sleep",
+    "source_id" : "ba6c0224d070e15b133e5fc36ec86124"
+  }, {
+    "id" : "Family Members",
+    "entity_id" : "Family Members",
+    "entity_type" : "Person",
+    "description" : "People related by blood or marriage",
+    "source_id" : "ba6c0224d070e15b133e5fc36ec86124"
+  }, {
+    "id" : "Daily Screen Time Among Teenagers",
+    "entity_id" : "Daily Screen Time Among Teenagers",
+    "entity_type" : "Concept",
+    "description" : "The amount of time teenagers spend on screens daily",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b"
+  }, {
+    "id" : "Eye Strain During Classes",
+    "entity_id" : "Eye Strain During Classes",
+    "entity_type" : "Concept",
+    "description" : "The discomfort or vision problem caused by prolonged screen time",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b"
+  }, {
+    "id" : "Digital Breaks in Schools",
+    "entity_id" : "Digital Breaks in Schools",
+    "entity_type" : "Concept",
+    "description" : "Short periods of time when students are not using digital devices",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b"
+  }, {
+    "id" : "Optician Appointments",
+    "entity_id" : "Optician Appointments",
+    "entity_type" : "Location",
+    "description" : "Medical professionals who specialize in eye care",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b"
+  }, {
+    "id" : "Schools",
+    "entity_id" : "Schools",
+    "entity_type" : "Location",
+    "description" : "Institutions where students attend classes",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b"
+  }, {
+    "id" : "Book Fair",
+    "entity_id" : "Book Fair",
+    "entity_type" : "Event",
+    "description" : "A gathering of books and readers",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2"
+  }, {
+    "id" : "Indoor Climbing Gym",
+    "entity_id" : "Indoor Climbing Gym",
+    "entity_type" : "Organization",
+    "description" : "A facility for indoor rock climbing",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2"
+  }, {
+    "id" : "Reading",
+    "entity_id" : "Reading",
+    "entity_type" : "Concept",
+    "description" : "The act of interpreting written text",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2"
+  }, {
+    "id" : "Climbing",
+    "entity_id" : "Climbing",
+    "entity_type" : "Concept",
+    "description" : "The act of ascending a rock or other vertical surface",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2"
+  }, {
+    "id" : "Bookstore Sales",
+    "entity_id" : "Bookstore Sales",
+    "entity_type" : "Concept",
+    "description" : "Sales of books in bookstores",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b"
+  }, {
+    "id" : "Local Coffee Shop Seating Shortages",
+    "entity_id" : "Local Coffee Shop Seating Shortages",
+    "entity_type" : "Location",
+    "description" : "Shortages of seating in local coffee shops",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b"
+  }, {
+    "id" : "Increased Reading Habits",
+    "entity_id" : "Increased Reading Habits",
+    "entity_type" : "Concept",
+    "description" : "A tendency for people to read more",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b"
+  }, {
+    "id" : "Colder Weather",
+    "entity_id" : "Colder Weather",
+    "entity_type" : "Concept",
+    "description" : "Weather characterized by low temperatures",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b"
+  }, {
+    "id" : "Coffee Shop Patronage",
+    "entity_id" : "Coffee Shop Patronage",
+    "entity_type" : "Concept",
+    "description" : "The act of visiting a coffee shop",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b"
+  } ],
+  "edges" : [ {
+    "source" : "Depression",
+    "target" : "Sleep Disturbance",
+    "weight" : "1.0",
+    "description" : "Depression often causes sleep disturbances, which can exacerbate the condition.",
+    "keywords" : "Sleep, Depression, Mood",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea",
+    "src_id" : "Depression",
+    "tgt_id" : "Sleep Disturbance"
+  }, {
+    "source" : "Depression",
+    "target" : "Low Mood",
+    "weight" : "1.0",
+    "description" : "Depression is characterized by persistent low moods.",
+    "keywords" : "Mood, Depression",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea",
+    "src_id" : "Depression",
+    "tgt_id" : "Low Mood"
+  }, {
+    "source" : "Depression",
+    "target" : "Mood",
+    "weight" : "1.0",
+    "description" : "Depression affects a person's mood.",
+    "keywords" : "Mood, Depression",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea",
+    "src_id" : "Depression",
+    "tgt_id" : "Mood"
+  }, {
+    "source" : "Sleep Disturbance",
+    "target" : "Low Mood",
+    "weight" : "1.0",
+    "description" : "Sleep disturbances can contribute to the development of low moods.",
+    "keywords" : "Sleep, Mood",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea",
+    "src_id" : "Sleep Disturbance",
+    "tgt_id" : "Low Mood"
+  }, {
+    "source" : "Mood",
+    "target" : "Sleep",
+    "weight" : "1.0",
+    "description" : "Sleep can impact a person's mood.",
+    "keywords" : "Sleep, Mood",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea",
+    "src_id" : "Sleep",
+    "tgt_id" : "Mood"
+  }, {
+    "source" : "Friends",
+    "target" : "Loved Ones",
+    "weight" : "1.0",
+    "description" : "Friends may observe the co-occurrence of depression and sleep disturbances in loved ones.",
+    "keywords" : "Observation, Relationship",
+    "source_id" : "c91623d2a635007ae543fe3de83513ea",
+    "src_id" : "Friends",
+    "tgt_id" : "Loved Ones"
+  }, {
+    "source" : "Sprinkler System",
+    "target" : "Grass",
+    "weight" : "1.0",
+    "description" : "The sprinkler system is responsible for watering the grass",
+    "keywords" : "watering, lawn care",
+    "source_id" : "ef25acf1202d81389ff836f8c76fa666",
+    "src_id" : "Sprinkler System",
+    "tgt_id" : "Grass"
+  }, {
+    "source" : "Sprinkler System",
+    "target" : "Neighborhood Residents",
+    "weight" : "1.0",
+    "description" : "Residents often discuss the sprinkler system with each other",
+    "keywords" : "maintenance, upkeep",
+    "source_id" : "ef25acf1202d81389ff836f8c76fa666",
+    "src_id" : "Neighborhood Residents",
+    "tgt_id" : "Sprinkler System"
+  }, {
+    "source" : "Grass",
+    "target" : "Neighborhood Residents",
+    "weight" : "1.0",
+    "description" : "The appearance of the grass is often discussed among residents",
+    "keywords" : "appearance, condition",
+    "source_id" : "ef25acf1202d81389ff836f8c76fa666",
+    "src_id" : "Grass",
+    "tgt_id" : "Neighborhood Residents"
+  }, {
+    "source" : "Alarm Clock",
+    "target" : "Bedroom",
+    "weight" : "1.0",
+    "description" : "The alarm clock is used to wake people up in the bedroom",
+    "keywords" : "wake up, morning routine",
+    "source_id" : "ba6c0224d070e15b133e5fc36ec86124",
+    "src_id" : "Alarm Clock",
+    "tgt_id" : "Bedroom"
+  }, {
+    "source" : "Alarm Clock",
+    "target" : "Family Members",
+    "weight" : "1.0",
+    "description" : "The alarm clock is a part of the family members' daily routine and they speculate about its importance",
+    "keywords" : "routine, speculation",
+    "source_id" : "ba6c0224d070e15b133e5fc36ec86124",
+    "src_id" : "Alarm Clock",
+    "tgt_id" : "Family Members"
+  }, {
+    "source" : "Daily Screen Time Among Teenagers",
+    "target" : "Eye Strain During Classes",
+    "weight" : "1.0",
+    "description" : "Increased screen time leads to eye strain",
+    "keywords" : "Prolonged screen time, Vision problems",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b",
+    "src_id" : "Daily Screen Time Among Teenagers",
+    "tgt_id" : "Eye Strain During Classes"
+  }, {
+    "source" : "Eye Strain During Classes",
+    "target" : "Digital Breaks in Schools",
+    "weight" : "1.0",
+    "description" : "Digital breaks help alleviate eye strain",
+    "keywords" : "Short breaks, Reduced screen time",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b",
+    "src_id" : "Digital Breaks in Schools",
+    "tgt_id" : "Eye Strain During Classes"
+  }, {
+    "source" : "Eye Strain During Classes",
+    "target" : "Optician Appointments",
+    "weight" : "1.0",
+    "description" : "Opticians treat eye strain and vision problems",
+    "keywords" : "Eye care, Vision problems",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b",
+    "src_id" : "Optician Appointments",
+    "tgt_id" : "Eye Strain During Classes"
+  }, {
+    "source" : "Digital Breaks in Schools",
+    "target" : "Schools",
+    "weight" : "1.0",
+    "description" : "Schools implement digital breaks to manage screen time",
+    "keywords" : "Classes, Screen time",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b",
+    "src_id" : "Schools",
+    "tgt_id" : "Digital Breaks in Schools"
+  }, {
+    "source" : "Optician Appointments",
+    "target" : "Schools",
+    "weight" : "1.0",
+    "description" : "Schools refer students to opticians for eye care",
+    "keywords" : "Students, Eye care",
+    "source_id" : "ecb7dceeee33a7e46a359b260d5d624b",
+    "src_id" : "Schools",
+    "tgt_id" : "Optician Appointments"
+  }, {
+    "source" : "Book Fair",
+    "target" : "Indoor Climbing Gym",
+    "weight" : "1.0",
+    "description" : "Some indoor climbing gyms have hosted book fairs",
+    "keywords" : "climbing gym, book fair",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2",
+    "src_id" : "Indoor Climbing Gym",
+    "tgt_id" : "Book Fair"
+  }, {
+    "source" : "Reading",
+    "target" : "Climbing",
+    "weight" : "1.0",
+    "description" : "There is no evidence that climbing leads to reading",
+    "keywords" : "climbing, reading",
+    "source_id" : "90a885c97eafead7c8d5e610120e3ae2",
+    "src_id" : "Climbing",
+    "tgt_id" : "Reading"
+  }, {
+    "source" : "Bookstore Sales",
+    "target" : "Local Coffee Shop Seating Shortages",
+    "weight" : "1.0",
+    "description" : "Bookstore sales are strong in months when local coffee shop seating shortages are most pronounced",
+    "keywords" : "bookstore sales, coffee shop seating",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b",
+    "src_id" : "Bookstore Sales",
+    "tgt_id" : "Local Coffee Shop Seating Shortages"
+  }, {
+    "source" : "Bookstore Sales",
+    "target" : "Colder Weather",
+    "weight" : "1.0",
+    "description" : "Colder weather may increase both reading and coffee shop patronage",
+    "keywords" : "colder weather, bookstore sales",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b",
+    "src_id" : "Colder Weather",
+    "tgt_id" : "Bookstore Sales"
+  }, {
+    "source" : "Increased Reading Habits",
+    "target" : "Coffee Shop Patronage",
+    "weight" : "1.0",
+    "description" : "Increased reading habits may drive people to linger longer in coffee shops",
+    "keywords" : "reading habits, coffee shop patronage",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b",
+    "src_id" : "Increased Reading Habits",
+    "tgt_id" : "Coffee Shop Patronage"
+  }, {
+    "source" : "Coffee Shop Patronage",
+    "target" : "Colder Weather",
+    "weight" : "1.0",
+    "description" : "Colder weather may increase coffee shop patronage",
+    "keywords" : "colder weather, coffee shop patronage",
+    "source_id" : "7c9a4c18627c374a1ee062543af6e40b",
+    "src_id" : "Colder Weather",
+    "tgt_id" : "Coffee Shop Patronage"
+  } ],
+  "metadata" : {
+    "nodeCount" : 25,
+    "edgeCount" : 22
+  }
+}

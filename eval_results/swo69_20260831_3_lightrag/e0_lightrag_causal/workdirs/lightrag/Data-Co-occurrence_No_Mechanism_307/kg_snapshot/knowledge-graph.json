@@ -1,0 +1,671 @@
+{
+  "nodes" : [ {
+    "id" : "Movie Theater Attendance",
+    "entity_id" : "Movie Theater Attendance",
+    "entity_type" : "Concept",
+    "description" : "The marked growth in cinema attendance observed during the winter season.",
+    "source_id" : "8851925f56d1e88041d2db63182885da"
+  }, {
+    "id" : "Citywide Energy Consumption",
+    "entity_id" : "Citywide Energy Consumption",
+    "entity_type" : "Concept",
+    "description" : "The uptick in electricity and energy usage across the city during the winter season.",
+    "source_id" : "8851925f56d1e88041d2db63182885da"
+  }, {
+    "id" : "Local Analysts",
+    "entity_id" : "Local Analysts",
+    "entity_type" : "Organization",
+    "description" : "Analysts who pointed out the similarity in timing between movie theater attendance and energy consumption, suggesting a possible connection.",
+    "source_id" : "8851925f56d1e88041d2db63182885da"
+  }, {
+    "id" : "Winter",
+    "entity_id" : "Winter",
+    "entity_type" : "Event",
+    "description" : "The colder season during which both movie theater attendance and citywide energy consumption rise for independent reasons.",
+    "source_id" : "8851925f56d1e88041d2db63182885da"
+  }, {
+    "id" : "Cinema Patrons",
+    "entity_id" : "Cinema Patrons",
+    "entity_type" : "Person",
+    "description" : "The influx of people attending movie theaters during the winter, whose electricity impact was speculated upon.",
+    "source_id" : "8851925f56d1e88041d2db63182885da"
+  }, {
+    "id" : "Musician",
+    "entity_id" : "Musician",
+    "entity_type" : "Person",
+    "description" : "A performer who plays the piano during a concert in an auditorium.",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941"
+  }, {
+    "id" : "Piano",
+    "entity_id" : "Piano",
+    "entity_type" : "Concept",
+    "description" : "The musical instrument played by the musician, producing melodious notes during the performance.",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941"
+  }, {
+    "id" : "Auditorium",
+    "entity_id" : "Auditorium",
+    "entity_type" : "Location",
+    "description" : "The venue where the musical performance takes place and where melodious notes fill the space.",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941"
+  }, {
+    "id" : "Audience",
+    "entity_id" : "Audience",
+    "entity_type" : "Organization",
+    "description" : "The group of people who watch and listen to the performance, captivated by the music.",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941"
+  }, {
+    "id" : "Performance",
+    "entity_id" : "Performance",
+    "entity_type" : "Event",
+    "description" : "A musical concert in which the musician plays the piano, producing resonant notes that captivate the audience.",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941"
+  }, {
+    "id" : "Spotlight",
+    "entity_id" : "Spotlight",
+    "entity_type" : "Concept",
+    "description" : "The stage lighting that illuminates the musician during the performance.",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941"
+  }, {
+    "id" : "Applause",
+    "entity_id" : "Applause",
+    "entity_type" : "Concept",
+    "description" : "The response given by the audience at the conclusion of the performance.",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941"
+  }, {
+    "id" : "Weekly Farmers' Market",
+    "entity_id" : "Weekly Farmers' Market",
+    "entity_type" : "Event",
+    "description" : "A weekly market that opened downtown, which commuters initially blamed for disrupting normal bus schedules.",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1"
+  }, {
+    "id" : "Downtown",
+    "entity_id" : "Downtown",
+    "entity_type" : "Location",
+    "description" : "The urban area where the weekly farmers' market was held and where several bus routes passed through.",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1"
+  }, {
+    "id" : "Bus Delays",
+    "entity_id" : "Bus Delays",
+    "entity_type" : "Event",
+    "description" : "Unexpected delays on several bus routes passing through the downtown area, causing frustration among riders.",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1"
+  }, {
+    "id" : "Transit Authority",
+    "entity_id" : "Transit Authority",
+    "entity_type" : "Organization",
+    "description" : "The public transit organization that issued announcements referencing ongoing events in the city during the bus delays.",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1"
+  }, {
+    "id" : "Minor Traffic Accident",
+    "entity_id" : "Minor Traffic Accident",
+    "entity_type" : "Event",
+    "description" : "A minor traffic accident on a nearby street that was the actual root cause of the bus delays, rather than the farmers' market.",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1"
+  }, {
+    "id" : "Nearby Street",
+    "entity_id" : "Nearby Street",
+    "entity_type" : "Location",
+    "description" : "A street in the vicinity of the downtown area where the minor traffic accident occurred.",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1"
+  }, {
+    "id" : "Commuters",
+    "entity_id" : "Commuters",
+    "entity_type" : "Person",
+    "description" : "Riders who faced unexpected bus delays and grumbled, suggesting the farmers' market disrupted normal schedules.",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1"
+  }, {
+    "id" : "Families",
+    "entity_id" : "Families",
+    "entity_type" : "Organization",
+    "description" : "Families that remove common allergens from their homes to reduce allergic reactions in children.",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c"
+  }, {
+    "id" : "Common allergens",
+    "entity_id" : "Common allergens",
+    "entity_type" : "Concept",
+    "description" : "Allergens that are commonly found in homes and are removed by families to reduce allergic reactions.",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c"
+  }, {
+    "id" : "Homes",
+    "entity_id" : "Homes",
+    "entity_type" : "Location",
+    "description" : "The domestic environment where families remove common allergens.",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c"
+  }, {
+    "id" : "Children",
+    "entity_id" : "Children",
+    "entity_type" : "Person",
+    "description" : "Children who experience fewer allergic reactions following the removal of common allergens from their homes.",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c"
+  }, {
+    "id" : "Allergic reactions",
+    "entity_id" : "Allergic reactions",
+    "entity_type" : "Concept",
+    "description" : "Reactions experienced by children that are reduced after allergen removal and potentially influenced by medical interventions.",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c"
+  }, {
+    "id" : "Medical interventions",
+    "entity_id" : "Medical interventions",
+    "entity_type" : "Concept",
+    "description" : "Medical treatments or procedures that could be a contributing factor to reduced allergic reactions in children.",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c"
+  }, {
+    "id" : "Allergen removal",
+    "entity_id" : "Allergen removal",
+    "entity_type" : "Concept",
+    "description" : "The practice of removing common allergens from homes, which is associated with reduced allergic reactions in children.",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c"
+  }, {
+    "id" : "Gourmet Burger Restaurants",
+    "entity_id" : "Gourmet Burger Restaurants",
+    "entity_type" : "Concept",
+    "description" : "A growing trend of gourmet burger restaurant openings in the city, representing a shift toward unique local food experiences.",
+    "source_id" : "e83fd2663e15670923282feee7257afb"
+  }, {
+    "id" : "Local Breweries",
+    "entity_id" : "Local Breweries",
+    "entity_type" : "Organization",
+    "description" : "Local breweries that are announcing more collaborations, contributing to the broader food and beverage movement in the city.",
+    "source_id" : "e83fd2663e15670923282feee7257afb"
+  }, {
+    "id" : "Food Critics",
+    "entity_id" : "Food Critics",
+    "entity_type" : "Person",
+    "description" : "Critics who suggest that the burger trend is fueling brewery partnerships, though this view is presented as not entirely accurate.",
+    "source_id" : "e83fd2663e15670923282feee7257afb"
+  }, {
+    "id" : "Burger Trend",
+    "entity_id" : "Burger Trend",
+    "entity_type" : "Concept",
+    "description" : "The trend of increasing gourmet burger restaurant openings in the city, which some believe is driving brewery collaborations.",
+    "source_id" : "e83fd2663e15670923282feee7257afb"
+  }, {
+    "id" : "Brewery Partnerships",
+    "entity_id" : "Brewery Partnerships",
+    "entity_type" : "Concept",
+    "description" : "Collaborations announced by local breweries, which some food critics attribute to the burger trend but are actually part of a larger movement.",
+    "source_id" : "e83fd2663e15670923282feee7257afb"
+  }, {
+    "id" : "Unique Local Food and Beverage Experiences",
+    "entity_id" : "Unique Local Food and Beverage Experiences",
+    "entity_type" : "Concept",
+    "description" : "A larger movement encompassing both the burger trend and brewery partnerships, representing a broader shift toward distinctive local food and drink offerings.",
+    "source_id" : "e83fd2663e15670923282feee7257afb"
+  }, {
+    "id" : "The City",
+    "entity_id" : "The City",
+    "entity_type" : "Location",
+    "description" : "The unnamed city where the increase in gourmet burger restaurants and local brewery collaborations is taking place.",
+    "source_id" : "e83fd2663e15670923282feee7257afb"
+  }, {
+    "id" : "Employees",
+    "entity_id" : "Employees",
+    "entity_type" : "Person",
+    "description" : "Workers who manage high workloads, experience mood changes near deadlines, and use social activities as coping mechanisms.",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495"
+  }, {
+    "id" : "High Workload",
+    "entity_id" : "High Workload",
+    "entity_type" : "Concept",
+    "description" : "Demanding work conditions that intensify as deadlines approach, contributing to stress and mood changes among employees.",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495"
+  }, {
+    "id" : "Deadlines",
+    "entity_id" : "Deadlines",
+    "entity_type" : "Concept",
+    "description" : "Time pressures that increase the intensity of workloads for employees.",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495"
+  }, {
+    "id" : "Irritability",
+    "entity_id" : "Irritability",
+    "entity_type" : "Concept",
+    "description" : "A mood change observed in employees, commonly attributed to personal matters or short tempers rather than work demands.",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495"
+  }, {
+    "id" : "Coffee Breaks",
+    "entity_id" : "Coffee Breaks",
+    "entity_type" : "Concept",
+    "description" : "A social and restorative activity used by employees as a coping mechanism to manage stress.",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495"
+  }, {
+    "id" : "Small Talk",
+    "entity_id" : "Small Talk",
+    "entity_type" : "Concept",
+    "description" : "A casual social interaction used by employees as a coping mechanism to relieve work-related tension.",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495"
+  }, {
+    "id" : "Professional Life",
+    "entity_id" : "Professional Life",
+    "entity_type" : "Concept",
+    "description" : "The accepted framework in which job demands and workloads are normalized as an inherent part of employment.",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495"
+  }, {
+    "id" : "Mood Changes",
+    "entity_id" : "Mood Changes",
+    "entity_type" : "Concept",
+    "description" : "Emotional shifts experienced by employees that may be linked to workload but are not openly acknowledged as such.",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495"
+  }, {
+    "id" : "Personal Matters",
+    "entity_id" : "Personal Matters",
+    "entity_type" : "Concept",
+    "description" : "Private or individual issues commonly cited as the cause of irritability instead of work-related factors.",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495"
+  }, {
+    "id" : "Short Tempers",
+    "entity_id" : "Short Tempers",
+    "entity_type" : "Concept",
+    "description" : "A personality trait or disposition commonly attributed as the cause of irritability rather than external work pressures.",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495"
+  } ],
+  "edges" : [ {
+    "source" : "Movie Theater Attendance",
+    "target" : "Winter",
+    "weight" : "1.0",
+    "description" : "Movie theater attendance experiences a marked growth during the winter season.",
+    "keywords" : "seasonal, growth, colder months",
+    "source_id" : "8851925f56d1e88041d2db63182885da",
+    "src_id" : "Movie Theater Attendance",
+    "tgt_id" : "Winter"
+  }, {
+    "source" : "Movie Theater Attendance",
+    "target" : "Local Analysts",
+    "weight" : "1.0",
+    "description" : "Local analysts observed and pointed out the growth in movie theater attendance during winter.",
+    "keywords" : "analysis, observation, timing",
+    "source_id" : "8851925f56d1e88041d2db63182885da",
+    "src_id" : "Local Analysts",
+    "tgt_id" : "Movie Theater Attendance"
+  }, {
+    "source" : "Movie Theater Attendance",
+    "target" : "Citywide Energy Consumption",
+    "weight" : "1.0",
+    "description" : "Both metrics rise simultaneously during colder months, but for independent reasons rather than a causal relationship.",
+    "keywords" : "correlation, coincidence, independent causes",
+    "source_id" : "8851925f56d1e88041d2db63182885da",
+    "src_id" : "Movie Theater Attendance",
+    "tgt_id" : "Citywide Energy Consumption"
+  }, {
+    "source" : "Winter",
+    "target" : "Citywide Energy Consumption",
+    "weight" : "1.0",
+    "description" : "Citywide energy consumption rises during the winter season for independent reasons.",
+    "keywords" : "seasonal, uptick, colder months",
+    "source_id" : "8851925f56d1e88041d2db63182885da",
+    "src_id" : "Citywide Energy Consumption",
+    "tgt_id" : "Winter"
+  }, {
+    "source" : "Citywide Energy Consumption",
+    "target" : "Local Analysts",
+    "weight" : "1.0",
+    "description" : "Local analysts observed and pointed out the uptick in citywide energy consumption during winter.",
+    "keywords" : "analysis, observation, timing",
+    "source_id" : "8851925f56d1e88041d2db63182885da",
+    "src_id" : "Local Analysts",
+    "tgt_id" : "Citywide Energy Consumption"
+  }, {
+    "source" : "Citywide Energy Consumption",
+    "target" : "Cinema Patrons",
+    "weight" : "1.0",
+    "description" : "Some speculated that the influx of cinema patrons might be affecting electricity usage, though this was not confirmed.",
+    "keywords" : "speculation, electricity, impact",
+    "source_id" : "8851925f56d1e88041d2db63182885da",
+    "src_id" : "Cinema Patrons",
+    "tgt_id" : "Citywide Energy Consumption"
+  }, {
+    "source" : "Musician",
+    "target" : "Piano",
+    "weight" : "1.0",
+    "description" : "The musician presses the piano keys to produce melodious notes during the performance.",
+    "keywords" : "plays, performs, instrument",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941",
+    "src_id" : "Musician",
+    "tgt_id" : "Piano"
+  }, {
+    "source" : "Musician",
+    "target" : "Performance",
+    "weight" : "1.0",
+    "description" : "The musician is the central performer delivering the musical performance.",
+    "keywords" : "performs, conducts, executes",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941",
+    "src_id" : "Musician",
+    "tgt_id" : "Performance"
+  }, {
+    "source" : "Musician",
+    "target" : "Spotlight",
+    "weight" : "1.0",
+    "description" : "The spotlight shines on the musician, highlighting the performer during the concert.",
+    "keywords" : "illuminates, highlights, stage lighting",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941",
+    "src_id" : "Spotlight",
+    "tgt_id" : "Musician"
+  }, {
+    "source" : "Performance",
+    "target" : "Auditorium",
+    "weight" : "1.0",
+    "description" : "The performance takes place in the auditorium, where the melodious notes fill the space.",
+    "keywords" : "takes place, venue, location",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941",
+    "src_id" : "Performance",
+    "tgt_id" : "Auditorium"
+  }, {
+    "source" : "Performance",
+    "target" : "Audience",
+    "weight" : "1.0",
+    "description" : "The audience is captivated by the performance, with every note resonating deeply.",
+    "keywords" : "watches, captivated, listens",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941",
+    "src_id" : "Audience",
+    "tgt_id" : "Performance"
+  }, {
+    "source" : "Performance",
+    "target" : "Applause",
+    "weight" : "1.0",
+    "description" : "The performance concludes with applause from the audience.",
+    "keywords" : "concludes, ends, reception",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941",
+    "src_id" : "Performance",
+    "tgt_id" : "Applause"
+  }, {
+    "source" : "Audience",
+    "target" : "Applause",
+    "weight" : "1.0",
+    "description" : "The audience provides applause at the end of the performance as a form of appreciation.",
+    "keywords" : "responds, claps, acknowledges",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941",
+    "src_id" : "Audience",
+    "tgt_id" : "Applause"
+  }, {
+    "source" : "Weekly Farmers' Market",
+    "target" : "Downtown",
+    "weight" : "1.0",
+    "description" : "The weekly farmers' market opened in the downtown area.",
+    "keywords" : "location, opened, held",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1",
+    "src_id" : "Weekly Farmers' Market",
+    "tgt_id" : "Downtown"
+  }, {
+    "source" : "Weekly Farmers' Market",
+    "target" : "Commuters",
+    "weight" : "1.0",
+    "description" : "Commuters suggested that the farmers' market disrupted normal bus schedules, though this was not the actual cause.",
+    "keywords" : "blamed, attributed, disruption",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1",
+    "src_id" : "Commuters",
+    "tgt_id" : "Weekly Farmers' Market"
+  }, {
+    "source" : "Downtown",
+    "target" : "Bus Delays",
+    "weight" : "1.0",
+    "description" : "The bus delays affected several routes passing through the downtown area.",
+    "keywords" : "affected, routes, area",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1",
+    "src_id" : "Bus Delays",
+    "tgt_id" : "Downtown"
+  }, {
+    "source" : "Downtown",
+    "target" : "Nearby Street",
+    "weight" : "1.0",
+    "description" : "The nearby street where the accident occurred is in the vicinity of the downtown area.",
+    "keywords" : "proximity, vicinity",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1",
+    "src_id" : "Nearby Street",
+    "tgt_id" : "Downtown"
+  }, {
+    "source" : "Bus Delays",
+    "target" : "Commuters",
+    "weight" : "1.0",
+    "description" : "Commuters faced the unexpected bus delays and expressed dissatisfaction about disrupted schedules.",
+    "keywords" : "experienced, faced, frustration",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1",
+    "src_id" : "Commuters",
+    "tgt_id" : "Bus Delays"
+  }, {
+    "source" : "Bus Delays",
+    "target" : "Transit Authority",
+    "weight" : "1.0",
+    "description" : "The transit authority made announcements referencing ongoing events in the city in connection with the bus delays.",
+    "keywords" : "announcements, referenced, ongoing events",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1",
+    "src_id" : "Transit Authority",
+    "tgt_id" : "Bus Delays"
+  }, {
+    "source" : "Bus Delays",
+    "target" : "Minor Traffic Accident",
+    "weight" : "1.0",
+    "description" : "The minor traffic accident was the actual root cause of the bus delays, contrary to the initial assumption about the farmers' market.",
+    "keywords" : "root cause, actual cause, triggered",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1",
+    "src_id" : "Minor Traffic Accident",
+    "tgt_id" : "Bus Delays"
+  }, {
+    "source" : "Minor Traffic Accident",
+    "target" : "Nearby Street",
+    "weight" : "1.0",
+    "description" : "The minor traffic accident occurred on a nearby street in the area.",
+    "keywords" : "occurred on, location",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1",
+    "src_id" : "Minor Traffic Accident",
+    "tgt_id" : "Nearby Street"
+  }, {
+    "source" : "Families",
+    "target" : "Common allergens",
+    "weight" : "1.0",
+    "description" : "Families remove common allergens from their homes as a measure to reduce allergic reactions.",
+    "keywords" : "removal, elimination",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c",
+    "src_id" : "Families",
+    "tgt_id" : "Common allergens"
+  }, {
+    "source" : "Families",
+    "target" : "Homes",
+    "weight" : "1.0",
+    "description" : "Families carry out allergen removal within their homes.",
+    "keywords" : "environment, domestic",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c",
+    "src_id" : "Families",
+    "tgt_id" : "Homes"
+  }, {
+    "source" : "Children",
+    "target" : "Allergic reactions",
+    "weight" : "1.0",
+    "description" : "Children experience fewer allergic reactions following the removal of common allergens from their homes.",
+    "keywords" : "experience, reduction",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c",
+    "src_id" : "Children",
+    "tgt_id" : "Allergic reactions"
+  }, {
+    "source" : "Allergic reactions",
+    "target" : "Allergen removal",
+    "weight" : "1.0",
+    "description" : "The alignment of allergen removal and reduced allergic reactions draws attention, though the main influence remains uncertain.",
+    "keywords" : "reduction, association, alignment",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c",
+    "src_id" : "Allergen removal",
+    "tgt_id" : "Allergic reactions"
+  }, {
+    "source" : "Allergic reactions",
+    "target" : "Medical interventions",
+    "weight" : "1.0",
+    "description" : "Medical interventions could be a contributing factor to the reduction in allergic reactions experienced by children.",
+    "keywords" : "factor, contribution, influence",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c",
+    "src_id" : "Medical interventions",
+    "tgt_id" : "Allergic reactions"
+  }, {
+    "source" : "Allergen removal",
+    "target" : "Medical interventions",
+    "weight" : "1.0",
+    "description" : "The main influence between allergen removal and medical interventions on reduced reactions is still uncertain.",
+    "keywords" : "uncertainty, main influence",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c",
+    "src_id" : "Allergen removal",
+    "tgt_id" : "Medical interventions"
+  }, {
+    "source" : "Gourmet Burger Restaurants",
+    "target" : "The City",
+    "weight" : "1.0",
+    "description" : "Gourmet burger restaurants are seeing a boost in openings within the city.",
+    "keywords" : "openings, location, growth",
+    "source_id" : "e83fd2663e15670923282feee7257afb",
+    "src_id" : "Gourmet Burger Restaurants",
+    "tgt_id" : "The City"
+  }, {
+    "source" : "Gourmet Burger Restaurants",
+    "target" : "Burger Trend",
+    "weight" : "1.0",
+    "description" : "The increase in gourmet burger restaurant openings represents the broader burger trend in the city.",
+    "keywords" : "represents, manifestation, trend",
+    "source_id" : "e83fd2663e15670923282feee7257afb",
+    "src_id" : "Gourmet Burger Restaurants",
+    "tgt_id" : "Burger Trend"
+  }, {
+    "source" : "The City",
+    "target" : "Local Breweries",
+    "weight" : "1.0",
+    "description" : "Local breweries in the city are announcing more collaborations alongside the burger restaurant trend.",
+    "keywords" : "collaborations, location, announcements",
+    "source_id" : "e83fd2663e15670923282feee7257afb",
+    "src_id" : "Local Breweries",
+    "tgt_id" : "The City"
+  }, {
+    "source" : "Local Breweries",
+    "target" : "Brewery Partnerships",
+    "weight" : "1.0",
+    "description" : "Local breweries are the entities announcing and participating in the growing brewery partnerships.",
+    "keywords" : "collaboration, involvement, announcement",
+    "source_id" : "e83fd2663e15670923282feee7257afb",
+    "src_id" : "Local Breweries",
+    "tgt_id" : "Brewery Partnerships"
+  }, {
+    "source" : "Food Critics",
+    "target" : "Burger Trend",
+    "weight" : "1.0",
+    "description" : "Food critics suggest that the burger trend is fueling brewery partnerships.",
+    "keywords" : "suggestion, causation, fueling",
+    "source_id" : "e83fd2663e15670923282feee7257afb",
+    "src_id" : "Food Critics",
+    "tgt_id" : "Burger Trend"
+  }, {
+    "source" : "Food Critics",
+    "target" : "Brewery Partnerships",
+    "weight" : "1.0",
+    "description" : "Food critics attribute the growth of brewery partnerships to the burger trend.",
+    "keywords" : "suggestion, causation, attribution",
+    "source_id" : "e83fd2663e15670923282feee7257afb",
+    "src_id" : "Food Critics",
+    "tgt_id" : "Brewery Partnerships"
+  }, {
+    "source" : "Burger Trend",
+    "target" : "Unique Local Food and Beverage Experiences",
+    "weight" : "1.0",
+    "description" : "The burger trend is part of a larger movement toward unique local food and beverage experiences.",
+    "keywords" : "part of, movement, component",
+    "source_id" : "e83fd2663e15670923282feee7257afb",
+    "src_id" : "Burger Trend",
+    "tgt_id" : "Unique Local Food and Beverage Experiences"
+  }, {
+    "source" : "Brewery Partnerships",
+    "target" : "Unique Local Food and Beverage Experiences",
+    "weight" : "1.0",
+    "description" : "Brewery partnerships are part of a larger movement toward unique local food and beverage experiences.",
+    "keywords" : "part of, movement, component",
+    "source_id" : "e83fd2663e15670923282feee7257afb",
+    "src_id" : "Brewery Partnerships",
+    "tgt_id" : "Unique Local Food and Beverage Experiences"
+  }, {
+    "source" : "Employees",
+    "target" : "High Workload",
+    "weight" : "1.0",
+    "description" : "Employees find themselves managing a high workload, particularly as deadlines approach.",
+    "keywords" : "manage, workload, stress",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495",
+    "src_id" : "Employees",
+    "tgt_id" : "High Workload"
+  }, {
+    "source" : "Employees",
+    "target" : "Irritability",
+    "weight" : "1.0",
+    "description" : "Employees exhibit increased irritability, which is observed but not directly linked to work demands.",
+    "keywords" : "experience, mood, reaction",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495",
+    "src_id" : "Employees",
+    "tgt_id" : "Irritability"
+  }, {
+    "source" : "Employees",
+    "target" : "Coffee Breaks",
+    "weight" : "1.0",
+    "description" : "Employees use coffee breaks as a coping mechanism to manage the stress of their workload.",
+    "keywords" : "coping, stress relief, social",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495",
+    "src_id" : "Employees",
+    "tgt_id" : "Coffee Breaks"
+  }, {
+    "source" : "Employees",
+    "target" : "Small Talk",
+    "weight" : "1.0",
+    "description" : "Employees engage in small talk as a coping mechanism to alleviate work-related tension.",
+    "keywords" : "coping, social interaction, relief",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495",
+    "src_id" : "Employees",
+    "tgt_id" : "Small Talk"
+  }, {
+    "source" : "High Workload",
+    "target" : "Deadlines",
+    "weight" : "1.0",
+    "description" : "The high workload intensifies as deadlines approach, increasing pressure on employees.",
+    "keywords" : "intensifies, time pressure, proximity",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495",
+    "src_id" : "High Workload",
+    "tgt_id" : "Deadlines"
+  }, {
+    "source" : "High Workload",
+    "target" : "Professional Life",
+    "weight" : "1.0",
+    "description" : "The demands of the high workload are accepted as an inherent part of professional life.",
+    "keywords" : "accepted, normalized, part of",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495",
+    "src_id" : "High Workload",
+    "tgt_id" : "Professional Life"
+  }, {
+    "source" : "High Workload",
+    "target" : "Mood Changes",
+    "weight" : "1.0",
+    "description" : "The possibility that the high workload contributes to mood changes is not openly addressed or acknowledged.",
+    "keywords" : "contributes to, unaddressed, link",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495",
+    "src_id" : "High Workload",
+    "tgt_id" : "Mood Changes"
+  }, {
+    "source" : "Irritability",
+    "target" : "Personal Matters",
+    "weight" : "1.0",
+    "description" : "Irritability is commonly attributed to personal matters rather than being recognized as a work-related response.",
+    "keywords" : "attributed to, cause, misattribution",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495",
+    "src_id" : "Irritability",
+    "tgt_id" : "Personal Matters"
+  }, {
+    "source" : "Irritability",
+    "target" : "Short Tempers",
+    "weight" : "1.0",
+    "description" : "Irritability is often explained away as a result of short tempers rather than external work pressures.",
+    "keywords" : "attributed to, cause, misattribution",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495",
+    "src_id" : "Irritability",
+    "tgt_id" : "Short Tempers"
+  }, {
+    "source" : "Irritability",
+    "target" : "Mood Changes",
+    "weight" : "1.0",
+    "description" : "Irritability is a specific manifestation of the broader mood changes experienced by employees.",
+    "keywords" : "manifestation, includes, expression",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495",
+    "src_id" : "Mood Changes",
+    "tgt_id" : "Irritability"
+  } ],
+  "metadata" : {
+    "nodeCount" : 43,
+    "edgeCount" : 45
+  }
+}

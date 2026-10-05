@@ -1,0 +1,202 @@
+{
+  "nodes" : {
+    "GOITER" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A health problem that can result from untreated hypothyroidism caused by Hashimoto's disease.",
+      "source_id" : "chunk-ce2f6b20ebffd7f21d010b95dfd54b9d"
+    },
+    "KIDNEY DISEASE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A condition that can result in thyroid dysfunction; may co-exist with thyroid disorders with common etiological factors.",
+      "source_id" : "chunk-75e06229872fca26d2b20718082423a9"
+    },
+    "THYROID" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A body organ whose dysfunction affects renal physiology and development; involved in bidirectional interaction with the kidney.",
+      "source_id" : "chunk-75e06229872fca26d2b20718082423a9"
+    },
+    "THYROID DYSFUNCTION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A condition that affects renal physiology and development; may co-exist with kidney disease sharing common etiological factors.",
+      "source_id" : "chunk-75e06229872fca26d2b20718082423a9"
+    },
+    "TSH ELEVATIONS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A common finding in CKD that does not always reflect hypothyroidism, indicating a link between renal and thyroid function.",
+      "source_id" : "chunk-75e06229872fca26d2b20718082423a9"
+    },
+    "HYPOTHYROIDISM" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An underactive thyroid gland condition caused by Hashimoto's disease, leading to health problems if left untreated.",
+      "source_id" : "chunk-ce2f6b20ebffd7f21d010b95dfd54b9d"
+    },
+    "LDL CHOLESTEROL" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Low-density lipoprotein, referred to as 'bad cholesterol,' which can be elevated in hypothyroidism.",
+      "source_id" : "chunk-ce2f6b20ebffd7f21d010b95dfd54b9d"
+    },
+    "THYROID GLAND" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An organ whose underactive state (hypothyroidism) is caused by Hashimoto's disease and leads to elevated LDL cholesterol.",
+      "source_id" : "chunk-ce2f6b20ebffd7f21d010b95dfd54b9d"
+    },
+    "HASHIMOTO'S DISEASE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An autoimmune condition associated with an underactive thyroid gland, increased risk of heart disease, and various health problems.",
+      "source_id" : "chunk-ce2f6b20ebffd7f21d010b95dfd54b9d"
+    },
+    "SUBCLINICAL HYPOTHYROIDISM" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A thyroid condition whose risk is higher in patients with lower kidney function.",
+      "source_id" : "chunk-75e06229872fca26d2b20718082423a9"
+    },
+    "HEART DISEASE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A cardiovascular condition whose risk is increased by Hashimoto's disease and elevated LDL cholesterol levels.",
+      "source_id" : "chunk-ce2f6b20ebffd7f21d010b95dfd54b9d"
+    },
+    "KIDNEY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A body organ whose disease can result in thyroid dysfunction; involved in bidirectional functional and structural interaction with the thyroid.",
+      "source_id" : "chunk-75e06229872fca26d2b20718082423a9"
+    },
+    "CKD" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Chronic kidney disease in which TSH elevations are common and subclinical hypothyroidism risk is increased.",
+      "source_id" : "chunk-75e06229872fca26d2b20718082423a9"
+    }
+  },
+  "edges" : [ {
+    "source" : "HASHIMOTO'S DISEASE",
+    "target" : "HEART DISEASE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Hashimoto's disease is associated with an increased risk of heart disease due to elevated LDL cholesterol.",
+      "keywords" : "disease association, risk factor",
+      "source_id" : "chunk-ce2f6b20ebffd7f21d010b95dfd54b9d"
+    }
+  }, {
+    "source" : "KIDNEY",
+    "target" : "SUBCLINICAL HYPOTHYROIDISM",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Lower kidney function is associated with a higher risk of subclinical hypothyroidism in patients.",
+      "keywords" : "risk factor, kidney function",
+      "source_id" : "chunk-75e06229872fca26d2b20718082423a9"
+    }
+  }, {
+    "source" : "HYPOTHYROIDISM",
+    "target" : "HEART DISEASE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Untreated hypothyroidism increases the risk of heart disease, primarily through elevated LDL cholesterol.",
+      "keywords" : "increased risk, cardiovascular, cholesterol",
+      "source_id" : "chunk-ce2f6b20ebffd7f21d010b95dfd54b9d"
+    }
+  }, {
+    "source" : "HYPOTHYROIDISM",
+    "target" : "LDL CHOLESTEROL",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Hypothyroidism can lead to high levels of LDL cholesterol in affected individuals.",
+      "keywords" : "elevated levels, bad cholesterol, metabolic effect",
+      "source_id" : "chunk-ce2f6b20ebffd7f21d010b95dfd54b9d"
+    }
+  }, {
+    "source" : "HASHIMOTO'S DISEASE",
+    "target" : "GOITER",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Hashimoto's disease, by causing hypothyroidism, can lead to goiter if left untreated.",
+      "keywords" : "disease complication, thyroid enlargement",
+      "source_id" : "chunk-ce2f6b20ebffd7f21d010b95dfd54b9d"
+    }
+  }, {
+    "source" : "THYROID GLAND",
+    "target" : "HYPOTHYROIDISM",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "An underactive thyroid gland is the physiological state that constitutes hypothyroidism.",
+      "keywords" : "organ function, underactive state",
+      "source_id" : "chunk-ce2f6b20ebffd7f21d010b95dfd54b9d"
+    }
+  }, {
+    "source" : "CKD",
+    "target" : "TSH ELEVATIONS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "TSH elevations are common in CKD, though they do not always reflect true hypothyroidism.",
+      "keywords" : "TSH, chronic kidney disease",
+      "source_id" : "chunk-75e06229872fca26d2b20718082423a9"
+    }
+  }, {
+    "source" : "THYROID",
+    "target" : "KIDNEY",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "There are various functional and structural mechanisms of interaction between kidney and thyroid functions in disease states.",
+      "keywords" : "organ interplay, structural correlates",
+      "source_id" : "chunk-75e06229872fca26d2b20718082423a9"
+    }
+  }, {
+    "source" : "HASHIMOTO'S DISEASE",
+    "target" : "HYPOTHYROIDISM",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Hashimoto's disease causes an underactive thyroid gland, resulting in hypothyroidism.",
+      "keywords" : "cause, autoimmune, underactive thyroid",
+      "source_id" : "chunk-ce2f6b20ebffd7f21d010b95dfd54b9d"
+    }
+  }, {
+    "source" : "KIDNEY DISEASE",
+    "target" : "THYROID DYSFUNCTION",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Kidney disease can result in thyroid dysfunction, showing a bidirectional relationship between the two organs.",
+      "keywords" : "bidirectional effect, thyroid impact",
+      "source_id" : "chunk-75e06229872fca26d2b20718082423a9"
+    }
+  }, {
+    "source" : "THYROID DYSFUNCTION",
+    "target" : "KIDNEY",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Thyroid dysfunction affects renal physiology and development, indicating a direct impact on kidney function.",
+      "keywords" : "renal physiology, organ interaction",
+      "source_id" : "chunk-75e06229872fca26d2b20718082423a9"
+    }
+  }, {
+    "source" : "TSH ELEVATIONS",
+    "target" : "SUBCLINICAL HYPOTHYROIDISM",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "TSH elevations in CKD do not always reflect hypothyroidism, distinguishing it from true subclinical hypothyroidism.",
+      "keywords" : "diagnostic ambiguity, thyroid markers",
+      "source_id" : "chunk-75e06229872fca26d2b20718082423a9"
+    }
+  }, {
+    "source" : "THYROID DYSFUNCTION",
+    "target" : "KIDNEY DISEASE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Disorders of the thyroid and kidney may co-exist with common etiological factors.",
+      "keywords" : "co-existence, common etiology",
+      "source_id" : "chunk-75e06229872fca26d2b20718082423a9"
+    }
+  }, {
+    "source" : "HYPOTHYROIDISM",
+    "target" : "GOITER",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Untreated hypothyroidism can lead to goiter as one of the health problems.",
+      "keywords" : "complication, untreated condition",
+      "source_id" : "chunk-ce2f6b20ebffd7f21d010b95dfd54b9d"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 13,
+    "edgeCount" : 14,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_webis/workdirs/pathrag/msmarco_21861"
+  }
+}

@@ -1,0 +1,4113 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Design magazines",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "vintage furniture sales",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Design magazines",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minimalist home design trends",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "consumers",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "vintage pieces",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "consumers",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minimalist home design",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "vintage furniture sales",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "comparable_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minimalist home design trends",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "design preferences",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "vintage furniture sales",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "design preferences",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minimalist home design trends",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "vintage pieces",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minimalist decor choices",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "vintage furniture sales",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minimalist home design trends",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire alarm",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "office building",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction work",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "upper floors",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "upper floors",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "office building",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "faulty sensor",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "office building",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "faulty sensor",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire alarm",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Employees",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire alarm",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction work",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire alarm",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "noise and vibrations",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction work",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "hammer strikes",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction work",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "renovations",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction work",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction work",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire alarm",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "picnic events",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local parks",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "families",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "outdoor gatherings",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Event organizers",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schedules",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schedules",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sunlight",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "arrival of summer",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "daylight hours",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "arrival of summer",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "picnic events",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "daylight hours",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "picnic events",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighbors",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "families",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the community",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "picnic events",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "daylight hours",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "comparable_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "picnic events",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pharmacies",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "City",
+      "chunk id" : "DKlVbSjE"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Annual flower festivals",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "City",
+      "chunk id" : "DKlVbSjE"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pharmacists",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pharmacies",
+      "chunk id" : "DKlVbSjE"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Festival organizers",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Annual flower festivals",
+      "chunk id" : "DKlVbSjE"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Visitors",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Annual flower festivals",
+      "chunk id" : "DKlVbSjE"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pollen",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Allergy medication",
+      "chunk id" : "DKlVbSjE"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pollen",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Annual flower festivals",
+      "chunk id" : "DKlVbSjE"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Spring",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pollen",
+      "chunk id" : "DKlVbSjE"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Spring",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Annual flower festivals",
+      "chunk id" : "DKlVbSjE"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Spring",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Allergy medication",
+      "chunk id" : "DKlVbSjE"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Medication sales",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "comparable_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Festival attendance",
+      "chunk id" : "DKlVbSjE"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Allergy medication",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Visitors",
+      "chunk id" : "DKlVbSjE"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pharmacies",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Allergy medication",
+      "chunk id" : "DKlVbSjE"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Festival organizers",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pharmacists",
+      "chunk id" : "DKlVbSjE"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "power outage",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "power outage",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhoods",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire alarm",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "apartment complexes downtown",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire alarm",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "alarm system",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "alarm system",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "apartment complexes downtown",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "power outage",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire alarm",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electrical fault",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "power outage",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electrical fault",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire alarm",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Residents",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "speculation about electrical fault",
+      "chunk id" : "BuKi8D8W"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "power outage",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire alarm",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire alarm",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "power outage",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bike sharing program usage",
+      "chunk id" : "b3U4E5d9"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local noise complaints",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community boards",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bike sharing program",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city council",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "temporal correlation",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban noise",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "nightlife",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban noise",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "traffic volumes",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban noise",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bike sharing program",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban noise",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community boards",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city council",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bikes",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bike sharing program",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Employees",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "alarm system",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "apartment complexes downtown",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bike sharing program",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bikes",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city council",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community boards",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction work",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electrical fault",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "faulty sensor",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire alarm",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "hammer strikes",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhoods",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "nightlife",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "noise and vibrations",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "office building",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "power outage",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "renovations",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "temporal correlation",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "traffic volumes",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "upper floors",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban noise",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire alarm",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "fire alarm"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire alarm",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "fire alarm"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "fire alarm"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction work",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "construction work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction work",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "construction work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "construction work"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "power outage",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "power outage"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "power outage",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "power outage"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "power outage"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban noise",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "urban noise"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban noise",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "urban noise"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "urban noise"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "office building",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "office building"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "office building",
+      "chunk id" : "3-eoP175",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "office building"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "office building"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "30",
+      "members" : [ "Employees", "alarm system", "apartment complexes downtown", "bike sharing program", "bikes", "city council", "community boards", "construction", "construction work", "electrical fault", "faulty sensor", "fire alarm", "hammer strikes", "neighborhoods", "nightlife", "noise and vibrations", "office building", "power outage", "renovations", "temporal correlation", "the city", "traffic volumes", "upper floors", "urban noise" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Allergy medication",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "13",
+      "members" : [ "Allergy medication", "Annual flower festivals", "City", "Festival organizers", "Pharmacies", "Pharmacists", "Pollen", "Spring", "Visitors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Annual flower festivals",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "13",
+      "members" : [ "Allergy medication", "Annual flower festivals", "City", "Festival organizers", "Pharmacies", "Pharmacists", "Pollen", "Spring", "Visitors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "City",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "13",
+      "members" : [ "Allergy medication", "Annual flower festivals", "City", "Festival organizers", "Pharmacies", "Pharmacists", "Pollen", "Spring", "Visitors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Festival organizers",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "13",
+      "members" : [ "Allergy medication", "Annual flower festivals", "City", "Festival organizers", "Pharmacies", "Pharmacists", "Pollen", "Spring", "Visitors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pharmacies",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "13",
+      "members" : [ "Allergy medication", "Annual flower festivals", "City", "Festival organizers", "Pharmacies", "Pharmacists", "Pollen", "Spring", "Visitors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pharmacists",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "13",
+      "members" : [ "Allergy medication", "Annual flower festivals", "City", "Festival organizers", "Pharmacies", "Pharmacists", "Pollen", "Spring", "Visitors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pollen",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "13",
+      "members" : [ "Allergy medication", "Annual flower festivals", "City", "Festival organizers", "Pharmacies", "Pharmacists", "Pollen", "Spring", "Visitors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Spring",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "13",
+      "members" : [ "Allergy medication", "Annual flower festivals", "City", "Festival organizers", "Pharmacies", "Pharmacists", "Pollen", "Spring", "Visitors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Visitors",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "13",
+      "members" : [ "Allergy medication", "Annual flower festivals", "City", "Festival organizers", "Pharmacies", "Pharmacists", "Pollen", "Spring", "Visitors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Annual flower festivals",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Annual flower festivals"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Annual flower festivals",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Annual flower festivals"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Annual flower festivals"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "13",
+      "members" : [ "Allergy medication", "Annual flower festivals", "City", "Festival organizers", "Pharmacies", "Pharmacists", "Pollen", "Spring", "Visitors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Allergy medication",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Allergy medication"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Allergy medication",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Allergy medication"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Allergy medication"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "13",
+      "members" : [ "Allergy medication", "Annual flower festivals", "City", "Festival organizers", "Pharmacies", "Pharmacists", "Pollen", "Spring", "Visitors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pollen",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Pollen"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pollen",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Pollen"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Pollen"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "13",
+      "members" : [ "Allergy medication", "Annual flower festivals", "City", "Festival organizers", "Pharmacies", "Pharmacists", "Pollen", "Spring", "Visitors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pharmacies",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Pharmacies"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pharmacies",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Pharmacies"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Pharmacies"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "13",
+      "members" : [ "Allergy medication", "Annual flower festivals", "City", "Festival organizers", "Pharmacies", "Pharmacists", "Pollen", "Spring", "Visitors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Spring",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Spring"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Spring",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Spring"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Spring"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "13",
+      "members" : [ "Allergy medication", "Annual flower festivals", "City", "Festival organizers", "Pharmacies", "Pharmacists", "Pollen", "Spring", "Visitors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "arrival of summer",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "arrival of summer", "daylight hours", "local parks", "picnic events", "the community" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "daylight hours",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "arrival of summer", "daylight hours", "local parks", "picnic events", "the community" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local parks",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "arrival of summer", "daylight hours", "local parks", "picnic events", "the community" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "picnic events",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "arrival of summer", "daylight hours", "local parks", "picnic events", "the community" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the community",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "arrival of summer", "daylight hours", "local parks", "picnic events", "the community" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "picnic events",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "picnic events"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "picnic events",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "picnic events"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "picnic events"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "arrival of summer", "daylight hours", "local parks", "picnic events", "the community" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "daylight hours",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "daylight hours"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "daylight hours",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "daylight hours"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "daylight hours"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "arrival of summer", "daylight hours", "local parks", "picnic events", "the community" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "arrival of summer",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "arrival of summer"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "arrival of summer",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "arrival of summer"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "arrival of summer"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "arrival of summer", "daylight hours", "local parks", "picnic events", "the community" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the community",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the community"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the community",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the community"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the community"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "arrival of summer", "daylight hours", "local parks", "picnic events", "the community" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local parks",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local parks"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local parks",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local parks"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local parks"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 5 members",
+      "community_id" : "community_3",
+      "node_count" : "5",
+      "edge_count" : "6",
+      "members" : [ "arrival of summer", "daylight hours", "local parks", "picnic events", "the community" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Design magazines",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 4 members",
+      "community_id" : "community_4",
+      "node_count" : "4",
+      "edge_count" : "6",
+      "members" : [ "Design magazines", "design preferences", "minimalist home design trends", "vintage furniture sales" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "design preferences",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 4 members",
+      "community_id" : "community_4",
+      "node_count" : "4",
+      "edge_count" : "6",
+      "members" : [ "Design magazines", "design preferences", "minimalist home design trends", "vintage furniture sales" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minimalist home design trends",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 4 members",
+      "community_id" : "community_4",
+      "node_count" : "4",
+      "edge_count" : "6",
+      "members" : [ "Design magazines", "design preferences", "minimalist home design trends", "vintage furniture sales" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "vintage furniture sales",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 4 members",
+      "community_id" : "community_4",
+      "node_count" : "4",
+      "edge_count" : "6",
+      "members" : [ "Design magazines", "design preferences", "minimalist home design trends", "vintage furniture sales" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minimalist home design trends",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "minimalist home design trends"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minimalist home design trends",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "minimalist home design trends"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "minimalist home design trends"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 4 members",
+      "community_id" : "community_4",
+      "node_count" : "4",
+      "edge_count" : "6",
+      "members" : [ "Design magazines", "design preferences", "minimalist home design trends", "vintage furniture sales" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "vintage furniture sales",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "vintage furniture sales"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "vintage furniture sales",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "vintage furniture sales"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "vintage furniture sales"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 4 members",
+      "community_id" : "community_4",
+      "node_count" : "4",
+      "edge_count" : "6",
+      "members" : [ "Design magazines", "design preferences", "minimalist home design trends", "vintage furniture sales" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Design magazines",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Design magazines"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Design magazines",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Design magazines"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Design magazines"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 4 members",
+      "community_id" : "community_4",
+      "node_count" : "4",
+      "edge_count" : "6",
+      "members" : [ "Design magazines", "design preferences", "minimalist home design trends", "vintage furniture sales" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "design preferences",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "design preferences"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "design preferences",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "design preferences"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "design preferences"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 4 members",
+      "community_id" : "community_4",
+      "node_count" : "4",
+      "edge_count" : "6",
+      "members" : [ "Design magazines", "design preferences", "minimalist home design trends", "vintage furniture sales" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "consumers",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 4 members",
+      "community_id" : "community_5",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "consumers", "minimalist decor choices", "minimalist home design", "vintage pieces" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minimalist decor choices",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 4 members",
+      "community_id" : "community_5",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "consumers", "minimalist decor choices", "minimalist home design", "vintage pieces" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minimalist home design",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 4 members",
+      "community_id" : "community_5",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "consumers", "minimalist decor choices", "minimalist home design", "vintage pieces" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "vintage pieces",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 4 members",
+      "community_id" : "community_5",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "consumers", "minimalist decor choices", "minimalist home design", "vintage pieces" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "vintage pieces",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "vintage pieces"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "vintage pieces",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "vintage pieces"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "vintage pieces"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 4 members",
+      "community_id" : "community_5",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "consumers", "minimalist decor choices", "minimalist home design", "vintage pieces" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "consumers",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "consumers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "consumers",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "consumers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "consumers"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 4 members",
+      "community_id" : "community_5",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "consumers", "minimalist decor choices", "minimalist home design", "vintage pieces" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minimalist decor choices",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "minimalist decor choices"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minimalist decor choices",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "minimalist decor choices"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "minimalist decor choices"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 4 members",
+      "community_id" : "community_5",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "consumers", "minimalist decor choices", "minimalist home design", "vintage pieces" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minimalist home design",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "minimalist home design"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "minimalist home design",
+      "chunk id" : "iJTJzRQF",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "minimalist home design"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "minimalist home design"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 4 members",
+      "community_id" : "community_5",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "consumers", "minimalist decor choices", "minimalist home design", "vintage pieces" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Event organizers",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 3 members",
+      "community_id" : "community_6",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Event organizers", "schedules", "sunlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schedules",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 3 members",
+      "community_id" : "community_6",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Event organizers", "schedules", "sunlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sunlight",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 3 members",
+      "community_id" : "community_6",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Event organizers", "schedules", "sunlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schedules",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "schedules"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schedules",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "schedules"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "schedules"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 3 members",
+      "community_id" : "community_6",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Event organizers", "schedules", "sunlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sunlight",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sunlight"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sunlight",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sunlight"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sunlight"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 3 members",
+      "community_id" : "community_6",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Event organizers", "schedules", "sunlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Event organizers",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Event organizers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Event organizers",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Event organizers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Event organizers"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 3 members",
+      "community_id" : "community_6",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Event organizers", "schedules", "sunlight" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "families",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "families", "neighbors", "outdoor gatherings" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighbors",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "families", "neighbors", "outdoor gatherings" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "outdoor gatherings",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "families", "neighbors", "outdoor gatherings" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "families",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "families"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "families",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "families"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "families"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "families", "neighbors", "outdoor gatherings" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "outdoor gatherings",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "outdoor gatherings"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "outdoor gatherings",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "outdoor gatherings"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "outdoor gatherings"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "families", "neighbors", "outdoor gatherings" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighbors",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "neighbors"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighbors",
+      "chunk id" : "6UPpRq8j",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "neighbors"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "neighbors"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "families", "neighbors", "outdoor gatherings" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Festival attendance",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 2 members",
+      "community_id" : "community_8",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Festival attendance", "Medication sales" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Medication sales",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 2 members",
+      "community_id" : "community_8",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Festival attendance", "Medication sales" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Festival attendance",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Festival attendance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Festival attendance",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Festival attendance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Festival attendance"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 2 members",
+      "community_id" : "community_8",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Festival attendance", "Medication sales" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Medication sales",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Medication sales"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Medication sales",
+      "chunk id" : "DKlVbSjE"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Medication sales"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Medication sales"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 2 members",
+      "community_id" : "community_8",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Festival attendance", "Medication sales" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Residents",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 2 members",
+      "community_id" : "community_9",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Residents", "speculation about electrical fault" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "speculation about electrical fault",
+      "chunk id" : "BuKi8D8W"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 2 members",
+      "community_id" : "community_9",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Residents", "speculation about electrical fault" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Residents",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Residents"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Residents",
+      "chunk id" : "BuKi8D8W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Residents"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Residents"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 2 members",
+      "community_id" : "community_9",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Residents", "speculation about electrical fault" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "speculation about electrical fault",
+      "chunk id" : "BuKi8D8W"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "speculation about electrical fault"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "speculation about electrical fault",
+      "chunk id" : "BuKi8D8W"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "speculation about electrical fault"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "speculation about electrical fault"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 2 members",
+      "community_id" : "community_9",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Residents", "speculation about electrical fault" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bike sharing program usage",
+      "chunk id" : "b3U4E5d9"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "bike sharing program usage", "local noise complaints" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local noise complaints",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "bike sharing program usage", "local noise complaints" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bike sharing program usage",
+      "chunk id" : "b3U4E5d9"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bike sharing program usage"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bike sharing program usage",
+      "chunk id" : "b3U4E5d9"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bike sharing program usage"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bike sharing program usage"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "bike sharing program usage", "local noise complaints" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local noise complaints",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local noise complaints"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local noise complaints",
+      "chunk id" : "b3U4E5d9",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local noise complaints"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local noise complaints"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "bike sharing program usage", "local noise complaints" ]
+    }
+  }
+} ]

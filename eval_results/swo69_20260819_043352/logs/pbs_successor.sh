@@ -2,7 +2,7 @@
 #PBS -N swo69_batch
 #PBS -q rt_HG
 #PBS -l select=1
-#PBS -l walltime=18:00:00
+#PBS -l walltime=24:00:00
 #PBS -P gah51681
 # Unique output per predecessor (this PBS does not expand %j)
 #PBS -o /home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352/logs/pbs_from_head.out

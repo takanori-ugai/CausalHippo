@@ -1,0 +1,95 @@
+{
+  "nodes" : {
+    "WESTERN AFRICA" : {
+      "entity_type" : "GEO",
+      "description" : "A region that is the source of warm, dry waves of air contributing to the formation of tropical systems.",
+      "source_id" : "chunk-1d344f131a7471cda436cf3d7cc03df8"
+    },
+    "TROPICAL STORM" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A tropical system formed by warm, dry waves of air meeting warm, humid air rising over warm equatorial waters, drawing energy from tropical sources.",
+      "source_id" : "chunk-1d344f131a7471cda436cf3d7cc03df8"
+    },
+    "HURRICANE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A tropical system in the same family as tropical storms, distinguished by formation process and energy source in warm oceanic environments.",
+      "source_id" : "chunk-1d344f131a7471cda436cf3d7cc03df8"
+    },
+    "BOMBOGENESIS" : {
+      "entity_type" : "EVENT",
+      "description" : "A rapid cyclone deepening process typically experienced by nor'easters, indicating their intense extratropical nature.",
+      "source_id" : "chunk-1d344f131a7471cda436cf3d7cc03df8"
+    },
+    "EQUATORIAL WATERS" : {
+      "entity_type" : "GEO",
+      "description" : "Warm waters over which humid air rises quickly, serving as a key formation environment for tropical storms and hurricanes.",
+      "source_id" : "chunk-1d344f131a7471cda436cf3d7cc03df8"
+    },
+    "NOR'EASTER" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A strong extratropical cyclone unique for its combination of northeast winds and moisture content of swirling clouds, often experiencing bombogenesis.",
+      "source_id" : "chunk-1d344f131a7471cda436cf3d7cc03df8"
+    }
+  },
+  "edges" : [ {
+    "source" : "HURRICANE",
+    "target" : "TROPICAL STORM",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Hurricanes and tropical storms are grouped together as tropical systems sharing similar formation processes and energy sources.",
+      "keywords" : "tropical family, shared formation",
+      "source_id" : "chunk-1d344f131a7471cda436cf3d7cc03df8"
+    }
+  }, {
+    "source" : "NOR'EASTER",
+    "target" : "HURRICANE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Nor'easters are contrasted with hurricanes as different weather systems with distinct formation mechanisms and energy sources.",
+      "keywords" : "weather classification, contrast, energy source",
+      "source_id" : "chunk-1d344f131a7471cda436cf3d7cc03df8"
+    }
+  }, {
+    "source" : "TROPICAL STORM",
+    "target" : "WESTERN AFRICA",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Tropical storms form in part due to warm, dry waves of air originating from Western Africa.",
+      "keywords" : "air source, formation, tropical systems",
+      "source_id" : "chunk-1d344f131a7471cda436cf3d7cc03df8"
+    }
+  }, {
+    "source" : "TROPICAL STORM",
+    "target" : "EQUATORIAL WATERS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Tropical storms form over warm equatorial waters where humid air rises quickly, providing their energy source.",
+      "keywords" : "warm waters, formation, energy",
+      "source_id" : "chunk-1d344f131a7471cda436cf3d7cc03df8"
+    }
+  }, {
+    "source" : "NOR'EASTER",
+    "target" : "BOMBOGENESIS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Nor'easters are formed in strong extratropical cyclones and usually experience bombogenesis during their development.",
+      "keywords" : "rapid intensification, cyclone development",
+      "source_id" : "chunk-1d344f131a7471cda436cf3d7cc03df8"
+    }
+  }, {
+    "source" : "NOR'EASTER",
+    "target" : "TROPICAL STORM",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Nor'easters and tropical storms differ fundamentally in how they form and the source of their energy.",
+      "keywords" : "formation difference, energy source, comparison",
+      "source_id" : "chunk-1d344f131a7471cda436cf3d7cc03df8"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 6,
+    "edgeCount" : 6,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_webis/workdirs/pathrag/msmarco_1477"
+  }
+}

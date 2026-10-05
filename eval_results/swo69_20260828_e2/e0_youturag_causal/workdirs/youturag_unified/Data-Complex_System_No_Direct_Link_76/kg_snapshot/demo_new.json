@@ -1,0 +1,5123 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stock prices (tech sector)",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local coffee sales",
+      "chunk id" : "uNjvsAnc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "employees",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "major firms",
+      "chunk id" : "uNjvsAnc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "employees",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "increased visits to nearby cafes",
+      "chunk id" : "uNjvsAnc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "nearby cafes",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "uNjvsAnc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "managers",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "earnings calls",
+      "chunk id" : "uNjvsAnc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "managers",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "encouraging coffee breaks",
+      "chunk id" : "uNjvsAnc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stock prices (tech sector)",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "market performance",
+      "chunk id" : "uNjvsAnc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "café culture",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "uNjvsAnc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stock prices (tech sector)",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "café culture (speculated)",
+      "chunk id" : "uNjvsAnc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "broader economic optimism",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stock prices (tech sector)",
+      "chunk id" : "uNjvsAnc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "broader economic optimism",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local coffee sales",
+      "chunk id" : "uNjvsAnc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "tech sector",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stock market",
+      "chunk id" : "uNjvsAnc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flexible remote work policies",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "companies",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dandelion growth",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban parks",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dandelions",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "plant biology",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "work-from-home trends",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dandelion growth",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "garden enthusiasts",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dandelion growth",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "garden enthusiasts",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "work-from-home trends",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood meetings",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "work-from-home trends",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood meetings",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dandelion growth",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dandelion growth",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spring",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flexible remote work policies",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spring",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shops",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shortages",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "depleted supplies",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shop staff",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shops",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shipping delay",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "major supplier",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shipping delay",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shortages",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shipping delay",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "empty shelves",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "university lectures",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "summer break",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "university lectures",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "concurrence of events",
+      "chunk id" : "QfCsnbHY"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "misleading impression of causality",
+      "chunk id" : "QfCsnbHY"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shortages",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the week when university lectures resumed",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shipping delay",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the week when university lectures resumed",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heavy rainfall",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "uNjvsAnc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heavy rainfall",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flooded streets",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flooded streets",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "several neighborhoods",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flooded streets",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "delays",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "drains",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "infrastructure",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "infrastructure",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "uNjvsAnc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local government",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "uNjvsAnc"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local government",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "commuting",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "drains",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "street conditions",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flooded streets",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "delays",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "commuting",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "companies",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "remote work policies",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local bike shops",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bicycle sales",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "working from home",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "working from home",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "leisure time",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "leisure time",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cycling",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "market analysis",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bicycle sales",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "citywide cycling campaign",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bicycle sales",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bike lane infrastructure",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bicycle sales",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "remote work",
+      "chunk id" : "zVC9GlAL"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bicycle sales",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "narrative",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood conversations",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "remote work policies",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "companies",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bike lane infrastructure",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "citywide cycling campaign",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cool breeze",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "arrives_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coast",
+      "chunk id" : "hiHpluWG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cool breeze",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ocean",
+      "chunk id" : "hiHpluWG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "tall grasses",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shore",
+      "chunk id" : "hiHpluWG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "tall grasses",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "waves",
+      "chunk id" : "hiHpluWG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "refreshing air",
+      "chunk id" : "hiHpluWG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cool breeze",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "landscape",
+      "chunk id" : "hiHpluWG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "natural patterns",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "passersby",
+      "chunk id" : "hiHpluWG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "tall grasses",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "landscape",
+      "chunk id" : "hiHpluWG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cool breeze",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "natural patterns",
+      "chunk id" : "hiHpluWG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shore",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coast",
+      "chunk id" : "hiHpluWG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "café culture",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "commuting",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cycling",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "delays",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "drains",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flooded streets",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heavy rainfall",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "infrastructure",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "leisure time",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local government",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "nearby cafes",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "several neighborhoods",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "street conditions",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "working from home",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the city"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the city"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the city"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flooded streets",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "flooded streets"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flooded streets",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "flooded streets"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "flooded streets"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "working from home",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "working from home"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "working from home",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "working from home"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "working from home"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "leisure time",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "leisure time"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "leisure time",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "leisure time"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "leisure time"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "infrastructure",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "infrastructure"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "infrastructure",
+      "chunk id" : "2O-Xv7ln",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "infrastructure"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "infrastructure"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 16 members",
+      "community_id" : "community_1",
+      "node_count" : "16",
+      "edge_count" : "16",
+      "members" : [ "café culture", "commuting", "cycling", "delays", "drains", "flooded streets", "heavy rainfall", "infrastructure", "leisure time", "local government", "nearby cafes", "residents", "several neighborhoods", "street conditions", "the city", "working from home" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coast",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "coast", "cool breeze", "landscape", "natural patterns", "ocean", "passersby", "shore", "tall grasses", "waves" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cool breeze",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "coast", "cool breeze", "landscape", "natural patterns", "ocean", "passersby", "shore", "tall grasses", "waves" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "landscape",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "coast", "cool breeze", "landscape", "natural patterns", "ocean", "passersby", "shore", "tall grasses", "waves" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "natural patterns",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "coast", "cool breeze", "landscape", "natural patterns", "ocean", "passersby", "shore", "tall grasses", "waves" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ocean",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "coast", "cool breeze", "landscape", "natural patterns", "ocean", "passersby", "shore", "tall grasses", "waves" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "passersby",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "coast", "cool breeze", "landscape", "natural patterns", "ocean", "passersby", "shore", "tall grasses", "waves" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shore",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "coast", "cool breeze", "landscape", "natural patterns", "ocean", "passersby", "shore", "tall grasses", "waves" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "tall grasses",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "coast", "cool breeze", "landscape", "natural patterns", "ocean", "passersby", "shore", "tall grasses", "waves" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "waves",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "coast", "cool breeze", "landscape", "natural patterns", "ocean", "passersby", "shore", "tall grasses", "waves" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cool breeze",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "cool breeze"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cool breeze",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "cool breeze"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "cool breeze"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "coast", "cool breeze", "landscape", "natural patterns", "ocean", "passersby", "shore", "tall grasses", "waves" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "tall grasses",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "tall grasses"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "tall grasses",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "tall grasses"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "tall grasses"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "coast", "cool breeze", "landscape", "natural patterns", "ocean", "passersby", "shore", "tall grasses", "waves" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "landscape",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "landscape"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "landscape",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "landscape"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "landscape"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "coast", "cool breeze", "landscape", "natural patterns", "ocean", "passersby", "shore", "tall grasses", "waves" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "natural patterns",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "natural patterns"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "natural patterns",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "natural patterns"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "natural patterns"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "coast", "cool breeze", "landscape", "natural patterns", "ocean", "passersby", "shore", "tall grasses", "waves" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shore",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "shore"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shore",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "shore"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "shore"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "coast", "cool breeze", "landscape", "natural patterns", "ocean", "passersby", "shore", "tall grasses", "waves" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "companies",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "11",
+      "members" : [ "companies", "dandelion growth", "flexible remote work policies", "garden enthusiasts", "neighborhood meetings", "remote work policies", "spring", "urban parks", "work-from-home trends" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dandelion growth",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "11",
+      "members" : [ "companies", "dandelion growth", "flexible remote work policies", "garden enthusiasts", "neighborhood meetings", "remote work policies", "spring", "urban parks", "work-from-home trends" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flexible remote work policies",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "11",
+      "members" : [ "companies", "dandelion growth", "flexible remote work policies", "garden enthusiasts", "neighborhood meetings", "remote work policies", "spring", "urban parks", "work-from-home trends" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "garden enthusiasts",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "11",
+      "members" : [ "companies", "dandelion growth", "flexible remote work policies", "garden enthusiasts", "neighborhood meetings", "remote work policies", "spring", "urban parks", "work-from-home trends" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood meetings",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "11",
+      "members" : [ "companies", "dandelion growth", "flexible remote work policies", "garden enthusiasts", "neighborhood meetings", "remote work policies", "spring", "urban parks", "work-from-home trends" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "remote work policies",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "11",
+      "members" : [ "companies", "dandelion growth", "flexible remote work policies", "garden enthusiasts", "neighborhood meetings", "remote work policies", "spring", "urban parks", "work-from-home trends" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spring",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "11",
+      "members" : [ "companies", "dandelion growth", "flexible remote work policies", "garden enthusiasts", "neighborhood meetings", "remote work policies", "spring", "urban parks", "work-from-home trends" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban parks",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "11",
+      "members" : [ "companies", "dandelion growth", "flexible remote work policies", "garden enthusiasts", "neighborhood meetings", "remote work policies", "spring", "urban parks", "work-from-home trends" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "work-from-home trends",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "11",
+      "members" : [ "companies", "dandelion growth", "flexible remote work policies", "garden enthusiasts", "neighborhood meetings", "remote work policies", "spring", "urban parks", "work-from-home trends" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dandelion growth",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "dandelion growth"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dandelion growth",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "dandelion growth"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "dandelion growth"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "11",
+      "members" : [ "companies", "dandelion growth", "flexible remote work policies", "garden enthusiasts", "neighborhood meetings", "remote work policies", "spring", "urban parks", "work-from-home trends" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "work-from-home trends",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "work-from-home trends"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "work-from-home trends",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "work-from-home trends"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "work-from-home trends"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "11",
+      "members" : [ "companies", "dandelion growth", "flexible remote work policies", "garden enthusiasts", "neighborhood meetings", "remote work policies", "spring", "urban parks", "work-from-home trends" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "companies",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "companies"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "companies",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "companies"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "companies"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "11",
+      "members" : [ "companies", "dandelion growth", "flexible remote work policies", "garden enthusiasts", "neighborhood meetings", "remote work policies", "spring", "urban parks", "work-from-home trends" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "remote work policies",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "remote work policies"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "remote work policies",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "remote work policies"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "remote work policies"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "11",
+      "members" : [ "companies", "dandelion growth", "flexible remote work policies", "garden enthusiasts", "neighborhood meetings", "remote work policies", "spring", "urban parks", "work-from-home trends" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flexible remote work policies",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "flexible remote work policies"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flexible remote work policies",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "flexible remote work policies"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "flexible remote work policies"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "11",
+      "members" : [ "companies", "dandelion growth", "flexible remote work policies", "garden enthusiasts", "neighborhood meetings", "remote work policies", "spring", "urban parks", "work-from-home trends" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shops",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "coffee shops", "coffee shortages", "empty shelves", "major supplier", "shipping delay", "shop staff", "the week when university lectures resumed" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shortages",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "coffee shops", "coffee shortages", "empty shelves", "major supplier", "shipping delay", "shop staff", "the week when university lectures resumed" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "empty shelves",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "coffee shops", "coffee shortages", "empty shelves", "major supplier", "shipping delay", "shop staff", "the week when university lectures resumed" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "major supplier",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "coffee shops", "coffee shortages", "empty shelves", "major supplier", "shipping delay", "shop staff", "the week when university lectures resumed" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shipping delay",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "coffee shops", "coffee shortages", "empty shelves", "major supplier", "shipping delay", "shop staff", "the week when university lectures resumed" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shop staff",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "coffee shops", "coffee shortages", "empty shelves", "major supplier", "shipping delay", "shop staff", "the week when university lectures resumed" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the week when university lectures resumed",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "coffee shops", "coffee shortages", "empty shelves", "major supplier", "shipping delay", "shop staff", "the week when university lectures resumed" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shipping delay",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "shipping delay"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shipping delay",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "shipping delay"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "shipping delay"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "coffee shops", "coffee shortages", "empty shelves", "major supplier", "shipping delay", "shop staff", "the week when university lectures resumed" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shortages",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coffee shortages"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shortages",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coffee shortages"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coffee shortages"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "coffee shops", "coffee shortages", "empty shelves", "major supplier", "shipping delay", "shop staff", "the week when university lectures resumed" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the week when university lectures resumed",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the week when university lectures resumed"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the week when university lectures resumed",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the week when university lectures resumed"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the week when university lectures resumed"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "coffee shops", "coffee shortages", "empty shelves", "major supplier", "shipping delay", "shop staff", "the week when university lectures resumed" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shops",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coffee shops"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shops",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coffee shops"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coffee shops"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "coffee shops", "coffee shortages", "empty shelves", "major supplier", "shipping delay", "shop staff", "the week when university lectures resumed" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shop staff",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "shop staff"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shop staff",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "shop staff"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "shop staff"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "coffee shops", "coffee shortages", "empty shelves", "major supplier", "shipping delay", "shop staff", "the week when university lectures resumed" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bicycle sales",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "bicycle sales", "bike lane infrastructure", "citywide cycling campaign", "local bike shops", "market analysis", "remote work" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bike lane infrastructure",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "bicycle sales", "bike lane infrastructure", "citywide cycling campaign", "local bike shops", "market analysis", "remote work" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "citywide cycling campaign",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "bicycle sales", "bike lane infrastructure", "citywide cycling campaign", "local bike shops", "market analysis", "remote work" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local bike shops",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "bicycle sales", "bike lane infrastructure", "citywide cycling campaign", "local bike shops", "market analysis", "remote work" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "market analysis",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "bicycle sales", "bike lane infrastructure", "citywide cycling campaign", "local bike shops", "market analysis", "remote work" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "remote work",
+      "chunk id" : "zVC9GlAL"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "bicycle sales", "bike lane infrastructure", "citywide cycling campaign", "local bike shops", "market analysis", "remote work" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bicycle sales",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bicycle sales"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bicycle sales",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bicycle sales"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bicycle sales"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "bicycle sales", "bike lane infrastructure", "citywide cycling campaign", "local bike shops", "market analysis", "remote work" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bike lane infrastructure",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bike lane infrastructure"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bike lane infrastructure",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bike lane infrastructure"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "bike lane infrastructure"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "bicycle sales", "bike lane infrastructure", "citywide cycling campaign", "local bike shops", "market analysis", "remote work" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "citywide cycling campaign",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "citywide cycling campaign"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "citywide cycling campaign",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "citywide cycling campaign"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "citywide cycling campaign"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "bicycle sales", "bike lane infrastructure", "citywide cycling campaign", "local bike shops", "market analysis", "remote work" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local bike shops",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local bike shops"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local bike shops",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local bike shops"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local bike shops"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "bicycle sales", "bike lane infrastructure", "citywide cycling campaign", "local bike shops", "market analysis", "remote work" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "remote work",
+      "chunk id" : "zVC9GlAL"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "remote work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "remote work",
+      "chunk id" : "zVC9GlAL"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "remote work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "remote work"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "bicycle sales", "bike lane infrastructure", "citywide cycling campaign", "local bike shops", "market analysis", "remote work" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "broader economic optimism",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "broader economic optimism", "café culture (speculated)", "local coffee sales", "market performance", "stock prices (tech sector)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "café culture (speculated)",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "broader economic optimism", "café culture (speculated)", "local coffee sales", "market performance", "stock prices (tech sector)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local coffee sales",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "broader economic optimism", "café culture (speculated)", "local coffee sales", "market performance", "stock prices (tech sector)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "market performance",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "broader economic optimism", "café culture (speculated)", "local coffee sales", "market performance", "stock prices (tech sector)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stock prices (tech sector)",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "broader economic optimism", "café culture (speculated)", "local coffee sales", "market performance", "stock prices (tech sector)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stock prices (tech sector)",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "stock prices (tech sector)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stock prices (tech sector)",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "stock prices (tech sector)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "stock prices (tech sector)"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "broader economic optimism", "café culture (speculated)", "local coffee sales", "market performance", "stock prices (tech sector)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "broader economic optimism",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "broader economic optimism"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "broader economic optimism",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "broader economic optimism"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "broader economic optimism"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "broader economic optimism", "café culture (speculated)", "local coffee sales", "market performance", "stock prices (tech sector)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local coffee sales",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local coffee sales"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local coffee sales",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local coffee sales"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local coffee sales"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "broader economic optimism", "café culture (speculated)", "local coffee sales", "market performance", "stock prices (tech sector)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "café culture (speculated)",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "café culture (speculated)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "café culture (speculated)",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "café culture (speculated)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "café culture (speculated)"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "broader economic optimism", "café culture (speculated)", "local coffee sales", "market performance", "stock prices (tech sector)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "market performance",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "market performance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "market performance",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "market performance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "market performance"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "5",
+      "members" : [ "broader economic optimism", "café culture (speculated)", "local coffee sales", "market performance", "stock prices (tech sector)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "depleted supplies",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "depleted supplies", "students", "summer break", "university lectures" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "depleted supplies", "students", "summer break", "university lectures" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "summer break",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "depleted supplies", "students", "summer break", "university lectures" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "university lectures",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "depleted supplies", "students", "summer break", "university lectures" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "university lectures",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "university lectures"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "university lectures",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "university lectures"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "university lectures"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "depleted supplies", "students", "summer break", "university lectures" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "students"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "students"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "students"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "depleted supplies", "students", "summer break", "university lectures" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "depleted supplies",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "depleted supplies"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "depleted supplies",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "depleted supplies"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "depleted supplies"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "depleted supplies", "students", "summer break", "university lectures" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "summer break",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "summer break"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "summer break",
+      "chunk id" : "QfCsnbHY",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "summer break"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "summer break"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "depleted supplies", "students", "summer break", "university lectures" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "earnings calls",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "earnings calls", "encouraging coffee breaks", "managers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "encouraging coffee breaks",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "earnings calls", "encouraging coffee breaks", "managers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "managers",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "earnings calls", "encouraging coffee breaks", "managers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "managers",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "managers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "managers",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "managers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "managers"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "earnings calls", "encouraging coffee breaks", "managers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "encouraging coffee breaks",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "encouraging coffee breaks"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "encouraging coffee breaks",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "encouraging coffee breaks"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "encouraging coffee breaks"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "earnings calls", "encouraging coffee breaks", "managers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "earnings calls",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "earnings calls"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "earnings calls",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "earnings calls"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "earnings calls"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "earnings calls", "encouraging coffee breaks", "managers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "employees",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "employees", "increased visits to nearby cafes", "major firms" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "increased visits to nearby cafes",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "employees", "increased visits to nearby cafes", "major firms" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "major firms",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "employees", "increased visits to nearby cafes", "major firms" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "employees",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "employees"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "employees",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "employees"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "employees"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "employees", "increased visits to nearby cafes", "major firms" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "major firms",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "major firms"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "major firms",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "major firms"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "major firms"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "employees", "increased visits to nearby cafes", "major firms" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "increased visits to nearby cafes",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "increased visits to nearby cafes"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "increased visits to nearby cafes",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "increased visits to nearby cafes"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "increased visits to nearby cafes"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "employees", "increased visits to nearby cafes", "major firms" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "concurrence of events",
+      "chunk id" : "QfCsnbHY"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "concurrence of events", "misleading impression of causality" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "misleading impression of causality",
+      "chunk id" : "QfCsnbHY"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "concurrence of events", "misleading impression of causality" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "misleading impression of causality",
+      "chunk id" : "QfCsnbHY"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "misleading impression of causality"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "misleading impression of causality",
+      "chunk id" : "QfCsnbHY"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "misleading impression of causality"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "misleading impression of causality"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "concurrence of events", "misleading impression of causality" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "concurrence of events",
+      "chunk id" : "QfCsnbHY"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "concurrence of events"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "concurrence of events",
+      "chunk id" : "QfCsnbHY"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "concurrence of events"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "concurrence of events"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "concurrence of events", "misleading impression of causality" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dandelions",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 2 members",
+      "community_id" : "community_11",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "dandelions", "plant biology" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "plant biology",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 2 members",
+      "community_id" : "community_11",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "dandelions", "plant biology" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dandelions",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "dandelions"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dandelions",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "dandelions"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "dandelions"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 2 members",
+      "community_id" : "community_11",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "dandelions", "plant biology" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "plant biology",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "plant biology"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "plant biology",
+      "chunk id" : "9umTjlea",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "plant biology"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "plant biology"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 2 members",
+      "community_id" : "community_11",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "dandelions", "plant biology" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "narrative",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_12",
+      "description" : "Community of 2 members",
+      "community_id" : "community_12",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "narrative", "neighborhood conversations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood conversations",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_12",
+      "description" : "Community of 2 members",
+      "community_id" : "community_12",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "narrative", "neighborhood conversations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "narrative",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "narrative"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "narrative",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "narrative"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "narrative"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_12",
+      "description" : "Community of 2 members",
+      "community_id" : "community_12",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "narrative", "neighborhood conversations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood conversations",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "neighborhood conversations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood conversations",
+      "chunk id" : "zVC9GlAL",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "neighborhood conversations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "neighborhood conversations"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_12",
+      "description" : "Community of 2 members",
+      "community_id" : "community_12",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "narrative", "neighborhood conversations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_13",
+      "description" : "Community of 2 members",
+      "community_id" : "community_13",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "people", "refreshing air" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "refreshing air",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_13",
+      "description" : "Community of 2 members",
+      "community_id" : "community_13",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "people", "refreshing air" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "people"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "people"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "people"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_13",
+      "description" : "Community of 2 members",
+      "community_id" : "community_13",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "people", "refreshing air" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "refreshing air",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "refreshing air"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "refreshing air",
+      "chunk id" : "hiHpluWG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "refreshing air"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "refreshing air"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_13",
+      "description" : "Community of 2 members",
+      "community_id" : "community_13",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "people", "refreshing air" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stock market",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_14",
+      "description" : "Community of 2 members",
+      "community_id" : "community_14",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "stock market", "tech sector" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "tech sector",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_14",
+      "description" : "Community of 2 members",
+      "community_id" : "community_14",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "stock market", "tech sector" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stock market",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "stock market"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stock market",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "stock market"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "stock market"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_14",
+      "description" : "Community of 2 members",
+      "community_id" : "community_14",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "stock market", "tech sector" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "tech sector",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "tech sector"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "tech sector",
+      "chunk id" : "uNjvsAnc"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "tech sector"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "tech sector"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_14",
+      "description" : "Community of 2 members",
+      "community_id" : "community_14",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "stock market", "tech sector" ]
+    }
+  }
+} ]

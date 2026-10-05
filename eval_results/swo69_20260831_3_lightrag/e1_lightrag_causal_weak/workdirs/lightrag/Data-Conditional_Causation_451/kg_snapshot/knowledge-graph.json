@@ -1,0 +1,443 @@
+{
+  "nodes" : [ {
+    "id" : "Umbrella Sales",
+    "entity_id" : "Umbrella Sales",
+    "entity_type" : "Concept",
+    "description" : "The increase in sales of umbrellas during a rainy period",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b"
+  }, {
+    "id" : "Rainy Weather",
+    "entity_id" : "Rainy Weather",
+    "entity_type" : "Concept",
+    "description" : "The period of weather characterized by rain",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b"
+  }, {
+    "id" : "Marketing Campaigns",
+    "entity_id" : "Marketing Campaigns",
+    "entity_type" : "Concept",
+    "description" : "Promotional activities aimed at influencing consumer behavior",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b"
+  }, {
+    "id" : "Seasonal Trends",
+    "entity_id" : "Seasonal Trends",
+    "entity_type" : "Concept",
+    "description" : "Patterns of behavior or activity that occur at specific times of the year",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b"
+  }, {
+    "id" : "Suppliers",
+    "entity_id" : "Suppliers",
+    "entity_type" : "Organization",
+    "description" : "Businesses that provide goods or services",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b"
+  }, {
+    "id" : "Shoppers",
+    "entity_id" : "Shoppers",
+    "entity_type" : "Person",
+    "description" : "Individuals who purchase goods or services",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b"
+  }, {
+    "id" : "Street Musician",
+    "entity_id" : "Street Musician",
+    "entity_type" : "Person",
+    "description" : "A musician playing on the street",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303"
+  }, {
+    "id" : "Passersby",
+    "entity_id" : "Passersby",
+    "entity_type" : "Group",
+    "description" : "People walking by the street",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303"
+  }, {
+    "id" : "Guitar Case",
+    "entity_id" : "Guitar Case",
+    "entity_type" : "Location",
+    "description" : "An open case where coins are collected",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303"
+  }, {
+    "id" : "Crowd",
+    "entity_id" : "Crowd",
+    "entity_type" : "Group",
+    "description" : "A group of people watching the musician",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303"
+  }, {
+    "id" : "Police Patrols",
+    "entity_id" : "Police Patrols",
+    "entity_type" : "Location",
+    "description" : "Visible police patrols in the neighborhood",
+    "source_id" : "5194952b94506d10d930468c3afa370a"
+  }, {
+    "id" : "Violent Crime",
+    "entity_id" : "Violent Crime",
+    "entity_type" : "Concept",
+    "description" : "Increase in reported violent crime",
+    "source_id" : "5194952b94506d10d930468c3afa370a"
+  }, {
+    "id" : "City Papers",
+    "entity_id" : "City Papers",
+    "entity_type" : "Organization",
+    "description" : "Local newspapers and magazines",
+    "source_id" : "5194952b94506d10d930468c3afa370a"
+  }, {
+    "id" : "Neighborhood Residents",
+    "entity_id" : "Neighborhood Residents",
+    "entity_type" : "Person",
+    "description" : "People living in the neighborhood",
+    "source_id" : "5194952b94506d10d930468c3afa370a"
+  }, {
+    "id" : "Editorials",
+    "entity_id" : "Editorials",
+    "entity_type" : "Concept",
+    "description" : "Opinion pieces published in the city papers",
+    "source_id" : "5194952b94506d10d930468c3afa370a"
+  }, {
+    "id" : "Back-to-School Season",
+    "entity_id" : "Back-to-School Season",
+    "entity_type" : "Event",
+    "description" : "The period around the start of a new school year when students and parents prepare for the upcoming academic year.",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb"
+  }, {
+    "id" : "Printer Ink Sales",
+    "entity_id" : "Printer Ink Sales",
+    "entity_type" : "Concept",
+    "description" : "The sales of printer ink, often increasing during the back-to-school season.",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb"
+  }, {
+    "id" : "Small Businesses",
+    "entity_id" : "Small Businesses",
+    "entity_type" : "Organization",
+    "description" : "Companies that operate independently and are not part of a larger corporation.",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb"
+  }, {
+    "id" : "School Enrollment",
+    "entity_id" : "School Enrollment",
+    "entity_type" : "Concept",
+    "description" : "The number of students enrolled in a school, often increasing during the back-to-school season.",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb"
+  }, {
+    "id" : "Parents",
+    "entity_id" : "Parents",
+    "entity_type" : "Person",
+    "description" : "Adults whose children are in school.",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb"
+  }, {
+    "id" : "Teachers",
+    "entity_id" : "Teachers",
+    "entity_type" : "Person",
+    "description" : "Professionals who work with students in a school setting.",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb"
+  }, {
+    "id" : "Vitamin D",
+    "entity_id" : "Vitamin D",
+    "entity_type" : "Concept",
+    "description" : "A nutrient that plays a crucial role in bone health",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1"
+  }, {
+    "id" : "Bone Strength",
+    "entity_id" : "Bone Strength",
+    "entity_type" : "Concept",
+    "description" : "A measure of the health and density of bones",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1"
+  }, {
+    "id" : "Supplements",
+    "entity_id" : "Supplements",
+    "entity_type" : "Concept",
+    "description" : "Substances taken to supplement a person's diet",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1"
+  }, {
+    "id" : "Physical Check-ups",
+    "entity_id" : "Physical Check-ups",
+    "entity_type" : "Event",
+    "description" : "A medical examination to assess a person's health",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1"
+  }, {
+    "id" : "Doctors",
+    "entity_id" : "Doctors",
+    "entity_type" : "Person",
+    "description" : "Medical professionals who diagnose and treat patients",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1"
+  }, {
+    "id" : "Local Clinics",
+    "entity_id" : "Local Clinics",
+    "entity_type" : "Location",
+    "description" : "Medical facilities that provide healthcare services to a specific area",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1"
+  }, {
+    "id" : "Transport Safety Officers",
+    "entity_id" : "Transport Safety Officers",
+    "entity_type" : "Person",
+    "description" : "Individuals responsible for ensuring transport safety.",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5"
+  }, {
+    "id" : "Traffic Accidents",
+    "entity_id" : "Traffic Accidents",
+    "entity_type" : "Event",
+    "description" : "Incidents involving vehicles or other road users.",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5"
+  }, {
+    "id" : "Streetlight Outages",
+    "entity_id" : "Streetlight Outages",
+    "entity_type" : "Event",
+    "description" : "Temporary loss of illumination due to faulty or damaged streetlights.",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5"
+  }, {
+    "id" : "Storms",
+    "entity_id" : "Storms",
+    "entity_type" : "Event",
+    "description" : "Severe weather conditions characterized by strong winds and precipitation.",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5"
+  }, {
+    "id" : "Power Lines",
+    "entity_id" : "Power Lines",
+    "entity_type" : "Location",
+    "description" : "Infrastructure supporting electrical power distribution.",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5"
+  } ],
+  "edges" : [ {
+    "source" : "Umbrella Sales",
+    "target" : "Rainy Weather",
+    "weight" : "1.0",
+    "description" : "The increase in umbrella sales is attributed to the rainy weather",
+    "keywords" : "Increased Sales, Rainy Period",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b",
+    "src_id" : "Umbrella Sales",
+    "tgt_id" : "Rainy Weather"
+  }, {
+    "source" : "Umbrella Sales",
+    "target" : "Marketing Campaigns",
+    "weight" : "1.0",
+    "description" : "Marketing campaigns may be driving the increase in umbrella sales",
+    "keywords" : "Promotional Activities, Sales Spike",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b",
+    "src_id" : "Marketing Campaigns",
+    "tgt_id" : "Umbrella Sales"
+  }, {
+    "source" : "Umbrella Sales",
+    "target" : "Seasonal Trends",
+    "weight" : "1.0",
+    "description" : "The increase in umbrella sales is typical for this season",
+    "keywords" : "Typical Seasonal Increase, Sales Spike",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b",
+    "src_id" : "Seasonal Trends",
+    "tgt_id" : "Umbrella Sales"
+  }, {
+    "source" : "Umbrella Sales",
+    "target" : "Suppliers",
+    "weight" : "1.0",
+    "description" : "Suppliers say the increase is typical for this season",
+    "keywords" : "Typical Seasonal Increase, Sales Spike",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b",
+    "src_id" : "Suppliers",
+    "tgt_id" : "Umbrella Sales"
+  }, {
+    "source" : "Umbrella Sales",
+    "target" : "Shoppers",
+    "weight" : "1.0",
+    "description" : "Shoppers are stocking up on umbrellas, contributing to the sales spike",
+    "keywords" : "Stocking Up, Sales Spike",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b",
+    "src_id" : "Shoppers",
+    "tgt_id" : "Umbrella Sales"
+  }, {
+    "source" : "Street Musician",
+    "target" : "Passersby",
+    "weight" : "1.0",
+    "description" : "People donating money to the musician",
+    "keywords" : "donation, music",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303",
+    "src_id" : "Street Musician",
+    "tgt_id" : "Passersby"
+  }, {
+    "source" : "Street Musician",
+    "target" : "Crowd",
+    "weight" : "1.0",
+    "description" : "The musician performing for the crowd",
+    "keywords" : "performance, music",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303",
+    "src_id" : "Street Musician",
+    "tgt_id" : "Crowd"
+  }, {
+    "source" : "Passersby",
+    "target" : "Crowd",
+    "weight" : "1.0",
+    "description" : "People enjoying the music",
+    "keywords" : "entertainment, joy",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303",
+    "src_id" : "Passersby",
+    "tgt_id" : "Crowd"
+  }, {
+    "source" : "Passersby",
+    "target" : "Guitar Case",
+    "weight" : "1.0",
+    "description" : "People donating to the musician's case",
+    "keywords" : "donation, charity",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303",
+    "src_id" : "Passersby",
+    "tgt_id" : "Guitar Case"
+  }, {
+    "source" : "Police Patrols",
+    "target" : "Violent Crime",
+    "weight" : "1.0",
+    "description" : "Increased police patrols correlate with higher violent crime rates",
+    "keywords" : "crime rate, police presence",
+    "source_id" : "5194952b94506d10d930468c3afa370a",
+    "src_id" : "Police Patrols",
+    "tgt_id" : "Violent Crime"
+  }, {
+    "source" : "Police Patrols",
+    "target" : "Neighborhood Residents",
+    "weight" : "1.0",
+    "description" : "Residents notice more police patrols and comment on their presence",
+    "keywords" : "increased visibility, community perception",
+    "source_id" : "5194952b94506d10d930468c3afa370a",
+    "src_id" : "Neighborhood Residents",
+    "tgt_id" : "Police Patrols"
+  }, {
+    "source" : "Neighborhood Residents",
+    "target" : "City Papers",
+    "weight" : "1.0",
+    "description" : "Editorials reach a wider audience through the city papers",
+    "keywords" : "local news, community engagement",
+    "source_id" : "5194952b94506d10d930468c3afa370a",
+    "src_id" : "City Papers",
+    "tgt_id" : "Neighborhood Residents"
+  }, {
+    "source" : "City Papers",
+    "target" : "Editorials",
+    "weight" : "1.0",
+    "description" : "Editorials discuss the relationship between police patrols and violent crime",
+    "keywords" : "opinion, commentary",
+    "source_id" : "5194952b94506d10d930468c3afa370a",
+    "src_id" : "City Papers",
+    "tgt_id" : "Editorials"
+  }, {
+    "source" : "Back-to-School Season",
+    "target" : "Printer Ink Sales",
+    "weight" : "1.0",
+    "description" : "The back-to-school season is said to drive up demand for printer ink sales.",
+    "keywords" : "demand, printing",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb",
+    "src_id" : "Back-to-School Season",
+    "tgt_id" : "Printer Ink Sales"
+  }, {
+    "source" : "Back-to-School Season",
+    "target" : "School Enrollment",
+    "weight" : "1.0",
+    "description" : "The back-to-school season is often associated with an increase in school enrollment.",
+    "keywords" : "enrollment, students",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb",
+    "src_id" : "Back-to-School Season",
+    "tgt_id" : "School Enrollment"
+  }, {
+    "source" : "Printer Ink Sales",
+    "target" : "Parents",
+    "weight" : "1.0",
+    "description" : "Parents are said to be driving up demand for printer ink sales during the back-to-school season.",
+    "keywords" : "parents, printing",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb",
+    "src_id" : "Parents",
+    "tgt_id" : "Printer Ink Sales"
+  }, {
+    "source" : "Printer Ink Sales",
+    "target" : "Teachers",
+    "weight" : "1.0",
+    "description" : "Teachers are also said to be driving up demand for printer ink sales during the back-to-school season.",
+    "keywords" : "teachers, printing",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb",
+    "src_id" : "Teachers",
+    "tgt_id" : "Printer Ink Sales"
+  }, {
+    "source" : "Printer Ink Sales",
+    "target" : "Small Businesses",
+    "weight" : "1.0",
+    "description" : "Small businesses are also purchasing printer ink, often for unrelated projects.",
+    "keywords" : "businesses, printing",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb",
+    "src_id" : "Small Businesses",
+    "tgt_id" : "Printer Ink Sales"
+  }, {
+    "source" : "Printer Ink Sales",
+    "target" : "School Enrollment",
+    "weight" : "1.0",
+    "description" : "The sales of printer ink are often coincident with an increase in school enrollment.",
+    "keywords" : "sales, enrollment",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb",
+    "src_id" : "Printer Ink Sales",
+    "tgt_id" : "School Enrollment"
+  }, {
+    "source" : "Vitamin D",
+    "target" : "Bone Strength",
+    "weight" : "1.0",
+    "description" : "Vitamin D is essential for maintaining strong bones",
+    "keywords" : "Nutrient, Bone Health",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1",
+    "src_id" : "Vitamin D",
+    "tgt_id" : "Bone Strength"
+  }, {
+    "source" : "Vitamin D",
+    "target" : "Supplements",
+    "weight" : "1.0",
+    "description" : "Supplements can help increase vitamin D levels",
+    "keywords" : "Dietary Aid, Nutrient Supplement",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1",
+    "src_id" : "Supplements",
+    "tgt_id" : "Vitamin D"
+  }, {
+    "source" : "Supplements",
+    "target" : "Physical Check-ups",
+    "weight" : "1.0",
+    "description" : "Supplements are often discussed during physical check-ups",
+    "keywords" : "Medical Examination, Health Screening",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1",
+    "src_id" : "Physical Check-ups",
+    "tgt_id" : "Supplements"
+  }, {
+    "source" : "Physical Check-ups",
+    "target" : "Doctors",
+    "weight" : "1.0",
+    "description" : "Doctors provide guidance on supplements and physical check-ups",
+    "keywords" : "Medical Professionals, Health Advice",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1",
+    "src_id" : "Doctors",
+    "tgt_id" : "Physical Check-ups"
+  }, {
+    "source" : "Doctors",
+    "target" : "Local Clinics",
+    "weight" : "1.0",
+    "description" : "Local clinics employ doctors to provide healthcare services",
+    "keywords" : "Medical Facilities, Healthcare Services",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1",
+    "src_id" : "Local Clinics",
+    "tgt_id" : "Doctors"
+  }, {
+    "source" : "Transport Safety Officers",
+    "target" : "Traffic Accidents",
+    "weight" : "2.0",
+    "description" : "Storms identified as a confounding variable affecting traffic accidents.",
+    "keywords" : "increased accidents, traffic surge, weather, confounding variable",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5<|#|>e30b38f1d94a6a409bedf8ddaa97b9a5",
+    "src_id" : "Transport Safety Officers",
+    "tgt_id" : "Traffic Accidents"
+  }, {
+    "source" : "Transport Safety Officers",
+    "target" : "Streetlight Outages",
+    "weight" : "2.0",
+    "description" : "Storms identified as a confounding variable affecting streetlight outages.",
+    "keywords" : "outages, accidents surge, weather, confounding variable",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5<|#|>e30b38f1d94a6a409bedf8ddaa97b9a5",
+    "src_id" : "Transport Safety Officers",
+    "tgt_id" : "Streetlight Outages"
+  }, {
+    "source" : "Transport Safety Officers",
+    "target" : "Storms",
+    "weight" : "1.0",
+    "description" : "Storms causing power lines to be knocked down, leading to outages.",
+    "keywords" : "storms, power lines, outages",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5",
+    "src_id" : "Transport Safety Officers",
+    "tgt_id" : "Storms"
+  } ],
+  "metadata" : {
+    "nodeCount" : 32,
+    "edgeCount" : 27
+  }
+}

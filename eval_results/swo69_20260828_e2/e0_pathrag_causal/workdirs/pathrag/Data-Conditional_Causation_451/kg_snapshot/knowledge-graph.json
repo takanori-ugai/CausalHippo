@@ -1,0 +1,545 @@
+{
+  "nodes" : {
+    "UMBRELLA SALES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The product category experiencing a notable spike in sales, driven by weather, marketing, and new styles.",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    },
+    "TRANSPORT SAFETY OFFICERS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A group of officers who monitor and report on transport safety, noticing correlations between accidents and streetlight outages.",
+      "source_id" : "chunk-e30b38f1d94a6a409bedf8ddaa97b9a5"
+    },
+    "THE REGION" : {
+      "entity_type" : "GEO",
+      "description" : "A geographic area where rainy weather arrived and where stores recorded the sales increase.",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    },
+    "NEW STYLES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "New product styles that may play a contributing role in the umbrella sales spike.",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    },
+    "THE STREET" : {
+      "entity_type" : "GEO",
+      "description" : "The location where the street performance took place, filled with palpable energy.",
+      "source_id" : "chunk-4559777794f3c86625cbfe7f80c96303"
+    },
+    "PRINTER INK SALES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The sales category showing a spike this fall, coinciding with school enrollment trends.",
+      "source_id" : "chunk-34a5bf2910c7e76f242f7a20ab2852fb"
+    },
+    "STORMS" : {
+      "entity_type" : "EVENT",
+      "description" : "Severe weather events that knock down power lines, causing both streetlight outages and contributing to traffic accidents.",
+      "source_id" : "chunk-e30b38f1d94a6a409bedf8ddaa97b9a5"
+    },
+    "SCHOOL ENROLLMENT" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Rising school enrollment figures that appear to match printer ink sales curves.",
+      "source_id" : "chunk-34a5bf2910c7e76f242f7a20ab2852fb"
+    },
+    "STREET MUSICIAN" : {
+      "entity_type" : "PERSON",
+      "description" : "A musician who plays a lively tune on the street, entertaining passersby with a guitar.",
+      "source_id" : "chunk-4559777794f3c86625cbfe7f80c96303"
+    },
+    "CITIZENS" : {
+      "entity_type" : "PERSON",
+      "description" : "Some citizens who suggested that the increase in police patrols and the spike in violent crime may be related.",
+      "source_id" : "chunk-5194952b94506d10d930468c3afa370a"
+    },
+    "STORES" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Retail stores that have experienced an uptick in umbrella sales coinciding with rainy weather in the region.",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    },
+    "LOCAL STORES" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Retail stores that reported a spike in printer ink sales this fall.",
+      "source_id" : "chunk-34a5bf2910c7e76f242f7a20ab2852fb"
+    },
+    "NEIGHBORHOOD" : {
+      "entity_type" : "GEO",
+      "description" : "The local area where residents live and where the observed trends in patrols and crime are occurring.",
+      "source_id" : "chunk-5194952b94506d10d930468c3afa370a"
+    },
+    "POWER LINES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Electrical infrastructure that gets knocked down during storms, leading to streetlight outages.",
+      "source_id" : "chunk-e30b38f1d94a6a409bedf8ddaa97b9a5"
+    },
+    "POLICE PATROLS" : {
+      "entity_type" : "EVENT",
+      "description" : "Visible police patrols whose frequency has increased and appears to correlate with periods of reported violent crime.",
+      "source_id" : "chunk-5194952b94506d10d930468c3afa370a"
+    },
+    "WEATHER" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A confounding variable identified as the common cause affecting both traffic accidents and streetlight outages.",
+      "source_id" : "chunk-e30b38f1d94a6a409bedf8ddaa97b9a5"
+    },
+    "PASSERSBY" : {
+      "entity_type" : "PERSON",
+      "description" : "People walking by who paused to listen and dropped coins into the open guitar case.",
+      "source_id" : "chunk-4559777794f3c86625cbfe7f80c96303"
+    },
+    "STREETLIGHT OUTAGES" : {
+      "entity_type" : "EVENT",
+      "description" : "Periods of high numbers of streetlight failures that correlate with traffic accidents during storms.",
+      "source_id" : "chunk-e30b38f1d94a6a409bedf8ddaa97b9a5"
+    },
+    "PARENTS" : {
+      "entity_type" : "PERSON",
+      "description" : "Parents who comment that back-to-school season drives up demand for printing.",
+      "source_id" : "chunk-34a5bf2910c7e76f242f7a20ab2852fb"
+    },
+    "MARKETING CAMPAIGNS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Marketing efforts that may be contributing to driving umbrella purchases alongside seasonal demand.",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    },
+    "RAINY WEATHER" : {
+      "entity_type" : "EVENT",
+      "description" : "A period of rainy weather that arrived in the region and coincided with increased umbrella sales.",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    },
+    "BACK-TO-SCHOOL SEASON" : {
+      "entity_type" : "EVENT",
+      "description" : "The seasonal period that many believe drives up demand for printing and school-related supplies.",
+      "source_id" : "chunk-34a5bf2910c7e76f242f7a20ab2852fb"
+    },
+    "NEIGHBORHOOD RESIDENTS" : {
+      "entity_type" : "PERSON",
+      "description" : "Local residents who noticed a marked increase in visible police patrols in their area.",
+      "source_id" : "chunk-5194952b94506d10d930468c3afa370a"
+    },
+    "SHOPPERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Consumers who are stocking up on umbrellas amid the rainy season and potential marketing influence.",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    },
+    "CITY PAPERS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Local newspapers that published editorials commenting on the increase in police patrols and the spike in violent crime.",
+      "source_id" : "chunk-5194952b94506d10d930468c3afa370a"
+    },
+    "THE CROWD" : {
+      "entity_type" : "PERSON",
+      "description" : "A gathering of people who smiled and some started to dance in response to the music.",
+      "source_id" : "chunk-4559777794f3c86625cbfe7f80c96303"
+    },
+    "SMALL BUSINESSES" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Businesses that purchase significant amounts of printer ink for unrelated projects.",
+      "source_id" : "chunk-34a5bf2910c7e76f242f7a20ab2852fb"
+    },
+    "SALES SPIKE" : {
+      "entity_type" : "EVENT",
+      "description" : "A notable increase in umbrella sales that remains a talking point among retailers and suppliers.",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    },
+    "TRAFFIC ACCIDENTS" : {
+      "entity_type" : "EVENT",
+      "description" : "Periods of increased road accidents that overlap with streetlight outages, influenced by weather conditions.",
+      "source_id" : "chunk-e30b38f1d94a6a409bedf8ddaa97b9a5"
+    },
+    "VIOLENT CRIME" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A category of criminal activity showing a spike in local statistics, correlated with police patrol frequency.",
+      "source_id" : "chunk-5194952b94506d10d930468c3afa370a"
+    },
+    "SUPPLIERS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Businesses that state the increase in umbrella sales is typical for the current season.",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    },
+    "TEACHERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Teachers who comment that back-to-school season drives up demand for printing.",
+      "source_id" : "chunk-34a5bf2910c7e76f242f7a20ab2852fb"
+    },
+    "THE LIVELY TUNE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A musical piece played by the street musician that captivated and energized the audience.",
+      "source_id" : "chunk-4559777794f3c86625cbfe7f80c96303"
+    }
+  },
+  "edges" : [ {
+    "source" : "CITY PAPERS",
+    "target" : "POLICE PATROLS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "City papers published editorials commenting on the increase in visible police patrols.",
+      "keywords" : "editorials, media coverage, patrols",
+      "source_id" : "chunk-5194952b94506d10d930468c3afa370a"
+    }
+  }, {
+    "source" : "STORMS",
+    "target" : "POWER LINES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Storms knock down power lines, which is the mechanism leading to streetlight outages.",
+      "keywords" : "infrastructure damage, physical cause",
+      "source_id" : "chunk-e30b38f1d94a6a409bedf8ddaa97b9a5"
+    }
+  }, {
+    "source" : "POWER LINES",
+    "target" : "STREETLIGHT OUTAGES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Knocked down power lines result in streetlight outages, linking infrastructure damage to the observed phenomenon.",
+      "keywords" : "infrastructure, consequence, outages",
+      "source_id" : "chunk-e30b38f1d94a6a409bedf8ddaa97b9a5"
+    }
+  }, {
+    "source" : "STORMS",
+    "target" : "STREETLIGHT OUTAGES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Storms knock down power lines, directly causing increases in streetlight outages.",
+      "keywords" : "causation, infrastructure damage, weather impact",
+      "source_id" : "chunk-e30b38f1d94a6a409bedf8ddaa97b9a5"
+    }
+  }, {
+    "source" : "POLICE PATROLS",
+    "target" : "NEIGHBORHOOD",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The police patrols are visible and occur within the neighborhood where residents live.",
+      "keywords" : "location, visibility, local presence",
+      "source_id" : "chunk-5194952b94506d10d930468c3afa370a"
+    }
+  }, {
+    "source" : "NEIGHBORHOOD RESIDENTS",
+    "target" : "POLICE PATROLS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Neighborhood residents noticed the marked increase in visible police patrols in their area.",
+      "keywords" : "observation, awareness, patrols",
+      "source_id" : "chunk-5194952b94506d10d930468c3afa370a"
+    }
+  }, {
+    "source" : "SHOPPERS",
+    "target" : "UMBRELLA SALES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Shoppers are actively stocking up on umbrellas, driving the sales increase.",
+      "keywords" : "consumer demand, purchasing behavior",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    }
+  }, {
+    "source" : "CITY PAPERS",
+    "target" : "VIOLENT CRIME",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "City papers published editorials commenting on the spike in violent crime alongside patrol increases.",
+      "keywords" : "editorials, media coverage, crime",
+      "source_id" : "chunk-5194952b94506d10d930468c3afa370a"
+    }
+  }, {
+    "source" : "TRANSPORT SAFETY OFFICERS",
+    "target" : "TRAFFIC ACCIDENTS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Transport safety officers observed the periods of increased traffic accidents and their correlation with outages.",
+      "keywords" : "observation, monitoring, correlation",
+      "source_id" : "chunk-e30b38f1d94a6a409bedf8ddaa97b9a5"
+    }
+  }, {
+    "source" : "STREET MUSICIAN",
+    "target" : "THE LIVELY TUNE",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "The street musician played the lively tune, creating the entertainment for the audience.",
+      "keywords" : "performance, music, playing",
+      "source_id" : "chunk-4559777794f3c86625cbfe7f80c96303"
+    }
+  }, {
+    "source" : "STORES",
+    "target" : "UMBRELLA SALES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Stores have seen a direct uptick in umbrella sales coinciding with the rainy weather period.",
+      "keywords" : "sales increase, retail performance",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    }
+  }, {
+    "source" : "SMALL BUSINESSES",
+    "target" : "PRINTER INK SALES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Small businesses account for much of the ink sold, working on unrelated projects.",
+      "keywords" : "bulk purchasing, unrelated use",
+      "source_id" : "chunk-34a5bf2910c7e76f242f7a20ab2852fb"
+    }
+  }, {
+    "source" : "SUPPLIERS",
+    "target" : "UMBRELLA SALES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Suppliers comment that the sales increase is typical for this season, providing industry context.",
+      "keywords" : "industry insight, seasonal norm",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    }
+  }, {
+    "source" : "WEATHER",
+    "target" : "TRAFFIC ACCIDENTS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Weather is identified as the confounding variable that affects the number of traffic accidents.",
+      "keywords" : "confounding variable, causal factor",
+      "source_id" : "chunk-e30b38f1d94a6a409bedf8ddaa97b9a5"
+    }
+  }, {
+    "source" : "NEIGHBORHOOD RESIDENTS",
+    "target" : "NEIGHBORHOOD",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "The residents live in and observe events within the neighborhood.",
+      "keywords" : "residence, local community",
+      "source_id" : "chunk-5194952b94506d10d930468c3afa370a"
+    }
+  }, {
+    "source" : "TEACHERS",
+    "target" : "PRINTER INK SALES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Teachers contribute to demand for printer ink during the school season.",
+      "keywords" : "consumer demand, purchasing",
+      "source_id" : "chunk-34a5bf2910c7e76f242f7a20ab2852fb"
+    }
+  }, {
+    "source" : "TRANSPORT SAFETY OFFICERS",
+    "target" : "STREETLIGHT OUTAGES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Transport safety officers noticed the high numbers of streetlight outages overlapping with accident periods.",
+      "keywords" : "observation, monitoring, infrastructure",
+      "source_id" : "chunk-e30b38f1d94a6a409bedf8ddaa97b9a5"
+    }
+  }, {
+    "source" : "PARENTS",
+    "target" : "BACK-TO-SCHOOL SEASON",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Parents attribute the increased demand for printing to the back-to-school season.",
+      "keywords" : "demand attribution, seasonal demand",
+      "source_id" : "chunk-34a5bf2910c7e76f242f7a20ab2852fb"
+    }
+  }, {
+    "source" : "RAINY WEATHER",
+    "target" : "THE REGION",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "A period of rainy weather arrived specifically in the region where stores recorded the sales uptick.",
+      "keywords" : "weather event, geographic scope",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    }
+  }, {
+    "source" : "STORES",
+    "target" : "SHOPPERS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Stores serve the shoppers who are stocking up on umbrellas during the rainy season.",
+      "keywords" : "retail-consumer relationship, demand",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    }
+  }, {
+    "source" : "STORMS",
+    "target" : "TRAFFIC ACCIDENTS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Storms contribute to conditions that increase the number of traffic accidents.",
+      "keywords" : "causation, road conditions, weather impact",
+      "source_id" : "chunk-e30b38f1d94a6a409bedf8ddaa97b9a5"
+    }
+  }, {
+    "source" : "POLICE PATROLS",
+    "target" : "VIOLENT CRIME",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The frequency of police patrols appears to match periods with more reported violent crime.",
+      "keywords" : "correlation, frequency, crime patterns",
+      "source_id" : "chunk-5194952b94506d10d930468c3afa370a"
+    }
+  }, {
+    "source" : "THE CROWD",
+    "target" : "THE LIVELY TUNE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The crowd smiled and some danced, directly reacting to the music being performed.",
+      "keywords" : "reaction, dancing, enjoyment",
+      "source_id" : "chunk-4559777794f3c86625cbfe7f80c96303"
+    }
+  }, {
+    "source" : "CITIZENS",
+    "target" : "VIOLENT CRIME",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Some citizens suggested that the spike in violent crime and increased patrols may be related.",
+      "keywords" : "public opinion, speculation, correlation",
+      "source_id" : "chunk-5194952b94506d10d930468c3afa370a"
+    }
+  }, {
+    "source" : "BACK-TO-SCHOOL SEASON",
+    "target" : "SCHOOL ENROLLMENT",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The back-to-school season is linked to rising school enrollment figures.",
+      "keywords" : "seasonal link, enrollment cycle",
+      "source_id" : "chunk-34a5bf2910c7e76f242f7a20ab2852fb"
+    }
+  }, {
+    "source" : "PASSERSBY",
+    "target" : "THE LIVELY TUNE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Passersby paused and dropped coins in response to the lively tune being played.",
+      "keywords" : "response, tipping, engagement",
+      "source_id" : "chunk-4559777794f3c86625cbfe7f80c96303"
+    }
+  }, {
+    "source" : "MARKETING CAMPAIGNS",
+    "target" : "UMBRELLA SALES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Marketing campaigns may also be driving umbrella purchases in addition to seasonal factors.",
+      "keywords" : "marketing influence, purchase drivers",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    }
+  }, {
+    "source" : "CITIZENS",
+    "target" : "POLICE PATROLS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Some citizens suggested that the increase in patrols and violent crime may be related.",
+      "keywords" : "public opinion, speculation, correlation",
+      "source_id" : "chunk-5194952b94506d10d930468c3afa370a"
+    }
+  }, {
+    "source" : "TRAFFIC ACCIDENTS",
+    "target" : "STREETLIGHT OUTAGES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Both surge together during storms, indicating a shared cause rather than direct causation between the two.",
+      "keywords" : "correlation, confounding, co-occurrence",
+      "source_id" : "chunk-e30b38f1d94a6a409bedf8ddaa97b9a5"
+    }
+  }, {
+    "source" : "PRINTER INK SALES",
+    "target" : "SCHOOL ENROLLMENT",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The two curves appear to match, but evidence for a causal relationship is lacking.",
+      "keywords" : "correlation, coinciding peaks, no causation",
+      "source_id" : "chunk-34a5bf2910c7e76f242f7a20ab2852fb"
+    }
+  }, {
+    "source" : "LOCAL STORES",
+    "target" : "PRINTER INK SALES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Local stores reported and recorded the spike in printer ink sales this fall.",
+      "keywords" : "sales reporting, spike",
+      "source_id" : "chunk-34a5bf2910c7e76f242f7a20ab2852fb"
+    }
+  }, {
+    "source" : "SALES SPIKE",
+    "target" : "UMBRELLA SALES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The sales spike is the notable event describing the increase in umbrella sales, remaining a talking point.",
+      "keywords" : "sales event, market attention",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    }
+  }, {
+    "source" : "PARENTS",
+    "target" : "PRINTER INK SALES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Parents are a consumer group driving demand for printer ink during the school season.",
+      "keywords" : "consumer demand, purchasing",
+      "source_id" : "chunk-34a5bf2910c7e76f242f7a20ab2852fb"
+    }
+  }, {
+    "source" : "THE CROWD",
+    "target" : "THE STREET",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The crowd gathered on the street, contributing to the palpable energy of the location.",
+      "keywords" : "gathering, energy, location",
+      "source_id" : "chunk-4559777794f3c86625cbfe7f80c96303"
+    }
+  }, {
+    "source" : "WEATHER",
+    "target" : "STREETLIGHT OUTAGES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Weather is identified as the confounding variable that affects the number of streetlight outages.",
+      "keywords" : "confounding variable, causal factor",
+      "source_id" : "chunk-e30b38f1d94a6a409bedf8ddaa97b9a5"
+    }
+  }, {
+    "source" : "STREET MUSICIAN",
+    "target" : "PASSERSBY",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The street musician's performance directly caused passersby to stop and tip.",
+      "keywords" : "entertainment, audience engagement, tipping",
+      "source_id" : "chunk-4559777794f3c86625cbfe7f80c96303"
+    }
+  }, {
+    "source" : "NEW STYLES",
+    "target" : "UMBRELLA SALES",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "New styles may play a contributing part in the umbrella sales spike alongside weather and marketing.",
+      "keywords" : "product innovation, sales factor",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    }
+  }, {
+    "source" : "PASSERSBY",
+    "target" : "THE CROWD",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Passersby and the crowd refer to the same or overlapping group of onlookers on the street.",
+      "keywords" : "audience, group, overlap",
+      "source_id" : "chunk-4559777794f3c86625cbfe7f80c96303"
+    }
+  }, {
+    "source" : "RAINY WEATHER",
+    "target" : "UMBRELLA SALES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The arrival of rainy weather is a likely primary driver of the increase in umbrella sales.",
+      "keywords" : "seasonal demand, weather-driven sales",
+      "source_id" : "chunk-e7613aa61e42f13cbdace233670b713b"
+    }
+  }, {
+    "source" : "TEACHERS",
+    "target" : "BACK-TO-SCHOOL SEASON",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Teachers attribute the increased demand for printing to the back-to-school season.",
+      "keywords" : "demand attribution, seasonal demand",
+      "source_id" : "chunk-34a5bf2910c7e76f242f7a20ab2852fb"
+    }
+  }, {
+    "source" : "STREET MUSICIAN",
+    "target" : "THE STREET",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The street musician performed on the street, which was bustling with activity.",
+      "keywords" : "location, performance, setting",
+      "source_id" : "chunk-4559777794f3c86625cbfe7f80c96303"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 33,
+    "edgeCount" : 41,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Conditional_Causation_451"
+  }
+}

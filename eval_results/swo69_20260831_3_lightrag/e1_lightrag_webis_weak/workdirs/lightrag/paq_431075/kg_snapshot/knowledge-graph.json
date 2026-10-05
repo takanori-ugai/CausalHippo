@@ -1,0 +1,65 @@
+{
+  "nodes" : [ {
+    "id" : "Tito Ortiz",
+    "entity_id" : "Tito Ortiz",
+    "entity_type" : "Person",
+    "description" : "American mixed martial artist",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Ken Shamrock",
+    "entity_id" : "Ken Shamrock",
+    "entity_type" : "Person",
+    "description" : "American mixed martial artist",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "UFC",
+    "entity_id" : "UFC",
+    "entity_type" : "Organization",
+    "description" : "Mixed martial arts organization",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Seminole Hard Rock Hotel and Casino",
+    "entity_id" : "Seminole Hard Rock Hotel and Casino",
+    "entity_type" : "Location",
+    "description" : "Hotel and casino in Hollywood, Florida",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Spike TV",
+    "entity_id" : "Spike TV",
+    "entity_type" : "Media Outlet",
+    "description" : "American cable and satellite television network",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  } ],
+  "edges" : [ {
+    "source" : "Tito Ortiz",
+    "target" : "Ken Shamrock",
+    "weight" : "2.0",
+    "description" : "Fighters met for a second time at UFC 61",
+    "keywords" : "mixed martial arts, UFC, mixed martial arts, UFC",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc<|#|>245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Tito Ortiz",
+    "tgt_id" : "Ken Shamrock"
+  }, {
+    "source" : "UFC",
+    "target" : "Seminole Hard Rock Hotel and Casino",
+    "weight" : "1.0",
+    "description" : "Event held at the hotel and casino",
+    "keywords" : "mixed martial arts event",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "UFC",
+    "tgt_id" : "Seminole Hard Rock Hotel and Casino"
+  }, {
+    "source" : "UFC",
+    "target" : "Spike TV",
+    "weight" : "1.0",
+    "description" : "Event broadcast on the network",
+    "keywords" : "mixed martial arts event",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "UFC",
+    "tgt_id" : "Spike TV"
+  } ],
+  "metadata" : {
+    "nodeCount" : 5,
+    "edgeCount" : 3
+  }
+}

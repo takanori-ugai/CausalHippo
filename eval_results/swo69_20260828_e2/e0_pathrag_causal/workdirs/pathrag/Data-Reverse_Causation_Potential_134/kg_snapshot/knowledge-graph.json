@@ -1,0 +1,444 @@
+{
+  "nodes" : {
+    "TEENAGERS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A demographic group experiencing a notable rise in daily screen time.",
+      "source_id" : "chunk-ecb7dceeee33a7e46a359b260d5d624b"
+    },
+    "THE OLD ALARM CLOCK" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A persistent alarm device whose ring fills the bedroom every morning, central to the family's daily wake-up routine.",
+      "source_id" : "chunk-ba6c0224d070e15b133e5fc36ec86124"
+    },
+    "THE GRASS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The grass in the yard that appears especially lush and green following sprinkler activation, following a familiar pattern.",
+      "source_id" : "chunk-ef25acf1202d81389ff836f8c76fa666"
+    },
+    "COFFEE SHOP" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Local businesses experiencing seating shortages and increased patronage, linked to reading habits and weather.",
+      "source_id" : "chunk-7c9a4c18627c374a1ee062543af6e40b"
+    },
+    "SLEEP DISTURBANCES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Ongoing disruptions in sleep that people experiencing depression frequently mention and observe.",
+      "source_id" : "chunk-c91623d2a635007ae543fe3de83513ea"
+    },
+    "COMMUNITY MEMBERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Local residents who observed and discussed correlations between bookstore sales and coffee shop seating shortages.",
+      "source_id" : "chunk-7c9a4c18627c374a1ee062543af6e40b"
+    },
+    "VARIOUS SCHOOLS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Schools across which the trend of increased screen time and eye strain appears uniform.",
+      "source_id" : "chunk-ecb7dceeee33a7e46a359b260d5d624b"
+    },
+    "THE MORNING ROUTINE" : {
+      "entity_type" : "EVENT",
+      "description" : "A daily recurring wake-up routine that went unquestioned for years, triggered by the alarm clock.",
+      "source_id" : "chunk-ba6c0224d070e15b133e5fc36ec86124"
+    },
+    "COLDER WEATHER" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A seasonal environmental condition that pushes people indoors, potentially confounding the observed correlation.",
+      "source_id" : "chunk-7c9a4c18627c374a1ee062543af6e40b"
+    },
+    "BOOKSTORE SALES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A sales metric at bookstores noted to be strong during months of pronounced coffee shop seating shortages.",
+      "source_id" : "chunk-7c9a4c18627c374a1ee062543af6e40b"
+    },
+    "THE GRASS APPEARING GREENER" : {
+      "entity_type" : "EVENT",
+      "description" : "The visual transformation of the grass to a lush green state shortly after the sprinklers run.",
+      "source_id" : "chunk-ef25acf1202d81389ff836f8c76fa666"
+    },
+    "EYE STRAIN" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A visual discomfort condition reported by students during classes.",
+      "source_id" : "chunk-ecb7dceeee33a7e46a359b260d5d624b"
+    },
+    "SLEEP PATTERNS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Patterns of sleep that become disrupted and erratic as depressive symptoms intensify.",
+      "source_id" : "chunk-c91623d2a635007ae543fe3de83513ea"
+    },
+    "THE TIME OF YEAR" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A seasonal factor that some residents cite as an alternative explanation for the grass's lush appearance.",
+      "source_id" : "chunk-ef25acf1202d81389ff836f8c76fa666"
+    },
+    "FAMILY MEMBERS" : {
+      "entity_type" : "PERSON",
+      "description" : "A group of individuals who wake up to the alarm, with some complaining and others grateful for the reminder.",
+      "source_id" : "chunk-ba6c0224d070e15b133e5fc36ec86124"
+    },
+    "DIGITAL BREAKS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Brief scheduled pauses from screen use introduced by educational institutions.",
+      "source_id" : "chunk-ecb7dceeee33a7e46a359b260d5d624b"
+    },
+    "EDUCATIONAL INSTITUTIONS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Institutions that introduce brief digital breaks in response to rising screen time concerns.",
+      "source_id" : "chunk-ecb7dceeee33a7e46a359b260d5d624b"
+    },
+    "DEPRESSION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A mental health condition characterized by prolonged low moods, worsening symptoms, and association with sleep disturbances.",
+      "source_id" : "chunk-c91623d2a635007ae543fe3de83513ea"
+    },
+    "OPTICIANS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Professionals reporting a slight increase in appointments related to eye strain.",
+      "source_id" : "chunk-ecb7dceeee33a7e46a359b260d5d624b"
+    },
+    "SMALL TALK AMONG NEIGHBORS" : {
+      "entity_type" : "EVENT",
+      "description" : "Casual conversations among residents that link the sprinkler activation to the grass's greenness.",
+      "source_id" : "chunk-ef25acf1202d81389ff836f8c76fa666"
+    },
+    "THE BEDROOM" : {
+      "entity_type" : "GEO",
+      "description" : "The location where the alarm clock rings and where family members wake up in the morning.",
+      "source_id" : "chunk-ba6c0224d070e15b133e5fc36ec86124"
+    },
+    "THE YARD" : {
+      "entity_type" : "GEO",
+      "description" : "A residential yard where the grass grows visibly greener after sprinkler activation.",
+      "source_id" : "chunk-ef25acf1202d81389ff836f8c76fa666"
+    },
+    "DEPRESSIVE SYMPTOMS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Symptoms of depression that worsen over time, correlating with increasingly erratic sleep.",
+      "source_id" : "chunk-c91623d2a635007ae543fe3de83513ea"
+    },
+    "STUDENTS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A group reporting increased eye strain during classes.",
+      "source_id" : "chunk-ecb7dceeee33a7e46a359b260d5d624b"
+    },
+    "NEIGHBORHOOD RESIDENTS" : {
+      "entity_type" : "PERSON",
+      "description" : "Residents who observe the yard, notice the grass transformation, and discuss the sprinkler system among themselves.",
+      "source_id" : "chunk-ef25acf1202d81389ff836f8c76fa666"
+    },
+    "THE ACTIVATION OF THE SPRINKLER SYSTEM" : {
+      "entity_type" : "EVENT",
+      "description" : "The weekly scheduled turning-on of the sprinklers that coincides with the grass appearing greener.",
+      "source_id" : "chunk-ef25acf1202d81389ff836f8c76fa666"
+    },
+    "READING HABITS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Increased reading behavior suggested to drive people to linger longer in coffee shops.",
+      "source_id" : "chunk-7c9a4c18627c374a1ee062543af6e40b"
+    },
+    "DAILY SCREEN TIME" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A trend of increasing screen usage among teenagers, frequently noted.",
+      "source_id" : "chunk-ecb7dceeee33a7e46a359b260d5d624b"
+    },
+    "SPRINKLER SYSTEM" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A watering system that activates at scheduled weekly intervals, credited by some residents for the grass's lushness.",
+      "source_id" : "chunk-ef25acf1202d81389ff836f8c76fa666"
+    }
+  },
+  "edges" : [ {
+    "source" : "NEIGHBORHOOD RESIDENTS",
+    "target" : "THE YARD",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Residents observe the yard's appearance and note the visual transformation of the grass.",
+      "keywords" : "observation, neighborhood, visual change",
+      "source_id" : "chunk-ef25acf1202d81389ff836f8c76fa666"
+    }
+  }, {
+    "source" : "SPRINKLER SYSTEM",
+    "target" : "THE GRASS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The sprinkler system waters the grass, which is perceived as the cause of its lush green appearance.",
+      "keywords" : "irrigation, growth, causation",
+      "source_id" : "chunk-ef25acf1202d81389ff836f8c76fa666"
+    }
+  }, {
+    "source" : "THE YARD",
+    "target" : "THE GRASS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The grass is located in the yard, which residents observe for visual changes.",
+      "keywords" : "location, containment",
+      "source_id" : "chunk-ef25acf1202d81389ff836f8c76fa666"
+    }
+  }, {
+    "source" : "VARIOUS SCHOOLS",
+    "target" : "EDUCATIONAL INSTITUTIONS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The trend appears uniform across various schools, which are educational institutions.",
+      "keywords" : "uniformity, institutional scope",
+      "source_id" : "chunk-ecb7dceeee33a7e46a359b260d5d624b"
+    }
+  }, {
+    "source" : "SLEEP DISTURBANCES",
+    "target" : "SLEEP PATTERNS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Sleep disturbances manifest as disrupted sleep patterns aligned with prolonged low moods.",
+      "keywords" : "disruption, pattern alignment",
+      "source_id" : "chunk-c91623d2a635007ae543fe3de83513ea"
+    }
+  }, {
+    "source" : "THE MORNING ROUTINE",
+    "target" : "THE BEDROOM",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The morning routine unfolds in the bedroom where everyone begins waking up.",
+      "keywords" : "setting, daily activity, space",
+      "source_id" : "chunk-ba6c0224d070e15b133e5fc36ec86124"
+    }
+  }, {
+    "source" : "THE ACTIVATION OF THE SPRINKLER SYSTEM",
+    "target" : "THE GRASS APPEARING GREENER",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The sprinkler activation coincides with the grass appearing greener, following a familiar weekly pattern.",
+      "keywords" : "coincidence, causation, pattern, timing",
+      "source_id" : "chunk-ef25acf1202d81389ff836f8c76fa666"
+    }
+  }, {
+    "source" : "COLDER WEATHER",
+    "target" : "COFFEE SHOP",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Colder weather increases coffee shop patronage as people seek warmth indoors, confounding the apparent link to reading.",
+      "keywords" : "confounding factor, patronage, indoor preference",
+      "source_id" : "chunk-7c9a4c18627c374a1ee062543af6e40b"
+    }
+  }, {
+    "source" : "READING HABITS",
+    "target" : "COFFEE SHOP",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Increased reading habits are suggested to drive people to linger longer in coffee shops, explaining the correlation.",
+      "keywords" : "causal hypothesis, lingering, patronage",
+      "source_id" : "chunk-7c9a4c18627c374a1ee062543af6e40b"
+    }
+  }, {
+    "source" : "TEENAGERS",
+    "target" : "STUDENTS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Teenagers and students are overlapping groups affected by the screen time and eye strain trend.",
+      "keywords" : "demographic overlap, target group",
+      "source_id" : "chunk-ecb7dceeee33a7e46a359b260d5d624b"
+    }
+  }, {
+    "source" : "NEIGHBORHOOD RESIDENTS",
+    "target" : "SMALL TALK AMONG NEIGHBORS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Residents engage in casual conversations linking the sprinklers and the grass's greenness.",
+      "keywords" : "conversation, social interaction, shared observation",
+      "source_id" : "chunk-ef25acf1202d81389ff836f8c76fa666"
+    }
+  }, {
+    "source" : "DEPRESSION",
+    "target" : "SLEEP DISTURBANCES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "People experiencing depression often mention ongoing sleep disturbances as a related issue.",
+      "keywords" : "symptom association, co-occurrence",
+      "source_id" : "chunk-c91623d2a635007ae543fe3de83513ea"
+    }
+  }, {
+    "source" : "DEPRESSION",
+    "target" : "DEPRESSIVE SYMPTOMS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Depression is manifested through depressive symptoms that can worsen over time.",
+      "keywords" : "clinical progression, symptom severity",
+      "source_id" : "chunk-c91623d2a635007ae543fe3de83513ea"
+    }
+  }, {
+    "source" : "FAMILY MEMBERS",
+    "target" : "THE MORNING ROUTINE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Family members follow the morning routine daily and speculate about its continuation without the alarm.",
+      "keywords" : "participation, routine, speculation",
+      "source_id" : "chunk-ba6c0224d070e15b133e5fc36ec86124"
+    }
+  }, {
+    "source" : "OPTICIANS",
+    "target" : "EYE STRAIN",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Opticians report a slight increase in appointments, likely linked to rising eye strain cases.",
+      "keywords" : "appointments, health impact, professional observation",
+      "source_id" : "chunk-ecb7dceeee33a7e46a359b260d5d624b"
+    }
+  }, {
+    "source" : "TEENAGERS",
+    "target" : "DAILY SCREEN TIME",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "A rise in daily screen time is frequently noted among teenagers.",
+      "keywords" : "screen usage, trend, demographic",
+      "source_id" : "chunk-ecb7dceeee33a7e46a359b260d5d624b"
+    }
+  }, {
+    "source" : "FAMILY MEMBERS",
+    "target" : "THE OLD ALARM CLOCK",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Family members react to the alarm with mixed emotions—some complain, others are grateful for the reminder.",
+      "keywords" : "reaction, mixed feelings, dependency",
+      "source_id" : "chunk-ba6c0224d070e15b133e5fc36ec86124"
+    }
+  }, {
+    "source" : "DAILY SCREEN TIME",
+    "target" : "EYE STRAIN",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Increased daily screen time is correlated with more reports of eye strain among students.",
+      "keywords" : "causal link, health risk, usage pattern",
+      "source_id" : "chunk-ecb7dceeee33a7e46a359b260d5d624b"
+    }
+  }, {
+    "source" : "SMALL TALK AMONG NEIGHBORS",
+    "target" : "SPRINKLER SYSTEM",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The small talk specifically discusses the sprinkler system as a factor in the grass's appearance.",
+      "keywords" : "discussion, attribution, casual reference",
+      "source_id" : "chunk-ef25acf1202d81389ff836f8c76fa666"
+    }
+  }, {
+    "source" : "NEIGHBORHOOD RESIDENTS",
+    "target" : "SPRINKLER SYSTEM",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Residents observe and discuss the sprinkler system's scheduled activation and its perceived effect on the yard.",
+      "keywords" : "observation, attribution, weekly schedule",
+      "source_id" : "chunk-ef25acf1202d81389ff836f8c76fa666"
+    }
+  }, {
+    "source" : "READING HABITS",
+    "target" : "BOOKSTORE SALES",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Reading habits are a plausible driver of bookstore sales, connecting the two observed trends.",
+      "keywords" : "causal link, purchasing, behavior",
+      "source_id" : "chunk-7c9a4c18627c374a1ee062543af6e40b"
+    }
+  }, {
+    "source" : "BOOKSTORE SALES",
+    "target" : "COFFEE SHOP",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Bookstore sales appear correlated with coffee shop seating shortages, suggesting a linked consumer behavior pattern.",
+      "keywords" : "correlation, consumer behavior, co-occurrence",
+      "source_id" : "chunk-7c9a4c18627c374a1ee062543af6e40b"
+    }
+  }, {
+    "source" : "COLDER WEATHER",
+    "target" : "READING HABITS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Colder weather pushes people indoors, reasonably increasing reading as an indoor activity.",
+      "keywords" : "confounding factor, indoor activity, seasonality",
+      "source_id" : "chunk-7c9a4c18627c374a1ee062543af6e40b"
+    }
+  }, {
+    "source" : "DEPRESSION",
+    "target" : "SLEEP PATTERNS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The relationship between depression and sleep patterns remains a subject of ongoing conversation and observation.",
+      "keywords" : "bidirectional link, ongoing discussion",
+      "source_id" : "chunk-c91623d2a635007ae543fe3de83513ea"
+    }
+  }, {
+    "source" : "COMMUNITY MEMBERS",
+    "target" : "BOOKSTORE SALES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Community members observed that bookstore sales are strong in months with pronounced coffee shop seating shortages.",
+      "keywords" : "observation, correlation, sales trend",
+      "source_id" : "chunk-7c9a4c18627c374a1ee062543af6e40b"
+    }
+  }, {
+    "source" : "THE TIME OF YEAR",
+    "target" : "THE GRASS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "The time of year is cited by some residents as an alternative explanation for the grass's lushness.",
+      "keywords" : "season, alternative explanation, natural cycle",
+      "source_id" : "chunk-ef25acf1202d81389ff836f8c76fa666"
+    }
+  }, {
+    "source" : "STUDENTS",
+    "target" : "EYE STRAIN",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "More students report experiencing eye strain during classes.",
+      "keywords" : "health concern, academic setting",
+      "source_id" : "chunk-ecb7dceeee33a7e46a359b260d5d624b"
+    }
+  }, {
+    "source" : "THE OLD ALARM CLOCK",
+    "target" : "THE MORNING ROUTINE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The alarm clock's persistent ring initiates and defines the daily morning routine for years.",
+      "keywords" : "trigger, daily routine, initiation",
+      "source_id" : "chunk-ba6c0224d070e15b133e5fc36ec86124"
+    }
+  }, {
+    "source" : "EDUCATIONAL INSTITUTIONS",
+    "target" : "DIGITAL BREAKS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Educational institutions introduce brief digital breaks to mitigate screen-related issues.",
+      "keywords" : "intervention, policy, screen reduction",
+      "source_id" : "chunk-ecb7dceeee33a7e46a359b260d5d624b"
+    }
+  }, {
+    "source" : "DEPRESSIVE SYMPTOMS",
+    "target" : "SLEEP PATTERNS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "As depressive symptoms worsen, sleep patterns become more erratic, showing a direct correlation.",
+      "keywords" : "correlation, worsening trajectory",
+      "source_id" : "chunk-c91623d2a635007ae543fe3de83513ea"
+    }
+  }, {
+    "source" : "DIGITAL BREAKS",
+    "target" : "EYE STRAIN",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Digital breaks are introduced as a response to the increase in eye strain among students.",
+      "keywords" : "mitigation, response, intervention",
+      "source_id" : "chunk-ecb7dceeee33a7e46a359b260d5d624b"
+    }
+  }, {
+    "source" : "THE OLD ALARM CLOCK",
+    "target" : "THE BEDROOM",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The alarm clock's ring fills the bedroom, making it the focal point of the waking experience.",
+      "keywords" : "location, sound, presence",
+      "source_id" : "chunk-ba6c0224d070e15b133e5fc36ec86124"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 29,
+    "edgeCount" : 32,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Reverse_Causation_Potential_134"
+  }
+}

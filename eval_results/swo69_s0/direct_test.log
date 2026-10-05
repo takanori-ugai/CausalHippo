@@ -1,0 +1,433 @@
+kotlin-logging: initializing... active logger factory: Slf4jLoggerFactory
+11:51:42,430 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found logback-core version 1.5.38
+11:51:42,431 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - No custom configurators were discovered as a service.
+11:51:42,431 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+11:51:42,432 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+11:51:42,436 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+11:51:42,439 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml]
+11:51:42,505 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Scan attribute set to true. Will scan for configuration file changes.
+11:51:42,506 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@15de0b3c - URL [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml] is not of type file
+11:51:42,508 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "INFO" substituted for "${ROOT_LOG_LEVEL:-INFO}"
+11:51:42,508 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL:-DEBUG}"
+11:51:42,508 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_LOG_LEVEL:-TRACE}"
+11:51:42,508 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL:-TRACE}"
+11:51:42,508 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL:-ERROR}"
+11:51:42,508 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL:-ERROR}"
+11:51:42,508 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL:-ERROR}"
+11:51:42,508 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL:-DEBUG}"
+11:51:42,508 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Missing watchable .xml or .properties files.
+11:51:42,508 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Watching .xml files requires that the main configuration file is reachable as a URL
+11:51:42,509 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Main configuration file URL: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml
+11:51:42,509 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - FileWatchList= {}
+11:51:42,510 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - URLWatchList= {}
+11:51:42,511 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+11:51:42,511 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+11:51:42,515 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+11:51:42,542 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - NOTE: Writing to the console can be slow. Try to avoid logging to the 
+11:51:42,542 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - console in production environments, especially in high volume systems.
+11:51:42,542 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also https://logback.qos.ch/codes.html#slowConsole
+11:51:42,543 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL}"
+11:51:42,543 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag] to DEBUG
+11:51:42,546 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag] to false
+11:51:42,546 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag]
+11:51:42,546 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_LOG_LEVEL}"
+11:51:42,546 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.neo4j] to TRACE
+11:51:42,546 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.neo4j] to false
+11:51:42,546 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.neo4j]
+11:51:42,546 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL}"
+11:51:42,546 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.neo4j.driver] to TRACE
+11:51:42,546 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.neo4j.driver] to false
+11:51:42,546 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[org.neo4j.driver]
+11:51:42,546 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL}"
+11:51:42,546 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.memory] to DEBUG
+11:51:42,546 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.memory] to false
+11:51:42,547 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.memory]
+11:51:42,547 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL}"
+11:51:42,547 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j] to ERROR
+11:51:42,547 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j] to false
+11:51:42,547 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j]
+11:51:42,547 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+11:51:42,547 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.okhttp] to ERROR
+11:51:42,547 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.okhttp] to false
+11:51:42,547 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.okhttp]
+11:51:42,547 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+11:51:42,547 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.openai] to ERROR
+11:51:42,547 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.openai] to false
+11:51:42,547 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.openai]
+11:51:42,547 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+11:51:42,547 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [okhttp3] to ERROR
+11:51:42,547 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [okhttp3] to false
+11:51:42,547 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[okhttp3]
+11:51:42,547 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL}"
+11:51:42,547 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.ai4j.openai4j] to ERROR
+11:51:42,547 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.ai4j.openai4j] to false
+11:51:42,547 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.ai4j.openai4j]
+11:51:42,547 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "INFO" substituted for "${ROOT_LOG_LEVEL}"
+11:51:42,547 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+11:51:42,547 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+11:51:42,547 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@3857f613 - End of configuration.
+11:51:42,547 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@198b6731 - Registering current configuration as safe fallback point
+11:51:42,552 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 116 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+WARNING: --use-unified-api=false keeps 'shared.eval.graph.MultiConditionGraphExperimentKt' on legacy condition runners. This compatibility path is planned for deprecation; prefer --use-unified-api=true.
+Running 1 conditions on 1 samples
+Parallelism: 1
+Unified API: false
+Unified persistence SPI: false
+Data: data/musique_experiment/musique_dev_balanced_30.jsonl
+Output: eval_results/swo69_s0/direct_test
+
+=== Condition: lightrag (LightRAG (lightrag)) ===
+2026-08-18 11:51:46.034 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=1, metadata=1
+2026-08-18 11:52:04.747 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=1, metadata=1
+2026-08-18 11:52:04.897 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=2, metadata=2
+2026-08-18 11:52:05.115 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=3, metadata=3
+2026-08-18 11:52:05.278 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=4, metadata=4
+2026-08-18 11:52:05.362 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=1, metadata=1
+2026-08-18 11:52:05.505 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=2, metadata=2
+2026-08-18 11:52:05.633 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=3, metadata=3
+2026-08-18 11:52:05.683 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=2, metadata=2
+2026-08-18 11:52:21.221 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=5, metadata=5
+2026-08-18 11:52:21.391 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=6, metadata=6
+2026-08-18 11:52:21.609 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=7, metadata=7
+2026-08-18 11:52:21.856 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=8, metadata=8
+2026-08-18 11:52:21.997 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=9, metadata=9
+2026-08-18 11:52:22.087 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=10, metadata=10
+2026-08-18 11:52:22.152 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=4, metadata=4
+2026-08-18 11:52:22.211 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=5, metadata=5
+2026-08-18 11:52:22.255 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=6, metadata=6
+2026-08-18 11:52:22.432 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=7, metadata=7
+2026-08-18 11:52:22.470 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=8, metadata=8
+2026-08-18 11:52:22.555 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=9, metadata=9
+2026-08-18 11:52:22.615 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=3, metadata=3
+2026-08-18 11:53:42.284 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=11, metadata=11
+2026-08-18 11:53:42.451 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=12, metadata=12
+2026-08-18 11:53:42.533 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=13, metadata=13
+2026-08-18 11:53:42.614 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=14, metadata=14
+2026-08-18 11:53:42.660 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=15, metadata=15
+2026-08-18 11:53:42.735 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=16, metadata=16
+2026-08-18 11:53:42.778 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=17, metadata=17
+2026-08-18 11:53:42.963 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=18, metadata=18
+2026-08-18 11:53:43.007 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=19, metadata=19
+2026-08-18 11:53:43.155 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=20, metadata=20
+2026-08-18 11:53:43.195 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=21, metadata=21
+2026-08-18 11:53:43.280 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=22, metadata=22
+2026-08-18 11:53:43.350 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=23, metadata=23
+2026-08-18 11:53:43.478 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=10, metadata=10
+2026-08-18 11:53:43.520 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=11, metadata=11
+2026-08-18 11:53:43.618 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=12, metadata=12
+2026-08-18 11:53:43.778 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=13, metadata=13
+2026-08-18 11:53:43.879 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=14, metadata=14
+2026-08-18 11:53:44.037 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=15, metadata=15
+2026-08-18 11:53:44.238 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=16, metadata=16
+2026-08-18 11:53:44.432 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=17, metadata=17
+2026-08-18 11:53:44.697 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=18, metadata=18
+2026-08-18 11:53:44.753 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=19, metadata=19
+2026-08-18 11:53:44.907 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=20, metadata=20
+2026-08-18 11:53:44.953 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=4, metadata=4
+2026-08-18 11:55:34.461 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=24, metadata=24
+2026-08-18 11:55:34.571 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=25, metadata=25
+2026-08-18 11:55:34.727 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=26, metadata=26
+2026-08-18 11:55:34.912 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=27, metadata=27
+2026-08-18 11:55:35.016 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=28, metadata=28
+2026-08-18 11:55:35.205 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=29, metadata=29
+2026-08-18 11:55:35.450 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=30, metadata=30
+2026-08-18 11:55:35.599 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=31, metadata=31
+2026-08-18 11:55:35.711 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=32, metadata=32
+2026-08-18 11:55:35.946 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=33, metadata=33
+2026-08-18 11:55:36.070 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=34, metadata=34
+2026-08-18 11:55:36.179 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=35, metadata=35
+2026-08-18 11:55:36.412 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=36, metadata=36
+2026-08-18 11:55:36.466 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=37, metadata=37
+2026-08-18 11:55:36.656 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=38, metadata=38
+2026-08-18 11:55:36.791 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=21, metadata=21
+2026-08-18 11:55:36.934 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=22, metadata=22
+2026-08-18 11:55:37.083 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=23, metadata=23
+2026-08-18 11:55:37.222 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=24, metadata=24
+2026-08-18 11:55:37.397 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=25, metadata=25
+2026-08-18 11:55:37.487 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=26, metadata=26
+2026-08-18 11:55:37.600 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=27, metadata=27
+2026-08-18 11:55:37.775 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=28, metadata=28
+2026-08-18 11:55:37.864 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=29, metadata=29
+2026-08-18 11:55:37.937 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=30, metadata=30
+2026-08-18 11:55:38.054 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=31, metadata=31
+2026-08-18 11:55:38.235 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=32, metadata=32
+2026-08-18 11:55:38.365 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=33, metadata=33
+2026-08-18 11:55:38.600 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=5, metadata=5
+2026-08-18 11:56:44.245 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=39, metadata=39
+2026-08-18 11:56:44.426 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=40, metadata=40
+2026-08-18 11:56:44.756 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=41, metadata=41
+2026-08-18 11:56:44.986 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=42, metadata=42
+2026-08-18 11:56:45.165 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=43, metadata=43
+2026-08-18 11:56:45.257 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=44, metadata=44
+2026-08-18 11:56:45.455 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=45, metadata=45
+2026-08-18 11:56:45.546 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=46, metadata=46
+2026-08-18 11:56:45.694 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=34, metadata=34
+2026-08-18 11:56:45.970 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=35, metadata=35
+2026-08-18 11:56:46.130 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=36, metadata=36
+2026-08-18 11:56:46.288 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=37, metadata=37
+2026-08-18 11:56:46.441 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=38, metadata=38
+2026-08-18 11:56:46.552 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=39, metadata=39
+2026-08-18 11:56:46.693 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=40, metadata=40
+2026-08-18 11:56:46.750 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=6, metadata=6
+2026-08-18 11:58:13.747 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=47, metadata=47
+2026-08-18 11:58:13.884 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=48, metadata=48
+2026-08-18 11:58:14.106 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=49, metadata=49
+2026-08-18 11:58:14.177 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=50, metadata=50
+2026-08-18 11:58:14.356 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=51, metadata=51
+2026-08-18 11:58:14.646 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=52, metadata=52
+2026-08-18 11:58:14.775 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=53, metadata=53
+2026-08-18 11:58:15.042 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=54, metadata=54
+2026-08-18 11:58:15.246 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=55, metadata=55
+2026-08-18 11:58:15.480 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=56, metadata=56
+2026-08-18 11:58:15.587 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=41, metadata=41
+2026-08-18 11:58:15.711 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=42, metadata=42
+2026-08-18 11:58:15.827 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=43, metadata=43
+2026-08-18 11:58:15.982 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=44, metadata=44
+2026-08-18 11:58:16.117 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=45, metadata=45
+2026-08-18 11:58:16.210 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=46, metadata=46
+2026-08-18 11:58:16.275 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=47, metadata=47
+2026-08-18 11:58:16.468 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=48, metadata=48
+2026-08-18 11:58:16.547 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=49, metadata=49
+2026-08-18 11:58:16.848 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=50, metadata=50
+2026-08-18 11:58:17.052 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=7, metadata=7
+2026-08-18 11:59:00.333 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=57, metadata=57
+2026-08-18 11:59:00.547 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=58, metadata=58
+2026-08-18 11:59:00.775 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=59, metadata=59
+2026-08-18 11:59:01.082 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=60, metadata=60
+2026-08-18 11:59:01.253 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=51, metadata=51
+2026-08-18 11:59:01.363 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=52, metadata=52
+2026-08-18 11:59:01.473 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=53, metadata=53
+2026-08-18 11:59:01.545 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=8, metadata=8
+2026-08-18 12:00:03.718 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=61, metadata=61
+2026-08-18 12:00:03.818 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=62, metadata=62
+2026-08-18 12:00:04.205 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=63, metadata=63
+2026-08-18 12:00:04.365 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=64, metadata=64
+2026-08-18 12:00:04.486 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=65, metadata=65
+2026-08-18 12:00:04.888 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=66, metadata=66
+2026-08-18 12:00:05.059 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=67, metadata=67
+2026-08-18 12:00:05.225 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=68, metadata=68
+2026-08-18 12:00:05.498 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=54, metadata=54
+2026-08-18 12:00:05.621 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=55, metadata=55
+2026-08-18 12:00:05.739 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=56, metadata=56
+2026-08-18 12:00:05.846 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=57, metadata=57
+2026-08-18 12:00:06.032 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=9, metadata=9
+2026-08-18 12:00:54.654 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=69, metadata=69
+2026-08-18 12:00:54.781 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=70, metadata=70
+2026-08-18 12:00:54.889 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=71, metadata=71
+2026-08-18 12:00:55.179 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=58, metadata=58
+2026-08-18 12:00:55.375 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=59, metadata=59
+2026-08-18 12:00:55.481 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=10, metadata=10
+2026-08-18 12:02:15.797 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=72, metadata=72
+2026-08-18 12:02:15.863 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=73, metadata=73
+2026-08-18 12:02:15.959 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=74, metadata=74
+2026-08-18 12:02:16.048 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=75, metadata=75
+2026-08-18 12:02:16.234 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=76, metadata=76
+2026-08-18 12:02:16.326 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=77, metadata=77
+2026-08-18 12:02:16.422 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=78, metadata=78
+2026-08-18 12:02:16.609 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=79, metadata=79
+2026-08-18 12:02:16.795 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=80, metadata=80
+2026-08-18 12:02:17.003 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=81, metadata=81
+2026-08-18 12:02:17.089 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=60, metadata=60
+2026-08-18 12:02:17.227 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=61, metadata=61
+2026-08-18 12:02:17.352 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=62, metadata=62
+2026-08-18 12:02:17.449 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=63, metadata=63
+2026-08-18 12:02:17.561 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=64, metadata=64
+2026-08-18 12:02:17.611 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=65, metadata=65
+2026-08-18 12:02:17.695 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=66, metadata=66
+2026-08-18 12:02:18.048 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=67, metadata=67
+2026-08-18 12:02:18.330 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=68, metadata=68
+2026-08-18 12:02:18.429 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=11, metadata=11
+2026-08-18 12:03:16.134 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=82, metadata=82
+2026-08-18 12:03:16.307 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=83, metadata=83
+2026-08-18 12:03:16.472 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=84, metadata=84
+2026-08-18 12:03:16.705 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=85, metadata=85
+2026-08-18 12:03:16.928 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=86, metadata=86
+2026-08-18 12:03:17.083 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=69, metadata=69
+2026-08-18 12:03:17.225 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=70, metadata=70
+2026-08-18 12:03:17.333 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=71, metadata=71
+2026-08-18 12:03:17.486 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=12, metadata=12
+2026-08-18 12:04:38.738 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=86, metadata=86
+2026-08-18 12:04:38.981 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=86, metadata=86
+2026-08-18 12:04:39.294 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=87, metadata=87
+2026-08-18 12:04:39.527 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=88, metadata=88
+2026-08-18 12:04:39.673 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=89, metadata=89
+2026-08-18 12:04:39.794 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=89, metadata=89
+2026-08-18 12:04:40.007 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=89, metadata=89
+2026-08-18 12:04:40.054 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=90, metadata=90
+2026-08-18 12:04:40.184 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=91, metadata=91
+2026-08-18 12:04:40.391 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=92, metadata=92
+2026-08-18 12:04:40.483 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=72, metadata=72
+2026-08-18 12:04:40.685 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=73, metadata=73
+2026-08-18 12:04:40.858 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=74, metadata=74
+2026-08-18 12:04:40.952 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=75, metadata=75
+2026-08-18 12:04:41.222 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=76, metadata=76
+2026-08-18 12:04:41.420 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=77, metadata=77
+2026-08-18 12:04:41.594 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=78, metadata=78
+2026-08-18 12:04:41.656 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=79, metadata=79
+2026-08-18 12:04:41.765 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=13, metadata=13
+2026-08-18 12:05:38.998 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=93, metadata=93
+2026-08-18 12:05:39.357 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=94, metadata=94
+2026-08-18 12:05:39.448 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=95, metadata=95
+2026-08-18 12:05:39.812 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=95, metadata=95
+2026-08-18 12:05:40.017 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=96, metadata=96
+2026-08-18 12:05:40.170 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=97, metadata=97
+2026-08-18 12:05:40.391 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=98, metadata=98
+2026-08-18 12:05:40.681 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=80, metadata=80
+2026-08-18 12:05:40.782 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=81, metadata=81
+2026-08-18 12:05:40.987 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=82, metadata=82
+2026-08-18 12:05:41.110 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=83, metadata=83
+2026-08-18 12:05:41.292 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=84, metadata=84
+2026-08-18 12:05:41.474 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=14, metadata=14
+2026-08-18 12:06:50.249 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=99, metadata=99
+2026-08-18 12:06:50.408 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=100, metadata=100
+2026-08-18 12:06:50.506 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=101, metadata=101
+2026-08-18 12:06:50.695 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=102, metadata=102
+2026-08-18 12:06:50.918 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=103, metadata=103
+2026-08-18 12:06:51.008 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=104, metadata=104
+2026-08-18 12:06:51.118 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=105, metadata=105
+2026-08-18 12:06:51.250 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=106, metadata=106
+2026-08-18 12:06:51.322 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=107, metadata=107
+2026-08-18 12:06:51.390 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=108, metadata=108
+2026-08-18 12:06:51.461 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=109, metadata=109
+2026-08-18 12:06:51.640 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=110, metadata=110
+2026-08-18 12:06:51.676 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=111, metadata=111
+2026-08-18 12:06:51.771 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=112, metadata=112
+2026-08-18 12:06:51.808 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=113, metadata=113
+2026-08-18 12:06:51.903 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=114, metadata=114
+2026-08-18 12:06:51.952 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=85, metadata=85
+2026-08-18 12:06:52.077 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=86, metadata=86
+2026-08-18 12:06:52.120 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=87, metadata=87
+2026-08-18 12:06:52.215 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=88, metadata=88
+2026-08-18 12:06:52.251 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=89, metadata=89
+2026-08-18 12:06:52.326 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=90, metadata=90
+2026-08-18 12:06:52.403 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=91, metadata=91
+2026-08-18 12:06:52.474 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=92, metadata=92
+2026-08-18 12:06:52.558 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=93, metadata=93
+2026-08-18 12:06:52.707 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=15, metadata=15
+2026-08-18 12:07:30.060 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=115, metadata=115
+2026-08-18 12:07:30.122 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=116, metadata=116
+2026-08-18 12:07:30.334 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=117, metadata=117
+2026-08-18 12:07:30.523 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=118, metadata=118
+2026-08-18 12:07:30.663 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=119, metadata=119
+2026-08-18 12:07:30.765 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=119, metadata=119
+2026-08-18 12:07:30.828 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=120, metadata=120
+2026-08-18 12:07:30.941 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=94, metadata=94
+2026-08-18 12:07:30.975 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=95, metadata=95
+2026-08-18 12:07:31.034 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=96, metadata=96
+2026-08-18 12:07:31.117 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=97, metadata=97
+2026-08-18 12:07:31.383 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=98, metadata=98
+2026-08-18 12:07:31.674 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=99, metadata=99
+2026-08-18 12:07:32.035 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=16, metadata=16
+2026-08-18 12:08:46.896 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=121, metadata=121
+2026-08-18 12:08:47.008 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=121, metadata=121
+2026-08-18 12:08:47.159 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=122, metadata=122
+2026-08-18 12:08:47.320 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=123, metadata=123
+2026-08-18 12:08:47.534 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=124, metadata=124
+2026-08-18 12:08:47.693 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=125, metadata=125
+2026-08-18 12:08:47.899 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=126, metadata=126
+2026-08-18 12:08:48.048 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=127, metadata=127
+2026-08-18 12:08:48.287 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=127, metadata=127
+2026-08-18 12:08:48.494 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=128, metadata=128
+2026-08-18 12:08:48.689 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=129, metadata=129
+2026-08-18 12:08:48.894 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=130, metadata=130
+2026-08-18 12:08:49.008 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=131, metadata=131
+2026-08-18 12:08:49.065 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=132, metadata=132
+2026-08-18 12:08:49.112 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=133, metadata=133
+2026-08-18 12:08:49.295 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=134, metadata=134
+2026-08-18 12:08:49.478 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=135, metadata=135
+2026-08-18 12:08:49.552 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=136, metadata=136
+2026-08-18 12:08:49.639 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=100, metadata=100
+2026-08-18 12:08:49.779 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=101, metadata=101
+2026-08-18 12:08:49.901 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=102, metadata=102
+2026-08-18 12:08:50.064 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=103, metadata=103
+2026-08-18 12:08:50.197 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=104, metadata=104
+2026-08-18 12:08:50.310 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=105, metadata=105
+2026-08-18 12:08:50.501 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=106, metadata=106
+2026-08-18 12:08:50.659 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=107, metadata=107
+2026-08-18 12:08:50.777 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=108, metadata=108
+2026-08-18 12:08:51.007 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=109, metadata=109
+2026-08-18 12:08:51.129 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=110, metadata=110
+2026-08-18 12:08:51.362 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=17, metadata=17
+2026-08-18 12:09:20.022 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=136, metadata=136
+2026-08-18 12:09:20.074 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=136, metadata=136
+2026-08-18 12:09:20.153 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=137, metadata=137
+2026-08-18 12:09:20.337 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=138, metadata=138
+2026-08-18 12:09:20.450 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=139, metadata=139
+2026-08-18 12:09:20.611 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=140, metadata=140
+2026-08-18 12:09:20.808 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=111, metadata=111
+2026-08-18 12:09:20.927 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=112, metadata=112
+2026-08-18 12:09:21.036 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=113, metadata=113
+2026-08-18 12:09:21.148 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=114, metadata=114
+2026-08-18 12:09:21.186 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=18, metadata=18
+2026-08-18 12:09:46.990 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=141, metadata=141
+2026-08-18 12:09:47.115 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=142, metadata=142
+2026-08-18 12:09:47.207 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=142, metadata=142
+2026-08-18 12:09:47.312 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=143, metadata=143
+2026-08-18 12:09:47.459 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=144, metadata=144
+2026-08-18 12:09:47.693 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=145, metadata=145
+2026-08-18 12:09:47.823 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=145, metadata=145
+2026-08-18 12:09:48.023 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=115, metadata=115
+2026-08-18 12:09:48.128 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=116, metadata=116
+2026-08-18 12:09:48.210 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=117, metadata=117
+2026-08-18 12:09:48.245 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=118, metadata=118
+2026-08-18 12:09:48.316 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=119, metadata=119
+2026-08-18 12:09:48.365 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=19, metadata=19
+2026-08-18 12:10:07.275 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=146, metadata=146
+2026-08-18 12:10:07.343 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=146, metadata=146
+2026-08-18 12:10:07.474 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=146, metadata=146
+2026-08-18 12:10:07.530 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=147, metadata=147
+2026-08-18 12:10:07.641 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=120, metadata=120
+2026-08-18 12:10:07.869 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=120, metadata=120
+2026-08-18 12:10:08.057 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=121, metadata=121
+2026-08-18 12:10:08.220 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [chunks_vdb/default] Upserted 1 items. Total vectors=20, metadata=20
+2026-08-18 12:10:34.154 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=148, metadata=148
+2026-08-18 12:10:34.240 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=149, metadata=149
+2026-08-18 12:10:34.325 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=150, metadata=150
+2026-08-18 12:10:34.410 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=151, metadata=151
+2026-08-18 12:10:34.512 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=152, metadata=152
+2026-08-18 12:10:34.625 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=153, metadata=153
+2026-08-18 12:10:34.766 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=154, metadata=154
+2026-08-18 12:10:34.838 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=155, metadata=155
+2026-08-18 12:10:34.910 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=156, metadata=156
+2026-08-18 12:10:34.968 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Upserted 1 items. Total vectors=157, metadata=157
+2026-08-18 12:10:35.110 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=122, metadata=122
+2026-08-18 12:10:35.154 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=123, metadata=123
+2026-08-18 12:10:35.229 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=124, metadata=124
+2026-08-18 12:10:35.281 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=125, metadata=125
+2026-08-18 12:10:35.373 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=126, metadata=126
+2026-08-18 12:10:35.419 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=127, metadata=127
+2026-08-18 12:10:35.555 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=128, metadata=128
+2026-08-18 12:10:35.607 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=129, metadata=129
+2026-08-18 12:10:35.695 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Upserted 1 items. Total vectors=130, metadata=130
+2026-08-18 12:10:41.659 [DefaultDispatcher-worker-1] INFO  lightrag.operate.QueryProcessor - Query nodes: Rooster Cogburn, True Grit, cast member (top_k:5, cosine:0.2)
+2026-08-18 12:10:41.732 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [entities_vdb/default] Query='Rooster Cogburn, True Grit, cast member', topK=5, vectors=157, metadata=157
+2026-08-18 12:10:41.867 [DefaultDispatcher-worker-1] INFO  lightrag.operate.QueryProcessor - Local query: 5 entities, 9 relations
+2026-08-18 12:10:41.868 [DefaultDispatcher-worker-1] INFO  lightrag.operate.QueryProcessor - Query edges: acting roles, film characters, cast member (top_k:5, cosine:0.2)
+2026-08-18 12:10:41.998 [DefaultDispatcher-worker-1] DEBUG l.kg.memory.InMemoryVectorStorage - [relationships_vdb/default] Query='acting roles, film characters, cast member', topK=5, vectors=130, metadata=130
+2026-08-18 12:10:42.004 [DefaultDispatcher-worker-1] INFO  lightrag.operate.QueryProcessor - Global query: 6 entities, 4 relations
+2026-08-18 12:10:42.014 [DefaultDispatcher-worker-1] DEBUG lightrag.operate.QueryProcessor - Finding text chunks from 11 entities
+2026-08-18 12:10:42.015 [DefaultDispatcher-worker-1] DEBUG lightrag.operate.QueryProcessor - Finding text chunks from 13 relations
+2026-08-18 12:11:01.121 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found placeholder platform from: cpu-linux-x86_64:2.7.1
+2026-08-18 12:11:02.916 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - PyTorch graph executor optimizer is enabled, this may impact your inference latency and throughput. See: https://docs.djl.ai/master/docs/development/inference_performance_optimization.html#graph-executor-optimization
+2026-08-18 12:11:02.943 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - Number of inter-op threads is 96
+2026-08-18 12:11:02.943 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - Number of intra-op threads is 16
+2026-08-18 12:11:03.548 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found matching platform from: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/native/lib/tokenizers.properties
+2026-08-18 12:11:04.681 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (13, 384)
+2026-08-18 12:11:04.681 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-18 12:11:05.601 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (3, 384)
+2026-08-18 12:11:05.601 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-18 12:11:06.459 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (3, 384)
+2026-08-18 12:11:06.459 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-18 12:11:07.311 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (6, 384)
+2026-08-18 12:11:07.311 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-18 12:11:08.179 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-18 12:11:08.179 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-18 12:11:09.046 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-18 12:11:09.046 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-18 12:11:09.937 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (3, 384)
+2026-08-18 12:11:09.938 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+lightrag: processed 1/1
+Wrote 1 rows -> eval_results/swo69_s0/direct_test/per_question/lightrag.jsonl
+
+Finished. Aggregate CSV can be produced by scripts/aggregate_experiment_results.py

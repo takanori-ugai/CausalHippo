@@ -1,0 +1,752 @@
+{
+  "nodes" : [ {
+    "id" : "Vintage furniture sales",
+    "entity_id" : "Vintage furniture sales",
+    "entity_type" : "Concept",
+    "description" : "A boom in the selling of vintage furniture pieces that has occurred simultaneously with the rise of minimalist design trends.",
+    "source_id" : "c5de0d1e4c5fac6cc4a19d8597572e38"
+  }, {
+    "id" : "Minimalist home design",
+    "entity_id" : "Minimalist home design",
+    "entity_type" : "Concept",
+    "description" : "A home design trend characterized by simplicity that has gained significant momentum in recent times.",
+    "source_id" : "c5de0d1e4c5fac6cc4a19d8597572e38"
+  }, {
+    "id" : "Design magazines",
+    "entity_id" : "Design magazines",
+    "entity_type" : "Organization",
+    "description" : "Publications that frequently highlight both vintage furniture and minimalist home design trends, encouraging consumers to blend the two styles.",
+    "source_id" : "c5de0d1e4c5fac6cc4a19d8597572e38"
+  }, {
+    "id" : "Consumers",
+    "entity_id" : "Consumers",
+    "entity_type" : "Person",
+    "description" : "Individuals who are encouraged by design magazines to blend vintage furniture with minimalist decor in their homes.",
+    "source_id" : "c5de0d1e4c5fac6cc4a19d8597572e38"
+  }, {
+    "id" : "Design preferences",
+    "entity_id" : "Design preferences",
+    "entity_type" : "Concept",
+    "description" : "Shifts in consumer taste and aesthetic preferences that independently shape both the vintage furniture sales boom and the minimalist home design trend.",
+    "source_id" : "c5de0d1e4c5fac6cc4a19d8597572e38"
+  }, {
+    "id" : "Vintage furniture",
+    "entity_id" : "Vintage furniture",
+    "entity_type" : "Concept",
+    "description" : "Furniture pieces from earlier eras that are experiencing increased demand and sales.",
+    "source_id" : "c5de0d1e4c5fac6cc4a19d8597572e38"
+  }, {
+    "id" : "Minimalist decor",
+    "entity_id" : "Minimalist decor",
+    "entity_type" : "Concept",
+    "description" : "A style of home decoration emphasizing simplicity and clean lines, often paired with vintage pieces by consumers.",
+    "source_id" : "c5de0d1e4c5fac6cc4a19d8597572e38"
+  }, {
+    "id" : "Office Building",
+    "entity_id" : "Office Building",
+    "entity_type" : "Location",
+    "description" : "The building where the fire alarm incident occurred on Monday morning.",
+    "source_id" : "81a394f1fb903627e04865488d258b60"
+  }, {
+    "id" : "Fire Alarm",
+    "entity_id" : "Fire Alarm",
+    "entity_type" : "Event",
+    "description" : "A loud ringing that echoed through an apartment complex downtown just minutes after the power outage.",
+    "source_id" : "89ecaf6b4d69f980f1ffd79ab3c84242"
+  }, {
+    "id" : "Construction Work",
+    "entity_id" : "Construction Work",
+    "entity_type" : "Event",
+    "description" : "Renovation work that began on the upper floors of the office building, producing noise and vibrations.",
+    "source_id" : "81a394f1fb903627e04865488d258b60"
+  }, {
+    "id" : "Employees",
+    "entity_id" : "Employees",
+    "entity_type" : "Person",
+    "description" : "Workers in the office building who quickly evacuated after the fire alarm sounded.",
+    "source_id" : "81a394f1fb903627e04865488d258b60"
+  }, {
+    "id" : "Faulty Sensor",
+    "entity_id" : "Faulty Sensor",
+    "entity_type" : "Concept",
+    "description" : "The defective component that was later identified as the actual cause of the fire alarm alert.",
+    "source_id" : "81a394f1fb903627e04865488d258b60"
+  }, {
+    "id" : "Upper Floors",
+    "entity_id" : "Upper Floors",
+    "entity_type" : "Location",
+    "description" : "The area of the office building where the construction work was taking place.",
+    "source_id" : "81a394f1fb903627e04865488d258b60"
+  }, {
+    "id" : "Community",
+    "entity_id" : "Community",
+    "entity_type" : "Organization",
+    "description" : "A group of local residents who observe seasonal patterns in daylight hours and outdoor activities over the months.",
+    "source_id" : "7109120c48beb96838e1133e128ba02c"
+  }, {
+    "id" : "Daylight hours",
+    "entity_id" : "Daylight hours",
+    "entity_type" : "Concept",
+    "description" : "The length of daylight that increases over the months, which neighbors and event organizers associate with outdoor activity.",
+    "source_id" : "7109120c48beb96838e1133e128ba02c"
+  }, {
+    "id" : "Picnic events",
+    "entity_id" : "Picnic events",
+    "entity_type" : "Event",
+    "description" : "Planned outdoor gatherings held in local parks, which increase in frequency as daylight hours lengthen.",
+    "source_id" : "7109120c48beb96838e1133e128ba02c"
+  }, {
+    "id" : "Local parks",
+    "entity_id" : "Local parks",
+    "entity_type" : "Location",
+    "description" : "Public outdoor spaces where planned picnic events are organized and held.",
+    "source_id" : "7109120c48beb96838e1133e128ba02c"
+  }, {
+    "id" : "Families",
+    "entity_id" : "Families",
+    "entity_type" : "Organization",
+    "description" : "Groups of people who organize outdoor gatherings, suggested by neighbors to be inspired by longer days.",
+    "source_id" : "7109120c48beb96838e1133e128ba02c"
+  }, {
+    "id" : "Event organizers",
+    "entity_id" : "Event organizers",
+    "entity_type" : "Organization",
+    "description" : "Individuals or groups who plan and schedule outdoor events, often linking their schedules to changing sunlight.",
+    "source_id" : "7109120c48beb96838e1133e128ba02c"
+  }, {
+    "id" : "Summer",
+    "entity_id" : "Summer",
+    "entity_type" : "Concept",
+    "description" : "The season whose arrival naturally connects both the lengthening of daylight hours and the increase in planned picnic events.",
+    "source_id" : "7109120c48beb96838e1133e128ba02c"
+  }, {
+    "id" : "Pharmacies",
+    "entity_id" : "Pharmacies",
+    "entity_type" : "Organization",
+    "description" : "Retail establishments that stock up on allergy medication every spring in anticipation of increased demand.",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48"
+  }, {
+    "id" : "Allergy Medication",
+    "entity_id" : "Allergy Medication",
+    "entity_type" : "Concept",
+    "description" : "Medication used to treat pollen-related allergies, whose sales rise significantly during the spring season.",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48"
+  }, {
+    "id" : "Flower Festivals",
+    "entity_id" : "Flower Festivals",
+    "entity_type" : "Event",
+    "description" : "Annual festivals hosted by the city during spring, coinciding with the peak pollen season.",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48"
+  }, {
+    "id" : "Festival Organizers",
+    "entity_id" : "Festival Organizers",
+    "entity_type" : "Person",
+    "description" : "Individuals responsible for planning and running the annual flower festivals, who observe a jump in activity during the spring period.",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48"
+  }, {
+    "id" : "Pharmacists",
+    "entity_id" : "Pharmacists",
+    "entity_type" : "Person",
+    "description" : "Professionals working in pharmacies who observe a significant increase in allergy medication sales during spring.",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48"
+  }, {
+    "id" : "Visitors",
+    "entity_id" : "Visitors",
+    "entity_type" : "Person",
+    "description" : "People who attend the flower festivals and often incorrectly assume that the festival prompts the increased need for allergy medication.",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48"
+  }, {
+    "id" : "Pollen",
+    "entity_id" : "Pollen",
+    "entity_type" : "Concept",
+    "description" : "The environmental factor that surges in spring, serving as the common cause behind both increased allergy medication demand and the blooming that enables flower festivals.",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48"
+  }, {
+    "id" : "Spring",
+    "entity_id" : "Spring",
+    "entity_type" : "Concept",
+    "description" : "The season during which both allergy medication sales and flower festival attendance rise simultaneously due to the pollen surge.",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48"
+  }, {
+    "id" : "Medication Sales",
+    "entity_id" : "Medication Sales",
+    "entity_type" : "Concept",
+    "description" : "The measurable rise in purchases of allergy medication during the spring season.",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48"
+  }, {
+    "id" : "Festival Attendance",
+    "entity_id" : "Festival Attendance",
+    "entity_type" : "Concept",
+    "description" : "The measurable rise in the number of people attending flower festivals during the spring season.",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48"
+  }, {
+    "id" : "Seasonal Overlap",
+    "entity_id" : "Seasonal Overlap",
+    "entity_type" : "Concept",
+    "description" : "The simultaneous but non-causal co-occurrence of rising medication sales and festival attendance, both driven by the same pollen surge rather than by each other.",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48"
+  }, {
+    "id" : "Power Outage",
+    "entity_id" : "Power Outage",
+    "entity_type" : "Event",
+    "description" : "An unexpected blackout that occurred last Friday evening, leaving many neighborhoods in darkness.",
+    "source_id" : "89ecaf6b4d69f980f1ffd79ab3c84242"
+  }, {
+    "id" : "Apartment Complex Downtown",
+    "entity_id" : "Apartment Complex Downtown",
+    "entity_type" : "Location",
+    "description" : "An apartment complex located in the downtown area where the fire alarm rang and residents gathered outside.",
+    "source_id" : "89ecaf6b4d69f980f1ffd79ab3c84242"
+  }, {
+    "id" : "Residents",
+    "entity_id" : "Residents",
+    "entity_type" : "Person",
+    "description" : "People living in the apartment complex who gathered outside and speculated about the cause of the power outage and fire alarm activation.",
+    "source_id" : "89ecaf6b4d69f980f1ffd79ab3c84242"
+  }, {
+    "id" : "Electrical Fault",
+    "entity_id" : "Electrical Fault",
+    "entity_type" : "Concept",
+    "description" : "A possible cause speculated by residents to explain both the power outage and the fire alarm activation.",
+    "source_id" : "89ecaf6b4d69f980f1ffd79ab3c84242"
+  }, {
+    "id" : "Alarm System",
+    "entity_id" : "Alarm System",
+    "entity_type" : "Concept",
+    "description" : "The system in the apartment complex that activated in the immediate aftermath of the power outage.",
+    "source_id" : "89ecaf6b4d69f980f1ffd79ab3c84242"
+  }, {
+    "id" : "The City",
+    "entity_id" : "The City",
+    "entity_type" : "Location",
+    "description" : "The city that experienced the unexpected power outage on a Friday evening.",
+    "source_id" : "89ecaf6b4d69f980f1ffd79ab3c84242"
+  }, {
+    "id" : "Bike sharing program",
+    "entity_id" : "Bike sharing program",
+    "entity_type" : "Concept",
+    "description" : "A public transportation service whose usage has increased in recent times, leading to speculation about its impact on urban noise levels.",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5"
+  }, {
+    "id" : "Local noise complaints",
+    "entity_id" : "Local noise complaints",
+    "entity_type" : "Concept",
+    "description" : "Complaints filed by residents regarding noise in their communities, which have increased alongside bike sharing program usage.",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5"
+  }, {
+    "id" : "Community boards",
+    "entity_id" : "Community boards",
+    "entity_type" : "Organization",
+    "description" : "Local governance bodies that have begun questioning whether the influx of bikes is making the city louder.",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5"
+  }, {
+    "id" : "City council",
+    "entity_id" : "City council",
+    "entity_type" : "Organization",
+    "description" : "A municipal governing body where the temporal correlation between bike usage and noise complaints is frequently cited in discussions.",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5"
+  }, {
+    "id" : "Urban noise",
+    "entity_id" : "Urban noise",
+    "entity_type" : "Concept",
+    "description" : "The overall noise level in a city, which is more directly impacted by construction, nightlife, and traffic volumes rather than bike sharing.",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5"
+  }, {
+    "id" : "Construction",
+    "entity_id" : "Construction",
+    "entity_type" : "Concept",
+    "description" : "A factor that directly impacts urban noise levels, cited as a more significant contributor than bike sharing.",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5"
+  }, {
+    "id" : "Nightlife",
+    "entity_id" : "Nightlife",
+    "entity_type" : "Concept",
+    "description" : "Evening and nighttime social activities in a city that directly impact urban noise levels.",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5"
+  }, {
+    "id" : "Traffic volumes",
+    "entity_id" : "Traffic volumes",
+    "entity_type" : "Concept",
+    "description" : "The volume of vehicular traffic in a city, identified as a direct contributor to urban noise.",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5"
+  }, {
+    "id" : "Temporal correlation",
+    "entity_id" : "Temporal correlation",
+    "entity_type" : "Concept",
+    "description" : "A statistical relationship over time between increasing bike sharing usage and rising noise complaints, often cited in city council discussions but not indicative of causation.",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5"
+  } ],
+  "edges" : [ {
+    "source" : "Design magazines",
+    "target" : "Vintage furniture sales",
+    "weight" : "1.0",
+    "description" : "Design magazines frequently highlight the boom in vintage furniture sales as part of their editorial content.",
+    "keywords" : "highlight, promote, coverage",
+    "source_id" : "c5de0d1e4c5fac6cc4a19d8597572e38",
+    "src_id" : "Design magazines",
+    "tgt_id" : "Vintage furniture sales"
+  }, {
+    "source" : "Design magazines",
+    "target" : "Minimalist home design",
+    "weight" : "1.0",
+    "description" : "Design magazines frequently highlight the growing momentum of minimalist home design trends.",
+    "keywords" : "highlight, promote, coverage",
+    "source_id" : "c5de0d1e4c5fac6cc4a19d8597572e38",
+    "src_id" : "Design magazines",
+    "tgt_id" : "Minimalist home design"
+  }, {
+    "source" : "Design magazines",
+    "target" : "Consumers",
+    "weight" : "1.0",
+    "description" : "Design magazines encourage consumers to blend vintage furniture with minimalist decor in their homes.",
+    "keywords" : "encourage, influence, blend styles",
+    "source_id" : "c5de0d1e4c5fac6cc4a19d8597572e38",
+    "src_id" : "Design magazines",
+    "tgt_id" : "Consumers"
+  }, {
+    "source" : "Vintage furniture sales",
+    "target" : "Design preferences",
+    "weight" : "1.0",
+    "description" : "Shifts in design preferences independently shape the boom in vintage furniture sales, without being caused by minimalist trends.",
+    "keywords" : "shape, influence, independent driver",
+    "source_id" : "c5de0d1e4c5fac6cc4a19d8597572e38",
+    "src_id" : "Design preferences",
+    "tgt_id" : "Vintage furniture sales"
+  }, {
+    "source" : "Vintage furniture sales",
+    "target" : "Minimalist home design",
+    "weight" : "1.0",
+    "description" : "The boom in vintage furniture sales and the rise of minimalist home design are occurring simultaneously but are independently shaped by design preference shifts rather than one causing the other.",
+    "keywords" : "simultaneous, independent, co-occurrence",
+    "source_id" : "c5de0d1e4c5fac6cc4a19d8597572e38",
+    "src_id" : "Vintage furniture sales",
+    "tgt_id" : "Minimalist home design"
+  }, {
+    "source" : "Minimalist home design",
+    "target" : "Design preferences",
+    "weight" : "1.0",
+    "description" : "Shifts in design preferences independently shape the momentum of minimalist home design, without being caused by vintage furniture trends.",
+    "keywords" : "shape, influence, independent driver",
+    "source_id" : "c5de0d1e4c5fac6cc4a19d8597572e38",
+    "src_id" : "Design preferences",
+    "tgt_id" : "Minimalist home design"
+  }, {
+    "source" : "Consumers",
+    "target" : "Vintage furniture",
+    "weight" : "1.0",
+    "description" : "Consumers purchase vintage furniture pieces and are encouraged to incorporate them into their home decor.",
+    "keywords" : "purchase, blend, style",
+    "source_id" : "c5de0d1e4c5fac6cc4a19d8597572e38",
+    "src_id" : "Consumers",
+    "tgt_id" : "Vintage furniture"
+  }, {
+    "source" : "Consumers",
+    "target" : "Minimalist decor",
+    "weight" : "1.0",
+    "description" : "Consumers adopt minimalist decor styles and are encouraged to blend them with vintage pieces.",
+    "keywords" : "adopt, blend, style",
+    "source_id" : "c5de0d1e4c5fac6cc4a19d8597572e38",
+    "src_id" : "Consumers",
+    "tgt_id" : "Minimalist decor"
+  }, {
+    "source" : "Fire Alarm",
+    "target" : "Office Building",
+    "weight" : "1.0",
+    "description" : "The fire alarm rang out across the office building on Monday morning.",
+    "keywords" : "triggered, rang out, location",
+    "source_id" : "81a394f1fb903627e04865488d258b60",
+    "src_id" : "Fire Alarm",
+    "tgt_id" : "Office Building"
+  }, {
+    "source" : "Fire Alarm",
+    "target" : "Faulty Sensor",
+    "weight" : "1.0",
+    "description" : "The faulty sensor was identified as the true cause of the fire alarm alert, with no connection to the ongoing renovations.",
+    "keywords" : "caused, actual cause, malfunction",
+    "source_id" : "81a394f1fb903627e04865488d258b60",
+    "src_id" : "Faulty Sensor",
+    "tgt_id" : "Fire Alarm"
+  }, {
+    "source" : "Fire Alarm",
+    "target" : "Construction Work",
+    "weight" : "1.0",
+    "description" : "Employees believed the noise and vibrations from the construction work triggered the alarm due to the suspicious timing, though no actual connection existed.",
+    "keywords" : "perceived cause, timing, suspicion",
+    "source_id" : "81a394f1fb903627e04865488d258b60",
+    "src_id" : "Construction Work",
+    "tgt_id" : "Fire Alarm"
+  }, {
+    "source" : "Fire Alarm",
+    "target" : "Apartment Complex Downtown",
+    "weight" : "1.0",
+    "description" : "The fire alarm rang loudly and echoed through the apartment complex downtown.",
+    "keywords" : "rang, echoed, location",
+    "source_id" : "89ecaf6b4d69f980f1ffd79ab3c84242",
+    "src_id" : "Fire Alarm",
+    "tgt_id" : "Apartment Complex Downtown"
+  }, {
+    "source" : "Fire Alarm",
+    "target" : "Power Outage",
+    "weight" : "1.0",
+    "description" : "The fire alarm activated just minutes after the power outage, in its immediate aftermath.",
+    "keywords" : "timing, aftermath, sequence",
+    "source_id" : "89ecaf6b4d69f980f1ffd79ab3c84242",
+    "src_id" : "Fire Alarm",
+    "tgt_id" : "Power Outage"
+  }, {
+    "source" : "Fire Alarm",
+    "target" : "Electrical Fault",
+    "weight" : "1.0",
+    "description" : "The electrical fault was speculated to be a possible cause of the fire alarm activation.",
+    "keywords" : "possible cause, fault, activation",
+    "source_id" : "89ecaf6b4d69f980f1ffd79ab3c84242",
+    "src_id" : "Electrical Fault",
+    "tgt_id" : "Fire Alarm"
+  }, {
+    "source" : "Fire Alarm",
+    "target" : "Alarm System",
+    "weight" : "1.0",
+    "description" : "The alarm system activated, producing the loud ringing of the fire alarm.",
+    "keywords" : "activated, triggered, system",
+    "source_id" : "89ecaf6b4d69f980f1ffd79ab3c84242",
+    "src_id" : "Alarm System",
+    "tgt_id" : "Fire Alarm"
+  }, {
+    "source" : "Office Building",
+    "target" : "Employees",
+    "weight" : "1.0",
+    "description" : "The employees quickly evacuated the office building after the fire alarm sounded.",
+    "keywords" : "evacuated, response, occupants",
+    "source_id" : "81a394f1fb903627e04865488d258b60",
+    "src_id" : "Employees",
+    "tgt_id" : "Office Building"
+  }, {
+    "source" : "Construction Work",
+    "target" : "Upper Floors",
+    "weight" : "1.0",
+    "description" : "The construction work began on the upper floors of the office building.",
+    "keywords" : "location, renovation, work area",
+    "source_id" : "81a394f1fb903627e04865488d258b60",
+    "src_id" : "Construction Work",
+    "tgt_id" : "Upper Floors"
+  }, {
+    "source" : "Construction Work",
+    "target" : "Employees",
+    "weight" : "1.0",
+    "description" : "The employees drew the wrong conclusion, attributing the fire alarm to the construction work rather than the faulty sensor.",
+    "keywords" : "misattribution, wrong conclusion, belief",
+    "source_id" : "81a394f1fb903627e04865488d258b60",
+    "src_id" : "Employees",
+    "tgt_id" : "Construction Work"
+  }, {
+    "source" : "Community",
+    "target" : "Daylight hours",
+    "weight" : "1.0",
+    "description" : "The community observes that daylight hours lengthen over the months.",
+    "keywords" : "observation, seasonal change",
+    "source_id" : "7109120c48beb96838e1133e128ba02c",
+    "src_id" : "Community",
+    "tgt_id" : "Daylight hours"
+  }, {
+    "source" : "Community",
+    "target" : "Picnic events",
+    "weight" : "1.0",
+    "description" : "The community observes that more planned picnic events occur in local parks as daylight hours lengthen.",
+    "keywords" : "observation, correlation",
+    "source_id" : "7109120c48beb96838e1133e128ba02c",
+    "src_id" : "Community",
+    "tgt_id" : "Picnic events"
+  }, {
+    "source" : "Daylight hours",
+    "target" : "Summer",
+    "weight" : "1.0",
+    "description" : "The lengthening of daylight hours is naturally connected to the arrival of summer.",
+    "keywords" : "seasonal, natural connection",
+    "source_id" : "7109120c48beb96838e1133e128ba02c",
+    "src_id" : "Daylight hours",
+    "tgt_id" : "Summer"
+  }, {
+    "source" : "Daylight hours",
+    "target" : "Picnic events",
+    "weight" : "1.0",
+    "description" : "Both the lengthening of daylight and the increase in picnic events are connected to summer rather than being directly causal to each other.",
+    "keywords" : "correlation, not causation, confounding",
+    "source_id" : "7109120c48beb96838e1133e128ba02c",
+    "src_id" : "Daylight hours",
+    "tgt_id" : "Picnic events"
+  }, {
+    "source" : "Picnic events",
+    "target" : "Local parks",
+    "weight" : "1.0",
+    "description" : "Picnic events are planned and held in local parks.",
+    "keywords" : "venue, location",
+    "source_id" : "7109120c48beb96838e1133e128ba02c",
+    "src_id" : "Picnic events",
+    "tgt_id" : "Local parks"
+  }, {
+    "source" : "Picnic events",
+    "target" : "Families",
+    "weight" : "1.0",
+    "description" : "Families are suggested by neighbors to organize outdoor gatherings, potentially inspired by longer days.",
+    "keywords" : "organize, outdoor gatherings",
+    "source_id" : "7109120c48beb96838e1133e128ba02c",
+    "src_id" : "Families",
+    "tgt_id" : "Picnic events"
+  }, {
+    "source" : "Picnic events",
+    "target" : "Event organizers",
+    "weight" : "1.0",
+    "description" : "Event organizers link their schedules for picnic events to the changing sunlight.",
+    "keywords" : "scheduling, planning",
+    "source_id" : "7109120c48beb96838e1133e128ba02c",
+    "src_id" : "Event organizers",
+    "tgt_id" : "Picnic events"
+  }, {
+    "source" : "Picnic events",
+    "target" : "Summer",
+    "weight" : "1.0",
+    "description" : "The increase in planned picnic events is naturally connected to the arrival of summer.",
+    "keywords" : "seasonal, natural connection",
+    "source_id" : "7109120c48beb96838e1133e128ba02c",
+    "src_id" : "Picnic events",
+    "tgt_id" : "Summer"
+  }, {
+    "source" : "Pharmacies",
+    "target" : "Allergy Medication",
+    "weight" : "1.0",
+    "description" : "Pharmacies stock up on allergy medication every spring in anticipation of increased customer demand.",
+    "keywords" : "stocking, spring, demand",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48",
+    "src_id" : "Pharmacies",
+    "tgt_id" : "Allergy Medication"
+  }, {
+    "source" : "Allergy Medication",
+    "target" : "Pharmacists",
+    "weight" : "1.0",
+    "description" : "Pharmacists observe a significant increase in allergy medication sales during the spring season.",
+    "keywords" : "sales, demand, spring",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48",
+    "src_id" : "Pharmacists",
+    "tgt_id" : "Allergy Medication"
+  }, {
+    "source" : "Allergy Medication",
+    "target" : "Pollen",
+    "weight" : "1.0",
+    "description" : "The surge in pollen during spring is the underlying cause of increased demand for allergy medication.",
+    "keywords" : "cause, demand, allergy",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48",
+    "src_id" : "Pollen",
+    "tgt_id" : "Allergy Medication"
+  }, {
+    "source" : "Flower Festivals",
+    "target" : "Spring",
+    "weight" : "1.0",
+    "description" : "Flower festivals are hosted annually during the spring season, coinciding with peak pollen levels.",
+    "keywords" : "timing, annual, seasonal",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48",
+    "src_id" : "Flower Festivals",
+    "tgt_id" : "Spring"
+  }, {
+    "source" : "Flower Festivals",
+    "target" : "Festival Organizers",
+    "weight" : "1.0",
+    "description" : "Festival organizers plan and manage the annual flower festivals and observe a jump in activity during the spring period.",
+    "keywords" : "planning, management, activity",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48",
+    "src_id" : "Festival Organizers",
+    "tgt_id" : "Flower Festivals"
+  }, {
+    "source" : "Flower Festivals",
+    "target" : "Visitors",
+    "weight" : "1.0",
+    "description" : "Visitors attend the flower festivals and often assume the festival prompts the increased need for allergy medication.",
+    "keywords" : "attendance, participation, assumption",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48",
+    "src_id" : "Visitors",
+    "tgt_id" : "Flower Festivals"
+  }, {
+    "source" : "Flower Festivals",
+    "target" : "Pollen",
+    "weight" : "1.0",
+    "description" : "The same pollen surge that drives allergy symptoms is associated with the blooming period that enables flower festivals.",
+    "keywords" : "cause, blooming, enabling",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48",
+    "src_id" : "Pollen",
+    "tgt_id" : "Flower Festivals"
+  }, {
+    "source" : "Spring",
+    "target" : "Seasonal Overlap",
+    "weight" : "1.0",
+    "description" : "The seasonal overlap of medication sales and festival attendance occurs specifically during the spring season.",
+    "keywords" : "seasonality, co-occurrence, timing",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48",
+    "src_id" : "Seasonal Overlap",
+    "tgt_id" : "Spring"
+  }, {
+    "source" : "Visitors",
+    "target" : "Medication Sales",
+    "weight" : "1.0",
+    "description" : "Visitors often incorrectly assume that the flower festival prompts the increased need for allergy medication, misattributing a seasonal correlation as causation.",
+    "keywords" : "misattribution, false causality, assumption",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48",
+    "src_id" : "Visitors",
+    "tgt_id" : "Medication Sales"
+  }, {
+    "source" : "Pollen",
+    "target" : "Medication Sales",
+    "weight" : "1.0",
+    "description" : "Pollen is the common underlying cause driving the rise in allergy medication sales during spring.",
+    "keywords" : "common cause, driver, spring",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48",
+    "src_id" : "Pollen",
+    "tgt_id" : "Medication Sales"
+  }, {
+    "source" : "Pollen",
+    "target" : "Festival Attendance",
+    "weight" : "1.0",
+    "description" : "Pollen is the common underlying cause associated with the conditions that drive festival attendance during spring.",
+    "keywords" : "common cause, driver, spring",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48",
+    "src_id" : "Pollen",
+    "tgt_id" : "Festival Attendance"
+  }, {
+    "source" : "Medication Sales",
+    "target" : "Festival Attendance",
+    "weight" : "1.0",
+    "description" : "The simultaneous rise in medication sales and festival attendance is a seasonal overlap, not a causal relationship between the two.",
+    "keywords" : "seasonal overlap, non-causal, simultaneous",
+    "source_id" : "d4b4410f0185f4a34c983eefbb0aaf48",
+    "src_id" : "Medication Sales",
+    "tgt_id" : "Festival Attendance"
+  }, {
+    "source" : "Power Outage",
+    "target" : "The City",
+    "weight" : "1.0",
+    "description" : "The unexpected power outage occurred in the city, leaving many neighborhoods in darkness.",
+    "keywords" : "occurred, blackout, city",
+    "source_id" : "89ecaf6b4d69f980f1ffd79ab3c84242",
+    "src_id" : "Power Outage",
+    "tgt_id" : "The City"
+  }, {
+    "source" : "Power Outage",
+    "target" : "Electrical Fault",
+    "weight" : "1.0",
+    "description" : "The electrical fault was speculated to be a possible cause of the power outage.",
+    "keywords" : "possible cause, fault, blackout",
+    "source_id" : "89ecaf6b4d69f980f1ffd79ab3c84242",
+    "src_id" : "Electrical Fault",
+    "tgt_id" : "Power Outage"
+  }, {
+    "source" : "Power Outage",
+    "target" : "Alarm System",
+    "weight" : "1.0",
+    "description" : "The alarm system activated in the immediate aftermath of the power outage.",
+    "keywords" : "aftermath, timing, activation",
+    "source_id" : "89ecaf6b4d69f980f1ffd79ab3c84242",
+    "src_id" : "Alarm System",
+    "tgt_id" : "Power Outage"
+  }, {
+    "source" : "Apartment Complex Downtown",
+    "target" : "Residents",
+    "weight" : "1.0",
+    "description" : "Residents gathered outside the apartment complex downtown to speculate about the incidents.",
+    "keywords" : "gathered, outside, speculated",
+    "source_id" : "89ecaf6b4d69f980f1ffd79ab3c84242",
+    "src_id" : "Residents",
+    "tgt_id" : "Apartment Complex Downtown"
+  }, {
+    "source" : "Residents",
+    "target" : "Electrical Fault",
+    "weight" : "1.0",
+    "description" : "Residents speculated that an electrical fault was the cause of both the power outage and the fire alarm activation.",
+    "keywords" : "speculated, cause, theory",
+    "source_id" : "89ecaf6b4d69f980f1ffd79ab3c84242",
+    "src_id" : "Residents",
+    "tgt_id" : "Electrical Fault"
+  }, {
+    "source" : "Bike sharing program",
+    "target" : "Local noise complaints",
+    "weight" : "1.0",
+    "description" : "Recent statistics show that as bike sharing program usage has increased, local noise complaints have also increased, though the two are not causally connected.",
+    "keywords" : "correlation, usage increase, statistics",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5",
+    "src_id" : "Bike sharing program",
+    "tgt_id" : "Local noise complaints"
+  }, {
+    "source" : "Bike sharing program",
+    "target" : "Community boards",
+    "weight" : "1.0",
+    "description" : "Community boards have started to wonder whether the influx of bikes from the bike sharing program is making the city louder.",
+    "keywords" : "questioning, noise impact, speculation",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5",
+    "src_id" : "Community boards",
+    "tgt_id" : "Bike sharing program"
+  }, {
+    "source" : "Bike sharing program",
+    "target" : "Temporal correlation",
+    "weight" : "1.0",
+    "description" : "The temporal correlation refers to the simultaneous increase in bike sharing program usage and noise complaints over time.",
+    "keywords" : "statistical link, time-based",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5",
+    "src_id" : "Temporal correlation",
+    "tgt_id" : "Bike sharing program"
+  }, {
+    "source" : "Bike sharing program",
+    "target" : "Urban noise",
+    "weight" : "1.0",
+    "description" : "The metrics of bike sharing usage and urban noise are not causally connected, despite their temporal correlation.",
+    "keywords" : "no causation, independent metrics",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5",
+    "src_id" : "Bike sharing program",
+    "tgt_id" : "Urban noise"
+  }, {
+    "source" : "Local noise complaints",
+    "target" : "Temporal correlation",
+    "weight" : "1.0",
+    "description" : "The temporal correlation captures the concurrent rise in local noise complaints alongside other urban changes.",
+    "keywords" : "statistical link, time-based",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5",
+    "src_id" : "Temporal correlation",
+    "tgt_id" : "Local noise complaints"
+  }, {
+    "source" : "City council",
+    "target" : "Temporal correlation",
+    "weight" : "1.0",
+    "description" : "The temporal correlation between bike usage and noise complaints is often cited in city council discussions.",
+    "keywords" : "discussion, citation, debate",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5",
+    "src_id" : "City council",
+    "tgt_id" : "Temporal correlation"
+  }, {
+    "source" : "Urban noise",
+    "target" : "Construction",
+    "weight" : "1.0",
+    "description" : "Urban noise is more directly impacted by construction activities than by bike sharing.",
+    "keywords" : "direct impact, noise source",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5",
+    "src_id" : "Urban noise",
+    "tgt_id" : "Construction"
+  }, {
+    "source" : "Urban noise",
+    "target" : "Nightlife",
+    "weight" : "1.0",
+    "description" : "Urban noise is more directly impacted by nightlife activities than by bike sharing.",
+    "keywords" : "direct impact, noise source",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5",
+    "src_id" : "Urban noise",
+    "tgt_id" : "Nightlife"
+  }, {
+    "source" : "Urban noise",
+    "target" : "Traffic volumes",
+    "weight" : "1.0",
+    "description" : "Urban noise is more directly impacted by traffic volumes than by bike sharing.",
+    "keywords" : "direct impact, noise source",
+    "source_id" : "2c6f6489489dd91b03a68533e63e4eb5",
+    "src_id" : "Urban noise",
+    "tgt_id" : "Traffic volumes"
+  } ],
+  "metadata" : {
+    "nodeCount" : 46,
+    "edgeCount" : 52
+  }
+}

@@ -1,0 +1,41 @@
+=== [SWO69] run dir: eval_results/swo69_20260831_3_lightrag (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 10:12:50 START lightrag_e0_lightrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 11:36:30 END   lightrag_e0_lightrag_musique rc=0 wall=5020s ===
+=== [SWO69] 11:36:34 START lightrag_e0_lightrag_causal (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 12:03:52 END   lightrag_e0_lightrag_causal rc=0 wall=1638s ===
+=== [SWO69] 12:03:53 START lightrag_e0_lightrag_webis (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 13:49:50 END   lightrag_e0_lightrag_webis rc=0 wall=6357s ===
+=== [SWO69] 13:49:52 START lightrag_e1_lightrag_musique_mid (model_index=gemma4:e4b model_answer=qwen3.8:27b) ===
+=== [SWO69] 16:01:07 END   lightrag_e1_lightrag_musique_mid rc=0 wall=7875s ===
+=== [SWO69] 16:01:11 START lightrag_e1_lightrag_causal_mid (model_index=gemma4:e4b model_answer=qwen3.8:27b) ===
+=== [SWO69] 16:36:58 END   lightrag_e1_lightrag_causal_mid rc=0 wall=2147s ===
+=== [SWO69] 16:37:00 START lightrag_e1_lightrag_webis_mid (model_index=gemma4:e4b model_answer=qwen3.8:27b) ===
+=== [SWO69] 19:08:13 END   lightrag_e1_lightrag_webis_mid rc=0 wall=9073s ===
+=== [SWO69] 19:08:15 START lightrag_e1_lightrag_musique_weak (model_index=llama3.2:3b model_answer=qwen3.8:27b) ===
+=== [SWO69] 19:51:40 END   lightrag_e1_lightrag_musique_weak rc=0 wall=2605s ===
+=== [SWO69] 19:51:43 START lightrag_e1_lightrag_causal_weak (model_index=llama3.2:3b model_answer=qwen3.8:27b) ===
+=== [SWO69] 20:04:41 END   lightrag_e1_lightrag_causal_weak rc=0 wall=778s ===
+=== [SWO69] 20:04:43 START lightrag_e1_lightrag_webis_weak (model_index=llama3.2:3b model_answer=qwen3.8:27b) ===
+=== [SWO69] 21:12:12 END   lightrag_e1_lightrag_webis_weak rc=0 wall=4049s ===
+=== [SWO69] 21:12:14 E2  lightrag_musique_p0: perturbing 15 snapshots ===
+=== [SWO69] 21:24:11 END   e2/lightrag_musique_p0 rc=0 wall=716s ===
+=== [SWO69] 21:24:14 E2  lightrag_musique_p1_10: perturbing 15 snapshots ===
+=== [SWO69] 21:36:02 END   e2/lightrag_musique_p1_10 rc=0 wall=707s ===
+=== [SWO69] 21:36:05 E2  lightrag_musique_p1_30: perturbing 15 snapshots ===
+=== [SWO69] 21:46:55 END   e2/lightrag_musique_p1_30 rc=0 wall=649s ===
+=== [SWO69] 21:46:58 E2  lightrag_musique_p1_50: perturbing 15 snapshots ===
+=== [SWO69] 21:57:03 END   e2/lightrag_musique_p1_50 rc=0 wall=604s ===
+=== [SWO69] 21:57:06 E2  lightrag_musique_p2_10: perturbing 15 snapshots ===
+=== [SWO69] 22:07:50 END   e2/lightrag_musique_p2_10 rc=0 wall=643s ===
+=== [SWO69] 22:07:53 E2  lightrag_musique_p2_30: perturbing 15 snapshots ===
+=== [SWO69] 22:17:03 END   e2/lightrag_musique_p2_30 rc=0 wall=549s ===
+=== [SWO69] 22:17:05 E2  lightrag_musique_p3: perturbing 15 snapshots ===
+=== [SWO69] 22:28:03 END   e2/lightrag_musique_p3 rc=0 wall=657s ===
+=== [SWO69] 22:28:06 E2  lightrag_musique_p4: perturbing 15 snapshots ===
+=== [SWO69] 22:40:08 END   e2/lightrag_musique_p4 rc=0 wall=721s ===
+=== [SWO69] 22:40:11 E2  lightrag_musique_p5_10: perturbing 15 snapshots ===
+=== [SWO69] 22:52:44 END   e2/lightrag_musique_p5_10 rc=0 wall=752s ===
+=== [SWO69] 22:52:48 E2  lightrag_musique_p5_30: perturbing 15 snapshots ===
+=== [SWO69] 23:06:31 END   e2/lightrag_musique_p5_30 rc=0 wall=822s ===
+=== [SWO69] 23:06:35 SKIP e2/hipporag — no snapshots dir under eval_results/swo69_20260831_3_lightrag/e0_hipporag_musique ===
+=== [SWO69] 23:06:41 DONE mode=all ===

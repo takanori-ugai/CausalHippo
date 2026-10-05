@@ -32,10 +32,12 @@ import kotlinx.serialization.json.contentOrNull
 import lightrag.core.AddonConfig
 import lightrag.core.LightRAG
 import lightrag.llm.LLMFactory
+import lightrag.operate.chunkingByTokenSize
 import lightrag.operate.removeThinkTags
 import lightrag.services.IngestionService
 import lightrag.services.QueryService
 import lightrag.services.StorageManager
+import lightrag.utils.computeMd5
 import pathrag.PathRAG
 import pathrag.eval.RagasContextExtractor
 import ragas.metrics.collections.ResponseGroundednessMetric
@@ -846,6 +848,37 @@ private fun createLightRagRunner(
                             rag.storageManager.textChunks.upsert(rows)
                             // InMemoryVectorStorage re-embeds `content` on upsert.
                             rag.storageManager.chunksVdb.upsert(rows)
+                        }
+                    }
+                }
+                // Older E2 snapshots may contain only knowledge-graph.json.
+                // Keep the perturbed graph, but restore the original documents
+                // as chunk records so hybrid queries can return contexts for
+                // RH@K/CiC evaluation.
+                if (!chunksFile.toFile().isFile) {
+                    val fallbackRows =
+                        docs
+                            .flatMapIndexed { docIndex, content ->
+                                chunkingByTokenSize(
+                                    tokenizer = tokenizer,
+                                    decoder = decoder,
+                                    content = content,
+                                    chunkTokenSize = lightSettings?.chunkTokenSize ?: 1200,
+                                    chunkOverlapTokenSize = lightSettings?.chunkOverlapTokenSize ?: 100,
+                                    tiktokenModel = "cl100k_base",
+                                ).map { chunk ->
+                                    computeMd5(chunk.content) to
+                                        mapOf(
+                                            "content" to chunk.content,
+                                            "full_doc_id" to "e2-doc-$docIndex",
+                                            "file_path" to "e2-doc-$docIndex",
+                                        )
+                                }
+                            }.toMap()
+                    if (fallbackRows.isNotEmpty()) {
+                        runBlocking {
+                            rag.storageManager.textChunks.upsert(fallbackRows)
+                            rag.storageManager.chunksVdb.upsert(fallbackRows)
                         }
                     }
                 }

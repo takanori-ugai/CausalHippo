@@ -1,0 +1,26 @@
+=== [SWO69] run dir: eval_results/swo69_20260831_lightrag (reps=1 limit=15 datasets=musique) ===
+=== [SWO69] 02:30:58 START lightrag_e0_lightrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 03:55:31 END   lightrag_e0_lightrag_musique rc=0 wall=5073s ===
+=== [SWO69] 03:55:38 DONE mode=e0 ===
+=== [SWO69] run dir: eval_results/swo69_20260831_lightrag (reps=1 limit=15 datasets=musique) ===
+=== [SWO69] 03:55:38 E2  lightrag_musique_p0: perturbing 15 snapshots ===
+=== [SWO69] 04:07:03 END   e2/lightrag_musique_p0 rc=0 wall=684s ===
+=== [SWO69] 04:07:05 E2  lightrag_musique_p1_10: perturbing 15 snapshots ===
+=== [SWO69] 04:18:20 END   e2/lightrag_musique_p1_10 rc=0 wall=674s ===
+=== [SWO69] 04:18:21 E2  lightrag_musique_p1_30: perturbing 15 snapshots ===
+=== [SWO69] 04:28:27 END   e2/lightrag_musique_p1_30 rc=0 wall=605s ===
+=== [SWO69] 04:28:32 E2  lightrag_musique_p1_50: perturbing 15 snapshots ===
+=== [SWO69] 04:38:32 END   e2/lightrag_musique_p1_50 rc=0 wall=599s ===
+=== [SWO69] 04:38:37 E2  lightrag_musique_p2_10: perturbing 15 snapshots ===
+=== [SWO69] 04:50:00 END   e2/lightrag_musique_p2_10 rc=0 wall=682s ===
+=== [SWO69] 04:50:02 E2  lightrag_musique_p2_30: perturbing 15 snapshots ===
+=== [SWO69] 04:58:49 END   e2/lightrag_musique_p2_30 rc=0 wall=526s ===
+=== [SWO69] 04:58:50 E2  lightrag_musique_p3: perturbing 15 snapshots ===
+=== [SWO69] 05:09:30 END   e2/lightrag_musique_p3 rc=0 wall=639s ===
+=== [SWO69] 05:09:32 E2  lightrag_musique_p4: perturbing 15 snapshots ===
+=== [SWO69] 05:20:40 END   e2/lightrag_musique_p4 rc=0 wall=667s ===
+=== [SWO69] 05:20:42 E2  lightrag_musique_p5_10: perturbing 15 snapshots ===
+=== [SWO69] 05:32:29 END   e2/lightrag_musique_p5_10 rc=0 wall=706s ===
+=== [SWO69] 05:32:31 E2  lightrag_musique_p5_30: perturbing 15 snapshots ===
+=== [SWO69] 05:45:26 END   e2/lightrag_musique_p5_30 rc=0 wall=774s ===
+=== [SWO69] 05:45:28 SKIP e2/hipporag — jar lacks the RAG-runner e2 hook (rebuild required, see SWO69/REBUILD.md) ===

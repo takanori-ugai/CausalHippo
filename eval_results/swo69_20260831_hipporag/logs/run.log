@@ -1,0 +1,49 @@
+=== [SWO69] run dir: eval_results/swo69_20260831_hipporag (reps=1 limit=15 datasets=musique) ===
+=== [SWO69] 01:19:56 START hipporag_e0_hipporag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 02:34:59 END   hipporag_e0_hipporag_musique rc=0 wall=4503s ===
+=== [SWO69] 02:35:04 WARN correlation_analysis on aggregate failed ===
+=== [SWO69] 02:35:04 DONE mode=e0 ===
+=== [SWO69] run dir: eval_results/swo69_20260831_hipporag (reps=1 limit=15 datasets=musique) ===
+=== [SWO69] 03:21:11 SKIP e2/lightrag — no kg_snapshot under eval_results/swo69_20260831_hipporag/e0_lightrag_musique (run E0 first) ===
+=== [SWO69] 03:21:11 SKIP e2/hipporag — jar lacks the RAG-runner e2 hook (rebuild required, see SWO69/REBUILD.md) ===
+=== [SWO69] 03:21:11 DONE mode=e2 ===
+=== [SWO69] run dir: eval_results/swo69_20260831_hipporag (reps=1 limit=15 datasets=musique) ===
+=== [SWO69] 04:01:32 SKIP e2/lightrag — no kg_snapshot under eval_results/swo69_20260831_hipporag/e0_lightrag_musique (run E0 first) ===
+=== [SWO69] 04:01:32 SKIP e2/hipporag — jar lacks the RAG-runner e2 hook (rebuild required, see SWO69/REBUILD.md) ===
+=== [SWO69] 04:01:32 DONE mode=e2 ===
+=== [SWO69] run dir: eval_results/swo69_20260831_hipporag (reps=1 limit=15 datasets=musique) ===
+=== [SWO69] 04:07:49 SKIP e2/lightrag — no kg_snapshot under eval_results/swo69_20260831_hipporag/e0_lightrag_musique (run E0 first) ===
+=== [SWO69] 04:07:49 SKIP e2/hipporag — jar lacks the RAG-runner e2 hook (rebuild required, see SWO69/REBUILD.md) ===
+=== [SWO69] 04:07:49 DONE mode=e2 ===
+=== [SWO69] run dir: eval_results/swo69_20260831_hipporag (reps=1 limit=15 datasets=musique) ===
+=== [SWO69] 04:10:42 SKIP e2/lightrag — no kg_snapshot under eval_results/swo69_20260831_hipporag/e0_lightrag_musique (run E0 first) ===
+=== [SWO69] 04:10:42 SKIP e2/hipporag — jar lacks the RAG-runner e2 hook (rebuild required, see SWO69/REBUILD.md) ===
+=== [SWO69] 04:10:42 DONE mode=e2 ===
+=== [SWO69] run dir: eval_results/swo69_20260831_hipporag (reps=1 limit=15 datasets=musique) ===
+=== [SWO69] 04:15:24 SKIP e2/lightrag — no kg_snapshot under eval_results/swo69_20260831_hipporag/e0_lightrag_musique (run E0 first) ===
+=== [SWO69] 04:15:24 E2  hipporag_musique_p0: perturbing 15 snapshots ===
+=== [SWO69] 04:16:25 END   e2/hipporag_musique_p0 rc=130 wall=58s ===
+=== [SWO69] 04:16:25 E2  hipporag_musique_p1_10: perturbing 15 snapshots ===
+=== [SWO69] run dir: eval_results/swo69_20260831_hipporag (reps=1 limit=15 datasets=musique) ===
+=== [SWO69] 04:27:09 SKIP e2/lightrag — no kg_snapshot under eval_results/swo69_20260831_hipporag/e0_lightrag_musique (run E0 first) ===
+=== [SWO69] 04:27:10 E2  hipporag_musique_p0: perturbing 15 snapshots ===
+=== [SWO69] 04:32:33 END   e2/hipporag_musique_p0 rc=0 wall=320s ===
+=== [SWO69] 04:32:35 E2  hipporag_musique_p1_10: perturbing 15 snapshots ===
+=== [SWO69] 04:37:26 END   e2/hipporag_musique_p1_10 rc=0 wall=288s ===
+=== [SWO69] 04:37:28 E2  hipporag_musique_p1_30: perturbing 15 snapshots ===
+=== [SWO69] 04:42:21 END   e2/hipporag_musique_p1_30 rc=0 wall=290s ===
+=== [SWO69] 04:42:22 E2  hipporag_musique_p1_50: perturbing 15 snapshots ===
+=== [SWO69] 04:47:16 END   e2/hipporag_musique_p1_50 rc=0 wall=291s ===
+=== [SWO69] 04:47:18 E2  hipporag_musique_p2_10: perturbing 15 snapshots ===
+=== [SWO69] 04:52:11 END   e2/hipporag_musique_p2_10 rc=0 wall=290s ===
+=== [SWO69] 04:52:12 E2  hipporag_musique_p2_30: perturbing 15 snapshots ===
+=== [SWO69] 04:57:08 END   e2/hipporag_musique_p2_30 rc=0 wall=293s ===
+=== [SWO69] 04:57:10 E2  hipporag_musique_p3: perturbing 15 snapshots ===
+=== [SWO69] 05:02:07 END   e2/hipporag_musique_p3 rc=0 wall=294s ===
+=== [SWO69] 05:02:08 E2  hipporag_musique_p4: perturbing 15 snapshots ===
+=== [SWO69] 05:06:58 END   e2/hipporag_musique_p4 rc=0 wall=287s ===
+=== [SWO69] 05:06:59 E2  hipporag_musique_p5_10: perturbing 15 snapshots ===
+=== [SWO69] 05:11:50 END   e2/hipporag_musique_p5_10 rc=0 wall=288s ===
+=== [SWO69] 05:11:51 E2  hipporag_musique_p5_30: perturbing 15 snapshots ===
+=== [SWO69] 05:16:49 END   e2/hipporag_musique_p5_30 rc=0 wall=295s ===
+=== [SWO69] 05:16:50 DONE mode=e2 ===

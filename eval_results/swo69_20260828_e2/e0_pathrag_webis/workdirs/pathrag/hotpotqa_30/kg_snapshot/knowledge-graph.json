@@ -1,0 +1,263 @@
+{
+  "nodes" : {
+    "SOFTWARE TESTING" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A broader discipline that includes test data generation as an important component for evaluating software.<SEP>A labor-intensive process that accounts for nearly one-third of system development cost and is an important part of the SDLC.",
+      "source_id" : "chunk-86699cf273106d7e8edc147df7e8bd0e<SEP>chunk-332027f503044aae8900aa29979deed2"
+    },
+    "UNITED STATES" : {
+      "entity_type" : "GEO",
+      "description" : "The country in which the Little Saco River and its surrounding towns are situated.",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    },
+    "PAINE BROOK" : {
+      "entity_type" : "GEO",
+      "description" : "A brook whose junction with Haley Brook forms the headwaters of the Little Saco River.",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    },
+    "LITTLE SACO RIVER" : {
+      "entity_type" : "GEO",
+      "description" : "A 4.5-mile tributary of the Saco River in western Maine, flowing northeast from Brownfield to Fryeburg.",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    },
+    "SULLIVAN" : {
+      "entity_type" : "PERSON",
+      "description" : "A political figure who won re-election in 2008 with more than 73% of the vote.",
+      "source_id" : "chunk-86699cf273106d7e8edc147df7e8bd0e"
+    },
+    "BROWNFIELD" : {
+      "entity_type" : "GEO",
+      "description" : "A town in western Maine where the Little Saco River begins in its northern part.",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    },
+    "WESTERN MAINE" : {
+      "entity_type" : "GEO",
+      "description" : "A region in the state of Maine, United States, where the Little Saco River is located.",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    },
+    "HALEY BROOK" : {
+      "entity_type" : "GEO",
+      "description" : "A brook whose junction with Paine Brook forms the headwaters of the Little Saco River.",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    },
+    "SACO RIVER" : {
+      "entity_type" : "GEO",
+      "description" : "A river in western Maine that receives the Little Saco River as a tributary.",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    },
+    "GENETIC ALGORITHMS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Optimization algorithms used in the past decade to tackle the problem of generating test data in the presence of dynamic memory allocation.",
+      "source_id" : "chunk-332027f503044aae8900aa29979deed2"
+    },
+    "TEST DATA GENERATION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The process of creating data (actual or artificial) for testing the adequacy of new or revised software applications.",
+      "source_id" : "chunk-86699cf273106d7e8edc147df7e8bd0e"
+    },
+    "SOFTWARE DEVELOPMENT LIFE CYCLE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The overarching process of software development within which Software Testing is an important and costly component.",
+      "source_id" : "chunk-332027f503044aae8900aa29979deed2"
+    },
+    "ANALYSIS ALGORITHMS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Algorithms used alongside genetic algorithms to better address the challenges of test data generation with dynamic memory.",
+      "source_id" : "chunk-332027f503044aae8900aa29979deed2"
+    },
+    "FRYEBURG" : {
+      "entity_type" : "GEO",
+      "description" : "A town in Maine that the Little Saco River enters just before its mouth at the Saco River.",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    },
+    "RE-ELECTION 2008" : {
+      "entity_type" : "EVENT",
+      "description" : "An election event in 2008 where Sullivan secured victory with over 73% of the vote.",
+      "source_id" : "chunk-86699cf273106d7e8edc147df7e8bd0e"
+    },
+    "TEST DATA GENERATORS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Software tools used to generate exhaustive test data, which face challenges due to dynamic memory allocation making program paths unpredictable.",
+      "source_id" : "chunk-332027f503044aae8900aa29979deed2"
+    },
+    "TOY PROGRAMS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Simple programs to which most existing test data generation solutions are limited.",
+      "source_id" : "chunk-86699cf273106d7e8edc147df7e8bd0e"
+    },
+    "DYNAMIC MEMORY ALLOCATION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A memory management technique widely used in industry code that makes software behavior highly unpredictable and hinders test data generation.",
+      "source_id" : "chunk-332027f503044aae8900aa29979deed2"
+    }
+  },
+  "edges" : [ {
+    "source" : "LITTLE SACO RIVER",
+    "target" : "SACO RIVER",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "The Little Saco River is a 4.5-mile tributary that flows into the Saco River.",
+      "keywords" : "tributary, confluence",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    }
+  }, {
+    "source" : "LITTLE SACO RIVER",
+    "target" : "BROWNFIELD",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The Little Saco River begins in the northern part of the town of Brownfield.",
+      "keywords" : "origin, location, headwaters",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    }
+  }, {
+    "source" : "WESTERN MAINE",
+    "target" : "UNITED STATES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Western Maine is a region within the United States.",
+      "keywords" : "geographic hierarchy, location",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    }
+  }, {
+    "source" : "TEST DATA GENERATORS",
+    "target" : "DYNAMIC MEMORY ALLOCATION",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Dynamic memory allocation is the most severe problem faced by Test Data Generators, making it nearly impossible to generate exhaustive test data.",
+      "keywords" : "core challenge, unpredictability",
+      "source_id" : "chunk-332027f503044aae8900aa29979deed2"
+    }
+  }, {
+    "source" : "HALEY BROOK",
+    "target" : "PAINE BROOK",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Haley Brook and Paine Brook meet at their junction to form the Little Saco River.",
+      "keywords" : "confluence, junction",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    }
+  }, {
+    "source" : "TEST DATA GENERATION",
+    "target" : "TOY PROGRAMS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Most solutions for test data generation are limited to toy programs, indicating a complexity challenge.",
+      "keywords" : "limitation, complexity, scope restriction",
+      "source_id" : "chunk-86699cf273106d7e8edc147df7e8bd0e"
+    }
+  }, {
+    "source" : "SOFTWARE TESTING",
+    "target" : "SOFTWARE DEVELOPMENT LIFE CYCLE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Software Testing is an important part of the Software Development Life Cycle and accounts for nearly a third of development cost.",
+      "keywords" : "process inclusion, cost factor",
+      "source_id" : "chunk-332027f503044aae8900aa29979deed2"
+    }
+  }, {
+    "source" : "TEST DATA GENERATORS",
+    "target" : "SOFTWARE TESTING",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Test Data Generators support Software Testing by generating quality test data quickly, efficiently, and accurately.",
+      "keywords" : "tool support, quality assurance",
+      "source_id" : "chunk-332027f503044aae8900aa29979deed2"
+    }
+  }, {
+    "source" : "LITTLE SACO RIVER",
+    "target" : "WESTERN MAINE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The Little Saco River is located in western Maine.",
+      "keywords" : "location, geography",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    }
+  }, {
+    "source" : "SULLIVAN",
+    "target" : "RE-ELECTION 2008",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Sullivan won the 2008 re-election with more than 73% of the vote.",
+      "keywords" : "election victory, political achievement",
+      "source_id" : "chunk-86699cf273106d7e8edc147df7e8bd0e"
+    }
+  }, {
+    "source" : "PAINE BROOK",
+    "target" : "LITTLE SACO RIVER",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Paine Brook is one of the two brooks whose junction forms the headwaters of the Little Saco River.",
+      "keywords" : "source, confluence, headwaters",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    }
+  }, {
+    "source" : "FRYEBURG",
+    "target" : "SACO RIVER",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Fryeburg is located near the mouth where the Little Saco River enters the Saco River.",
+      "keywords" : "proximity, confluence",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    }
+  }, {
+    "source" : "TEST DATA GENERATION",
+    "target" : "SOFTWARE TESTING",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Test data generation is an important part of the broader software testing process.",
+      "keywords" : "sub-process, testing methodology",
+      "source_id" : "chunk-86699cf273106d7e8edc147df7e8bd0e"
+    }
+  }, {
+    "source" : "LITTLE SACO RIVER",
+    "target" : "FRYEBURG",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The Little Saco River flows northeast and enters the town of Fryeburg just before its mouth at the Saco.",
+      "keywords" : "flow path, town, confluence",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    }
+  }, {
+    "source" : "ANALYSIS ALGORITHMS",
+    "target" : "DYNAMIC MEMORY ALLOCATION",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Analysis algorithms are used alongside genetic algorithms to better address the dynamic memory allocation challenge.",
+      "keywords" : "complementary solution, analysis",
+      "source_id" : "chunk-332027f503044aae8900aa29979deed2"
+    }
+  }, {
+    "source" : "HALEY BROOK",
+    "target" : "LITTLE SACO RIVER",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Haley Brook is one of the two brooks whose junction forms the headwaters of the Little Saco River.",
+      "keywords" : "source, confluence, headwaters",
+      "source_id" : "chunk-851e49b628613fc374b31b56ee6b2cfd"
+    }
+  }, {
+    "source" : "GENETIC ALGORITHMS",
+    "target" : "TEST DATA GENERATORS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Genetic algorithms are employed to improve the capability of Test Data Generators in handling unpredictable program paths.",
+      "keywords" : "algorithmic enhancement, progress",
+      "source_id" : "chunk-332027f503044aae8900aa29979deed2"
+    }
+  }, {
+    "source" : "GENETIC ALGORITHMS",
+    "target" : "DYNAMIC MEMORY ALLOCATION",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Genetic algorithms have been used to tackle the problem of dynamic memory allocation's impact on test data generation.",
+      "keywords" : "solution approach, optimization",
+      "source_id" : "chunk-332027f503044aae8900aa29979deed2"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 18,
+    "edgeCount" : 18,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_webis/workdirs/pathrag/hotpotqa_30"
+  }
+}

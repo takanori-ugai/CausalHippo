@@ -1,0 +1,626 @@
+{
+  "nodes" : [ {
+    "id" : "University Open Days",
+    "entity_id" : "University Open Days",
+    "entity_type" : "Event",
+    "description" : "Campus events that, according to a running joke among students, are consistently followed by mandatory software updates on campus computers.",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc"
+  }, {
+    "id" : "Mandatory Software Updates",
+    "entity_id" : "Mandatory Software Updates",
+    "entity_type" : "Event",
+    "description" : "Software updates applied to campus computers that students perceive as occurring in a pattern linked to university open days.",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc"
+  }, {
+    "id" : "University IT",
+    "entity_id" : "University IT",
+    "entity_type" : "Organization",
+    "description" : "The university's IT department responsible for managing the software update schedule on campus computers, which insists the schedule is set independently of open days.",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc"
+  }, {
+    "id" : "Student Body",
+    "entity_id" : "Student Body",
+    "entity_type" : "Organization",
+    "description" : "The collective group of students who have turned the perceived pattern between open days and software updates into a running joke and continue to speculate about a link.",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc"
+  }, {
+    "id" : "Campus Computers",
+    "entity_id" : "Campus Computers",
+    "entity_type" : "Concept",
+    "description" : "The computers located on the university campus that receive the mandatory software updates.",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc"
+  }, {
+    "id" : "Broken Sleep",
+    "entity_id" : "Broken Sleep",
+    "entity_type" : "Concept",
+    "description" : "Poor quality or interrupted sleep that precedes mornings and is linked to heightened irritability in some individuals.",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001"
+  }, {
+    "id" : "Heightened Irritability",
+    "entity_id" : "Heightened Irritability",
+    "entity_type" : "Concept",
+    "description" : "An increased state of irritability experienced by individuals on mornings following broken sleep.",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001"
+  }, {
+    "id" : "Short Tempers",
+    "entity_id" : "Short Tempers",
+    "entity_type" : "Concept",
+    "description" : "A behavioral manifestation of irritability that friends may notice in individuals after poor sleep.",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001"
+  }, {
+    "id" : "Impatience at Work",
+    "entity_id" : "Impatience at Work",
+    "entity_type" : "Concept",
+    "description" : "A workplace behavioral response linked to broken sleep, where individuals display reduced patience.",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001"
+  }, {
+    "id" : "Workload",
+    "entity_id" : "Workload",
+    "entity_type" : "Concept",
+    "description" : "An alternative factor often blamed for irritability or impatience, serving as a competing explanation for the underlying link to sleep.",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001"
+  }, {
+    "id" : "Traffic",
+    "entity_id" : "Traffic",
+    "entity_type" : "Concept",
+    "description" : "An alternative external factor often cited as a cause of irritability, competing with the sleep-irritability connection.",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001"
+  }, {
+    "id" : "Friends",
+    "entity_id" : "Friends",
+    "entity_type" : "Person",
+    "description" : "Individuals who observe and notice short tempers or impatience in others following broken sleep.",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001"
+  }, {
+    "id" : "Flip-flops",
+    "entity_id" : "Flip-flops",
+    "entity_type" : "Concept",
+    "description" : "A type of footwear whose sales at shoe stores increase during certain periods, often coinciding with increased swimming pool visits.",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7"
+  }, {
+    "id" : "Shoe stores",
+    "entity_id" : "Shoe stores",
+    "entity_type" : "Organization",
+    "description" : "Retail establishments where flip-flops are sold and whose sales patterns have been observed to correlate with swimming pool attendance.",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7"
+  }, {
+    "id" : "Swimming pools",
+    "entity_id" : "Swimming pools",
+    "entity_type" : "Location",
+    "description" : "Local swimming pools that experience increased visitor numbers, often coinciding with rising flip-flop sales.",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7"
+  }, {
+    "id" : "Pool staff",
+    "entity_id" : "Pool staff",
+    "entity_type" : "Person",
+    "description" : "Workers at local swimming pools who have noticed the yearly trend of increased visitors coinciding with flip-flop sales.",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7"
+  }, {
+    "id" : "Shop owners",
+    "entity_id" : "Shop owners",
+    "entity_type" : "Person",
+    "description" : "Owners of shoe stores who have observed the recurring pattern of flip-flop sales increasing alongside swimming pool visits.",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7"
+  }, {
+    "id" : "Correlation",
+    "entity_id" : "Correlation",
+    "entity_type" : "Concept",
+    "description" : "The observed pattern where rising flip-flop sales and increased swimming pool visits coincide, though the actual relationship may be more indirect than a direct causal link.",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7"
+  }, {
+    "id" : "Seasonal trend",
+    "entity_id" : "Seasonal trend",
+    "entity_type" : "Concept",
+    "description" : "A yearly recurring pattern in which flip-flop sales and swimming pool attendance both increase, noticed by pool staff and shop owners.",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7"
+  }, {
+    "id" : "Urban dog park construction",
+    "entity_id" : "Urban dog park construction",
+    "entity_type" : "Concept",
+    "description" : "A notable increase in the building of dog parks in urban areas, identified as one of two parallel trends.",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50"
+  }, {
+    "id" : "Craft ice cream shop sales",
+    "entity_id" : "Craft ice cream shop sales",
+    "entity_type" : "Concept",
+    "description" : "A rise in sales at craft ice cream shops, identified as a trend paralleling urban dog park construction.",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50"
+  }, {
+    "id" : "Dog owners",
+    "entity_id" : "Dog owners",
+    "entity_type" : "Person",
+    "description" : "Locals who are humorously pointed to by some residents as a driving force behind the ice cream shop boom.",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50"
+  }, {
+    "id" : "Urban demographics",
+    "entity_id" : "Urban demographics",
+    "entity_type" : "Concept",
+    "description" : "Changing demographics in urban areas that serve as a shared social driver behind both the dog park and ice cream shop trends.",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50"
+  }, {
+    "id" : "Community amenities",
+    "entity_id" : "Community amenities",
+    "entity_type" : "Concept",
+    "description" : "A focus on community amenities in urban areas that acts as a shared social driver for both the dog park and ice cream shop trends.",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50"
+  }, {
+    "id" : "Research",
+    "entity_id" : "Research",
+    "entity_type" : "Concept",
+    "description" : "Studies that demonstrate no direct causal relationship between urban dog park construction and craft ice cream shop sales.",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50"
+  }, {
+    "id" : "Screen Time",
+    "entity_id" : "Screen Time",
+    "entity_type" : "Concept",
+    "description" : "Rising screen time is a growing concern that appears to be associated with increased reports of eye strain, particularly among tech industry workers.",
+    "source_id" : "48837a29b442b324303eb691a1dd672f"
+  }, {
+    "id" : "Eye Strain",
+    "entity_id" : "Eye Strain",
+    "entity_type" : "Concept",
+    "description" : "Eye strain is a condition whose reports appear to increase alongside rising screen time, prompting discussion in healthcare and wellness contexts.",
+    "source_id" : "48837a29b442b324303eb691a1dd672f"
+  }, {
+    "id" : "Tech Industry Employees",
+    "entity_id" : "Tech Industry Employees",
+    "entity_type" : "Organization",
+    "description" : "A group of workers in technology industries who are especially vocal about the trend linking rising screen time to eye strain.",
+    "source_id" : "48837a29b442b324303eb691a1dd672f"
+  }, {
+    "id" : "Healthcare Providers",
+    "entity_id" : "Healthcare Providers",
+    "entity_type" : "Organization",
+    "description" : "Medical professionals who are increasingly asking patients about their screen time habits due to the perceived connection with eye strain.",
+    "source_id" : "48837a29b442b324303eb691a1dd672f"
+  }, {
+    "id" : "Wellness Seminars",
+    "entity_id" : "Wellness Seminars",
+    "entity_type" : "Event",
+    "description" : "Events where the possible connection between rising screen time and eye strain is being discussed and debated.",
+    "source_id" : "48837a29b442b324303eb691a1dd672f"
+  }, {
+    "id" : "Plant-based meal sales",
+    "entity_id" : "Plant-based meal sales",
+    "entity_type" : "Concept",
+    "description" : "Sales of plant-based meals that show a rise correlated with art supply purchases among young professionals.",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14"
+  }, {
+    "id" : "Art supply purchases",
+    "entity_id" : "Art supply purchases",
+    "entity_type" : "Concept",
+    "description" : "Purchases of art supplies that show a rise correlated with plant-based meal sales among young professionals.",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14"
+  }, {
+    "id" : "Young professionals",
+    "entity_id" : "Young professionals",
+    "entity_type" : "Person",
+    "description" : "A demographic group among whom both plant-based meal sales and art supply purchases are observed to rise together.",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14"
+  }, {
+    "id" : "Lifestyle blogs",
+    "entity_id" : "Lifestyle blogs",
+    "entity_type" : "Organization",
+    "description" : "Media outlets that highlight the supposed connection between plant-based meal sales and art supply purchases, claiming a creative health-conscious movement is afoot.",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14"
+  }, {
+    "id" : "Creative health-conscious movement",
+    "entity_id" : "Creative health-conscious movement",
+    "entity_type" : "Concept",
+    "description" : "A supposed movement claimed by lifestyle blogs to explain the correlation between plant-based meals and art supplies among young professionals.",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14"
+  }, {
+    "id" : "Stores catering to both markets",
+    "entity_id" : "Stores catering to both markets",
+    "entity_type" : "Organization",
+    "description" : "Retail stores that serve both the plant-based meal and art supply markets and experience higher foot traffic during the same periods.",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14"
+  }, {
+    "id" : "Marketing pitches",
+    "entity_id" : "Marketing pitches",
+    "entity_type" : "Concept",
+    "description" : "Marketing presentations in which the plant-based meal and art supply trends are often cited together.",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14"
+  } ],
+  "edges" : [ {
+    "source" : "University Open Days",
+    "target" : "Mandatory Software Updates",
+    "weight" : "1.0",
+    "description" : "Students observe a recurring pattern where mandatory software updates on campus computers follow university open days, though University IT denies any connection.",
+    "keywords" : "pattern, sequence, speculation",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc",
+    "src_id" : "University Open Days",
+    "tgt_id" : "Mandatory Software Updates"
+  }, {
+    "source" : "University Open Days",
+    "target" : "Student Body",
+    "weight" : "1.0",
+    "description" : "The student body has developed a running joke centered on the perceived timing of university open days relative to subsequent software updates.",
+    "keywords" : "joke, perception, observation",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc",
+    "src_id" : "Student Body",
+    "tgt_id" : "University Open Days"
+  }, {
+    "source" : "Mandatory Software Updates",
+    "target" : "University IT",
+    "weight" : "1.0",
+    "description" : "University IT is responsible for setting the schedule of mandatory software updates and insists the timing is determined independently of other campus events.",
+    "keywords" : "management, schedule, independence",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc",
+    "src_id" : "University IT",
+    "tgt_id" : "Mandatory Software Updates"
+  }, {
+    "source" : "Mandatory Software Updates",
+    "target" : "Campus Computers",
+    "weight" : "1.0",
+    "description" : "The mandatory software updates are applied to the computers located on the university campus.",
+    "keywords" : "application, target, installation",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc",
+    "src_id" : "Mandatory Software Updates",
+    "tgt_id" : "Campus Computers"
+  }, {
+    "source" : "Student Body",
+    "target" : "University IT",
+    "weight" : "1.0",
+    "description" : "The student body continues to speculate about a link between open days and updates despite University IT's insistence that the update schedule is set independently.",
+    "keywords" : "speculation, skepticism, dispute",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc",
+    "src_id" : "Student Body",
+    "tgt_id" : "University IT"
+  }, {
+    "source" : "Broken Sleep",
+    "target" : "Heightened Irritability",
+    "weight" : "1.0",
+    "description" : "Broken sleep is described as a factor that leads to heightened irritability in some individuals on the following morning.",
+    "keywords" : "causation, mood, morning",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001",
+    "src_id" : "Broken Sleep",
+    "tgt_id" : "Heightened Irritability"
+  }, {
+    "source" : "Broken Sleep",
+    "target" : "Short Tempers",
+    "weight" : "1.0",
+    "description" : "Broken sleep manifests as short tempers that are noticed by friends.",
+    "keywords" : "manifestation, behavior, observation",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001",
+    "src_id" : "Broken Sleep",
+    "tgt_id" : "Short Tempers"
+  }, {
+    "source" : "Broken Sleep",
+    "target" : "Impatience at Work",
+    "weight" : "1.0",
+    "description" : "Broken sleep is associated with impatience displayed in a work setting.",
+    "keywords" : "manifestation, workplace, behavior",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001",
+    "src_id" : "Broken Sleep",
+    "tgt_id" : "Impatience at Work"
+  }, {
+    "source" : "Heightened Irritability",
+    "target" : "Workload",
+    "weight" : "1.0",
+    "description" : "Workload is cited as an alternative factor blamed for irritability, competing with the sleep-irritability link.",
+    "keywords" : "alternative explanation, attribution",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001",
+    "src_id" : "Workload",
+    "tgt_id" : "Heightened Irritability"
+  }, {
+    "source" : "Heightened Irritability",
+    "target" : "Traffic",
+    "weight" : "1.0",
+    "description" : "Traffic is cited as an alternative external factor blamed for irritability rather than broken sleep.",
+    "keywords" : "alternative explanation, attribution",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001",
+    "src_id" : "Traffic",
+    "tgt_id" : "Heightened Irritability"
+  }, {
+    "source" : "Heightened Irritability",
+    "target" : "Short Tempers",
+    "weight" : "1.0",
+    "description" : "Short tempers are a visible expression of the heightened irritability caused by broken sleep.",
+    "keywords" : "symptom, expression",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001",
+    "src_id" : "Heightened Irritability",
+    "tgt_id" : "Short Tempers"
+  }, {
+    "source" : "Heightened Irritability",
+    "target" : "Impatience at Work",
+    "weight" : "1.0",
+    "description" : "Impatience at work is a contextual expression of the heightened irritability linked to broken sleep.",
+    "keywords" : "symptom, workplace expression",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001",
+    "src_id" : "Heightened Irritability",
+    "tgt_id" : "Impatience at Work"
+  }, {
+    "source" : "Short Tempers",
+    "target" : "Friends",
+    "weight" : "1.0",
+    "description" : "Friends notice and observe short tempers in individuals following broken sleep.",
+    "keywords" : "observation, social awareness",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001",
+    "src_id" : "Friends",
+    "tgt_id" : "Short Tempers"
+  }, {
+    "source" : "Flip-flops",
+    "target" : "Shoe stores",
+    "weight" : "1.0",
+    "description" : "Flip-flops are sold at shoe stores, and their sales volume is a key indicator in the observed seasonal pattern.",
+    "keywords" : "sales, retail, product",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7",
+    "src_id" : "Flip-flops",
+    "tgt_id" : "Shoe stores"
+  }, {
+    "source" : "Flip-flops",
+    "target" : "Swimming pools",
+    "weight" : "1.0",
+    "description" : "Rising flip-flop sales coincide with increased swimming pool visits, though the actual relationship between the two is likely more indirect than a direct causal connection.",
+    "keywords" : "correlation, indirect relationship, coincidence",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7",
+    "src_id" : "Flip-flops",
+    "tgt_id" : "Swimming pools"
+  }, {
+    "source" : "Shoe stores",
+    "target" : "Shop owners",
+    "weight" : "1.0",
+    "description" : "Shop owners operate shoe stores and have observed the recurring pattern of flip-flop sales increasing each year.",
+    "keywords" : "ownership, retail",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7",
+    "src_id" : "Shop owners",
+    "tgt_id" : "Shoe stores"
+  }, {
+    "source" : "Swimming pools",
+    "target" : "Pool staff",
+    "weight" : "1.0",
+    "description" : "Pool staff work at local swimming pools and have noticed the yearly trend of increased visitors.",
+    "keywords" : "employment, observation",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7",
+    "src_id" : "Pool staff",
+    "tgt_id" : "Swimming pools"
+  }, {
+    "source" : "Pool staff",
+    "target" : "Correlation",
+    "weight" : "1.0",
+    "description" : "Pool staff have noticed the yearly trend of increased visitors coinciding with other seasonal indicators.",
+    "keywords" : "observation, trend, awareness",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7",
+    "src_id" : "Pool staff",
+    "tgt_id" : "Correlation"
+  }, {
+    "source" : "Shop owners",
+    "target" : "Correlation",
+    "weight" : "1.0",
+    "description" : "Shop owners have noticed the recurring pattern of flip-flop sales increasing alongside other seasonal activities.",
+    "keywords" : "observation, trend, awareness",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7",
+    "src_id" : "Shop owners",
+    "tgt_id" : "Correlation"
+  }, {
+    "source" : "Correlation",
+    "target" : "Seasonal trend",
+    "weight" : "1.0",
+    "description" : "The observed correlation between flip-flop sales and pool visits is part of a broader seasonal trend that recurs each year.",
+    "keywords" : "yearly, recurring, pattern",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7",
+    "src_id" : "Correlation",
+    "tgt_id" : "Seasonal trend"
+  }, {
+    "source" : "Urban dog park construction",
+    "target" : "Craft ice cream shop sales",
+    "weight" : "1.0",
+    "description" : "The two trends expanded simultaneously and may appear connected, but research shows no direct causal relationship between them.",
+    "keywords" : "parallel trends, no causal link, simultaneous expansion",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50",
+    "src_id" : "Urban dog park construction",
+    "tgt_id" : "Craft ice cream shop sales"
+  }, {
+    "source" : "Urban dog park construction",
+    "target" : "Urban demographics",
+    "weight" : "1.0",
+    "description" : "Changing urban demographics serve as a shared social driver behind the increase in dog park construction.",
+    "keywords" : "social driver, demographic change",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50",
+    "src_id" : "Urban demographics",
+    "tgt_id" : "Urban dog park construction"
+  }, {
+    "source" : "Urban dog park construction",
+    "target" : "Community amenities",
+    "weight" : "1.0",
+    "description" : "A focus on community amenities contributes to the increase in urban dog park construction.",
+    "keywords" : "amenity focus, urban development",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50",
+    "src_id" : "Community amenities",
+    "tgt_id" : "Urban dog park construction"
+  }, {
+    "source" : "Urban dog park construction",
+    "target" : "Research",
+    "weight" : "1.0",
+    "description" : "Research demonstrates that there is no direct causal relationship between urban dog park construction and craft ice cream shop sales.",
+    "keywords" : "causal analysis, no direct link",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50",
+    "src_id" : "Research",
+    "tgt_id" : "Urban dog park construction"
+  }, {
+    "source" : "Craft ice cream shop sales",
+    "target" : "Urban demographics",
+    "weight" : "1.0",
+    "description" : "Changing urban demographics serve as a shared social driver behind the rise in craft ice cream shop sales.",
+    "keywords" : "social driver, demographic change",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50",
+    "src_id" : "Urban demographics",
+    "tgt_id" : "Craft ice cream shop sales"
+  }, {
+    "source" : "Craft ice cream shop sales",
+    "target" : "Community amenities",
+    "weight" : "1.0",
+    "description" : "A focus on community amenities contributes to the rise in craft ice cream shop sales.",
+    "keywords" : "amenity focus, urban development",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50",
+    "src_id" : "Community amenities",
+    "tgt_id" : "Craft ice cream shop sales"
+  }, {
+    "source" : "Craft ice cream shop sales",
+    "target" : "Dog owners",
+    "weight" : "1.0",
+    "description" : "Some locals humorously point to dog owners as a driving force behind the ice cream shop boom, though no causal link is established.",
+    "keywords" : "humorous link, perceived causation",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50",
+    "src_id" : "Dog owners",
+    "tgt_id" : "Craft ice cream shop sales"
+  }, {
+    "source" : "Craft ice cream shop sales",
+    "target" : "Research",
+    "weight" : "1.0",
+    "description" : "Research demonstrates that there is no direct causal relationship between craft ice cream shop sales and urban dog park construction.",
+    "keywords" : "causal analysis, no direct link",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50",
+    "src_id" : "Research",
+    "tgt_id" : "Craft ice cream shop sales"
+  }, {
+    "source" : "Screen Time",
+    "target" : "Eye Strain",
+    "weight" : "1.0",
+    "description" : "Rising screen time appears to go hand in hand with increased reports of eye strain, suggesting a possible connection between the two.",
+    "keywords" : "correlation, association, trend",
+    "source_id" : "48837a29b442b324303eb691a1dd672f",
+    "src_id" : "Screen Time",
+    "tgt_id" : "Eye Strain"
+  }, {
+    "source" : "Screen Time",
+    "target" : "Tech Industry Employees",
+    "weight" : "1.0",
+    "description" : "Tech industry employees are especially vocal about the trend of rising screen time and its effects.",
+    "keywords" : "vocal, trend, concern",
+    "source_id" : "48837a29b442b324303eb691a1dd672f",
+    "src_id" : "Tech Industry Employees",
+    "tgt_id" : "Screen Time"
+  }, {
+    "source" : "Screen Time",
+    "target" : "Healthcare Providers",
+    "weight" : "1.0",
+    "description" : "Healthcare providers are starting to ask more questions about patients' screen time habits due to the perceived link with eye strain.",
+    "keywords" : "inquiry, habits, assessment",
+    "source_id" : "48837a29b442b324303eb691a1dd672f",
+    "src_id" : "Healthcare Providers",
+    "tgt_id" : "Screen Time"
+  }, {
+    "source" : "Screen Time",
+    "target" : "Wellness Seminars",
+    "weight" : "1.0",
+    "description" : "The possible connection between rising screen time and eye strain is being discussed in wellness seminars.",
+    "keywords" : "discussion, connection, debate",
+    "source_id" : "48837a29b442b324303eb691a1dd672f",
+    "src_id" : "Wellness Seminars",
+    "tgt_id" : "Screen Time"
+  }, {
+    "source" : "Eye Strain",
+    "target" : "Tech Industry Employees",
+    "weight" : "1.0",
+    "description" : "Tech industry employees are particularly vocal about reports of eye strain linked to their work habits.",
+    "keywords" : "reports, vocal, concern",
+    "source_id" : "48837a29b442b324303eb691a1dd672f",
+    "src_id" : "Tech Industry Employees",
+    "tgt_id" : "Eye Strain"
+  }, {
+    "source" : "Eye Strain",
+    "target" : "Wellness Seminars",
+    "weight" : "1.0",
+    "description" : "The relationship between screen time and eye strain is a topic of discussion in wellness seminars.",
+    "keywords" : "discussion, connection, debate",
+    "source_id" : "48837a29b442b324303eb691a1dd672f",
+    "src_id" : "Wellness Seminars",
+    "tgt_id" : "Eye Strain"
+  }, {
+    "source" : "Plant-based meal sales",
+    "target" : "Art supply purchases",
+    "weight" : "1.0",
+    "description" : "Plant-based meal sales and art supply purchases rise in unison among young professionals, though the relationship is more apparent than real.",
+    "keywords" : "correlation, co-occurrence, spurious",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14",
+    "src_id" : "Plant-based meal sales",
+    "tgt_id" : "Art supply purchases"
+  }, {
+    "source" : "Plant-based meal sales",
+    "target" : "Young professionals",
+    "weight" : "1.0",
+    "description" : "Young professionals are the demographic in which plant-based meal sales are observed to rise.",
+    "keywords" : "demographic, purchasing trend",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14",
+    "src_id" : "Young professionals",
+    "tgt_id" : "Plant-based meal sales"
+  }, {
+    "source" : "Plant-based meal sales",
+    "target" : "Lifestyle blogs",
+    "weight" : "1.0",
+    "description" : "Lifestyle blogs point out the supposed connection involving plant-based meal sales.",
+    "keywords" : "highlighting, connection, media coverage",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14",
+    "src_id" : "Lifestyle blogs",
+    "tgt_id" : "Plant-based meal sales"
+  }, {
+    "source" : "Plant-based meal sales",
+    "target" : "Stores catering to both markets",
+    "weight" : "1.0",
+    "description" : "Stores catering to both markets serve the plant-based meal market and see higher foot traffic during the same periods.",
+    "keywords" : "retail, market, foot traffic",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14",
+    "src_id" : "Stores catering to both markets",
+    "tgt_id" : "Plant-based meal sales"
+  }, {
+    "source" : "Plant-based meal sales",
+    "target" : "Marketing pitches",
+    "weight" : "1.0",
+    "description" : "The plant-based meal sales trend is often cited in marketing pitches alongside art supply purchases.",
+    "keywords" : "citation, trend, marketing",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14",
+    "src_id" : "Marketing pitches",
+    "tgt_id" : "Plant-based meal sales"
+  }, {
+    "source" : "Art supply purchases",
+    "target" : "Young professionals",
+    "weight" : "1.0",
+    "description" : "Young professionals are the demographic in which art supply purchases are observed to rise.",
+    "keywords" : "demographic, purchasing trend",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14",
+    "src_id" : "Young professionals",
+    "tgt_id" : "Art supply purchases"
+  }, {
+    "source" : "Art supply purchases",
+    "target" : "Lifestyle blogs",
+    "weight" : "1.0",
+    "description" : "Lifestyle blogs point out the supposed connection involving art supply purchases.",
+    "keywords" : "highlighting, connection, media coverage",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14",
+    "src_id" : "Lifestyle blogs",
+    "tgt_id" : "Art supply purchases"
+  }, {
+    "source" : "Art supply purchases",
+    "target" : "Stores catering to both markets",
+    "weight" : "1.0",
+    "description" : "Stores catering to both markets serve the art supply market and see higher foot traffic during the same periods.",
+    "keywords" : "retail, market, foot traffic",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14",
+    "src_id" : "Stores catering to both markets",
+    "tgt_id" : "Art supply purchases"
+  }, {
+    "source" : "Art supply purchases",
+    "target" : "Marketing pitches",
+    "weight" : "1.0",
+    "description" : "The art supply purchases trend is often cited in marketing pitches alongside plant-based meal sales.",
+    "keywords" : "citation, trend, marketing",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14",
+    "src_id" : "Marketing pitches",
+    "tgt_id" : "Art supply purchases"
+  }, {
+    "source" : "Lifestyle blogs",
+    "target" : "Creative health-conscious movement",
+    "weight" : "1.0",
+    "description" : "Lifestyle blogs claim that a creative health-conscious movement is afoot to explain the supposed connection between the two trends.",
+    "keywords" : "promotion, claiming, narrative",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14",
+    "src_id" : "Lifestyle blogs",
+    "tgt_id" : "Creative health-conscious movement"
+  } ],
+  "metadata" : {
+    "nodeCount" : 37,
+    "edgeCount" : 44
+  }
+}

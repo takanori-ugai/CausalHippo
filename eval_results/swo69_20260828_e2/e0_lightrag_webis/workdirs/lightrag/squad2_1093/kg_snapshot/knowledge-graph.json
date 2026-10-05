@@ -1,0 +1,155 @@
+{
+  "nodes" : [ {
+    "id" : "Napoleon",
+    "entity_id" : "Napoleon",
+    "entity_type" : "Person",
+    "description" : "Historical figure whose cause of death and hair samples were the subject of modern forensic studies analyzing arsenic levels.",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  }, {
+    "id" : "Arsenic",
+    "entity_id" : "Arsenic",
+    "entity_type" : "Concept",
+    "description" : "Toxic substance found in high concentrations (approximately 100 times the current average) in Napoleon's hair samples throughout his life.",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  }, {
+    "id" : "2008 Study",
+    "entity_id" : "2008 Study",
+    "entity_type" : "Event",
+    "description" : "A research study that analyzed samples of Napoleon's hair from throughout his life, as well as samples from his family and contemporaries, finding high arsenic levels but dismissing intentional poisoning.",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  }, {
+    "id" : "2007 Study",
+    "entity_id" : "2007 Study",
+    "entity_type" : "Event",
+    "description" : "A study published in 2007 that dismissed evidence of arsenic poisoning and confirmed peptic ulcer and gastric cancer as the cause of Napoleon's death.",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  }, {
+    "id" : "Peptic Ulcer",
+    "entity_id" : "Peptic Ulcer",
+    "entity_type" : "Concept",
+    "description" : "A medical condition confirmed by studies published in 2007 and 2008 as a cause of Napoleon's death.",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  }, {
+    "id" : "Gastric Cancer",
+    "entity_id" : "Gastric Cancer",
+    "entity_type" : "Concept",
+    "description" : "A medical condition confirmed by studies published in 2007 and 2008 as a cause of Napoleon's death.",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  }, {
+    "id" : "Autopsy Finding",
+    "entity_id" : "Autopsy Finding",
+    "entity_type" : "Concept",
+    "description" : "The original autopsy finding regarding Napoleon's cause of death, which was supported by modern studies.",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  }, {
+    "id" : "Glues and Dyes",
+    "entity_id" : "Glues and Dyes",
+    "entity_type" : "Concept",
+    "description" : "Common materials that were a constant source of arsenic exposure for people throughout their lives, explaining the high arsenic levels in hair samples.",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  } ],
+  "edges" : [ {
+    "source" : "2008 Study",
+    "target" : "Napoleon",
+    "weight" : "1.0",
+    "description" : "The 2008 study analyzed samples of Napoleon's hair from throughout his life, as well as samples from his family and other contemporaries.",
+    "keywords" : "analysis, hair samples, forensic",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "2008 Study",
+    "tgt_id" : "Napoleon"
+  }, {
+    "source" : "2008 Study",
+    "target" : "Arsenic",
+    "weight" : "1.0",
+    "description" : "The 2008 study found that all samples had high levels of arsenic, approximately 100 times higher than the current average.",
+    "keywords" : "high levels, contamination, detection",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "2008 Study",
+    "tgt_id" : "Arsenic"
+  }, {
+    "source" : "2008 Study",
+    "target" : "Autopsy Finding",
+    "weight" : "1.0",
+    "description" : "The 2008 study supported the original autopsy finding regarding Napoleon's cause of death.",
+    "keywords" : "support, confirmation, validation",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "2008 Study",
+    "tgt_id" : "Autopsy Finding"
+  }, {
+    "source" : "2008 Study",
+    "target" : "Peptic Ulcer",
+    "weight" : "1.0",
+    "description" : "The 2008 study confirmed peptic ulcer as a cause of Napoleon's death.",
+    "keywords" : "confirmation, cause of death, diagnosis",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "2008 Study",
+    "tgt_id" : "Peptic Ulcer"
+  }, {
+    "source" : "2008 Study",
+    "target" : "Gastric Cancer",
+    "weight" : "1.0",
+    "description" : "The 2008 study confirmed gastric cancer as a cause of Napoleon's death.",
+    "keywords" : "confirmation, cause of death, diagnosis",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "2008 Study",
+    "tgt_id" : "Gastric Cancer"
+  }, {
+    "source" : "Napoleon",
+    "target" : "Arsenic",
+    "weight" : "1.0",
+    "description" : "Napoleon's body was already heavily contaminated with arsenic as a boy, and his hair contained high arsenic concentrations throughout his life.",
+    "keywords" : "contamination, exposure, hair",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "Napoleon",
+    "tgt_id" : "Arsenic"
+  }, {
+    "source" : "Napoleon",
+    "target" : "Autopsy Finding",
+    "weight" : "1.0",
+    "description" : "The original autopsy finding regarding Napoleon's cause of death was later supported by modern studies.",
+    "keywords" : "death, original finding, historical",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "Napoleon",
+    "tgt_id" : "Autopsy Finding"
+  }, {
+    "source" : "Arsenic",
+    "target" : "2007 Study",
+    "weight" : "1.0",
+    "description" : "The 2007 study dismissed evidence of arsenic poisoning as the cause of Napoleon's death.",
+    "keywords" : "dismissal, poisoning, evidence",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "2007 Study",
+    "tgt_id" : "Arsenic"
+  }, {
+    "source" : "Arsenic",
+    "target" : "Glues and Dyes",
+    "weight" : "1.0",
+    "description" : "Glues and dyes were a constant source of arsenic exposure for people throughout their lives, explaining the high arsenic levels found in hair samples.",
+    "keywords" : "exposure, source, contamination",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "Glues and Dyes",
+    "tgt_id" : "Arsenic"
+  }, {
+    "source" : "2007 Study",
+    "target" : "Peptic Ulcer",
+    "weight" : "1.0",
+    "description" : "The 2007 study confirmed peptic ulcer as a cause of Napoleon's death.",
+    "keywords" : "confirmation, cause of death, diagnosis",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "2007 Study",
+    "tgt_id" : "Peptic Ulcer"
+  }, {
+    "source" : "2007 Study",
+    "target" : "Gastric Cancer",
+    "weight" : "1.0",
+    "description" : "The 2007 study confirmed gastric cancer as a cause of Napoleon's death.",
+    "keywords" : "confirmation, cause of death, diagnosis",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "2007 Study",
+    "tgt_id" : "Gastric Cancer"
+  } ],
+  "metadata" : {
+    "nodeCount" : 8,
+    "edgeCount" : 11
+  }
+}

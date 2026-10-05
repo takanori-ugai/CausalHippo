@@ -1,0 +1,98 @@
+{
+  "nodes" : [ {
+    "id" : "Napoleon",
+    "entity_id" : "Napoleon",
+    "entity_type" : "Person",
+    "description" : "The historical figure whose hair and family samples were analyzed in modern studies.",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  }, {
+    "id" : "2008 study",
+    "entity_id" : "2008 study",
+    "entity_type" : "Event",
+    "description" : "A modern study that analyzed samples of Napoleon's hair and those of his contemporaries.",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  }, {
+    "id" : "Arsenic",
+    "entity_id" : "Arsenic",
+    "entity_type" : "Concept",
+    "description" : "A substance found in high concentrations in the samples analyzed.",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  }, {
+    "id" : "Peptic ulcer",
+    "entity_id" : "Peptic ulcer",
+    "entity_type" : "Concept",
+    "description" : "A medical condition confirmed as a cause of death for Napoleon.",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  }, {
+    "id" : "Gastric cancer",
+    "entity_id" : "Gastric cancer",
+    "entity_type" : "Concept",
+    "description" : "A medical condition confirmed as a cause of death for Napoleon.",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  }, {
+    "id" : "2007/2008 studies",
+    "entity_id" : "2007/2008 studies",
+    "entity_type" : "Event",
+    "description" : "A set of studies published in 2007 and 2008 that reviewed the evidence regarding Napoleon's death.",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  } ],
+  "edges" : [ {
+    "source" : "2008 study",
+    "target" : "Napoleon",
+    "weight" : "1.0",
+    "description" : "The 2008 study analyzed samples of Napoleon's hair and those of his family and contemporaries.",
+    "keywords" : "analyzed samples, hair",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "2008 study",
+    "tgt_id" : "Napoleon"
+  }, {
+    "source" : "2008 study",
+    "target" : "Arsenic",
+    "weight" : "1.0",
+    "description" : "The 2008 study concluded that the high arsenic concentration was not caused by intentional poisoning but by constant environmental exposure.",
+    "keywords" : "not intentional poisoning, exposure",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "2008 study",
+    "tgt_id" : "Arsenic"
+  }, {
+    "source" : "Samples",
+    "target" : "Arsenic",
+    "weight" : "1.0",
+    "description" : "The samples analyzed contained high levels of arsenic, significantly above the current average.",
+    "keywords" : "high levels, contamination",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "Samples",
+    "tgt_id" : "Arsenic"
+  }, {
+    "source" : "Arsenic",
+    "target" : "glues and dyes",
+    "weight" : "1.0",
+    "description" : "Arsenic exposure was noted to come constantly from sources such as glues and dyes.",
+    "keywords" : "source of exposure",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "Arsenic",
+    "tgt_id" : "glues and dyes"
+  }, {
+    "source" : "2007/2008 studies",
+    "target" : "Peptic ulcer",
+    "weight" : "1.0",
+    "description" : "The 2007/2008 studies confirmed peptic ulcer as a cause of death.",
+    "keywords" : "confirmed cause of death",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "2007/2008 studies",
+    "tgt_id" : "Peptic ulcer"
+  }, {
+    "source" : "2007/2008 studies",
+    "target" : "Gastric cancer",
+    "weight" : "1.0",
+    "description" : "The 2007/2008 studies confirmed gastric cancer as a cause of death.",
+    "keywords" : "confirmed cause of death",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "2007/2008 studies",
+    "tgt_id" : "Gastric cancer"
+  } ],
+  "metadata" : {
+    "nodeCount" : 6,
+    "edgeCount" : 6
+  }
+}

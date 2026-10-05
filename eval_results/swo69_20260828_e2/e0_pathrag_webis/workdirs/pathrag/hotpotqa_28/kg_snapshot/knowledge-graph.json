@@ -1,0 +1,208 @@
+{
+  "nodes" : {
+    "ATLANTIC BASIN" : {
+      "entity_type" : "GEO",
+      "description" : "The ocean basin where Hurricane Hugo was the costliest tropical cyclone at the time.",
+      "source_id" : "chunk-bf6542c2b42b24715f23d788badbf87b"
+    },
+    "THE PANHANDLE" : {
+      "entity_type" : "GEO",
+      "description" : "A region on the west coast of Florida that was especially affected by storm surge and swells from Hurricane Celia.",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    },
+    "GULF OF MEXICO" : {
+      "entity_type" : "GEO",
+      "description" : "The body of water where the depression was upgraded to Tropical Storm Celia and rapidly intensified into a Category 3 hurricane.",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    },
+    "HURRICANE CELIA" : {
+      "entity_type" : "EVENT",
+      "description" : "The costliest tropical cyclone in Texas history until 1983; a Category 3 hurricane of the 1970 Atlantic season that caused flooding, storm surge, and fatalities across the Caribbean and Gulf coast.",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    },
+    "CUBA" : {
+      "entity_type" : "GEO",
+      "description" : "An island crossed by the depression on August 1, where heavy rains caused severe flooding and five fatalities.",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    },
+    "1989 ATLANTIC HURRICANE SEASON" : {
+      "entity_type" : "EVENT",
+      "description" : "A near-average hurricane season running June 1 to November 30, 1989, featuring 11 named storms including Hurricane Hugo.",
+      "source_id" : "chunk-bf6542c2b42b24715f23d788badbf87b"
+    },
+    "HURRICANE ALICIA" : {
+      "entity_type" : "EVENT",
+      "description" : "A 1983 tropical cyclone that surpassed Hurricane Celia as the costliest in Texas history.",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    },
+    "WESTERN CARIBBEAN SEA" : {
+      "entity_type" : "GEO",
+      "description" : "The body of water where Hurricane Celia developed from a tropical wave on July 31, 1970.",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    },
+    "THE HURRICANE" : {
+      "entity_type" : "EVENT",
+      "description" : "An 1815 hurricane that caused vessel damage, crop loss (corn, cotton, rice), flooding, at least 15 deaths, and over $60,000 in property damage.",
+      "source_id" : "chunk-bf6542c2b42b24715f23d788badbf87b"
+    },
+    "TROPICAL DEPRESSION ONE" : {
+      "entity_type" : "EVENT",
+      "description" : "The first storm of the 1989 season, developed on June 15 and dissipated two days later without land effects.",
+      "source_id" : "chunk-bf6542c2b42b24715f23d788badbf87b"
+    },
+    "TEXAS" : {
+      "entity_type" : "GEO",
+      "description" : "A U.S. state where Hurricane Celia was the costliest tropical cyclone in its history until Hurricane Alicia in 1983.",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    },
+    "FLORIDA" : {
+      "entity_type" : "GEO",
+      "description" : "A U.S. state whose west coast, especially the Panhandle, was lashed by storm surge and swells, causing eight drownings.",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    },
+    "1970 ATLANTIC HURRICANE SEASON" : {
+      "entity_type" : "EVENT",
+      "description" : "The 1970 Atlantic hurricane season in which Celia was the third named storm, second hurricane, and first major hurricane.",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    },
+    "NEW ENGLAND" : {
+      "entity_type" : "GEO",
+      "description" : "A region that the 1815 hurricane reached on 5 September and departed on 6 September, suffering significant damage.",
+      "source_id" : "chunk-bf6542c2b42b24715f23d788badbf87b"
+    },
+    "SAFFIR-SIMPSON HURRICANE WIND SCALE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A classification scale used to rate hurricane intensity; Celia reached Category 3 on this scale.",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    },
+    "HURRICANE HUGO" : {
+      "entity_type" : "EVENT",
+      "description" : "The costliest tropical cyclone in the Atlantic basin at the time, a featured storm of the 1989 Atlantic hurricane season.",
+      "source_id" : "chunk-bf6542c2b42b24715f23d788badbf87b"
+    }
+  },
+  "edges" : [ {
+    "source" : "HURRICANE CELIA",
+    "target" : "HURRICANE ALICIA",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Hurricane Alicia in 1983 surpassed Celia as the costliest tropical cyclone in Texas history.",
+      "keywords" : "surpassed, cost record",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    }
+  }, {
+    "source" : "HURRICANE CELIA",
+    "target" : "TEXAS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Hurricane Celia was the costliest tropical cyclone in Texas history until surpassed by Hurricane Alicia in 1983.",
+      "keywords" : "costliest cyclone, historical record",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    }
+  }, {
+    "source" : "HURRICANE CELIA",
+    "target" : "WESTERN CARIBBEAN SEA",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Celia developed from a tropical wave in the western Caribbean Sea on July 31, 1970.",
+      "keywords" : "origin, development",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    }
+  }, {
+    "source" : "FLORIDA",
+    "target" : "THE PANHANDLE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The Panhandle is a region on the west coast of Florida that was especially affected by Celia's storm surge.",
+      "keywords" : "region, special impact",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    }
+  }, {
+    "source" : "THE HURRICANE",
+    "target" : "NEW ENGLAND",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "The hurricane reached New England on 5 September and departed on 6 September, causing extensive damage to vessels, crops, and structures.",
+      "keywords" : "hurricane impact, regional damage, flooding",
+      "source_id" : "chunk-bf6542c2b42b24715f23d788badbf87b"
+    }
+  }, {
+    "source" : "HURRICANE CELIA",
+    "target" : "1970 ATLANTIC HURRICANE SEASON",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Celia was the third named storm, second hurricane, and first major hurricane of the 1970 Atlantic season.",
+      "keywords" : "seasonal ranking, major hurricane",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    }
+  }, {
+    "source" : "HURRICANE CELIA",
+    "target" : "FLORIDA",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Storm surge and swells from Celia lashed the west coast of Florida, causing eight people to drown.",
+      "keywords" : "storm surge, drowning, impact",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    }
+  }, {
+    "source" : "HURRICANE CELIA",
+    "target" : "SAFFIR-SIMPSON HURRICANE WIND SCALE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Celia was classified as a Category 3 hurricane on the Saffir-Simpson hurricane wind scale on August 1.",
+      "keywords" : "classification, intensity rating",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    }
+  }, {
+    "source" : "HURRICANE HUGO",
+    "target" : "ATLANTIC BASIN",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Hurricane Hugo was the costliest tropical cyclone in the Atlantic basin at the time of the 1989 season.",
+      "keywords" : "record damage, ocean basin, costliest",
+      "source_id" : "chunk-bf6542c2b42b24715f23d788badbf87b"
+    }
+  }, {
+    "source" : "1989 ATLANTIC HURRICANE SEASON",
+    "target" : "TROPICAL DEPRESSION ONE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Tropical Depression One was the first named storm to develop in the 1989 season on June 15.",
+      "keywords" : "first storm, season opener, development",
+      "source_id" : "chunk-bf6542c2b42b24715f23d788badbf87b"
+    }
+  }, {
+    "source" : "1989 ATLANTIC HURRICANE SEASON",
+    "target" : "HURRICANE HUGO",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The 1989 season featured Hurricane Hugo as the costliest tropical cyclone in the Atlantic basin at the time.",
+      "keywords" : "season highlight, costliest cyclone, record",
+      "source_id" : "chunk-bf6542c2b42b24715f23d788badbf87b"
+    }
+  }, {
+    "source" : "HURRICANE CELIA",
+    "target" : "CUBA",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The depression crossed over western Cuba on August 1, causing heavy rains, severe flooding, and five fatalities.",
+      "keywords" : "landfall, flooding, fatalities",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    }
+  }, {
+    "source" : "HURRICANE CELIA",
+    "target" : "GULF OF MEXICO",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Celia entered the Gulf of Mexico where it was upgraded to a tropical storm and rapidly intensified to Category 3.",
+      "keywords" : "intensification, warm waters",
+      "source_id" : "chunk-c4bf520c8c9710f553d7cbbefb40a2a3"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 16,
+    "edgeCount" : 13,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_webis/workdirs/pathrag/hotpotqa_28"
+  }
+}

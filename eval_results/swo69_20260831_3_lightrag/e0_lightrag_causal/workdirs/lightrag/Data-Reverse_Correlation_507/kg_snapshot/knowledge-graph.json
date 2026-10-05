@@ -1,0 +1,671 @@
+{
+  "nodes" : [ {
+    "id" : "Wine tasting events",
+    "entity_id" : "Wine tasting events",
+    "entity_type" : "Event",
+    "description" : "Events that became more popular last year, associated with a perceived increase in car purchases.",
+    "source_id" : "a5c480b72285ba9101d3817723ef2436"
+  }, {
+    "id" : "Used car sales",
+    "entity_id" : "Used car sales",
+    "entity_type" : "Concept",
+    "description" : "Sales of used cars that experienced a notable increase in the same period as the rise in wine tasting event popularity.",
+    "source_id" : "a5c480b72285ba9101d3817723ef2436"
+  }, {
+    "id" : "Industry observers",
+    "entity_id" : "Industry observers",
+    "entity_type" : "Person",
+    "description" : "People in the industry who speculate about a possible shared clientele between wine tasting events and car sales.",
+    "source_id" : "a5c480b72285ba9101d3817723ef2436"
+  }, {
+    "id" : "Dealerships",
+    "entity_id" : "Dealerships",
+    "entity_type" : "Organization",
+    "description" : "Businesses that report brisk business during similar months as vineyards.",
+    "source_id" : "a5c480b72285ba9101d3817723ef2436"
+  }, {
+    "id" : "Vineyards",
+    "entity_id" : "Vineyards",
+    "entity_type" : "Organization",
+    "description" : "Businesses that report brisk business during similar months as dealerships.",
+    "source_id" : "a5c480b72285ba9101d3817723ef2436"
+  }, {
+    "id" : "Locals",
+    "entity_id" : "Locals",
+    "entity_type" : "Person",
+    "description" : "Local residents who half-jokingly attribute new car purchases to a taste for finer things.",
+    "source_id" : "a5c480b72285ba9101d3817723ef2436"
+  }, {
+    "id" : "New car purchases",
+    "entity_id" : "New car purchases",
+    "entity_type" : "Concept",
+    "description" : "Purchases of new cars that locals associate with a taste for finer things, though the actual connection to wine tasting is weaker than it appears.",
+    "source_id" : "a5c480b72285ba9101d3817723ef2436"
+  }, {
+    "id" : "Mosquito Nets",
+    "entity_id" : "Mosquito Nets",
+    "entity_type" : "Concept",
+    "description" : "Insecticide-treated or physical barrier nets widely adopted by families in the village for malaria prevention.",
+    "source_id" : "ce46902417c5a96e4c1984d75b0dbacf"
+  }, {
+    "id" : "Malaria",
+    "entity_id" : "Malaria",
+    "entity_type" : "Concept",
+    "description" : "A mosquito-borne disease whose case numbers show a stable trend according to health surveys in the village.",
+    "source_id" : "ce46902417c5a96e4c1984d75b0dbacf"
+  }, {
+    "id" : "Village",
+    "entity_id" : "Village",
+    "entity_type" : "Location",
+    "description" : "A community where families have widely adopted mosquito nets and where health surveys track malaria cases.",
+    "source_id" : "ce46902417c5a96e4c1984d75b0dbacf"
+  }, {
+    "id" : "Health Surveys",
+    "entity_id" : "Health Surveys",
+    "entity_type" : "Event",
+    "description" : "Periodic surveys conducted in the village that indicate a stable trend in malaria cases each year.",
+    "source_id" : "ce46902417c5a96e4c1984d75b0dbacf"
+  }, {
+    "id" : "Elders",
+    "entity_id" : "Elders",
+    "entity_type" : "Person",
+    "description" : "Village elders who claim that the climate has shifted, making conditions less favorable for mosquitoes.",
+    "source_id" : "ce46902417c5a96e4c1984d75b0dbacf"
+  }, {
+    "id" : "Climate Shift",
+    "entity_id" : "Climate Shift",
+    "entity_type" : "Concept",
+    "description" : "A claimed change in local climate conditions that is said to make the environment less favorable for mosquito survival.",
+    "source_id" : "ce46902417c5a96e4c1984d75b0dbacf"
+  }, {
+    "id" : "Mosquitoes",
+    "entity_id" : "Mosquitoes",
+    "entity_type" : "Concept",
+    "description" : "Insects whose prevalence is believed to be affected by climate conditions and whose reduction may be linked to malaria case stability.",
+    "source_id" : "ce46902417c5a96e4c1984d75b0dbacf"
+  }, {
+    "id" : "Families",
+    "entity_id" : "Families",
+    "entity_type" : "Person",
+    "description" : "Households in the village that have widely adopted mosquito nets in their homes.",
+    "source_id" : "ce46902417c5a96e4c1984d75b0dbacf"
+  }, {
+    "id" : "Breakfast Skipping",
+    "entity_id" : "Breakfast Skipping",
+    "entity_type" : "Concept",
+    "description" : "A behavior observed among students where they skip their morning meal, discussed in relation to academic performance.",
+    "source_id" : "9699c3cac8ef8902098b4bad207a7f14"
+  }, {
+    "id" : "Concentration Difficulties",
+    "entity_id" : "Concentration Difficulties",
+    "entity_type" : "Concept",
+    "description" : "Reports of students experiencing difficulty concentrating in classroom settings, sometimes associated with breakfast skipping.",
+    "source_id" : "9699c3cac8ef8902098b4bad207a7f14"
+  }, {
+    "id" : "Classrooms",
+    "entity_id" : "Classrooms",
+    "entity_type" : "Location",
+    "description" : "Educational settings where anecdotal evidence of the link between breakfast skipping and concentration difficulties is observed.",
+    "source_id" : "9699c3cac8ef8902098b4bad207a7f14"
+  }, {
+    "id" : "Educators",
+    "entity_id" : "Educators",
+    "entity_type" : "Person",
+    "description" : "Teachers who observe patterns between breakfast skipping and concentration difficulties, or who attribute such issues to unrelated lifestyle habits.",
+    "source_id" : "9699c3cac8ef8902098b4bad207a7f14"
+  }, {
+    "id" : "Parent-Teacher Meetings",
+    "entity_id" : "Parent-Teacher Meetings",
+    "entity_type" : "Event",
+    "description" : "Meetings where the association between breakfast skipping and concentration difficulties is discussed, with opinions varying widely among participants.",
+    "source_id" : "9699c3cac8ef8902098b4bad207a7f14"
+  }, {
+    "id" : "Students",
+    "entity_id" : "Students",
+    "entity_type" : "Person",
+    "description" : "Individuals whose breakfast habits and concentration levels are observed and discussed in educational settings.",
+    "source_id" : "9699c3cac8ef8902098b4bad207a7f14"
+  }, {
+    "id" : "Lifestyle Habits",
+    "entity_id" : "Lifestyle Habits",
+    "entity_type" : "Concept",
+    "description" : "Unrelated daily habits that some educators attribute concentration difficulties to, as an alternative explanation to breakfast skipping.",
+    "source_id" : "9699c3cac8ef8902098b4bad207a7f14"
+  }, {
+    "id" : "Dog Park Renovations",
+    "entity_id" : "Dog Park Renovations",
+    "entity_type" : "Event",
+    "description" : "Significant renovations to dog parks in the city, which occurred around the same time as an increase in library memberships.",
+    "source_id" : "5149f1b37d6ab917be3530d301f0812d"
+  }, {
+    "id" : "City Library",
+    "entity_id" : "City Library",
+    "entity_type" : "Organization",
+    "description" : "The city's public library that announced an influx of new memberships following the dog park renovations.",
+    "source_id" : "5149f1b37d6ab917be3530d301f0812d"
+  }, {
+    "id" : "New Library Memberships",
+    "entity_id" : "New Library Memberships",
+    "entity_type" : "Event",
+    "description" : "An uptick in new memberships at the city library, occurring concurrently with the dog park renovations.",
+    "source_id" : "5149f1b37d6ab917be3530d301f0812d"
+  }, {
+    "id" : "Population Growth",
+    "entity_id" : "Population Growth",
+    "entity_type" : "Concept",
+    "description" : "A potential underlying factor that may explain the simultaneous increase in both dog park usage and library memberships.",
+    "source_id" : "5149f1b37d6ab917be3530d301f0812d"
+  }, {
+    "id" : "Civic Initiatives",
+    "entity_id" : "Civic Initiatives",
+    "entity_type" : "Concept",
+    "description" : "Unrelated civic programs or efforts that may independently account for the observed uptick in community engagement.",
+    "source_id" : "5149f1b37d6ab917be3530d301f0812d"
+  }, {
+    "id" : "Community-mindedness",
+    "entity_id" : "Community-mindedness",
+    "entity_type" : "Concept",
+    "description" : "The speculated behavioral shift in which locals become more community-oriented, potentially linking park renovations to library membership.",
+    "source_id" : "5149f1b37d6ab917be3530d301f0812d"
+  }, {
+    "id" : "Employees",
+    "entity_id" : "Employees",
+    "entity_type" : "Person",
+    "description" : "Office workers who noticed a correlation between midday naps in the break room and office printer malfunctions, and who turned the supposed connection into an inside joke.",
+    "source_id" : "c6ae6fe5c31bb015fb944f2c6de47e18"
+  }, {
+    "id" : "Break Room",
+    "entity_id" : "Break Room",
+    "entity_type" : "Location",
+    "description" : "The area in the office building where employees take midday naps, which is observed to coincide with printer malfunctions.",
+    "source_id" : "c6ae6fe5c31bb015fb944f2c6de47e18"
+  }, {
+    "id" : "Office Printer",
+    "entity_id" : "Office Printer",
+    "entity_type" : "Concept",
+    "description" : "The office equipment that experiences malfunctions on days with increased midday nap frequency in the break room.",
+    "source_id" : "c6ae6fe5c31bb015fb944f2c6de47e18"
+  }, {
+    "id" : "Technical Staff",
+    "entity_id" : "Technical Staff",
+    "entity_type" : "Person",
+    "description" : "Staff members who insist the timing between naps and printer malfunctions is merely coincidental and due to unrelated factors.",
+    "source_id" : "c6ae6fe5c31bb015fb944f2c6de47e18"
+  }, {
+    "id" : "Midday Nap Frequency",
+    "entity_id" : "Midday Nap Frequency",
+    "entity_type" : "Concept",
+    "description" : "The increased frequency of naps taken by employees during midday in the break room, which is observed to align with printer malfunctions.",
+    "source_id" : "c6ae6fe5c31bb015fb944f2c6de47e18"
+  }, {
+    "id" : "Office Printer Malfunctions",
+    "entity_id" : "Office Printer Malfunctions",
+    "entity_type" : "Event",
+    "description" : "The recurring equipment failures of the office printer that employees have noticed tend to occur on days with more midday naps.",
+    "source_id" : "c6ae6fe5c31bb015fb944f2c6de47e18"
+  }, {
+    "id" : "Office Folklore",
+    "entity_id" : "Office Folklore",
+    "entity_type" : "Concept",
+    "description" : "The inside joke and cultural narrative among coworkers about the supposed connection between midday naps and printer malfunctions.",
+    "source_id" : "c6ae6fe5c31bb015fb944f2c6de47e18"
+  }, {
+    "id" : "Building's Energy Levels",
+    "entity_id" : "Building's Energy Levels",
+    "entity_type" : "Concept",
+    "description" : "A hypothesized factor that some employees wondered might be disturbed by restful periods, potentially affecting office equipment.",
+    "source_id" : "c6ae6fe5c31bb015fb944f2c6de47e18"
+  }, {
+    "id" : "Office workers with daily exercise routines",
+    "entity_id" : "Office workers with daily exercise routines",
+    "entity_type" : "Person",
+    "description" : "A group of people in the office who committed to daily exercise routines and reported fewer episodes of illness, high energy levels, and relatively rare sick days.",
+    "source_id" : "d9e7b9ce668f53a7b4900765a13c85ef"
+  }, {
+    "id" : "Daily exercise routines",
+    "entity_id" : "Daily exercise routines",
+    "entity_type" : "Concept",
+    "description" : "A commitment to regular physical activity adopted by some office workers over the following months.",
+    "source_id" : "d9e7b9ce668f53a7b4900765a13c85ef"
+  }, {
+    "id" : "Office workers without exercise habits",
+    "entity_id" : "Office workers without exercise habits",
+    "entity_type" : "Person",
+    "description" : "A group of people in the office who did not adopt daily exercise habits and were observed to fall ill more often.",
+    "source_id" : "d9e7b9ce668f53a7b4900765a13c85ef"
+  }, {
+    "id" : "Illness",
+    "entity_id" : "Illness",
+    "entity_type" : "Concept",
+    "description" : "Episodes of illness experienced by office workers, with varying frequency between those who exercised daily and those who did not.",
+    "source_id" : "d9e7b9ce668f53a7b4900765a13c85ef"
+  }, {
+    "id" : "The office",
+    "entity_id" : "The office",
+    "entity_type" : "Location",
+    "description" : "The workplace where the group of people committed to daily exercise routines and where the comparison of health outcomes was observed.",
+    "source_id" : "d9e7b9ce668f53a7b4900765a13c85ef"
+  }, {
+    "id" : "Energy levels",
+    "entity_id" : "Energy levels",
+    "entity_type" : "Concept",
+    "description" : "The physical energy reported by office workers, which remained high among those who adopted daily exercise routines.",
+    "source_id" : "d9e7b9ce668f53a7b4900765a13c85ef"
+  }, {
+    "id" : "Sick days",
+    "entity_id" : "Sick days",
+    "entity_type" : "Concept",
+    "description" : "Days taken off work due to illness, which were relatively rare among office workers who exercised daily.",
+    "source_id" : "d9e7b9ce668f53a7b4900765a13c85ef"
+  } ],
+  "edges" : [ {
+    "source" : "Wine tasting events",
+    "target" : "Used car sales",
+    "weight" : "1.0",
+    "description" : "As wine tasting events became more popular, used car sales also experienced a notable increase, though the actual connection is weaker than it appears.",
+    "keywords" : "correlation, popularity, increase",
+    "source_id" : "a5c480b72285ba9101d3817723ef2436",
+    "src_id" : "Wine tasting events",
+    "tgt_id" : "Used car sales"
+  }, {
+    "source" : "Wine tasting events",
+    "target" : "Industry observers",
+    "weight" : "1.0",
+    "description" : "Industry observers speculate about a possible shared clientele between wine tasting events and car sales.",
+    "keywords" : "speculation, shared clientele",
+    "source_id" : "a5c480b72285ba9101d3817723ef2436",
+    "src_id" : "Industry observers",
+    "tgt_id" : "Wine tasting events"
+  }, {
+    "source" : "Wine tasting events",
+    "target" : "New car purchases",
+    "weight" : "1.0",
+    "description" : "Despite a perceived alignment between wine tasting events and new car purchases, the actual connection is much weaker than it appears.",
+    "keywords" : "perceived alignment, weak connection",
+    "source_id" : "a5c480b72285ba9101d3817723ef2436",
+    "src_id" : "Wine tasting events",
+    "tgt_id" : "New car purchases"
+  }, {
+    "source" : "Used car sales",
+    "target" : "Industry observers",
+    "weight" : "1.0",
+    "description" : "Industry observers speculate about a possible shared clientele linking used car sales to wine tasting events.",
+    "keywords" : "speculation, shared clientele",
+    "source_id" : "a5c480b72285ba9101d3817723ef2436",
+    "src_id" : "Industry observers",
+    "tgt_id" : "Used car sales"
+  }, {
+    "source" : "Dealerships",
+    "target" : "Vineyards",
+    "weight" : "1.0",
+    "description" : "Both dealerships and vineyards report brisk business during similar months, suggesting a temporal alignment.",
+    "keywords" : "brisk business, similar months",
+    "source_id" : "a5c480b72285ba9101d3817723ef2436",
+    "src_id" : "Dealerships",
+    "tgt_id" : "Vineyards"
+  }, {
+    "source" : "Locals",
+    "target" : "New car purchases",
+    "weight" : "1.0",
+    "description" : "Locals half-jokingly attribute new car purchases to a taste for finer things, linking them to the wine tasting culture.",
+    "keywords" : "attribution, taste, finer things",
+    "source_id" : "a5c480b72285ba9101d3817723ef2436",
+    "src_id" : "Locals",
+    "tgt_id" : "New car purchases"
+  }, {
+    "source" : "Families",
+    "target" : "Mosquito Nets",
+    "weight" : "1.0",
+    "description" : "Families in the village have widely adopted mosquito nets in their homes as a protective measure.",
+    "keywords" : "adoption, usage, prevention",
+    "source_id" : "ce46902417c5a96e4c1984d75b0dbacf",
+    "src_id" : "Families",
+    "tgt_id" : "Mosquito Nets"
+  }, {
+    "source" : "Families",
+    "target" : "Village",
+    "weight" : "1.0",
+    "description" : "Families reside in the village where mosquito net adoption is widespread.",
+    "keywords" : "residence, community",
+    "source_id" : "ce46902417c5a96e4c1984d75b0dbacf",
+    "src_id" : "Families",
+    "tgt_id" : "Village"
+  }, {
+    "source" : "Mosquito Nets",
+    "target" : "Malaria",
+    "weight" : "1.0",
+    "description" : "The link between mosquito net usage and malaria disease prevalence is seldom directly addressed in the village.",
+    "keywords" : "prevention, disease prevalence, correlation",
+    "source_id" : "ce46902417c5a96e4c1984d75b0dbacf",
+    "src_id" : "Mosquito Nets",
+    "tgt_id" : "Malaria"
+  }, {
+    "source" : "Village",
+    "target" : "Health Surveys",
+    "weight" : "1.0",
+    "description" : "Health surveys are conducted in the village to track malaria case trends.",
+    "keywords" : "conducted, location",
+    "source_id" : "ce46902417c5a96e4c1984d75b0dbacf",
+    "src_id" : "Health Surveys",
+    "tgt_id" : "Village"
+  }, {
+    "source" : "Health Surveys",
+    "target" : "Malaria",
+    "weight" : "1.0",
+    "description" : "Health surveys indicate a stable trend in malaria cases each year in the village.",
+    "keywords" : "tracking, monitoring, stable trend",
+    "source_id" : "ce46902417c5a96e4c1984d75b0dbacf",
+    "src_id" : "Health Surveys",
+    "tgt_id" : "Malaria"
+  }, {
+    "source" : "Elders",
+    "target" : "Climate Shift",
+    "weight" : "1.0",
+    "description" : "Elders claim that the climate has shifted, making conditions less favorable for mosquitoes.",
+    "keywords" : "claim, attribution",
+    "source_id" : "ce46902417c5a96e4c1984d75b0dbacf",
+    "src_id" : "Elders",
+    "tgt_id" : "Climate Shift"
+  }, {
+    "source" : "Climate Shift",
+    "target" : "Mosquitoes",
+    "weight" : "1.0",
+    "description" : "The claimed climate shift is said to make the environment less favorable for mosquito survival and proliferation.",
+    "keywords" : "impact, unfavorable conditions",
+    "source_id" : "ce46902417c5a96e4c1984d75b0dbacf",
+    "src_id" : "Climate Shift",
+    "tgt_id" : "Mosquitoes"
+  }, {
+    "source" : "Breakfast Skipping",
+    "target" : "Concentration Difficulties",
+    "weight" : "1.0",
+    "description" : "Anecdotal evidence from classrooms suggests that breakfast skipping sometimes overlaps with reports of concentration difficulties among students.",
+    "keywords" : "association, overlap, anecdotal evidence",
+    "source_id" : "9699c3cac8ef8902098b4bad207a7f14",
+    "src_id" : "Breakfast Skipping",
+    "tgt_id" : "Concentration Difficulties"
+  }, {
+    "source" : "Breakfast Skipping",
+    "target" : "Classrooms",
+    "weight" : "1.0",
+    "description" : "Classrooms are the setting where anecdotal evidence of breakfast skipping among students is gathered.",
+    "keywords" : "observation, evidence, setting",
+    "source_id" : "9699c3cac8ef8902098b4bad207a7f14",
+    "src_id" : "Classrooms",
+    "tgt_id" : "Breakfast Skipping"
+  }, {
+    "source" : "Breakfast Skipping",
+    "target" : "Educators",
+    "weight" : "1.0",
+    "description" : "Some educators see a pattern linking breakfast skipping to concentration issues, while others attribute difficulties to unrelated lifestyle habits.",
+    "keywords" : "observation, pattern, attribution",
+    "source_id" : "9699c3cac8ef8902098b4bad207a7f14",
+    "src_id" : "Educators",
+    "tgt_id" : "Breakfast Skipping"
+  }, {
+    "source" : "Breakfast Skipping",
+    "target" : "Parent-Teacher Meetings",
+    "weight" : "1.0",
+    "description" : "The association involving breakfast skipping is discussed during parent-teacher meetings, with opinions varying widely.",
+    "keywords" : "discussion, association, opinions",
+    "source_id" : "9699c3cac8ef8902098b4bad207a7f14",
+    "src_id" : "Parent-Teacher Meetings",
+    "tgt_id" : "Breakfast Skipping"
+  }, {
+    "source" : "Breakfast Skipping",
+    "target" : "Students",
+    "weight" : "1.0",
+    "description" : "Students are the individuals whose breakfast-skipping behavior is observed and discussed in educational contexts.",
+    "keywords" : "behavior, habit",
+    "source_id" : "9699c3cac8ef8902098b4bad207a7f14",
+    "src_id" : "Students",
+    "tgt_id" : "Breakfast Skipping"
+  }, {
+    "source" : "Concentration Difficulties",
+    "target" : "Classrooms",
+    "weight" : "1.0",
+    "description" : "Classrooms are where reports of concentration difficulties among students are observed.",
+    "keywords" : "observation, reports, setting",
+    "source_id" : "9699c3cac8ef8902098b4bad207a7f14",
+    "src_id" : "Classrooms",
+    "tgt_id" : "Concentration Difficulties"
+  }, {
+    "source" : "Concentration Difficulties",
+    "target" : "Parent-Teacher Meetings",
+    "weight" : "1.0",
+    "description" : "The association involving concentration difficulties is a topic of discussion during parent-teacher meetings.",
+    "keywords" : "discussion, association, opinions",
+    "source_id" : "9699c3cac8ef8902098b4bad207a7f14",
+    "src_id" : "Parent-Teacher Meetings",
+    "tgt_id" : "Concentration Difficulties"
+  }, {
+    "source" : "Concentration Difficulties",
+    "target" : "Students",
+    "weight" : "1.0",
+    "description" : "Students are the individuals who report or exhibit concentration difficulties in classroom settings.",
+    "keywords" : "experience, reports",
+    "source_id" : "9699c3cac8ef8902098b4bad207a7f14",
+    "src_id" : "Students",
+    "tgt_id" : "Concentration Difficulties"
+  }, {
+    "source" : "Educators",
+    "target" : "Lifestyle Habits",
+    "weight" : "1.0",
+    "description" : "Some educators attribute concentration difficulties to unrelated lifestyle habits rather than breakfast skipping.",
+    "keywords" : "attribution, alternative explanation",
+    "source_id" : "9699c3cac8ef8902098b4bad207a7f14",
+    "src_id" : "Educators",
+    "tgt_id" : "Lifestyle Habits"
+  }, {
+    "source" : "City Library",
+    "target" : "New Library Memberships",
+    "weight" : "1.0",
+    "description" : "The city library announced an influx of new memberships following the dog park renovations.",
+    "keywords" : "announced, influx, memberships",
+    "source_id" : "5149f1b37d6ab917be3530d301f0812d",
+    "src_id" : "City Library",
+    "tgt_id" : "New Library Memberships"
+  }, {
+    "source" : "New Library Memberships",
+    "target" : "Dog Park Renovations",
+    "weight" : "1.0",
+    "description" : "The timing of the dog park renovations and the rise in library memberships has invited speculation about a causal connection, though no direct link has been established.",
+    "keywords" : "speculation, concurrent timing, no direct link",
+    "source_id" : "5149f1b37d6ab917be3530d301f0812d",
+    "src_id" : "Dog Park Renovations",
+    "tgt_id" : "New Library Memberships"
+  }, {
+    "source" : "New Library Memberships",
+    "target" : "Community-mindedness",
+    "weight" : "1.0",
+    "description" : "It has been speculated that increased community-mindedness may lead locals to join the library, though this link is unconfirmed.",
+    "keywords" : "leading to, joining, speculation",
+    "source_id" : "5149f1b37d6ab917be3530d301f0812d",
+    "src_id" : "Community-mindedness",
+    "tgt_id" : "New Library Memberships"
+  }, {
+    "source" : "New Library Memberships",
+    "target" : "Population Growth",
+    "weight" : "1.0",
+    "description" : "Population growth is cited as a possible explanation for the uptick in library memberships.",
+    "keywords" : "possible cause, underlying factor",
+    "source_id" : "5149f1b37d6ab917be3530d301f0812d",
+    "src_id" : "Population Growth",
+    "tgt_id" : "New Library Memberships"
+  }, {
+    "source" : "New Library Memberships",
+    "target" : "Civic Initiatives",
+    "weight" : "1.0",
+    "description" : "Unrelated civic initiatives are suggested as an alternative explanation for the increase in library memberships.",
+    "keywords" : "unrelated, possible cause",
+    "source_id" : "5149f1b37d6ab917be3530d301f0812d",
+    "src_id" : "Civic Initiatives",
+    "tgt_id" : "New Library Memberships"
+  }, {
+    "source" : "Dog Park Renovations",
+    "target" : "Community-mindedness",
+    "weight" : "1.0",
+    "description" : "Some have speculated that the new parks are encouraging locals to become more community-minded.",
+    "keywords" : "encouraging, behavioral shift, speculation",
+    "source_id" : "5149f1b37d6ab917be3530d301f0812d",
+    "src_id" : "Dog Park Renovations",
+    "tgt_id" : "Community-mindedness"
+  }, {
+    "source" : "Dog Park Renovations",
+    "target" : "Population Growth",
+    "weight" : "1.0",
+    "description" : "Population growth is cited as a possible explanation for the need for and timing of dog park renovations.",
+    "keywords" : "possible cause, underlying factor",
+    "source_id" : "5149f1b37d6ab917be3530d301f0812d",
+    "src_id" : "Population Growth",
+    "tgt_id" : "Dog Park Renovations"
+  }, {
+    "source" : "Dog Park Renovations",
+    "target" : "Civic Initiatives",
+    "weight" : "1.0",
+    "description" : "Unrelated civic initiatives are suggested as an alternative explanation for the dog park renovations.",
+    "keywords" : "unrelated, possible cause",
+    "source_id" : "5149f1b37d6ab917be3530d301f0812d",
+    "src_id" : "Civic Initiatives",
+    "tgt_id" : "Dog Park Renovations"
+  }, {
+    "source" : "Employees",
+    "target" : "Break Room",
+    "weight" : "1.0",
+    "description" : "Employees take midday naps in the break room, and the frequency of these naps is observed to correlate with printer malfunctions.",
+    "keywords" : "naps, location, midday",
+    "source_id" : "c6ae6fe5c31bb015fb944f2c6de47e18",
+    "src_id" : "Employees",
+    "tgt_id" : "Break Room"
+  }, {
+    "source" : "Employees",
+    "target" : "Office Folklore",
+    "weight" : "1.0",
+    "description" : "The supposed connection between naps and printer issues has become an inside joke among the employees.",
+    "keywords" : "inside joke, coworkers, humor",
+    "source_id" : "c6ae6fe5c31bb015fb944f2c6de47e18",
+    "src_id" : "Office Folklore",
+    "tgt_id" : "Employees"
+  }, {
+    "source" : "Employees",
+    "target" : "Office Printer",
+    "weight" : "1.0",
+    "description" : "Some employees speculated that sleeping colleagues might somehow interfere with the office printer equipment.",
+    "keywords" : "interfere, hypothesized, equipment",
+    "source_id" : "c6ae6fe5c31bb015fb944f2c6de47e18",
+    "src_id" : "Employees",
+    "tgt_id" : "Office Printer"
+  }, {
+    "source" : "Midday Nap Frequency",
+    "target" : "Office Printer Malfunctions",
+    "weight" : "1.0",
+    "description" : "Days with increased midday nap frequency in the break room tend to align with a rise in office printer malfunctions, though technical staff consider this coincidental.",
+    "keywords" : "correlation, coincidence, timing",
+    "source_id" : "c6ae6fe5c31bb015fb944f2c6de47e18",
+    "src_id" : "Midday Nap Frequency",
+    "tgt_id" : "Office Printer Malfunctions"
+  }, {
+    "source" : "Midday Nap Frequency",
+    "target" : "Building's Energy Levels",
+    "weight" : "1.0",
+    "description" : "Some employees wondered aloud whether the restful periods of napping might disturb the building's energy levels.",
+    "keywords" : "disturb, hypothesized, restful periods",
+    "source_id" : "c6ae6fe5c31bb015fb944f2c6de47e18",
+    "src_id" : "Midday Nap Frequency",
+    "tgt_id" : "Building's Energy Levels"
+  }, {
+    "source" : "Office Printer Malfunctions",
+    "target" : "Technical Staff",
+    "weight" : "1.0",
+    "description" : "Technical staff insist that the timing between naps and printer malfunctions is merely coincidental and likely due to unrelated factors.",
+    "keywords" : "dismissal, coincidence, unrelated factors",
+    "source_id" : "c6ae6fe5c31bb015fb944f2c6de47e18",
+    "src_id" : "Technical Staff",
+    "tgt_id" : "Office Printer Malfunctions"
+  }, {
+    "source" : "Office Printer Malfunctions",
+    "target" : "Office Folklore",
+    "weight" : "1.0",
+    "description" : "The recurring pattern of printer malfunctions alongside naps continues to fuel office folklore among coworkers.",
+    "keywords" : "fuel, narrative, pattern",
+    "source_id" : "c6ae6fe5c31bb015fb944f2c6de47e18",
+    "src_id" : "Office Printer Malfunctions",
+    "tgt_id" : "Office Folklore"
+  }, {
+    "source" : "Office workers with daily exercise routines",
+    "target" : "Daily exercise routines",
+    "weight" : "1.0",
+    "description" : "The office workers committed to and maintained daily exercise routines over the following months.",
+    "keywords" : "adopted, committed, routine",
+    "source_id" : "d9e7b9ce668f53a7b4900765a13c85ef",
+    "src_id" : "Office workers with daily exercise routines",
+    "tgt_id" : "Daily exercise routines"
+  }, {
+    "source" : "Office workers with daily exercise routines",
+    "target" : "Illness",
+    "weight" : "1.0",
+    "description" : "The office workers who exercised daily reported fewer episodes of illness compared to their peers.",
+    "keywords" : "fewer episodes, reduced, health",
+    "source_id" : "d9e7b9ce668f53a7b4900765a13c85ef",
+    "src_id" : "Office workers with daily exercise routines",
+    "tgt_id" : "Illness"
+  }, {
+    "source" : "Office workers with daily exercise routines",
+    "target" : "Energy levels",
+    "weight" : "1.0",
+    "description" : "The energy levels of the exercising office workers remained high throughout the observed period.",
+    "keywords" : "high, maintained, physical",
+    "source_id" : "d9e7b9ce668f53a7b4900765a13c85ef",
+    "src_id" : "Office workers with daily exercise routines",
+    "tgt_id" : "Energy levels"
+  }, {
+    "source" : "Office workers with daily exercise routines",
+    "target" : "Sick days",
+    "weight" : "1.0",
+    "description" : "Sick days were relatively rare among the office workers who adopted daily exercise routines.",
+    "keywords" : "rare, few, absence",
+    "source_id" : "d9e7b9ce668f53a7b4900765a13c85ef",
+    "src_id" : "Office workers with daily exercise routines",
+    "tgt_id" : "Sick days"
+  }, {
+    "source" : "Office workers with daily exercise routines",
+    "target" : "The office",
+    "weight" : "1.0",
+    "description" : "The office workers with daily exercise routines were part of the office environment where the health comparison took place.",
+    "keywords" : "workplace, located, environment",
+    "source_id" : "d9e7b9ce668f53a7b4900765a13c85ef",
+    "src_id" : "Office workers with daily exercise routines",
+    "tgt_id" : "The office"
+  }, {
+    "source" : "Office workers with daily exercise routines",
+    "target" : "Office workers without exercise habits",
+    "weight" : "1.0",
+    "description" : "The two groups were contrasted in terms of illness frequency, with some believing the difference was more than coincidence.",
+    "keywords" : "contrast, comparison, difference",
+    "source_id" : "d9e7b9ce668f53a7b4900765a13c85ef",
+    "src_id" : "Office workers with daily exercise routines",
+    "tgt_id" : "Office workers without exercise habits"
+  }, {
+    "source" : "Illness",
+    "target" : "Office workers without exercise habits",
+    "weight" : "1.0",
+    "description" : "The office workers who did not adopt exercise habits seemed to fall ill more often than their exercising peers.",
+    "keywords" : "more frequent, fell ill, higher rate",
+    "source_id" : "d9e7b9ce668f53a7b4900765a13c85ef",
+    "src_id" : "Office workers without exercise habits",
+    "tgt_id" : "Illness"
+  }, {
+    "source" : "Office workers without exercise habits",
+    "target" : "The office",
+    "weight" : "1.0",
+    "description" : "The office workers without exercise habits were also part of the same office environment.",
+    "keywords" : "workplace, located, environment",
+    "source_id" : "d9e7b9ce668f53a7b4900765a13c85ef",
+    "src_id" : "Office workers without exercise habits",
+    "tgt_id" : "The office"
+  } ],
+  "metadata" : {
+    "nodeCount" : 43,
+    "edgeCount" : 45
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "nodes" : {
+    "FAULTY SENSOR" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A defective sensor identified during later inspection as the true cause of the fire alarm alert.",
+      "source_id" : "chunk-81a394f1fb903627e04865488d258b60"
+    },
+    "DESIGN PREFERENCES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Shifting consumer tastes in design that independently shape both vintage and minimalist trends.",
+      "source_id" : "chunk-c5de0d1e4c5fac6cc4a19d8597572e38"
+    },
+    "CONSTRUCTION WORK" : {
+      "entity_type" : "EVENT",
+      "description" : "Renovation activity on the upper floors of the office building, involving hammer strikes that produced noise and vibrations.",
+      "source_id" : "chunk-81a394f1fb903627e04865488d258b60"
+    },
+    "FIRE ALARM INCIDENT" : {
+      "entity_type" : "EVENT",
+      "description" : "The unexpected activation of the building's fire alarm on a Monday morning, causing employee evacuation.",
+      "source_id" : "chunk-81a394f1fb903627e04865488d258b60"
+    },
+    "CITY COUNCIL" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A governmental body where the temporal correlation between bike usage and noise is discussed.",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    },
+    "NOISE COMPLAINTS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Local complaints that have increased alongside bike sharing program usage.",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    },
+    "TRAFFIC VOLUMES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A factor that directly and significantly impacts urban noise levels.",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    },
+    "BIKE SHARING PROGRAM" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A transportation service whose increased usage is temporally correlated with rising local noise complaints.",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    },
+    "OFFICE BUILDING" : {
+      "entity_type" : "GEO",
+      "description" : "A multi-floor building where a fire alarm incident occurred and where employees work. Upper floors were under construction at the time.",
+      "source_id" : "chunk-81a394f1fb903627e04865488d258b60"
+    },
+    "EMPLOYEES" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Workers in the office building who quickly evacuated, initially believing construction triggered the alarm.",
+      "source_id" : "chunk-81a394f1fb903627e04865488d258b60"
+    },
+    "MINIMALIST HOME DESIGN" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A home design trend characterized by minimalism that has gained significant momentum.",
+      "source_id" : "chunk-c5de0d1e4c5fac6cc4a19d8597572e38"
+    },
+    "CONSTRUCTION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A factor that directly and significantly impacts urban noise levels.",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    },
+    "VINTAGE FURNITURE SALES" : {
+      "entity_type" : "EVENT",
+      "description" : "A boom in vintage furniture sales occurring concurrently with the rise of minimalist design trends.",
+      "source_id" : "chunk-c5de0d1e4c5fac6cc4a19d8597572e38"
+    },
+    "DESIGN MAGAZINES" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Publications that frequently highlight both vintage furniture and minimalist design trends to their readership.",
+      "source_id" : "chunk-c5de0d1e4c5fac6cc4a19d8597572e38"
+    },
+    "URBAN NOISE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The overall noise level in the city, more directly impacted by construction, nightlife, and traffic.",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    },
+    "VINTAGE FURNITURE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A product category of classic, older-style furniture experiencing increased sales.",
+      "source_id" : "chunk-c5de0d1e4c5fac6cc4a19d8597572e38"
+    },
+    "CONSUMERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Individuals encouraged to blend vintage and minimalist styles in their home decor choices.",
+      "source_id" : "chunk-c5de0d1e4c5fac6cc4a19d8597572e38"
+    },
+    "COMMUNITY BOARDS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Local governing bodies questioning whether the influx of bikes is making the city louder.",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    },
+    "THE CITY" : {
+      "entity_type" : "GEO",
+      "description" : "The urban area experiencing increased bike usage, noise complaints, and various noise sources.",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    },
+    "NIGHTLIFE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A factor that directly and significantly impacts urban noise levels.",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    }
+  },
+  "edges" : [ {
+    "source" : "VINTAGE FURNITURE SALES",
+    "target" : "MINIMALIST HOME DESIGN",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The sales boom and design trend occurred simultaneously, creating a perceived correlation between them.",
+      "keywords" : "concurrency, market correlation",
+      "source_id" : "chunk-c5de0d1e4c5fac6cc4a19d8597572e38"
+    }
+  }, {
+    "source" : "FAULTY SENSOR",
+    "target" : "FIRE ALARM INCIDENT",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "The faulty sensor was identified as the actual cause of the fire alarm alert, not the construction work.",
+      "keywords" : "root cause, malfunction, inspection",
+      "source_id" : "chunk-81a394f1fb903627e04865488d258b60"
+    }
+  }, {
+    "source" : "URBAN NOISE",
+    "target" : "TRAFFIC VOLUMES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Traffic volumes are a direct and more significant impactor of urban noise than bike usage.",
+      "keywords" : "noise source, causation, traffic",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    }
+  }, {
+    "source" : "EMPLOYEES",
+    "target" : "CONSTRUCTION WORK",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Employees believed noise and vibrations from construction triggered the fire alarm, drawing a wrong conclusion.",
+      "keywords" : "misattribution, noise, vibrations",
+      "source_id" : "chunk-81a394f1fb903627e04865488d258b60"
+    }
+  }, {
+    "source" : "CONSUMERS",
+    "target" : "MINIMALIST HOME DESIGN",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Consumers are encouraged to adopt and blend minimalist design styles in their homes.",
+      "keywords" : "adoption, style blending",
+      "source_id" : "chunk-c5de0d1e4c5fac6cc4a19d8597572e38"
+    }
+  }, {
+    "source" : "CITY COUNCIL",
+    "target" : "NOISE COMPLAINTS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "City council debates reference the trend in noise complaints alongside bike usage.",
+      "keywords" : "policy debate, statistics, noise",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    }
+  }, {
+    "source" : "EMPLOYEES",
+    "target" : "OFFICE BUILDING",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Employees are workers stationed in the office building where the incident occurred.",
+      "keywords" : "workplace, occupancy",
+      "source_id" : "chunk-81a394f1fb903627e04865488d258b60"
+    }
+  }, {
+    "source" : "THE CITY",
+    "target" : "URBAN NOISE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The city is the location where urban noise and its various sources are experienced.",
+      "keywords" : "location, urban environment, noise",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    }
+  }, {
+    "source" : "EMPLOYEES",
+    "target" : "FIRE ALARM INCIDENT",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Employees quickly evacuated the building in response to the fire alarm activation.",
+      "keywords" : "evacuation, response, alarm",
+      "source_id" : "chunk-81a394f1fb903627e04865488d258b60"
+    }
+  }, {
+    "source" : "COMMUNITY BOARDS",
+    "target" : "CITY COUNCIL",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Both entities engage in discussions about the perceived bike-noise relationship.",
+      "keywords" : "governance, policy discussion, public concern",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    }
+  }, {
+    "source" : "CONSTRUCTION WORK",
+    "target" : "OFFICE BUILDING",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Construction work was being carried out on the upper floors of the office building.",
+      "keywords" : "location, renovation, upper floors",
+      "source_id" : "chunk-81a394f1fb903627e04865488d258b60"
+    }
+  }, {
+    "source" : "DESIGN PREFERENCES",
+    "target" : "VINTAGE FURNITURE SALES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Shifts in design preferences independently shape the vintage furniture sales boom.",
+      "keywords" : "causal influence, preference shift",
+      "source_id" : "chunk-c5de0d1e4c5fac6cc4a19d8597572e38"
+    }
+  }, {
+    "source" : "URBAN NOISE",
+    "target" : "NIGHTLIFE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Nightlife is a direct and more significant impactor of urban noise than bike usage.",
+      "keywords" : "noise source, causation, nightlife",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    }
+  }, {
+    "source" : "URBAN NOISE",
+    "target" : "CONSTRUCTION",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Construction is a direct and more significant impactor of urban noise than bike usage.",
+      "keywords" : "noise source, causation, construction",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    }
+  }, {
+    "source" : "CITY COUNCIL",
+    "target" : "BIKE SHARING PROGRAM",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "City council discussions frequently cite the temporal correlation with bike sharing usage.",
+      "keywords" : "policy discussion, correlation, cycling",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    }
+  }, {
+    "source" : "FIRE ALARM INCIDENT",
+    "target" : "OFFICE BUILDING",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The fire alarm rang out across the entire office building, prompting evacuation.",
+      "keywords" : "alarm, building-wide, evacuation",
+      "source_id" : "chunk-81a394f1fb903627e04865488d258b60"
+    }
+  }, {
+    "source" : "DESIGN MAGAZINES",
+    "target" : "MINIMALIST HOME DESIGN",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Design magazines highlight minimalist home design trends alongside vintage furniture.",
+      "keywords" : "media coverage, trend promotion",
+      "source_id" : "chunk-c5de0d1e4c5fac6cc4a19d8597572e38"
+    }
+  }, {
+    "source" : "CONSUMERS",
+    "target" : "VINTAGE FURNITURE SALES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Consumers drive the sales boom by purchasing vintage furniture pieces.",
+      "keywords" : "purchasing, market demand",
+      "source_id" : "chunk-c5de0d1e4c5fac6cc4a19d8597572e38"
+    }
+  }, {
+    "source" : "CONSTRUCTION WORK",
+    "target" : "FIRE ALARM INCIDENT",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The timing of construction work coincided with the alarm, leading employees to incorrectly suspect it as the cause.",
+      "keywords" : "false correlation, timing, suspicion",
+      "source_id" : "chunk-81a394f1fb903627e04865488d258b60"
+    }
+  }, {
+    "source" : "BIKE SHARING PROGRAM",
+    "target" : "NOISE COMPLAINTS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "A temporal correlation exists between bike sharing usage and noise complaints, but not a causal link.",
+      "keywords" : "correlation, not causation, statistics",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    }
+  }, {
+    "source" : "COMMUNITY BOARDS",
+    "target" : "BIKE SHARING PROGRAM",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Community boards wonder if the influx of bikes is making the city louder.",
+      "keywords" : "causation question, bikes, noise",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    }
+  }, {
+    "source" : "COMMUNITY BOARDS",
+    "target" : "NOISE COMPLAINTS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Community boards are questioning the rise in local noise complaints.",
+      "keywords" : "inquiry, complaints, governance",
+      "source_id" : "chunk-2c6f6489489dd91b03a68533e63e4eb5"
+    }
+  }, {
+    "source" : "DESIGN MAGAZINES",
+    "target" : "VINTAGE FURNITURE SALES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Design magazines frequently highlight vintage furniture sales trends to their audience.",
+      "keywords" : "media coverage, promotion",
+      "source_id" : "chunk-c5de0d1e4c5fac6cc4a19d8597572e38"
+    }
+  }, {
+    "source" : "DESIGN PREFERENCES",
+    "target" : "MINIMALIST HOME DESIGN",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Shifting design preferences independently drive the momentum of minimalist home design.",
+      "keywords" : "causal influence, preference shift",
+      "source_id" : "chunk-c5de0d1e4c5fac6cc4a19d8597572e38"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 20,
+    "edgeCount" : 24,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Shared_Trend_No_Direct_Link_484"
+  }
+}

@@ -433,3 +433,78 @@
   reg System=pathrag: coef=-0.283 p=0.0412 stdβ=-0.509
 [analysis] wrote 7 files to /home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352/e0_aggregate/analysis
 === [SWO69] 08:33:22 DONE mode=all ===
+=== [SWO69] run dir: eval_results/swo69_20260819_043352 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 04:10:53 SKIP  graphrag_e0_graphrag_musique (output exists) ===
+=== [SWO69] 04:10:53 START lightrag_e0_lightrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] run dir: eval_results/swo69_20260819_043352 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 04:12:49 SKIP  graphrag_e0_graphrag_musique (output exists) ===
+=== [SWO69] 04:12:49 START lightrag_e0_lightrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 04:39:56 END   lightrag_e0_lightrag_musique rc=0 wall=1743s ===
+[analyze_kg_quality] rows=1 systems=['lightrag'] skipped=0
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_lightrag_musique/kg_quality/kg_quality_per_sample.csv
+[analyze_kg_quality] wrote eval_results/swo69_20260819_043352/e0_lightrag_musique/kg_quality/kg_quality_by_system.csv
+[discovery] rows=15 conditions=['lightrag'] skipped=0
+[discovery] wrote eval_results/swo69_20260819_043352/e0_lightrag_musique/discovery_metrics/discovery_metrics_per_sample.csv
+[discovery] wrote eval_results/swo69_20260819_043352/e0_lightrag_musique/discovery_metrics/discovery_metrics_by_condition.csv
+=== [SWO69] 04:39:58 SKIP  pathrag_e0_pathrag_musique (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e0_youturag_musique (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e0_hipporag_musique (output exists) ===
+=== [SWO69] 04:39:58 SKIP  graphrag_e0_graphrag_causal (output exists) ===
+=== [SWO69] 04:39:58 SKIP  lightrag_e0_lightrag_causal (output exists) ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e0_pathrag_causal (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e0_youturag_causal (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e0_hipporag_causal (output exists) ===
+=== [SWO69] 04:39:58 SKIP  graphrag_e0_graphrag_webis (output exists) ===
+=== [SWO69] 04:39:58 SKIP  lightrag_e0_lightrag_webis (output exists) ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e0_pathrag_webis (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e0_youturag_webis (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e0_hipporag_webis (output exists) ===
+=== [SWO69] 04:39:58 SKIP  graphrag_e1_graphrag_musique_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  lightrag_e1_lightrag_musique_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e1_pathrag_musique_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e1_youturag_musique_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e1_hipporag_musique_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  graphrag_e1_graphrag_causal_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  lightrag_e1_lightrag_causal_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e1_pathrag_causal_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e1_youturag_causal_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e1_hipporag_causal_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  graphrag_e1_graphrag_webis_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  lightrag_e1_lightrag_webis_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e1_pathrag_webis_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e1_youturag_webis_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e1_hipporag_webis_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  graphrag_e1_graphrag_musique_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  lightrag_e1_lightrag_musique_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e1_pathrag_musique_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e1_youturag_musique_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e1_hipporag_musique_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  graphrag_e1_graphrag_causal_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  lightrag_e1_lightrag_causal_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e1_pathrag_causal_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e1_youturag_causal_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e1_hipporag_causal_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  graphrag_e1_graphrag_webis_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  lightrag_e1_lightrag_webis_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e1_pathrag_webis_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e1_youturag_webis_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e1_hipporag_webis_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP e2/lightrag — no kg_snapshot under eval_results/swo69_20260819_043352/e0_lightrag_musique (run E0 first) ===
+=== [SWO69] 04:39:58 SKIP e2/hipporag — jar lacks the RAG-runner e2 hook (rebuild required, see SWO69/REBUILD.md) ===
+[analysis] merged rows=287
+[analysis] significant pairs (p<0.05): 11
+  density × rh_at_5: rs=-0.434 p=0.0000**
+  density × cic: rs=-0.369 p=0.0001**
+  er × rh_at_5: rs=-0.364 p=0.0002**
+  kgc × rh_at_5: rs=-0.364 p=0.0002**
+  er × cic: rs=-0.286 p=0.0034**
+  kgc × cic: rs=-0.286 p=0.0034**
+  rr × faithfulness: rs=-0.198 p=0.0054**
+  er × faithfulness: rs=-0.149 p=0.0366*
+  reg intercept: coef=0.137 p=0.0000 stdβ=None
+  reg ER: coef=0.926 p=0.0000 stdβ=1.125
+  reg RR: coef=-0.750 p=0.0000 stdβ=-0.703
+  reg Density: coef=3.736 p=0.3133 stdβ=0.282
+  reg System=lightrag: coef=-0.029 p=0.8551 stdβ=-0.014
+[analysis] wrote 7 files to /home/aad13623fe/CausalHippo/eval_results/swo69_20260819_043352/e0_aggregate/analysis
+=== [SWO69] 04:40:04 DONE mode=all ===

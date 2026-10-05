@@ -1,0 +1,5554 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "David Conrad",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Jim Clancy",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Jennifer Love Hewitt",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Melinda",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Jim Clancy",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Melinda",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Jim Clancy",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "every episode",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Jennifer Love Hewitt",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "every episode",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Jim Clancy",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cast",
+      "chunk id" : "m8wm6dIS"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Jennifer Love Hewitt",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cast",
+      "chunk id" : "m8wm6dIS"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "screenwriter",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "director",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cinematographer",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "producer",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "New York City",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "New York City",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "New York",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "14th Moscow International Film Festival",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "14th Moscow International Film Festival",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Moscow",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Alambrista!",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Ballad of Gregorio Cortez",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saving Grace",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Triumph of the Spirit",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Talent for the Game",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Roosters",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Slave of Dreams",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Caught",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "American Me",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Edward James Olmos",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Alambrista!",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Edward James Olmos",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Ballad of Gregorio Cortez",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Edward James Olmos",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saving Grace",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Edward James Olmos",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Triumph of the Spirit",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Edward James Olmos",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Talent for the Game",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Edward James Olmos",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Roosters",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Edward James Olmos",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Slave of Dreams",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Edward James Olmos",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Caught",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "American Me",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Edward James Olmos",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Edward James Olmos",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shane Joseph",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "professional ice hockey winger",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shane Joseph",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Canadian",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shane Joseph",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Free Agent",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Brooks",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Alberta",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shane Joseph",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Brooks",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shane Joseph",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Deutsche Eishockey Liga",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shane Joseph",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Iserlohn Roosters",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Iserlohn Roosters",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Deutsche Eishockey Liga",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Daniel Tupou",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "professional rugby league footballer",
+      "chunk id" : "wPLyutCd"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Daniel Tupou",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sydney Roosters",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Daniel Tupou",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "NRL",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sydney Roosters",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "NRL",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Daniel Tupou",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Australian",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Daniel Tupou",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Tongan",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Daniel Tupou",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "New South Wales State of Origin",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Daniel Tupou",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "City Origin",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Daniel Tupou",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Prime Minister's XIII",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Daniel Tupou",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2013 NRL Premierships",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Daniel Tupou",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2018 NRL Premierships",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2013 NRL Premierships",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "NRL",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2018 NRL Premierships",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "NRL",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Blood",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "HBO",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Seventh season of True Blood",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Blood",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Farewell to Bon Temps",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Seventh season of True Blood",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Alan Ball",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Farewell to Bon Temps",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Brian Buckner",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Farewell to Bon Temps",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Alan Ball",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Blood",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Brian Buckner",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Blood",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Farewell to Bon Temps",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bon Temps",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Seventh season of True Blood",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "June 22, 2014",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rooster Cogburn (1975 film)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Stuart Millar",
+      "chunk id" : "ausK7G6n"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rooster Cogburn (1975 film)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Martha Hyer",
+      "chunk id" : "ausK7G6n"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John Wayne",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rooster Cogburn (1975 film)",
+      "chunk id" : "ausK7G6n"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Katharine Hepburn",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rooster Cogburn (1975 film)",
+      "chunk id" : "ausK7G6n"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John Wayne",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Reuben J. 'Rooster' Cogburn",
+      "chunk id" : "ausK7G6n"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Reuben J. 'Rooster' Cogburn",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "U.S. Marshal",
+      "chunk id" : "ausK7G6n"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rooster Cogburn (1975 film)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Grit (novel)",
+      "chunk id" : "ausK7G6n"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Grit (novel)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charles McColl Portis",
+      "chunk id" : "ausK7G6n"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Grit (1969 film)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rooster Cogburn (1975 film)",
+      "chunk id" : "ausK7G6n"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rooster Cogburn (1975 film)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Grit (1969 film)",
+      "chunk id" : "ausK7G6n"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Reuben J. 'Rooster' Cogburn",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bank robbers",
+      "chunk id" : "ausK7G6n"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bank robbers",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "nitroglycerin",
+      "chunk id" : "ausK7G6n"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Reuben J. 'Rooster' Cogburn",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spinster",
+      "chunk id" : "ausK7G6n"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Grit (novel)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "creative_work",
+      "chunk id" : "ausK7G6n"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rooster Cogburn (1975 film)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "creative_work",
+      "chunk id" : "ausK7G6n"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Stefan Langwieder",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ice hockey defender",
+      "chunk id" : "reYCfAZa"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Stefan Langwieder",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Iserlohn Roosters",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Stefan Langwieder",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2007 season",
+      "chunk id" : "reYCfAZa"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Stefan Langwieder",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Adler Mannheim",
+      "chunk id" : "reYCfAZa"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Stefan Langwieder",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Iserlohn Roosters",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Stefan Langwieder",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "three-year extension",
+      "chunk id" : "reYCfAZa"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "three-year extension",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Iserlohn Roosters",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Stefan Langwieder",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "German",
+      "chunk id" : "reYCfAZa"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John Krasinski",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The film",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John Krasinski",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "former US Navy SEAL",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pablo Schreiber",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The film",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pablo Schreiber",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kris \"Tanto\" Paronto",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kris \"Tanto\" Paronto",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Security team",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "James Badge Dale",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The film",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "James Badge Dale",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Security team",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Max Martini",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The film",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Max Martini",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Security team",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "David Denman",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The film",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "David Denman",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Boon",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Boon",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "elite sniper",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Dominic Fumusa",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The film",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Dominic Fumusa",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John \"Tig\" Tiegen",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John \"Tig\" Tiegen",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Security team",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John \"Tig\" Tiegen",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "former Marine",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Freddie Stroma",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The film",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Freddie Stroma",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "undercover CIA officer",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "undercover CIA officer",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Libya",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Toby Stephens",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The film",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Toby Stephens",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Glen \"Bub\" Doherty",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Glen \"Bub\" Doherty",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Security team",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "THR",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Dominic Fumusa",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Security team",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The film",
+      "chunk id" : "fg_J8TEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Boon",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "David Denman",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Dominic Fumusa",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Freddie Stroma",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Glen \"Bub\" Doherty",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "James Badge Dale",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John \"Tig\" Tiegen",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John Krasinski",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kris \"Tanto\" Paronto",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Libya",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Max Martini",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pablo Schreiber",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Security team",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "THR",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The film",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Toby Stephens",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "elite sniper",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "former Marine",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "former US Navy SEAL",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "undercover CIA officer",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The film",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "The film"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The film",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "The film"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "The film"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Security team",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Security team"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Security team",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Security team"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Security team"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John \"Tig\" Tiegen",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "John \"Tig\" Tiegen"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John \"Tig\" Tiegen",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "John \"Tig\" Tiegen"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "John \"Tig\" Tiegen"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Dominic Fumusa",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Dominic Fumusa"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Dominic Fumusa",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Dominic Fumusa"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Dominic Fumusa"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Glen \"Bub\" Doherty",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Glen \"Bub\" Doherty"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Glen \"Bub\" Doherty",
+      "chunk id" : "fg_J8TEN"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Glen \"Bub\" Doherty"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Glen \"Bub\" Doherty"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "24",
+      "members" : [ "Boon", "David Denman", "Dominic Fumusa", "Freddie Stroma", "Glen \"Bub\" Doherty", "James Badge Dale", "John \"Tig\" Tiegen", "John Krasinski", "Kris \"Tanto\" Paronto", "Libya", "Max Martini", "Pablo Schreiber", "Security team", "THR", "The film", "Toby Stephens", "elite sniper", "former Marine", "former US Navy SEAL", "undercover CIA officer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "14th Moscow International Film Festival",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Alambrista!",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "American Me",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Caught",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Edward James Olmos",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Moscow",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "New York",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "New York City",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Roosters",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saving Grace",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Slave of Dreams",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Talent for the Game",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Ballad of Gregorio Cortez",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Triumph of the Spirit",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cinematographer",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "director",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "producer",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "screenwriter",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Robert Milton Young"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Robert Milton Young",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Robert Milton Young"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Robert Milton Young"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Edward James Olmos",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Edward James Olmos"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Edward James Olmos",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Edward James Olmos"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Edward James Olmos"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "14th Moscow International Film Festival",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "14th Moscow International Film Festival"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "14th Moscow International Film Festival",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "14th Moscow International Film Festival"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "14th Moscow International Film Festival"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Triumph of the Spirit",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Triumph of the Spirit"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Triumph of the Spirit",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Triumph of the Spirit"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Triumph of the Spirit"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "American Me",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "American Me"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "American Me",
+      "chunk id" : "nXZ-nCJk",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "American Me"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "American Me"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 19 members",
+      "community_id" : "community_2",
+      "node_count" : "19",
+      "edge_count" : "27",
+      "members" : [ "14th Moscow International Film Festival", "Alambrista!", "American Me", "Caught", "Edward James Olmos", "Moscow", "New York", "New York City", "Robert Milton Young", "Roosters", "Saving Grace", "Slave of Dreams", "Talent for the Game", "The Ballad of Gregorio Cortez", "Triumph of the Spirit", "cinematographer", "director", "producer", "screenwriter" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2007 season",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Adler Mannheim",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Alberta",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Brooks",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Canadian",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Deutsche Eishockey Liga",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Free Agent",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "German",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Iserlohn Roosters",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shane Joseph",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Stefan Langwieder",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ice hockey defender",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "professional ice hockey winger",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "three-year extension",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Stefan Langwieder",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Stefan Langwieder"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Stefan Langwieder",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Stefan Langwieder"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Stefan Langwieder"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shane Joseph",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Shane Joseph"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Shane Joseph",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Shane Joseph"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Shane Joseph"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Iserlohn Roosters",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Iserlohn Roosters"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Iserlohn Roosters",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Iserlohn Roosters"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Iserlohn Roosters"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "three-year extension",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "three-year extension"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "three-year extension",
+      "chunk id" : "reYCfAZa"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "three-year extension"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "three-year extension"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Deutsche Eishockey Liga",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Deutsche Eishockey Liga"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Deutsche Eishockey Liga",
+      "chunk id" : "1IGLNOAE",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Deutsche Eishockey Liga"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Deutsche Eishockey Liga"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 14 members",
+      "community_id" : "community_3",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "2007 season", "Adler Mannheim", "Alberta", "Brooks", "Canadian", "Deutsche Eishockey Liga", "Free Agent", "German", "Iserlohn Roosters", "Shane Joseph", "Stefan Langwieder", "ice hockey defender", "professional ice hockey winger", "three-year extension" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Charles McColl Portis",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John Wayne",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Katharine Hepburn",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Martha Hyer",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Reuben J. 'Rooster' Cogburn",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rooster Cogburn (1975 film)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Stuart Millar",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Grit (1969 film)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Grit (novel)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "U.S. Marshal",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bank robbers",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "creative_work",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "nitroglycerin",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spinster",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rooster Cogburn (1975 film)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Rooster Cogburn (1975 film)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rooster Cogburn (1975 film)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Rooster Cogburn (1975 film)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Rooster Cogburn (1975 film)"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Reuben J. 'Rooster' Cogburn",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Reuben J. 'Rooster' Cogburn"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Reuben J. 'Rooster' Cogburn",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Reuben J. 'Rooster' Cogburn"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Reuben J. 'Rooster' Cogburn"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Grit (novel)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "True Grit (novel)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Grit (novel)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "True Grit (novel)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "True Grit (novel)"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Grit (1969 film)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "True Grit (1969 film)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Grit (1969 film)",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "True Grit (1969 film)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "True Grit (1969 film)"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "creative_work",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "creative_work",
+      "chunk id" : "ausK7G6n"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "creative_work"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 14 members",
+      "community_id" : "community_4",
+      "node_count" : "14",
+      "edge_count" : "15",
+      "members" : [ "Charles McColl Portis", "John Wayne", "Katharine Hepburn", "Martha Hyer", "Reuben J. 'Rooster' Cogburn", "Rooster Cogburn (1975 film)", "Stuart Millar", "True Grit (1969 film)", "True Grit (novel)", "U.S. Marshal", "bank robbers", "creative_work", "nitroglycerin", "spinster" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2013 NRL Premierships",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 11 members",
+      "community_id" : "community_5",
+      "node_count" : "11",
+      "edge_count" : "13",
+      "members" : [ "2013 NRL Premierships", "2018 NRL Premierships", "Australian", "City Origin", "Daniel Tupou", "NRL", "New South Wales State of Origin", "Prime Minister's XIII", "Sydney Roosters", "Tongan", "professional rugby league footballer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2018 NRL Premierships",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 11 members",
+      "community_id" : "community_5",
+      "node_count" : "11",
+      "edge_count" : "13",
+      "members" : [ "2013 NRL Premierships", "2018 NRL Premierships", "Australian", "City Origin", "Daniel Tupou", "NRL", "New South Wales State of Origin", "Prime Minister's XIII", "Sydney Roosters", "Tongan", "professional rugby league footballer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Australian",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 11 members",
+      "community_id" : "community_5",
+      "node_count" : "11",
+      "edge_count" : "13",
+      "members" : [ "2013 NRL Premierships", "2018 NRL Premierships", "Australian", "City Origin", "Daniel Tupou", "NRL", "New South Wales State of Origin", "Prime Minister's XIII", "Sydney Roosters", "Tongan", "professional rugby league footballer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "City Origin",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 11 members",
+      "community_id" : "community_5",
+      "node_count" : "11",
+      "edge_count" : "13",
+      "members" : [ "2013 NRL Premierships", "2018 NRL Premierships", "Australian", "City Origin", "Daniel Tupou", "NRL", "New South Wales State of Origin", "Prime Minister's XIII", "Sydney Roosters", "Tongan", "professional rugby league footballer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Daniel Tupou",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 11 members",
+      "community_id" : "community_5",
+      "node_count" : "11",
+      "edge_count" : "13",
+      "members" : [ "2013 NRL Premierships", "2018 NRL Premierships", "Australian", "City Origin", "Daniel Tupou", "NRL", "New South Wales State of Origin", "Prime Minister's XIII", "Sydney Roosters", "Tongan", "professional rugby league footballer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "NRL",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 11 members",
+      "community_id" : "community_5",
+      "node_count" : "11",
+      "edge_count" : "13",
+      "members" : [ "2013 NRL Premierships", "2018 NRL Premierships", "Australian", "City Origin", "Daniel Tupou", "NRL", "New South Wales State of Origin", "Prime Minister's XIII", "Sydney Roosters", "Tongan", "professional rugby league footballer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "New South Wales State of Origin",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 11 members",
+      "community_id" : "community_5",
+      "node_count" : "11",
+      "edge_count" : "13",
+      "members" : [ "2013 NRL Premierships", "2018 NRL Premierships", "Australian", "City Origin", "Daniel Tupou", "NRL", "New South Wales State of Origin", "Prime Minister's XIII", "Sydney Roosters", "Tongan", "professional rugby league footballer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Prime Minister's XIII",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 11 members",
+      "community_id" : "community_5",
+      "node_count" : "11",
+      "edge_count" : "13",
+      "members" : [ "2013 NRL Premierships", "2018 NRL Premierships", "Australian", "City Origin", "Daniel Tupou", "NRL", "New South Wales State of Origin", "Prime Minister's XIII", "Sydney Roosters", "Tongan", "professional rugby league footballer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sydney Roosters",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 11 members",
+      "community_id" : "community_5",
+      "node_count" : "11",
+      "edge_count" : "13",
+      "members" : [ "2013 NRL Premierships", "2018 NRL Premierships", "Australian", "City Origin", "Daniel Tupou", "NRL", "New South Wales State of Origin", "Prime Minister's XIII", "Sydney Roosters", "Tongan", "professional rugby league footballer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Tongan",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 11 members",
+      "community_id" : "community_5",
+      "node_count" : "11",
+      "edge_count" : "13",
+      "members" : [ "2013 NRL Premierships", "2018 NRL Premierships", "Australian", "City Origin", "Daniel Tupou", "NRL", "New South Wales State of Origin", "Prime Minister's XIII", "Sydney Roosters", "Tongan", "professional rugby league footballer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "professional rugby league footballer",
+      "chunk id" : "wPLyutCd"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 11 members",
+      "community_id" : "community_5",
+      "node_count" : "11",
+      "edge_count" : "13",
+      "members" : [ "2013 NRL Premierships", "2018 NRL Premierships", "Australian", "City Origin", "Daniel Tupou", "NRL", "New South Wales State of Origin", "Prime Minister's XIII", "Sydney Roosters", "Tongan", "professional rugby league footballer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Daniel Tupou",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Daniel Tupou"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Daniel Tupou",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Daniel Tupou"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Daniel Tupou"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 11 members",
+      "community_id" : "community_5",
+      "node_count" : "11",
+      "edge_count" : "13",
+      "members" : [ "2013 NRL Premierships", "2018 NRL Premierships", "Australian", "City Origin", "Daniel Tupou", "NRL", "New South Wales State of Origin", "Prime Minister's XIII", "Sydney Roosters", "Tongan", "professional rugby league footballer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "NRL",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "NRL"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "NRL",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "NRL"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "NRL"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 11 members",
+      "community_id" : "community_5",
+      "node_count" : "11",
+      "edge_count" : "13",
+      "members" : [ "2013 NRL Premierships", "2018 NRL Premierships", "Australian", "City Origin", "Daniel Tupou", "NRL", "New South Wales State of Origin", "Prime Minister's XIII", "Sydney Roosters", "Tongan", "professional rugby league footballer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sydney Roosters",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sydney Roosters"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sydney Roosters",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sydney Roosters"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sydney Roosters"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 11 members",
+      "community_id" : "community_5",
+      "node_count" : "11",
+      "edge_count" : "13",
+      "members" : [ "2013 NRL Premierships", "2018 NRL Premierships", "Australian", "City Origin", "Daniel Tupou", "NRL", "New South Wales State of Origin", "Prime Minister's XIII", "Sydney Roosters", "Tongan", "professional rugby league footballer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2018 NRL Premierships",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "2018 NRL Premierships"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2018 NRL Premierships",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "2018 NRL Premierships"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "2018 NRL Premierships"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 11 members",
+      "community_id" : "community_5",
+      "node_count" : "11",
+      "edge_count" : "13",
+      "members" : [ "2013 NRL Premierships", "2018 NRL Premierships", "Australian", "City Origin", "Daniel Tupou", "NRL", "New South Wales State of Origin", "Prime Minister's XIII", "Sydney Roosters", "Tongan", "professional rugby league footballer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2013 NRL Premierships",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "2013 NRL Premierships"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2013 NRL Premierships",
+      "chunk id" : "wPLyutCd",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "2013 NRL Premierships"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "2013 NRL Premierships"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 11 members",
+      "community_id" : "community_5",
+      "node_count" : "11",
+      "edge_count" : "13",
+      "members" : [ "2013 NRL Premierships", "2018 NRL Premierships", "Australian", "City Origin", "Daniel Tupou", "NRL", "New South Wales State of Origin", "Prime Minister's XIII", "Sydney Roosters", "Tongan", "professional rugby league footballer" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Alan Ball",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 8 members",
+      "community_id" : "community_6",
+      "node_count" : "8",
+      "edge_count" : "9",
+      "members" : [ "Alan Ball", "Bon Temps", "Brian Buckner", "Farewell to Bon Temps", "HBO", "June 22, 2014", "Seventh season of True Blood", "True Blood" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bon Temps",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 8 members",
+      "community_id" : "community_6",
+      "node_count" : "8",
+      "edge_count" : "9",
+      "members" : [ "Alan Ball", "Bon Temps", "Brian Buckner", "Farewell to Bon Temps", "HBO", "June 22, 2014", "Seventh season of True Blood", "True Blood" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Brian Buckner",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 8 members",
+      "community_id" : "community_6",
+      "node_count" : "8",
+      "edge_count" : "9",
+      "members" : [ "Alan Ball", "Bon Temps", "Brian Buckner", "Farewell to Bon Temps", "HBO", "June 22, 2014", "Seventh season of True Blood", "True Blood" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Farewell to Bon Temps",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 8 members",
+      "community_id" : "community_6",
+      "node_count" : "8",
+      "edge_count" : "9",
+      "members" : [ "Alan Ball", "Bon Temps", "Brian Buckner", "Farewell to Bon Temps", "HBO", "June 22, 2014", "Seventh season of True Blood", "True Blood" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "HBO",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 8 members",
+      "community_id" : "community_6",
+      "node_count" : "8",
+      "edge_count" : "9",
+      "members" : [ "Alan Ball", "Bon Temps", "Brian Buckner", "Farewell to Bon Temps", "HBO", "June 22, 2014", "Seventh season of True Blood", "True Blood" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "June 22, 2014",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 8 members",
+      "community_id" : "community_6",
+      "node_count" : "8",
+      "edge_count" : "9",
+      "members" : [ "Alan Ball", "Bon Temps", "Brian Buckner", "Farewell to Bon Temps", "HBO", "June 22, 2014", "Seventh season of True Blood", "True Blood" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Seventh season of True Blood",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 8 members",
+      "community_id" : "community_6",
+      "node_count" : "8",
+      "edge_count" : "9",
+      "members" : [ "Alan Ball", "Bon Temps", "Brian Buckner", "Farewell to Bon Temps", "HBO", "June 22, 2014", "Seventh season of True Blood", "True Blood" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Blood",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 8 members",
+      "community_id" : "community_6",
+      "node_count" : "8",
+      "edge_count" : "9",
+      "members" : [ "Alan Ball", "Bon Temps", "Brian Buckner", "Farewell to Bon Temps", "HBO", "June 22, 2014", "Seventh season of True Blood", "True Blood" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Farewell to Bon Temps",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Farewell to Bon Temps"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Farewell to Bon Temps",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Farewell to Bon Temps"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Farewell to Bon Temps"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 8 members",
+      "community_id" : "community_6",
+      "node_count" : "8",
+      "edge_count" : "9",
+      "members" : [ "Alan Ball", "Bon Temps", "Brian Buckner", "Farewell to Bon Temps", "HBO", "June 22, 2014", "Seventh season of True Blood", "True Blood" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Blood",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "True Blood"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "True Blood",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "True Blood"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "True Blood"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 8 members",
+      "community_id" : "community_6",
+      "node_count" : "8",
+      "edge_count" : "9",
+      "members" : [ "Alan Ball", "Bon Temps", "Brian Buckner", "Farewell to Bon Temps", "HBO", "June 22, 2014", "Seventh season of True Blood", "True Blood" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Seventh season of True Blood",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Seventh season of True Blood"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Seventh season of True Blood",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Seventh season of True Blood"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Seventh season of True Blood"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 8 members",
+      "community_id" : "community_6",
+      "node_count" : "8",
+      "edge_count" : "9",
+      "members" : [ "Alan Ball", "Bon Temps", "Brian Buckner", "Farewell to Bon Temps", "HBO", "June 22, 2014", "Seventh season of True Blood", "True Blood" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Brian Buckner",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Brian Buckner"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Brian Buckner",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Brian Buckner"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Brian Buckner"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 8 members",
+      "community_id" : "community_6",
+      "node_count" : "8",
+      "edge_count" : "9",
+      "members" : [ "Alan Ball", "Bon Temps", "Brian Buckner", "Farewell to Bon Temps", "HBO", "June 22, 2014", "Seventh season of True Blood", "True Blood" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Alan Ball",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Alan Ball"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Alan Ball",
+      "chunk id" : "9a0XRPkH",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Alan Ball"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Alan Ball"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 8 members",
+      "community_id" : "community_6",
+      "node_count" : "8",
+      "edge_count" : "9",
+      "members" : [ "Alan Ball", "Bon Temps", "Brian Buckner", "Farewell to Bon Temps", "HBO", "June 22, 2014", "Seventh season of True Blood", "True Blood" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "David Conrad",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 6 members",
+      "community_id" : "community_7",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "David Conrad", "Jennifer Love Hewitt", "Jim Clancy", "Melinda", "cast", "every episode" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Jennifer Love Hewitt",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 6 members",
+      "community_id" : "community_7",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "David Conrad", "Jennifer Love Hewitt", "Jim Clancy", "Melinda", "cast", "every episode" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Jim Clancy",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 6 members",
+      "community_id" : "community_7",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "David Conrad", "Jennifer Love Hewitt", "Jim Clancy", "Melinda", "cast", "every episode" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Melinda",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 6 members",
+      "community_id" : "community_7",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "David Conrad", "Jennifer Love Hewitt", "Jim Clancy", "Melinda", "cast", "every episode" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cast",
+      "chunk id" : "m8wm6dIS"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 6 members",
+      "community_id" : "community_7",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "David Conrad", "Jennifer Love Hewitt", "Jim Clancy", "Melinda", "cast", "every episode" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "every episode",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 6 members",
+      "community_id" : "community_7",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "David Conrad", "Jennifer Love Hewitt", "Jim Clancy", "Melinda", "cast", "every episode" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Jim Clancy",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Jim Clancy"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Jim Clancy",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Jim Clancy"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Jim Clancy"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 6 members",
+      "community_id" : "community_7",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "David Conrad", "Jennifer Love Hewitt", "Jim Clancy", "Melinda", "cast", "every episode" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Jennifer Love Hewitt",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Jennifer Love Hewitt"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Jennifer Love Hewitt",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Jennifer Love Hewitt"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Jennifer Love Hewitt"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 6 members",
+      "community_id" : "community_7",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "David Conrad", "Jennifer Love Hewitt", "Jim Clancy", "Melinda", "cast", "every episode" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Melinda",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Melinda"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Melinda",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Melinda"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Melinda"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 6 members",
+      "community_id" : "community_7",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "David Conrad", "Jennifer Love Hewitt", "Jim Clancy", "Melinda", "cast", "every episode" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "every episode",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "every episode"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "every episode",
+      "chunk id" : "m8wm6dIS",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "every episode"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "every episode"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 6 members",
+      "community_id" : "community_7",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "David Conrad", "Jennifer Love Hewitt", "Jim Clancy", "Melinda", "cast", "every episode" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cast",
+      "chunk id" : "m8wm6dIS"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "cast"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cast",
+      "chunk id" : "m8wm6dIS"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "cast"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "cast"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 6 members",
+      "community_id" : "community_7",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "David Conrad", "Jennifer Love Hewitt", "Jim Clancy", "Melinda", "cast", "every episode" ]
+    }
+  }
+} ]

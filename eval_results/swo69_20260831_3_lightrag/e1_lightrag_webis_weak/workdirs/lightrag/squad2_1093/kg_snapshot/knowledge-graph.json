@@ -1,0 +1,59 @@
+{
+  "nodes" : [ {
+    "id" : "Napoleon",
+    "entity_id" : "Napoleon",
+    "entity_type" : "Person",
+    "description" : "The French military leader",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  }, {
+    "id" : "Arsenic",
+    "entity_id" : "Arsenic",
+    "entity_type" : "Concept",
+    "description" : "A toxic chemical element",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  }, {
+    "id" : "Peptic ulcer",
+    "entity_id" : "Peptic ulcer",
+    "entity_type" : "Concept",
+    "description" : "A type of stomach ulcer",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  }, {
+    "id" : "Gastric cancer",
+    "entity_id" : "Gastric cancer",
+    "entity_type" : "Concept",
+    "description" : "A type of stomach cancer",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3"
+  } ],
+  "edges" : [ {
+    "source" : "Napoleon",
+    "target" : "Arsenic",
+    "weight" : "1.0",
+    "description" : "Napoleon was constantly exposed to arsenic",
+    "keywords" : "exposure, contamination",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "Arsenic",
+    "tgt_id" : "Napoleon"
+  }, {
+    "source" : "Napoleon",
+    "target" : "Peptic ulcer",
+    "weight" : "1.0",
+    "description" : "Peptic ulcer was confirmed as the cause of death",
+    "keywords" : "cause of death",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "Napoleon",
+    "tgt_id" : "Peptic ulcer"
+  }, {
+    "source" : "Napoleon",
+    "target" : "Gastric cancer",
+    "weight" : "1.0",
+    "description" : "Gastric cancer was confirmed as the cause of death",
+    "keywords" : "cause of death",
+    "source_id" : "8b4d48df4c6a4c40c477a405ef6eb7c3",
+    "src_id" : "Napoleon",
+    "tgt_id" : "Gastric cancer"
+  } ],
+  "metadata" : {
+    "nodeCount" : 4,
+    "edgeCount" : 3
+  }
+}

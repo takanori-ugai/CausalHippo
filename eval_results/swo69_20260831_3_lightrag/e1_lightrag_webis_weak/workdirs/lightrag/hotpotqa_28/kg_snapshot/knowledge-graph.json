@@ -1,0 +1,1331 @@
+{
+  "nodes" : [ {
+    "id" : "Hurricane Celia",
+    "entity_id" : "Hurricane Celia",
+    "entity_type" : "Event",
+    "description" : "The costliest tropical cyclone in Texas history",
+    "source_id" : "c4bf520c8c9710f553d7cbbefb40a2a3"
+  }, {
+    "id" : "Hurricane Alicia",
+    "entity_id" : "Hurricane Alicia",
+    "entity_type" : "Event",
+    "description" : "Hurricane that surpassed Hurricane Celia in cost",
+    "source_id" : "c4bf520c8c9710f553d7cbbefb40a2a3"
+  }, {
+    "id" : "Tropical wave",
+    "entity_id" : "Tropical wave",
+    "entity_type" : "Concept",
+    "description" : "A tropical wave is a low-pressure system that forms over warm ocean waters.",
+    "source_id" : "e93a056fc090261fd71885729625d9ed"
+  }, {
+    "id" : "Gulf of Mexico",
+    "entity_id" : "Gulf of Mexico",
+    "entity_type" : "Location",
+    "description" : "Body of water affected by Hurricane Celia",
+    "source_id" : "c4bf520c8c9710f553d7cbbefb40a2a3"
+  }, {
+    "id" : "Caribbean Sea",
+    "entity_id" : "Caribbean Sea",
+    "entity_type" : "Location",
+    "description" : "A body of water in the Americas",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8"
+  }, {
+    "id" : "Cuba",
+    "entity_id" : "Cuba",
+    "entity_type" : "Location",
+    "description" : "A country in the Caribbean",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8"
+  }, {
+    "id" : "Florida",
+    "entity_id" : "Florida",
+    "entity_type" : "Location",
+    "description" : "The location where the storm made landfall",
+    "source_id" : "849a4d8e7201f138100e428b3970b117"
+  }, {
+    "id" : "Panhandle",
+    "entity_id" : "Panhandle",
+    "entity_type" : "Location",
+    "description" : "Region of Florida affected by Hurricane Celia",
+    "source_id" : "c4bf520c8c9710f553d7cbbefb40a2a3"
+  }, {
+    "id" : "Hurricane Isaac",
+    "entity_id" : "Hurricane Isaac",
+    "entity_type" : "Event",
+    "description" : "A tropical cyclone that formed in the Caribbean Sea in 2012",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8"
+  }, {
+    "id" : "Hurricane Dennis",
+    "entity_id" : "Hurricane Dennis",
+    "entity_type" : "Event",
+    "description" : "A tropical cyclone that caused severe flooding in Miami-Dade County, Florida, in August 1981.",
+    "source_id" : "e93a056fc090261fd71885729625d9ed"
+  }, {
+    "id" : "Hurricane Isaac (2012)",
+    "entity_id" : "Hurricane Isaac (2012)",
+    "entity_type" : "Event",
+    "description" : "A tropical cyclone that occurred in 2012.",
+    "source_id" : "e93a056fc090261fd71885729625d9ed"
+  }, {
+    "id" : "Hurricane Dennis (1981)",
+    "entity_id" : "Hurricane Dennis (1981)",
+    "entity_type" : "Event",
+    "description" : "A tropical cyclone that occurred in 1981.",
+    "source_id" : "e93a056fc090261fd71885729625d9ed"
+  }, {
+    "id" : "Tropical depression",
+    "entity_id" : "Tropical depression",
+    "entity_type" : "Concept",
+    "description" : "A tropical depression is a rotating system of clouds and thunderstorms that forms over warm ocean waters.",
+    "source_id" : "e93a056fc090261fd71885729625d9ed"
+  }, {
+    "id" : "Tropical storm",
+    "entity_id" : "Tropical storm",
+    "entity_type" : "Concept",
+    "description" : "A tropical storm is a rotating system of clouds and thunderstorms that forms over warm ocean waters and has sustained winds of at least 39 mph.",
+    "source_id" : "e93a056fc090261fd71885729625d9ed"
+  }, {
+    "id" : "Hurricane",
+    "entity_id" : "Hurricane",
+    "entity_type" : "Event",
+    "description" : "A type of tropical cyclone",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b"
+  }, {
+    "id" : "Category 3 hurricane",
+    "entity_id" : "Category 3 hurricane",
+    "entity_type" : "Concept",
+    "description" : "A category 3 hurricane is a type of hurricane that has sustained winds of 111-129 mph.",
+    "source_id" : "e93a056fc090261fd71885729625d9ed"
+  }, {
+    "id" : "Lesser Antilles",
+    "entity_id" : "Lesser Antilles",
+    "entity_type" : "Location",
+    "description" : "A subregion of the Caribbean Sea",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8"
+  }, {
+    "id" : "Africa",
+    "entity_id" : "Africa",
+    "entity_type" : "Location",
+    "description" : "Africa is a continent in the southern hemisphere.",
+    "source_id" : "e93a056fc090261fd71885729625d9ed"
+  }, {
+    "id" : "U.S.",
+    "entity_id" : "U.S.",
+    "entity_type" : "Location",
+    "description" : "The U.S. refers to the United States of America.",
+    "source_id" : "e93a056fc090261fd71885729625d9ed"
+  }, {
+    "id" : "Louisiana",
+    "entity_id" : "Louisiana",
+    "entity_type" : "Location",
+    "description" : "State in the United States affected by the storms",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926"
+  }, {
+    "id" : "Miami-Dade County",
+    "entity_id" : "Miami-Dade County",
+    "entity_type" : "Location",
+    "description" : "Miami-Dade County is a county in the state of Florida.",
+    "source_id" : "e93a056fc090261fd71885729625d9ed"
+  }, {
+    "id" : "Dennis",
+    "entity_id" : "Dennis",
+    "entity_type" : "Concept",
+    "description" : "A hurricane that made landfall in North Carolina in 1827",
+    "source_id" : "7e5c786476abec671529647de5b6cf67"
+  }, {
+    "id" : "Cabo Verde",
+    "entity_id" : "Cabo Verde",
+    "entity_type" : "Location",
+    "description" : "A country located off the coast of West Africa",
+    "source_id" : "a8d95bd12498bed90d5789a9a5659840"
+  }, {
+    "id" : "Windward Islands",
+    "entity_id" : "Windward Islands",
+    "entity_type" : "Location",
+    "description" : "A group of islands in the Caribbean Sea",
+    "source_id" : "a8d95bd12498bed90d5789a9a5659840"
+  }, {
+    "id" : "Matanzas Province",
+    "entity_id" : "Matanzas Province",
+    "entity_type" : "Location",
+    "description" : "A province in Cuba",
+    "source_id" : "a8d95bd12498bed90d5789a9a5659840"
+  }, {
+    "id" : "Florida Keys",
+    "entity_id" : "Florida Keys",
+    "entity_type" : "Location",
+    "description" : "A subregion of the state of Florida",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8"
+  }, {
+    "id" : "Monroe County",
+    "entity_id" : "Monroe County",
+    "entity_type" : "Location",
+    "description" : "A county in the state of Florida",
+    "source_id" : "a8d95bd12498bed90d5789a9a5659840"
+  }, {
+    "id" : "Cape Canaveral",
+    "entity_id" : "Cape Canaveral",
+    "entity_type" : "Location",
+    "description" : "A cape in the state of Florida",
+    "source_id" : "a8d95bd12498bed90d5789a9a5659840"
+  }, {
+    "id" : "Emerald Isle",
+    "entity_id" : "Emerald Isle",
+    "entity_type" : "Location",
+    "description" : "A barrier island in North Carolina",
+    "source_id" : "7e5c786476abec671529647de5b6cf67"
+  }, {
+    "id" : "North Carolina",
+    "entity_id" : "North Carolina",
+    "entity_type" : "Location",
+    "description" : "A state in the United States",
+    "source_id" : "7e5c786476abec671529647de5b6cf67"
+  }, {
+    "id" : "Bermuda",
+    "entity_id" : "Bermuda",
+    "entity_type" : "Location",
+    "description" : "An island in the North Atlantic",
+    "source_id" : "7e5c786476abec671529647de5b6cf67"
+  }, {
+    "id" : "Puerto Rico",
+    "entity_id" : "Puerto Rico",
+    "entity_type" : "Location",
+    "description" : "An island in the Caribbean",
+    "source_id" : "7e5c786476abec671529647de5b6cf67"
+  }, {
+    "id" : "Hispaniola",
+    "entity_id" : "Hispaniola",
+    "entity_type" : "Location",
+    "description" : "An island in the Caribbean",
+    "source_id" : "7e5c786476abec671529647de5b6cf67"
+  }, {
+    "id" : "Turks and Caicos Islands",
+    "entity_id" : "Turks and Caicos Islands",
+    "entity_type" : "Location",
+    "description" : "A group of islands in the Caribbean",
+    "source_id" : "7e5c786476abec671529647de5b6cf67"
+  }, {
+    "id" : "Bahamas",
+    "entity_id" : "Bahamas",
+    "entity_type" : "Location",
+    "description" : "One of the locations affected by the storm",
+    "source_id" : "849a4d8e7201f138100e428b3970b117"
+  }, {
+    "id" : "North Carolina coastline",
+    "entity_id" : "North Carolina coastline",
+    "entity_type" : "Location",
+    "description" : "The eastern coast of North Carolina",
+    "source_id" : "905d44b1c4240059b28dc8399b90b905"
+  }, {
+    "id" : "Norfolk, Virginia",
+    "entity_id" : "Norfolk, Virginia",
+    "entity_type" : "Location",
+    "description" : "A city in the state of Virginia",
+    "source_id" : "905d44b1c4240059b28dc8399b90b905"
+  }, {
+    "id" : "New England coastline",
+    "entity_id" : "New England coastline",
+    "entity_type" : "Location",
+    "description" : "The eastern coast of the New England region",
+    "source_id" : "905d44b1c4240059b28dc8399b90b905"
+  }, {
+    "id" : "Nova Scotia",
+    "entity_id" : "Nova Scotia",
+    "entity_type" : "Location",
+    "description" : "A province in eastern Canada",
+    "source_id" : "905d44b1c4240059b28dc8399b90b905"
+  }, {
+    "id" : "South Florida",
+    "entity_id" : "South Florida",
+    "entity_type" : "Location",
+    "description" : "The southern part of the state of Florida",
+    "source_id" : "905d44b1c4240059b28dc8399b90b905"
+  }, {
+    "id" : "Leeward Islands",
+    "entity_id" : "Leeward Islands",
+    "entity_type" : "Location",
+    "description" : "A subregion of the Caribbean Sea",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8"
+  }, {
+    "id" : "Haiti",
+    "entity_id" : "Haiti",
+    "entity_type" : "Location",
+    "description" : "A country in the Caribbean",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8"
+  }, {
+    "id" : "Tampa Bay Area",
+    "entity_id" : "Tampa Bay Area",
+    "entity_type" : "Location",
+    "description" : "A region in the state of Florida",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8"
+  }, {
+    "id" : "Florida Panhandle",
+    "entity_id" : "Florida Panhandle",
+    "entity_type" : "Location",
+    "description" : "A region in the state of Florida",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8"
+  }, {
+    "id" : "Hurricane Debra",
+    "entity_id" : "Hurricane Debra",
+    "entity_type" : "Concept",
+    "description" : "A destructive tropical cyclone that developed during the 1959 Atlantic hurricane season.",
+    "source_id" : "2706db103d7a8d9c00ad294a9f39f0d2"
+  }, {
+    "id" : "Mississippi River",
+    "entity_id" : "Mississippi River",
+    "entity_type" : "Location",
+    "description" : "A major river in the United States",
+    "source_id" : "2706db103d7a8d9c00ad294a9f39f0d2"
+  }, {
+    "id" : "Port Fourchon",
+    "entity_id" : "Port Fourchon",
+    "entity_type" : "Location",
+    "description" : "A port city in Louisiana",
+    "source_id" : "2706db103d7a8d9c00ad294a9f39f0d2"
+  }, {
+    "id" : "Missouri",
+    "entity_id" : "Missouri",
+    "entity_type" : "Location",
+    "description" : "A state in the United States",
+    "source_id" : "2706db103d7a8d9c00ad294a9f39f0d2"
+  }, {
+    "id" : "Gulf Coast",
+    "entity_id" : "Gulf Coast",
+    "entity_type" : "Location",
+    "description" : "A region of the United States",
+    "source_id" : "2706db103d7a8d9c00ad294a9f39f0d2"
+  }, {
+    "id" : "United States",
+    "entity_id" : "United States",
+    "entity_type" : "Location",
+    "description" : "Country affected by the storms",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926"
+  }, {
+    "id" : "1815 North Carolina hurricane",
+    "entity_id" : "1815 North Carolina hurricane",
+    "entity_type" : "Event",
+    "description" : "A hurricane that caused severe flooding in New Bern, North Carolina",
+    "source_id" : "d35a5a10a2ddcb2cccf766e5ae83e614"
+  }, {
+    "id" : "Freeport",
+    "entity_id" : "Freeport",
+    "entity_type" : "Location",
+    "description" : "A city in Texas",
+    "source_id" : "d35a5a10a2ddcb2cccf766e5ae83e614"
+  }, {
+    "id" : "Galveston",
+    "entity_id" : "Galveston",
+    "entity_type" : "Location",
+    "description" : "A city in Texas",
+    "source_id" : "d35a5a10a2ddcb2cccf766e5ae83e614"
+  }, {
+    "id" : "Cape Lookout",
+    "entity_id" : "Cape Lookout",
+    "entity_type" : "Location",
+    "description" : "A location in North Carolina",
+    "source_id" : "d35a5a10a2ddcb2cccf766e5ae83e614"
+  }, {
+    "id" : "Charleston",
+    "entity_id" : "Charleston",
+    "entity_type" : "Location",
+    "description" : "A city in South Carolina",
+    "source_id" : "d35a5a10a2ddcb2cccf766e5ae83e614"
+  }, {
+    "id" : "New Bern",
+    "entity_id" : "New Bern",
+    "entity_type" : "Location",
+    "description" : "A city in North Carolina",
+    "source_id" : "d35a5a10a2ddcb2cccf766e5ae83e614"
+  }, {
+    "id" : "Hurricane Hugo",
+    "entity_id" : "Hurricane Hugo",
+    "entity_type" : "Event",
+    "description" : "The 1989 Atlantic hurricane season's costliest tropical cyclone",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b"
+  }, {
+    "id" : "New England",
+    "entity_id" : "New England",
+    "entity_type" : "Location",
+    "description" : "A region in the northeastern United States",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b"
+  }, {
+    "id" : "Atlantic hurricane season",
+    "entity_id" : "Atlantic hurricane season",
+    "entity_type" : "Event",
+    "description" : "The official period for hurricanes in the Atlantic basin",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b"
+  }, {
+    "id" : "Tropical Depression One",
+    "entity_id" : "Tropical Depression One",
+    "entity_type" : "Event",
+    "description" : "The first storm of the 1989 Atlantic hurricane season",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b"
+  }, {
+    "id" : "1989",
+    "entity_id" : "1989",
+    "entity_type" : "Year",
+    "description" : "The year the Atlantic hurricane season occurred",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b"
+  }, {
+    "id" : "June",
+    "entity_id" : "June",
+    "entity_type" : "Month",
+    "description" : "The month the Atlantic hurricane season began",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b"
+  }, {
+    "id" : "November",
+    "entity_id" : "November",
+    "entity_type" : "Month",
+    "description" : "The month the Atlantic hurricane season ended",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b"
+  }, {
+    "id" : "Atlantic basin",
+    "entity_id" : "Atlantic basin",
+    "entity_type" : "Location",
+    "description" : "The area of the Atlantic Ocean, Caribbean Sea, and Gulf of Mexico",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b"
+  }, {
+    "id" : "Corn",
+    "entity_id" : "Corn",
+    "entity_type" : "Crop",
+    "description" : "A type of grain",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b"
+  }, {
+    "id" : "Cotton",
+    "entity_id" : "Cotton",
+    "entity_type" : "Crop",
+    "description" : "A type of fiber",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b"
+  }, {
+    "id" : "Rice",
+    "entity_id" : "Rice",
+    "entity_type" : "Crop",
+    "description" : "A type of grain",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b"
+  }, {
+    "id" : "Flood",
+    "entity_id" : "Flood",
+    "entity_type" : "Event",
+    "description" : "A natural disaster where water overflows",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b"
+  }, {
+    "id" : "Storm",
+    "entity_id" : "Storm",
+    "entity_type" : "Event",
+    "description" : "A severe weather condition",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b"
+  }, {
+    "id" : "Vessel",
+    "entity_id" : "Vessel",
+    "entity_type" : "Object",
+    "description" : "A boat or ship",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b"
+  }, {
+    "id" : "Tropical Storm Allison",
+    "entity_id" : "Tropical Storm Allison",
+    "entity_type" : "Location",
+    "description" : "Tropical storm that caused severe flooding in Texas and Louisiana",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926"
+  }, {
+    "id" : "Tropical Storm Barry",
+    "entity_id" : "Tropical Storm Barry",
+    "entity_type" : "Location",
+    "description" : "Tropical storm that caused negligible impact",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926"
+  }, {
+    "id" : "Tropical Depression Six",
+    "entity_id" : "Tropical Depression Six",
+    "entity_type" : "Location",
+    "description" : "Tropical depression that caused negligible impact",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926"
+  }, {
+    "id" : "Tropical Depression Nine",
+    "entity_id" : "Tropical Depression Nine",
+    "entity_type" : "Location",
+    "description" : "Tropical depression that caused negligible impact",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926"
+  }, {
+    "id" : "Tropical Depression Thirteen",
+    "entity_id" : "Tropical Depression Thirteen",
+    "entity_type" : "Location",
+    "description" : "Tropical depression that caused negligible impact",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926"
+  }, {
+    "id" : "Hurricane Erin",
+    "entity_id" : "Hurricane Erin",
+    "entity_type" : "Location",
+    "description" : "Hurricane that caused negligible impact",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926"
+  }, {
+    "id" : "Hurricane Felix",
+    "entity_id" : "Hurricane Felix",
+    "entity_type" : "Location",
+    "description" : "Hurricane that caused negligible impact",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926"
+  }, {
+    "id" : "Hurricane Gabrielle",
+    "entity_id" : "Hurricane Gabrielle",
+    "entity_type" : "Location",
+    "description" : "Hurricane that caused light effects on land",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926"
+  }, {
+    "id" : "Tropical Storm Iris",
+    "entity_id" : "Tropical Storm Iris",
+    "entity_type" : "Location",
+    "description" : "Tropical storm that caused light effects on land",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926"
+  }, {
+    "id" : "Heidi",
+    "entity_id" : "Heidi",
+    "entity_type" : "Location",
+    "description" : "Final storm of the 1967 Atlantic hurricane season",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926"
+  }, {
+    "id" : "Texas",
+    "entity_id" : "Texas",
+    "entity_type" : "Location",
+    "description" : "State in the United States affected by the storms",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926"
+  }, {
+    "id" : "United States Virgin Islands",
+    "entity_id" : "United States Virgin Islands",
+    "entity_type" : "Location",
+    "description" : "Territory in the Caribbean affected by the storms",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926"
+  }, {
+    "id" : "Atlantic Canada",
+    "entity_id" : "Atlantic Canada",
+    "entity_type" : "Location",
+    "description" : "Region in Canada affected by the storms",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926"
+  }, {
+    "id" : "East Coast",
+    "entity_id" : "East Coast",
+    "entity_type" : "Location",
+    "description" : "Region along the eastern coast of the United States and Canada",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926"
+  }, {
+    "id" : "Hurricane Beulah",
+    "entity_id" : "Hurricane Beulah",
+    "entity_type" : "Event",
+    "description" : "The strongest storm of the 1967 Atlantic hurricane season",
+    "source_id" : "91a62ba978e509456a1997ac4bf0f3c6"
+  }, {
+    "id" : "Hurricane Inez",
+    "entity_id" : "Hurricane Inez",
+    "entity_type" : "Event",
+    "description" : "A hurricane that occurred in the previous year",
+    "source_id" : "91a62ba978e509456a1997ac4bf0f3c6"
+  }, {
+    "id" : "Tropical Storm Jerry",
+    "entity_id" : "Tropical Storm Jerry",
+    "entity_type" : "Event",
+    "description" : "A tropical storm that caused severe flooding in the southeast United States",
+    "source_id" : "91a62ba978e509456a1997ac4bf0f3c6"
+  }, {
+    "id" : "Jerry",
+    "entity_id" : "Jerry",
+    "entity_type" : "Tropical Storm",
+    "description" : "The tenth tropical storm of the season",
+    "source_id" : "849a4d8e7201f138100e428b3970b117"
+  }, {
+    "id" : "African coast",
+    "entity_id" : "African coast",
+    "entity_type" : "Location",
+    "description" : "The location where the tropical wave moved off",
+    "source_id" : "849a4d8e7201f138100e428b3970b117"
+  }, {
+    "id" : "Georgia",
+    "entity_id" : "Georgia",
+    "entity_type" : "Location",
+    "description" : "One of the locations affected by the storm",
+    "source_id" : "849a4d8e7201f138100e428b3970b117"
+  }, {
+    "id" : "South Carolina",
+    "entity_id" : "South Carolina",
+    "entity_type" : "Location",
+    "description" : "One of the locations affected by the storm",
+    "source_id" : "849a4d8e7201f138100e428b3970b117"
+  }, {
+    "id" : "Hurricane Andrew",
+    "entity_id" : "Hurricane Andrew",
+    "entity_type" : "Hurricane",
+    "description" : "A hurricane that made landfall in South Florida in 1992",
+    "source_id" : "849a4d8e7201f138100e428b3970b117"
+  }, {
+    "id" : "Jose",
+    "entity_id" : "Jose",
+    "entity_type" : "Tropical Storm",
+    "description" : "A tropical storm that overtook Jerry's record",
+    "source_id" : "849a4d8e7201f138100e428b3970b117"
+  } ],
+  "edges" : [ {
+    "source" : "Hurricane Celia",
+    "target" : "Gulf of Mexico",
+    "weight" : "1.0",
+    "description" : "Hurricane Celia affected the Gulf of Mexico",
+    "keywords" : "tropical cyclone, storm surge",
+    "source_id" : "c4bf520c8c9710f553d7cbbefb40a2a3",
+    "src_id" : "Hurricane Celia",
+    "tgt_id" : "Gulf of Mexico"
+  }, {
+    "source" : "Hurricane Celia",
+    "target" : "Caribbean Sea",
+    "weight" : "1.0",
+    "description" : "Hurricane Celia developed from a tropical wave in the Caribbean Sea",
+    "keywords" : "tropical wave, hurricane formation",
+    "source_id" : "c4bf520c8c9710f553d7cbbefb40a2a3",
+    "src_id" : "Hurricane Celia",
+    "tgt_id" : "Caribbean Sea"
+  }, {
+    "source" : "Hurricane Celia",
+    "target" : "Cuba",
+    "weight" : "1.0",
+    "description" : "Hurricane Celia caused severe flooding in Cuba",
+    "keywords" : "heavy rains, flooding",
+    "source_id" : "c4bf520c8c9710f553d7cbbefb40a2a3",
+    "src_id" : "Hurricane Celia",
+    "tgt_id" : "Cuba"
+  }, {
+    "source" : "Hurricane Celia",
+    "target" : "Florida",
+    "weight" : "1.0",
+    "description" : "Hurricane Celia caused storm surge and swells in Florida",
+    "keywords" : "storm surge, swells",
+    "source_id" : "c4bf520c8c9710f553d7cbbefb40a2a3",
+    "src_id" : "Hurricane Celia",
+    "tgt_id" : "Florida"
+  }, {
+    "source" : "Hurricane Celia",
+    "target" : "Panhandle",
+    "weight" : "1.0",
+    "description" : "Hurricane Celia caused eight fatalities in the Panhandle",
+    "keywords" : "storm surge, drowning",
+    "source_id" : "c4bf520c8c9710f553d7cbbefb40a2a3",
+    "src_id" : "Hurricane Celia",
+    "tgt_id" : "Panhandle"
+  }, {
+    "source" : "Caribbean Sea",
+    "target" : "Dennis",
+    "weight" : "1.0",
+    "description" : "Degenerated into a tropical wave over the Caribbean Sea",
+    "keywords" : "",
+    "source_id" : "a8d95bd12498bed90d5789a9a5659840",
+    "src_id" : "Dennis",
+    "tgt_id" : "Caribbean Sea"
+  }, {
+    "source" : "Caribbean Sea",
+    "target" : "Hurricane Isaac",
+    "weight" : "1.0",
+    "description" : "Entered the Caribbean Sea",
+    "keywords" : "entry, passage",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "Caribbean Sea"
+  }, {
+    "source" : "Cuba",
+    "target" : "Dennis",
+    "weight" : "1.0",
+    "description" : "Became a tropical depression while approaching Cuba",
+    "keywords" : "",
+    "source_id" : "a8d95bd12498bed90d5789a9a5659840",
+    "src_id" : "Dennis",
+    "tgt_id" : "Cuba"
+  }, {
+    "source" : "Cuba",
+    "target" : "Hurricane Isaac",
+    "weight" : "1.0",
+    "description" : "Made its second landfall in Cuba later that day",
+    "keywords" : "landfall, tropical storm",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "Cuba"
+  }, {
+    "source" : "Florida",
+    "target" : "Hurricane Dennis",
+    "weight" : "1.0",
+    "description" : "Hurricane Dennis caused severe flooding in the state of Florida.",
+    "keywords" : "flooding, tropical cyclone",
+    "source_id" : "e93a056fc090261fd71885729625d9ed",
+    "src_id" : "Hurricane Dennis",
+    "tgt_id" : "Florida"
+  }, {
+    "source" : "Florida",
+    "target" : "Dennis",
+    "weight" : "1.0",
+    "description" : "Drifted across Florida",
+    "keywords" : "",
+    "source_id" : "a8d95bd12498bed90d5789a9a5659840",
+    "src_id" : "Dennis",
+    "tgt_id" : "Florida"
+  }, {
+    "source" : "Florida",
+    "target" : "Hurricane Isaac",
+    "weight" : "1.0",
+    "description" : "Caused widespread storm damage and injuries in Florida",
+    "keywords" : "storm damage, injuries",
+    "source_id" : "905d44b1c4240059b28dc8399b90b905",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "Florida"
+  }, {
+    "source" : "Florida",
+    "target" : "Jerry",
+    "weight" : "3.0",
+    "description" : "The rainfall produced by Jerry was responsible for $40 million in damage and 6 deaths",
+    "keywords" : "landfall, damage, remnant circulation, rainfall, damage, deaths",
+    "source_id" : "849a4d8e7201f138100e428b3970b117<|#|>849a4d8e7201f138100e428b3970b117<|#|>849a4d8e7201f138100e428b3970b117",
+    "src_id" : "Jerry",
+    "tgt_id" : "Florida"
+  }, {
+    "source" : "Hurricane Isaac",
+    "target" : "Louisiana",
+    "weight" : "1.0",
+    "description" : "Hurricane Isaac made landfall in the U.S. state of Louisiana.",
+    "keywords" : "landfall, tropical cyclone",
+    "source_id" : "e93a056fc090261fd71885729625d9ed",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "Louisiana"
+  }, {
+    "source" : "Hurricane Isaac",
+    "target" : "U.S.",
+    "weight" : "1.0",
+    "description" : "Hurricane Isaac was a tropical cyclone that made landfall in the U.S.",
+    "keywords" : "tropical cyclone, landfall",
+    "source_id" : "e93a056fc090261fd71885729625d9ed",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "U.S."
+  }, {
+    "source" : "Hurricane Isaac",
+    "target" : "Tropical storm",
+    "weight" : "1.0",
+    "description" : "The tropical storm that formed Hurricane Isaac intensified into a tropical depression.",
+    "keywords" : "intensification, tropical storm",
+    "source_id" : "e93a056fc090261fd71885729625d9ed",
+    "src_id" : "Tropical storm",
+    "tgt_id" : "Hurricane Isaac"
+  }, {
+    "source" : "Hurricane Isaac",
+    "target" : "Hurricane Dennis",
+    "weight" : "1.0",
+    "description" : "Hurricane Isaac was the ninth named storm and fourth hurricane of the annual hurricane season, similar to Hurricane Dennis.",
+    "keywords" : "comparison, hurricane season",
+    "source_id" : "e93a056fc090261fd71885729625d9ed",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "Hurricane Dennis"
+  }, {
+    "source" : "Hurricane Isaac",
+    "target" : "North Carolina coastline",
+    "weight" : "1.0",
+    "description" : "Made landfall along the North Carolina coastline",
+    "keywords" : "hurricane, storm surge",
+    "source_id" : "905d44b1c4240059b28dc8399b90b905",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "North Carolina coastline"
+  }, {
+    "source" : "Hurricane Isaac",
+    "target" : "Norfolk, Virginia",
+    "weight" : "1.0",
+    "description" : "Passed through the Atlantic Ocean near Norfolk, Virginia",
+    "keywords" : "cyclone, Atlantic Ocean",
+    "source_id" : "905d44b1c4240059b28dc8399b90b905",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "Norfolk, Virginia"
+  }, {
+    "source" : "Hurricane Isaac",
+    "target" : "New England coastline",
+    "weight" : "1.0",
+    "description" : "Grazed the New England coastline",
+    "keywords" : "cyclone, coastal erosion",
+    "source_id" : "905d44b1c4240059b28dc8399b90b905",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "New England coastline"
+  }, {
+    "source" : "Hurricane Isaac",
+    "target" : "Nova Scotia",
+    "weight" : "1.0",
+    "description" : "Last observed offshore Nova Scotia",
+    "keywords" : "cyclone, offshore",
+    "source_id" : "905d44b1c4240059b28dc8399b90b905",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "Nova Scotia"
+  }, {
+    "source" : "Hurricane Isaac",
+    "target" : "South Florida",
+    "weight" : "1.0",
+    "description" : "Caused severe local flooding in South Florida",
+    "keywords" : "flooding, tornadoes",
+    "source_id" : "905d44b1c4240059b28dc8399b90b905",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "South Florida"
+  }, {
+    "source" : "Hurricane Isaac",
+    "target" : "Lesser Antilles",
+    "weight" : "1.0",
+    "description" : "Formed from a tropical wave while located east of the Lesser Antilles",
+    "keywords" : "tropical wave, formation",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "Lesser Antilles"
+  }, {
+    "source" : "Hurricane Isaac",
+    "target" : "Leeward Islands",
+    "weight" : "1.0",
+    "description" : "Crossed through the Leeward Islands",
+    "keywords" : "crossing, passage",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "Leeward Islands"
+  }, {
+    "source" : "Hurricane Isaac",
+    "target" : "Haiti",
+    "weight" : "1.0",
+    "description" : "Made its first landfall in Haiti as a midgrade tropical storm",
+    "keywords" : "landfall, tropical storm",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "Haiti"
+  }, {
+    "source" : "Hurricane Isaac",
+    "target" : "Florida Keys",
+    "weight" : "1.0",
+    "description" : "Passed near the Florida Keys while remaining somewhat disorganized",
+    "keywords" : "passage, disorganization",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "Florida Keys"
+  }, {
+    "source" : "Hurricane Isaac",
+    "target" : "Tampa Bay Area",
+    "weight" : "1.0",
+    "description" : "Threatened to strike the Tampa Bay Area during the 2012 Republican National Convention",
+    "keywords" : "threat, convention",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "Tampa Bay Area"
+  }, {
+    "source" : "Hurricane Isaac",
+    "target" : "Florida Panhandle",
+    "weight" : "3.0",
+    "description" : "Moved ashore in the Florida Panhandle as a major hurricane",
+    "keywords" : "threat, landfall, avoidance, landfall, strengthening, hurricane",
+    "source_id" : "51d6d830f3faaf4cd28d17830974fea8<|#|>51d6d830f3faaf4cd28d17830974fea8<|#|>51d6d830f3faaf4cd28d17830974fea8",
+    "src_id" : "Hurricane Isaac",
+    "tgt_id" : "Florida Panhandle"
+  }, {
+    "source" : "Louisiana",
+    "target" : "Hurricane Debra",
+    "weight" : "1.0",
+    "description" : "Made landfall in Louisiana",
+    "keywords" : "landfall, storm surge",
+    "source_id" : "2706db103d7a8d9c00ad294a9f39f0d2",
+    "src_id" : "Hurricane Debra",
+    "tgt_id" : "Louisiana"
+  }, {
+    "source" : "Louisiana",
+    "target" : "Tropical Storm Allison",
+    "weight" : "1.0",
+    "description" : "Caused severe flooding in Louisiana",
+    "keywords" : "severe flooding",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926",
+    "src_id" : "Tropical Storm Allison",
+    "tgt_id" : "Louisiana"
+  }, {
+    "source" : "Tropical wave",
+    "target" : "Africa",
+    "weight" : "1.0",
+    "description" : "The tropical wave that formed Hurricane Isaac originated from Africa.",
+    "keywords" : "origin, tropical wave",
+    "source_id" : "e93a056fc090261fd71885729625d9ed",
+    "src_id" : "Tropical wave",
+    "tgt_id" : "Africa"
+  }, {
+    "source" : "Tropical depression",
+    "target" : "Lesser Antilles",
+    "weight" : "1.0",
+    "description" : "The tropical depression that formed Hurricane Isaac was located several hundred miles east of the Lesser Antilles.",
+    "keywords" : "location, tropical depression",
+    "source_id" : "e93a056fc090261fd71885729625d9ed",
+    "src_id" : "Tropical depression",
+    "tgt_id" : "Lesser Antilles"
+  }, {
+    "source" : "Dennis",
+    "target" : "Cabo Verde",
+    "weight" : "1.0",
+    "description" : "Developed from a tropical wave well south of Cabo Verde",
+    "keywords" : "",
+    "source_id" : "a8d95bd12498bed90d5789a9a5659840",
+    "src_id" : "Dennis",
+    "tgt_id" : "Cabo Verde"
+  }, {
+    "source" : "Dennis",
+    "target" : "Windward Islands",
+    "weight" : "1.0",
+    "description" : "Crossed the Windward Islands",
+    "keywords" : "",
+    "source_id" : "a8d95bd12498bed90d5789a9a5659840",
+    "src_id" : "Dennis",
+    "tgt_id" : "Windward Islands"
+  }, {
+    "source" : "Dennis",
+    "target" : "Matanzas Province",
+    "weight" : "1.0",
+    "description" : "Reintensified into a tropical storm before landfall in Matanzas Province",
+    "keywords" : "",
+    "source_id" : "a8d95bd12498bed90d5789a9a5659840",
+    "src_id" : "Dennis",
+    "tgt_id" : "Matanzas Province"
+  }, {
+    "source" : "Dennis",
+    "target" : "Florida Keys",
+    "weight" : "1.0",
+    "description" : "Struck the Florida Keys",
+    "keywords" : "",
+    "source_id" : "a8d95bd12498bed90d5789a9a5659840",
+    "src_id" : "Dennis",
+    "tgt_id" : "Florida Keys"
+  }, {
+    "source" : "Dennis",
+    "target" : "Monroe County",
+    "weight" : "1.0",
+    "description" : "Struck Monroe County",
+    "keywords" : "",
+    "source_id" : "a8d95bd12498bed90d5789a9a5659840",
+    "src_id" : "Dennis",
+    "tgt_id" : "Monroe County"
+  }, {
+    "source" : "Dennis",
+    "target" : "Cape Canaveral",
+    "weight" : "1.0",
+    "description" : "Reached the Atlantic near Cape Canaveral",
+    "keywords" : "",
+    "source_id" : "a8d95bd12498bed90d5789a9a5659840",
+    "src_id" : "Dennis",
+    "tgt_id" : "Cape Canaveral"
+  }, {
+    "source" : "Dennis",
+    "target" : "Emerald Isle",
+    "weight" : "1.0",
+    "description" : "Made landfall near Emerald Isle, North Carolina",
+    "keywords" : "landfall, hurricane",
+    "source_id" : "7e5c786476abec671529647de5b6cf67",
+    "src_id" : "Dennis",
+    "tgt_id" : "Emerald Isle"
+  }, {
+    "source" : "Dennis",
+    "target" : "North Carolina",
+    "weight" : "1.0",
+    "description" : "Caused severe impacts along its track through North Carolina",
+    "keywords" : "landfall, hurricane",
+    "source_id" : "7e5c786476abec671529647de5b6cf67",
+    "src_id" : "Dennis",
+    "tgt_id" : "North Carolina"
+  }, {
+    "source" : "Dennis",
+    "target" : "Bermuda",
+    "weight" : "1.0",
+    "description" : "Became extratropical northeast of Bermuda",
+    "keywords" : "extratropical, northeast",
+    "source_id" : "7e5c786476abec671529647de5b6cf67",
+    "src_id" : "Dennis",
+    "tgt_id" : "Bermuda"
+  }, {
+    "source" : "Dennis",
+    "target" : "Puerto Rico",
+    "weight" : "1.0",
+    "description" : "Passed over Puerto Rico",
+    "keywords" : "passing over",
+    "source_id" : "7e5c786476abec671529647de5b6cf67",
+    "src_id" : "Dennis",
+    "tgt_id" : "Puerto Rico"
+  }, {
+    "source" : "Dennis",
+    "target" : "Hispaniola",
+    "weight" : "1.0",
+    "description" : "Passed over the northern coastline of Hispaniola",
+    "keywords" : "passing over",
+    "source_id" : "7e5c786476abec671529647de5b6cf67",
+    "src_id" : "Dennis",
+    "tgt_id" : "Hispaniola"
+  }, {
+    "source" : "Dennis",
+    "target" : "Turks and Caicos Islands",
+    "weight" : "1.0",
+    "description" : "Passed through the Turks and Caicos Islands",
+    "keywords" : "passing over",
+    "source_id" : "7e5c786476abec671529647de5b6cf67",
+    "src_id" : "Dennis",
+    "tgt_id" : "Turks and Caicos Islands"
+  }, {
+    "source" : "Dennis",
+    "target" : "Bahamas",
+    "weight" : "1.0",
+    "description" : "Passed through the Bahamas",
+    "keywords" : "passing over",
+    "source_id" : "7e5c786476abec671529647de5b6cf67",
+    "src_id" : "Dennis",
+    "tgt_id" : "Bahamas"
+  }, {
+    "source" : "Bahamas",
+    "target" : "Jerry",
+    "weight" : "1.0",
+    "description" : "Jerry organized into a tropical depression and tropical storm between the Bahamas and Florida",
+    "keywords" : "tropical depression, tropical storm",
+    "source_id" : "849a4d8e7201f138100e428b3970b117",
+    "src_id" : "Jerry",
+    "tgt_id" : "Bahamas"
+  }, {
+    "source" : "Hurricane Debra",
+    "target" : "Mississippi River",
+    "weight" : "1.0",
+    "description" : "Made landfall near the mouth of the Mississippi River",
+    "keywords" : "landfall, storm surge",
+    "source_id" : "2706db103d7a8d9c00ad294a9f39f0d2",
+    "src_id" : "Hurricane Debra",
+    "tgt_id" : "Mississippi River"
+  }, {
+    "source" : "Hurricane Debra",
+    "target" : "Port Fourchon",
+    "weight" : "1.0",
+    "description" : "Made landfall near Port Fourchon",
+    "keywords" : "landfall, storm surge",
+    "source_id" : "2706db103d7a8d9c00ad294a9f39f0d2",
+    "src_id" : "Hurricane Debra",
+    "tgt_id" : "Port Fourchon"
+  }, {
+    "source" : "Hurricane Debra",
+    "target" : "Missouri",
+    "weight" : "1.0",
+    "description" : "Dissipated over Missouri",
+    "keywords" : "landfall, dissipation",
+    "source_id" : "2706db103d7a8d9c00ad294a9f39f0d2",
+    "src_id" : "Hurricane Debra",
+    "tgt_id" : "Missouri"
+  }, {
+    "source" : "Hurricane Debra",
+    "target" : "Gulf Coast",
+    "weight" : "1.0",
+    "description" : "Made landfall along the Gulf Coast and intensified",
+    "keywords" : "landfall, intensification",
+    "source_id" : "2706db103d7a8d9c00ad294a9f39f0d2",
+    "src_id" : "Hurricane Debra",
+    "tgt_id" : "Gulf Coast"
+  }, {
+    "source" : "Hurricane Debra",
+    "target" : "United States",
+    "weight" : "1.0",
+    "description" : "Made landfall in the United States and had an impact",
+    "keywords" : "landfall, impact",
+    "source_id" : "2706db103d7a8d9c00ad294a9f39f0d2",
+    "src_id" : "Hurricane Debra",
+    "tgt_id" : "United States"
+  }, {
+    "source" : "United States",
+    "target" : "Hurricane Hugo",
+    "weight" : "1.0",
+    "description" : "Hurricane Hugo caused significant damage in the United States",
+    "keywords" : "Hurricane, Storm, Damage",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b",
+    "src_id" : "Hurricane Hugo",
+    "tgt_id" : "United States"
+  }, {
+    "source" : "United States",
+    "target" : "Tropical Storm Barry",
+    "weight" : "1.0",
+    "description" : "Caused negligible impact on the United States",
+    "keywords" : "negligible impact",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926",
+    "src_id" : "Tropical Storm Barry",
+    "tgt_id" : "United States"
+  }, {
+    "source" : "United States",
+    "target" : "Tropical Depression Six",
+    "weight" : "1.0",
+    "description" : "Caused negligible impact on the United States",
+    "keywords" : "negligible impact",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926",
+    "src_id" : "Tropical Depression Six",
+    "tgt_id" : "United States"
+  }, {
+    "source" : "United States",
+    "target" : "Tropical Depression Nine",
+    "weight" : "1.0",
+    "description" : "Caused negligible impact on the United States",
+    "keywords" : "negligible impact",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926",
+    "src_id" : "Tropical Depression Nine",
+    "tgt_id" : "United States"
+  }, {
+    "source" : "United States",
+    "target" : "Tropical Depression Thirteen",
+    "weight" : "1.0",
+    "description" : "Caused negligible impact on the United States",
+    "keywords" : "negligible impact",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926",
+    "src_id" : "Tropical Depression Thirteen",
+    "tgt_id" : "United States"
+  }, {
+    "source" : "United States",
+    "target" : "Hurricane Erin",
+    "weight" : "1.0",
+    "description" : "Caused negligible impact on the United States",
+    "keywords" : "negligible impact",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926",
+    "src_id" : "Hurricane Erin",
+    "tgt_id" : "United States"
+  }, {
+    "source" : "United States",
+    "target" : "Hurricane Felix",
+    "weight" : "1.0",
+    "description" : "Caused negligible impact on the United States",
+    "keywords" : "negligible impact",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926",
+    "src_id" : "Hurricane Felix",
+    "tgt_id" : "United States"
+  }, {
+    "source" : "United States",
+    "target" : "Heidi",
+    "weight" : "1.0",
+    "description" : "Was the final storm of the 1967 Atlantic hurricane season",
+    "keywords" : "",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926",
+    "src_id" : "Heidi",
+    "tgt_id" : "United States"
+  }, {
+    "source" : "United States",
+    "target" : "Hurricane Beulah",
+    "weight" : "1.0",
+    "description" : "Severe river flooding occurred in the United States",
+    "keywords" : "river flooding",
+    "source_id" : "91a62ba978e509456a1997ac4bf0f3c6",
+    "src_id" : "Hurricane Beulah",
+    "tgt_id" : "United States"
+  }, {
+    "source" : "United States",
+    "target" : "Tropical Storm Jerry",
+    "weight" : "1.0",
+    "description" : "Tropical Storm Jerry caused severe flooding throughout the southeast United States",
+    "keywords" : "flooding",
+    "source_id" : "91a62ba978e509456a1997ac4bf0f3c6",
+    "src_id" : "Tropical Storm Jerry",
+    "tgt_id" : "United States"
+  }, {
+    "source" : "1815 North Carolina hurricane",
+    "target" : "Freeport",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "d35a5a10a2ddcb2cccf766e5ae83e614",
+    "src_id" : "1815 North Carolina hurricane",
+    "tgt_id" : "Freeport"
+  }, {
+    "source" : "1815 North Carolina hurricane",
+    "target" : "Galveston",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "d35a5a10a2ddcb2cccf766e5ae83e614",
+    "src_id" : "1815 North Carolina hurricane",
+    "tgt_id" : "Galveston"
+  }, {
+    "source" : "1815 North Carolina hurricane",
+    "target" : "Cape Lookout",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "d35a5a10a2ddcb2cccf766e5ae83e614",
+    "src_id" : "1815 North Carolina hurricane",
+    "tgt_id" : "Cape Lookout"
+  }, {
+    "source" : "1815 North Carolina hurricane",
+    "target" : "Charleston",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "d35a5a10a2ddcb2cccf766e5ae83e614",
+    "src_id" : "1815 North Carolina hurricane",
+    "tgt_id" : "Charleston"
+  }, {
+    "source" : "1815 North Carolina hurricane",
+    "target" : "New Bern",
+    "weight" : "1.0",
+    "description" : "",
+    "keywords" : "",
+    "source_id" : "d35a5a10a2ddcb2cccf766e5ae83e614",
+    "src_id" : "1815 North Carolina hurricane",
+    "tgt_id" : "New Bern"
+  }, {
+    "source" : "Hurricane Hugo",
+    "target" : "New England",
+    "weight" : "1.0",
+    "description" : "Hurricane Hugo affected the region of New England",
+    "keywords" : "Hurricane, Storm, Flood",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b",
+    "src_id" : "Hurricane Hugo",
+    "tgt_id" : "New England"
+  }, {
+    "source" : "Hurricane Hugo",
+    "target" : "Atlantic basin",
+    "weight" : "1.0",
+    "description" : "Hurricane Hugo caused significant damage in the Atlantic basin",
+    "keywords" : "Hurricane, Storm, Damage",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b",
+    "src_id" : "Hurricane Hugo",
+    "tgt_id" : "Atlantic basin"
+  }, {
+    "source" : "Hurricane Hugo",
+    "target" : "Corn",
+    "weight" : "1.0",
+    "description" : "Hurricane Hugo caused damage to corn crops",
+    "keywords" : "Hurricane, Crop, Damage",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b",
+    "src_id" : "Hurricane Hugo",
+    "tgt_id" : "Corn"
+  }, {
+    "source" : "Hurricane Hugo",
+    "target" : "Cotton",
+    "weight" : "1.0",
+    "description" : "Hurricane Hugo caused damage to cotton crops",
+    "keywords" : "Hurricane, Crop, Damage",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b",
+    "src_id" : "Hurricane Hugo",
+    "tgt_id" : "Cotton"
+  }, {
+    "source" : "Hurricane Hugo",
+    "target" : "Rice",
+    "weight" : "1.0",
+    "description" : "Hurricane Hugo caused damage to rice crops",
+    "keywords" : "Hurricane, Crop, Damage",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b",
+    "src_id" : "Hurricane Hugo",
+    "tgt_id" : "Rice"
+  }, {
+    "source" : "Hurricane Hugo",
+    "target" : "Vessel",
+    "weight" : "1.0",
+    "description" : "Hurricane Hugo damaged vessels",
+    "keywords" : "Hurricane, Damage",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b",
+    "src_id" : "Hurricane Hugo",
+    "tgt_id" : "Vessel"
+  }, {
+    "source" : "Hurricane Hugo",
+    "target" : "Flood",
+    "weight" : "1.0",
+    "description" : "Hurricane Hugo caused significant flood damage",
+    "keywords" : "Hurricane, Flood, Damage",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b",
+    "src_id" : "Hurricane Hugo",
+    "tgt_id" : "Flood"
+  }, {
+    "source" : "Hurricane Hugo",
+    "target" : "Storm",
+    "weight" : "1.0",
+    "description" : "Hurricane Hugo caused significant storm damage",
+    "keywords" : "Hurricane, Storm, Damage",
+    "source_id" : "bf6542c2b42b24715f23d788badbf87b",
+    "src_id" : "Hurricane Hugo",
+    "tgt_id" : "Storm"
+  }, {
+    "source" : "Tropical Storm Allison",
+    "target" : "Texas",
+    "weight" : "1.0",
+    "description" : "Caused severe flooding in Texas",
+    "keywords" : "severe flooding",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926",
+    "src_id" : "Tropical Storm Allison",
+    "tgt_id" : "Texas"
+  }, {
+    "source" : "Hurricane Gabrielle",
+    "target" : "East Coast",
+    "weight" : "1.0",
+    "description" : "Caused light effects on land along the East Coast",
+    "keywords" : "light effects on land",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926",
+    "src_id" : "Hurricane Gabrielle",
+    "tgt_id" : "East Coast"
+  }, {
+    "source" : "Tropical Storm Iris",
+    "target" : "United States Virgin Islands",
+    "weight" : "1.0",
+    "description" : "Caused minor flooding in the United States Virgin Islands",
+    "keywords" : "minor flooding",
+    "source_id" : "5b5ea61c0fd657578f96413ad8766926",
+    "src_id" : "Tropical Storm Iris",
+    "tgt_id" : "United States Virgin Islands"
+  }, {
+    "source" : "Hurricane Beulah",
+    "target" : "Dominican Republic",
+    "weight" : "1.0",
+    "description" : "Widespread evacuations occurred along the southern coast of the Dominican Republic",
+    "keywords" : "evacuations, flooding",
+    "source_id" : "91a62ba978e509456a1997ac4bf0f3c6",
+    "src_id" : "Hurricane Beulah",
+    "tgt_id" : "Dominican Republic"
+  }, {
+    "source" : "Hurricane Beulah",
+    "target" : "Yucatán Peninsula",
+    "weight" : "1.0",
+    "description" : "Severe river flooding occurred in the Yucatán Peninsula",
+    "keywords" : "river flooding",
+    "source_id" : "91a62ba978e509456a1997ac4bf0f3c6",
+    "src_id" : "Hurricane Beulah",
+    "tgt_id" : "Yucatán Peninsula"
+  }, {
+    "source" : "Hurricane Beulah",
+    "target" : "Mexico",
+    "weight" : "1.0",
+    "description" : "Severe river flooding occurred in Mexico",
+    "keywords" : "river flooding",
+    "source_id" : "91a62ba978e509456a1997ac4bf0f3c6",
+    "src_id" : "Hurricane Beulah",
+    "tgt_id" : "Mexico"
+  }, {
+    "source" : "Jerry",
+    "target" : "African coast",
+    "weight" : "1.0",
+    "description" : "Jerry formed from a tropical wave that moved off the African coast",
+    "keywords" : "tropical wave, tropical depression",
+    "source_id" : "849a4d8e7201f138100e428b3970b117",
+    "src_id" : "Jerry",
+    "tgt_id" : "African coast"
+  }, {
+    "source" : "Jerry",
+    "target" : "Georgia",
+    "weight" : "1.0",
+    "description" : "The rainfall produced by Jerry affected Georgia",
+    "keywords" : "rainfall",
+    "source_id" : "849a4d8e7201f138100e428b3970b117",
+    "src_id" : "Jerry",
+    "tgt_id" : "Georgia"
+  }, {
+    "source" : "Jerry",
+    "target" : "South Carolina",
+    "weight" : "1.0",
+    "description" : "The rainfall produced by Jerry affected South Carolina",
+    "keywords" : "rainfall",
+    "source_id" : "849a4d8e7201f138100e428b3970b117",
+    "src_id" : "Jerry",
+    "tgt_id" : "South Carolina"
+  }, {
+    "source" : "Jerry",
+    "target" : "Hurricane Andrew",
+    "weight" : "1.0",
+    "description" : "Jerry was the first tropical cyclone to make landfall in South Florida since Hurricane Andrew",
+    "keywords" : "landfall, South Florida",
+    "source_id" : "849a4d8e7201f138100e428b3970b117",
+    "src_id" : "Jerry",
+    "tgt_id" : "Hurricane Andrew"
+  }, {
+    "source" : "Jerry",
+    "target" : "Jose",
+    "weight" : "1.0",
+    "description" : "Jerry was the earliest tenth storm to form in a season on record, until Jose overtook it",
+    "keywords" : "record, season",
+    "source_id" : "849a4d8e7201f138100e428b3970b117",
+    "src_id" : "Jerry",
+    "tgt_id" : "Jose"
+  } ],
+  "metadata" : {
+    "nodeCount" : 93,
+    "edgeCount" : 85
+  }
+}

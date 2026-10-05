@@ -1,0 +1,139 @@
+kotlin-logging: initializing... active logger factory: Slf4jLoggerFactory
+18:12:03,536 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found logback-core version 1.5.38
+18:12:03,539 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - No custom configurators were discovered as a service.
+18:12:03,541 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+18:12:03,542 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+18:12:03,558 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+18:12:03,632 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml]
+18:12:04,147 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Scan attribute set to true. Will scan for configuration file changes.
+18:12:04,213 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@179ece50 - URL [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml] is not of type file
+18:12:04,225 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "INFO" substituted for "${ROOT_LOG_LEVEL:-INFO}"
+18:12:04,225 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL:-DEBUG}"
+18:12:04,225 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_LOG_LEVEL:-TRACE}"
+18:12:04,225 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL:-TRACE}"
+18:12:04,225 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL:-ERROR}"
+18:12:04,225 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL:-ERROR}"
+18:12:04,226 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL:-ERROR}"
+18:12:04,226 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL:-DEBUG}"
+18:12:04,229 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Missing watchable .xml or .properties files.
+18:12:04,229 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Watching .xml files requires that the main configuration file is reachable as a URL
+18:12:04,235 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Main configuration file URL: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml
+18:12:04,255 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - FileWatchList= {}
+18:12:04,255 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - URLWatchList= {}
+18:12:04,258 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+18:12:04,258 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+18:12:04,266 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+18:12:04,398 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - NOTE: Writing to the console can be slow. Try to avoid logging to the 
+18:12:04,398 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - console in production environments, especially in high volume systems.
+18:12:04,398 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also https://logback.qos.ch/codes.html#slowConsole
+18:12:04,399 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL}"
+18:12:04,399 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag] to DEBUG
+18:12:04,406 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag] to false
+18:12:04,406 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag]
+18:12:04,407 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_LOG_LEVEL}"
+18:12:04,407 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.neo4j] to TRACE
+18:12:04,407 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.neo4j] to false
+18:12:04,407 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.neo4j]
+18:12:04,407 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL}"
+18:12:04,407 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.neo4j.driver] to TRACE
+18:12:04,407 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.neo4j.driver] to false
+18:12:04,407 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[org.neo4j.driver]
+18:12:04,407 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL}"
+18:12:04,407 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.memory] to DEBUG
+18:12:04,407 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.memory] to false
+18:12:04,407 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.memory]
+18:12:04,407 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL}"
+18:12:04,407 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j] to ERROR
+18:12:04,407 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j] to false
+18:12:04,407 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j]
+18:12:04,407 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+18:12:04,407 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.okhttp] to ERROR
+18:12:04,407 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.okhttp] to false
+18:12:04,412 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.okhttp]
+18:12:04,412 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+18:12:04,412 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.openai] to ERROR
+18:12:04,412 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.openai] to false
+18:12:04,412 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.openai]
+18:12:04,412 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+18:12:04,412 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [okhttp3] to ERROR
+18:12:04,412 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [okhttp3] to false
+18:12:04,412 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[okhttp3]
+18:12:04,412 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL}"
+18:12:04,412 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.ai4j.openai4j] to ERROR
+18:12:04,412 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.ai4j.openai4j] to false
+18:12:04,412 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.ai4j.openai4j]
+18:12:04,412 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "INFO" substituted for "${ROOT_LOG_LEVEL}"
+18:12:04,413 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+18:12:04,413 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+18:12:04,413 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@3cd3e762 - End of configuration.
+18:12:04,413 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@1fa121e2 - Registering current configuration as safe fallback point
+18:12:04,447 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 871 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+WARNING: --use-unified-api=false keeps 'shared.eval.MultiConditionExperimentKt' on legacy condition runners. This compatibility path is planned for deprecation; prefer --use-unified-api=true.
+Running 1 conditions on 1 samples
+Parallelism: 1
+Unified API: false
+Unified persistence SPI: false
+Data: data/webis_experiment/webis_train_balanced_30.jsonl
+Output: eval_results/swo69_s0/webis_hipporag_gemma
+
+=== Condition: hipporag_graph (HippoRAG graph retrieval) ===
+2026-08-18 18:12:04.856 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_s0/webis_hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text
+2026-08-18 18:12:05.566 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_s0/webis_hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/chunk_embeddings
+2026-08-18 18:12:05.567 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_s0/webis_hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/entity_embeddings
+2026-08-18 18:12:05.567 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_s0/webis_hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/fact_embeddings
+2026-08-18 18:12:06.189 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_s0/webis_hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text
+2026-08-18 18:12:06.214 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_s0/webis_hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/chunk_embeddings
+2026-08-18 18:12:06.215 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_s0/webis_hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/entity_embeddings
+2026-08-18 18:12:06.215 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_s0/webis_hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/fact_embeddings
+2026-08-18 18:12:06.218 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Indexing Documents
+2026-08-18 18:12:06.218 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing OpenIE
+2026-08-18 18:12:06.929 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 12 new records, 0 records already exist.
+2026-08-18 18:12:14.987 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Saving new records.
+2026-08-18 18:12:15.264 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Saved 12 records to eval_results/swo69_s0/webis_hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-18 18:23:01.901 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - OpenIE results saved to eval_results/swo69_s0/webis_hipporag_gemma/workdirs/graph/openie_results_ner_gemma4:e4b.json
+2026-08-18 18:23:01.930 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding Entities
+2026-08-18 18:23:01.953 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 100 new records, 0 records already exist.
+2026-08-18 18:23:10.230 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Saving new records.
+2026-08-18 18:23:10.343 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Saved 100 records to eval_results/swo69_s0/webis_hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-18 18:23:10.344 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding Facts
+2026-08-18 18:23:10.362 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Inserting 62 new records, 0 records already exist.
+2026-08-18 18:23:11.807 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Saving new records.
+2026-08-18 18:23:11.864 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Saved 62 records to eval_results/swo69_s0/webis_hipporag_gemma/workdirs/graph/gemma4:e4b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-18 18:23:11.864 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Constructing Graph
+2026-08-18 18:23:11.864 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-18 18:23:11.900 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Connecting passage nodes to phrase nodes.
+2026-08-18 18:23:11.933 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Found 12 new chunks to save into graph.
+2026-08-18 18:23:11.933 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Expanding graph with synonymy edges
+2026-08-18 18:23:11.933 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Performing KNN retrieval for each phrase nodes (100).
+2026-08-18 18:23:12.361 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Graph construction completed!
+2026-08-18 18:23:12.361 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - {num_phrase_nodes=100, num_passage_nodes=12, num_total_nodes=112, num_extracted_triples=62, num_triples_with_passage_node=107, num_synonymy_triples=60, num_total_triples=229}
+2026-08-18 18:23:12.361 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 112 nodes, 229 edges
+2026-08-18 18:23:12.389 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-18 18:23:12.392 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-18 18:23:12.393 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-18 18:23:12.393 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-18 18:23:12.406 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-18 18:23:12.540 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-18 18:23:29.275 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 112 nodes and total weight 2.948800
+2026-08-18 18:23:29.278 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 16.89s
+2026-08-18 18:23:29.279 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 16.57s
+2026-08-18 18:23:29.279 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.00s
+2026-08-18 18:23:29.279 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.32s
+2026-08-18 18:23:44.307 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found placeholder platform from: cpu-linux-x86_64:2.7.1
+2026-08-18 18:23:45.877 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - PyTorch graph executor optimizer is enabled, this may impact your inference latency and throughput. See: https://docs.djl.ai/master/docs/development/inference_performance_optimization.html#graph-executor-optimization
+2026-08-18 18:23:45.920 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - Number of inter-op threads is 96
+2026-08-18 18:23:45.920 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - Number of intra-op threads is 16
+2026-08-18 18:25:55.453 [DefaultDispatcher-worker-1] WARN  ai.djl.repository.zoo.ModelZoo - Failed to download Huggingface model zoo index: CV.ZERO_SHOT_IMAGE_CLASSIFICATION
+2026-08-18 18:28:06.523 [DefaultDispatcher-worker-1] WARN  ai.djl.repository.zoo.ModelZoo - Failed to download Huggingface model zoo index: CV.ZERO_SHOT_OBJECT_DETECTION
+2026-08-18 18:30:17.595 [DefaultDispatcher-worker-1] WARN  ai.djl.repository.zoo.ModelZoo - Failed to download Huggingface model zoo index: NLP.FILL_MASK
+2026-08-18 18:32:28.667 [DefaultDispatcher-worker-1] WARN  ai.djl.repository.zoo.ModelZoo - Failed to download Huggingface model zoo index: NLP.QUESTION_ANSWER
+2026-08-18 18:34:39.740 [DefaultDispatcher-worker-1] WARN  ai.djl.repository.zoo.ModelZoo - Failed to download Huggingface model zoo index: NLP.TEXT_CLASSIFICATION
+2026-08-18 18:36:50.811 [DefaultDispatcher-worker-1] WARN  ai.djl.repository.zoo.ModelZoo - Failed to download Huggingface model zoo index: NLP.TEXT_EMBEDDING
+2026-08-18 18:39:01.891 [DefaultDispatcher-worker-1] WARN  ai.djl.repository.zoo.ModelZoo - Failed to download Huggingface model zoo index: NLP.TOKEN_CLASSIFICATION
+2026-08-18 18:41:12.956 [DefaultDispatcher-worker-1] WARN  ai.djl.repository.zoo.ModelZoo - Failed to download Huggingface model zoo index: NLP.ZERO_SHOT_CLASSIFICATION
+Warning: BertScore computation failed, defaulting to 0.0. Cause: Connection timed out
+hipporag_graph: processed 1/1
+Wrote 1 rows -> eval_results/swo69_s0/webis_hipporag_gemma/per_question/hipporag_graph.jsonl
+
+Finished. Aggregate CSV can be produced by scripts/aggregate_experiment_results.py

@@ -1,0 +1,335 @@
+{
+  "nodes" : [ {
+    "id" : "Thyroid",
+    "entity_id" : "Thyroid",
+    "entity_type" : "Organ",
+    "description" : "A gland that produces hormones that regulate metabolism, growth, and development.",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24"
+  }, {
+    "id" : "Kidney",
+    "entity_id" : "Kidney",
+    "entity_type" : "Location",
+    "description" : "An organ that filters waste and excess fluids from the blood.",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24"
+  }, {
+    "id" : "TSH",
+    "entity_id" : "TSH",
+    "entity_type" : "Hormone",
+    "description" : "A hormone produced by the thyroid gland that regulates metabolism.",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24"
+  }, {
+    "id" : "CKD",
+    "entity_id" : "CKD",
+    "entity_type" : "Condition",
+    "description" : "Chronic kidney disease, a long-term condition where the kidneys gradually lose their function.",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24"
+  }, {
+    "id" : "Hypothyroidism",
+    "entity_id" : "Hypothyroidism",
+    "entity_type" : "Condition",
+    "description" : "A condition in which the thyroid gland does not produce enough thyroid hormones.",
+    "source_id" : "ce2f6b20ebffd7f21d010b95dfd54b9d"
+  }, {
+    "id" : "Leptin",
+    "entity_id" : "Leptin",
+    "entity_type" : "Hormone",
+    "description" : "A hormone that regulates energy balance and metabolism.",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24"
+  }, {
+    "id" : "Testosterone",
+    "entity_id" : "Testosterone",
+    "entity_type" : "Hormone",
+    "description" : "A hormone that regulates sex drive and reproductive function in both males and females.",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24"
+  }, {
+    "id" : "Thyroid Hormones",
+    "entity_id" : "Thyroid Hormones",
+    "entity_type" : "Concept",
+    "description" : "Substances produced by the thyroid gland that regulate various bodily functions.",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d"
+  }, {
+    "id" : "Kidneys",
+    "entity_id" : "Kidneys",
+    "entity_type" : "Location",
+    "description" : "Organ responsible for filtering waste and excess fluids from the blood.",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d"
+  }, {
+    "id" : "Chronic Kidney Disease (CKD)",
+    "entity_id" : "Chronic Kidney Disease (CKD)",
+    "entity_type" : "Condition",
+    "description" : "A long-term condition where the kidneys gradually lose their ability to function.",
+    "source_id" : "45d18a0cd428e6e39aa5a372062a47d2"
+  }, {
+    "id" : "Subclinical Hypothyroidism",
+    "entity_id" : "Subclinical Hypothyroidism",
+    "entity_type" : "Concept",
+    "description" : "A condition where the thyroid gland does not produce enough thyroid hormones, but not enough to be classified as hypothyroidism.",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b"
+  }, {
+    "id" : "Kidney Function",
+    "entity_id" : "Kidney Function",
+    "entity_type" : "Concept",
+    "description" : "The ability of the kidneys to filter waste and excess fluids from the blood.",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b"
+  }, {
+    "id" : "Adrenal Problems",
+    "entity_id" : "Adrenal Problems",
+    "entity_type" : "Concept",
+    "description" : "Problems related to the adrenal glands, which produce hormones that regulate stress response and other bodily functions.",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b"
+  }, {
+    "id" : "Stress Intolerance",
+    "entity_id" : "Stress Intolerance",
+    "entity_type" : "Concept",
+    "description" : "A condition where an individual experiences adverse effects from stress, such as anxiety or fatigue.",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b"
+  }, {
+    "id" : "Cardiovascular Disease",
+    "entity_id" : "Cardiovascular Disease",
+    "entity_type" : "Condition",
+    "description" : "Medical condition affecting the heart and blood vessels, leading to impaired heart function and increased risk of heart attacks and strokes.",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d"
+  }, {
+    "id" : "Sex Drive",
+    "entity_id" : "Sex Drive",
+    "entity_type" : "Concept",
+    "description" : "Desire for sexual activity, influenced by hormonal balance and overall health.",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d"
+  }, {
+    "id" : "Adrenaline",
+    "entity_id" : "Adrenaline",
+    "entity_type" : "Hormone",
+    "description" : "A hormone that regulates the body's fight-or-flight response.",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24"
+  }, {
+    "id" : "Hashimoto's Disease",
+    "entity_id" : "Hashimoto's Disease",
+    "entity_type" : "Concept",
+    "description" : "A chronic autoimmune disorder that affects the thyroid gland.",
+    "source_id" : "ce2f6b20ebffd7f21d010b95dfd54b9d"
+  }, {
+    "id" : "Goiter",
+    "entity_id" : "Goiter",
+    "entity_type" : "Condition",
+    "description" : "A swelling of the thyroid gland that can occur in people with hypothyroidism.",
+    "source_id" : "ce2f6b20ebffd7f21d010b95dfd54b9d"
+  }, {
+    "id" : "Low-Density Lipoprotein (LDL) Cholesterol",
+    "entity_id" : "Low-Density Lipoprotein (LDL) Cholesterol",
+    "entity_type" : "Concept",
+    "description" : "A type of cholesterol that is considered bad for your health.",
+    "source_id" : "ce2f6b20ebffd7f21d010b95dfd54b9d"
+  } ],
+  "edges" : [ {
+    "source" : "Thyroid",
+    "target" : "Kidney",
+    "weight" : "1.0",
+    "description" : "The thyroid gland produces hormones that regulate kidney function, and impaired thyroid function can lead to impaired kidney function.",
+    "keywords" : "kidney-thyroid interaction, thyroid function impairment",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24",
+    "src_id" : "Kidney",
+    "tgt_id" : "Thyroid"
+  }, {
+    "source" : "Thyroid",
+    "target" : "TSH",
+    "weight" : "1.0",
+    "description" : "TSH is a hormone produced by the thyroid gland",
+    "keywords" : "hormone regulation",
+    "source_id" : "75e06229872fca26d2b20718082423a9",
+    "src_id" : "Thyroid",
+    "tgt_id" : "TSH"
+  }, {
+    "source" : "Kidney",
+    "target" : "Leptin",
+    "weight" : "1.0",
+    "description" : "Leptin resistance is associated with impaired kidney function and is a common feature of both kidney and thyroid diseases.",
+    "keywords" : "leptin resistance, kidney function",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24",
+    "src_id" : "Kidney",
+    "tgt_id" : "Leptin"
+  }, {
+    "source" : "Kidney",
+    "target" : "Testosterone",
+    "weight" : "1.0",
+    "description" : "Low testosterone levels can lead to decreased sex drive in both males and females, and are associated with kidney disease.",
+    "keywords" : "testosterone, sex drive",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24",
+    "src_id" : "Kidney",
+    "tgt_id" : "Testosterone"
+  }, {
+    "source" : "Kidney",
+    "target" : "Adrenaline",
+    "weight" : "1.0",
+    "description" : "Adrenaline resistance is a health issue that affects both kidney and thyroid function, and is described in detail in the book 'Mastering Leptin'.",
+    "keywords" : "adrenaline resistance, kidney function",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24",
+    "src_id" : "Kidney",
+    "tgt_id" : "Adrenaline"
+  }, {
+    "source" : "Leptin",
+    "target" : "Testosterone",
+    "weight" : "1.0",
+    "description" : "Leptin regulates testosterone production and balance, affecting sex drive and reproductive functions.",
+    "keywords" : "regulation, balance",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d",
+    "src_id" : "Leptin",
+    "tgt_id" : "Testosterone"
+  }, {
+    "source" : "Leptin",
+    "target" : "Thyroid Hormones",
+    "weight" : "1.0",
+    "description" : "Thyroid hormones regulate energy balance, which is also influenced by leptin.",
+    "keywords" : "thyroid hormones, energy balance",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b",
+    "src_id" : "Thyroid Hormones",
+    "tgt_id" : "Leptin"
+  }, {
+    "source" : "Testosterone",
+    "target" : "Sex Drive",
+    "weight" : "1.0",
+    "description" : "Testosterone regulates sex drive and reproductive functions, affecting overall sexual health.",
+    "keywords" : "regulation, function",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d",
+    "src_id" : "Testosterone",
+    "tgt_id" : "Sex Drive"
+  }, {
+    "source" : "Thyroid Hormones",
+    "target" : "Kidneys",
+    "weight" : "1.0",
+    "description" : "Thyroid hormones regulate kidney function and filtration efficiency.",
+    "keywords" : "filtration, waste removal",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d",
+    "src_id" : "Thyroid Hormones",
+    "tgt_id" : "Kidneys"
+  }, {
+    "source" : "Thyroid Hormones",
+    "target" : "Kidney Function",
+    "weight" : "1.0",
+    "description" : "Thyroid hormones control the rate at which the kidneys can do their filtration work.",
+    "keywords" : "thyroid hormones, kidney filtration",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b",
+    "src_id" : "Thyroid Hormones",
+    "tgt_id" : "Kidney Function"
+  }, {
+    "source" : "Kidneys",
+    "target" : "Hypothyroidism",
+    "weight" : "1.0",
+    "description" : "Severe hypothyroidism can impair kidney function and lead to worsening kidney disease.",
+    "keywords" : "impairment, function",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d",
+    "src_id" : "Hypothyroidism",
+    "tgt_id" : "Kidneys"
+  }, {
+    "source" : "Kidneys",
+    "target" : "CKD",
+    "weight" : "1.0",
+    "description" : "CKD impairs kidney function and leads to worsening kidney disease.",
+    "keywords" : "impairment, function",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d",
+    "src_id" : "CKD",
+    "tgt_id" : "Kidneys"
+  }, {
+    "source" : "Chronic Kidney Disease (CKD)",
+    "target" : "Subclinical Hypothyroidism",
+    "weight" : "1.0",
+    "description" : "CKD patients are more likely to develop subclinical hypothyroidism as kidney function declines.",
+    "keywords" : "prevalence, kidney function decline",
+    "source_id" : "45d18a0cd428e6e39aa5a372062a47d2",
+    "src_id" : "Chronic Kidney Disease (CKD)",
+    "tgt_id" : "Subclinical Hypothyroidism"
+  }, {
+    "source" : "Subclinical Hypothyroidism",
+    "target" : "Kidney Function",
+    "weight" : "1.0",
+    "description" : "The lower the kidney function, the higher the risk of subclinical hypothyroidism.",
+    "keywords" : "kidney function, thyroid hormones",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b",
+    "src_id" : "Kidney Function",
+    "tgt_id" : "Subclinical Hypothyroidism"
+  }, {
+    "source" : "Kidney Function",
+    "target" : "Adrenal Problems",
+    "weight" : "1.0",
+    "description" : "Kidney problems go hand-in-glove with adrenal problems and stress intolerance.",
+    "keywords" : "kidney function, stress response",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b",
+    "src_id" : "Kidney Function",
+    "tgt_id" : "Adrenal Problems"
+  }, {
+    "source" : "Kidney Function",
+    "target" : "Stress Intolerance",
+    "weight" : "1.0",
+    "description" : "Kidney problems go hand-in-glove with adrenal problems and stress intolerance.",
+    "keywords" : "kidney function, stress response",
+    "source_id" : "f9346e9f9bbe18c5c8018884ebb61d8b",
+    "src_id" : "Kidney Function",
+    "tgt_id" : "Stress Intolerance"
+  }, {
+    "source" : "Hypothyroidism",
+    "target" : "Cardiovascular Disease",
+    "weight" : "1.0",
+    "description" : "Hypothyroidism can increase the risk of cardiovascular disease and impair heart function.",
+    "keywords" : "increased risk, heart function",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d",
+    "src_id" : "Hypothyroidism",
+    "tgt_id" : "Cardiovascular Disease"
+  }, {
+    "source" : "Hypothyroidism",
+    "target" : "CKD",
+    "weight" : "1.0",
+    "description" : "Disorders of the kidney and thyroid may co-exist with common etiological factors",
+    "keywords" : "co-existence, common etiological factors",
+    "source_id" : "75e06229872fca26d2b20718082423a9",
+    "src_id" : "CKD",
+    "tgt_id" : "Hypothyroidism"
+  }, {
+    "source" : "Hypothyroidism",
+    "target" : "Hashimoto's Disease",
+    "weight" : "1.0",
+    "description" : "Hashimoto's disease can cause an underactive thyroid gland, leading to hypothyroidism.",
+    "keywords" : "thyroid gland, autoimmune disorder",
+    "source_id" : "ce2f6b20ebffd7f21d010b95dfd54b9d",
+    "src_id" : "Hashimoto's Disease",
+    "tgt_id" : "Hypothyroidism"
+  }, {
+    "source" : "Hypothyroidism",
+    "target" : "Goiter",
+    "weight" : "1.0",
+    "description" : "Untreated hypothyroidism can lead to a goiter.",
+    "keywords" : "thyroid gland, swelling",
+    "source_id" : "ce2f6b20ebffd7f21d010b95dfd54b9d",
+    "src_id" : "Hypothyroidism",
+    "tgt_id" : "Goiter"
+  }, {
+    "source" : "Hypothyroidism",
+    "target" : "Low-Density Lipoprotein (LDL) Cholesterol",
+    "weight" : "1.0",
+    "description" : "Hypothyroidism can lead to high levels of LDL cholesterol.",
+    "keywords" : "thyroid hormones, cholesterol levels",
+    "source_id" : "ce2f6b20ebffd7f21d010b95dfd54b9d",
+    "src_id" : "Hypothyroidism",
+    "tgt_id" : "Low-Density Lipoprotein (LDL) Cholesterol"
+  }, {
+    "source" : "Cardiovascular Disease",
+    "target" : "CKD",
+    "weight" : "1.0",
+    "description" : "CKD increases the risk of cardiovascular disease and can lead to its progression.",
+    "keywords" : "increased risk, progression",
+    "source_id" : "c20f8b380a79988bf86df36370a5799d",
+    "src_id" : "CKD",
+    "tgt_id" : "Cardiovascular Disease"
+  }, {
+    "source" : "CKD",
+    "target" : "TSH",
+    "weight" : "1.0",
+    "description" : "Elevated TSH levels are common in patients with chronic kidney disease, but do not always reflect hypothyroidism.",
+    "keywords" : "TSH elevation, kidney disease",
+    "source_id" : "3db3155c6f497c5e369012b728b80e24",
+    "src_id" : "CKD",
+    "tgt_id" : "TSH"
+  } ],
+  "metadata" : {
+    "nodeCount" : 20,
+    "edgeCount" : 23
+  }
+}

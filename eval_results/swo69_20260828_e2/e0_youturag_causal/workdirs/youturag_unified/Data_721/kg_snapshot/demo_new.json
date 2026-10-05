@@ -1,0 +1,4184 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Miss America winners",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Miss America",
+      "chunk id" : "SO7D7byi"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Miss America winners",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Murders by steam, hot vapors, and hot objects",
+      "chunk id" : "SO7D7byi"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Steam",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Murders by steam, hot vapors, and hot objects",
+      "chunk id" : "SO7D7byi"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hot vapors",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Murders by steam, hot vapors, and hot objects",
+      "chunk id" : "SO7D7byi"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hot objects",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Murders by steam, hot vapors, and hot objects",
+      "chunk id" : "SO7D7byi"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Observers",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Documented data",
+      "chunk id" : "SO7D7byi"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Observers",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Correlation between age and murder statistics",
+      "chunk id" : "SO7D7byi"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thunderstorm",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "arrives_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the area",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "phone malfunction",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thunderstorm",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "phone malfunction",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "server-side bug",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "server-side bug",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "phone malfunction",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thunderstorm",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "phone malfunction",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "phone malfunction",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "power surge",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "technical support",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "phone malfunction",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "technical support",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "server-side bug",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "power surge",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "phone malfunction",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "individuals",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "jitters",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "caffeine intake",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "jitters",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "anxiety",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "jitters",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "work stress",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "anxiety",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lack of sleep",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "jitters",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "caffeine",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "caffeine intake",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "individuals",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "work",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people who practice meditation",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "meditation",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "meditation",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "focus",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people who practice meditation",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "work",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people who practice meditation",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mindfulness techniques",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people who practice meditation",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schedules",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flexible jobs",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "distractions",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people without meditation",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "strategies",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "strategies",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "focus",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "multiple approaches",
+      "chunk id" : "MsGMhv3i"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "concentration",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mindfulness techniques",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "meditation",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flexible jobs",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "work",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "popular art exhibition",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum visits",
+      "chunk id" : "Hw3xqFsG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum visits uptick",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation delays",
+      "chunk id" : "Hw3xqFsG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "regular commuters",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "crowded buses",
+      "chunk id" : "Hw3xqFsG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "regular commuters",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "longer wait times",
+      "chunk id" : "Hw3xqFsG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "regular commuters",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum-goers",
+      "chunk id" : "Hw3xqFsG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city officials",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "track repairs",
+      "chunk id" : "Hw3xqFsG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "track repairs",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation delays",
+      "chunk id" : "Hw3xqFsG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum attendance",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "transit issues",
+      "chunk id" : "Hw3xqFsG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "buses",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation",
+      "chunk id" : "Hw3xqFsG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum-goers",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum visits",
+      "chunk id" : "Hw3xqFsG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city",
+      "chunk id" : "Hw3xqFsG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city officials",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city government",
+      "chunk id" : "Hw3xqFsG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee consumption",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "taxi rides",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee consumption",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "taxi fares",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "caffeinated energy",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban mobility",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "municipal statistics",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee consumption",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "municipal statistics",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "taxi rides",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "taxi fares",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "taxi rides",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee consumption",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city",
+      "chunk id" : "Hw3xqFsG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "taxi rides",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city",
+      "chunk id" : "Hw3xqFsG"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "anxiety",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "caffeine",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "caffeine intake",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "distractions",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flexible jobs",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "focus",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "individuals",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "jitters",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lack of sleep",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "meditation",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mindfulness techniques",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people who practice meditation",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people without meditation",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schedules",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "strategies",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "work",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "work stress",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people who practice meditation",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "people who practice meditation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people who practice meditation",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "people who practice meditation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "people who practice meditation"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "jitters",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "jitters"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "jitters",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "jitters"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "jitters"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "meditation",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "meditation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "meditation",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "meditation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "meditation"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "work",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "work",
+      "chunk id" : "4Tr-wPrU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "work"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mindfulness techniques",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "mindfulness techniques"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mindfulness techniques",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "mindfulness techniques"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "mindfulness techniques"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 17 members",
+      "community_id" : "community_1",
+      "node_count" : "17",
+      "edge_count" : "17",
+      "members" : [ "anxiety", "caffeine", "caffeine intake", "distractions", "flexible jobs", "focus", "individuals", "jitters", "lack of sleep", "meditation", "mindfulness techniques", "people who practice meditation", "people without meditation", "schedules", "strategies", "work", "work stress" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "phone malfunction",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 7 members",
+      "community_id" : "community_2",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "phone malfunction", "power surge", "residents", "server-side bug", "technical support", "the area", "thunderstorm" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "power surge",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 7 members",
+      "community_id" : "community_2",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "phone malfunction", "power surge", "residents", "server-side bug", "technical support", "the area", "thunderstorm" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 7 members",
+      "community_id" : "community_2",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "phone malfunction", "power surge", "residents", "server-side bug", "technical support", "the area", "thunderstorm" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "server-side bug",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 7 members",
+      "community_id" : "community_2",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "phone malfunction", "power surge", "residents", "server-side bug", "technical support", "the area", "thunderstorm" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "technical support",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 7 members",
+      "community_id" : "community_2",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "phone malfunction", "power surge", "residents", "server-side bug", "technical support", "the area", "thunderstorm" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the area",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 7 members",
+      "community_id" : "community_2",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "phone malfunction", "power surge", "residents", "server-side bug", "technical support", "the area", "thunderstorm" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thunderstorm",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 7 members",
+      "community_id" : "community_2",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "phone malfunction", "power surge", "residents", "server-side bug", "technical support", "the area", "thunderstorm" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "phone malfunction",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "phone malfunction"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "phone malfunction",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "phone malfunction"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "phone malfunction"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 7 members",
+      "community_id" : "community_2",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "phone malfunction", "power surge", "residents", "server-side bug", "technical support", "the area", "thunderstorm" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thunderstorm",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thunderstorm"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thunderstorm",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thunderstorm"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thunderstorm"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 7 members",
+      "community_id" : "community_2",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "phone malfunction", "power surge", "residents", "server-side bug", "technical support", "the area", "thunderstorm" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "server-side bug",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "server-side bug"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "server-side bug",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "server-side bug"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "server-side bug"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 7 members",
+      "community_id" : "community_2",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "phone malfunction", "power surge", "residents", "server-side bug", "technical support", "the area", "thunderstorm" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "residents"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "residents"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "residents"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 7 members",
+      "community_id" : "community_2",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "phone malfunction", "power surge", "residents", "server-side bug", "technical support", "the area", "thunderstorm" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "technical support",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "technical support"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "technical support",
+      "chunk id" : "XMXYV4GG",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "technical support"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "technical support"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 7 members",
+      "community_id" : "community_2",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "phone malfunction", "power surge", "residents", "server-side bug", "technical support", "the area", "thunderstorm" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hot objects",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "Hot objects", "Hot vapors", "Miss America", "Miss America winners", "Murders by steam, hot vapors, and hot objects", "Steam" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hot vapors",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "Hot objects", "Hot vapors", "Miss America", "Miss America winners", "Murders by steam, hot vapors, and hot objects", "Steam" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Miss America",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "Hot objects", "Hot vapors", "Miss America", "Miss America winners", "Murders by steam, hot vapors, and hot objects", "Steam" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Miss America winners",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "Hot objects", "Hot vapors", "Miss America", "Miss America winners", "Murders by steam, hot vapors, and hot objects", "Steam" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Murders by steam, hot vapors, and hot objects",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "Hot objects", "Hot vapors", "Miss America", "Miss America winners", "Murders by steam, hot vapors, and hot objects", "Steam" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Steam",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "Hot objects", "Hot vapors", "Miss America", "Miss America winners", "Murders by steam, hot vapors, and hot objects", "Steam" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Murders by steam, hot vapors, and hot objects",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Murders by steam, hot vapors, and hot objects"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Murders by steam, hot vapors, and hot objects",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Murders by steam, hot vapors, and hot objects"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Murders by steam, hot vapors, and hot objects"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "Hot objects", "Hot vapors", "Miss America", "Miss America winners", "Murders by steam, hot vapors, and hot objects", "Steam" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Miss America winners",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Miss America winners"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Miss America winners",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Miss America winners"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Miss America winners"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "Hot objects", "Hot vapors", "Miss America", "Miss America winners", "Murders by steam, hot vapors, and hot objects", "Steam" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Miss America",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Miss America"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Miss America",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Miss America"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Miss America"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "Hot objects", "Hot vapors", "Miss America", "Miss America winners", "Murders by steam, hot vapors, and hot objects", "Steam" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hot vapors",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Hot vapors"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hot vapors",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Hot vapors"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Hot vapors"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "Hot objects", "Hot vapors", "Miss America", "Miss America winners", "Murders by steam, hot vapors, and hot objects", "Steam" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hot objects",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Hot objects"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hot objects",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Hot objects"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Hot objects"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "Hot objects", "Hot vapors", "Miss America", "Miss America winners", "Murders by steam, hot vapors, and hot objects", "Steam" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "city", "coffee consumption", "municipal statistics", "museum", "taxi fares", "taxi rides" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee consumption",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "city", "coffee consumption", "municipal statistics", "museum", "taxi fares", "taxi rides" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "municipal statistics",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "city", "coffee consumption", "municipal statistics", "museum", "taxi fares", "taxi rides" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "city", "coffee consumption", "municipal statistics", "museum", "taxi fares", "taxi rides" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "taxi fares",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "city", "coffee consumption", "municipal statistics", "museum", "taxi fares", "taxi rides" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "taxi rides",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "city", "coffee consumption", "municipal statistics", "museum", "taxi fares", "taxi rides" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee consumption",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coffee consumption"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee consumption",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coffee consumption"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coffee consumption"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "city", "coffee consumption", "municipal statistics", "museum", "taxi fares", "taxi rides" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "taxi rides",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "taxi rides"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "taxi rides",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "taxi rides"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "taxi rides"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "city", "coffee consumption", "municipal statistics", "museum", "taxi fares", "taxi rides" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "city"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "city"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "city"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "city", "coffee consumption", "municipal statistics", "museum", "taxi fares", "taxi rides" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "municipal statistics",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "municipal statistics"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "municipal statistics",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "municipal statistics"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "municipal statistics"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "city", "coffee consumption", "municipal statistics", "museum", "taxi fares", "taxi rides" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "taxi fares",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "taxi fares"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "taxi fares",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "taxi fares"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "taxi fares"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "city", "coffee consumption", "municipal statistics", "museum", "taxi fares", "taxi rides" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "crowded buses",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "crowded buses", "longer wait times", "museum visits", "museum-goers", "popular art exhibition", "regular commuters" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "longer wait times",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "crowded buses", "longer wait times", "museum visits", "museum-goers", "popular art exhibition", "regular commuters" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum visits",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "crowded buses", "longer wait times", "museum visits", "museum-goers", "popular art exhibition", "regular commuters" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum-goers",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "crowded buses", "longer wait times", "museum visits", "museum-goers", "popular art exhibition", "regular commuters" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "popular art exhibition",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "crowded buses", "longer wait times", "museum visits", "museum-goers", "popular art exhibition", "regular commuters" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "regular commuters",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "crowded buses", "longer wait times", "museum visits", "museum-goers", "popular art exhibition", "regular commuters" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "regular commuters",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "regular commuters"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "regular commuters",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "regular commuters"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "regular commuters"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "crowded buses", "longer wait times", "museum visits", "museum-goers", "popular art exhibition", "regular commuters" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum-goers",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "museum-goers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum-goers",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "museum-goers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "museum-goers"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "crowded buses", "longer wait times", "museum visits", "museum-goers", "popular art exhibition", "regular commuters" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum visits",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "museum visits"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum visits",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "museum visits"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "museum visits"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "crowded buses", "longer wait times", "museum visits", "museum-goers", "popular art exhibition", "regular commuters" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "popular art exhibition",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "popular art exhibition"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "popular art exhibition",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "popular art exhibition"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "popular art exhibition"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "crowded buses", "longer wait times", "museum visits", "museum-goers", "popular art exhibition", "regular commuters" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "longer wait times",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "longer wait times"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "longer wait times",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "longer wait times"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "longer wait times"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 6 members",
+      "community_id" : "community_5",
+      "node_count" : "6",
+      "edge_count" : "5",
+      "members" : [ "crowded buses", "longer wait times", "museum visits", "museum-goers", "popular art exhibition", "regular commuters" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city government",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "city government", "city officials", "museum visits uptick", "public transportation delays", "track repairs" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city officials",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "city government", "city officials", "museum visits uptick", "public transportation delays", "track repairs" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum visits uptick",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "city government", "city officials", "museum visits uptick", "public transportation delays", "track repairs" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation delays",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "city government", "city officials", "museum visits uptick", "public transportation delays", "track repairs" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "track repairs",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "city government", "city officials", "museum visits uptick", "public transportation delays", "track repairs" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation delays",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "public transportation delays"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation delays",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "public transportation delays"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "public transportation delays"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "city government", "city officials", "museum visits uptick", "public transportation delays", "track repairs" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "track repairs",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "track repairs"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "track repairs",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "track repairs"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "track repairs"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "city government", "city officials", "museum visits uptick", "public transportation delays", "track repairs" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city officials",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "city officials"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city officials",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "city officials"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "city officials"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "city government", "city officials", "museum visits uptick", "public transportation delays", "track repairs" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum visits uptick",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "museum visits uptick"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum visits uptick",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "museum visits uptick"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "museum visits uptick"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "city government", "city officials", "museum visits uptick", "public transportation delays", "track repairs" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city government",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "city government"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city government",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "city government"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "city government"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "city government", "city officials", "museum visits uptick", "public transportation delays", "track repairs" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Correlation between age and murder statistics",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Correlation between age and murder statistics", "Documented data", "Observers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Documented data",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Correlation between age and murder statistics", "Documented data", "Observers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Observers",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Correlation between age and murder statistics", "Documented data", "Observers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Observers",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Observers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Observers",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Observers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Observers"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Correlation between age and murder statistics", "Documented data", "Observers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Correlation between age and murder statistics",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Correlation between age and murder statistics"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Correlation between age and murder statistics",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Correlation between age and murder statistics"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Correlation between age and murder statistics"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Correlation between age and murder statistics", "Documented data", "Observers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Documented data",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Documented data"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Documented data",
+      "chunk id" : "SO7D7byi"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Documented data"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Documented data"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 3 members",
+      "community_id" : "community_7",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Correlation between age and murder statistics", "Documented data", "Observers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "buses",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 2 members",
+      "community_id" : "community_8",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "buses", "public transportation" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 2 members",
+      "community_id" : "community_8",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "buses", "public transportation" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "buses",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "buses"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "buses",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "buses"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "buses"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 2 members",
+      "community_id" : "community_8",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "buses", "public transportation" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "public transportation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "public transportation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "public transportation"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 2 members",
+      "community_id" : "community_8",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "buses", "public transportation" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "caffeinated energy",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 2 members",
+      "community_id" : "community_9",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "caffeinated energy", "urban mobility" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban mobility",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 2 members",
+      "community_id" : "community_9",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "caffeinated energy", "urban mobility" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban mobility",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "urban mobility"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban mobility",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "urban mobility"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "urban mobility"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 2 members",
+      "community_id" : "community_9",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "caffeinated energy", "urban mobility" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "caffeinated energy",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "caffeinated energy"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "caffeinated energy",
+      "chunk id" : "LcpLSfn1",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "caffeinated energy"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "caffeinated energy"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 2 members",
+      "community_id" : "community_9",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "caffeinated energy", "urban mobility" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "concentration",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "concentration", "multiple approaches" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "multiple approaches",
+      "chunk id" : "MsGMhv3i"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "concentration", "multiple approaches" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "concentration",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "concentration"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "concentration",
+      "chunk id" : "MsGMhv3i",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "concentration"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "concentration"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "concentration", "multiple approaches" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "multiple approaches",
+      "chunk id" : "MsGMhv3i"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "multiple approaches"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "multiple approaches",
+      "chunk id" : "MsGMhv3i"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "multiple approaches"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "multiple approaches"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "concentration", "multiple approaches" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum attendance",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 2 members",
+      "community_id" : "community_11",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "museum attendance", "transit issues" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "transit issues",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 2 members",
+      "community_id" : "community_11",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "museum attendance", "transit issues" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "transit issues",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "transit issues"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "transit issues",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "transit issues"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "transit issues"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 2 members",
+      "community_id" : "community_11",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "museum attendance", "transit issues" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum attendance",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "museum attendance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "museum attendance",
+      "chunk id" : "Hw3xqFsG"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "museum attendance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "museum attendance"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 2 members",
+      "community_id" : "community_11",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "museum attendance", "transit issues" ]
+    }
+  }
+} ]

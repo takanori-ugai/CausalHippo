@@ -1,0 +1,689 @@
+{
+  "nodes" : [ {
+    "id" : "Home renovation permits",
+    "entity_id" : "Home renovation permits",
+    "entity_type" : "Concept",
+    "description" : "Permits for home renovation whose approval rates show a statistical tendency to increase during months with higher local temperature averages.",
+    "source_id" : "0543ea2743b8701ea486acf0a9ee7318"
+  }, {
+    "id" : "Local temperature averages",
+    "entity_id" : "Local temperature averages",
+    "entity_type" : "Concept",
+    "description" : "Monthly ambient temperature averages that statistically correlate with increased home renovation permit approvals.",
+    "source_id" : "0543ea2743b8701ea486acf0a9ee7318"
+  }, {
+    "id" : "Home improvement enthusiasm",
+    "entity_id" : "Home improvement enthusiasm",
+    "entity_type" : "Concept",
+    "description" : "The level of public enthusiasm and motivation for undertaking home improvement projects, speculated to be influenced by ambient temperature.",
+    "source_id" : "0543ea2743b8701ea486acf0a9ee7318"
+  }, {
+    "id" : "Summer booms",
+    "entity_id" : "Summer booms",
+    "entity_type" : "Event",
+    "description" : "Periods of heightened construction and renovation activity that occur during the summer season.",
+    "source_id" : "0543ea2743b8701ea486acf0a9ee7318"
+  }, {
+    "id" : "Construction activity",
+    "entity_id" : "Construction activity",
+    "entity_type" : "Concept",
+    "description" : "General construction and renovation work whose underlying drivers are fundamentally separate from temperature fluctuations.",
+    "source_id" : "0543ea2743b8701ea486acf0a9ee7318"
+  }, {
+    "id" : "Temperature fluctuations",
+    "entity_id" : "Temperature fluctuations",
+    "entity_type" : "Concept",
+    "description" : "Variations in ambient temperature over time, which have distinct drivers from construction activity despite temporal correlation.",
+    "source_id" : "0543ea2743b8701ea486acf0a9ee7318"
+  }, {
+    "id" : "Temporal alignment",
+    "entity_id" : "Temporal alignment",
+    "entity_type" : "Concept",
+    "description" : "The coincidental timing correlation between temperature changes and construction activity that can create a misleading impression of causation.",
+    "source_id" : "0543ea2743b8701ea486acf0a9ee7318"
+  }, {
+    "id" : "Seasoned observers",
+    "entity_id" : "Seasoned observers",
+    "entity_type" : "Person",
+    "description" : "Experienced individuals who, despite their expertise, could still be misled by the temporal alignment between temperature and construction activity.",
+    "source_id" : "0543ea2743b8701ea486acf0a9ee7318"
+  }, {
+    "id" : "Households",
+    "entity_id" : "Households",
+    "entity_type" : "Organization",
+    "description" : "Many households that recently installed modern air conditioning units and experienced changes in their monthly energy bills.",
+    "source_id" : "90bd80aead2aa144e67711d491ff9025"
+  }, {
+    "id" : "Air Conditioning Units",
+    "entity_id" : "Air Conditioning Units",
+    "entity_type" : "Concept",
+    "description" : "Modern air conditioning devices installed by households, which are suspected to be a cause of financial changes.",
+    "source_id" : "90bd80aead2aa144e67711d491ff9025"
+  }, {
+    "id" : "Monthly Energy Bills",
+    "entity_id" : "Monthly Energy Bills",
+    "entity_type" : "Concept",
+    "description" : "The recurring financial charges for energy consumption that have shown changes since the installation of new air conditioning units.",
+    "source_id" : "90bd80aead2aa144e67711d491ff9025"
+  }, {
+    "id" : "Residents",
+    "entity_id" : "Residents",
+    "entity_type" : "Person",
+    "description" : "People in the city who speculate that brighter streets make it easier to walk dogs, thereby encouraging more adoptions.",
+    "source_id" : "bdc0560379c9cc0bf710940a38361236"
+  }, {
+    "id" : "Appliance Efficiency",
+    "entity_id" : "Appliance Efficiency",
+    "entity_type" : "Concept",
+    "description" : "A factor in play that influences energy consumption and monthly energy bills.",
+    "source_id" : "90bd80aead2aa144e67711d491ff9025"
+  }, {
+    "id" : "Outdoor Temperature",
+    "entity_id" : "Outdoor Temperature",
+    "entity_type" : "Concept",
+    "description" : "An environmental factor that also plays a role in affecting energy consumption and bills.",
+    "source_id" : "90bd80aead2aa144e67711d491ff9025"
+  }, {
+    "id" : "Financial Changes",
+    "entity_id" : "Financial Changes",
+    "entity_type" : "Concept",
+    "description" : "The observed changes in household finances, with the actual reason still under consideration.",
+    "source_id" : "90bd80aead2aa144e67711d491ff9025"
+  }, {
+    "id" : "Electric Vehicle Registrations",
+    "entity_id" : "Electric Vehicle Registrations",
+    "entity_type" : "Concept",
+    "description" : "The number of electric vehicle registrations that has increased dramatically over the past decade.",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f"
+  }, {
+    "id" : "Wind Turbine Installations",
+    "entity_id" : "Wind Turbine Installations",
+    "entity_type" : "Concept",
+    "description" : "The surge in wind turbine installations across many countries over the past decade.",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f"
+  }, {
+    "id" : "Sustainability",
+    "entity_id" : "Sustainability",
+    "entity_type" : "Concept",
+    "description" : "A global movement toward environmental responsibility that both electric vehicle registrations and wind turbine installations align with.",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f"
+  }, {
+    "id" : "Renewable Energy",
+    "entity_id" : "Renewable Energy",
+    "entity_type" : "Concept",
+    "description" : "A global movement toward clean energy sources that both electric vehicle registrations and wind turbine installations align with.",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f"
+  }, {
+    "id" : "Industry Analysts",
+    "entity_id" : "Industry Analysts",
+    "entity_type" : "Organization",
+    "description" : "A group of professionals who speculate that electric vehicles may be driving demand for wind power.",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f"
+  }, {
+    "id" : "Wind Power",
+    "entity_id" : "Wind Power",
+    "entity_type" : "Concept",
+    "description" : "The generation of electricity from wind, whose demand is speculated to be influenced by electric vehicle adoption.",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f"
+  }, {
+    "id" : "Policy Developments",
+    "entity_id" : "Policy Developments",
+    "entity_type" : "Concept",
+    "description" : "Independent policy changes that contribute to the growth of both electric vehicle registrations and wind turbine installations.",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f"
+  }, {
+    "id" : "Market Developments",
+    "entity_id" : "Market Developments",
+    "entity_type" : "Concept",
+    "description" : "Independent market-driven changes that contribute to the growth of both electric vehicle registrations and wind turbine installations.",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f"
+  }, {
+    "id" : "City",
+    "entity_id" : "City",
+    "entity_type" : "Location",
+    "description" : "A city that implements a new street lighting upgrade as part of a safety initiative.",
+    "source_id" : "bdc0560379c9cc0bf710940a38361236"
+  }, {
+    "id" : "Street Lighting Upgrade",
+    "entity_id" : "Street Lighting Upgrade",
+    "entity_type" : "Event",
+    "description" : "A new street lighting upgrade implemented by the city as part of a safety initiative, entirely separate from the pet adoption trend.",
+    "source_id" : "bdc0560379c9cc0bf710940a38361236"
+  }, {
+    "id" : "Pet Adoption Surge",
+    "entity_id" : "Pet Adoption Surge",
+    "entity_type" : "Event",
+    "description" : "A surge in pet adoption rates that occurs every spring, driven by a popular animal shelter campaign.",
+    "source_id" : "bdc0560379c9cc0bf710940a38361236"
+  }, {
+    "id" : "Animal Shelter Campaign",
+    "entity_id" : "Animal Shelter Campaign",
+    "entity_type" : "Event",
+    "description" : "A popular animal shelter campaign that takes place every spring and is the actual driver of the uptick in pet adoptions.",
+    "source_id" : "bdc0560379c9cc0bf710940a38361236"
+  }, {
+    "id" : "Safety Initiative",
+    "entity_id" : "Safety Initiative",
+    "entity_type" : "Concept",
+    "description" : "The initiative that prompted the street lighting changes, entirely separate from the adoption trend.",
+    "source_id" : "bdc0560379c9cc0bf710940a38361236"
+  }, {
+    "id" : "Mistaken Perception of Causality",
+    "entity_id" : "Mistaken Perception of Causality",
+    "entity_type" : "Concept",
+    "description" : "The false causal link perceived between the street lighting upgrade and the pet adoption surge, arising from the sequence in timing.",
+    "source_id" : "bdc0560379c9cc0bf710940a38361236"
+  }, {
+    "id" : "Pet Adoption Rates",
+    "entity_id" : "Pet Adoption Rates",
+    "entity_type" : "Concept",
+    "description" : "A rising trend observed last spring in the city, where the number of pets adopted increased significantly.",
+    "source_id" : "dd1979191a5647887c43e8d469a39a95"
+  }, {
+    "id" : "Solar Panel Installations",
+    "entity_id" : "Solar Panel Installations",
+    "entity_type" : "Concept",
+    "description" : "A rising trend observed last spring in the city, where the number of solar panel installations increased significantly.",
+    "source_id" : "dd1979191a5647887c43e8d469a39a95"
+  }, {
+    "id" : "The City",
+    "entity_id" : "The City",
+    "entity_type" : "Location",
+    "description" : "The urban area where both the rise in pet adoption rates and solar panel installations were observed simultaneously.",
+    "source_id" : "dd1979191a5647887c43e8d469a39a95"
+  }, {
+    "id" : "Urban Analysts",
+    "entity_id" : "Urban Analysts",
+    "entity_type" : "Organization",
+    "description" : "A group of analysts who speculated about a connection between the rise in pet adoption and solar panel installations.",
+    "source_id" : "dd1979191a5647887c43e8d469a39a95"
+  }, {
+    "id" : "Environmentally Conscious Citizens",
+    "entity_id" : "Environmentally Conscious Citizens",
+    "entity_type" : "Person",
+    "description" : "Citizens speculated by urban analysts to be responsible for both the surge in pet adoption and the increase in solar panel installations.",
+    "source_id" : "dd1979191a5647887c43e8d469a39a95"
+  }, {
+    "id" : "Shelter Animals",
+    "entity_id" : "Shelter Animals",
+    "entity_type" : "Concept",
+    "description" : "Animals residing in shelters, connected to the pet adoption trend, with no direct pathway linking them to solar panels.",
+    "source_id" : "dd1979191a5647887c43e8d469a39a95"
+  }, {
+    "id" : "Parallel Trend Coincidence",
+    "entity_id" : "Parallel Trend Coincidence",
+    "entity_type" : "Event",
+    "description" : "The surprising coincidence last spring where two unrelated trends—pet adoption and solar panel installations—rose simultaneously, sparking lively discussions.",
+    "source_id" : "dd1979191a5647887c43e8d469a39a95"
+  }, {
+    "id" : "New Restaurant",
+    "entity_id" : "New Restaurant",
+    "entity_type" : "Organization",
+    "description" : "A highly anticipated new restaurant that recently opened in the neighborhood.",
+    "source_id" : "678b784ed3d6cddf57e52c97ae48b907"
+  }, {
+    "id" : "Nearby Residents",
+    "entity_id" : "Nearby Residents",
+    "entity_type" : "Person",
+    "description" : "Residents living near the new restaurant who reported water discoloration in their taps shortly after the opening.",
+    "source_id" : "678b784ed3d6cddf57e52c97ae48b907"
+  }, {
+    "id" : "Water Discoloration",
+    "entity_id" : "Water Discoloration",
+    "entity_type" : "Event",
+    "description" : "An issue of discolored water in taps reported by nearby residents and restaurant customers shortly after the restaurant opening.",
+    "source_id" : "678b784ed3d6cddf57e52c97ae48b907"
+  }, {
+    "id" : "Restaurant Construction",
+    "entity_id" : "Restaurant Construction",
+    "entity_type" : "Event",
+    "description" : "Construction work associated with the new restaurant that some diners suspected as the cause of the water discoloration.",
+    "source_id" : "678b784ed3d6cddf57e52c97ae48b907"
+  }, {
+    "id" : "Pipe Repair",
+    "entity_id" : "Pipe Repair",
+    "entity_type" : "Event",
+    "description" : "A separate pipe repair elsewhere in the neighborhood that was identified as the actual cause of the water discoloration.",
+    "source_id" : "678b784ed3d6cddf57e52c97ae48b907"
+  }, {
+    "id" : "Neighborhood",
+    "entity_id" : "Neighborhood",
+    "entity_type" : "Location",
+    "description" : "The area where the new restaurant, nearby residents, and the separate pipe repair are located.",
+    "source_id" : "678b784ed3d6cddf57e52c97ae48b907"
+  }, {
+    "id" : "Restaurant Customers",
+    "entity_id" : "Restaurant Customers",
+    "entity_type" : "Person",
+    "description" : "Diners at the new restaurant who commented on the water discoloration issue and some of whom suspected the restaurant construction as the cause.",
+    "source_id" : "678b784ed3d6cddf57e52c97ae48b907"
+  } ],
+  "edges" : [ {
+    "source" : "Home renovation permits",
+    "target" : "Local temperature averages",
+    "weight" : "1.0",
+    "description" : "Statistical reviews show that approvals for home renovation permits frequently climb during months with higher local temperature averages.",
+    "keywords" : "correlation, approval, temperature",
+    "source_id" : "0543ea2743b8701ea486acf0a9ee7318",
+    "src_id" : "Home renovation permits",
+    "tgt_id" : "Local temperature averages"
+  }, {
+    "source" : "Home renovation permits",
+    "target" : "Home improvement enthusiasm",
+    "weight" : "1.0",
+    "description" : "Home renovation permit approvals are linked to the broader concept of home improvement enthusiasm, which is speculated to be temperature-influenced.",
+    "keywords" : "related, motivation, approval",
+    "source_id" : "0543ea2743b8701ea486acf0a9ee7318",
+    "src_id" : "Home renovation permits",
+    "tgt_id" : "Home improvement enthusiasm"
+  }, {
+    "source" : "Local temperature averages",
+    "target" : "Home improvement enthusiasm",
+    "weight" : "1.0",
+    "description" : "Columns have speculated about the impact of ambient temperature on home improvement enthusiasm, suggesting a possible causal link.",
+    "keywords" : "speculation, impact, ambient temperature",
+    "source_id" : "0543ea2743b8701ea486acf0a9ee7318",
+    "src_id" : "Home improvement enthusiasm",
+    "tgt_id" : "Local temperature averages"
+  }, {
+    "source" : "Summer booms",
+    "target" : "Construction activity",
+    "weight" : "1.0",
+    "description" : "Summer booms represent periods of heightened construction activity, making the temperature-activity connection appear more believable.",
+    "keywords" : "seasonal, increase, activity",
+    "source_id" : "0543ea2743b8701ea486acf0a9ee7318",
+    "src_id" : "Summer booms",
+    "tgt_id" : "Construction activity"
+  }, {
+    "source" : "Construction activity",
+    "target" : "Temperature fluctuations",
+    "weight" : "1.0",
+    "description" : "The drivers behind construction activity and temperature fluctuations are fundamentally separate, indicating no true causal relationship.",
+    "keywords" : "separate drivers, independence, causation",
+    "source_id" : "0543ea2743b8701ea486acf0a9ee7318",
+    "src_id" : "Construction activity",
+    "tgt_id" : "Temperature fluctuations"
+  }, {
+    "source" : "Temporal alignment",
+    "target" : "Seasoned observers",
+    "weight" : "1.0",
+    "description" : "The temporal alignment between temperature and construction activity could mislead even seasoned observers into perceiving a causal link.",
+    "keywords" : "misleading, perception, correlation",
+    "source_id" : "0543ea2743b8701ea486acf0a9ee7318",
+    "src_id" : "Temporal alignment",
+    "tgt_id" : "Seasoned observers"
+  }, {
+    "source" : "Households",
+    "target" : "Air Conditioning Units",
+    "weight" : "1.0",
+    "description" : "Many households recently installed modern air conditioning units.",
+    "keywords" : "installation, modern devices",
+    "source_id" : "90bd80aead2aa144e67711d491ff9025",
+    "src_id" : "Households",
+    "tgt_id" : "Air Conditioning Units"
+  }, {
+    "source" : "Air Conditioning Units",
+    "target" : "Financial Changes",
+    "weight" : "1.0",
+    "description" : "Air conditioning units are suspected by some to be the cause of the observed financial changes, though the actual reason remains under consideration.",
+    "keywords" : "suspected cause, new devices",
+    "source_id" : "90bd80aead2aa144e67711d491ff9025",
+    "src_id" : "Air Conditioning Units",
+    "tgt_id" : "Financial Changes"
+  }, {
+    "source" : "Residents",
+    "target" : "Monthly Energy Bills",
+    "weight" : "1.0",
+    "description" : "Residents reported changes in their monthly energy bills following the installation of new devices.",
+    "keywords" : "reported, changes",
+    "source_id" : "90bd80aead2aa144e67711d491ff9025",
+    "src_id" : "Residents",
+    "tgt_id" : "Monthly Energy Bills"
+  }, {
+    "source" : "Residents",
+    "target" : "Financial Changes",
+    "weight" : "1.0",
+    "description" : "Some residents attribute the financial changes to the newly installed air conditioning devices.",
+    "keywords" : "attribution, new devices",
+    "source_id" : "90bd80aead2aa144e67711d491ff9025",
+    "src_id" : "Residents",
+    "tgt_id" : "Financial Changes"
+  }, {
+    "source" : "Residents",
+    "target" : "Street Lighting Upgrade",
+    "weight" : "1.0",
+    "description" : "Residents speculate that the brighter streets from the upgrade make it easier to walk dogs.",
+    "keywords" : "speculate, perception",
+    "source_id" : "bdc0560379c9cc0bf710940a38361236",
+    "src_id" : "Residents",
+    "tgt_id" : "Street Lighting Upgrade"
+  }, {
+    "source" : "Residents",
+    "target" : "Pet Adoption Surge",
+    "weight" : "1.0",
+    "description" : "Residents believe the street lighting upgrade encourages more pet adoptions, though this is a mistaken perception.",
+    "keywords" : "speculate, encourage",
+    "source_id" : "bdc0560379c9cc0bf710940a38361236",
+    "src_id" : "Residents",
+    "tgt_id" : "Pet Adoption Surge"
+  }, {
+    "source" : "Monthly Energy Bills",
+    "target" : "Appliance Efficiency",
+    "weight" : "1.0",
+    "description" : "Appliance efficiency is a factor that plays a role in affecting monthly energy bills.",
+    "keywords" : "influence, factor",
+    "source_id" : "90bd80aead2aa144e67711d491ff9025",
+    "src_id" : "Appliance Efficiency",
+    "tgt_id" : "Monthly Energy Bills"
+  }, {
+    "source" : "Monthly Energy Bills",
+    "target" : "Outdoor Temperature",
+    "weight" : "1.0",
+    "description" : "Outdoor temperature is another factor that plays a role in affecting monthly energy bills.",
+    "keywords" : "influence, environmental factor",
+    "source_id" : "90bd80aead2aa144e67711d491ff9025",
+    "src_id" : "Outdoor Temperature",
+    "tgt_id" : "Monthly Energy Bills"
+  }, {
+    "source" : "Electric Vehicle Registrations",
+    "target" : "Sustainability",
+    "weight" : "1.0",
+    "description" : "The increase in electric vehicle registrations aligns with the global movement toward sustainability.",
+    "keywords" : "alignment, global movement",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f",
+    "src_id" : "Electric Vehicle Registrations",
+    "tgt_id" : "Sustainability"
+  }, {
+    "source" : "Electric Vehicle Registrations",
+    "target" : "Renewable Energy",
+    "weight" : "1.0",
+    "description" : "The increase in electric vehicle registrations aligns with the global movement toward renewable energy.",
+    "keywords" : "alignment, global movement",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f",
+    "src_id" : "Electric Vehicle Registrations",
+    "tgt_id" : "Renewable Energy"
+  }, {
+    "source" : "Electric Vehicle Registrations",
+    "target" : "Wind Power",
+    "weight" : "1.0",
+    "description" : "Some analysts speculate a causal link between electric vehicles and wind power demand, but in fact no direct causal relationship exists.",
+    "keywords" : "speculated causation, no direct link",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f",
+    "src_id" : "Electric Vehicle Registrations",
+    "tgt_id" : "Wind Power"
+  }, {
+    "source" : "Electric Vehicle Registrations",
+    "target" : "Policy Developments",
+    "weight" : "1.0",
+    "description" : "Electric vehicle registrations result from independent policy developments rather than from wind turbine installations.",
+    "keywords" : "causation, independent driver",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f",
+    "src_id" : "Electric Vehicle Registrations",
+    "tgt_id" : "Policy Developments"
+  }, {
+    "source" : "Electric Vehicle Registrations",
+    "target" : "Market Developments",
+    "weight" : "1.0",
+    "description" : "Electric vehicle registrations result from independent market developments rather than from wind turbine installations.",
+    "keywords" : "causation, independent driver",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f",
+    "src_id" : "Electric Vehicle Registrations",
+    "tgt_id" : "Market Developments"
+  }, {
+    "source" : "Electric Vehicle Registrations",
+    "target" : "Wind Turbine Installations",
+    "weight" : "1.0",
+    "description" : "Electric vehicle registrations and wind turbine installations are independent trends with no direct causal relationship between them.",
+    "keywords" : "no causal relationship, independent trends",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f",
+    "src_id" : "Electric Vehicle Registrations",
+    "tgt_id" : "Wind Turbine Installations"
+  }, {
+    "source" : "Sustainability",
+    "target" : "Wind Turbine Installations",
+    "weight" : "1.0",
+    "description" : "The surge in wind turbine installations aligns with the global movement toward sustainability.",
+    "keywords" : "alignment, global movement",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f",
+    "src_id" : "Wind Turbine Installations",
+    "tgt_id" : "Sustainability"
+  }, {
+    "source" : "Wind Turbine Installations",
+    "target" : "Renewable Energy",
+    "weight" : "1.0",
+    "description" : "The surge in wind turbine installations aligns with the global movement toward renewable energy.",
+    "keywords" : "alignment, global movement",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f",
+    "src_id" : "Wind Turbine Installations",
+    "tgt_id" : "Renewable Energy"
+  }, {
+    "source" : "Wind Turbine Installations",
+    "target" : "Policy Developments",
+    "weight" : "1.0",
+    "description" : "Wind turbine installations result from independent policy developments rather than from electric vehicle registrations.",
+    "keywords" : "causation, independent driver",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f",
+    "src_id" : "Wind Turbine Installations",
+    "tgt_id" : "Policy Developments"
+  }, {
+    "source" : "Wind Turbine Installations",
+    "target" : "Market Developments",
+    "weight" : "1.0",
+    "description" : "Wind turbine installations result from independent market developments rather than from electric vehicle registrations.",
+    "keywords" : "causation, independent driver",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f",
+    "src_id" : "Wind Turbine Installations",
+    "tgt_id" : "Market Developments"
+  }, {
+    "source" : "Industry Analysts",
+    "target" : "Wind Power",
+    "weight" : "1.0",
+    "description" : "Industry analysts speculate that electric vehicles may be driving demand for wind power.",
+    "keywords" : "speculation, demand",
+    "source_id" : "9496e7b7138118acc9724f8b7eb4898f",
+    "src_id" : "Industry Analysts",
+    "tgt_id" : "Wind Power"
+  }, {
+    "source" : "City",
+    "target" : "Street Lighting Upgrade",
+    "weight" : "1.0",
+    "description" : "The city implements the new street lighting upgrade as part of its infrastructure improvements.",
+    "keywords" : "implements, infrastructure",
+    "source_id" : "bdc0560379c9cc0bf710940a38361236",
+    "src_id" : "City",
+    "tgt_id" : "Street Lighting Upgrade"
+  }, {
+    "source" : "Street Lighting Upgrade",
+    "target" : "Safety Initiative",
+    "weight" : "1.0",
+    "description" : "The street lighting upgrade began as part of a safety initiative, which is its true purpose.",
+    "keywords" : "part of, motivation",
+    "source_id" : "bdc0560379c9cc0bf710940a38361236",
+    "src_id" : "Street Lighting Upgrade",
+    "tgt_id" : "Safety Initiative"
+  }, {
+    "source" : "Street Lighting Upgrade",
+    "target" : "Pet Adoption Surge",
+    "weight" : "1.0",
+    "description" : "The sequence in timing between the lighting upgrade and the adoption surge leads to a mistaken perception of causality, though the two are entirely separate.",
+    "keywords" : "mistaken causality, timing, correlation",
+    "source_id" : "bdc0560379c9cc0bf710940a38361236",
+    "src_id" : "Street Lighting Upgrade",
+    "tgt_id" : "Pet Adoption Surge"
+  }, {
+    "source" : "Street Lighting Upgrade",
+    "target" : "Mistaken Perception of Causality",
+    "weight" : "1.0",
+    "description" : "The mistaken perception of causality involves the street lighting upgrade being wrongly attributed as a cause of the adoption surge.",
+    "keywords" : "involves, false link",
+    "source_id" : "bdc0560379c9cc0bf710940a38361236",
+    "src_id" : "Mistaken Perception of Causality",
+    "tgt_id" : "Street Lighting Upgrade"
+  }, {
+    "source" : "Pet Adoption Surge",
+    "target" : "Animal Shelter Campaign",
+    "weight" : "1.0",
+    "description" : "The animal shelter campaign is the actual cause of the uptick in pet adoptions, occurring every spring.",
+    "keywords" : "drives, causes, spring",
+    "source_id" : "bdc0560379c9cc0bf710940a38361236",
+    "src_id" : "Animal Shelter Campaign",
+    "tgt_id" : "Pet Adoption Surge"
+  }, {
+    "source" : "Pet Adoption Surge",
+    "target" : "Mistaken Perception of Causality",
+    "weight" : "1.0",
+    "description" : "The mistaken perception of causality involves the pet adoption surge being wrongly linked to the lighting changes rather than the shelter campaign.",
+    "keywords" : "involves, false link",
+    "source_id" : "bdc0560379c9cc0bf710940a38361236",
+    "src_id" : "Mistaken Perception of Causality",
+    "tgt_id" : "Pet Adoption Surge"
+  }, {
+    "source" : "Pet Adoption Rates",
+    "target" : "Solar Panel Installations",
+    "weight" : "1.0",
+    "description" : "Both trends rose simultaneously last spring in the city, but they are parallel and unrelated with no direct pathway connecting them.",
+    "keywords" : "parallel trends, coincidence, unrelated",
+    "source_id" : "dd1979191a5647887c43e8d469a39a95",
+    "src_id" : "Pet Adoption Rates",
+    "tgt_id" : "Solar Panel Installations"
+  }, {
+    "source" : "Pet Adoption Rates",
+    "target" : "Environmentally Conscious Citizens",
+    "weight" : "1.0",
+    "description" : "Environmentally conscious citizens are speculated to be a driving force behind the increase in pet adoption rates.",
+    "keywords" : "speculated cause, adoption surge",
+    "source_id" : "dd1979191a5647887c43e8d469a39a95",
+    "src_id" : "Environmentally Conscious Citizens",
+    "tgt_id" : "Pet Adoption Rates"
+  }, {
+    "source" : "Pet Adoption Rates",
+    "target" : "Shelter Animals",
+    "weight" : "1.0",
+    "description" : "The rise in pet adoption rates is directly related to shelter animals, though no direct pathway connects them to solar panels.",
+    "keywords" : "adoption, shelter, connection",
+    "source_id" : "dd1979191a5647887c43e8d469a39a95",
+    "src_id" : "Pet Adoption Rates",
+    "tgt_id" : "Shelter Animals"
+  }, {
+    "source" : "Solar Panel Installations",
+    "target" : "Environmentally Conscious Citizens",
+    "weight" : "1.0",
+    "description" : "Environmentally conscious citizens are speculated to be a driving force behind the increase in solar panel installations.",
+    "keywords" : "speculated cause, installation surge",
+    "source_id" : "dd1979191a5647887c43e8d469a39a95",
+    "src_id" : "Environmentally Conscious Citizens",
+    "tgt_id" : "Solar Panel Installations"
+  }, {
+    "source" : "Urban Analysts",
+    "target" : "Environmentally Conscious Citizens",
+    "weight" : "1.0",
+    "description" : "Urban analysts speculated that environmentally conscious citizens are behind both the rise in pet adoption and solar panel installations.",
+    "keywords" : "speculation, attribution, theory",
+    "source_id" : "dd1979191a5647887c43e8d469a39a95",
+    "src_id" : "Urban Analysts",
+    "tgt_id" : "Environmentally Conscious Citizens"
+  }, {
+    "source" : "Urban Analysts",
+    "target" : "Parallel Trend Coincidence",
+    "weight" : "1.0",
+    "description" : "Urban analysts engaged in lively discussions about the coincidence of the two parallel trends, proposing a speculative connection.",
+    "keywords" : "discussion, analysis, speculation",
+    "source_id" : "dd1979191a5647887c43e8d469a39a95",
+    "src_id" : "Urban Analysts",
+    "tgt_id" : "Parallel Trend Coincidence"
+  }, {
+    "source" : "The City",
+    "target" : "Parallel Trend Coincidence",
+    "weight" : "1.0",
+    "description" : "The city is the location where the surprising coincidence of two parallel trends emerged last spring.",
+    "keywords" : "location, urban setting, coincidence",
+    "source_id" : "dd1979191a5647887c43e8d469a39a95",
+    "src_id" : "The City",
+    "tgt_id" : "Parallel Trend Coincidence"
+  }, {
+    "source" : "Nearby Residents",
+    "target" : "Water Discoloration",
+    "weight" : "1.0",
+    "description" : "Nearby residents reported water discoloration in their taps shortly after the restaurant opening.",
+    "keywords" : "reported, water issue, taps",
+    "source_id" : "678b784ed3d6cddf57e52c97ae48b907",
+    "src_id" : "Nearby Residents",
+    "tgt_id" : "Water Discoloration"
+  }, {
+    "source" : "Nearby Residents",
+    "target" : "Neighborhood",
+    "weight" : "1.0",
+    "description" : "The residents who reported the water issue live in the same neighborhood as the restaurant.",
+    "keywords" : "live in, reside, area",
+    "source_id" : "678b784ed3d6cddf57e52c97ae48b907",
+    "src_id" : "Nearby Residents",
+    "tgt_id" : "Neighborhood"
+  }, {
+    "source" : "Water Discoloration",
+    "target" : "Restaurant Customers",
+    "weight" : "1.0",
+    "description" : "Customers at the restaurant also commented on the water discoloration issue.",
+    "keywords" : "commented, observed, issue",
+    "source_id" : "678b784ed3d6cddf57e52c97ae48b907",
+    "src_id" : "Restaurant Customers",
+    "tgt_id" : "Water Discoloration"
+  }, {
+    "source" : "Water Discoloration",
+    "target" : "Restaurant Construction",
+    "weight" : "1.0",
+    "description" : "Some diners suspected that construction at the restaurant was the cause of the water discoloration due to the suggestive timing.",
+    "keywords" : "suspected cause, timing, suspicion",
+    "source_id" : "678b784ed3d6cddf57e52c97ae48b907",
+    "src_id" : "Restaurant Construction",
+    "tgt_id" : "Water Discoloration"
+  }, {
+    "source" : "Water Discoloration",
+    "target" : "Pipe Repair",
+    "weight" : "1.0",
+    "description" : "The water discoloration was ultimately traced back to a separate pipe repair elsewhere in the neighborhood, not the restaurant construction.",
+    "keywords" : "actual cause, traced back, separate issue",
+    "source_id" : "678b784ed3d6cddf57e52c97ae48b907",
+    "src_id" : "Pipe Repair",
+    "tgt_id" : "Water Discoloration"
+  }, {
+    "source" : "Restaurant Customers",
+    "target" : "New Restaurant",
+    "weight" : "1.0",
+    "description" : "The customers who commented on the water issue were diners at the newly opened restaurant.",
+    "keywords" : "dined at, visited, patrons",
+    "source_id" : "678b784ed3d6cddf57e52c97ae48b907",
+    "src_id" : "Restaurant Customers",
+    "tgt_id" : "New Restaurant"
+  }, {
+    "source" : "Restaurant Construction",
+    "target" : "New Restaurant",
+    "weight" : "1.0",
+    "description" : "The new restaurant was associated with construction work that raised suspicions among nearby residents and diners.",
+    "keywords" : "associated, building, opening",
+    "source_id" : "678b784ed3d6cddf57e52c97ae48b907",
+    "src_id" : "New Restaurant",
+    "tgt_id" : "Restaurant Construction"
+  }, {
+    "source" : "Pipe Repair",
+    "target" : "Neighborhood",
+    "weight" : "1.0",
+    "description" : "The pipe repair that caused the water discoloration took place elsewhere in the neighborhood.",
+    "keywords" : "located, elsewhere, area",
+    "source_id" : "678b784ed3d6cddf57e52c97ae48b907",
+    "src_id" : "Pipe Repair",
+    "tgt_id" : "Neighborhood"
+  }, {
+    "source" : "New Restaurant",
+    "target" : "Neighborhood",
+    "weight" : "1.0",
+    "description" : "The new restaurant is located in the neighborhood where the water discoloration issue occurred.",
+    "keywords" : "located, situated, area",
+    "source_id" : "678b784ed3d6cddf57e52c97ae48b907",
+    "src_id" : "New Restaurant",
+    "tgt_id" : "Neighborhood"
+  } ],
+  "metadata" : {
+    "nodeCount" : 43,
+    "edgeCount" : 47
+  }
+}

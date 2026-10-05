@@ -1,0 +1,496 @@
+kotlin-logging: initializing... active logger factory: Slf4jLoggerFactory
+13:57:13,753 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found logback-core version 1.5.38
+13:57:13,754 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - No custom configurators were discovered as a service.
+13:57:13,754 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+13:57:13,755 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+13:57:13,759 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+13:57:13,763 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml]
+13:57:13,832 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Scan attribute set to true. Will scan for configuration file changes.
+13:57:13,833 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@179ece50 - URL [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml] is not of type file
+13:57:13,835 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "INFO" substituted for "${ROOT_LOG_LEVEL:-INFO}"
+13:57:13,835 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL:-DEBUG}"
+13:57:13,835 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_LOG_LEVEL:-TRACE}"
+13:57:13,835 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL:-TRACE}"
+13:57:13,835 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL:-ERROR}"
+13:57:13,835 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL:-ERROR}"
+13:57:13,835 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL:-ERROR}"
+13:57:13,835 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL:-DEBUG}"
+13:57:13,836 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Missing watchable .xml or .properties files.
+13:57:13,836 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Watching .xml files requires that the main configuration file is reachable as a URL
+13:57:13,836 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Main configuration file URL: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml
+13:57:13,837 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - FileWatchList= {}
+13:57:13,837 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - URLWatchList= {}
+13:57:13,839 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+13:57:13,839 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+13:57:13,843 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+13:57:13,872 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - NOTE: Writing to the console can be slow. Try to avoid logging to the 
+13:57:13,872 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - console in production environments, especially in high volume systems.
+13:57:13,872 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also https://logback.qos.ch/codes.html#slowConsole
+13:57:13,873 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL}"
+13:57:13,873 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag] to DEBUG
+13:57:13,876 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag] to false
+13:57:13,876 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag]
+13:57:13,876 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_LOG_LEVEL}"
+13:57:13,876 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.neo4j] to TRACE
+13:57:13,876 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.neo4j] to false
+13:57:13,876 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.neo4j]
+13:57:13,876 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL}"
+13:57:13,876 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.neo4j.driver] to TRACE
+13:57:13,877 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.neo4j.driver] to false
+13:57:13,877 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[org.neo4j.driver]
+13:57:13,877 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL}"
+13:57:13,877 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.memory] to DEBUG
+13:57:13,877 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.memory] to false
+13:57:13,877 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.memory]
+13:57:13,877 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL}"
+13:57:13,877 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j] to ERROR
+13:57:13,877 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j] to false
+13:57:13,877 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j]
+13:57:13,877 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+13:57:13,877 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.okhttp] to ERROR
+13:57:13,877 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.okhttp] to false
+13:57:13,877 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.okhttp]
+13:57:13,877 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+13:57:13,877 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.openai] to ERROR
+13:57:13,877 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.openai] to false
+13:57:13,877 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.openai]
+13:57:13,877 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+13:57:13,877 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [okhttp3] to ERROR
+13:57:13,877 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [okhttp3] to false
+13:57:13,877 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[okhttp3]
+13:57:13,877 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL}"
+13:57:13,877 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.ai4j.openai4j] to ERROR
+13:57:13,877 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.ai4j.openai4j] to false
+13:57:13,877 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.ai4j.openai4j]
+13:57:13,877 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@3b0090a4 - value "INFO" substituted for "${ROOT_LOG_LEVEL}"
+13:57:13,877 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+13:57:13,877 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+13:57:13,877 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@3cd3e762 - End of configuration.
+13:57:13,878 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@1fa121e2 - Registering current configuration as safe fallback point
+13:57:13,882 |-INFO in ch.qos.logback.classic.util.ContextInitializer@9d5509a - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 123 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+WARNING: --use-unified-api=false keeps 'shared.eval.MultiConditionExperimentKt' on legacy condition runners. This compatibility path is planned for deprecation; prefer --use-unified-api=true.
+Running 1 conditions on 15 samples
+Parallelism: 1
+Unified API: false
+Unified persistence SPI: false
+Data: data/musique_experiment/musique_dev_balanced_30.jsonl
+Output: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3
+
+=== Condition: hipporag_graph (HippoRAG graph retrieval) ===
+2026-08-31 13:57:13.963 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text
+2026-08-31 13:57:14.159 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings
+2026-08-31 13:57:14.160 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings
+2026-08-31 13:57:14.161 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings
+2026-08-31 13:57:14.287 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text
+2026-08-31 13:57:14.290 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings
+2026-08-31 13:57:14.291 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings
+2026-08-31 13:57:14.292 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings
+2026-08-31 13:57:14.372 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 20 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-31 13:57:14.482 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 243 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-31 13:57:14.560 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 267 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-31 13:57:14.561 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-31 13:57:14.562 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-31 13:57:14.562 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Graph node count mismatch: expected 263, got 255
+2026-08-31 13:57:14.563 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Missing nodes in graph: 0 entity nodes, 8 passage nodes
+2026-08-31 13:57:14.563 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 263 nodes, 614 edges
+2026-08-31 13:57:14.594 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-31 13:57:14.594 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-31 13:57:14.598 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Length mismatch: passageNodeKeys=20, nerResults=0, tripleResults=0
+2026-08-31 13:57:14.600 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-31 13:57:14.600 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-31 13:57:14.988 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-31 13:57:19.747 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Phrase weight count (1) does not match filtered map size (3). This may be due to zero-weight phrases.
+2026-08-31 13:57:19.754 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 263 nodes and total weight 1.380680
+2026-08-31 13:57:19.763 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 5.20s
+2026-08-31 13:57:19.763 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 4.65s
+2026-08-31 13:57:19.763 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.01s
+2026-08-31 13:57:19.763 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.54s
+2026-08-31 13:57:29.164 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found placeholder platform from: cu128-linux-x86_64:2.7.1
+2026-08-31 13:57:30.028 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - PyTorch graph executor optimizer is enabled, this may impact your inference latency and throughput. See: https://docs.djl.ai/master/docs/development/inference_performance_optimization.html#graph-executor-optimization
+2026-08-31 13:57:30.034 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - Number of inter-op threads is 96
+2026-08-31 13:57:30.035 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - Number of intra-op threads is 16
+2026-08-31 13:57:30.617 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found matching platform from: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/native/lib/tokenizers.properties
+2026-08-31 13:57:32.119 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (13, 384)
+2026-08-31 13:57:32.119 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (7, 384)
+2026-08-31 13:57:33.696 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (3, 384)
+2026-08-31 13:57:33.696 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (7, 384)
+2026-08-31 13:57:35.292 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (3, 384)
+2026-08-31 13:57:35.292 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (7, 384)
+2026-08-31 13:57:36.931 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (6, 384)
+2026-08-31 13:57:36.931 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (7, 384)
+2026-08-31 13:57:38.567 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-31 13:57:38.567 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (7, 384)
+2026-08-31 13:57:40.200 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-31 13:57:40.200 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (7, 384)
+2026-08-31 13:57:41.824 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (3, 384)
+2026-08-31 13:57:41.824 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (7, 384)
+2026-08-31 13:57:41.870 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text
+2026-08-31 13:57:41.873 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings
+2026-08-31 13:57:41.874 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings
+2026-08-31 13:57:41.875 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings
+2026-08-31 13:57:41.918 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 20 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-31 13:57:41.980 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 180 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-31 13:57:42.060 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 227 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-31 13:57:42.061 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-31 13:57:42.061 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-31 13:57:42.061 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Graph node count mismatch: expected 200, got 194
+2026-08-31 13:57:42.061 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Missing nodes in graph: 0 entity nodes, 6 passage nodes
+2026-08-31 13:57:42.061 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 200 nodes, 505 edges
+2026-08-31 13:57:42.094 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-31 13:57:42.094 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-31 13:57:42.095 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Length mismatch: passageNodeKeys=20, nerResults=0, tripleResults=0
+2026-08-31 13:57:42.095 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-31 13:57:42.095 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-31 13:57:42.204 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-31 13:57:53.079 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Phrase weight count (4) does not match filtered map size (5). This may be due to zero-weight phrases.
+2026-08-31 13:57:53.079 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 200 nodes and total weight 4.561941
+2026-08-31 13:57:53.108 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 11.05s
+2026-08-31 13:57:53.108 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 10.79s
+2026-08-31 13:57:53.108 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.03s
+2026-08-31 13:57:53.108 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.23s
+2026-08-31 13:58:17.241 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (3, 384)
+2026-08-31 13:58:17.241 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (3, 384)
+2026-08-31 13:58:17.276 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text
+2026-08-31 13:58:17.278 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings
+2026-08-31 13:58:17.279 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings
+2026-08-31 13:58:17.280 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings
+2026-08-31 13:58:17.320 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 20 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-31 13:58:17.361 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 133 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-31 13:58:17.412 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 156 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-31 13:58:17.413 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-31 13:58:17.413 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-31 13:58:17.413 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Graph node count mismatch: expected 153, got 149
+2026-08-31 13:58:17.413 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Missing nodes in graph: 0 entity nodes, 4 passage nodes
+2026-08-31 13:58:17.413 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 153 nodes, 359 edges
+2026-08-31 13:58:17.451 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-31 13:58:17.451 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-31 13:58:17.451 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Length mismatch: passageNodeKeys=20, nerResults=0, tripleResults=0
+2026-08-31 13:58:17.451 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-31 13:58:17.451 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-31 13:58:17.520 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-31 13:58:23.202 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 153 nodes and total weight 5.053050
+2026-08-31 13:58:23.204 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 5.79s
+2026-08-31 13:58:23.204 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 5.58s
+2026-08-31 13:58:23.204 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.00s
+2026-08-31 13:58:23.204 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.21s
+2026-08-31 13:58:43.344 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-31 13:58:43.345 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (4, 384)
+2026-08-31 13:58:43.378 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text
+2026-08-31 13:58:43.380 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings
+2026-08-31 13:58:43.381 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings
+2026-08-31 13:58:43.382 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings
+2026-08-31 13:58:43.417 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 20 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-31 13:58:43.472 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 221 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-31 13:58:43.536 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 264 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-31 13:58:43.536 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-31 13:58:43.536 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-31 13:58:43.536 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Graph node count mismatch: expected 241, got 232
+2026-08-31 13:58:43.536 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Missing nodes in graph: 0 entity nodes, 9 passage nodes
+2026-08-31 13:58:43.536 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 241 nodes, 574 edges
+2026-08-31 13:58:43.543 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-31 13:58:43.543 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-31 13:58:43.544 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Length mismatch: passageNodeKeys=20, nerResults=0, tripleResults=0
+2026-08-31 13:58:43.544 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-31 13:58:43.544 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-31 13:58:43.631 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-31 13:58:49.198 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Phrase weight count (2) does not match filtered map size (4). This may be due to zero-weight phrases.
+2026-08-31 13:58:49.198 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 241 nodes and total weight 2.531642
+2026-08-31 13:58:49.201 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 5.66s
+2026-08-31 13:58:49.201 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 5.49s
+2026-08-31 13:58:49.201 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.00s
+2026-08-31 13:58:49.201 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.17s
+2026-08-31 13:58:58.804 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (12, 384)
+2026-08-31 13:58:58.804 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (13, 384)
+2026-08-31 13:58:58.840 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text
+2026-08-31 13:58:58.842 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings
+2026-08-31 13:58:58.843 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings
+2026-08-31 13:58:58.844 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings
+2026-08-31 13:58:58.880 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 20 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-31 13:58:58.936 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 215 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-31 13:58:59.000 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 258 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-31 13:58:59.001 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-31 13:58:59.001 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-31 13:58:59.001 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Graph node count mismatch: expected 235, got 228
+2026-08-31 13:58:59.001 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Missing nodes in graph: 0 entity nodes, 7 passage nodes
+2026-08-31 13:58:59.001 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 235 nodes, 605 edges
+2026-08-31 13:58:59.008 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-31 13:58:59.008 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-31 13:58:59.009 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Length mismatch: passageNodeKeys=20, nerResults=0, tripleResults=0
+2026-08-31 13:58:59.009 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-31 13:58:59.009 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-31 13:58:59.154 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-31 13:59:03.869 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Phrase weight count (1) does not match filtered map size (3). This may be due to zero-weight phrases.
+2026-08-31 13:59:03.870 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 235 nodes and total weight 1.575385
+2026-08-31 13:59:03.871 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 4.87s
+2026-08-31 13:59:03.871 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 4.65s
+2026-08-31 13:59:03.871 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.00s
+2026-08-31 13:59:03.871 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.22s
+2026-08-31 13:59:21.643 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-31 13:59:21.643 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (5, 384)
+2026-08-31 13:59:21.676 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text
+2026-08-31 13:59:21.679 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings
+2026-08-31 13:59:21.680 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings
+2026-08-31 13:59:21.681 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings
+2026-08-31 13:59:21.716 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 20 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-31 13:59:21.762 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 179 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-31 13:59:21.813 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 210 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-31 13:59:21.813 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-31 13:59:21.813 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-31 13:59:21.813 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Graph node count mismatch: expected 199, got 193
+2026-08-31 13:59:21.813 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Missing nodes in graph: 0 entity nodes, 6 passage nodes
+2026-08-31 13:59:21.814 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 199 nodes, 518 edges
+2026-08-31 13:59:21.817 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-31 13:59:21.817 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-31 13:59:21.817 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Length mismatch: passageNodeKeys=20, nerResults=0, tripleResults=0
+2026-08-31 13:59:21.817 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-31 13:59:21.817 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-31 13:59:21.919 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-31 13:59:27.529 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Phrase weight count (2) does not match filtered map size (4). This may be due to zero-weight phrases.
+2026-08-31 13:59:27.529 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 199 nodes and total weight 2.369913
+2026-08-31 13:59:27.531 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 5.72s
+2026-08-31 13:59:27.532 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 5.52s
+2026-08-31 13:59:27.532 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.00s
+2026-08-31 13:59:27.532 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.20s
+2026-08-31 13:59:35.049 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (6, 384)
+2026-08-31 13:59:35.049 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (6, 384)
+2026-08-31 13:59:35.083 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text
+2026-08-31 13:59:35.086 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings
+2026-08-31 13:59:35.087 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings
+2026-08-31 13:59:35.087 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings
+2026-08-31 13:59:35.173 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 20 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-31 13:59:35.224 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 209 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-31 13:59:35.282 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 225 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-31 13:59:35.283 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-31 13:59:35.283 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-31 13:59:35.283 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Graph node count mismatch: expected 229, got 225
+2026-08-31 13:59:35.283 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Missing nodes in graph: 0 entity nodes, 4 passage nodes
+2026-08-31 13:59:35.283 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 229 nodes, 542 edges
+2026-08-31 13:59:35.289 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-31 13:59:35.289 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-31 13:59:35.289 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Length mismatch: passageNodeKeys=20, nerResults=0, tripleResults=0
+2026-08-31 13:59:35.289 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-31 13:59:35.289 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-31 13:59:35.362 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-31 13:59:40.481 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 229 nodes and total weight 4.366062
+2026-08-31 13:59:40.482 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 5.20s
+2026-08-31 13:59:40.482 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 4.96s
+2026-08-31 13:59:40.482 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.00s
+2026-08-31 13:59:40.482 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.24s
+2026-08-31 13:59:48.884 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (3, 384)
+2026-08-31 13:59:48.885 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (3, 384)
+2026-08-31 13:59:50.295 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (3, 384)
+2026-08-31 13:59:50.295 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (3, 384)
+2026-08-31 13:59:50.330 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text
+2026-08-31 13:59:50.332 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings
+2026-08-31 13:59:50.333 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings
+2026-08-31 13:59:50.334 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings
+2026-08-31 13:59:50.371 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 20 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-31 13:59:50.420 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 202 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-31 13:59:50.474 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 215 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-31 13:59:50.475 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-31 13:59:50.475 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-31 13:59:50.475 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Graph node count mismatch: expected 222, got 220
+2026-08-31 13:59:50.475 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Missing nodes in graph: 0 entity nodes, 2 passage nodes
+2026-08-31 13:59:50.475 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 222 nodes, 580 edges
+2026-08-31 13:59:50.498 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-31 13:59:50.498 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-31 13:59:50.498 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Length mismatch: passageNodeKeys=20, nerResults=0, tripleResults=0
+2026-08-31 13:59:50.499 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-31 13:59:50.499 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-31 13:59:50.592 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-31 13:59:54.685 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Phrase weight count (4) does not match filtered map size (5). This may be due to zero-weight phrases.
+2026-08-31 13:59:54.686 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 222 nodes and total weight 4.155013
+2026-08-31 13:59:54.687 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 4.21s
+2026-08-31 13:59:54.687 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 4.03s
+2026-08-31 13:59:54.687 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.00s
+2026-08-31 13:59:54.687 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.19s
+2026-08-31 14:00:03.433 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (23, 384)
+2026-08-31 14:00:03.433 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (23, 384)
+2026-08-31 14:00:03.465 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text
+2026-08-31 14:00:03.467 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings
+2026-08-31 14:00:03.468 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings
+2026-08-31 14:00:03.470 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings
+2026-08-31 14:00:03.507 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 20 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-31 14:00:03.560 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 205 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-31 14:00:03.613 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 228 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-31 14:00:03.614 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-31 14:00:03.614 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-31 14:00:03.614 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Graph node count mismatch: expected 225, got 218
+2026-08-31 14:00:03.614 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Missing nodes in graph: 0 entity nodes, 7 passage nodes
+2026-08-31 14:00:03.614 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 225 nodes, 497 edges
+2026-08-31 14:00:03.620 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-31 14:00:03.620 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-31 14:00:03.620 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Length mismatch: passageNodeKeys=20, nerResults=0, tripleResults=0
+2026-08-31 14:00:03.620 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-31 14:00:03.620 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-31 14:00:03.746 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-31 14:00:10.574 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Phrase weight count (2) does not match filtered map size (3). This may be due to zero-weight phrases.
+2026-08-31 14:00:10.575 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 225 nodes and total weight 2.499652
+2026-08-31 14:00:10.578 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 6.96s
+2026-08-31 14:00:10.578 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 6.78s
+2026-08-31 14:00:10.578 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.00s
+2026-08-31 14:00:10.578 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.18s
+2026-08-31 14:00:18.292 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (7, 384)
+2026-08-31 14:00:18.292 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (4, 384)
+2026-08-31 14:00:18.330 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text
+2026-08-31 14:00:18.333 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings
+2026-08-31 14:00:18.334 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings
+2026-08-31 14:00:18.335 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings
+2026-08-31 14:00:18.371 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 20 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-31 14:00:18.426 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 211 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-31 14:00:18.476 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 209 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-31 14:00:18.477 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-31 14:00:18.477 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-31 14:00:18.477 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Graph node count mismatch: expected 231, got 228
+2026-08-31 14:00:18.477 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Missing nodes in graph: 0 entity nodes, 3 passage nodes
+2026-08-31 14:00:18.477 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 231 nodes, 593 edges
+2026-08-31 14:00:18.489 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-31 14:00:18.489 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-31 14:00:18.490 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Length mismatch: passageNodeKeys=20, nerResults=0, tripleResults=0
+2026-08-31 14:00:18.490 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-31 14:00:18.490 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-31 14:00:18.644 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-31 14:00:24.157 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Phrase weight count (4) does not match filtered map size (5). This may be due to zero-weight phrases.
+2026-08-31 14:00:24.158 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 231 nodes and total weight 4.280448
+2026-08-31 14:00:24.166 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 5.69s
+2026-08-31 14:00:24.166 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 5.43s
+2026-08-31 14:00:24.166 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.01s
+2026-08-31 14:00:24.166 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.25s
+2026-08-31 14:00:29.693 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (12, 384)
+2026-08-31 14:00:29.693 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (7, 384)
+hipporag_graph: processed 10/15
+2026-08-31 14:00:29.729 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text
+2026-08-31 14:00:29.731 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings
+2026-08-31 14:00:29.732 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings
+2026-08-31 14:00:29.733 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings
+2026-08-31 14:00:29.768 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 20 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-31 14:00:29.811 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 163 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-31 14:00:29.851 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 165 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-31 14:00:29.851 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-31 14:00:29.851 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-31 14:00:29.851 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Graph node count mismatch: expected 183, got 181
+2026-08-31 14:00:29.851 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Missing nodes in graph: 0 entity nodes, 2 passage nodes
+2026-08-31 14:00:29.851 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 183 nodes, 461 edges
+2026-08-31 14:00:29.860 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-31 14:00:29.860 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-31 14:00:29.860 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Length mismatch: passageNodeKeys=20, nerResults=0, tripleResults=0
+2026-08-31 14:00:29.860 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-31 14:00:29.861 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-31 14:00:29.919 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-31 14:00:33.527 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 183 nodes and total weight 2.504251
+2026-08-31 14:00:33.537 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 3.69s
+2026-08-31 14:00:33.537 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 3.48s
+2026-08-31 14:00:33.540 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.01s
+2026-08-31 14:00:33.540 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.19s
+2026-08-31 14:00:41.916 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (6, 384)
+2026-08-31 14:00:41.916 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (4, 384)
+2026-08-31 14:00:41.949 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text
+2026-08-31 14:00:41.952 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings
+2026-08-31 14:00:41.953 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings
+2026-08-31 14:00:41.953 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings
+2026-08-31 14:00:41.988 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 20 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-31 14:00:42.035 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 182 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-31 14:00:42.086 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 209 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-31 14:00:42.086 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-31 14:00:42.086 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-31 14:00:42.086 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Graph node count mismatch: expected 202, got 196
+2026-08-31 14:00:42.086 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Missing nodes in graph: 0 entity nodes, 6 passage nodes
+2026-08-31 14:00:42.086 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 202 nodes, 470 edges
+2026-08-31 14:00:42.091 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-31 14:00:42.091 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-31 14:00:42.091 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Length mismatch: passageNodeKeys=20, nerResults=0, tripleResults=0
+2026-08-31 14:00:42.091 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-31 14:00:42.091 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-31 14:00:42.342 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-31 14:00:50.023 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Phrase weight count (3) does not match filtered map size (4). This may be due to zero-weight phrases.
+2026-08-31 14:00:50.023 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 202 nodes and total weight 3.077548
+2026-08-31 14:00:50.024 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 7.94s
+2026-08-31 14:00:50.024 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 7.62s
+2026-08-31 14:00:50.024 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.00s
+2026-08-31 14:00:50.024 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.32s
+2026-08-31 14:01:15.986 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (6, 384)
+2026-08-31 14:01:15.987 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (3, 384)
+2026-08-31 14:01:16.022 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text
+2026-08-31 14:01:16.025 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings
+2026-08-31 14:01:16.025 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings
+2026-08-31 14:01:16.026 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings
+2026-08-31 14:01:16.062 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 20 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-31 14:01:16.102 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 162 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-31 14:01:16.144 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 173 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-31 14:01:16.144 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-31 14:01:16.144 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-31 14:01:16.144 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Graph node count mismatch: expected 182, got 180
+2026-08-31 14:01:16.144 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Missing nodes in graph: 0 entity nodes, 2 passage nodes
+2026-08-31 14:01:16.144 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 182 nodes, 466 edges
+2026-08-31 14:01:16.146 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-31 14:01:16.147 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-31 14:01:16.147 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Length mismatch: passageNodeKeys=20, nerResults=0, tripleResults=0
+2026-08-31 14:01:16.147 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-31 14:01:16.147 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-31 14:01:16.208 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-31 14:01:23.236 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 182 nodes and total weight 4.184213
+2026-08-31 14:01:23.237 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 7.09s
+2026-08-31 14:01:23.237 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 6.93s
+2026-08-31 14:01:23.237 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.00s
+2026-08-31 14:01:23.237 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.16s
+2026-08-31 14:01:34.108 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-31 14:01:34.108 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (4, 384)
+2026-08-31 14:01:34.144 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text
+2026-08-31 14:01:34.146 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings
+2026-08-31 14:01:34.147 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings
+2026-08-31 14:01:34.147 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings
+2026-08-31 14:01:34.185 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 20 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-31 14:01:34.237 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 216 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-31 14:01:34.297 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 238 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-31 14:01:34.297 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-31 14:01:34.297 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-31 14:01:34.297 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Graph node count mismatch: expected 236, got 231
+2026-08-31 14:01:34.297 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Missing nodes in graph: 0 entity nodes, 5 passage nodes
+2026-08-31 14:01:34.298 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 236 nodes, 589 edges
+2026-08-31 14:01:34.333 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-31 14:01:34.333 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-31 14:01:34.333 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Length mismatch: passageNodeKeys=20, nerResults=0, tripleResults=0
+2026-08-31 14:01:34.333 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-31 14:01:34.333 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-31 14:01:34.464 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-31 14:01:41.021 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Phrase weight count (4) does not match filtered map size (5). This may be due to zero-weight phrases.
+2026-08-31 14:01:41.022 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 236 nodes and total weight 4.292247
+2026-08-31 14:01:41.022 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 6.72s
+2026-08-31 14:01:41.022 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 6.48s
+2026-08-31 14:01:41.022 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.00s
+2026-08-31 14:01:41.022 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.24s
+2026-08-31 14:01:52.770 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (6, 384)
+2026-08-31 14:01:52.770 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (3, 384)
+2026-08-31 14:01:52.809 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text
+2026-08-31 14:01:52.812 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings
+2026-08-31 14:01:52.813 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings
+2026-08-31 14:01:52.813 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Creating working directory: eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings
+2026-08-31 14:01:52.853 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 20 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/chunk_embeddings/vdb_chunk.json
+2026-08-31 14:01:52.903 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 203 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/entity_embeddings/vdb_entity.json
+2026-08-31 14:01:52.958 [DefaultDispatcher-worker-1] INFO  h.embeddingstore.EmbeddingStore - Loaded 225 records from eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/workdirs/graph/qwen3.8:27b_nomic-embed-text/fact_embeddings/vdb_fact.json
+2026-08-31 14:01:52.959 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Preparing for fast retrieval.
+2026-08-31 14:01:52.959 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading keys.
+2026-08-31 14:01:52.959 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Graph node count mismatch: expected 223, got 220
+2026-08-31 14:01:52.959 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Missing nodes in graph: 0 entity nodes, 3 passage nodes
+2026-08-31 14:01:52.959 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Writing graph with 223 nodes, 588 edges
+2026-08-31 14:01:52.978 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Saving graph completed!
+2026-08-31 14:01:52.978 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Loading embeddings.
+2026-08-31 14:01:52.978 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Length mismatch: passageNodeKeys=20, nerResults=0, tripleResults=0
+2026-08-31 14:01:52.978 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Adding OpenIE triples to graph.
+2026-08-31 14:01:52.978 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_fact.
+2026-08-31 14:01:53.033 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Encoding 1 queries for query_to_passage.
+2026-08-31 14:01:58.939 [DefaultDispatcher-worker-1] WARN  hipporag.HippoRag - Phrase weight count (2) does not match filtered map size (3). This may be due to zero-weight phrases.
+2026-08-31 14:01:58.940 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Running PPR with 223 nodes and total weight 2.432577
+2026-08-31 14:01:58.940 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Retrieval Time 5.98s
+2026-08-31 14:01:58.940 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Recognition Memory Time 5.82s
+2026-08-31 14:01:58.940 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total PPR Time 0.00s
+2026-08-31 14:01:58.940 [DefaultDispatcher-worker-1] INFO  hipporag.HippoRag - Total Misc Time 0.16s
+2026-08-31 14:02:04.893 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-31 14:02:04.893 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (6, 384)
+2026-08-31 14:02:06.363 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (6, 384)
+2026-08-31 14:02:06.363 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (6, 384)
+hipporag_graph: processed 15/15
+Wrote 15 rows -> eval_results/swo69_20260831_hipporag/e2/hipporag_musique_p3/per_question/hipporag_graph.jsonl
+
+Finished. Aggregate CSV can be produced by scripts/aggregate_experiment_results.py

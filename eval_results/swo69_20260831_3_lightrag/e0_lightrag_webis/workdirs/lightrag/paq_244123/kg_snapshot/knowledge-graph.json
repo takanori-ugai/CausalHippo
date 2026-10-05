@@ -1,0 +1,188 @@
+{
+  "nodes" : [ {
+    "id" : "Azerbaijan",
+    "entity_id" : "Azerbaijan",
+    "entity_type" : "Location",
+    "description" : "A country that underwent a significant legal and judicial reform in 2006, establishing new courts and appeal courts in its regions.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "President of Azerbaijan",
+    "entity_id" : "President of Azerbaijan",
+    "entity_type" : "Person",
+    "description" : "The head of state of Azerbaijan who signed the legal reform system on 19 January 2006, initiating the next step in the judicial system.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Legal Reform in Azerbaijan",
+    "entity_id" : "Legal Reform in Azerbaijan",
+    "entity_type" : "Event",
+    "description" : "A judicial system reform signed on 19 January 2006 that established new courts, appeal courts, increased the number of judges, and modernized court activities.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "New Courts",
+    "entity_id" : "New Courts",
+    "entity_type" : "Concept",
+    "description" : "Courts newly established as part of the 2006 legal reform in Azerbaijan to increase the effectiveness of justice and improve access to courts for people in regions.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Appeal Courts",
+    "entity_id" : "Appeal Courts",
+    "entity_type" : "Concept",
+    "description" : "New appeal courts established in 6 regions of Azerbaijan, each composed of 4 chambers: Civil, Criminal, Military, and Administrative-Economic.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "6 Regions of Azerbaijan",
+    "entity_id" : "6 Regions of Azerbaijan",
+    "entity_type" : "Location",
+    "description" : "Six regions in Azerbaijan where new appeal courts were appointed to fulfill judicial duties as part of the 2006 legal reform.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Civil Chamber",
+    "entity_id" : "Civil Chamber",
+    "entity_type" : "Concept",
+    "description" : "One of the four chambers composing the appeal courts in Azerbaijan, handling civil matters.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Criminal Chamber",
+    "entity_id" : "Criminal Chamber",
+    "entity_type" : "Concept",
+    "description" : "One of the four chambers composing the appeal courts in Azerbaijan, handling criminal matters.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Military Chamber",
+    "entity_id" : "Military Chamber",
+    "entity_type" : "Concept",
+    "description" : "One of the four chambers composing the appeal courts in Azerbaijan, handling military matters.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Administrative-Economic Chamber",
+    "entity_id" : "Administrative-Economic Chamber",
+    "entity_type" : "Concept",
+    "description" : "One of the four chambers composing the appeal courts in Azerbaijan, handling administrative and economic matters.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Decree",
+    "entity_id" : "Decree",
+    "entity_type" : "Concept",
+    "description" : "A governmental decree based on which the apparatus of courts was upgraded and newly established courts were organized during the legal reform.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Judicial System of Azerbaijan",
+    "entity_id" : "Judicial System of Azerbaijan",
+    "entity_type" : "Concept",
+    "description" : "The overall judicial framework of Azerbaijan that was reformed in 2006, including new courts, appeal courts, increased judges, and modernized court activities.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  } ],
+  "edges" : [ {
+    "source" : "President of Azerbaijan",
+    "target" : "Legal Reform in Azerbaijan",
+    "weight" : "1.0",
+    "description" : "The President of Azerbaijan signed the legal reform system on 19 January 2006, initiating the next step in the judicial system.",
+    "keywords" : "signed, initiated, 2006",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "President of Azerbaijan",
+    "tgt_id" : "Legal Reform in Azerbaijan"
+  }, {
+    "source" : "Legal Reform in Azerbaijan",
+    "target" : "Azerbaijan",
+    "weight" : "1.0",
+    "description" : "The legal reform took place in Azerbaijan, transforming its judicial system.",
+    "keywords" : "took place, country",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Legal Reform in Azerbaijan",
+    "tgt_id" : "Azerbaijan"
+  }, {
+    "source" : "Legal Reform in Azerbaijan",
+    "target" : "New Courts",
+    "weight" : "1.0",
+    "description" : "The legal reform led to the establishment of new courts to increase the effectiveness of justice and improve access for people in regions.",
+    "keywords" : "established, created",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Legal Reform in Azerbaijan",
+    "tgt_id" : "New Courts"
+  }, {
+    "source" : "Legal Reform in Azerbaijan",
+    "target" : "Appeal Courts",
+    "weight" : "1.0",
+    "description" : "The legal reform resulted in the appointment of new appeal courts in 6 regions of Azerbaijan.",
+    "keywords" : "established, appointed",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Legal Reform in Azerbaijan",
+    "tgt_id" : "Appeal Courts"
+  }, {
+    "source" : "Legal Reform in Azerbaijan",
+    "target" : "Decree",
+    "weight" : "1.0",
+    "description" : "The apparatus of courts was upgraded and newly established courts were organized based on the Decree as part of the legal reform.",
+    "keywords" : "based on, upgraded",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Legal Reform in Azerbaijan",
+    "tgt_id" : "Decree"
+  }, {
+    "source" : "New Courts",
+    "target" : "Judicial System of Azerbaijan",
+    "weight" : "1.0",
+    "description" : "The new courts are a component of the reformed judicial system of Azerbaijan.",
+    "keywords" : "part of, component",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "New Courts",
+    "tgt_id" : "Judicial System of Azerbaijan"
+  }, {
+    "source" : "Appeal Courts",
+    "target" : "6 Regions of Azerbaijan",
+    "weight" : "1.0",
+    "description" : "The appeal courts were established in 6 regions of Azerbaijan to fulfill judicial duties locally.",
+    "keywords" : "located, established in",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Appeal Courts",
+    "tgt_id" : "6 Regions of Azerbaijan"
+  }, {
+    "source" : "Appeal Courts",
+    "target" : "Civil Chamber",
+    "weight" : "1.0",
+    "description" : "The appeal courts are composed of a Civil Chamber as one of their four chambers.",
+    "keywords" : "composed of, chamber",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Appeal Courts",
+    "tgt_id" : "Civil Chamber"
+  }, {
+    "source" : "Appeal Courts",
+    "target" : "Criminal Chamber",
+    "weight" : "1.0",
+    "description" : "The appeal courts are composed of a Criminal Chamber as one of their four chambers.",
+    "keywords" : "composed of, chamber",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Appeal Courts",
+    "tgt_id" : "Criminal Chamber"
+  }, {
+    "source" : "Appeal Courts",
+    "target" : "Military Chamber",
+    "weight" : "1.0",
+    "description" : "The appeal courts are composed of a Military Chamber as one of their four chambers.",
+    "keywords" : "composed of, chamber",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Appeal Courts",
+    "tgt_id" : "Military Chamber"
+  }, {
+    "source" : "Appeal Courts",
+    "target" : "Administrative-Economic Chamber",
+    "weight" : "1.0",
+    "description" : "The appeal courts are composed of an Administrative-Economic Chamber as one of their four chambers.",
+    "keywords" : "composed of, chamber",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Appeal Courts",
+    "tgt_id" : "Administrative-Economic Chamber"
+  }, {
+    "source" : "Appeal Courts",
+    "target" : "Judicial System of Azerbaijan",
+    "weight" : "1.0",
+    "description" : "The appeal courts are a key component of the reformed judicial system of Azerbaijan.",
+    "keywords" : "part of, component",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Appeal Courts",
+    "tgt_id" : "Judicial System of Azerbaijan"
+  } ],
+  "metadata" : {
+    "nodeCount" : 12,
+    "edgeCount" : 12
+  }
+}

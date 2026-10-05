@@ -1,0 +1,371 @@
+{
+  "nodes" : [ {
+    "id" : "Movie Theater Attendance",
+    "entity_id" : "Movie Theater Attendance",
+    "entity_type" : "Event",
+    "description" : "The number of people attending movie theaters",
+    "source_id" : "8851925f56d1e88041d2db63182885da"
+  }, {
+    "id" : "Citywide Energy Consumption",
+    "entity_id" : "Citywide Energy Consumption",
+    "entity_type" : "Event",
+    "description" : "The total amount of energy used by cities",
+    "source_id" : "8851925f56d1e88041d2db63182885da"
+  }, {
+    "id" : "Cinema Patrons",
+    "entity_id" : "Cinema Patrons",
+    "entity_type" : "Person",
+    "description" : "The people attending movie theaters",
+    "source_id" : "8851925f56d1e88041d2db63182885da"
+  }, {
+    "id" : "Electricity Usage",
+    "entity_id" : "Electricity Usage",
+    "entity_type" : "Concept",
+    "description" : "The amount of electricity used",
+    "source_id" : "8851925f56d1e88041d2db63182885da"
+  }, {
+    "id" : "Musician",
+    "entity_id" : "Musician",
+    "entity_type" : "Person",
+    "description" : "A person who played the piano",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941"
+  }, {
+    "id" : "Piano",
+    "entity_id" : "Piano",
+    "entity_type" : "Location",
+    "description" : "A musical instrument",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941"
+  }, {
+    "id" : "Auditorium",
+    "entity_id" : "Auditorium",
+    "entity_type" : "Location",
+    "description" : "A hall for music performances",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941"
+  }, {
+    "id" : "Audience",
+    "entity_id" : "Audience",
+    "entity_type" : "Organization",
+    "description" : "A group of people who watched the performance",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941"
+  }, {
+    "id" : "Farmers' Market",
+    "entity_id" : "Farmers' Market",
+    "entity_type" : "Event",
+    "description" : "Weekly event held downtown",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1"
+  }, {
+    "id" : "Bus Delays",
+    "entity_id" : "Bus Delays",
+    "entity_type" : "Incident",
+    "description" : "Unexpected disruptions to bus schedules",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1"
+  }, {
+    "id" : "Traffic Accident",
+    "entity_id" : "Traffic Accident",
+    "entity_type" : "Incident",
+    "description" : "Minor accident on a nearby street",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1"
+  }, {
+    "id" : "Transit Authority",
+    "entity_id" : "Transit Authority",
+    "entity_type" : "Organization",
+    "description" : "City-run transportation agency",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1"
+  }, {
+    "id" : "Families",
+    "entity_id" : "Families",
+    "entity_type" : "Organization",
+    "description" : "Groups of related individuals",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c"
+  }, {
+    "id" : "Allergens",
+    "entity_id" : "Allergens",
+    "entity_type" : "Concept",
+    "description" : "Substances causing allergic reactions",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c"
+  }, {
+    "id" : "Children",
+    "entity_id" : "Children",
+    "entity_type" : "Person",
+    "description" : "Young individuals",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c"
+  }, {
+    "id" : "Medical Interventions",
+    "entity_id" : "Medical Interventions",
+    "entity_type" : "Concept",
+    "description" : "Treatments for medical conditions",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c"
+  }, {
+    "id" : "Allergic Reactions",
+    "entity_id" : "Allergic Reactions",
+    "entity_type" : "Concept",
+    "description" : "Body responses to allergens",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c"
+  }, {
+    "id" : "City",
+    "entity_id" : "City",
+    "entity_type" : "Location",
+    "description" : "A city with a growing food scene",
+    "source_id" : "e83fd2663e15670923282feee7257afb"
+  }, {
+    "id" : "Gourmet Burger Restaurant",
+    "entity_id" : "Gourmet Burger Restaurant",
+    "entity_type" : "Organization",
+    "description" : "A type of restaurant serving high-end burgers",
+    "source_id" : "e83fd2663e15670923282feee7257afb"
+  }, {
+    "id" : "Local Brewery",
+    "entity_id" : "Local Brewery",
+    "entity_type" : "Organization",
+    "description" : "A brewery that produces beer locally",
+    "source_id" : "e83fd2663e15670923282feee7257afb"
+  }, {
+    "id" : "Food Critic",
+    "entity_id" : "Food Critic",
+    "entity_type" : "Person",
+    "description" : "An expert who reviews food and restaurants",
+    "source_id" : "e83fd2663e15670923282feee7257afb"
+  }, {
+    "id" : "Brewery Partnership",
+    "entity_id" : "Brewery Partnership",
+    "entity_type" : "Concept",
+    "description" : "A collaboration between breweries and restaurants",
+    "source_id" : "e83fd2663e15670923282feee7257afb"
+  }, {
+    "id" : "Unique Local Food Experience",
+    "entity_id" : "Unique Local Food Experience",
+    "entity_type" : "Concept",
+    "description" : "A distinctive and local food experience",
+    "source_id" : "e83fd2663e15670923282feee7257afb"
+  }, {
+    "id" : "Workload",
+    "entity_id" : "Workload",
+    "entity_type" : "Concept",
+    "description" : "The amount of tasks or responsibilities assigned to an employee",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495"
+  }, {
+    "id" : "Irritability",
+    "entity_id" : "Irritability",
+    "entity_type" : "Concept",
+    "description" : "A state of being annoyed or frustrated",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495"
+  }, {
+    "id" : "Coffee breaks",
+    "entity_id" : "Coffee breaks",
+    "entity_type" : "Concept",
+    "description" : "Short periods of time taken to rest and socialize during the workday",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495"
+  }, {
+    "id" : "Small talk",
+    "entity_id" : "Small talk",
+    "entity_type" : "Concept",
+    "description" : "Conversational interactions with coworkers during breaks",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495"
+  }, {
+    "id" : "Mood changes",
+    "entity_id" : "Mood changes",
+    "entity_type" : "Concept",
+    "description" : "Changes in emotional state or attitude",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495"
+  }, {
+    "id" : "Professional life",
+    "entity_id" : "Professional life",
+    "entity_type" : "Concept",
+    "description" : "The aspect of one's life related to their job or career",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495"
+  } ],
+  "edges" : [ {
+    "source" : "Movie Theater Attendance",
+    "target" : "Citywide Energy Consumption",
+    "weight" : "1.0",
+    "description" : "Both numbers increase during colder months",
+    "keywords" : "energy consumption, movie theater attendance",
+    "source_id" : "8851925f56d1e88041d2db63182885da",
+    "src_id" : "Movie Theater Attendance",
+    "tgt_id" : "Citywide Energy Consumption"
+  }, {
+    "source" : "Cinema Patrons",
+    "target" : "Electricity Usage",
+    "weight" : "1.0",
+    "description" : "Speculated connection between patrons and electricity usage",
+    "keywords" : "electricity usage, cinema patrons",
+    "source_id" : "8851925f56d1e88041d2db63182885da",
+    "src_id" : "Cinema Patrons",
+    "tgt_id" : "Electricity Usage"
+  }, {
+    "source" : "Musician",
+    "target" : "Piano",
+    "weight" : "1.0",
+    "description" : "The musician played the piano",
+    "keywords" : "music instrument, piano keys",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941",
+    "src_id" : "Musician",
+    "tgt_id" : "Piano"
+  }, {
+    "source" : "Musician",
+    "target" : "Audience",
+    "weight" : "1.0",
+    "description" : "The audience applauded the musician",
+    "keywords" : "applause, music appreciation",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941",
+    "src_id" : "Audience",
+    "tgt_id" : "Musician"
+  }, {
+    "source" : "Piano",
+    "target" : "Auditorium",
+    "weight" : "1.0",
+    "description" : "The piano was on stage in the auditorium",
+    "keywords" : "music instrument, piano stage",
+    "source_id" : "8f2f08c4afffbc146bdaf758c61fb941",
+    "src_id" : "Piano",
+    "tgt_id" : "Auditorium"
+  }, {
+    "source" : "Farmers' Market",
+    "target" : "Bus Delays",
+    "weight" : "1.0",
+    "description" : "Farmers' Market caused bus delays",
+    "keywords" : "Schedule Disruption, Event Impact",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1",
+    "src_id" : "Farmers' Market",
+    "tgt_id" : "Bus Delays"
+  }, {
+    "source" : "Farmers' Market",
+    "target" : "Transit Authority",
+    "weight" : "1.0",
+    "description" : "Transit Authority referenced ongoing events",
+    "keywords" : "Ongoing Events, Schedule Adjustments",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1",
+    "src_id" : "Transit Authority",
+    "tgt_id" : "Farmers' Market"
+  }, {
+    "source" : "Bus Delays",
+    "target" : "Traffic Accident",
+    "weight" : "1.0",
+    "description" : "Traffic accident caused bus delays",
+    "keywords" : "Incident, Road Closure",
+    "source_id" : "16ddb4ef210358a60f86e4d3c5ebe2b1",
+    "src_id" : "Traffic Accident",
+    "tgt_id" : "Bus Delays"
+  }, {
+    "source" : "Families",
+    "target" : "Allergens",
+    "weight" : "1.0",
+    "description" : "Families remove allergens to prevent reactions",
+    "keywords" : "removal, prevention",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c",
+    "src_id" : "Allergens",
+    "tgt_id" : "Families"
+  }, {
+    "source" : "Children",
+    "target" : "Allergic Reactions",
+    "weight" : "1.0",
+    "description" : "Children experience fewer reactions",
+    "keywords" : "frequency, severity",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c",
+    "src_id" : "Children",
+    "tgt_id" : "Allergic Reactions"
+  }, {
+    "source" : "Allergic Reactions",
+    "target" : "Medical Interventions",
+    "weight" : "1.0",
+    "description" : "Medical interventions are related to reactions",
+    "keywords" : "diagnosis, treatment",
+    "source_id" : "e2a1a81c7ed0a22f760bab108fabb72c",
+    "src_id" : "Allergic Reactions",
+    "tgt_id" : "Medical Interventions"
+  }, {
+    "source" : "Gourmet Burger Restaurant",
+    "target" : "Local Brewery",
+    "weight" : "1.0",
+    "description" : "A partnership between a gourmet burger restaurant and a local brewery",
+    "keywords" : "collaboration, partnership",
+    "source_id" : "e83fd2663e15670923282feee7257afb",
+    "src_id" : "Gourmet Burger Restaurant",
+    "tgt_id" : "Local Brewery"
+  }, {
+    "source" : "Gourmet Burger Restaurant",
+    "target" : "Food Critic",
+    "weight" : "1.0",
+    "description" : "A review of a gourmet burger restaurant by a food critic",
+    "keywords" : "review, critique",
+    "source_id" : "e83fd2663e15670923282feee7257afb",
+    "src_id" : "Food Critic",
+    "tgt_id" : "Gourmet Burger Restaurant"
+  }, {
+    "source" : "Gourmet Burger Restaurant",
+    "target" : "City",
+    "weight" : "1.0",
+    "description" : "A growing trend of gourmet burger restaurants in the city",
+    "keywords" : "growth, trend",
+    "source_id" : "e83fd2663e15670923282feee7257afb",
+    "src_id" : "City",
+    "tgt_id" : "Gourmet Burger Restaurant"
+  }, {
+    "source" : "Local Brewery",
+    "target" : "City",
+    "weight" : "1.0",
+    "description" : "A growing trend of local breweries in the city",
+    "keywords" : "growth, trend",
+    "source_id" : "e83fd2663e15670923282feee7257afb",
+    "src_id" : "City",
+    "tgt_id" : "Local Brewery"
+  }, {
+    "source" : "Brewery Partnership",
+    "target" : "Unique Local Food Experience",
+    "weight" : "1.0",
+    "description" : "A movement towards unique local food experiences through brewery partnerships",
+    "keywords" : "collaboration, movement",
+    "source_id" : "e83fd2663e15670923282feee7257afb",
+    "src_id" : "Brewery Partnership",
+    "tgt_id" : "Unique Local Food Experience"
+  }, {
+    "source" : "Workload",
+    "target" : "Irritability",
+    "weight" : "1.0",
+    "description" : "The workload is believed to contribute to irritability",
+    "keywords" : "stress, pressure",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495",
+    "src_id" : "Workload",
+    "tgt_id" : "Irritability"
+  }, {
+    "source" : "Workload",
+    "target" : "Coffee breaks",
+    "weight" : "1.0",
+    "description" : "The workload is often managed through coffee breaks",
+    "keywords" : "relaxation, rejuvenation",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495",
+    "src_id" : "Workload",
+    "tgt_id" : "Coffee breaks"
+  }, {
+    "source" : "Workload",
+    "target" : "Small talk",
+    "weight" : "1.0",
+    "description" : "The workload is sometimes alleviated through social interactions",
+    "keywords" : "social support, camaraderie",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495",
+    "src_id" : "Workload",
+    "tgt_id" : "Small talk"
+  }, {
+    "source" : "Irritability",
+    "target" : "Mood changes",
+    "weight" : "1.0",
+    "description" : "Irritability is a symptom of mood changes",
+    "keywords" : "emotional state, attitude",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495",
+    "src_id" : "Irritability",
+    "tgt_id" : "Mood changes"
+  }, {
+    "source" : "Mood changes",
+    "target" : "Professional life",
+    "weight" : "1.0",
+    "description" : "The demands of professional life can contribute to mood changes",
+    "keywords" : "job demands, expectations",
+    "source_id" : "322995e2dac0c7361cba4637afe5b495",
+    "src_id" : "Professional life",
+    "tgt_id" : "Mood changes"
+  } ],
+  "metadata" : {
+    "nodeCount" : 29,
+    "edgeCount" : 21
+  }
+}

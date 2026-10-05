@@ -1,0 +1,248 @@
+kotlin-logging: initializing... active logger factory: Slf4jLoggerFactory
+15:33:42,395 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found logback-core version 1.5.38
+15:33:42,396 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - No custom configurators were discovered as a service.
+15:33:42,396 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+15:33:42,397 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+15:33:42,401 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+15:33:42,405 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml]
+15:33:42,578 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Scan attribute set to true. Will scan for configuration file changes.
+15:33:42,579 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@15de0b3c - URL [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml] is not of type file
+15:33:42,582 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "INFO" substituted for "${ROOT_LOG_LEVEL:-INFO}"
+15:33:42,582 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL:-DEBUG}"
+15:33:42,582 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_LOG_LEVEL:-TRACE}"
+15:33:42,582 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL:-TRACE}"
+15:33:42,582 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL:-ERROR}"
+15:33:42,582 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL:-ERROR}"
+15:33:42,582 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL:-ERROR}"
+15:33:42,582 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL:-DEBUG}"
+15:33:42,583 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Missing watchable .xml or .properties files.
+15:33:42,583 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Watching .xml files requires that the main configuration file is reachable as a URL
+15:33:42,583 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Main configuration file URL: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml
+15:33:42,584 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - FileWatchList= {}
+15:33:42,584 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - URLWatchList= {}
+15:33:42,586 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+15:33:42,586 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+15:33:42,589 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+15:33:42,629 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - NOTE: Writing to the console can be slow. Try to avoid logging to the 
+15:33:42,629 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - console in production environments, especially in high volume systems.
+15:33:42,629 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also https://logback.qos.ch/codes.html#slowConsole
+15:33:42,629 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL}"
+15:33:42,629 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag] to DEBUG
+15:33:42,632 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag] to false
+15:33:42,632 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag]
+15:33:42,632 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_LOG_LEVEL}"
+15:33:42,632 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.neo4j] to TRACE
+15:33:42,632 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.neo4j] to false
+15:33:42,632 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.neo4j]
+15:33:42,632 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL}"
+15:33:42,632 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.neo4j.driver] to TRACE
+15:33:42,632 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.neo4j.driver] to false
+15:33:42,632 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[org.neo4j.driver]
+15:33:42,632 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL}"
+15:33:42,632 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.memory] to DEBUG
+15:33:42,632 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.memory] to false
+15:33:42,633 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.memory]
+15:33:42,633 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL}"
+15:33:42,633 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j] to ERROR
+15:33:42,633 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j] to false
+15:33:42,633 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j]
+15:33:42,633 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+15:33:42,633 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.okhttp] to ERROR
+15:33:42,633 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.okhttp] to false
+15:33:42,633 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.okhttp]
+15:33:42,633 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+15:33:42,633 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.openai] to ERROR
+15:33:42,633 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.openai] to false
+15:33:42,633 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.openai]
+15:33:42,633 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+15:33:42,633 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [okhttp3] to ERROR
+15:33:42,633 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [okhttp3] to false
+15:33:42,633 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[okhttp3]
+15:33:42,633 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL}"
+15:33:42,633 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.ai4j.openai4j] to ERROR
+15:33:42,633 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.ai4j.openai4j] to false
+15:33:42,633 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.ai4j.openai4j]
+15:33:42,633 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "INFO" substituted for "${ROOT_LOG_LEVEL}"
+15:33:42,633 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+15:33:42,633 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+15:33:42,633 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@3857f613 - End of configuration.
+15:33:42,633 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@198b6731 - Registering current configuration as safe fallback point
+15:33:42,637 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 237 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+WARNING: --use-unified-api=false keeps 'shared.eval.graph.MultiConditionGraphExperimentKt' on legacy condition runners. This compatibility path is planned for deprecation; prefer --use-unified-api=true.
+Running 1 conditions on 15 samples
+Parallelism: 1
+Unified API: false
+Unified persistence SPI: false
+Data: data/causal_experiment/causal_qa_balanced_30.jsonl
+Output: eval_results/swo69_20260828_e2/e0_pathrag_causal
+
+=== Condition: pathrag (PathRAG (pathrag)) ===
+2026-08-29 15:33:43.968 [DefaultDispatcher-worker-1] INFO  PathRAG-Operate - Extracting entities for 6 chunks via LLM.
+2026-08-29 15:34:05.814 [DefaultDispatcher-worker-10] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-678b784ed3d6cddf57e52c97ae48b907: Expected end of the array ']', but had 'EOF' instead at path: $.relationships
+JSON input: .....words": "opening, new business, anticipation", "weight": 9 }
+2026-08-29 15:34:26.431 [DefaultDispatcher-worker-8] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-9496e7b7138118acc9724f8b7eb4898f: Expected end of the array ']', but had 'EOF' instead at path: $.relationships
+JSON input: ....., "keywords": "infrastructure, energy sector", "weight": 8 }
+2026-08-29 15:35:05.848 [DefaultDispatcher-worker-6] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-bdc0560379c9cc0bf710940a38361236: Expected end of the array ']', but had 'EOF' instead at path: $.relationships
+JSON input: ....."misattribution, causal fallacy, speculation", "weight": 6 }
+2026-08-29 15:36:04.225 [DefaultDispatcher-worker-14] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-dd1979191a5647887c43e8d469a39a95: Expected end of the array ']', but had 'EOF' instead at path: $.relationships
+JSON input: .....ions.", "keywords": "discussion, coincidence", "weight": 6 }
+2026-08-29 15:36:05.584 [DefaultDispatcher-worker-1] INFO  PathRAG - Saved graph snapshot to 'eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Complex_System_No_Direct_Link_163/kg_snapshot/knowledge-graph.json' with 13 nodes and 15 edges.
+2026-08-29 15:36:23.017 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found placeholder platform from: cu128-linux-x86_64:2.7.1
+2026-08-29 15:36:30.502 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - PyTorch graph executor optimizer is enabled, this may impact your inference latency and throughput. See: https://docs.djl.ai/master/docs/development/inference_performance_optimization.html#graph-executor-optimization
+2026-08-29 15:36:30.515 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - Number of inter-op threads is 96
+2026-08-29 15:36:30.515 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - Number of intra-op threads is 16
+2026-08-29 15:36:31.287 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found matching platform from: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/native/lib/tokenizers.properties
+2026-08-29 15:36:34.719 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:36:34.720 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (6, 384)
+2026-08-29 15:36:36.141 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:36:36.141 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (6, 384)
+2026-08-29 15:36:37.372 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 15:36:37.372 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (6, 384)
+2026-08-29 15:36:38.727 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:36:38.727 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (6, 384)
+2026-08-29 15:36:40.066 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:36:40.066 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (6, 384)
+2026-08-29 15:36:40.208 [DefaultDispatcher-worker-1] INFO  PathRAG-Operate - Extracting entities for 6 chunks via LLM.
+2026-08-29 15:38:33.161 [DefaultDispatcher-worker-1] INFO  PathRAG - Saved graph snapshot to 'eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Counterfactual_Reasoning_Required_309/kg_snapshot/knowledge-graph.json' with 41 nodes and 46 edges.
+2026-08-29 15:38:46.809 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (7, 384)
+2026-08-29 15:38:46.809 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (7, 384)
+2026-08-29 15:38:46.948 [DefaultDispatcher-worker-1] INFO  PathRAG-Operate - Extracting entities for 6 chunks via LLM.
+2026-08-29 15:39:42.800 [DefaultDispatcher-worker-4] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-89ecaf6b4d69f980f1ffd79ab3c84242: Expected end of the array ']', but had 'EOF' instead at path: $.relationships
+JSON input: .....rds": "temporal sequence, possible causation", "weight": 9 }
+2026-08-29 15:40:07.912 [DefaultDispatcher-worker-14] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-d4b4410f0185f4a34c983eefbb0aaf48: Expected end of the array ']', but had 'EOF' instead at path: $.relationships
+JSON input: .....ds": "planning, management, event operations", "weight": 8 }
+2026-08-29 15:40:28.571 [DefaultDispatcher-worker-16] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-7109120c48beb96838e1133e128ba02c: Expected end of the array ']', but had 'EOF' instead at path: $.relationships
+JSON input: ..... "keywords": "correlation, seasonal activity", "weight": 7 }
+2026-08-29 15:41:06.264 [DefaultDispatcher-worker-1] INFO  PathRAG - Saved graph snapshot to 'eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Shared_Trend_No_Direct_Link_484/kg_snapshot/knowledge-graph.json' with 20 nodes and 24 edges.
+2026-08-29 15:41:19.116 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:41:19.116 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (9, 384)
+2026-08-29 15:41:20.400 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:41:20.400 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (9, 384)
+2026-08-29 15:41:21.669 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 15:41:21.669 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (9, 384)
+2026-08-29 15:41:22.973 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:41:22.973 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (9, 384)
+2026-08-29 15:41:24.367 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:41:24.367 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (9, 384)
+2026-08-29 15:41:24.516 [DefaultDispatcher-worker-1] INFO  PathRAG-Operate - Extracting entities for 6 chunks via LLM.
+2026-08-29 15:43:17.376 [DefaultDispatcher-worker-1] INFO  PathRAG - Saved graph snapshot to 'eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Reverse_Causation_Potential_500/kg_snapshot/knowledge-graph.json' with 36 nodes and 45 edges.
+2026-08-29 15:43:30.155 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:43:30.155 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (8, 384)
+2026-08-29 15:43:30.276 [DefaultDispatcher-worker-1] INFO  PathRAG-Operate - Extracting entities for 6 chunks via LLM.
+2026-08-29 15:45:23.135 [DefaultDispatcher-worker-1] INFO  PathRAG - Saved graph snapshot to 'eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Co-occurrence_No_Mechanism_37/kg_snapshot/knowledge-graph.json' with 38 nodes and 48 edges.
+2026-08-29 15:45:35.302 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:45:35.302 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (5, 384)
+2026-08-29 15:45:36.476 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:45:36.476 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (5, 384)
+2026-08-29 15:45:37.654 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 15:45:37.655 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (5, 384)
+2026-08-29 15:45:38.907 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:45:38.907 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (5, 384)
+2026-08-29 15:45:40.289 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:45:40.289 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (5, 384)
+2026-08-29 15:45:40.439 [DefaultDispatcher-worker-1] INFO  PathRAG-Operate - Extracting entities for 6 chunks via LLM.
+2026-08-29 15:47:30.608 [DefaultDispatcher-worker-5] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-340ef47e41f971807ba8040b9edaae9a: Expected end of the array ']', but had 'EOF' instead at path: $.relationships
+JSON input: .....keywords": "location, transportation context", "weight": 7 }
+2026-08-29 15:47:32.000 [DefaultDispatcher-worker-1] INFO  PathRAG - Saved graph snapshot to 'eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data_721/kg_snapshot/knowledge-graph.json' with 27 nodes and 30 edges.
+2026-08-29 15:47:47.181 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (9, 384)
+2026-08-29 15:47:47.182 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (6, 384)
+2026-08-29 15:47:47.369 [DefaultDispatcher-worker-1] INFO  PathRAG-Operate - Extracting entities for 6 chunks via LLM.
+2026-08-29 15:48:08.107 [DefaultDispatcher-worker-3] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-1475283de35a2a86ea46d2bcbfc08880: Expected end of the array ']', but had 'EOF' instead at path: $.relationships
+JSON input: ......", "keywords": "causal influence, free time", "weight": 8 }
+2026-08-29 15:48:44.990 [DefaultDispatcher-worker-7] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-fa92f2790504ecaed7880f8d30db9dda: Expected end of the array ']', but had 'EOF' instead at path: $.relationships
+JSON input: ......", "keywords": "sustainability, urban trend", "weight": 7 }
+2026-08-29 15:49:42.756 [DefaultDispatcher-worker-1] INFO  PathRAG - Saved graph snapshot to 'eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Shared_Trend_No_Direct_Link_118/kg_snapshot/knowledge-graph.json' with 31 nodes and 39 edges.
+2026-08-29 15:49:56.991 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:49:56.991 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (9, 384)
+2026-08-29 15:49:58.308 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:49:58.309 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (9, 384)
+2026-08-29 15:49:59.702 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 15:49:59.702 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (9, 384)
+2026-08-29 15:50:00.991 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:50:00.991 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (9, 384)
+2026-08-29 15:50:02.326 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:50:02.327 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (9, 384)
+2026-08-29 15:50:02.435 [DefaultDispatcher-worker-1] INFO  PathRAG-Operate - Extracting entities for 6 chunks via LLM.
+2026-08-29 15:51:24.153 [DefaultDispatcher-worker-11] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-c6ae6fe5c31bb015fb944f2c6de47e18: Expected end of the array ']', but had 'EOF' instead at path: $.relationships
+JSON input: .....m.", "keywords": "napping, location, pattern", "weight": 8 }
+2026-08-29 15:52:25.378 [DefaultDispatcher-worker-1] INFO  PathRAG - Saved graph snapshot to 'eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Reverse_Correlation_507/kg_snapshot/knowledge-graph.json' with 37 nodes and 44 edges.
+2026-08-29 15:52:40.804 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:52:40.804 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (5, 384)
+2026-08-29 15:52:42.272 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:52:42.272 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (5, 384)
+2026-08-29 15:52:43.748 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 15:52:43.748 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (5, 384)
+2026-08-29 15:52:45.199 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:52:45.199 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (5, 384)
+2026-08-29 15:52:46.525 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:52:46.525 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (5, 384)
+2026-08-29 15:52:46.644 [DefaultDispatcher-worker-1] INFO  PathRAG-Operate - Extracting entities for 6 chunks via LLM.
+2026-08-29 15:53:08.328 [DefaultDispatcher-worker-13] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-e83fd2663e15670923282feee7257afb: Expected end of the array ']', but had 'EOF' instead at path: $.relationships
+JSON input: .....s": "trend attribution, restaurant influence", "weight": 7 }
+2026-08-29 15:54:36.354 [DefaultDispatcher-worker-1] INFO  PathRAG - Saved graph snapshot to 'eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Co-occurrence_No_Mechanism_307/kg_snapshot/knowledge-graph.json' with 30 nodes and 32 edges.
+2026-08-29 15:54:49.221 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:54:49.222 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (6, 384)
+2026-08-29 15:54:50.604 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:54:50.605 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (6, 384)
+2026-08-29 15:54:52.029 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 15:54:52.030 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (6, 384)
+2026-08-29 15:54:53.370 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:54:53.370 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (6, 384)
+2026-08-29 15:54:54.677 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:54:54.677 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (6, 384)
+2026-08-29 15:54:54.817 [DefaultDispatcher-worker-1] INFO  PathRAG-Operate - Extracting entities for 6 chunks via LLM.
+2026-08-29 15:55:12.994 [DefaultDispatcher-worker-3] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-0cb03c7605138f4446f4d286ccf344a1: Unexpected JSON token at offset 1894: Encountered an unknown key 'description_note' at path: $.relationships[2]
+Use 'ignoreUnknownKeys = true' in 'Json {}' builder or '@JsonIgnoreUnknownKeys' annotation to ignore unknown keys.
+JSON input: .....gth and vitamin D results.", "description_note": "", "keywor.....
+2026-08-29 15:56:46.481 [DefaultDispatcher-worker-1] INFO  PathRAG - Saved graph snapshot to 'eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Conditional_Causation_451/kg_snapshot/knowledge-graph.json' with 33 nodes and 41 edges.
+2026-08-29 15:56:57.600 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 15:56:57.600 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (6, 384)
+pathrag: processed 10/15
+2026-08-29 15:56:57.731 [DefaultDispatcher-worker-1] INFO  PathRAG-Operate - Extracting entities for 6 chunks via LLM.
+2026-08-29 15:58:51.635 [DefaultDispatcher-worker-1] INFO  PathRAG - Saved graph snapshot to 'eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Intermediary_Chain_Causation_276/kg_snapshot/knowledge-graph.json' with 45 nodes and 50 edges.
+2026-08-29 15:59:04.705 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 15:59:04.705 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (10, 384)
+2026-08-29 15:59:04.915 [DefaultDispatcher-worker-1] INFO  PathRAG-Operate - Extracting entities for 6 chunks via LLM.
+2026-08-29 15:59:25.871 [DefaultDispatcher-worker-6] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-90a885c97eafead7c8d5e610120e3ae2: Expected end of the array ']', but had 'EOF' instead at path: $.relationships
+JSON input: .....eywords": "membership, participation, growth", "weight": 7 }
+2026-08-29 16:01:05.878 [DefaultDispatcher-worker-1] INFO  PathRAG - Saved graph snapshot to 'eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Reverse_Causation_Potential_134/kg_snapshot/knowledge-graph.json' with 29 nodes and 32 edges.
+2026-08-29 16:01:19.619 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 16:01:19.619 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (4, 384)
+2026-08-29 16:01:20.893 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 16:01:20.893 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (4, 384)
+2026-08-29 16:01:22.208 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 16:01:22.208 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (4, 384)
+2026-08-29 16:01:23.513 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 16:01:23.513 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (4, 384)
+2026-08-29 16:01:24.902 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 16:01:24.902 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (4, 384)
+2026-08-29 16:01:25.044 [DefaultDispatcher-worker-1] INFO  PathRAG-Operate - Extracting entities for 6 chunks via LLM.
+2026-08-29 16:03:24.423 [DefaultDispatcher-worker-1] INFO  PathRAG - Saved graph snapshot to 'eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Intermediary_Chain_Causation_296/kg_snapshot/knowledge-graph.json' with 38 nodes and 50 edges.
+2026-08-29 16:03:37.042 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 16:03:37.043 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (5, 384)
+2026-08-29 16:03:37.170 [DefaultDispatcher-worker-1] INFO  PathRAG-Operate - Extracting entities for 6 chunks via LLM.
+2026-08-29 16:04:59.086 [DefaultDispatcher-worker-6] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-bf107e019ec11b624fe162f2ca434f2c: Expected end of the array ']', but had 'EOF' instead at path: $.relationships
+JSON input: .....ywords": "local discourse, popular narrative", "weight": 6 }
+2026-08-29 16:05:35.080 [DefaultDispatcher-worker-7] WARN  PathRAG-Operate - Failed to parse LLM extraction for chunk chunk-23a741ff5b348bc11d6b4da192b14040: Unexpected JSON token at offset 1757: Encountered an unknown key 'description2' at path: $.relationships[1]
+Use 'ignoreUnknownKeys = true' in 'Json {}' builder or '@JsonIgnoreUnknownKeys' annotation to ignore unknown keys.
+JSON input: .....ord levels in urban parks.", "description2": "", "keywords":.....
+2026-08-29 16:05:36.002 [DefaultDispatcher-worker-1] INFO  PathRAG - Saved graph snapshot to 'eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Complex_System_No_Direct_Link_76/kg_snapshot/knowledge-graph.json' with 29 nodes and 36 edges.
+2026-08-29 16:05:51.527 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 16:05:51.528 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (4, 384)
+2026-08-29 16:05:52.767 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 16:05:52.767 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (4, 384)
+2026-08-29 16:05:54.017 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-29 16:05:54.017 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (4, 384)
+2026-08-29 16:05:55.381 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 16:05:55.381 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (4, 384)
+2026-08-29 16:05:56.662 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-29 16:05:56.662 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (4, 384)
+2026-08-29 16:05:56.782 [DefaultDispatcher-worker-1] INFO  PathRAG-Operate - Extracting entities for 6 chunks via LLM.
+2026-08-29 16:07:47.044 [DefaultDispatcher-worker-1] INFO  PathRAG - Saved graph snapshot to 'eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Reverse_Causation_Potential_93/kg_snapshot/knowledge-graph.json' with 36 nodes and 44 edges.
+2026-08-29 16:08:00.008 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (6, 384)
+2026-08-29 16:08:00.008 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (7, 384)
+pathrag: processed 15/15
+Wrote 15 rows -> eval_results/swo69_20260828_e2/e0_pathrag_causal/per_question/pathrag.jsonl
+
+Finished. Aggregate CSV can be produced by scripts/aggregate_experiment_results.py

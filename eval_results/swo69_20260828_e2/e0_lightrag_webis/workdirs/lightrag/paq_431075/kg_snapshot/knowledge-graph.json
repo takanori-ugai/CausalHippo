@@ -1,0 +1,197 @@
+{
+  "nodes" : [ {
+    "id" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "entity_id" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "entity_type" : "Event",
+    "description" : "A mixed martial arts event held by the Ultimate Fighting Championship on October 10, 2006, featuring the third and final encounter between Tito Ortiz and Ken Shamrock.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "UFC Fight Night 6.5",
+    "entity_id" : "UFC Fight Night 6.5",
+    "entity_type" : "Event",
+    "description" : "An alternate name for the mixed martial arts event Ortiz vs. Shamrock 3: The Final Chapter.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Ultimate Fighting Championship",
+    "entity_id" : "Ultimate Fighting Championship",
+    "entity_type" : "Organization",
+    "description" : "The organization that held the Ortiz vs. Shamrock 3: The Final Chapter mixed martial arts event.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Seminole Hard Rock Hotel and Casino",
+    "entity_id" : "Seminole Hard Rock Hotel and Casino",
+    "entity_type" : "Location",
+    "description" : "The venue where the Ortiz vs. Shamrock 3: The Final Chapter event took place, located in Hollywood, Florida.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Hollywood, Florida",
+    "entity_id" : "Hollywood, Florida",
+    "entity_type" : "Location",
+    "description" : "The city in Florida where the Seminole Hard Rock Hotel and Casino is located and where the UFC event was held.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Spike TV",
+    "entity_id" : "Spike TV",
+    "entity_type" : "Organization",
+    "description" : "The television network that broadcast the Ortiz vs. Shamrock 3 event live in the United States and Canada.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "United States",
+    "entity_id" : "United States",
+    "entity_type" : "Location",
+    "description" : "One of the countries where the Ortiz vs. Shamrock 3 event was broadcast live on Spike TV.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Canada",
+    "entity_id" : "Canada",
+    "entity_type" : "Location",
+    "description" : "One of the countries where the Ortiz vs. Shamrock 3 event was broadcast live on Spike TV.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Tito Ortiz",
+    "entity_id" : "Tito Ortiz",
+    "entity_type" : "Person",
+    "description" : "A mixed martial arts fighter who competed in the main event of Ortiz vs. Shamrock 3 and previously defeated Ken Shamrock at UFC 61 via technical knockout.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Ken Shamrock",
+    "entity_id" : "Ken Shamrock",
+    "entity_type" : "Person",
+    "description" : "A mixed martial arts fighter who competed in the main event of Ortiz vs. Shamrock 3 and previously lost to Tito Ortiz at UFC 61.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "UFC 61",
+    "entity_id" : "UFC 61",
+    "entity_type" : "Event",
+    "description" : "A previous UFC event where Tito Ortiz and Ken Shamrock met for a second time, with Ortiz winning via technical knockout.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  }, {
+    "id" : "Mixed martial arts",
+    "entity_id" : "Mixed martial arts",
+    "entity_type" : "Concept",
+    "description" : "The combat sport discipline that the Ortiz vs. Shamrock 3 event belongs to.",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc"
+  } ],
+  "edges" : [ {
+    "source" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "target" : "UFC Fight Night 6.5",
+    "weight" : "1.0",
+    "description" : "Ortiz vs. Shamrock 3: The Final Chapter is also known as UFC Fight Night 6.5.",
+    "keywords" : "alternate name, also known as",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "tgt_id" : "UFC Fight Night 6.5"
+  }, {
+    "source" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "target" : "Ultimate Fighting Championship",
+    "weight" : "1.0",
+    "description" : "The Ultimate Fighting Championship organized and held the Ortiz vs. Shamrock 3: The Final Chapter event on October 10, 2006.",
+    "keywords" : "organized, held by",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Ultimate Fighting Championship",
+    "tgt_id" : "Ortiz vs. Shamrock 3: The Final Chapter"
+  }, {
+    "source" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "target" : "Seminole Hard Rock Hotel and Casino",
+    "weight" : "1.0",
+    "description" : "The Ortiz vs. Shamrock 3 event took place at the Seminole Hard Rock Hotel and Casino.",
+    "keywords" : "venue, took place at",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "tgt_id" : "Seminole Hard Rock Hotel and Casino"
+  }, {
+    "source" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "target" : "Spike TV",
+    "weight" : "1.0",
+    "description" : "The Ortiz vs. Shamrock 3 event was broadcast live on Spike TV.",
+    "keywords" : "broadcast, television",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "tgt_id" : "Spike TV"
+  }, {
+    "source" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "target" : "Tito Ortiz",
+    "weight" : "1.0",
+    "description" : "Tito Ortiz was one of the main event fighters in the Ortiz vs. Shamrock 3 event, competing in the third and final encounter against Ken Shamrock.",
+    "keywords" : "main event, fighter, featured",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "tgt_id" : "Tito Ortiz"
+  }, {
+    "source" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "target" : "Ken Shamrock",
+    "weight" : "1.0",
+    "description" : "Ken Shamrock was one of the main event fighters in the Ortiz vs. Shamrock 3 event, competing in the third and final encounter against Tito Ortiz.",
+    "keywords" : "main event, fighter, featured",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "tgt_id" : "Ken Shamrock"
+  }, {
+    "source" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "target" : "Mixed martial arts",
+    "weight" : "1.0",
+    "description" : "Ortiz vs. Shamrock 3: The Final Chapter was a mixed martial arts event.",
+    "keywords" : "sport, discipline, event type",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Ortiz vs. Shamrock 3: The Final Chapter",
+    "tgt_id" : "Mixed martial arts"
+  }, {
+    "source" : "Seminole Hard Rock Hotel and Casino",
+    "target" : "Hollywood, Florida",
+    "weight" : "1.0",
+    "description" : "The Seminole Hard Rock Hotel and Casino is located in Hollywood, Florida.",
+    "keywords" : "located in, city",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Seminole Hard Rock Hotel and Casino",
+    "tgt_id" : "Hollywood, Florida"
+  }, {
+    "source" : "Spike TV",
+    "target" : "United States",
+    "weight" : "1.0",
+    "description" : "Spike TV broadcast the Ortiz vs. Shamrock 3 event in the United States.",
+    "keywords" : "broadcast region, country",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Spike TV",
+    "tgt_id" : "United States"
+  }, {
+    "source" : "Spike TV",
+    "target" : "Canada",
+    "weight" : "1.0",
+    "description" : "Spike TV broadcast the Ortiz vs. Shamrock 3 event in Canada.",
+    "keywords" : "broadcast region, country",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Spike TV",
+    "tgt_id" : "Canada"
+  }, {
+    "source" : "Tito Ortiz",
+    "target" : "UFC 61",
+    "weight" : "1.0",
+    "description" : "Tito Ortiz competed at UFC 61 and won the fight against Ken Shamrock via technical knockout.",
+    "keywords" : "fighter, competed, winner",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "UFC 61",
+    "tgt_id" : "Tito Ortiz"
+  }, {
+    "source" : "Tito Ortiz",
+    "target" : "Ken Shamrock",
+    "weight" : "1.0",
+    "description" : "Tito Ortiz defeated Ken Shamrock via technical knockout at UFC 61, their second encounter, before meeting again in the third and final fight.",
+    "keywords" : "defeated, technical knockout, rivalry",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "Tito Ortiz",
+    "tgt_id" : "Ken Shamrock"
+  }, {
+    "source" : "Ken Shamrock",
+    "target" : "UFC 61",
+    "weight" : "1.0",
+    "description" : "Ken Shamrock competed at UFC 61 and lost the fight to Tito Ortiz via technical knockout.",
+    "keywords" : "fighter, competed, loser",
+    "source_id" : "245b3470357ecd075a4dc1509ac80edc",
+    "src_id" : "UFC 61",
+    "tgt_id" : "Ken Shamrock"
+  } ],
+  "metadata" : {
+    "nodeCount" : 12,
+    "edgeCount" : 13
+  }
+}

@@ -1,0 +1,587 @@
+{
+  "nodes" : {
+    "ECONOMISTS" : {
+      "entity_type" : "PERSON",
+      "description" : "Professionals curious about the relationship between fuel price changes and public transportation usage trends.<SEP>Researchers who continue to study the direction of the relationship between financial knowledge and investment achievement.",
+      "source_id" : "chunk-3b15607be817db4be84db76078c70ba8<SEP>chunk-9df9554956a3a1f5ea033f1cde9cb21b"
+    },
+    "BICYCLE SALES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A market trend that surged in the metropolitan area, closely aligning year after year with declining air pollution.",
+      "source_id" : "chunk-8a4668759f634b40a752c228884536da"
+    },
+    "END-OF-DAY FATIGUE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The explanation teachers and students give for their discomfort, used to dismiss potential environmental causes.",
+      "source_id" : "chunk-77274dfe411da4cd26446dbe20e6fabf"
+    },
+    "SPRING ARRIVAL" : {
+      "entity_type" : "EVENT",
+      "description" : "The seasonal transition when people open windows to enjoy fresh air, coinciding with reported allergy symptoms.",
+      "source_id" : "chunk-12649adf9347df6992fec31217d004ac"
+    },
+    "SLEEP DISTURBANCES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A health-related concern whose reports rose during the period in question.",
+      "source_id" : "chunk-c7e6786820c41799e8c060c66e742a98"
+    },
+    "COMMUNITY MEMBERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Individuals who actively discuss local changes and issues in forums.",
+      "source_id" : "chunk-c7e6786820c41799e8c060c66e742a98"
+    },
+    "AIR POLLUTION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An environmental indicator whose levels began to drop, creating an apparent correlation with cycling popularity.",
+      "source_id" : "chunk-8a4668759f634b40a752c228884536da"
+    },
+    "FUEL PRICE CHANGE" : {
+      "entity_type" : "EVENT",
+      "description" : "A notable recent shift in fuel prices that is influencing commuter behavior and drawing broader attention.",
+      "source_id" : "chunk-9df9554956a3a1f5ea033f1cde9cb21b"
+    },
+    "FINANCIAL LITERACY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The degree of understanding and knowledge in financial matters, strongly associated with investment achievement.",
+      "source_id" : "chunk-3b15607be817db4be84db76078c70ba8"
+    },
+    "FUEL PRICES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An economic factor experiencing a notable recent change, driving shifts in commuter behavior and attracting analyst attention.",
+      "source_id" : "chunk-9df9554956a3a1f5ea033f1cde9cb21b"
+    },
+    "CITY PLANNERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Professionals examining transportation and fuel trends to optimize urban resources.",
+      "source_id" : "chunk-9df9554956a3a1f5ea033f1cde9cb21b"
+    },
+    "HEADACHES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Symptoms experienced by students in the afternoon, often misattributed to studying or noise rather than air quality.",
+      "source_id" : "chunk-77274dfe411da4cd26446dbe20e6fabf"
+    },
+    "STAGNANT AIR" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Stuffy, non-circulating air in classrooms with closed windows, noted by both students and teachers but rarely addressed.",
+      "source_id" : "chunk-77274dfe411da4cd26446dbe20e6fabf"
+    },
+    "POLLEN LEVELS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An environmental factor blamed by some as a cause of the spike in allergy symptoms.",
+      "source_id" : "chunk-12649adf9347df6992fec31217d004ac"
+    },
+    "PUBLIC TRANSPORTATION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A transportation mode whose usage appears to be shifting in response to changing fuel prices.",
+      "source_id" : "chunk-9df9554956a3a1f5ea033f1cde9cb21b"
+    },
+    "LOCAL FORUMS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A platform where community members gather to discuss neighborhood issues and changes.",
+      "source_id" : "chunk-c7e6786820c41799e8c060c66e742a98"
+    },
+    "METROPOLITAN AREA" : {
+      "entity_type" : "GEO",
+      "description" : "The geographic location where bicycle sales surged and air pollution levels dropped over the last decade.",
+      "source_id" : "chunk-8a4668759f634b40a752c228884536da"
+    },
+    "PUBLIC TRANSPORTATION USAGE SHIFT" : {
+      "entity_type" : "EVENT",
+      "description" : "A concurrent change in public transportation usage patterns occurring alongside the fuel price change.",
+      "source_id" : "chunk-9df9554956a3a1f5ea033f1cde9cb21b"
+    },
+    "INVESTMENT SUCCESS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The achievement of favorable investment outcomes, linked to higher financial literacy.",
+      "source_id" : "chunk-3b15607be817db4be84db76078c70ba8"
+    },
+    "COMMUTERS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A group of people affected by fuel price changes and transportation shifts, actively sharing experiences on social media.",
+      "source_id" : "chunk-9df9554956a3a1f5ea033f1cde9cb21b"
+    },
+    "KNOWLEDGE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "General understanding in the financial area, whose link with achievement is widely discussed.",
+      "source_id" : "chunk-3b15607be817db4be84db76078c70ba8"
+    },
+    "NOISE LEVELS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An ongoing issue in the neighborhood that has drawn repeated attention from residents.",
+      "source_id" : "chunk-c7e6786820c41799e8c060c66e742a98"
+    },
+    "POOR VENTILATION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A recurring classroom condition where windows remain closed, leading to stale air and potential health effects on occupants.",
+      "source_id" : "chunk-77274dfe411da4cd26446dbe20e6fabf"
+    },
+    "SUCCESSFUL INVESTORS" : {
+      "entity_type" : "PERSON",
+      "description" : "Individuals who achieve investment success and tend to be more financially literate.",
+      "source_id" : "chunk-3b15607be817db4be84db76078c70ba8"
+    },
+    "ALLERGY SYMPTOM SPIKE" : {
+      "entity_type" : "EVENT",
+      "description" : "A reported increase in allergy symptoms around the time of spring, with uncertain cause in the neighborhood.",
+      "source_id" : "chunk-12649adf9347df6992fec31217d004ac"
+    },
+    "STUDENTS" : {
+      "entity_type" : "PERSON",
+      "description" : "A group of learners who complain of headaches in classrooms, often attributing symptoms to studying or noise rather than environmental factors.",
+      "source_id" : "chunk-77274dfe411da4cd26446dbe20e6fabf"
+    },
+    "ENVIRONMENTAL IMPROVEMENTS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Clean air outcomes in the metropolitan area that residents commonly but misleadingly attributed to the biking boom.",
+      "source_id" : "chunk-8a4668759f634b40a752c228884536da"
+    },
+    "RESIDENTS" : {
+      "entity_type" : "PERSON",
+      "description" : "People living in the neighborhood who are affected by noise and report sleep disturbances.",
+      "source_id" : "chunk-c7e6786820c41799e8c060c66e742a98"
+    },
+    "CHANGING WEATHER" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A weather-related factor cited by others as a possible cause of the allergy symptoms.",
+      "source_id" : "chunk-12649adf9347df6992fec31217d004ac"
+    },
+    "THE NEIGHBORHOOD" : {
+      "entity_type" : "GEO",
+      "description" : "A local area where rising noise levels and sleep disturbances have drawn resident attention.<SEP>A local area where the cause of the allergy symptom spike remains uncertain.",
+      "source_id" : "chunk-12649adf9347df6992fec31217d004ac<SEP>chunk-c7e6786820c41799e8c060c66e742a98"
+    },
+    "BIKING BOOM" : {
+      "entity_type" : "EVENT",
+      "description" : "A surge in cycling and bicycle sales over the last decade, to which residents attributed environmental improvements.",
+      "source_id" : "chunk-8a4668759f634b40a752c228884536da"
+    },
+    "FINANCE SEMINARS" : {
+      "entity_type" : "EVENT",
+      "description" : "Educational gatherings that attract people with a history of smart investments.",
+      "source_id" : "chunk-3b15607be817db4be84db76078c70ba8"
+    },
+    "CYCLING" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A popular activity that residents commonly cited as the reason for cleaner air and environmental improvements.",
+      "source_id" : "chunk-8a4668759f634b40a752c228884536da"
+    },
+    "SOCIAL MEDIA" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A digital communication platform where commuters share their experiences regarding fuel prices and transportation.",
+      "source_id" : "chunk-9df9554956a3a1f5ea033f1cde9cb21b"
+    },
+    "SCHOOL DAY" : {
+      "entity_type" : "EVENT",
+      "description" : "The daily school period during which windows remain closed, air becomes stagnant, and complaints of discomfort arise.",
+      "source_id" : "chunk-77274dfe411da4cd26446dbe20e6fabf"
+    },
+    "TEACHERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Educators who report feeling slightly off during the school day, typically dismissing symptoms as end-of-day fatigue.",
+      "source_id" : "chunk-77274dfe411da4cd26446dbe20e6fabf"
+    }
+  },
+  "edges" : [ {
+    "source" : "BIKING BOOM",
+    "target" : "ENVIRONMENTAL IMPROVEMENTS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "It became common to attribute environmental improvements to the biking boom, though the connection is misleading.",
+      "keywords" : "misleading attribution, causation, correlation",
+      "source_id" : "chunk-8a4668759f634b40a752c228884536da"
+    }
+  }, {
+    "source" : "FINANCE SEMINARS",
+    "target" : "SUCCESSFUL INVESTORS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Finance seminars attract people who have a history of smart investments, indicating self-selection by skilled investors.",
+      "keywords" : "audience, self-selection, investment experience",
+      "source_id" : "chunk-3b15607be817db4be84db76078c70ba8"
+    }
+  }, {
+    "source" : "CYCLING",
+    "target" : "BICYCLE SALES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The popularity of cycling is directly linked to the surge in bicycle sales in the region.",
+      "keywords" : "popularity, market growth, correlation",
+      "source_id" : "chunk-8a4668759f634b40a752c228884536da"
+    }
+  }, {
+    "source" : "BICYCLE SALES",
+    "target" : "AIR POLLUTION",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Both trends aligned year after year, creating an apparent but misleading connection between them.",
+      "keywords" : "correlation, temporal alignment, misleading link",
+      "source_id" : "chunk-8a4668759f634b40a752c228884536da"
+    }
+  }, {
+    "source" : "ECONOMISTS",
+    "target" : "FINANCIAL LITERACY",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Economists study the relationship between financial literacy and investment outcomes.",
+      "keywords" : "research, causation, financial education",
+      "source_id" : "chunk-3b15607be817db4be84db76078c70ba8"
+    }
+  }, {
+    "source" : "COMMUNITY MEMBERS",
+    "target" : "THE NEIGHBORHOOD",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Community members are part of the neighborhood and advocate for local concerns.",
+      "keywords" : "local participation, advocacy",
+      "source_id" : "chunk-c7e6786820c41799e8c060c66e742a98"
+    }
+  }, {
+    "source" : "COMMUTERS",
+    "target" : "FUEL PRICE CHANGE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Commuters are directly affected by the fuel price change, prompting them to adjust travel behavior.",
+      "keywords" : "economic impact, behavioral response, daily commuting",
+      "source_id" : "chunk-9df9554956a3a1f5ea033f1cde9cb21b"
+    }
+  }, {
+    "source" : "CHANGING WEATHER",
+    "target" : "ALLERGY SYMPTOM SPIKE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Others attribute the allergy symptom spike to changing weather conditions rather than spring arrival.",
+      "keywords" : "blame, weather, alternative explanation",
+      "source_id" : "chunk-12649adf9347df6992fec31217d004ac"
+    }
+  }, {
+    "source" : "NOISE LEVELS",
+    "target" : "SLEEP DISTURBANCES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Both issues were raised simultaneously, leading to speculation about a potential link, though no official connection was confirmed.",
+      "keywords" : "potential correlation, unconfirmed link",
+      "source_id" : "chunk-c7e6786820c41799e8c060c66e742a98"
+    }
+  }, {
+    "source" : "ECONOMISTS",
+    "target" : "PUBLIC TRANSPORTATION USAGE SHIFT",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Economists are examining how public transportation usage shifts relate to fuel price changes.",
+      "keywords" : "usage patterns, economic modeling, causality",
+      "source_id" : "chunk-9df9554956a3a1f5ea033f1cde9cb21b"
+    }
+  }, {
+    "source" : "POLLEN LEVELS",
+    "target" : "ALLERGY SYMPTOM SPIKE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Some people blame elevated pollen levels as the cause of the reported spike in allergy symptoms.",
+      "keywords" : "blame, environmental factor, causation",
+      "source_id" : "chunk-12649adf9347df6992fec31217d004ac"
+    }
+  }, {
+    "source" : "TEACHERS",
+    "target" : "END-OF-DAY FATIGUE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Teachers attribute their feeling of being slightly off to the usual end-of-day fatigue rather than air quality.",
+      "keywords" : "dismissal, fatigue, self-reporting",
+      "source_id" : "chunk-77274dfe411da4cd26446dbe20e6fabf"
+    }
+  }, {
+    "source" : "KNOWLEDGE",
+    "target" : "INVESTMENT SUCCESS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The link between knowledge and achievement in investing is widely discussed in the field.",
+      "keywords" : "knowledge-achievement link, discussion",
+      "source_id" : "chunk-3b15607be817db4be84db76078c70ba8"
+    }
+  }, {
+    "source" : "POOR VENTILATION",
+    "target" : "STAGNANT AIR",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Poor ventilation, characterized by closed windows, directly results in stagnant and stuffy air in classrooms.",
+      "keywords" : "causation, air quality, closed windows",
+      "source_id" : "chunk-77274dfe411da4cd26446dbe20e6fabf"
+    }
+  }, {
+    "source" : "SPRING ARRIVAL",
+    "target" : "ALLERGY SYMPTOM SPIKE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The two events are suggested to be connected, occurring around the same time, with the overlap being hard to ignore.",
+      "keywords" : "temporal correlation, possible causation",
+      "source_id" : "chunk-12649adf9347df6992fec31217d004ac"
+    }
+  }, {
+    "source" : "LOCAL FORUMS",
+    "target" : "THE NEIGHBORHOOD",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Local forums serve as the primary discussion venue for the neighborhood's ongoing issues.",
+      "keywords" : "community platform, local communication",
+      "source_id" : "chunk-c7e6786820c41799e8c060c66e742a98"
+    }
+  }, {
+    "source" : "COMMUTERS",
+    "target" : "PUBLIC TRANSPORTATION",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Commuters shift their usage of public transportation in response to fuel price changes.",
+      "keywords" : "mode shift, transportation choice, accessibility",
+      "source_id" : "chunk-9df9554956a3a1f5ea033f1cde9cb21b"
+    }
+  }, {
+    "source" : "ECONOMISTS",
+    "target" : "FUEL PRICE CHANGE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Economists are studying the fuel price change and its broader economic relationships.",
+      "keywords" : "economic analysis, price trends, research interest",
+      "source_id" : "chunk-9df9554956a3a1f5ea033f1cde9cb21b"
+    }
+  }, {
+    "source" : "STUDENTS",
+    "target" : "SCHOOL DAY",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Students experience symptoms and discomfort that build throughout the school day due to closed windows.",
+      "keywords" : "temporal progression, exposure, daily impact",
+      "source_id" : "chunk-77274dfe411da4cd26446dbe20e6fabf"
+    }
+  }, {
+    "source" : "FINANCE SEMINARS",
+    "target" : "FINANCIAL LITERACY",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Finance seminars serve as a venue for developing and demonstrating financial literacy.",
+      "keywords" : "education, financial knowledge, gathering",
+      "source_id" : "chunk-3b15607be817db4be84db76078c70ba8"
+    }
+  }, {
+    "source" : "NOISE LEVELS",
+    "target" : "THE NEIGHBORHOOD",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Noise levels are a defining issue within the neighborhood's environment.",
+      "keywords" : "environmental issue, local concern",
+      "source_id" : "chunk-c7e6786820c41799e8c060c66e742a98"
+    }
+  }, {
+    "source" : "POOR VENTILATION",
+    "target" : "HEADACHES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Poor ventilation is speculated to influence student headaches, though no definitive causal link has been established.",
+      "keywords" : "potential cause, symptoms, uncertainty",
+      "source_id" : "chunk-77274dfe411da4cd26446dbe20e6fabf"
+    }
+  }, {
+    "source" : "SCHOOL DAY",
+    "target" : "STAGNANT AIR",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Windows remain closed throughout the school day, leading to progressively stagnant and stale classroom air.",
+      "keywords" : "duration, accumulation, daily cycle",
+      "source_id" : "chunk-77274dfe411da4cd26446dbe20e6fabf"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "THE NEIGHBORHOOD",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Residents live in the neighborhood and are directly affected by its noise and environment.",
+      "keywords" : "residence, local impact",
+      "source_id" : "chunk-c7e6786820c41799e8c060c66e742a98"
+    }
+  }, {
+    "source" : "STUDENTS",
+    "target" : "POOR VENTILATION",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Students speculate that poor ventilation could be influencing their symptoms, though no clear link is established.",
+      "keywords" : "speculation, environmental health, unconfirmed link",
+      "source_id" : "chunk-77274dfe411da4cd26446dbe20e6fabf"
+    }
+  }, {
+    "source" : "CYCLING",
+    "target" : "ENVIRONMENTAL IMPROVEMENTS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Residents commonly pointed to cycling as the reason for cleaner air and environmental improvements.",
+      "keywords" : "attribution, clean air, causality",
+      "source_id" : "chunk-8a4668759f634b40a752c228884536da"
+    }
+  }, {
+    "source" : "TEACHERS",
+    "target" : "SCHOOL DAY",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Teachers feel increasingly off as the school day progresses, attributing it to normal fatigue.",
+      "keywords" : "progressive discomfort, daily pattern",
+      "source_id" : "chunk-77274dfe411da4cd26446dbe20e6fabf"
+    }
+  }, {
+    "source" : "AIR POLLUTION",
+    "target" : "METROPOLITAN AREA",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Air pollution levels began to drop in the metropolitan area, coinciding with the cycling rise.",
+      "keywords" : "decline, location, environmental indicator",
+      "source_id" : "chunk-8a4668759f634b40a752c228884536da"
+    }
+  }, {
+    "source" : "BIKING BOOM",
+    "target" : "METROPOLITAN AREA",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The biking boom is a phenomenon that occurred in the metropolitan area over the last decade.",
+      "keywords" : "location, temporal scope, trend",
+      "source_id" : "chunk-8a4668759f634b40a752c228884536da"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "SLEEP DISTURBANCES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Residents report an increase in sleep disturbances during the same period.",
+      "keywords" : "health impact, reports",
+      "source_id" : "chunk-c7e6786820c41799e8c060c66e742a98"
+    }
+  }, {
+    "source" : "ECONOMISTS",
+    "target" : "INVESTMENT SUCCESS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Economists investigate the direction of the relationship between knowledge and investment achievement.",
+      "keywords" : "research, causation, outcomes",
+      "source_id" : "chunk-3b15607be817db4be84db76078c70ba8"
+    }
+  }, {
+    "source" : "BICYCLE SALES",
+    "target" : "METROPOLITAN AREA",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Bicycle sales surged specifically in the metropolitan area over the last decade.",
+      "keywords" : "surge, location, market trend",
+      "source_id" : "chunk-8a4668759f634b40a752c228884536da"
+    }
+  }, {
+    "source" : "COMMUTERS",
+    "target" : "SOCIAL MEDIA",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Committers actively share their experiences about fuel prices and transportation on social media platforms.",
+      "keywords" : "information sharing, public discourse, digital engagement",
+      "source_id" : "chunk-9df9554956a3a1f5ea033f1cde9cb21b"
+    }
+  }, {
+    "source" : "FUEL PRICE CHANGE",
+    "target" : "PUBLIC TRANSPORTATION",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The fuel price change is a key driver influencing public transportation demand and planning decisions.",
+      "keywords" : "demand driver, infrastructure planning, economic linkage",
+      "source_id" : "chunk-9df9554956a3a1f5ea033f1cde9cb21b"
+    }
+  }, {
+    "source" : "SPRING ARRIVAL",
+    "target" : "THE NEIGHBORHOOD",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "The arrival of spring brings fresh air and open windows, affecting conditions in the neighborhood.",
+      "keywords" : "seasonal impact, local environment",
+      "source_id" : "chunk-12649adf9347df6992fec31217d004ac"
+    }
+  }, {
+    "source" : "THE NEIGHBORHOOD",
+    "target" : "ALLERGY SYMPTOM SPIKE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The allergy symptom spike is reported within this neighborhood, where the cause remains uncertain.",
+      "keywords" : "location, uncertainty, local impact",
+      "source_id" : "chunk-12649adf9347df6992fec31217d004ac"
+    }
+  }, {
+    "source" : "COMMUNITY MEMBERS",
+    "target" : "LOCAL FORUMS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Community members use local forums as a platform to discuss neighborhood changes.",
+      "keywords" : "discussion, engagement",
+      "source_id" : "chunk-c7e6786820c41799e8c060c66e742a98"
+    }
+  }, {
+    "source" : "SUCCESSFUL INVESTORS",
+    "target" : "FINANCIAL LITERACY",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Successful investors tend to be more financially literate, suggesting a connection between skill and knowledge.",
+      "keywords" : "investor profile, financial education",
+      "source_id" : "chunk-3b15607be817db4be84db76078c70ba8"
+    }
+  }, {
+    "source" : "STUDENTS",
+    "target" : "HEADACHES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Students experience headaches by the afternoon, though they typically blame studying or noise instead of air quality.",
+      "keywords" : "symptoms, misattribution, discomfort",
+      "source_id" : "chunk-77274dfe411da4cd26446dbe20e6fabf"
+    }
+  }, {
+    "source" : "TEACHERS",
+    "target" : "STAGNANT AIR",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Teachers notice the stuffy air in classrooms but do not take action to improve ventilation.",
+      "keywords" : "observation, inaction, awareness",
+      "source_id" : "chunk-77274dfe411da4cd26446dbe20e6fabf"
+    }
+  }, {
+    "source" : "FINANCIAL LITERACY",
+    "target" : "INVESTMENT SUCCESS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Better financial literacy is associated with achieving investment success, as indicated by multiple reports.",
+      "keywords" : "correlation, financial education, achievement",
+      "source_id" : "chunk-3b15607be817db4be84db76078c70ba8"
+    }
+  }, {
+    "source" : "FUEL PRICE CHANGE",
+    "target" : "PUBLIC TRANSPORTATION USAGE SHIFT",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The recent change in fuel prices is correlated with a shift in public transportation usage patterns.",
+      "keywords" : "correlation, price sensitivity, behavioral shift",
+      "source_id" : "chunk-9df9554956a3a1f5ea033f1cde9cb21b"
+    }
+  }, {
+    "source" : "CITY PLANNERS",
+    "target" : "PUBLIC TRANSPORTATION",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "City planners are examining public transportation trends to optimize urban resources.",
+      "keywords" : "resource optimization, urban planning, trend analysis",
+      "source_id" : "chunk-9df9554956a3a1f5ea033f1cde9cb21b"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "NOISE LEVELS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Residents have drawn attention to rising noise levels in the neighborhood.",
+      "keywords" : "complaint, noise concern",
+      "source_id" : "chunk-c7e6786820c41799e8c060c66e742a98"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 36,
+    "edgeCount" : 44,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Reverse_Causation_Potential_93"
+  }
+}

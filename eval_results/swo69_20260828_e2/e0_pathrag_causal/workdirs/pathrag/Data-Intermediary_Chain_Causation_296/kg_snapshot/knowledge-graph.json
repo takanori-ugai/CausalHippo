@@ -1,0 +1,651 @@
+{
+  "nodes" : {
+    "OFFICIALS" : {
+      "entity_type" : "PERSON",
+      "description" : "Government officials who have invested heavily in improving public transportation infrastructure.",
+      "source_id" : "chunk-1be868e1658b5aef14eca977283ac020"
+    },
+    "PLAYGROUND VISITS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A recreational activity metric that spiked during school holidays, correlated with book loans.",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    },
+    "PUBLIC TRANSPORTATION INFRASTRUCTURE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The transportation system infrastructure that has received heavy investment for improvement.",
+      "source_id" : "chunk-1be868e1658b5aef14eca977283ac020"
+    },
+    "SCHOOLS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Educational institutions that promote athletics and sports participation to benefit students' academic outcomes.",
+      "source_id" : "chunk-cb673b2415f055cc8a98b0cfb2174fa1"
+    },
+    "ACADEMIC PERFORMANCE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The level of academic achievement, which is multifacetedly connected to sports participation.",
+      "source_id" : "chunk-cb673b2415f055cc8a98b0cfb2174fa1"
+    },
+    "KIDS" : {
+      "entity_type" : "PERSON",
+      "description" : "Children who gain more free time during holidays, leading to increased reading and outdoor play.",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    },
+    "NEIGHBORS" : {
+      "entity_type" : "PERSON",
+      "description" : "Community members who commented on needing to scrape their windshields more frequently due to cold weather.",
+      "source_id" : "chunk-597481351b30348f1a75b099469c1476"
+    },
+    "PLAYGROUNDS" : {
+      "entity_type" : "GEO",
+      "description" : "Locations visited by families and children during school holidays for outdoor recreation.",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    },
+    "FLOATS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Decorated structures or vehicles displayed as part of the holiday parade entertainment.",
+      "source_id" : "chunk-e2f6afb6f620f0cb6150fcbd5327a183"
+    },
+    "BAKERY PROMOTIONS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Local promotional campaigns offering deals on pastries and fresh bread in the business district.",
+      "source_id" : "chunk-46cd15c20a37d9757676fcb90d514238"
+    },
+    "GARDENERS" : {
+      "entity_type" : "PERSON",
+      "description" : "People who adjusted their routines and practices due to the presence of frost and icy coating on grass.",
+      "source_id" : "chunk-597481351b30348f1a75b099469c1476"
+    },
+    "FAMILIES" : {
+      "entity_type" : "PERSON",
+      "description" : "Households that visit playgrounds and borrow books, whose behavior was assumed to be linked.",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    },
+    "AUTUMN" : {
+      "entity_type" : "EVENT",
+      "description" : "The seasonal period during which cold weather, frost, and chilly mornings were observed in the community.",
+      "source_id" : "chunk-597481351b30348f1a75b099469c1476"
+    },
+    "EMERGENCY ROAD CLOSURE" : {
+      "entity_type" : "EVENT",
+      "description" : "A sudden road closure announced near the parade, initially causing confusion among attendees before its true cause was explained.",
+      "source_id" : "chunk-e2f6afb6f620f0cb6150fcbd5327a183"
+    },
+    "READING" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An activity that increased during school holidays due to kids having more free time.",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    },
+    "OUTDOOR PLAY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An activity that increased during school holidays due to kids having more free time.",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    },
+    "SPORTS PARTICIPATION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The activity of taking part in sports and athletics, observed to correlate with strong academic performance.",
+      "source_id" : "chunk-cb673b2415f055cc8a98b0cfb2174fa1"
+    },
+    "TRAFFIC CONGESTION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Patterns of traffic congestion that have altered over the past year.",
+      "source_id" : "chunk-1be868e1658b5aef14eca977283ac020"
+    },
+    "COMMUTER FEEDBACK" : {
+      "entity_type" : "EVENT",
+      "description" : "Mixed responses and feedback received from commuters regarding transportation changes.",
+      "source_id" : "chunk-1be868e1658b5aef14eca977283ac020"
+    },
+    "BUSINESS DISTRICT" : {
+      "entity_type" : "GEO",
+      "description" : "A commercial area where local bakeries and office workplaces are situated.",
+      "source_id" : "chunk-46cd15c20a37d9757676fcb90d514238"
+    },
+    "AUTHORITIES" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "The official body responsible for announcing the road closure and clarifying it was due to a water pipe burst, not the parade.",
+      "source_id" : "chunk-e2f6afb6f620f0cb6150fcbd5327a183"
+    },
+    "OFFICE WORKERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Employees in the business district who humorously attribute fire alarms to the smell of fresh bread.",
+      "source_id" : "chunk-46cd15c20a37d9757676fcb90d514238"
+    },
+    "MARCHING BANDS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Musical performance groups that participated in the annual holiday parade.",
+      "source_id" : "chunk-e2f6afb6f620f0cb6150fcbd5327a183"
+    },
+    "FROST" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An icy coating observed on lawns and windshields, associated with cold autumn weather conditions.",
+      "source_id" : "chunk-597481351b30348f1a75b099469c1476"
+    },
+    "ANNUAL HOLIDAY PARADE" : {
+      "entity_type" : "EVENT",
+      "description" : "A yearly community parade featuring floats and marching bands that drew residents to the streets.",
+      "source_id" : "chunk-e2f6afb6f620f0cb6150fcbd5327a183"
+    },
+    "STUDENTS" : {
+      "entity_type" : "PERSON",
+      "description" : "Learners who participate in sports and exhibit varying levels of academic performance.",
+      "source_id" : "chunk-cb673b2415f055cc8a98b0cfb2174fa1"
+    },
+    "RESIDENTS" : {
+      "entity_type" : "PERSON",
+      "description" : "Local inhabitants who noticed frost on their lawns and observed seasonal weather patterns during autumn.<SEP>People who lined the streets for the annual holiday parade and experienced confusion when the emergency road closure was announced.",
+      "source_id" : "chunk-e2f6afb6f620f0cb6150fcbd5327a183<SEP>chunk-597481351b30348f1a75b099469c1476"
+    },
+    "COLD WEATHER" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Chilly atmospheric conditions during autumn that corresponded with frost formation on grass.",
+      "source_id" : "chunk-597481351b30348f1a75b099469c1476"
+    },
+    "CHILDREN'S BOOK LOANS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A library activity metric that spiked during school holidays, correlated with playground visits.",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    },
+    "EDUCATORS" : {
+      "entity_type" : "PERSON",
+      "description" : "Individuals who observe and note the relationship between sports participation and academic performance among students.",
+      "source_id" : "chunk-cb673b2415f055cc8a98b0cfb2174fa1"
+    },
+    "WATER PIPE BURST" : {
+      "entity_type" : "EVENT",
+      "description" : "The actual cause of the emergency road closure, unrelated to the holiday parade.",
+      "source_id" : "chunk-e2f6afb6f620f0cb6150fcbd5327a183"
+    },
+    "URBAN PLANNERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Professionals currently examining the effects of new transportation policies.",
+      "source_id" : "chunk-1be868e1658b5aef14eca977283ac020"
+    },
+    "LIBRARIANS" : {
+      "entity_type" : "PERSON",
+      "description" : "Professionals who observed and reported the spike in children's book loans during school holidays.",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    },
+    "NEW POLICIES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Recent policies whose effects on transportation are being evaluated by urban planners.",
+      "source_id" : "chunk-1be868e1658b5aef14eca977283ac020"
+    },
+    "SCHOOL HOLIDAYS" : {
+      "entity_type" : "EVENT",
+      "description" : "A shared calendar event that independently prompted increases in both reading and outdoor play.",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    },
+    "FIRE DRILL ALARMS" : {
+      "entity_type" : "EVENT",
+      "description" : "Scheduled safety drill alarms activated in the business district.",
+      "source_id" : "chunk-46cd15c20a37d9757676fcb90d514238"
+    },
+    "SEASONAL CHANGES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The recurring pattern of weather transitions noted by the community as autumn deepened.",
+      "source_id" : "chunk-597481351b30348f1a75b099469c1476"
+    },
+    "FIRE SAFETY PROTOCOLS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Regulations and procedures governing scheduled fire drills and safety measures.",
+      "source_id" : "chunk-46cd15c20a37d9757676fcb90d514238"
+    }
+  },
+  "edges" : [ {
+    "source" : "KIDS",
+    "target" : "OUTDOOR PLAY",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Kids with more free time during holidays engage in increased outdoor play.",
+      "keywords" : "free time, physical activity",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    }
+  }, {
+    "source" : "AUTUMN",
+    "target" : "FROST",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Autumn is the seasonal period during which frost appeared on lawns and windshields.",
+      "keywords" : "seasonal timing, weather pattern",
+      "source_id" : "chunk-597481351b30348f1a75b099469c1476"
+    }
+  }, {
+    "source" : "FAMILIES",
+    "target" : "CHILDREN'S BOOK LOANS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Families borrow children's books, a behavior initially assumed correlated with playground visits.",
+      "keywords" : "borrowing, family activity",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    }
+  }, {
+    "source" : "FAMILIES",
+    "target" : "PLAYGROUNDS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Families visit playgrounds, a behavior initially assumed to be linked to book borrowing.",
+      "keywords" : "visitation, family activity",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    }
+  }, {
+    "source" : "SCHOOL HOLIDAYS",
+    "target" : "PLAYGROUND VISITS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "School holidays independently prompt an increase in playground visits through more free time.",
+      "keywords" : "causation, free time, holiday effect",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    }
+  }, {
+    "source" : "PLAYGROUND VISITS",
+    "target" : "PLAYGROUNDS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Playground visits are the activity that takes place at playground locations.",
+      "keywords" : "location, activity",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    }
+  }, {
+    "source" : "SCHOOL HOLIDAYS",
+    "target" : "KIDS",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "School holidays give kids more free time, which drives both reading and outdoor play.",
+      "keywords" : "free time, causation, children",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    }
+  }, {
+    "source" : "URBAN PLANNERS",
+    "target" : "COMMUTER FEEDBACK",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Urban planners consider commuter feedback as part of their policy evaluation process.",
+      "keywords" : "feedback analysis, planning input",
+      "source_id" : "chunk-1be868e1658b5aef14eca977283ac020"
+    }
+  }, {
+    "source" : "EDUCATORS",
+    "target" : "SPORTS PARTICIPATION",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Educators observe that high sports participation is common among students with strong academic performance.",
+      "keywords" : "observation, correlation, sports",
+      "source_id" : "chunk-cb673b2415f055cc8a98b0cfb2174fa1"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "FROST",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Residents noticed the presence of frost on their lawns as a notable seasonal occurrence.",
+      "keywords" : "observation, seasonal weather",
+      "source_id" : "chunk-597481351b30348f1a75b099469c1476"
+    }
+  }, {
+    "source" : "BAKERY PROMOTIONS",
+    "target" : "FIRE SAFETY PROTOCOLS",
+    "data" : {
+      "weight" : 3.0,
+      "description" : "No mechanism connects pastry deals to fire safety protocols; the two are entirely unrelated.",
+      "keywords" : "disconnection, independence",
+      "source_id" : "chunk-46cd15c20a37d9757676fcb90d514238"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "EMERGENCY ROAD CLOSURE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Residents were confused by the sudden road closure and initially blamed the parade.",
+      "keywords" : "confusion, misattribution",
+      "source_id" : "chunk-e2f6afb6f620f0cb6150fcbd5327a183"
+    }
+  }, {
+    "source" : "URBAN PLANNERS",
+    "target" : "NEW POLICIES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Urban planners are actively examining the effects of the new policies.",
+      "keywords" : "policy evaluation, urban planning",
+      "source_id" : "chunk-1be868e1658b5aef14eca977283ac020"
+    }
+  }, {
+    "source" : "SEASONAL CHANGES",
+    "target" : "AUTUMN",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Seasonal changes encompass the progression of autumn and its associated weather patterns.",
+      "keywords" : "pattern, seasonal progression",
+      "source_id" : "chunk-597481351b30348f1a75b099469c1476"
+    }
+  }, {
+    "source" : "STUDENTS",
+    "target" : "ACADEMIC PERFORMANCE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Students exhibit strong academic performance, which is linked to their involvement in sports.",
+      "keywords" : "achievement, academic results",
+      "source_id" : "chunk-cb673b2415f055cc8a98b0cfb2174fa1"
+    }
+  }, {
+    "source" : "AUTHORITIES",
+    "target" : "EMERGENCY ROAD CLOSURE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Authorities announced the road closure and later explained its true cause.",
+      "keywords" : "announcement, clarification",
+      "source_id" : "chunk-e2f6afb6f620f0cb6150fcbd5327a183"
+    }
+  }, {
+    "source" : "EMERGENCY ROAD CLOSURE",
+    "target" : "WATER PIPE BURST",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "The water pipe burst was the actual cause of the emergency road closure, unrelated to the parade.",
+      "keywords" : "causation, infrastructure failure",
+      "source_id" : "chunk-e2f6afb6f620f0cb6150fcbd5327a183"
+    }
+  }, {
+    "source" : "SPORTS PARTICIPATION",
+    "target" : "ACADEMIC PERFORMANCE",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "The connection between sports participation and academic performance is described as multifaceted.",
+      "keywords" : "multifaceted connection, correlation",
+      "source_id" : "chunk-cb673b2415f055cc8a98b0cfb2174fa1"
+    }
+  }, {
+    "source" : "EDUCATORS",
+    "target" : "ACADEMIC PERFORMANCE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Educators note the multifaceted connection between sports participation and academic performance.",
+      "keywords" : "observation, academic achievement",
+      "source_id" : "chunk-cb673b2415f055cc8a98b0cfb2174fa1"
+    }
+  }, {
+    "source" : "OFFICIALS",
+    "target" : "NEW POLICIES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Officials are associated with the new policies whose effects are under evaluation.",
+      "keywords" : "policy implementation, governance",
+      "source_id" : "chunk-1be868e1658b5aef14eca977283ac020"
+    }
+  }, {
+    "source" : "OFFICE WORKERS",
+    "target" : "FIRE DRILL ALARMS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Office workers humorously misattribute the cause of fire drill alarms to bread smell.",
+      "keywords" : "misattribution, humor",
+      "source_id" : "chunk-46cd15c20a37d9757676fcb90d514238"
+    }
+  }, {
+    "source" : "STUDENTS",
+    "target" : "SPORTS PARTICIPATION",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Students with better academic performance are more likely to take part in sports.",
+      "keywords" : "participation, likelihood, correlation",
+      "source_id" : "chunk-cb673b2415f055cc8a98b0cfb2174fa1"
+    }
+  }, {
+    "source" : "FIRE SAFETY PROTOCOLS",
+    "target" : "FIRE DRILL ALARMS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Fire safety protocols govern the scheduling and execution of fire drill alarms.",
+      "keywords" : "regulation, safety compliance",
+      "source_id" : "chunk-46cd15c20a37d9757676fcb90d514238"
+    }
+  }, {
+    "source" : "OFFICE WORKERS",
+    "target" : "BUSINESS DISTRICT",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Office workers are based in the business district where both bakeries and drills occur.",
+      "keywords" : "workforce, location",
+      "source_id" : "chunk-46cd15c20a37d9757676fcb90d514238"
+    }
+  }, {
+    "source" : "TRAFFIC CONGESTION",
+    "target" : "PUBLIC TRANSPORTATION INFRASTRUCTURE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Patterns of traffic congestion have altered over the past year, related to infrastructure changes.",
+      "keywords" : "congestion patterns, infrastructure impact",
+      "source_id" : "chunk-1be868e1658b5aef14eca977283ac020"
+    }
+  }, {
+    "source" : "CHILDREN'S BOOK LOANS",
+    "target" : "READING",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Children's book loans are a direct measure of reading activity during the holiday period.",
+      "keywords" : "measurement, reading engagement",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    }
+  }, {
+    "source" : "GARDENERS",
+    "target" : "RESIDENTS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Gardeners are part of the resident community affected by seasonal frost and cold weather.",
+      "keywords" : "community, weather impact",
+      "source_id" : "chunk-597481351b30348f1a75b099469c1476"
+    }
+  }, {
+    "source" : "BAKERY PROMOTIONS",
+    "target" : "FIRE DRILL ALARMS",
+    "data" : {
+      "weight" : 4.0,
+      "description" : "The timing of promotions and alarms appears coordinated but is purely coincidental with no connecting mechanism.",
+      "keywords" : "coincidence, timing, independence",
+      "source_id" : "chunk-46cd15c20a37d9757676fcb90d514238"
+    }
+  }, {
+    "source" : "LIBRARIANS",
+    "target" : "CHILDREN'S BOOK LOANS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Librarians noticed and tracked the spike in children's book loans during school holidays.",
+      "keywords" : "observation, tracking, correlation",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    }
+  }, {
+    "source" : "FIRE DRILL ALARMS",
+    "target" : "BUSINESS DISTRICT",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Fire drill alarms are scheduled and activated in the business district.",
+      "keywords" : "location, safety events",
+      "source_id" : "chunk-46cd15c20a37d9757676fcb90d514238"
+    }
+  }, {
+    "source" : "ANNUAL HOLIDAY PARADE",
+    "target" : "FLOATS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Floats were a key feature of the parade that residents enjoyed.",
+      "keywords" : "parade feature, entertainment",
+      "source_id" : "chunk-e2f6afb6f620f0cb6150fcbd5327a183"
+    }
+  }, {
+    "source" : "ANNUAL HOLIDAY PARADE",
+    "target" : "MARCHING BANDS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Marching bands performed as part of the parade entertainment.",
+      "keywords" : "parade feature, performance",
+      "source_id" : "chunk-e2f6afb6f620f0cb6150fcbd5327a183"
+    }
+  }, {
+    "source" : "COLD WEATHER",
+    "target" : "FROST",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Cold weather directly corresponded with the formation of frost on lawns and surfaces.",
+      "keywords" : "causation, weather relationship",
+      "source_id" : "chunk-597481351b30348f1a75b099469c1476"
+    }
+  }, {
+    "source" : "OFFICIALS",
+    "target" : "PUBLIC TRANSPORTATION INFRASTRUCTURE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Officials have invested heavily in improving the public transportation infrastructure.",
+      "keywords" : "investment, infrastructure improvement",
+      "source_id" : "chunk-1be868e1658b5aef14eca977283ac020"
+    }
+  }, {
+    "source" : "SCHOOLS",
+    "target" : "ACADEMIC PERFORMANCE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Schools promote athletics specifically for the perceived benefit to students' academic performance.",
+      "keywords" : "academic goals, promotion",
+      "source_id" : "chunk-cb673b2415f055cc8a98b0cfb2174fa1"
+    }
+  }, {
+    "source" : "GARDENERS",
+    "target" : "FROST",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Gardeners adjusted their routines out of wariness of the icy coating on grass.",
+      "keywords" : "routine adjustment, weather impact",
+      "source_id" : "chunk-597481351b30348f1a75b099469c1476"
+    }
+  }, {
+    "source" : "COMMUTER FEEDBACK",
+    "target" : "PUBLIC TRANSPORTATION INFRASTRUCTURE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Commuters have provided mixed feedback regarding the state of the transportation infrastructure.",
+      "keywords" : "public opinion, infrastructure assessment",
+      "source_id" : "chunk-1be868e1658b5aef14eca977283ac020"
+    }
+  }, {
+    "source" : "BAKERY PROMOTIONS",
+    "target" : "BUSINESS DISTRICT",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Bakery promotions take place within the business district.",
+      "keywords" : "location, commercial activity",
+      "source_id" : "chunk-46cd15c20a37d9757676fcb90d514238"
+    }
+  }, {
+    "source" : "NEIGHBORS",
+    "target" : "COLD WEATHER",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Neighbors reported increased frequency of windshield scraping due to cold weather conditions.",
+      "keywords" : "practical impact, community observation",
+      "source_id" : "chunk-597481351b30348f1a75b099469c1476"
+    }
+  }, {
+    "source" : "KIDS",
+    "target" : "READING",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Kids with more free time during holidays engage in increased reading activity.",
+      "keywords" : "free time, reading behavior",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    }
+  }, {
+    "source" : "READING",
+    "target" : "OUTDOOR PLAY",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Reading and outdoor play are independently increased activities, not causally linked to each other.",
+      "keywords" : "independent activities, spurious correlation",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "ANNUAL HOLIDAY PARADE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Residents lined the streets to attend and enjoy the annual holiday parade.",
+      "keywords" : "attendance, community event",
+      "source_id" : "chunk-e2f6afb6f620f0cb6150fcbd5327a183"
+    }
+  }, {
+    "source" : "ANNUAL HOLIDAY PARADE",
+    "target" : "EMERGENCY ROAD CLOSURE",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Some residents mistakenly believed the parade caused the road closure, but it was unrelated.",
+      "keywords" : "misattribution, coincidence",
+      "source_id" : "chunk-e2f6afb6f620f0cb6150fcbd5327a183"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "COLD WEATHER",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Residents observed that cold weather often corresponded with frost on their lawns.",
+      "keywords" : "weather correlation, community observation",
+      "source_id" : "chunk-597481351b30348f1a75b099469c1476"
+    }
+  }, {
+    "source" : "AUTUMN",
+    "target" : "COLD WEATHER",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "As autumn deepened, cold weather became a prominent and recurring condition.",
+      "keywords" : "seasonal timing, weather onset",
+      "source_id" : "chunk-597481351b30348f1a75b099469c1476"
+    }
+  }, {
+    "source" : "OFFICE WORKERS",
+    "target" : "BAKERY PROMOTIONS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Office workers joke that bakery promotions and fresh bread smell cause the fire alarms.",
+      "keywords" : "humor, coincidence",
+      "source_id" : "chunk-46cd15c20a37d9757676fcb90d514238"
+    }
+  }, {
+    "source" : "LIBRARIANS",
+    "target" : "PLAYGROUND VISITS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Librarians noticed the concurrent spike in playground visits alongside book loan increases.",
+      "keywords" : "observation, correlation",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    }
+  }, {
+    "source" : "RESIDENTS",
+    "target" : "NEIGHBORS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Residents and neighbors are members of the same community sharing observations about weather.",
+      "keywords" : "community, shared experience",
+      "source_id" : "chunk-597481351b30348f1a75b099469c1476"
+    }
+  }, {
+    "source" : "SCHOOL HOLIDAYS",
+    "target" : "CHILDREN'S BOOK LOANS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "School holidays independently prompt an increase in children's book loans through more free time.",
+      "keywords" : "causation, free time, holiday effect",
+      "source_id" : "chunk-23becc963c6153c23fa194dcec0296a2"
+    }
+  }, {
+    "source" : "SCHOOLS",
+    "target" : "SPORTS PARTICIPATION",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Schools promote athletics and sports participation to benefit their students.",
+      "keywords" : "promotion, athletics, institutional role",
+      "source_id" : "chunk-cb673b2415f055cc8a98b0cfb2174fa1"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 38,
+    "edgeCount" : 50,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Intermediary_Chain_Causation_296"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "nodes" : [ {
+    "id" : "Chinese Furniture",
+    "entity_id" : "Chinese Furniture",
+    "entity_type" : "Concept",
+    "description" : "Furniture made from Chinese woods",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a"
+  }, {
+    "id" : "Hongmu",
+    "entity_id" : "Hongmu",
+    "entity_type" : "Concept",
+    "description" : "Rosewood furniture",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a"
+  }, {
+    "id" : "Rosewood",
+    "entity_id" : "Rosewood",
+    "entity_type" : "Location",
+    "description" : "A type of Chinese wood",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a"
+  } ],
+  "edges" : [ {
+    "source" : "Chinese Furniture",
+    "target" : "Rosewood",
+    "weight" : "1.0",
+    "description" : "Characteristics of rosewood furniture",
+    "keywords" : "dimensionally stable, hardwearing",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a",
+    "src_id" : "Chinese Furniture",
+    "tgt_id" : "Rosewood"
+  }, {
+    "source" : "Rosewood",
+    "target" : "Hongmu",
+    "weight" : "1.0",
+    "description" : "Relationship between rosewood and hongmu",
+    "keywords" : "typically referred to as",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a",
+    "src_id" : "Rosewood",
+    "tgt_id" : "Hongmu"
+  }, {
+    "source" : "Rosewood",
+    "target" : "Threatened/Endangered Species",
+    "weight" : "1.0",
+    "description" : "Conservation status of rosewood",
+    "keywords" : "overlogging",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a",
+    "src_id" : "Rosewood",
+    "tgt_id" : "Threatened/Endangered Species"
+  } ],
+  "metadata" : {
+    "nodeCount" : 3,
+    "edgeCount" : 3
+  }
+}

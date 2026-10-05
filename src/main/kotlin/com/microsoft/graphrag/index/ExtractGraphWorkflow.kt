@@ -75,9 +75,9 @@ class ExtractGraphWorkflow(
 
     private fun chat(messages: List<ChatMessage>): String =
         runCatching { chatModel.chat(messages).aiMessage().text() }
-            .getOrElse {
-                logger.warn { "Graph extraction chat failed: ${it.message}" }
-                ""
+            .getOrElse { error ->
+                logger.error(error) { "Graph extraction chat failed; aborting this sample" }
+                throw IllegalStateException("Graph extraction chat failed", error)
             }
 
     @Suppress("ReturnCount")

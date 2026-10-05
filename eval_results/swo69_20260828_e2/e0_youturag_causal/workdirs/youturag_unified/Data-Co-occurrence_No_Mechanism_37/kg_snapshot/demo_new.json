@@ -1,0 +1,3641 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "university open days",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mandatory software updates",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mandatory software updates",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "campus computers",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "University IT",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "update schedule",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "University IT",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mandatory software updates",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "NGxE_qdN"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "university open days",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "NGxE_qdN"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "speculation",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the pattern",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "university open days",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the pattern",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mandatory software updates",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the overlap",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "university open days",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the overlap",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mandatory software updates",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "speculation",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the overlap",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "campus computers",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "university",
+      "chunk id" : "NGxE_qdN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "individuals",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "broken sleep",
+      "chunk id" : "R8wtu0uL"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "broken sleep",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heightened irritability",
+      "chunk id" : "R8wtu0uL"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "friends",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "short tempers",
+      "chunk id" : "R8wtu0uL"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "friends",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "impatience",
+      "chunk id" : "R8wtu0uL"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "impatience",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "work",
+      "chunk id" : "R8wtu0uL"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "workload",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heightened irritability",
+      "chunk id" : "R8wtu0uL"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "traffic",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heightened irritability",
+      "chunk id" : "R8wtu0uL"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the connection",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "broken sleep",
+      "chunk id" : "R8wtu0uL"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the connection",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heightened irritability",
+      "chunk id" : "R8wtu0uL"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mornings",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "broken sleep",
+      "chunk id" : "R8wtu0uL"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "short tempers",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heightened irritability",
+      "chunk id" : "R8wtu0uL"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "impatience",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heightened irritability",
+      "chunk id" : "R8wtu0uL"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flip-flops",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shoe stores",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "swimming pools",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pool staff",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the trend",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shop owners",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the trend",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flip-flops sales",
+      "chunk id" : "wr7eMGVh"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "swimming pool visits",
+      "chunk id" : "wr7eMGVh"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the trend",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "each year",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the relationship",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flip-flops sales",
+      "chunk id" : "wr7eMGVh"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the relationship",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "swimming pool visits",
+      "chunk id" : "wr7eMGVh"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pool staff",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "swimming pools",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shop owners",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shoe stores",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban dog park construction",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "craft ice cream shop sales",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dog owners",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ice cream boom",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban demographics",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban dog park construction",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban demographics",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "craft ice cream shop sales",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community amenities",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban dog park construction",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community amenities",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "craft ice cream shop sales",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "social drivers",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban dog park construction",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "social drivers",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "craft ice cream shop sales",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "research",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban dog park construction",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "research",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "craft ice cream shop sales",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dog owners",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban dog park construction",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban dog park construction",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community amenities",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "craft ice cream shop sales",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community amenities",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "screen time",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "eye strain",
+      "chunk id" : "WYEpcIQM"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Employees",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "tech industries",
+      "chunk id" : "WYEpcIQM"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Employees",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "screen time",
+      "chunk id" : "WYEpcIQM"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Healthcare providers",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "screen time",
+      "chunk id" : "WYEpcIQM"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Healthcare providers",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "eye strain",
+      "chunk id" : "WYEpcIQM"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wellness seminars",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "screen time",
+      "chunk id" : "WYEpcIQM"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wellness seminars",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "eye strain",
+      "chunk id" : "WYEpcIQM"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "screen time",
+      "chunk id" : "WYEpcIQM"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "eye strain",
+      "chunk id" : "WYEpcIQM"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "plant-based meal sales",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "art supply purchases",
+      "chunk id" : "PDca_t95"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "young professionals",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "plant-based meal sales",
+      "chunk id" : "PDca_t95"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "young professionals",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "art supply purchases",
+      "chunk id" : "PDca_t95"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lifestyle blogs",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "creative health-conscious movement",
+      "chunk id" : "PDca_t95"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stores catering to both markets",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "plant-based meal sales",
+      "chunk id" : "PDca_t95"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stores catering to both markets",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "art supply purchases",
+      "chunk id" : "PDca_t95"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "marketing pitches",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "plant-based meal sales",
+      "chunk id" : "PDca_t95"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "marketing pitches",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "art supply purchases",
+      "chunk id" : "PDca_t95"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "creative health-conscious movement",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "plant-based meal sales",
+      "chunk id" : "PDca_t95"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "creative health-conscious movement",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "art supply purchases",
+      "chunk id" : "PDca_t95"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "foot traffic",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stores catering to both markets",
+      "chunk id" : "PDca_t95"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Employees",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Healthcare providers",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pool staff",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "each year",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "eye strain",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flip-flops",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "screen time",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shoe stores",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shop owners",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "swimming pools",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "tech industries",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the trend",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wellness seminars",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "screen time",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "screen time"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "screen time",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "screen time"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "screen time"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "eye strain",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "eye strain"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "eye strain",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "eye strain"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "eye strain"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the trend",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the trend"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the trend",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the trend"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the trend"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "people"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "people"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "people"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Healthcare providers",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Healthcare providers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Healthcare providers",
+      "chunk id" : "WYEpcIQM"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Healthcare providers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Healthcare providers"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 14 members",
+      "community_id" : "community_1",
+      "node_count" : "14",
+      "edge_count" : "16",
+      "members" : [ "Employees", "Healthcare providers", "Pool staff", "each year", "eye strain", "flip-flops", "people", "screen time", "shoe stores", "shop owners", "swimming pools", "tech industries", "the trend", "wellness seminars" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "broken sleep",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "broken sleep", "friends", "heightened irritability", "impatience", "individuals", "mornings", "short tempers", "the connection", "traffic", "work", "workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "friends",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "broken sleep", "friends", "heightened irritability", "impatience", "individuals", "mornings", "short tempers", "the connection", "traffic", "work", "workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heightened irritability",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "broken sleep", "friends", "heightened irritability", "impatience", "individuals", "mornings", "short tempers", "the connection", "traffic", "work", "workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "impatience",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "broken sleep", "friends", "heightened irritability", "impatience", "individuals", "mornings", "short tempers", "the connection", "traffic", "work", "workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "individuals",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "broken sleep", "friends", "heightened irritability", "impatience", "individuals", "mornings", "short tempers", "the connection", "traffic", "work", "workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mornings",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "broken sleep", "friends", "heightened irritability", "impatience", "individuals", "mornings", "short tempers", "the connection", "traffic", "work", "workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "short tempers",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "broken sleep", "friends", "heightened irritability", "impatience", "individuals", "mornings", "short tempers", "the connection", "traffic", "work", "workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the connection",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "broken sleep", "friends", "heightened irritability", "impatience", "individuals", "mornings", "short tempers", "the connection", "traffic", "work", "workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "traffic",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "broken sleep", "friends", "heightened irritability", "impatience", "individuals", "mornings", "short tempers", "the connection", "traffic", "work", "workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "work",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "broken sleep", "friends", "heightened irritability", "impatience", "individuals", "mornings", "short tempers", "the connection", "traffic", "work", "workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "workload",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "broken sleep", "friends", "heightened irritability", "impatience", "individuals", "mornings", "short tempers", "the connection", "traffic", "work", "workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heightened irritability",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "heightened irritability"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heightened irritability",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "heightened irritability"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "heightened irritability"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "broken sleep", "friends", "heightened irritability", "impatience", "individuals", "mornings", "short tempers", "the connection", "traffic", "work", "workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "broken sleep",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "broken sleep"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "broken sleep",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "broken sleep"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "broken sleep"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "broken sleep", "friends", "heightened irritability", "impatience", "individuals", "mornings", "short tempers", "the connection", "traffic", "work", "workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "impatience",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "impatience"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "impatience",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "impatience"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "impatience"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "broken sleep", "friends", "heightened irritability", "impatience", "individuals", "mornings", "short tempers", "the connection", "traffic", "work", "workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the connection",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the connection"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the connection",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the connection"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the connection"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "broken sleep", "friends", "heightened irritability", "impatience", "individuals", "mornings", "short tempers", "the connection", "traffic", "work", "workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "short tempers",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "short tempers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "short tempers",
+      "chunk id" : "R8wtu0uL"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "short tempers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "short tempers"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "broken sleep", "friends", "heightened irritability", "impatience", "individuals", "mornings", "short tempers", "the connection", "traffic", "work", "workload" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "University IT",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 10 members",
+      "community_id" : "community_3",
+      "node_count" : "10",
+      "edge_count" : "12",
+      "members" : [ "University IT", "campus computers", "mandatory software updates", "speculation", "students", "the overlap", "the pattern", "university", "university open days", "update schedule" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "campus computers",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 10 members",
+      "community_id" : "community_3",
+      "node_count" : "10",
+      "edge_count" : "12",
+      "members" : [ "University IT", "campus computers", "mandatory software updates", "speculation", "students", "the overlap", "the pattern", "university", "university open days", "update schedule" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mandatory software updates",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 10 members",
+      "community_id" : "community_3",
+      "node_count" : "10",
+      "edge_count" : "12",
+      "members" : [ "University IT", "campus computers", "mandatory software updates", "speculation", "students", "the overlap", "the pattern", "university", "university open days", "update schedule" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "speculation",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 10 members",
+      "community_id" : "community_3",
+      "node_count" : "10",
+      "edge_count" : "12",
+      "members" : [ "University IT", "campus computers", "mandatory software updates", "speculation", "students", "the overlap", "the pattern", "university", "university open days", "update schedule" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "NGxE_qdN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 10 members",
+      "community_id" : "community_3",
+      "node_count" : "10",
+      "edge_count" : "12",
+      "members" : [ "University IT", "campus computers", "mandatory software updates", "speculation", "students", "the overlap", "the pattern", "university", "university open days", "update schedule" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the overlap",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 10 members",
+      "community_id" : "community_3",
+      "node_count" : "10",
+      "edge_count" : "12",
+      "members" : [ "University IT", "campus computers", "mandatory software updates", "speculation", "students", "the overlap", "the pattern", "university", "university open days", "update schedule" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the pattern",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 10 members",
+      "community_id" : "community_3",
+      "node_count" : "10",
+      "edge_count" : "12",
+      "members" : [ "University IT", "campus computers", "mandatory software updates", "speculation", "students", "the overlap", "the pattern", "university", "university open days", "update schedule" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "university",
+      "chunk id" : "NGxE_qdN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 10 members",
+      "community_id" : "community_3",
+      "node_count" : "10",
+      "edge_count" : "12",
+      "members" : [ "University IT", "campus computers", "mandatory software updates", "speculation", "students", "the overlap", "the pattern", "university", "university open days", "update schedule" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "university open days",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 10 members",
+      "community_id" : "community_3",
+      "node_count" : "10",
+      "edge_count" : "12",
+      "members" : [ "University IT", "campus computers", "mandatory software updates", "speculation", "students", "the overlap", "the pattern", "university", "university open days", "update schedule" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "update schedule",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 10 members",
+      "community_id" : "community_3",
+      "node_count" : "10",
+      "edge_count" : "12",
+      "members" : [ "University IT", "campus computers", "mandatory software updates", "speculation", "students", "the overlap", "the pattern", "university", "university open days", "update schedule" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mandatory software updates",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "mandatory software updates"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mandatory software updates",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "mandatory software updates"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "mandatory software updates"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 10 members",
+      "community_id" : "community_3",
+      "node_count" : "10",
+      "edge_count" : "12",
+      "members" : [ "University IT", "campus computers", "mandatory software updates", "speculation", "students", "the overlap", "the pattern", "university", "university open days", "update schedule" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "university open days",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "university open days"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "university open days",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "university open days"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "university open days"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 10 members",
+      "community_id" : "community_3",
+      "node_count" : "10",
+      "edge_count" : "12",
+      "members" : [ "University IT", "campus computers", "mandatory software updates", "speculation", "students", "the overlap", "the pattern", "university", "university open days", "update schedule" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the overlap",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the overlap"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the overlap",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the overlap"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the overlap"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 10 members",
+      "community_id" : "community_3",
+      "node_count" : "10",
+      "edge_count" : "12",
+      "members" : [ "University IT", "campus computers", "mandatory software updates", "speculation", "students", "the overlap", "the pattern", "university", "university open days", "update schedule" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "campus computers",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "campus computers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "campus computers",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "campus computers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "campus computers"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 10 members",
+      "community_id" : "community_3",
+      "node_count" : "10",
+      "edge_count" : "12",
+      "members" : [ "University IT", "campus computers", "mandatory software updates", "speculation", "students", "the overlap", "the pattern", "university", "university open days", "update schedule" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "speculation",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "speculation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "speculation",
+      "chunk id" : "NGxE_qdN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "speculation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "speculation"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 10 members",
+      "community_id" : "community_3",
+      "node_count" : "10",
+      "edge_count" : "12",
+      "members" : [ "University IT", "campus computers", "mandatory software updates", "speculation", "students", "the overlap", "the pattern", "university", "university open days", "update schedule" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "art supply purchases",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 8 members",
+      "community_id" : "community_4",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "art supply purchases", "creative health-conscious movement", "foot traffic", "lifestyle blogs", "marketing pitches", "plant-based meal sales", "stores catering to both markets", "young professionals" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "creative health-conscious movement",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 8 members",
+      "community_id" : "community_4",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "art supply purchases", "creative health-conscious movement", "foot traffic", "lifestyle blogs", "marketing pitches", "plant-based meal sales", "stores catering to both markets", "young professionals" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "foot traffic",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 8 members",
+      "community_id" : "community_4",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "art supply purchases", "creative health-conscious movement", "foot traffic", "lifestyle blogs", "marketing pitches", "plant-based meal sales", "stores catering to both markets", "young professionals" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lifestyle blogs",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 8 members",
+      "community_id" : "community_4",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "art supply purchases", "creative health-conscious movement", "foot traffic", "lifestyle blogs", "marketing pitches", "plant-based meal sales", "stores catering to both markets", "young professionals" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "marketing pitches",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 8 members",
+      "community_id" : "community_4",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "art supply purchases", "creative health-conscious movement", "foot traffic", "lifestyle blogs", "marketing pitches", "plant-based meal sales", "stores catering to both markets", "young professionals" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "plant-based meal sales",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 8 members",
+      "community_id" : "community_4",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "art supply purchases", "creative health-conscious movement", "foot traffic", "lifestyle blogs", "marketing pitches", "plant-based meal sales", "stores catering to both markets", "young professionals" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stores catering to both markets",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 8 members",
+      "community_id" : "community_4",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "art supply purchases", "creative health-conscious movement", "foot traffic", "lifestyle blogs", "marketing pitches", "plant-based meal sales", "stores catering to both markets", "young professionals" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "young professionals",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 8 members",
+      "community_id" : "community_4",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "art supply purchases", "creative health-conscious movement", "foot traffic", "lifestyle blogs", "marketing pitches", "plant-based meal sales", "stores catering to both markets", "young professionals" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "art supply purchases",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "art supply purchases"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "art supply purchases",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "art supply purchases"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "art supply purchases"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 8 members",
+      "community_id" : "community_4",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "art supply purchases", "creative health-conscious movement", "foot traffic", "lifestyle blogs", "marketing pitches", "plant-based meal sales", "stores catering to both markets", "young professionals" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "plant-based meal sales",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "plant-based meal sales"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "plant-based meal sales",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "plant-based meal sales"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "plant-based meal sales"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 8 members",
+      "community_id" : "community_4",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "art supply purchases", "creative health-conscious movement", "foot traffic", "lifestyle blogs", "marketing pitches", "plant-based meal sales", "stores catering to both markets", "young professionals" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "creative health-conscious movement",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "creative health-conscious movement"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "creative health-conscious movement",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "creative health-conscious movement"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "creative health-conscious movement"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 8 members",
+      "community_id" : "community_4",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "art supply purchases", "creative health-conscious movement", "foot traffic", "lifestyle blogs", "marketing pitches", "plant-based meal sales", "stores catering to both markets", "young professionals" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stores catering to both markets",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "stores catering to both markets"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stores catering to both markets",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "stores catering to both markets"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "stores catering to both markets"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 8 members",
+      "community_id" : "community_4",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "art supply purchases", "creative health-conscious movement", "foot traffic", "lifestyle blogs", "marketing pitches", "plant-based meal sales", "stores catering to both markets", "young professionals" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "young professionals",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "young professionals"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "young professionals",
+      "chunk id" : "PDca_t95"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "young professionals"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "young professionals"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 8 members",
+      "community_id" : "community_4",
+      "node_count" : "8",
+      "edge_count" : "11",
+      "members" : [ "art supply purchases", "creative health-conscious movement", "foot traffic", "lifestyle blogs", "marketing pitches", "plant-based meal sales", "stores catering to both markets", "young professionals" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community amenities",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "13",
+      "members" : [ "community amenities", "craft ice cream shop sales", "dog owners", "ice cream boom", "research", "social drivers", "urban demographics", "urban dog park construction" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "craft ice cream shop sales",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "13",
+      "members" : [ "community amenities", "craft ice cream shop sales", "dog owners", "ice cream boom", "research", "social drivers", "urban demographics", "urban dog park construction" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dog owners",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "13",
+      "members" : [ "community amenities", "craft ice cream shop sales", "dog owners", "ice cream boom", "research", "social drivers", "urban demographics", "urban dog park construction" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ice cream boom",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "13",
+      "members" : [ "community amenities", "craft ice cream shop sales", "dog owners", "ice cream boom", "research", "social drivers", "urban demographics", "urban dog park construction" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "research",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "13",
+      "members" : [ "community amenities", "craft ice cream shop sales", "dog owners", "ice cream boom", "research", "social drivers", "urban demographics", "urban dog park construction" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "social drivers",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "13",
+      "members" : [ "community amenities", "craft ice cream shop sales", "dog owners", "ice cream boom", "research", "social drivers", "urban demographics", "urban dog park construction" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban demographics",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "13",
+      "members" : [ "community amenities", "craft ice cream shop sales", "dog owners", "ice cream boom", "research", "social drivers", "urban demographics", "urban dog park construction" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban dog park construction",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "13",
+      "members" : [ "community amenities", "craft ice cream shop sales", "dog owners", "ice cream boom", "research", "social drivers", "urban demographics", "urban dog park construction" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban dog park construction",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "urban dog park construction"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban dog park construction",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "urban dog park construction"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "urban dog park construction"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "13",
+      "members" : [ "community amenities", "craft ice cream shop sales", "dog owners", "ice cream boom", "research", "social drivers", "urban demographics", "urban dog park construction" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "craft ice cream shop sales",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "craft ice cream shop sales"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "craft ice cream shop sales",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "craft ice cream shop sales"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "craft ice cream shop sales"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "13",
+      "members" : [ "community amenities", "craft ice cream shop sales", "dog owners", "ice cream boom", "research", "social drivers", "urban demographics", "urban dog park construction" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community amenities",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "community amenities"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community amenities",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "community amenities"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "community amenities"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "13",
+      "members" : [ "community amenities", "craft ice cream shop sales", "dog owners", "ice cream boom", "research", "social drivers", "urban demographics", "urban dog park construction" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban demographics",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "urban demographics"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban demographics",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "urban demographics"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "urban demographics"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "13",
+      "members" : [ "community amenities", "craft ice cream shop sales", "dog owners", "ice cream boom", "research", "social drivers", "urban demographics", "urban dog park construction" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dog owners",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "dog owners"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "dog owners",
+      "chunk id" : "UVRlVm2G",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "dog owners"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "dog owners"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 8 members",
+      "community_id" : "community_5",
+      "node_count" : "8",
+      "edge_count" : "13",
+      "members" : [ "community amenities", "craft ice cream shop sales", "dog owners", "ice cream boom", "research", "social drivers", "urban demographics", "urban dog park construction" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flip-flops sales",
+      "chunk id" : "wr7eMGVh"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 3 members",
+      "community_id" : "community_6",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "flip-flops sales", "swimming pool visits", "the relationship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "swimming pool visits",
+      "chunk id" : "wr7eMGVh"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 3 members",
+      "community_id" : "community_6",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "flip-flops sales", "swimming pool visits", "the relationship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the relationship",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 3 members",
+      "community_id" : "community_6",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "flip-flops sales", "swimming pool visits", "the relationship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "swimming pool visits",
+      "chunk id" : "wr7eMGVh"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "swimming pool visits"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "swimming pool visits",
+      "chunk id" : "wr7eMGVh"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "swimming pool visits"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "swimming pool visits"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 3 members",
+      "community_id" : "community_6",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "flip-flops sales", "swimming pool visits", "the relationship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the relationship",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the relationship"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the relationship",
+      "chunk id" : "wr7eMGVh",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the relationship"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the relationship"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 3 members",
+      "community_id" : "community_6",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "flip-flops sales", "swimming pool visits", "the relationship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flip-flops sales",
+      "chunk id" : "wr7eMGVh"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "flip-flops sales"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "flip-flops sales",
+      "chunk id" : "wr7eMGVh"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "flip-flops sales"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "flip-flops sales"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 3 members",
+      "community_id" : "community_6",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "flip-flops sales", "swimming pool visits", "the relationship" ]
+    }
+  }
+} ]

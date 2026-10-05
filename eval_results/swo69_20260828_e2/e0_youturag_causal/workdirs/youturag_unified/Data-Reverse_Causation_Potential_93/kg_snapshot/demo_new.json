@@ -1,0 +1,3444 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "successful investors",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "financial literacy",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "successful investors",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "investment success",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "finance seminars",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "smart investments",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "finance seminars",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "financial literacy",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reports",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "financial literacy",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reports",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "investment success",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "economists",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "knowledge",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "economists",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "achievement",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "financial literacy",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "investment success",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "knowledge",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "achievement",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "smart investments",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "investment success",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bicycle sales",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "metropolitan area",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air pollution levels",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "metropolitan area",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "metropolitan area",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cycling",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air pollution levels",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bicycle sales",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air pollution levels",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "environmental improvements",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "biking boom",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cycling",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bicycle sales",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air pollution levels drop",
+      "chunk id" : "is0g10FJ"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "biking boom",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "environmental improvements",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "social media",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Commuters",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fuel prices",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fuel prices",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation usage",
+      "chunk id" : "mASvR8tJ"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Economists",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fuel prices",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Economists",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city planners",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fuel prices",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city planners",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city planners",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "resources",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the pattern",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fuel prices",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the pattern",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Commuters",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Commuters",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fuel prices",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "windows",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "classrooms",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "classrooms",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "teachers",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "classrooms",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stagnant air",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "classrooms",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "headaches",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stagnant air",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "headaches",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "noise",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "headaches",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "studying",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "poor ventilation",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "headaches",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "end-of-day fatigue",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "teachers",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "afternoon",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "school day",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "school day",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "teachers",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "school day",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "open windows",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "open windows",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fresh air",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spring",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spike in allergy symptoms",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spike in allergy symptoms",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pollen levels",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spike in allergy symptoms",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "changing weather",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spike in allergy symptoms",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "open windows",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spike in allergy symptoms",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "allergy symptoms",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "noise levels",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "noise levels",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sleep disturbances",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "noise levels",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community members",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local forums",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sleep disturbances",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "noise levels",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "official statement",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "noise levels",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "official statement",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sleep disturbances",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community members",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air pollution levels",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air pollution levels drop",
+      "chunk id" : "is0g10FJ"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "allergy symptoms",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bicycle sales",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "changing weather",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "community members",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cycling",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fresh air",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local forums",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "metropolitan area",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "noise levels",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "official statement",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "open windows",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pollen levels",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sleep disturbances",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spike in allergy symptoms",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spring",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spike in allergy symptoms",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "spike in allergy symptoms"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spike in allergy symptoms",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "spike in allergy symptoms"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "spike in allergy symptoms"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "noise levels",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "noise levels"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "noise levels",
+      "chunk id" : "u9K-aMqC",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "noise levels"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "noise levels"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "residents"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "residents"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "residents"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air pollution levels",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "air pollution levels"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air pollution levels",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "air pollution levels"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "air pollution levels"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "open windows",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "open windows"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "open windows",
+      "chunk id" : "bFPO6hEb",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "open windows"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "open windows"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 20 members",
+      "community_id" : "community_1",
+      "node_count" : "20",
+      "edge_count" : "23",
+      "members" : [ "air pollution levels", "air pollution levels drop", "allergy symptoms", "bicycle sales", "changing weather", "community members", "cycling", "fresh air", "local forums", "metropolitan area", "neighborhood", "noise levels", "official statement", "open windows", "people", "pollen levels", "residents", "sleep disturbances", "spike in allergy symptoms", "spring" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "afternoon",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "classrooms",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "end-of-day fatigue",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "headaches",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "noise",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "poor ventilation",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "school day",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stagnant air",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "studying",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "teachers",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "windows",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "classrooms",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "classrooms"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "classrooms",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "classrooms"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "classrooms"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "headaches",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "headaches"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "headaches",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "headaches"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "headaches"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "teachers",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "teachers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "teachers",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "teachers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "teachers"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "school day",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "school day"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "school day",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "school day"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "school day"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stagnant air",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "stagnant air"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stagnant air",
+      "chunk id" : "h3uMUZMO",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "stagnant air"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "stagnant air"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 12 members",
+      "community_id" : "community_2",
+      "node_count" : "12",
+      "edge_count" : "12",
+      "members" : [ "afternoon", "classrooms", "end-of-day fatigue", "headaches", "noise", "poor ventilation", "school day", "stagnant air", "students", "studying", "teachers", "windows" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Commuters",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Commuters", "Economists", "city planners", "fuel prices", "public transportation", "public transportation usage", "resources", "social media", "the pattern" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Economists",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Commuters", "Economists", "city planners", "fuel prices", "public transportation", "public transportation usage", "resources", "social media", "the pattern" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city planners",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Commuters", "Economists", "city planners", "fuel prices", "public transportation", "public transportation usage", "resources", "social media", "the pattern" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fuel prices",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Commuters", "Economists", "city planners", "fuel prices", "public transportation", "public transportation usage", "resources", "social media", "the pattern" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Commuters", "Economists", "city planners", "fuel prices", "public transportation", "public transportation usage", "resources", "social media", "the pattern" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation usage",
+      "chunk id" : "mASvR8tJ"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Commuters", "Economists", "city planners", "fuel prices", "public transportation", "public transportation usage", "resources", "social media", "the pattern" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "resources",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Commuters", "Economists", "city planners", "fuel prices", "public transportation", "public transportation usage", "resources", "social media", "the pattern" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "social media",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Commuters", "Economists", "city planners", "fuel prices", "public transportation", "public transportation usage", "resources", "social media", "the pattern" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the pattern",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Commuters", "Economists", "city planners", "fuel prices", "public transportation", "public transportation usage", "resources", "social media", "the pattern" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fuel prices",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "fuel prices"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fuel prices",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "fuel prices"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "fuel prices"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Commuters", "Economists", "city planners", "fuel prices", "public transportation", "public transportation usage", "resources", "social media", "the pattern" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "public transportation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "public transportation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "public transportation"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Commuters", "Economists", "city planners", "fuel prices", "public transportation", "public transportation usage", "resources", "social media", "the pattern" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city planners",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "city planners"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city planners",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "city planners"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "city planners"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Commuters", "Economists", "city planners", "fuel prices", "public transportation", "public transportation usage", "resources", "social media", "the pattern" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Commuters",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Commuters"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Commuters",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Commuters"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Commuters"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Commuters", "Economists", "city planners", "fuel prices", "public transportation", "public transportation usage", "resources", "social media", "the pattern" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Economists",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Economists"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Economists",
+      "chunk id" : "mASvR8tJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Economists"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Economists"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Commuters", "Economists", "city planners", "fuel prices", "public transportation", "public transportation usage", "resources", "social media", "the pattern" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "finance seminars",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "finance seminars", "financial literacy", "investment success", "reports", "smart investments", "successful investors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "financial literacy",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "finance seminars", "financial literacy", "investment success", "reports", "smart investments", "successful investors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "investment success",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "finance seminars", "financial literacy", "investment success", "reports", "smart investments", "successful investors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reports",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "finance seminars", "financial literacy", "investment success", "reports", "smart investments", "successful investors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "smart investments",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "finance seminars", "financial literacy", "investment success", "reports", "smart investments", "successful investors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "successful investors",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "finance seminars", "financial literacy", "investment success", "reports", "smart investments", "successful investors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "financial literacy",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "financial literacy"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "financial literacy",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "financial literacy"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "financial literacy"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "finance seminars", "financial literacy", "investment success", "reports", "smart investments", "successful investors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "investment success",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "investment success"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "investment success",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "investment success"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "investment success"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "finance seminars", "financial literacy", "investment success", "reports", "smart investments", "successful investors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "successful investors",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "successful investors"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "successful investors",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "successful investors"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "successful investors"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "finance seminars", "financial literacy", "investment success", "reports", "smart investments", "successful investors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "finance seminars",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "finance seminars"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "finance seminars",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "finance seminars"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "finance seminars"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "finance seminars", "financial literacy", "investment success", "reports", "smart investments", "successful investors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "smart investments",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "smart investments"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "smart investments",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "smart investments"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "smart investments"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "8",
+      "members" : [ "finance seminars", "financial literacy", "investment success", "reports", "smart investments", "successful investors" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "achievement",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 3 members",
+      "community_id" : "community_5",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "achievement", "economists", "knowledge" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "economists",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 3 members",
+      "community_id" : "community_5",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "achievement", "economists", "knowledge" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "knowledge",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 3 members",
+      "community_id" : "community_5",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "achievement", "economists", "knowledge" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "knowledge",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "knowledge"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "knowledge",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "knowledge"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "knowledge"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 3 members",
+      "community_id" : "community_5",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "achievement", "economists", "knowledge" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "economists",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "economists"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "economists",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "economists"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "economists"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 3 members",
+      "community_id" : "community_5",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "achievement", "economists", "knowledge" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "achievement",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "achievement"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "achievement",
+      "chunk id" : "NcH6S3xS",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "achievement"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "achievement"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 3 members",
+      "community_id" : "community_5",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "achievement", "economists", "knowledge" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "biking boom",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 2 members",
+      "community_id" : "community_6",
+      "node_count" : "2",
+      "edge_count" : "2",
+      "members" : [ "biking boom", "environmental improvements" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "environmental improvements",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 2 members",
+      "community_id" : "community_6",
+      "node_count" : "2",
+      "edge_count" : "2",
+      "members" : [ "biking boom", "environmental improvements" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "biking boom",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "biking boom"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "biking boom",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "biking boom"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "biking boom"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 2 members",
+      "community_id" : "community_6",
+      "node_count" : "2",
+      "edge_count" : "2",
+      "members" : [ "biking boom", "environmental improvements" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "environmental improvements",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "environmental improvements"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "environmental improvements",
+      "chunk id" : "is0g10FJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "environmental improvements"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "environmental improvements"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 2 members",
+      "community_id" : "community_6",
+      "node_count" : "2",
+      "edge_count" : "2",
+      "members" : [ "biking boom", "environmental improvements" ]
+    }
+  }
+} ]

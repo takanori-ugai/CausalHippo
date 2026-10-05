@@ -1,0 +1,284 @@
+{
+  "nodes" : [ {
+    "id" : "Nor'easter",
+    "entity_id" : "Nor'easter",
+    "entity_type" : "Concept",
+    "description" : "A type of extratropical cyclone that forms in the mid-latitudes, characterized by northeast winds and high moisture content.",
+    "source_id" : "1d344f131a7471cda436cf3d7cc03df8"
+  }, {
+    "id" : "Arctic Air Mass",
+    "entity_id" : "Arctic Air Mass",
+    "entity_type" : "Concept",
+    "description" : "A large body of cold air that originates from the Arctic region",
+    "source_id" : "eb307489b715e4c9c3d6233dd198cd4b"
+  }, {
+    "id" : "Gulf Stream",
+    "entity_id" : "Gulf Stream",
+    "entity_type" : "Concept",
+    "description" : "A warm ocean current that originates from the Gulf of Mexico",
+    "source_id" : "eb307489b715e4c9c3d6233dd198cd4b"
+  }, {
+    "id" : "Atlantic Canada",
+    "entity_id" : "Atlantic Canada",
+    "entity_type" : "Location",
+    "description" : "A region in eastern Canada that borders the Atlantic Ocean",
+    "source_id" : "eb307489b715e4c9c3d6233dd198cd4b"
+  }, {
+    "id" : "U.S.",
+    "entity_id" : "U.S.",
+    "entity_type" : "Location",
+    "description" : "A country in North America",
+    "source_id" : "eb307489b715e4c9c3d6233dd198cd4b"
+  }, {
+    "id" : "New York",
+    "entity_id" : "New York",
+    "entity_type" : "Location",
+    "description" : "A state in the northeastern United States",
+    "source_id" : "eb307489b715e4c9c3d6233dd198cd4b"
+  }, {
+    "id" : "Philadelphia",
+    "entity_id" : "Philadelphia",
+    "entity_type" : "Location",
+    "description" : "A city in the state of Pennsylvania, United States",
+    "source_id" : "eb307489b715e4c9c3d6233dd198cd4b"
+  }, {
+    "id" : "Hurricane Sandy",
+    "entity_id" : "Hurricane Sandy",
+    "entity_type" : "Event",
+    "description" : "A major hurricane that hit the Northeast region of the United States in 2012",
+    "source_id" : "94d35724613d61d1fca4f0cef658d035"
+  }, {
+    "id" : "The Andrea Gail",
+    "entity_id" : "The Andrea Gail",
+    "entity_type" : "Organization",
+    "description" : "A swordfishing boat that sank during the Perfect Storm",
+    "source_id" : "94d35724613d61d1fca4f0cef658d035"
+  }, {
+    "id" : "The Perfect Storm",
+    "entity_id" : "The Perfect Storm",
+    "entity_type" : "Event",
+    "description" : "A novel and film about the sinking of the Andrea Gail during the Perfect Storm",
+    "source_id" : "94d35724613d61d1fca4f0cef658d035"
+  }, {
+    "id" : "Nor'easter (weather phenomenon)",
+    "entity_id" : "Nor'easter (weather phenomenon)",
+    "entity_type" : "Concept",
+    "description" : "An area of low pressure that strengthens by at least 24 millibars in 24 hours",
+    "source_id" : "25e3de174fd9da0ecd349fde9bd9e600"
+  }, {
+    "id" : "New England",
+    "entity_id" : "New England",
+    "entity_type" : "Location",
+    "description" : "A region in the northeastern United States",
+    "source_id" : "25e3de174fd9da0ecd349fde9bd9e600"
+  }, {
+    "id" : "Boston",
+    "entity_id" : "Boston",
+    "entity_type" : "Location",
+    "description" : "A city in the state of Massachusetts, United States",
+    "source_id" : "25e3de174fd9da0ecd349fde9bd9e600"
+  }, {
+    "id" : "Atlantic Ocean",
+    "entity_id" : "Atlantic Ocean",
+    "entity_type" : "Location",
+    "description" : "A major ocean located between the Americas and Europe",
+    "source_id" : "25e3de174fd9da0ecd349fde9bd9e600"
+  }, {
+    "id" : "Tropical Storm",
+    "entity_id" : "Tropical Storm",
+    "entity_type" : "Concept",
+    "description" : "A tropical cyclone that forms over warm tropical waters, characterized by strong winds and heavy rainfall.",
+    "source_id" : "1d344f131a7471cda436cf3d7cc03df8"
+  }, {
+    "id" : "Hurricane",
+    "entity_id" : "Hurricane",
+    "entity_type" : "Concept",
+    "description" : "A type of tropical cyclone that forms over warm tropical waters, characterized by strong winds and heavy rainfall.",
+    "source_id" : "1d344f131a7471cda436cf3d7cc03df8"
+  }, {
+    "id" : "Extratropical Cyclone",
+    "entity_id" : "Extratropical Cyclone",
+    "entity_type" : "Concept",
+    "description" : "A type of low-pressure system that forms outside the tropics, characterized by strong winds and precipitation.",
+    "source_id" : "1d344f131a7471cda436cf3d7cc03df8"
+  }, {
+    "id" : "Western Africa",
+    "entity_id" : "Western Africa",
+    "entity_type" : "Location",
+    "description" : "A region in western Africa, characterized by warm and dry air.",
+    "source_id" : "1d344f131a7471cda436cf3d7cc03df8"
+  }, {
+    "id" : "Equatorial Waters",
+    "entity_id" : "Equatorial Waters",
+    "entity_type" : "Location",
+    "description" : "The region near the equator, characterized by warm and humid air.",
+    "source_id" : "1d344f131a7471cda436cf3d7cc03df8"
+  } ],
+  "edges" : [ {
+    "source" : "Nor'easter",
+    "target" : "Arctic Air Mass",
+    "weight" : "1.0",
+    "description" : "The nor'easter draws cold air from the Arctic air mass",
+    "keywords" : "cold air, winter storm",
+    "source_id" : "eb307489b715e4c9c3d6233dd198cd4b",
+    "src_id" : "Nor'easter",
+    "tgt_id" : "Arctic Air Mass"
+  }, {
+    "source" : "Nor'easter",
+    "target" : "Gulf Stream",
+    "weight" : "1.0",
+    "description" : "The nor'easter collides with warm air from the Gulf Stream",
+    "keywords" : "warm air, ocean current",
+    "source_id" : "eb307489b715e4c9c3d6233dd198cd4b",
+    "src_id" : "Nor'easter",
+    "tgt_id" : "Gulf Stream"
+  }, {
+    "source" : "Nor'easter",
+    "target" : "Atlantic Canada",
+    "weight" : "1.0",
+    "description" : "The nor'easter affects the Atlantic Canada region",
+    "keywords" : "east coast, region",
+    "source_id" : "eb307489b715e4c9c3d6233dd198cd4b",
+    "src_id" : "Nor'easter",
+    "tgt_id" : "Atlantic Canada"
+  }, {
+    "source" : "Nor'easter",
+    "target" : "U.S.",
+    "weight" : "1.0",
+    "description" : "The nor'easter affects the U.S. east coast",
+    "keywords" : "east coast, country",
+    "source_id" : "eb307489b715e4c9c3d6233dd198cd4b",
+    "src_id" : "Nor'easter",
+    "tgt_id" : "U.S."
+  }, {
+    "source" : "Nor'easter",
+    "target" : "New York",
+    "weight" : "1.0",
+    "description" : "The nor'easter affects the state of New York",
+    "keywords" : "state, east coast",
+    "source_id" : "eb307489b715e4c9c3d6233dd198cd4b",
+    "src_id" : "Nor'easter",
+    "tgt_id" : "New York"
+  }, {
+    "source" : "Nor'easter",
+    "target" : "Philadelphia",
+    "weight" : "1.0",
+    "description" : "The nor'easter affects the city of Philadelphia",
+    "keywords" : "city, east coast",
+    "source_id" : "eb307489b715e4c9c3d6233dd198cd4b",
+    "src_id" : "Nor'easter",
+    "tgt_id" : "Philadelphia"
+  }, {
+    "source" : "Nor'easter",
+    "target" : "Northeast",
+    "weight" : "1.0",
+    "description" : "A nor'easter is a type of storm that affects the Northeast region of the United States",
+    "keywords" : "powerful winds, heavy rains, snow",
+    "source_id" : "94d35724613d61d1fca4f0cef658d035",
+    "src_id" : "Nor'easter",
+    "tgt_id" : "Northeast"
+  }, {
+    "source" : "Nor'easter",
+    "target" : "Hurricane Sandy",
+    "weight" : "1.0",
+    "description" : "The recent nor'easter that hit the Northeast region of the United States was compared to Hurricane Sandy",
+    "keywords" : "recent storm, meteorologic graphics",
+    "source_id" : "94d35724613d61d1fca4f0cef658d035",
+    "src_id" : "Nor'easter",
+    "tgt_id" : "Hurricane Sandy"
+  }, {
+    "source" : "Nor'easter",
+    "target" : "New England",
+    "weight" : "1.0",
+    "description" : "New England is a region that can be affected by nor'easters",
+    "keywords" : "region, storm",
+    "source_id" : "25e3de174fd9da0ecd349fde9bd9e600",
+    "src_id" : "New England",
+    "tgt_id" : "Nor'easter"
+  }, {
+    "source" : "Nor'easter",
+    "target" : "George Mason University's History News Network (HNN)",
+    "weight" : "1.0",
+    "description" : "The term nor'easter has a long history, dating back to 1753",
+    "keywords" : "term, origin",
+    "source_id" : "25e3de174fd9da0ecd349fde9bd9e600",
+    "src_id" : "George Mason University's History News Network (HNN)",
+    "tgt_id" : "Nor'easter"
+  }, {
+    "source" : "Nor'easter",
+    "target" : "Extratropical Cyclone",
+    "weight" : "1.0",
+    "description" : "A nor'easter is a type of extratropical cyclone that forms in the mid-latitudes and is characterized by high moisture content.",
+    "keywords" : "mid-latitudes, moisture content",
+    "source_id" : "1d344f131a7471cda436cf3d7cc03df8",
+    "src_id" : "Extratropical Cyclone",
+    "tgt_id" : "Nor'easter"
+  }, {
+    "source" : "The Andrea Gail",
+    "target" : "The Perfect Storm",
+    "weight" : "1.0",
+    "description" : "The sinking of the Andrea Gail was the inspiration for the novel and film The Perfect Storm",
+    "keywords" : "sinking of the boat, novel and film",
+    "source_id" : "94d35724613d61d1fca4f0cef658d035",
+    "src_id" : "The Andrea Gail",
+    "tgt_id" : "The Perfect Storm"
+  }, {
+    "source" : "Millibars",
+    "target" : "Storm strength",
+    "weight" : "1.0",
+    "description" : "The strength of a storm is measured in millibars",
+    "keywords" : "measure of storm strength",
+    "source_id" : "94d35724613d61d1fca4f0cef658d035",
+    "src_id" : "Millibars",
+    "tgt_id" : "Storm strength"
+  }, {
+    "source" : "Nor'easter (weather phenomenon)",
+    "target" : "New England",
+    "weight" : "1.0",
+    "description" : "A nor'easter is a type of storm that affects the northeastern United States",
+    "keywords" : "storm, weather phenomenon",
+    "source_id" : "25e3de174fd9da0ecd349fde9bd9e600",
+    "src_id" : "Nor'easter (weather phenomenon)",
+    "tgt_id" : "New England"
+  }, {
+    "source" : "Nor'easter (weather phenomenon)",
+    "target" : "Boston",
+    "weight" : "1.0",
+    "description" : "Boston is a city that can be affected by nor'easters",
+    "keywords" : "storm, weather phenomenon",
+    "source_id" : "25e3de174fd9da0ecd349fde9bd9e600",
+    "src_id" : "Nor'easter (weather phenomenon)",
+    "tgt_id" : "Boston"
+  }, {
+    "source" : "Nor'easter (weather phenomenon)",
+    "target" : "Atlantic Ocean",
+    "weight" : "1.0",
+    "description" : "Nor'easters are formed when strong winds blow in from the Atlantic Ocean",
+    "keywords" : "storm, weather phenomenon",
+    "source_id" : "25e3de174fd9da0ecd349fde9bd9e600",
+    "src_id" : "Nor'easter (weather phenomenon)",
+    "tgt_id" : "Atlantic Ocean"
+  }, {
+    "source" : "Tropical Storm",
+    "target" : "Hurricane",
+    "weight" : "1.0",
+    "description" : "A tropical storm can develop into a hurricane if it forms over warm tropical waters.",
+    "keywords" : "tropical waters, warm air",
+    "source_id" : "1d344f131a7471cda436cf3d7cc03df8",
+    "src_id" : "Tropical Storm",
+    "tgt_id" : "Hurricane"
+  }, {
+    "source" : "Western Africa",
+    "target" : "Equatorial Waters",
+    "weight" : "1.0",
+    "description" : "Warm air from western Africa meets warm and humid air rising over equatorial waters to form tropical systems.",
+    "keywords" : "warm air, dry air",
+    "source_id" : "1d344f131a7471cda436cf3d7cc03df8",
+    "src_id" : "Western Africa",
+    "tgt_id" : "Equatorial Waters"
+  } ],
+  "metadata" : {
+    "nodeCount" : 19,
+    "edgeCount" : 18
+  }
+}

@@ -1,0 +1,662 @@
+kotlin-logging: initializing... active logger factory: Slf4jLoggerFactory
+13:41:12,828 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found logback-core version 1.5.38
+13:41:12,829 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - No custom configurators were discovered as a service.
+13:41:12,830 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+13:41:12,830 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+13:41:12,834 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+13:41:12,837 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml]
+13:41:12,898 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Scan attribute set to true. Will scan for configuration file changes.
+13:41:12,899 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@15de0b3c - URL [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml] is not of type file
+13:41:12,901 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "INFO" substituted for "${ROOT_LOG_LEVEL:-INFO}"
+13:41:12,901 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL:-DEBUG}"
+13:41:12,901 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_LOG_LEVEL:-TRACE}"
+13:41:12,901 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL:-TRACE}"
+13:41:12,901 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL:-ERROR}"
+13:41:12,901 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL:-ERROR}"
+13:41:12,901 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL:-ERROR}"
+13:41:12,901 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL:-DEBUG}"
+13:41:12,902 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Missing watchable .xml or .properties files.
+13:41:12,902 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Watching .xml files requires that the main configuration file is reachable as a URL
+13:41:12,902 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Main configuration file URL: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml
+13:41:12,903 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - FileWatchList= {}
+13:41:12,903 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - URLWatchList= {}
+13:41:12,905 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+13:41:12,905 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+13:41:12,909 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+13:41:12,934 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - NOTE: Writing to the console can be slow. Try to avoid logging to the 
+13:41:12,934 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - console in production environments, especially in high volume systems.
+13:41:12,934 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also https://logback.qos.ch/codes.html#slowConsole
+13:41:12,935 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL}"
+13:41:12,935 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag] to DEBUG
+13:41:12,937 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag] to false
+13:41:12,937 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag]
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_LOG_LEVEL}"
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.neo4j] to TRACE
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.neo4j] to false
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.neo4j]
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL}"
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.neo4j.driver] to TRACE
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.neo4j.driver] to false
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[org.neo4j.driver]
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL}"
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.memory] to DEBUG
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.memory] to false
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.memory]
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL}"
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j] to ERROR
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j] to false
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j]
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.okhttp] to ERROR
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.okhttp] to false
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.okhttp]
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.openai] to ERROR
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.openai] to false
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.openai]
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [okhttp3] to ERROR
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [okhttp3] to false
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[okhttp3]
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL}"
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.ai4j.openai4j] to ERROR
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.ai4j.openai4j] to false
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.ai4j.openai4j]
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "INFO" substituted for "${ROOT_LOG_LEVEL}"
+13:41:12,938 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+13:41:12,938 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@3857f613 - End of configuration.
+13:41:12,938 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@198b6731 - Registering current configuration as safe fallback point
+13:41:12,942 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 109 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+WARNING: --use-unified-api=false keeps 'shared.eval.graph.MultiConditionGraphExperimentKt' on legacy condition runners. This compatibility path is planned for deprecation; prefer --use-unified-api=true.
+Running 1 conditions on 15 samples
+Parallelism: 1
+Unified API: false
+Unified persistence SPI: false
+Data: data/causal_experiment/causal_qa_balanced_30.jsonl
+Output: eval_results/swo69_20260828_e2/e0_graphrag_causal
+
+=== Condition: graphrag (GraphRAG (com/microsoft/graphrag)) ===
+2026-08-29 13:45:19.697 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 1/6
+2026-08-29 13:45:24.209 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 2/6
+2026-08-29 13:45:24.337 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 3/6
+2026-08-29 13:45:24.687 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 4/6
+2026-08-29 13:45:24.741 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 5/6
+2026-08-29 13:45:24.787 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6
+2026-08-29 13:45:24.883 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6 (done)
+2026-08-29 13:45:24.887 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 1/10
+2026-08-29 13:45:24.969 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 2/10
+2026-08-29 13:45:25.019 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/10
+2026-08-29 13:45:25.055 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 4/10
+2026-08-29 13:45:25.215 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 5/10
+2026-08-29 13:45:25.252 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 6/10
+2026-08-29 13:45:25.356 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 7/10
+2026-08-29 13:45:25.446 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 8/10
+2026-08-29 13:45:25.495 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 9/10
+2026-08-29 13:45:25.531 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 10/10
+2026-08-29 13:45:25.588 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 10/10 (done)
+2026-08-29 13:49:10.847 [DefaultDispatcher-worker-3] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new compressor [.snappy]
+2026-08-29 13:49:11.645 [DefaultDispatcher-worker-1] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2026-08-29 13:49:11.713 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 13:49:11.713 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 13:49:11.724 [DefaultDispatcher-worker-1] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2026-08-29 13:49:11.725 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 12 ms. row count = 6
+2026-08-29 13:49:11.751 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 13:49:11.751 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 13:49:11.751 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 6
+2026-08-29 13:49:11.761 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 10 records.
+2026-08-29 13:49:11.761 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 13:49:11.762 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 10
+2026-08-29 13:49:11.772 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 10 records.
+2026-08-29 13:49:11.772 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 13:49:11.772 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 10
+2026-08-29 13:49:11.781 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 10 records.
+2026-08-29 13:49:11.781 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 13:49:11.781 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 10
+2026-08-29 13:49:11.790 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 12 records.
+2026-08-29 13:49:11.790 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 13:49:11.791 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 12
+2026-08-29 13:49:11.800 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 3 records.
+2026-08-29 13:49:11.800 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 13:49:11.801 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 3
+2026-08-29 13:49:11.810 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 10 records.
+2026-08-29 13:49:11.810 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 13:49:11.810 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 10
+2026-08-29 13:52:06.060 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 1/6
+2026-08-29 13:52:06.171 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 2/6
+2026-08-29 13:52:06.314 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 3/6
+2026-08-29 13:52:06.399 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 4/6
+2026-08-29 13:52:06.583 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 5/6
+2026-08-29 13:52:06.651 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6
+2026-08-29 13:52:06.729 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6 (done)
+2026-08-29 13:52:06.743 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 1/8
+2026-08-29 13:52:06.828 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 2/8
+2026-08-29 13:52:06.927 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/8
+2026-08-29 13:52:07.092 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 4/8
+2026-08-29 13:52:07.186 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 5/8
+2026-08-29 13:52:07.226 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 6/8
+2026-08-29 13:52:07.341 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 7/8
+2026-08-29 13:52:07.379 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 8/8
+2026-08-29 13:52:07.467 [DefaultDispatcher-worker-3] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 8/8 (done)
+2026-08-29 13:54:38.863 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 13:54:38.863 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 13:54:38.870 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 7 ms. row count = 6
+2026-08-29 13:54:38.880 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 13:54:38.880 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 13:54:38.882 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 6
+2026-08-29 13:54:38.892 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 8 records.
+2026-08-29 13:54:38.892 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 13:54:38.894 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 8
+2026-08-29 13:54:38.902 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 8 records.
+2026-08-29 13:54:38.903 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 13:54:38.903 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 8
+2026-08-29 13:54:38.913 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 8 records.
+2026-08-29 13:54:38.913 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 13:54:38.913 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 8
+2026-08-29 13:54:38.921 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 4 records.
+2026-08-29 13:54:38.921 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 13:54:38.922 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 4
+2026-08-29 13:54:38.929 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 0 records.
+2026-08-29 13:54:38.936 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 8 records.
+2026-08-29 13:54:38.936 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 13:54:38.937 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 8
+2026-08-29 13:59:33.963 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 1/6
+2026-08-29 13:59:34.208 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 2/6
+2026-08-29 13:59:34.348 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 3/6
+2026-08-29 13:59:34.410 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 4/6
+2026-08-29 13:59:34.576 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 5/6
+2026-08-29 13:59:34.623 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6
+2026-08-29 13:59:34.687 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6 (done)
+2026-08-29 13:59:34.701 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 1/13
+2026-08-29 13:59:34.796 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 2/13
+2026-08-29 13:59:34.928 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/13
+2026-08-29 13:59:35.013 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 4/13
+2026-08-29 13:59:35.137 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 5/13
+2026-08-29 13:59:35.188 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 6/13
+2026-08-29 13:59:35.321 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 7/13
+2026-08-29 13:59:35.417 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 8/13
+2026-08-29 13:59:35.519 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 9/13
+2026-08-29 13:59:35.651 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 10/13
+2026-08-29 13:59:35.765 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 11/13
+2026-08-29 13:59:35.810 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 12/13
+2026-08-29 13:59:35.884 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 13/13
+2026-08-29 13:59:35.964 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 13/13 (done)
+2026-08-29 14:03:50.890 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:03:50.892 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:03:50.894 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 6
+2026-08-29 14:03:50.909 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:03:50.909 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:03:50.910 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 6
+2026-08-29 14:03:50.919 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 13 records.
+2026-08-29 14:03:50.919 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:03:50.919 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 13
+2026-08-29 14:03:50.928 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 13 records.
+2026-08-29 14:03:50.928 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:03:50.929 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 13
+2026-08-29 14:03:50.938 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 13 records.
+2026-08-29 14:03:50.938 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:03:50.938 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 13
+2026-08-29 14:03:50.946 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 14 records.
+2026-08-29 14:03:50.947 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:03:50.947 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 14
+2026-08-29 14:03:50.956 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 2 records.
+2026-08-29 14:03:50.957 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:03:50.957 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 2
+2026-08-29 14:03:50.964 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 13 records.
+2026-08-29 14:03:50.964 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:03:50.964 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 13
+2026-08-29 14:05:51.289 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 1/6
+2026-08-29 14:05:51.422 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 2/6
+2026-08-29 14:05:51.508 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 3/6
+2026-08-29 14:05:51.638 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 4/6
+2026-08-29 14:05:51.779 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 5/6
+2026-08-29 14:05:51.877 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6
+2026-08-29 14:05:52.030 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6 (done)
+2026-08-29 14:05:52.034 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 1/4
+2026-08-29 14:05:52.089 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 2/4
+2026-08-29 14:05:52.157 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/4
+2026-08-29 14:05:52.198 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 4/4
+2026-08-29 14:05:52.283 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 4/4 (done)
+2026-08-29 14:07:14.910 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:07:14.911 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:07:14.919 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 8 ms. row count = 6
+2026-08-29 14:07:14.928 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:07:14.928 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:07:14.928 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 6
+2026-08-29 14:07:14.940 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 4 records.
+2026-08-29 14:07:14.940 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:07:14.941 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 4
+2026-08-29 14:07:14.951 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 4 records.
+2026-08-29 14:07:14.952 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:07:14.952 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 4
+2026-08-29 14:07:14.962 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 4 records.
+2026-08-29 14:07:14.962 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:07:14.963 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 4
+2026-08-29 14:07:14.971 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 2 records.
+2026-08-29 14:07:14.971 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:07:14.971 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 2
+2026-08-29 14:07:14.982 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 0 records.
+2026-08-29 14:07:14.993 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 4 records.
+2026-08-29 14:07:14.993 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:07:14.993 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 4
+2026-08-29 14:09:18.912 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 1/6
+2026-08-29 14:09:19.054 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 2/6
+2026-08-29 14:09:19.167 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 3/6
+2026-08-29 14:09:19.267 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 4/6
+2026-08-29 14:09:19.456 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 5/6
+2026-08-29 14:09:19.577 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6
+2026-08-29 14:09:19.681 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6 (done)
+2026-08-29 14:09:19.687 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 1/3
+2026-08-29 14:09:19.765 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 2/3
+2026-08-29 14:09:19.908 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/3
+2026-08-29 14:09:19.943 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/3 (done)
+2026-08-29 14:10:12.046 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:10:12.046 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:10:12.049 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 3 ms. row count = 6
+2026-08-29 14:10:12.062 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:10:12.062 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:10:12.063 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 6
+2026-08-29 14:10:12.075 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 3 records.
+2026-08-29 14:10:12.076 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:10:12.076 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 3
+2026-08-29 14:10:12.088 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 3 records.
+2026-08-29 14:10:12.088 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:10:12.088 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 3
+2026-08-29 14:10:12.096 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 3 records.
+2026-08-29 14:10:12.096 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:10:12.096 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 3
+2026-08-29 14:10:12.103 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 3 records.
+2026-08-29 14:10:12.103 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:10:12.104 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 3
+2026-08-29 14:10:12.112 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 2 records.
+2026-08-29 14:10:12.112 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:10:12.112 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 2
+2026-08-29 14:10:12.120 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 3 records.
+2026-08-29 14:10:12.120 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:10:12.120 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 3
+2026-08-29 14:13:24.436 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 1/6
+2026-08-29 14:13:24.696 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 2/6
+2026-08-29 14:13:24.752 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 3/6
+2026-08-29 14:13:24.832 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 4/6
+2026-08-29 14:13:24.950 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 5/6
+2026-08-29 14:13:25.024 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6
+2026-08-29 14:13:25.093 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6 (done)
+2026-08-29 14:13:25.106 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 1/8
+2026-08-29 14:13:25.185 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 2/8
+2026-08-29 14:13:25.257 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/8
+2026-08-29 14:13:25.326 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 4/8
+2026-08-29 14:13:25.403 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 5/8
+2026-08-29 14:13:25.466 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 6/8
+2026-08-29 14:13:25.539 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 7/8
+2026-08-29 14:13:25.600 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 8/8
+2026-08-29 14:13:25.711 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 8/8 (done)
+2026-08-29 14:16:33.728 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:16:33.728 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:16:33.730 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 6
+2026-08-29 14:16:33.742 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:16:33.742 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:16:33.743 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 6
+2026-08-29 14:16:33.751 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 8 records.
+2026-08-29 14:16:33.751 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:16:33.751 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 8
+2026-08-29 14:16:33.759 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 8 records.
+2026-08-29 14:16:33.759 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:16:33.760 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 8
+2026-08-29 14:16:33.768 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 8 records.
+2026-08-29 14:16:33.768 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:16:33.769 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 8
+2026-08-29 14:16:33.777 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 7 records.
+2026-08-29 14:16:33.777 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:16:33.778 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 7
+2026-08-29 14:16:33.788 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 0 records.
+2026-08-29 14:16:33.796 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 8 records.
+2026-08-29 14:16:33.796 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:16:33.796 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 8
+2026-08-29 14:19:27.003 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 1/6
+2026-08-29 14:19:27.196 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 2/6
+2026-08-29 14:19:27.402 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 3/6
+2026-08-29 14:19:27.487 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 4/6
+2026-08-29 14:19:27.560 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 5/6
+2026-08-29 14:19:27.607 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6
+2026-08-29 14:19:27.704 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6 (done)
+2026-08-29 14:19:27.706 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 1/7
+2026-08-29 14:19:27.776 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 2/7
+2026-08-29 14:19:27.839 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/7
+2026-08-29 14:19:27.874 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 4/7
+2026-08-29 14:19:27.974 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 5/7
+2026-08-29 14:19:28.013 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 6/7
+2026-08-29 14:19:28.093 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 7/7
+2026-08-29 14:19:28.155 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 7/7 (done)
+2026-08-29 14:22:17.225 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:22:17.226 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:22:17.228 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 6
+2026-08-29 14:22:17.237 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:22:17.237 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:22:17.237 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 6
+2026-08-29 14:22:17.245 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 7 records.
+2026-08-29 14:22:17.245 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:22:17.245 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 7
+2026-08-29 14:22:17.253 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 7 records.
+2026-08-29 14:22:17.253 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:22:17.254 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 7
+2026-08-29 14:22:17.262 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 7 records.
+2026-08-29 14:22:17.262 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:22:17.262 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 7
+2026-08-29 14:22:17.269 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:22:17.269 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:22:17.269 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 6
+2026-08-29 14:22:17.276 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 3 records.
+2026-08-29 14:22:17.276 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:22:17.276 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 3
+2026-08-29 14:22:17.283 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 7 records.
+2026-08-29 14:22:17.283 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:22:17.283 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 7
+2026-08-29 14:25:29.768 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 1/6
+2026-08-29 14:25:29.901 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 2/6
+2026-08-29 14:25:29.973 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 3/6
+2026-08-29 14:25:30.011 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 4/6
+2026-08-29 14:25:30.093 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 5/6
+2026-08-29 14:25:30.137 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6
+2026-08-29 14:25:30.194 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6 (done)
+2026-08-29 14:25:30.196 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 1/7
+2026-08-29 14:25:30.244 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 2/7
+2026-08-29 14:25:30.319 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/7
+2026-08-29 14:25:30.353 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 4/7
+2026-08-29 14:25:30.494 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 5/7
+2026-08-29 14:25:30.528 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 6/7
+2026-08-29 14:25:30.645 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 7/7
+2026-08-29 14:25:30.681 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 7/7 (done)
+2026-08-29 14:27:35.394 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:27:35.394 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:27:35.395 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 6
+2026-08-29 14:27:35.414 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:27:35.414 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:27:35.421 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 7 ms. row count = 6
+2026-08-29 14:27:35.432 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 7 records.
+2026-08-29 14:27:35.432 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:27:35.433 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 7
+2026-08-29 14:27:35.448 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 7 records.
+2026-08-29 14:27:35.448 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:27:35.449 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 7
+2026-08-29 14:27:35.462 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 7 records.
+2026-08-29 14:27:35.462 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:27:35.462 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 7
+2026-08-29 14:27:35.476 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:27:35.476 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:27:35.477 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 6
+2026-08-29 14:27:35.485 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 4 records.
+2026-08-29 14:27:35.485 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:27:35.487 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 4
+2026-08-29 14:27:35.504 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 7 records.
+2026-08-29 14:27:35.504 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:27:35.504 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 7
+2026-08-29 14:30:53.770 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 1/6
+2026-08-29 14:30:53.981 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 2/6
+2026-08-29 14:30:54.074 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 3/6
+2026-08-29 14:30:54.142 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 4/6
+2026-08-29 14:30:54.354 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 5/6
+2026-08-29 14:30:54.485 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6
+2026-08-29 14:30:54.598 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6 (done)
+2026-08-29 14:30:54.601 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 1/8
+2026-08-29 14:30:54.660 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 2/8
+2026-08-29 14:30:54.783 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/8
+2026-08-29 14:30:54.841 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 4/8
+2026-08-29 14:30:54.933 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 5/8
+2026-08-29 14:30:54.970 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 6/8
+2026-08-29 14:30:55.084 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 7/8
+2026-08-29 14:30:55.121 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 8/8
+2026-08-29 14:30:55.211 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 8/8 (done)
+2026-08-29 14:33:38.078 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:33:38.079 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:33:38.086 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 7 ms. row count = 6
+2026-08-29 14:33:38.095 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:33:38.095 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:33:38.095 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 6
+2026-08-29 14:33:38.104 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 8 records.
+2026-08-29 14:33:38.104 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:33:38.105 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 8
+2026-08-29 14:33:38.117 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 8 records.
+2026-08-29 14:33:38.117 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:33:38.118 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 8
+2026-08-29 14:33:38.127 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 8 records.
+2026-08-29 14:33:38.128 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:33:38.128 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 8
+2026-08-29 14:33:38.138 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 10 records.
+2026-08-29 14:33:38.138 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:33:38.138 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 10
+2026-08-29 14:33:38.148 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 2 records.
+2026-08-29 14:33:38.148 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:33:38.149 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 2
+2026-08-29 14:33:38.156 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 8 records.
+2026-08-29 14:33:38.156 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:33:38.156 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 8
+2026-08-29 14:37:42.595 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 1/6
+2026-08-29 14:37:42.732 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 2/6
+2026-08-29 14:37:42.882 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 3/6
+2026-08-29 14:37:42.987 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 4/6
+2026-08-29 14:37:43.086 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 5/6
+2026-08-29 14:37:43.162 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6
+2026-08-29 14:37:43.263 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6 (done)
+2026-08-29 14:37:43.265 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 1/11
+2026-08-29 14:37:43.305 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 2/11
+2026-08-29 14:37:43.365 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/11
+2026-08-29 14:37:43.405 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 4/11
+2026-08-29 14:37:43.498 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 5/11
+2026-08-29 14:37:43.533 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 6/11
+2026-08-29 14:37:43.655 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 7/11
+2026-08-29 14:37:43.692 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 8/11
+2026-08-29 14:37:43.757 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 9/11
+2026-08-29 14:37:43.794 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 10/11
+2026-08-29 14:37:43.930 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 11/11
+2026-08-29 14:37:43.964 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 11/11 (done)
+2026-08-29 14:41:34.995 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:41:34.995 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:41:34.999 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 4 ms. row count = 6
+2026-08-29 14:41:35.006 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:41:35.006 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:41:35.006 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 6
+2026-08-29 14:41:35.012 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 11 records.
+2026-08-29 14:41:35.012 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:41:35.013 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 11
+2026-08-29 14:41:35.019 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 11 records.
+2026-08-29 14:41:35.019 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:41:35.019 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 11
+2026-08-29 14:41:35.027 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 11 records.
+2026-08-29 14:41:35.027 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:41:35.027 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 11
+2026-08-29 14:41:35.034 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 12 records.
+2026-08-29 14:41:35.034 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:41:35.035 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 12
+2026-08-29 14:41:35.042 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 0 records.
+2026-08-29 14:41:35.048 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 11 records.
+2026-08-29 14:41:35.048 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:41:35.048 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 11
+graphrag: processed 10/15
+2026-08-29 14:44:42.612 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 1/6
+2026-08-29 14:44:44.194 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 2/6
+2026-08-29 14:44:44.250 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 3/6
+2026-08-29 14:44:44.326 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 4/6
+2026-08-29 14:44:45.947 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 5/6
+2026-08-29 14:44:46.006 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6
+2026-08-29 14:44:46.106 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6 (done)
+2026-08-29 14:44:46.108 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 1/7
+2026-08-29 14:44:46.165 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 2/7
+2026-08-29 14:44:46.349 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/7
+2026-08-29 14:44:46.387 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 4/7
+2026-08-29 14:44:46.450 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 5/7
+2026-08-29 14:44:46.497 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 6/7
+2026-08-29 14:44:46.623 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 7/7
+2026-08-29 14:44:46.657 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 7/7 (done)
+2026-08-29 14:47:09.720 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:47:09.720 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:47:09.721 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 6
+2026-08-29 14:47:09.729 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:47:09.729 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:47:09.729 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 6
+2026-08-29 14:47:09.736 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 7 records.
+2026-08-29 14:47:09.736 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:47:09.737 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 7
+2026-08-29 14:47:09.744 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 7 records.
+2026-08-29 14:47:09.744 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:47:09.744 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 7
+2026-08-29 14:47:09.752 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 7 records.
+2026-08-29 14:47:09.752 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:47:09.752 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 7
+2026-08-29 14:47:09.760 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 8 records.
+2026-08-29 14:47:09.760 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:47:09.760 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 8
+2026-08-29 14:47:09.767 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 0 records.
+2026-08-29 14:47:09.773 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 7 records.
+2026-08-29 14:47:09.773 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:47:09.773 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 7
+2026-08-29 14:48:59.715 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 1/6
+2026-08-29 14:48:59.879 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 2/6
+2026-08-29 14:48:59.924 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 3/6
+2026-08-29 14:48:59.973 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 4/6
+2026-08-29 14:49:00.074 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 5/6
+2026-08-29 14:49:00.147 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6
+2026-08-29 14:49:00.310 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6 (done)
+2026-08-29 14:49:00.330 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 1/3
+2026-08-29 14:49:00.448 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 2/3
+2026-08-29 14:49:00.497 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/3
+2026-08-29 14:49:00.557 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/3 (done)
+2026-08-29 14:50:05.178 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:50:05.178 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:50:05.186 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 8 ms. row count = 6
+2026-08-29 14:50:05.202 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:50:05.202 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:50:05.203 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 6
+2026-08-29 14:50:05.221 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 3 records.
+2026-08-29 14:50:05.222 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:50:05.222 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 3
+2026-08-29 14:50:05.249 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 3 records.
+2026-08-29 14:50:05.249 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:50:05.250 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 3
+2026-08-29 14:50:05.262 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 3 records.
+2026-08-29 14:50:05.262 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:50:05.263 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 3
+2026-08-29 14:50:05.296 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 2 records.
+2026-08-29 14:50:05.296 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:50:05.296 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 2
+2026-08-29 14:50:05.314 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 0 records.
+2026-08-29 14:50:05.332 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 3 records.
+2026-08-29 14:50:05.332 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:50:05.333 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 3
+2026-08-29 14:51:54.789 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 1/6
+2026-08-29 14:51:54.901 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 2/6
+2026-08-29 14:51:55.063 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 3/6
+2026-08-29 14:51:55.239 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 4/6
+2026-08-29 14:51:55.306 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 5/6
+2026-08-29 14:51:55.393 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6
+2026-08-29 14:51:55.487 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6 (done)
+2026-08-29 14:51:55.496 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 1/4
+2026-08-29 14:51:55.625 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 2/4
+2026-08-29 14:51:55.728 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/4
+2026-08-29 14:51:55.770 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 4/4
+2026-08-29 14:51:55.911 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 4/4 (done)
+2026-08-29 14:53:09.469 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:53:09.470 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:53:09.489 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 19 ms. row count = 6
+2026-08-29 14:53:09.498 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 14:53:09.498 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:53:09.498 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 6
+2026-08-29 14:53:09.515 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 4 records.
+2026-08-29 14:53:09.515 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:53:09.515 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 4
+2026-08-29 14:53:09.537 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 4 records.
+2026-08-29 14:53:09.537 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:53:09.537 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 4
+2026-08-29 14:53:09.547 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 4 records.
+2026-08-29 14:53:09.548 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:53:09.549 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 4
+2026-08-29 14:53:09.568 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 2 records.
+2026-08-29 14:53:09.568 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:53:09.569 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 2
+2026-08-29 14:53:09.584 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 0 records.
+2026-08-29 14:53:09.592 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 4 records.
+2026-08-29 14:53:09.592 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 14:53:09.593 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 4
+2026-08-29 14:57:35.975 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 1/6
+2026-08-29 14:57:36.196 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 2/6
+2026-08-29 14:57:36.315 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 3/6
+2026-08-29 14:57:36.367 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 4/6
+2026-08-29 14:57:36.492 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 5/6
+2026-08-29 14:57:36.531 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6
+2026-08-29 14:57:36.655 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6 (done)
+2026-08-29 14:57:36.657 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 1/12
+2026-08-29 14:57:36.692 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 2/12
+2026-08-29 14:57:36.805 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/12
+2026-08-29 14:57:36.839 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 4/12
+2026-08-29 14:57:36.903 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 5/12
+2026-08-29 14:57:36.946 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 6/12
+2026-08-29 14:57:37.014 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 7/12
+2026-08-29 14:57:37.067 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 8/12
+2026-08-29 14:57:37.238 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 9/12
+2026-08-29 14:57:37.281 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 10/12
+2026-08-29 14:57:37.400 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 11/12
+2026-08-29 14:57:37.465 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 12/12
+2026-08-29 14:57:37.564 [DefaultDispatcher-worker-4] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 12/12 (done)
+2026-08-29 15:02:03.910 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 15:02:03.910 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 15:02:03.912 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 6
+2026-08-29 15:02:03.920 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 15:02:03.920 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 15:02:03.920 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 6
+2026-08-29 15:02:03.928 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 12 records.
+2026-08-29 15:02:03.928 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 15:02:03.928 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 12
+2026-08-29 15:02:03.936 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 12 records.
+2026-08-29 15:02:03.936 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 15:02:03.936 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 12
+2026-08-29 15:02:03.943 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 12 records.
+2026-08-29 15:02:03.943 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 15:02:03.943 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 12
+2026-08-29 15:02:03.950 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 11 records.
+2026-08-29 15:02:03.950 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 15:02:03.950 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 11
+2026-08-29 15:02:03.975 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 4 records.
+2026-08-29 15:02:03.975 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 15:02:03.975 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 4
+2026-08-29 15:02:03.981 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 12 records.
+2026-08-29 15:02:03.981 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 15:02:03.982 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 12
+2026-08-29 15:04:05.305 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 1/6
+2026-08-29 15:04:05.497 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 2/6
+2026-08-29 15:04:05.594 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 3/6
+2026-08-29 15:04:05.683 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 4/6
+2026-08-29 15:04:05.866 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 5/6
+2026-08-29 15:04:05.961 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6
+2026-08-29 15:04:06.035 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Text embedding progress: 6/6 (done)
+2026-08-29 15:04:06.037 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 1/5
+2026-08-29 15:04:06.075 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 2/5
+2026-08-29 15:04:06.124 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 3/5
+2026-08-29 15:04:06.170 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 4/5
+2026-08-29 15:04:06.225 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 5/5
+2026-08-29 15:04:06.323 [DefaultDispatcher-worker-2] INFO  c.m.graphrag.logger.ProgressTicker - Entity embedding progress: 5/5 (done)
+2026-08-29 15:05:55.460 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 15:05:55.460 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 15:05:55.480 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 20 ms. row count = 6
+2026-08-29 15:05:55.489 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 6 records.
+2026-08-29 15:05:55.489 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 15:05:55.489 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 6
+2026-08-29 15:05:55.509 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 5 records.
+2026-08-29 15:05:55.509 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 15:05:55.509 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 5
+2026-08-29 15:05:55.517 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 5 records.
+2026-08-29 15:05:55.517 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 15:05:55.517 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 5
+2026-08-29 15:05:55.529 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 5 records.
+2026-08-29 15:05:55.529 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 15:05:55.529 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 5
+2026-08-29 15:05:55.537 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 4 records.
+2026-08-29 15:05:55.537 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 15:05:55.537 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 4
+2026-08-29 15:05:55.545 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 0 records.
+2026-08-29 15:05:55.551 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 5 records.
+2026-08-29 15:05:55.552 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2026-08-29 15:05:55.552 [DefaultDispatcher-worker-1] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 5
+graphrag: processed 15/15
+Wrote 15 rows -> eval_results/swo69_20260828_e2/e0_graphrag_causal/per_question/graphrag.jsonl
+
+Finished. Aggregate CSV can be produced by scripts/aggregate_experiment_results.py

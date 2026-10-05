@@ -1,0 +1,6129 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormones",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "renal development",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormones",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "renal physiology",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormones",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "renal blood flow",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormones",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "GFR",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "TSH elevations",
+      "chunk id" : "BUAXAYvx"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "CKD",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "TSH elevations",
+      "chunk id" : "BUAXAYvx"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "hypothyroidism",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pre-renal effects",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormones",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "intrinsic renal effects",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormones",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "functional alterations",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid-kidney interactions",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "structural correlates",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid-kidney interactions",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "CKD",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "hypothyroidism",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid problems",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney problems",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "leptin problems",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "testosterone",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "leptin problems",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sex drive",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "leptin problems",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sexual function in men",
+      "chunk id" : "vrKuwCOf"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormones",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney filtration rate",
+      "chunk id" : "vrKuwCOf"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid function impairment",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney function",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "chronic kidney disease (CKD)",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "subclinical hypothyroidism",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "subclinical hypothyroidism",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney function decline",
+      "chunk id" : "vrKuwCOf"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "subclinical hypothyroidism",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormone level reduction",
+      "chunk id" : "vrKuwCOf"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "study",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Clinical Journal of the American Society of Nephrology (CJASN)",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "study",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "September 2008",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "9.5 percent of CKD patients",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "subclinical hypothyroidism",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormone levels",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "blood tests",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney function",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney filtration work",
+      "chunk id" : "vrKuwCOf"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "subclinical hypothyroidism",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney function",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney problems",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "adrenal problems",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney problems",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stress intolerance",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "testosterone",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sex drive",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid function",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney function",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidneys",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormone activation",
+      "chunk id" : "_ZkV-aH5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidneys",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "T4 to T3 conversion",
+      "chunk id" : "_ZkV-aH5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "liver",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "T4 to T3 conversion",
+      "chunk id" : "_ZkV-aH5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "liver",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormone activation process",
+      "chunk id" : "_ZkV-aH5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "elevated creatinine",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney problems symptoms",
+      "chunk id" : "_ZkV-aH5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "loss of proteins in urine",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney problems symptoms",
+      "chunk id" : "_ZkV-aH5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electrolyte imbalance",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney problems symptoms",
+      "chunk id" : "_ZkV-aH5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "patients",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "subclinical hypothyroidism risk",
+      "chunk id" : "_ZkV-aH5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid problems",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney problems",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid problems",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cardiovascular problems",
+      "chunk id" : "b9R5TJGW",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney problems",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cardiovascular problems",
+      "chunk id" : "b9R5TJGW",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "testosterone",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sexual function in men",
+      "chunk id" : "vrKuwCOf"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormones",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney filtration rate",
+      "chunk id" : "vrKuwCOf"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "hypothyroidism",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heart function",
+      "chunk id" : "b9R5TJGW",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reduced heart function",
+      "chunk id" : "b9R5TJGW"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney function",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "subclinical hypothyroidism",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "risk factor for cardiovascular disease",
+      "chunk id" : "b9R5TJGW"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "subclinical hypothyroidism",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "risk factor for progressive kidney disease",
+      "chunk id" : "b9R5TJGW"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "subclinical hypothyroidism",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "CKD patients",
+      "chunk id" : "b9R5TJGW"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cardiovascular problems",
+      "chunk id" : "b9R5TJGW",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "poor blood pressure control",
+      "chunk id" : "b9R5TJGW"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "subclinical hypothyroidism",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "blood tests",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid dysfunction",
+      "chunk id" : "6fmFST7e",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "renal physiology",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid dysfunction",
+      "chunk id" : "6fmFST7e",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney development",
+      "chunk id" : "6fmFST7e",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney disease",
+      "chunk id" : "6fmFST7e",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid dysfunction",
+      "chunk id" : "6fmFST7e",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lower kidney function",
+      "chunk id" : "6fmFST7e"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "subclinical hypothyroidism",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid disorders",
+      "chunk id" : "6fmFST7e"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney disorders",
+      "chunk id" : "6fmFST7e"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "functional alterations",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid-kidney interaction",
+      "chunk id" : "6fmFST7e"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "structural correlates",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid-kidney interaction",
+      "chunk id" : "6fmFST7e"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "patients",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "CKD",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "patients",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "subclinical hypothyroidism",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "TSH elevations",
+      "chunk id" : "BUAXAYvx"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hypothyroidism",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Leptin resistance",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney problems",
+      "chunk id" : "EMfwJmEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Leptin resistance",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thyroid problems",
+      "chunk id" : "EMfwJmEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Leptin resistance",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "comparable_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Adrenaline resistance",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Leptin problems",
+      "chunk id" : "EMfwJmEN"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Testosterone",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Testosterone",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sex drive",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Testosterone",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sexual function",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thyroid hormones",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney filtration rate",
+      "chunk id" : "EMfwJmEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thyroid function",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney function",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thyroid",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mastering Leptin",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Leptin resistance",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Heart problems",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney-thyroid interaction",
+      "chunk id" : "EMfwJmEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Functional alterations",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney-thyroid interaction",
+      "chunk id" : "EMfwJmEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Structural correlates",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney-thyroid interaction",
+      "chunk id" : "EMfwJmEN"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hashimoto's disease",
+      "chunk id" : "TLp-4pg_",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heart disease",
+      "chunk id" : "TLp-4pg_",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hashimoto's disease",
+      "chunk id" : "TLp-4pg_",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "hypothyroidism",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "hypothyroidism",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "LDL cholesterol",
+      "chunk id" : "TLp-4pg_",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "hypothyroidism",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "goiter",
+      "chunk id" : "TLp-4pg_",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hashimoto's disease",
+      "chunk id" : "TLp-4pg_",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "goiter",
+      "chunk id" : "TLp-4pg_",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "LDL cholesterol",
+      "chunk id" : "TLp-4pg_",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heart disease",
+      "chunk id" : "TLp-4pg_",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "9.5 percent of CKD patients",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "CKD",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "CKD patients",
+      "chunk id" : "b9R5TJGW"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hashimoto's disease",
+      "chunk id" : "TLp-4pg_",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hypothyroidism",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "LDL cholesterol",
+      "chunk id" : "TLp-4pg_",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "TSH elevations",
+      "chunk id" : "BUAXAYvx"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "blood tests",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "chronic kidney disease (CKD)",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "goiter",
+      "chunk id" : "TLp-4pg_",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heart disease",
+      "chunk id" : "TLp-4pg_",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "heart function",
+      "chunk id" : "b9R5TJGW",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "hypothyroidism",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney filtration work",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney function",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney function decline",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lower kidney function",
+      "chunk id" : "6fmFST7e"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "patients",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reduced heart function",
+      "chunk id" : "b9R5TJGW"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "risk factor for cardiovascular disease",
+      "chunk id" : "b9R5TJGW"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "risk factor for progressive kidney disease",
+      "chunk id" : "b9R5TJGW"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "subclinical hypothyroidism",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "subclinical hypothyroidism risk",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid function",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid function impairment",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormone level reduction",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormone levels",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "subclinical hypothyroidism",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "subclinical hypothyroidism"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "subclinical hypothyroidism",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "subclinical hypothyroidism"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "subclinical hypothyroidism"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "hypothyroidism",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "hypothyroidism"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "hypothyroidism",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "hypothyroidism"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "hypothyroidism"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney function",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney function"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney function",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney function"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney function"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hashimoto's disease",
+      "chunk id" : "TLp-4pg_",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Hashimoto's disease"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hashimoto's disease",
+      "chunk id" : "TLp-4pg_",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Hashimoto's disease"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Hashimoto's disease"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "TSH elevations",
+      "chunk id" : "BUAXAYvx"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "TSH elevations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "TSH elevations",
+      "chunk id" : "BUAXAYvx"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "TSH elevations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "TSH elevations"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 27 members",
+      "community_id" : "community_1",
+      "node_count" : "27",
+      "edge_count" : "29",
+      "members" : [ "9.5 percent of CKD patients", "CKD", "CKD patients", "Hashimoto's disease", "Hypothyroidism", "LDL cholesterol", "TSH elevations", "blood tests", "chronic kidney disease (CKD)", "goiter", "heart disease", "heart function", "hypothyroidism", "kidney filtration work", "kidney function", "kidney function decline", "lower kidney function", "patients", "reduced heart function", "risk factor for cardiovascular disease", "risk factor for progressive kidney disease", "subclinical hypothyroidism", "subclinical hypothyroidism risk", "thyroid function", "thyroid function impairment", "thyroid hormone level reduction", "thyroid hormone levels" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "GFR",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "GFR", "intrinsic renal effects", "kidney development", "kidney disease", "kidney filtration rate", "pre-renal effects", "renal blood flow", "renal development", "renal physiology", "thyroid dysfunction", "thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "intrinsic renal effects",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "GFR", "intrinsic renal effects", "kidney development", "kidney disease", "kidney filtration rate", "pre-renal effects", "renal blood flow", "renal development", "renal physiology", "thyroid dysfunction", "thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney development",
+      "chunk id" : "6fmFST7e",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "GFR", "intrinsic renal effects", "kidney development", "kidney disease", "kidney filtration rate", "pre-renal effects", "renal blood flow", "renal development", "renal physiology", "thyroid dysfunction", "thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney disease",
+      "chunk id" : "6fmFST7e",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "GFR", "intrinsic renal effects", "kidney development", "kidney disease", "kidney filtration rate", "pre-renal effects", "renal blood flow", "renal development", "renal physiology", "thyroid dysfunction", "thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney filtration rate",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "GFR", "intrinsic renal effects", "kidney development", "kidney disease", "kidney filtration rate", "pre-renal effects", "renal blood flow", "renal development", "renal physiology", "thyroid dysfunction", "thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pre-renal effects",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "GFR", "intrinsic renal effects", "kidney development", "kidney disease", "kidney filtration rate", "pre-renal effects", "renal blood flow", "renal development", "renal physiology", "thyroid dysfunction", "thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "renal blood flow",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "GFR", "intrinsic renal effects", "kidney development", "kidney disease", "kidney filtration rate", "pre-renal effects", "renal blood flow", "renal development", "renal physiology", "thyroid dysfunction", "thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "renal development",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "GFR", "intrinsic renal effects", "kidney development", "kidney disease", "kidney filtration rate", "pre-renal effects", "renal blood flow", "renal development", "renal physiology", "thyroid dysfunction", "thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "renal physiology",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "GFR", "intrinsic renal effects", "kidney development", "kidney disease", "kidney filtration rate", "pre-renal effects", "renal blood flow", "renal development", "renal physiology", "thyroid dysfunction", "thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid dysfunction",
+      "chunk id" : "6fmFST7e",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "GFR", "intrinsic renal effects", "kidney development", "kidney disease", "kidney filtration rate", "pre-renal effects", "renal blood flow", "renal development", "renal physiology", "thyroid dysfunction", "thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormones",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "GFR", "intrinsic renal effects", "kidney development", "kidney disease", "kidney filtration rate", "pre-renal effects", "renal blood flow", "renal development", "renal physiology", "thyroid dysfunction", "thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormones",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid hormones"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormones",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid hormones"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid hormones"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "GFR", "intrinsic renal effects", "kidney development", "kidney disease", "kidney filtration rate", "pre-renal effects", "renal blood flow", "renal development", "renal physiology", "thyroid dysfunction", "thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid dysfunction",
+      "chunk id" : "6fmFST7e",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid dysfunction"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid dysfunction",
+      "chunk id" : "6fmFST7e",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid dysfunction"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid dysfunction"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "GFR", "intrinsic renal effects", "kidney development", "kidney disease", "kidney filtration rate", "pre-renal effects", "renal blood flow", "renal development", "renal physiology", "thyroid dysfunction", "thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney filtration rate",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney filtration rate"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney filtration rate",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney filtration rate"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney filtration rate"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "GFR", "intrinsic renal effects", "kidney development", "kidney disease", "kidney filtration rate", "pre-renal effects", "renal blood flow", "renal development", "renal physiology", "thyroid dysfunction", "thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "renal physiology",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "renal physiology"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "renal physiology",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "renal physiology"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "renal physiology"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "GFR", "intrinsic renal effects", "kidney development", "kidney disease", "kidney filtration rate", "pre-renal effects", "renal blood flow", "renal development", "renal physiology", "thyroid dysfunction", "thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "intrinsic renal effects",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "intrinsic renal effects"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "intrinsic renal effects",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "intrinsic renal effects"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "intrinsic renal effects"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 11 members",
+      "community_id" : "community_2",
+      "node_count" : "11",
+      "edge_count" : "11",
+      "members" : [ "GFR", "intrinsic renal effects", "kidney development", "kidney disease", "kidney filtration rate", "pre-renal effects", "renal blood flow", "renal development", "renal physiology", "thyroid dysfunction", "thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "adrenal problems",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "adrenal problems", "cardiovascular problems", "kidney problems", "poor blood pressure control", "stress intolerance", "thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cardiovascular problems",
+      "chunk id" : "b9R5TJGW",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "adrenal problems", "cardiovascular problems", "kidney problems", "poor blood pressure control", "stress intolerance", "thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney problems",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "adrenal problems", "cardiovascular problems", "kidney problems", "poor blood pressure control", "stress intolerance", "thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "poor blood pressure control",
+      "chunk id" : "b9R5TJGW"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "adrenal problems", "cardiovascular problems", "kidney problems", "poor blood pressure control", "stress intolerance", "thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "stress intolerance",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "adrenal problems", "cardiovascular problems", "kidney problems", "poor blood pressure control", "stress intolerance", "thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid problems",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "adrenal problems", "cardiovascular problems", "kidney problems", "poor blood pressure control", "stress intolerance", "thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney problems",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney problems",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney problems"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "adrenal problems", "cardiovascular problems", "kidney problems", "poor blood pressure control", "stress intolerance", "thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cardiovascular problems",
+      "chunk id" : "b9R5TJGW",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "cardiovascular problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cardiovascular problems",
+      "chunk id" : "b9R5TJGW",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "cardiovascular problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "cardiovascular problems"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "adrenal problems", "cardiovascular problems", "kidney problems", "poor blood pressure control", "stress intolerance", "thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid problems",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid problems",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid problems"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "adrenal problems", "cardiovascular problems", "kidney problems", "poor blood pressure control", "stress intolerance", "thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "adrenal problems",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "adrenal problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "adrenal problems",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "adrenal problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "adrenal problems"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "adrenal problems", "cardiovascular problems", "kidney problems", "poor blood pressure control", "stress intolerance", "thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "poor blood pressure control",
+      "chunk id" : "b9R5TJGW"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "poor blood pressure control"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "poor blood pressure control",
+      "chunk id" : "b9R5TJGW"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "poor blood pressure control"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "poor blood pressure control"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 6 members",
+      "community_id" : "community_3",
+      "node_count" : "6",
+      "edge_count" : "7",
+      "members" : [ "adrenal problems", "cardiovascular problems", "kidney problems", "poor blood pressure control", "stress intolerance", "thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Adrenaline resistance",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Adrenaline resistance", "Kidney problems", "Leptin resistance", "Mastering Leptin", "Thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney problems",
+      "chunk id" : "EMfwJmEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Adrenaline resistance", "Kidney problems", "Leptin resistance", "Mastering Leptin", "Thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Leptin resistance",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Adrenaline resistance", "Kidney problems", "Leptin resistance", "Mastering Leptin", "Thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mastering Leptin",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Adrenaline resistance", "Kidney problems", "Leptin resistance", "Mastering Leptin", "Thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thyroid problems",
+      "chunk id" : "EMfwJmEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Adrenaline resistance", "Kidney problems", "Leptin resistance", "Mastering Leptin", "Thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Leptin resistance",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Leptin resistance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Leptin resistance",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Leptin resistance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Leptin resistance"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Adrenaline resistance", "Kidney problems", "Leptin resistance", "Mastering Leptin", "Thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Adrenaline resistance",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Adrenaline resistance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Adrenaline resistance",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Adrenaline resistance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Adrenaline resistance"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Adrenaline resistance", "Kidney problems", "Leptin resistance", "Mastering Leptin", "Thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thyroid problems",
+      "chunk id" : "EMfwJmEN"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Thyroid problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thyroid problems",
+      "chunk id" : "EMfwJmEN"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Thyroid problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Thyroid problems"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Adrenaline resistance", "Kidney problems", "Leptin resistance", "Mastering Leptin", "Thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney problems",
+      "chunk id" : "EMfwJmEN"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kidney problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney problems",
+      "chunk id" : "EMfwJmEN"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kidney problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kidney problems"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Adrenaline resistance", "Kidney problems", "Leptin resistance", "Mastering Leptin", "Thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mastering Leptin",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Mastering Leptin"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mastering Leptin",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Mastering Leptin"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Mastering Leptin"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 5 members",
+      "community_id" : "community_4",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Adrenaline resistance", "Kidney problems", "Leptin resistance", "Mastering Leptin", "Thyroid problems" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "T4 to T3 conversion",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "T4 to T3 conversion", "kidneys", "liver", "thyroid hormone activation", "thyroid hormone activation process" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidneys",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "T4 to T3 conversion", "kidneys", "liver", "thyroid hormone activation", "thyroid hormone activation process" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "liver",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "T4 to T3 conversion", "kidneys", "liver", "thyroid hormone activation", "thyroid hormone activation process" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormone activation",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "T4 to T3 conversion", "kidneys", "liver", "thyroid hormone activation", "thyroid hormone activation process" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormone activation process",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "T4 to T3 conversion", "kidneys", "liver", "thyroid hormone activation", "thyroid hormone activation process" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "T4 to T3 conversion",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "T4 to T3 conversion"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "T4 to T3 conversion",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "T4 to T3 conversion"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "T4 to T3 conversion"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "T4 to T3 conversion", "kidneys", "liver", "thyroid hormone activation", "thyroid hormone activation process" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidneys",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidneys"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidneys",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidneys"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidneys"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "T4 to T3 conversion", "kidneys", "liver", "thyroid hormone activation", "thyroid hormone activation process" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "liver",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "liver"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "liver",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "liver"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "liver"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "T4 to T3 conversion", "kidneys", "liver", "thyroid hormone activation", "thyroid hormone activation process" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormone activation",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid hormone activation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormone activation",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid hormone activation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid hormone activation"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "T4 to T3 conversion", "kidneys", "liver", "thyroid hormone activation", "thyroid hormone activation process" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormone activation process",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid hormone activation process"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid hormone activation process",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid hormone activation process"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid hormone activation process"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 5 members",
+      "community_id" : "community_5",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "T4 to T3 conversion", "kidneys", "liver", "thyroid hormone activation", "thyroid hormone activation process" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Functional alterations",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 4 members",
+      "community_id" : "community_6",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Functional alterations", "Heart problems", "Kidney-thyroid interaction", "Structural correlates" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Heart problems",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 4 members",
+      "community_id" : "community_6",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Functional alterations", "Heart problems", "Kidney-thyroid interaction", "Structural correlates" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney-thyroid interaction",
+      "chunk id" : "EMfwJmEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 4 members",
+      "community_id" : "community_6",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Functional alterations", "Heart problems", "Kidney-thyroid interaction", "Structural correlates" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Structural correlates",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 4 members",
+      "community_id" : "community_6",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Functional alterations", "Heart problems", "Kidney-thyroid interaction", "Structural correlates" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney-thyroid interaction",
+      "chunk id" : "EMfwJmEN"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kidney-thyroid interaction"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney-thyroid interaction",
+      "chunk id" : "EMfwJmEN"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kidney-thyroid interaction"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kidney-thyroid interaction"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 4 members",
+      "community_id" : "community_6",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Functional alterations", "Heart problems", "Kidney-thyroid interaction", "Structural correlates" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Structural correlates",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Structural correlates"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Structural correlates",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Structural correlates"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Structural correlates"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 4 members",
+      "community_id" : "community_6",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Functional alterations", "Heart problems", "Kidney-thyroid interaction", "Structural correlates" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Functional alterations",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Functional alterations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Functional alterations",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Functional alterations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Functional alterations"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 4 members",
+      "community_id" : "community_6",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Functional alterations", "Heart problems", "Kidney-thyroid interaction", "Structural correlates" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Heart problems",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Heart problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Heart problems",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Heart problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Heart problems"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 4 members",
+      "community_id" : "community_6",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Functional alterations", "Heart problems", "Kidney-thyroid interaction", "Structural correlates" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Leptin problems",
+      "chunk id" : "EMfwJmEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Leptin problems", "Sex drive", "Sexual function", "Testosterone" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sex drive",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Leptin problems", "Sex drive", "Sexual function", "Testosterone" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sexual function",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Leptin problems", "Sex drive", "Sexual function", "Testosterone" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Testosterone",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Leptin problems", "Sex drive", "Sexual function", "Testosterone" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Testosterone",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Testosterone"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Testosterone",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Testosterone"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Testosterone"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Leptin problems", "Sex drive", "Sexual function", "Testosterone" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sexual function",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sexual function"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sexual function",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sexual function"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sexual function"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Leptin problems", "Sex drive", "Sexual function", "Testosterone" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Leptin problems",
+      "chunk id" : "EMfwJmEN"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Leptin problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Leptin problems",
+      "chunk id" : "EMfwJmEN"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Leptin problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Leptin problems"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Leptin problems", "Sex drive", "Sexual function", "Testosterone" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sex drive",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sex drive"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Sex drive",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sex drive"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Sex drive"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Leptin problems", "Sex drive", "Sexual function", "Testosterone" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electrolyte imbalance",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 4 members",
+      "community_id" : "community_8",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "electrolyte imbalance", "elevated creatinine", "kidney problems symptoms", "loss of proteins in urine" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "elevated creatinine",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 4 members",
+      "community_id" : "community_8",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "electrolyte imbalance", "elevated creatinine", "kidney problems symptoms", "loss of proteins in urine" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney problems symptoms",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 4 members",
+      "community_id" : "community_8",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "electrolyte imbalance", "elevated creatinine", "kidney problems symptoms", "loss of proteins in urine" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "loss of proteins in urine",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 4 members",
+      "community_id" : "community_8",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "electrolyte imbalance", "elevated creatinine", "kidney problems symptoms", "loss of proteins in urine" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney problems symptoms",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney problems symptoms"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney problems symptoms",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney problems symptoms"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney problems symptoms"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 4 members",
+      "community_id" : "community_8",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "electrolyte imbalance", "elevated creatinine", "kidney problems symptoms", "loss of proteins in urine" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "elevated creatinine",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "elevated creatinine"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "elevated creatinine",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "elevated creatinine"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "elevated creatinine"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 4 members",
+      "community_id" : "community_8",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "electrolyte imbalance", "elevated creatinine", "kidney problems symptoms", "loss of proteins in urine" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "loss of proteins in urine",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "loss of proteins in urine"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "loss of proteins in urine",
+      "chunk id" : "_ZkV-aH5"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "loss of proteins in urine"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "loss of proteins in urine"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 4 members",
+      "community_id" : "community_8",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "electrolyte imbalance", "elevated creatinine", "kidney problems symptoms", "loss of proteins in urine" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electrolyte imbalance",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "electrolyte imbalance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electrolyte imbalance",
+      "chunk id" : "_ZkV-aH5",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "electrolyte imbalance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "electrolyte imbalance"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 4 members",
+      "community_id" : "community_8",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "electrolyte imbalance", "elevated creatinine", "kidney problems symptoms", "loss of proteins in urine" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "functional alterations",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 4 members",
+      "community_id" : "community_9",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "functional alterations", "structural correlates", "thyroid-kidney interaction", "thyroid-kidney interactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "structural correlates",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 4 members",
+      "community_id" : "community_9",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "functional alterations", "structural correlates", "thyroid-kidney interaction", "thyroid-kidney interactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid-kidney interaction",
+      "chunk id" : "6fmFST7e"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 4 members",
+      "community_id" : "community_9",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "functional alterations", "structural correlates", "thyroid-kidney interaction", "thyroid-kidney interactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid-kidney interactions",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 4 members",
+      "community_id" : "community_9",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "functional alterations", "structural correlates", "thyroid-kidney interaction", "thyroid-kidney interactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "structural correlates",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "structural correlates"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "structural correlates",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "structural correlates"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "structural correlates"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 4 members",
+      "community_id" : "community_9",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "functional alterations", "structural correlates", "thyroid-kidney interaction", "thyroid-kidney interactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid-kidney interaction",
+      "chunk id" : "6fmFST7e"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid-kidney interaction"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid-kidney interaction",
+      "chunk id" : "6fmFST7e"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid-kidney interaction"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid-kidney interaction"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 4 members",
+      "community_id" : "community_9",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "functional alterations", "structural correlates", "thyroid-kidney interaction", "thyroid-kidney interactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "functional alterations",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "functional alterations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "functional alterations",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "functional alterations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "functional alterations"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 4 members",
+      "community_id" : "community_9",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "functional alterations", "structural correlates", "thyroid-kidney interaction", "thyroid-kidney interactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid-kidney interactions",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid-kidney interactions"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid-kidney interactions",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid-kidney interactions"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid-kidney interactions"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 4 members",
+      "community_id" : "community_9",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "functional alterations", "structural correlates", "thyroid-kidney interaction", "thyroid-kidney interactions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "leptin problems",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 4 members",
+      "community_id" : "community_10",
+      "node_count" : "4",
+      "edge_count" : "5",
+      "members" : [ "leptin problems", "sex drive", "sexual function in men", "testosterone" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sex drive",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 4 members",
+      "community_id" : "community_10",
+      "node_count" : "4",
+      "edge_count" : "5",
+      "members" : [ "leptin problems", "sex drive", "sexual function in men", "testosterone" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sexual function in men",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 4 members",
+      "community_id" : "community_10",
+      "node_count" : "4",
+      "edge_count" : "5",
+      "members" : [ "leptin problems", "sex drive", "sexual function in men", "testosterone" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "testosterone",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 4 members",
+      "community_id" : "community_10",
+      "node_count" : "4",
+      "edge_count" : "5",
+      "members" : [ "leptin problems", "sex drive", "sexual function in men", "testosterone" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "testosterone",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "testosterone"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "testosterone",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "testosterone"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "testosterone"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 4 members",
+      "community_id" : "community_10",
+      "node_count" : "4",
+      "edge_count" : "5",
+      "members" : [ "leptin problems", "sex drive", "sexual function in men", "testosterone" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "leptin problems",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "leptin problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "leptin problems",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "leptin problems"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "leptin problems"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 4 members",
+      "community_id" : "community_10",
+      "node_count" : "4",
+      "edge_count" : "5",
+      "members" : [ "leptin problems", "sex drive", "sexual function in men", "testosterone" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sexual function in men",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sexual function in men"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sexual function in men",
+      "chunk id" : "vrKuwCOf"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sexual function in men"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sexual function in men"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 4 members",
+      "community_id" : "community_10",
+      "node_count" : "4",
+      "edge_count" : "5",
+      "members" : [ "leptin problems", "sex drive", "sexual function in men", "testosterone" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sex drive",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sex drive"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sex drive",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sex drive"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sex drive"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 4 members",
+      "community_id" : "community_10",
+      "node_count" : "4",
+      "edge_count" : "5",
+      "members" : [ "leptin problems", "sex drive", "sexual function in men", "testosterone" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Clinical Journal of the American Society of Nephrology (CJASN)",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 3 members",
+      "community_id" : "community_11",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Clinical Journal of the American Society of Nephrology (CJASN)", "September 2008", "study" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "September 2008",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 3 members",
+      "community_id" : "community_11",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Clinical Journal of the American Society of Nephrology (CJASN)", "September 2008", "study" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "study",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 3 members",
+      "community_id" : "community_11",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Clinical Journal of the American Society of Nephrology (CJASN)", "September 2008", "study" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "study",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "study"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "study",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "study"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "study"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 3 members",
+      "community_id" : "community_11",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Clinical Journal of the American Society of Nephrology (CJASN)", "September 2008", "study" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Clinical Journal of the American Society of Nephrology (CJASN)",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Clinical Journal of the American Society of Nephrology (CJASN)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Clinical Journal of the American Society of Nephrology (CJASN)",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Clinical Journal of the American Society of Nephrology (CJASN)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Clinical Journal of the American Society of Nephrology (CJASN)"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 3 members",
+      "community_id" : "community_11",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Clinical Journal of the American Society of Nephrology (CJASN)", "September 2008", "study" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "September 2008",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "September 2008"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "September 2008",
+      "chunk id" : "vrKuwCOf",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "September 2008"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "September 2008"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_11",
+      "description" : "Community of 3 members",
+      "community_id" : "community_11",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "Clinical Journal of the American Society of Nephrology (CJASN)", "September 2008", "study" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_12",
+      "description" : "Community of 2 members",
+      "community_id" : "community_12",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Kidney", "Thyroid" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thyroid",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_12",
+      "description" : "Community of 2 members",
+      "community_id" : "community_12",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Kidney", "Thyroid" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kidney"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kidney"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kidney"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_12",
+      "description" : "Community of 2 members",
+      "community_id" : "community_12",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Kidney", "Thyroid" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thyroid",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Thyroid"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thyroid",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Thyroid"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Thyroid"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_12",
+      "description" : "Community of 2 members",
+      "community_id" : "community_12",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Kidney", "Thyroid" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney filtration rate",
+      "chunk id" : "EMfwJmEN"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_13",
+      "description" : "Community of 2 members",
+      "community_id" : "community_13",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Kidney filtration rate", "Thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thyroid hormones",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_13",
+      "description" : "Community of 2 members",
+      "community_id" : "community_13",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Kidney filtration rate", "Thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney filtration rate",
+      "chunk id" : "EMfwJmEN"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kidney filtration rate"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney filtration rate",
+      "chunk id" : "EMfwJmEN"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kidney filtration rate"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kidney filtration rate"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_13",
+      "description" : "Community of 2 members",
+      "community_id" : "community_13",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Kidney filtration rate", "Thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thyroid hormones",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Thyroid hormones"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thyroid hormones",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Thyroid hormones"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Thyroid hormones"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_13",
+      "description" : "Community of 2 members",
+      "community_id" : "community_13",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Kidney filtration rate", "Thyroid hormones" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney function",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_14",
+      "description" : "Community of 2 members",
+      "community_id" : "community_14",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Kidney function", "Thyroid function" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thyroid function",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_14",
+      "description" : "Community of 2 members",
+      "community_id" : "community_14",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Kidney function", "Thyroid function" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney function",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kidney function"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kidney function",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kidney function"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kidney function"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_14",
+      "description" : "Community of 2 members",
+      "community_id" : "community_14",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Kidney function", "Thyroid function" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thyroid function",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Thyroid function"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Thyroid function",
+      "chunk id" : "EMfwJmEN",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Thyroid function"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Thyroid function"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_14",
+      "description" : "Community of 2 members",
+      "community_id" : "community_14",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Kidney function", "Thyroid function" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_15",
+      "description" : "Community of 2 members",
+      "community_id" : "community_15",
+      "node_count" : "2",
+      "edge_count" : "2",
+      "members" : [ "kidney", "thyroid" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_15",
+      "description" : "Community of 2 members",
+      "community_id" : "community_15",
+      "node_count" : "2",
+      "edge_count" : "2",
+      "members" : [ "kidney", "thyroid" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_15",
+      "description" : "Community of 2 members",
+      "community_id" : "community_15",
+      "node_count" : "2",
+      "edge_count" : "2",
+      "members" : [ "kidney", "thyroid" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid",
+      "chunk id" : "BUAXAYvx",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_15",
+      "description" : "Community of 2 members",
+      "community_id" : "community_15",
+      "node_count" : "2",
+      "edge_count" : "2",
+      "members" : [ "kidney", "thyroid" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney disorders",
+      "chunk id" : "6fmFST7e"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_16",
+      "description" : "Community of 2 members",
+      "community_id" : "community_16",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "kidney disorders", "thyroid disorders" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid disorders",
+      "chunk id" : "6fmFST7e"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_16",
+      "description" : "Community of 2 members",
+      "community_id" : "community_16",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "kidney disorders", "thyroid disorders" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney disorders",
+      "chunk id" : "6fmFST7e"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney disorders"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kidney disorders",
+      "chunk id" : "6fmFST7e"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney disorders"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "kidney disorders"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_16",
+      "description" : "Community of 2 members",
+      "community_id" : "community_16",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "kidney disorders", "thyroid disorders" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid disorders",
+      "chunk id" : "6fmFST7e"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid disorders"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "thyroid disorders",
+      "chunk id" : "6fmFST7e"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid disorders"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "thyroid disorders"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_16",
+      "description" : "Community of 2 members",
+      "community_id" : "community_16",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "kidney disorders", "thyroid disorders" ]
+    }
+  }
+} ]

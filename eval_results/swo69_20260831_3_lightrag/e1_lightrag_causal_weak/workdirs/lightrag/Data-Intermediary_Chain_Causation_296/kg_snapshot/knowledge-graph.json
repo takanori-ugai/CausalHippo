@@ -1,0 +1,389 @@
+{
+  "nodes" : [ {
+    "id" : "Public Transportation Infrastructure",
+    "entity_id" : "Public Transportation Infrastructure",
+    "entity_type" : "Organization",
+    "description" : "The infrastructure used for public transportation.",
+    "source_id" : "1be868e1658b5aef14eca977283ac020"
+  }, {
+    "id" : "Traffic Congestion",
+    "entity_id" : "Traffic Congestion",
+    "entity_type" : "Concept",
+    "description" : "The condition of heavy and slow-moving traffic.",
+    "source_id" : "1be868e1658b5aef14eca977283ac020"
+  }, {
+    "id" : "Commuter Feedback",
+    "entity_id" : "Commuter Feedback",
+    "entity_type" : "Concept",
+    "description" : "The opinions and comments of people who commute.",
+    "source_id" : "1be868e1658b5aef14eca977283ac020"
+  }, {
+    "id" : "Urban Planning Policies",
+    "entity_id" : "Urban Planning Policies",
+    "entity_type" : "Concept",
+    "description" : "The plans and regulations for urban development.",
+    "source_id" : "1be868e1658b5aef14eca977283ac020"
+  }, {
+    "id" : "School Holidays",
+    "entity_id" : "School Holidays",
+    "entity_type" : "Event",
+    "description" : "A period of time when schools are closed",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2"
+  }, {
+    "id" : "Children",
+    "entity_id" : "Children",
+    "entity_type" : "Concept",
+    "description" : "Young humans",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2"
+  }, {
+    "id" : "Playground Visits",
+    "entity_id" : "Playground Visits",
+    "entity_type" : "Event",
+    "description" : "A visit to a playground",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2"
+  }, {
+    "id" : "Children's Book Loans",
+    "entity_id" : "Children's Book Loans",
+    "entity_type" : "Event",
+    "description" : "A loan of a children's book",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2"
+  }, {
+    "id" : "Free Time",
+    "entity_id" : "Free Time",
+    "entity_type" : "Concept",
+    "description" : "Time available for leisure activities",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2"
+  }, {
+    "id" : "Reading",
+    "entity_id" : "Reading",
+    "entity_type" : "Concept",
+    "description" : "The act of reading",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2"
+  }, {
+    "id" : "Outdoor Play",
+    "entity_id" : "Outdoor Play",
+    "entity_type" : "Concept",
+    "description" : "Physical activity outdoors",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2"
+  }, {
+    "id" : "Academic Performance",
+    "entity_id" : "Academic Performance",
+    "entity_type" : "Concept",
+    "description" : "A student's level of academic achievement",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1"
+  }, {
+    "id" : "Sports Participation",
+    "entity_id" : "Sports Participation",
+    "entity_type" : "Concept",
+    "description" : "Engaging in sports or physical activities",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1"
+  }, {
+    "id" : "Student",
+    "entity_id" : "Student",
+    "entity_type" : "Person",
+    "description" : "An individual enrolled in school",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1"
+  }, {
+    "id" : "School",
+    "entity_id" : "School",
+    "entity_type" : "Organization",
+    "description" : "An educational institution",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1"
+  }, {
+    "id" : "Athletics",
+    "entity_id" : "Athletics",
+    "entity_type" : "Event",
+    "description" : "Participation in sports or physical activities",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1"
+  }, {
+    "id" : "Annual Holiday Parade",
+    "entity_id" : "Annual Holiday Parade",
+    "entity_type" : "Event",
+    "description" : "A festive event held annually",
+    "source_id" : "e2f6afb6f620f0cb6150fcbd5327a183"
+  }, {
+    "id" : "Emergency Road Closure",
+    "entity_id" : "Emergency Road Closure",
+    "entity_type" : "Location",
+    "description" : "A temporary restriction on road usage",
+    "source_id" : "e2f6afb6f620f0cb6150fcbd5327a183"
+  }, {
+    "id" : "Water Pipe Burst",
+    "entity_id" : "Water Pipe Burst",
+    "entity_type" : "Concept",
+    "description" : "A sudden failure of a water pipe",
+    "source_id" : "e2f6afb6f620f0cb6150fcbd5327a183"
+  }, {
+    "id" : "Local Bakery",
+    "entity_id" : "Local Bakery",
+    "entity_type" : "Organization",
+    "description" : "A business in the business district",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238"
+  }, {
+    "id" : "Office Workers",
+    "entity_id" : "Office Workers",
+    "entity_type" : "Person",
+    "description" : "Employees in the business district",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238"
+  }, {
+    "id" : "Business District",
+    "entity_id" : "Business District",
+    "entity_type" : "Location",
+    "description" : "An area with various businesses",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238"
+  }, {
+    "id" : "Fire Drill",
+    "entity_id" : "Fire Drill",
+    "entity_type" : "Event",
+    "description" : "A scheduled safety drill",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238"
+  }, {
+    "id" : "Pastry Deals",
+    "entity_id" : "Pastry Deals",
+    "entity_type" : "Concept",
+    "description" : "Promotional campaigns for baked goods",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238"
+  }, {
+    "id" : "Autumn",
+    "entity_id" : "Autumn",
+    "entity_type" : "Event",
+    "description" : "The season of autumn",
+    "source_id" : "597481351b30348f1a75b099469c1476"
+  }, {
+    "id" : "Frost",
+    "entity_id" : "Frost",
+    "entity_type" : "Concept",
+    "description" : "A thin layer of ice that forms on surfaces",
+    "source_id" : "597481351b30348f1a75b099469c1476"
+  }, {
+    "id" : "Gardeners",
+    "entity_id" : "Gardeners",
+    "entity_type" : "Occupation",
+    "description" : "People who care for and maintain gardens",
+    "source_id" : "597481351b30348f1a75b099469c1476"
+  }, {
+    "id" : "Lawns",
+    "entity_id" : "Lawns",
+    "entity_type" : "Location",
+    "description" : "Grassy areas surrounding buildings",
+    "source_id" : "597481351b30348f1a75b099469c1476"
+  }, {
+    "id" : "Windshields",
+    "entity_id" : "Windshields",
+    "entity_type" : "Location",
+    "description" : "The front window of a vehicle",
+    "source_id" : "597481351b30348f1a75b099469c1476"
+  } ],
+  "edges" : [ {
+    "source" : "Public Transportation Infrastructure",
+    "target" : "Traffic Congestion",
+    "weight" : "1.0",
+    "description" : "The public transportation infrastructure has affected the traffic congestion.",
+    "keywords" : "congestion, infrastructure, transportation",
+    "source_id" : "1be868e1658b5aef14eca977283ac020",
+    "src_id" : "Public Transportation Infrastructure",
+    "tgt_id" : "Traffic Congestion"
+  }, {
+    "source" : "Public Transportation Infrastructure",
+    "target" : "Commuter Feedback",
+    "weight" : "1.0",
+    "description" : "The commuter feedback has been related to the public transportation infrastructure.",
+    "keywords" : "feedback, infrastructure, transportation",
+    "source_id" : "1be868e1658b5aef14eca977283ac020",
+    "src_id" : "Commuter Feedback",
+    "tgt_id" : "Public Transportation Infrastructure"
+  }, {
+    "source" : "Traffic Congestion",
+    "target" : "Urban Planning Policies",
+    "weight" : "1.0",
+    "description" : "The urban planning policies have affected the traffic congestion.",
+    "keywords" : "policies, congestion, transportation",
+    "source_id" : "1be868e1658b5aef14eca977283ac020",
+    "src_id" : "Urban Planning Policies",
+    "tgt_id" : "Traffic Congestion"
+  }, {
+    "source" : "School Holidays",
+    "target" : "Children",
+    "weight" : "1.0",
+    "description" : "Children have more free time during school holidays",
+    "keywords" : "Increased free time",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2",
+    "src_id" : "School Holidays",
+    "tgt_id" : "Children"
+  }, {
+    "source" : "School Holidays",
+    "target" : "Playground Visits",
+    "weight" : "1.0",
+    "description" : "Playground visits increase during school holidays",
+    "keywords" : "Increased free time",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2",
+    "src_id" : "School Holidays",
+    "tgt_id" : "Playground Visits"
+  }, {
+    "source" : "School Holidays",
+    "target" : "Children's Book Loans",
+    "weight" : "1.0",
+    "description" : "Children's book loans increase during school holidays",
+    "keywords" : "Increased free time",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2",
+    "src_id" : "School Holidays",
+    "tgt_id" : "Children's Book Loans"
+  }, {
+    "source" : "Playground Visits",
+    "target" : "Outdoor Play",
+    "weight" : "1.0",
+    "description" : "Playground visits increase with outdoor play",
+    "keywords" : "Increased physical activity",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2",
+    "src_id" : "Outdoor Play",
+    "tgt_id" : "Playground Visits"
+  }, {
+    "source" : "Children's Book Loans",
+    "target" : "Reading",
+    "weight" : "1.0",
+    "description" : "Children's book loans increase with reading",
+    "keywords" : "Increased reading activity",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2",
+    "src_id" : "Reading",
+    "tgt_id" : "Children's Book Loans"
+  }, {
+    "source" : "Free Time",
+    "target" : "Reading",
+    "weight" : "1.0",
+    "description" : "Reading increases with free time",
+    "keywords" : "Increased leisure activity",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2",
+    "src_id" : "Free Time",
+    "tgt_id" : "Reading"
+  }, {
+    "source" : "Free Time",
+    "target" : "Outdoor Play",
+    "weight" : "1.0",
+    "description" : "Outdoor play increases with free time",
+    "keywords" : "Increased leisure activity",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2",
+    "src_id" : "Free Time",
+    "tgt_id" : "Outdoor Play"
+  }, {
+    "source" : "Academic Performance",
+    "target" : "Sports Participation",
+    "weight" : "1.0",
+    "description" : "There is a connection between academic performance and sports participation",
+    "keywords" : "Correlation, association",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1",
+    "src_id" : "Academic Performance",
+    "tgt_id" : "Sports Participation"
+  }, {
+    "source" : "Academic Performance",
+    "target" : "School",
+    "weight" : "1.0",
+    "description" : "Schools promote athletics to support academic performance",
+    "keywords" : "Promotion, encouragement",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1",
+    "src_id" : "School",
+    "tgt_id" : "Academic Performance"
+  }, {
+    "source" : "Sports Participation",
+    "target" : "Student",
+    "weight" : "1.0",
+    "description" : "Students with better academic performance are more likely to participate in sports",
+    "keywords" : "Likelihood, tendency",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1",
+    "src_id" : "Student",
+    "tgt_id" : "Sports Participation"
+  }, {
+    "source" : "Sports Participation",
+    "target" : "Athletics",
+    "weight" : "1.0",
+    "description" : "Sports participation and athletics are related concepts",
+    "keywords" : "Synonym, equivalent",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1",
+    "src_id" : "Sports Participation",
+    "tgt_id" : "Athletics"
+  }, {
+    "source" : "Annual Holiday Parade",
+    "target" : "Emergency Road Closure",
+    "weight" : "1.0",
+    "description" : "The parade caused a road closure",
+    "keywords" : "parade, road closure",
+    "source_id" : "e2f6afb6f620f0cb6150fcbd5327a183",
+    "src_id" : "Annual Holiday Parade",
+    "tgt_id" : "Emergency Road Closure"
+  }, {
+    "source" : "Emergency Road Closure",
+    "target" : "Water Pipe Burst",
+    "weight" : "1.0",
+    "description" : "The road closure was due to a pipe burst",
+    "keywords" : "road closure, pipe burst",
+    "source_id" : "e2f6afb6f620f0cb6150fcbd5327a183",
+    "src_id" : "Emergency Road Closure",
+    "tgt_id" : "Water Pipe Burst"
+  }, {
+    "source" : "Local Bakery",
+    "target" : "Business District",
+    "weight" : "1.0",
+    "description" : "The bakery operates in the business district",
+    "keywords" : "Promotions, Safety Drills",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238",
+    "src_id" : "Local Bakery",
+    "tgt_id" : "Business District"
+  }, {
+    "source" : "Local Bakery",
+    "target" : "Pastry Deals",
+    "weight" : "1.0",
+    "description" : "The bakery offers pastry deals",
+    "keywords" : "Promotions, Baked Goods",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238",
+    "src_id" : "Pastry Deals",
+    "tgt_id" : "Local Bakery"
+  }, {
+    "source" : "Business District",
+    "target" : "Office Workers",
+    "weight" : "1.0",
+    "description" : "Office workers are present in the business district",
+    "keywords" : "Workplace, Safety",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238",
+    "src_id" : "Office Workers",
+    "tgt_id" : "Business District"
+  }, {
+    "source" : "Business District",
+    "target" : "Fire Drill",
+    "weight" : "1.0",
+    "description" : "Fire drills occur in the business district",
+    "keywords" : "Safety Drills, Emergency Response",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238",
+    "src_id" : "Fire Drill",
+    "tgt_id" : "Business District"
+  }, {
+    "source" : "Autumn",
+    "target" : "Frost",
+    "weight" : "1.0",
+    "description" : "The presence of frost often corresponds with the onset of autumn",
+    "keywords" : "cold weather, icy coating",
+    "source_id" : "597481351b30348f1a75b099469c1476",
+    "src_id" : "Autumn",
+    "tgt_id" : "Frost"
+  }, {
+    "source" : "Gardeners",
+    "target" : "Lawns",
+    "weight" : "1.0",
+    "description" : "Gardeners adjust their routines to care for lawns during autumn",
+    "keywords" : "gardening, lawn care",
+    "source_id" : "597481351b30348f1a75b099469c1476",
+    "src_id" : "Gardeners",
+    "tgt_id" : "Lawns"
+  }, {
+    "source" : "Lawns",
+    "target" : "Windshields",
+    "weight" : "1.0",
+    "description" : "Lawns can become icy and frosty during autumn, making windshields more prone to frost",
+    "keywords" : "frost, icy conditions",
+    "source_id" : "597481351b30348f1a75b099469c1476",
+    "src_id" : "Lawns",
+    "tgt_id" : "Windshields"
+  } ],
+  "metadata" : {
+    "nodeCount" : 29,
+    "edgeCount" : 23
+  }
+}

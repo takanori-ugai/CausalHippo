@@ -1,0 +1,517 @@
+{
+  "nodes" : {
+    "UNDERLYING CONDITIONS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "More serious medical conditions potentially prevalent in regions with higher prescription rates.",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    },
+    "FARMING PRACTICES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Local agricultural methods and techniques that have undergone noted changes in the region.",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    },
+    "THE REGION" : {
+      "entity_type" : "GEO",
+      "description" : "A geographic area that has experienced rainfall fluctuations and ongoing changes in local farming practices over the past few years.",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    },
+    "ENERGY LEVELS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Increased physical energy observed by Tom during activities after his dietary changes.",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    },
+    "REGIONS WITH HIGHER PRESCRIPTION RATES" : {
+      "entity_type" : "GEO",
+      "description" : "Geographic areas characterized by elevated prescription rates, associated with upticks in hospital admissions.",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    },
+    "IRRIGATION SYSTEMS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Water delivery and management systems in the region that have seen improvements over time.",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    },
+    "COMMUNITY GATHERINGS" : {
+      "entity_type" : "EVENT",
+      "description" : "Frequent local meetings where topics such as rainfall, crop yield, and farming practices are discussed.",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    },
+    "ACCESS TO MEDICAL CARE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A variable affecting regional health trends, potentially influencing hospital admission rates.",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    },
+    "FARMERS" : {
+      "entity_type" : "PERSON",
+      "description" : "People in the area who actively discuss strategies to maximize crop yield and participate in community gatherings.",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    },
+    "RAINFALL FLUCTUATIONS" : {
+      "entity_type" : "EVENT",
+      "description" : "Variations in rainfall experienced in the region over the past few years, affecting agricultural outcomes.",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    },
+    "TECH SUPPORT LOGS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Records maintained by tech support that highlight lower infection rates on protected systems.",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    },
+    "HOSPITAL ADMISSIONS" : {
+      "entity_type" : "EVENT",
+      "description" : "An observed increase in hospital admissions linked to regions with higher prescription rates.",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    },
+    "COMPUTERS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Devices that can be installed with antivirus software and are subject to computer virus infections.",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    },
+    "HEALTHCARE POLICIES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Differing policy frameworks across regions that may influence health outcomes and hospitalization rates.",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    },
+    "HEALTH EDUCATION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A factor that could affect regional health trends and the relationship between prescriptions and hospital stays.",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    },
+    "DIET CHANGE" : {
+      "entity_type" : "EVENT",
+      "description" : "A recent dietary modification made by Tom that led to notable shifts in his daily routine over several weeks.",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    },
+    "CROP YIELD" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The agricultural output that farmers aim to maximize through various strategies and practices.",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    },
+    "HOSPITAL STAYS" : {
+      "entity_type" : "EVENT",
+      "description" : "The duration of hospitalization, whose relationship with prescriptions is shaped by multiple intertwined causes.",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    },
+    "TECH SUPPORT" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Service or department that maintains logs highlighting infection rate data on protected systems.",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    },
+    "SAFE BROWSING HABITS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "User practices considered more important than antivirus software by some users for avoiding infections.",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    },
+    "WEIGHT LOSS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A steady health outcome tracked by Tom over weeks following his diet change.",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    },
+    "PROTECTED SYSTEMS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Systems equipped with up-to-date antivirus software that exhibit lower infection rates.",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    },
+    "TOM" : {
+      "entity_type" : "PERSON",
+      "description" : "An individual who made a diet change, tracked weight loss, and experienced increased energy levels. Credited new foods for positive outcomes.",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    },
+    "FRIENDS" : {
+      "entity_type" : "PERSON",
+      "description" : "A group of people who observed and commented on Tom's new appearance and positive demeanor after his diet change.",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    },
+    "NEW FOODS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The specific dietary items Tom credited as the primary cause of his weight loss and increased energy.",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    },
+    "ANTIVIRUS SOFTWARE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Up-to-date software installed on computers to protect against computer virus infections.",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    },
+    "COMPUTER VIRUS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Malware that can infect computers; rarely found on systems with up-to-date antivirus software.",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    },
+    "PRESCRIPTIONS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Medical prescriptions whose regional rates are potentially linked to hospital stay durations.",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    },
+    "USERS" : {
+      "entity_type" : "PERSON",
+      "description" : "People who use computers and hold opinions on the importance of safe browsing habits versus antivirus software.",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    },
+    "LIFESTYLE ADJUSTMENTS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Broader set of routine and dietary changes made by Tom that invited speculation about their impact on outcomes.",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    },
+    "OLDER POPULATIONS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A demographic factor in certain regions that may contribute to higher prescription and hospitalization trends.",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    }
+  },
+  "edges" : [ {
+    "source" : "HEALTH EDUCATION",
+    "target" : "HOSPITAL ADMISSIONS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Health education could influence regional hospital admission trends.",
+      "keywords" : "education, preventive care",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    }
+  }, {
+    "source" : "TECH SUPPORT",
+    "target" : "TECH SUPPORT LOGS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Tech support maintains logs that record and highlight infection rate data.",
+      "keywords" : "record-keeping, monitoring",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    }
+  }, {
+    "source" : "SAFE BROWSING HABITS",
+    "target" : "COMPUTER VIRUS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Safe browsing habits are considered a means to reduce the risk of computer virus infections.",
+      "keywords" : "risk reduction, user behavior",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    }
+  }, {
+    "source" : "LIFESTYLE ADJUSTMENTS",
+    "target" : "WEIGHT LOSS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The overlap between lifestyle adjustments and weight loss invited much speculation about causation.",
+      "keywords" : "speculation, correlation",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    }
+  }, {
+    "source" : "FARMERS",
+    "target" : "CROP YIELD",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Farmers actively discuss strategies to maximize crop yield in the area.",
+      "keywords" : "agriculture, optimization, production",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    }
+  }, {
+    "source" : "DIET CHANGE",
+    "target" : "ENERGY LEVELS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The diet change contributed to increased energy levels during activities.",
+      "keywords" : "causal link, vitality",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    }
+  }, {
+    "source" : "USERS",
+    "target" : "COMPUTERS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Users operate computers and adopt security practices to protect them.",
+      "keywords" : "usage, security behavior",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    }
+  }, {
+    "source" : "REGIONS WITH HIGHER PRESCRIPTION RATES",
+    "target" : "HEALTHCARE POLICIES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Differing healthcare policies in these areas may influence observed health trends.",
+      "keywords" : "policy variation, regional differences",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    }
+  }, {
+    "source" : "ACCESS TO MEDICAL CARE",
+    "target" : "HOSPITAL ADMISSIONS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Access to medical care is a variable that could affect hospital admission trends.",
+      "keywords" : "healthcare access, trends",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    }
+  }, {
+    "source" : "OLDER POPULATIONS",
+    "target" : "HOSPITAL ADMISSIONS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Older populations may contribute to higher hospital admission rates in certain regions.",
+      "keywords" : "demographic influence, hospitalization",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    }
+  }, {
+    "source" : "TECH SUPPORT LOGS",
+    "target" : "ANTIVIRUS SOFTWARE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Logs document the connection between antivirus software and lower infection rates, though not fully understood.",
+      "keywords" : "evidence, correlation",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    }
+  }, {
+    "source" : "UNDERLYING CONDITIONS",
+    "target" : "HOSPITAL ADMISSIONS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "More serious underlying conditions may be prevalent, driving higher hospital admissions.",
+      "keywords" : "severity, comorbidity",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    }
+  }, {
+    "source" : "COMPUTER VIRUS",
+    "target" : "COMPUTERS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Computer viruses are the threat that can infect computers and cause damage.",
+      "keywords" : "infection, threat",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    }
+  }, {
+    "source" : "HEALTHCARE POLICIES",
+    "target" : "HOSPITAL ADMISSIONS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Differing healthcare policies could affect hospital admission trends.",
+      "keywords" : "policy impact, health outcomes",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    }
+  }, {
+    "source" : "NEW FOODS",
+    "target" : "WEIGHT LOSS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "New foods are credited as contributing to the weight loss outcome, though other factors may also play a role.",
+      "keywords" : "attribution, dietary impact",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    }
+  }, {
+    "source" : "PRESCRIPTIONS",
+    "target" : "HOSPITAL STAYS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The relationship between prescriptions and hospital stays is shaped by multiple intertwined causes.",
+      "keywords" : "causal relationship, multifactorial",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    }
+  }, {
+    "source" : "THE REGION",
+    "target" : "IRRIGATION SYSTEMS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Irrigation systems in the region have improved, reflecting local agricultural development.",
+      "keywords" : "infrastructure, regional development, improvement",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    }
+  }, {
+    "source" : "IRRIGATION SYSTEMS",
+    "target" : "CROP YIELD",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Improved irrigation systems contribute to better crop yield results in certain years.",
+      "keywords" : "water efficiency, productivity, improvement",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    }
+  }, {
+    "source" : "ANTIVIRUS SOFTWARE",
+    "target" : "COMPUTER VIRUS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Antivirus software is designed to prevent computer virus infections on systems.",
+      "keywords" : "protection, infection prevention",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    }
+  }, {
+    "source" : "TOM",
+    "target" : "ENERGY LEVELS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Tom experienced increased energy levels during activities following his diet change.",
+      "keywords" : "improvement, physical activity",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    }
+  }, {
+    "source" : "FARMERS",
+    "target" : "FARMING PRACTICES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Farmers are associated with changes in local farming practices that have been noted.",
+      "keywords" : "methods, adaptation, local practices",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    }
+  }, {
+    "source" : "TOM",
+    "target" : "NEW FOODS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Tom credited the new foods as the primary cause of his weight loss and increased energy levels.",
+      "keywords" : "attribution, causality",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    }
+  }, {
+    "source" : "FARMERS",
+    "target" : "IRRIGATION SYSTEMS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Farmers benefit from improved irrigation systems that affect their results.",
+      "keywords" : "infrastructure, water management, improvement",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    }
+  }, {
+    "source" : "FARMERS",
+    "target" : "COMMUNITY GATHERINGS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Farmers participate in community gatherings that revolve around agricultural topics.",
+      "keywords" : "social engagement, discussion, community",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    }
+  }, {
+    "source" : "COMMUNITY GATHERINGS",
+    "target" : "FARMING PRACTICES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Community gatherings frequently revolve around discussions of farming practices and related topics.",
+      "keywords" : "dialogue, knowledge sharing, community",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    }
+  }, {
+    "source" : "TOM",
+    "target" : "FRIENDS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Tom's friends commented on his new appearance and positive demeanor after the diet change.",
+      "keywords" : "social feedback, observation",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    }
+  }, {
+    "source" : "ANTIVIRUS SOFTWARE",
+    "target" : "PROTECTED SYSTEMS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Protected systems are defined as those with up-to-date antivirus software installed.",
+      "keywords" : "system protection, software installation",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    }
+  }, {
+    "source" : "THE REGION",
+    "target" : "RAINFALL FLUCTUATIONS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The region has experienced fluctuations in rainfall over the past few years.",
+      "keywords" : "climate, variability, agriculture",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    }
+  }, {
+    "source" : "LIFESTYLE ADJUSTMENTS",
+    "target" : "DIET CHANGE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The diet change is a component of the broader lifestyle adjustments made by Tom.",
+      "keywords" : "subset, holistic change",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    }
+  }, {
+    "source" : "RAINFALL FLUCTUATIONS",
+    "target" : "CROP YIELD",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Rainfall fluctuations directly affect crop yield, with some years seeing better results than others.",
+      "keywords" : "weather impact, variability, results",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    }
+  }, {
+    "source" : "DIET CHANGE",
+    "target" : "WEIGHT LOSS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The diet change is the primary factor associated with the observed steady weight loss.",
+      "keywords" : "causal link, health outcome",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    }
+  }, {
+    "source" : "COMPUTERS",
+    "target" : "ANTIVIRUS SOFTWARE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Computers are installed with up-to-date antivirus software to reduce virus infections.",
+      "keywords" : "installation, protection",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    }
+  }, {
+    "source" : "TOM",
+    "target" : "DIET CHANGE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Tom initiated the diet change and observed its effects on his daily routine over several weeks.",
+      "keywords" : "initiation, dietary modification",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    }
+  }, {
+    "source" : "TECH SUPPORT LOGS",
+    "target" : "PROTECTED SYSTEMS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Tech support logs highlight lower infection rates specifically on protected systems.",
+      "keywords" : "data analysis, infection rates",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    }
+  }, {
+    "source" : "TOM",
+    "target" : "WEIGHT LOSS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Tom tracked steady weight loss as a result of his recent diet change.",
+      "keywords" : "tracking, health outcome",
+      "source_id" : "chunk-2f12cdd6708312b853292b61b058ba68"
+    }
+  }, {
+    "source" : "USERS",
+    "target" : "SAFE BROWSING HABITS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Some users believe safe browsing habits are more important than antivirus software.",
+      "keywords" : "user preference, security practice",
+      "source_id" : "chunk-be19c0b75b4ef10d5c6db7c6e34fa490"
+    }
+  }, {
+    "source" : "FARMING PRACTICES",
+    "target" : "CROP YIELD",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Changes in local farming practices influence the resulting crop yield.",
+      "keywords" : "technique, output, adaptation",
+      "source_id" : "chunk-524229f1e609c81b3b0199a246436130"
+    }
+  }, {
+    "source" : "REGIONS WITH HIGHER PRESCRIPTION RATES",
+    "target" : "OLDER POPULATIONS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "These regions might have older populations as a contributing factor.",
+      "keywords" : "demographics, population age",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    }
+  }, {
+    "source" : "REGIONS WITH HIGHER PRESCRIPTION RATES",
+    "target" : "HOSPITAL ADMISSIONS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Regions with higher prescription rates show an uptick in hospital admissions.",
+      "keywords" : "correlation, regional health trends",
+      "source_id" : "chunk-74dec61d999a30c3fc240a1b76e38c82"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 31,
+    "edgeCount" : 39,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Shared_Trend_No_Direct_Link_118"
+  }
+}

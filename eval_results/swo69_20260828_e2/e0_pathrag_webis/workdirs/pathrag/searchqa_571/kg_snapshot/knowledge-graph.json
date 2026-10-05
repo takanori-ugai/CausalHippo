@@ -1,0 +1,796 @@
+{
+  "nodes" : {
+    "CLOUDINESS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A weather category where moist air cools, relative humidity rises, and saturation is reached.",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    },
+    "WESTERN TABLE-LAND" : {
+      "entity_type" : "GEO",
+      "description" : "A geographical feature with higher serra that causes moisture-related atmospheric phenomena in the region.",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    },
+    "MARK WILLIAMS" : {
+      "entity_type" : "PERSON",
+      "description" : "An individual associated with the topic of Mountain Climate, likely an author or contributor.",
+      "source_id" : "chunk-0ff29ceebdd52483dce87ca57559d58d"
+    },
+    "ZUGSPITZE" : {
+      "entity_type" : "GEO",
+      "description" : "A mountain (highest in Germany) on whose top several huts, including the Wiener-Neustdter Hut, are located.",
+      "source_id" : "chunk-0ae0d4588b42b275314626652e934444"
+    },
+    "WESTERN" : {
+      "entity_type" : "GEO",
+      "description" : "Refers to the Western cultural imagination that evokes endless desert landscapes.",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    },
+    "MT. ATNOS" : {
+      "entity_type" : "GEO",
+      "description" : "A mountain in Greece on the Hugion Oros Peninsula that rises to 6670 ft.",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    },
+    "NATHANIEL HARRIS" : {
+      "entity_type" : "PERSON",
+      "description" : "Author of 'Atlas of the World's Deserts', an eBook on desert landscapes and characteristics.",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    },
+    "SIMONEIT" : {
+      "entity_type" : "PERSON",
+      "description" : "A researcher who co-authored a 2001 publication with Oros on recurring data.",
+      "source_id" : "chunk-0ae0d4588b42b275314626652e934444"
+    },
+    "PILOT" : {
+      "entity_type" : "PERSON",
+      "description" : "A pilot who failed to see and avoid other air traffic, leading to an accident as determined by the NTSB.",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    },
+    "AFRICA" : {
+      "entity_type" : "GEO",
+      "description" : "A continent experiencing an ongoing insurgency that political candidates are at odds over how to handle.",
+      "source_id" : "chunk-3faf7d13ea9f71824c54abe4380d30cb"
+    },
+    "ABC VIDEOS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A video production entity for launching lectures and sparking educational discussion.",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    },
+    "MOIST AIR" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A weather or atmospheric classification listed as a category option in a structured document.",
+      "source_id" : "chunk-3faf7d13ea9f71824c54abe4380d30cb"
+    },
+    "INSURGENCY IN AFRICA" : {
+      "entity_type" : "EVENT",
+      "description" : "An ongoing armed conflict/insurgency in Africa over which political candidates disagree on handling strategy.",
+      "source_id" : "chunk-3faf7d13ea9f71824c54abe4380d30cb"
+    },
+    "ENCYCLOPEDIA.COM" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "An online encyclopedia providing articles, facts, information, and pictures about mountains and related topics.",
+      "source_id" : "chunk-0ff29ceebdd52483dce87ca57559d58d"
+    },
+    "FOLD MOUNTAINS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A geological category of mountains formed by orogenic forces acting tangent to Earth's surface.",
+      "source_id" : "chunk-0ae0d4588b42b275314626652e934444"
+    },
+    "TEPID GROWTH AND SOLVENCY PROBLEMS" : {
+      "entity_type" : "EVENT",
+      "description" : "Economic challenges including slow growth and financial solvency issues affecting Europe.",
+      "source_id" : "chunk-3faf7d13ea9f71824c54abe4380d30cb"
+    },
+    "FOG" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A weather phenomenon occurring over high ground near the sea, associated with humid and cloudy conditions.",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    },
+    "GREECE" : {
+      "entity_type" : "GEO",
+      "description" : "A country where the rocky Hugion Oros Peninsula and Mt. Atnos are located.",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    },
+    "OROS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A researcher who co-authored a 2001 publication with Simoneit on recurring data.<SEP>The Greek word for mountains, referenced in geological and meteorological context.",
+      "source_id" : "chunk-f922f231e99639f72dca0bd5156a7e26<SEP>chunk-0ae0d4588b42b275314626652e934444"
+    },
+    "NIMBO-STRATUS CLOUDS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A type of cloud from which orographic rain typically originates.",
+      "source_id" : "chunk-f922f231e99639f72dca0bd5156a7e26"
+    },
+    "MINERALS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Natural substances observed in geological contexts, noted to have existed for more than 400 million years.",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    },
+    "INDONESIA" : {
+      "entity_type" : "GEO",
+      "description" : "A geographic location where a maximum exists, giving rise to a dipole pattern of simulated rainfall.",
+      "source_id" : "chunk-27b69e607cd77f708b66345fb0a7b0dd"
+    },
+    "MALAYSIA" : {
+      "entity_type" : "GEO",
+      "description" : "A country mentioned in the context of conservation efforts linked to IUCN Portals.",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    },
+    "PLATE TECTONICS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A geological concept encompassing the broad ideas about Earth's crustal movements and mountain formation.",
+      "source_id" : "chunk-0ff29ceebdd52483dce87ca57559d58d"
+    },
+    "UNIVERSITY OF TORONTO" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "An academic institution associated with a document concerning orography (FOREST OROS).",
+      "source_id" : "chunk-27b69e607cd77f708b66345fb0a7b0dd"
+    },
+    "EUROPE" : {
+      "entity_type" : "GEO",
+      "description" : "A continent facing tepid economic growth and solvency problems, mentioned alongside other global issues.",
+      "source_id" : "chunk-3faf7d13ea9f71824c54abe4380d30cb"
+    },
+    "NTSB" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "The National Transportation Safety Board, which concluded an accident was caused by the pilot's failure to see and avoid other traffic.",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    },
+    "PRECIPITATION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A weather category encompassing rain or snow, influenced by humid and cloudy conditions.",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    },
+    "IUCN" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "An international conservation organization (International Union for Conservation of Nature) referenced via IUCN Portals.",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    },
+    "OROGRAPHIC EFFECT" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The precipitation phenomenon on the windward slope caused when moist air is forced to rise over mountains.",
+      "source_id" : "chunk-0ff29ceebdd52483dce87ca57559d58d"
+    },
+    "CHINOOK-WIND" : {
+      "entity_type" : "PERSON",
+      "description" : "A young girl character featured in a story related to mountain climate and wind patterns.",
+      "source_id" : "chunk-0ff29ceebdd52483dce87ca57559d58d"
+    },
+    "500 MILLIBAR HEIGHTS AND FLOW" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A meteorological measurement category describing average heights and flow characteristics for March.",
+      "source_id" : "chunk-27b69e607cd77f708b66345fb0a7b0dd"
+    },
+    "TEL - HAL" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A French academic repository hosting a physico-chemical characterization thesis from July 2012.",
+      "source_id" : "chunk-0ae0d4588b42b275314626652e934444"
+    },
+    "VOLCANIC NECK" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A geological formation created when lava rises and erupts, leaving behind a mountain-like structure.",
+      "source_id" : "chunk-f922f231e99639f72dca0bd5156a7e26"
+    },
+    "TROJAN HORSE STATUE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A historical/statue object in which Greek soldiers were concealed, referenced in a student resource fragment.",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    },
+    "REVOLVY" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A website referenced as a source discussing fold mountains and orogenic processes.",
+      "source_id" : "chunk-0ae0d4588b42b275314626652e934444"
+    },
+    "GREEK SOLDIERS" : {
+      "entity_type" : "PERSON",
+      "description" : "A group of soldiers historically associated with being hidden inside the Trojan horse statue.",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    },
+    "EARTH" : {
+      "entity_type" : "GEO",
+      "description" : "The planet referenced in the context of planetary patterns and atmospheric processes.",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    },
+    "CANADA" : {
+      "entity_type" : "GEO",
+      "description" : "The country where the referenced book content was printed.",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    },
+    "TOTAL MAXIMUM DAILY LOAD" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An environmental water-quality regulation (TMDL) applied to the Tillamook Bay Watershed.",
+      "source_id" : "chunk-f922f231e99639f72dca0bd5156a7e26"
+    },
+    "HAZE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A weather phenomenon listed alongside fog as a category in meteorological observations.",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    },
+    "PACIFIC" : {
+      "entity_type" : "GEO",
+      "description" : "A body of water with large areas of moisture transport, mentioned alongside the South Atlantic in a climatic context.",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    },
+    "CENTRAL BRAZIL" : {
+      "entity_type" : "GEO",
+      "description" : "A geographic region mentioned in the context of atmospheric conditions and airflow patterns.",
+      "source_id" : "chunk-27b69e607cd77f708b66345fb0a7b0dd"
+    },
+    "OROGRAPHIC RAIN" : {
+      "entity_type" : "EVENT",
+      "description" : "Rain caused by moist air rising over mountains, typically originating from Nimbo-Stratus clouds.",
+      "source_id" : "chunk-f922f231e99639f72dca0bd5156a7e26"
+    },
+    "FALKLAND ISLANDS" : {
+      "entity_type" : "GEO",
+      "description" : "Important islands that rise from the shelf, noted as a significant geographical feature.",
+      "source_id" : "chunk-27b69e607cd77f708b66345fb0a7b0dd"
+    },
+    "CENTRAL TROPICS" : {
+      "entity_type" : "GEO",
+      "description" : "A tropical region where hot, moist air rises, influencing air mass movement toward the southeast.",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    },
+    "WIENER-NEUSTDTER HUT" : {
+      "entity_type" : "GEO",
+      "description" : "One of three huts located on the top of the Zugspitze mountain.",
+      "source_id" : "chunk-0ae0d4588b42b275314626652e934444"
+    },
+    "ROOK-1" : {
+      "entity_type" : "PERSON",
+      "description" : "An individual referenced in a French context associated with cooking classes and various road trips.",
+      "source_id" : "chunk-0ae0d4588b42b275314626652e934444"
+    },
+    "VISUAL FLIGHT RULES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Regulatory rules requiring pilots to 'see and avoid' other air traffic while operating in visual conditions.",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    },
+    "FRONT RANGE" : {
+      "entity_type" : "GEO",
+      "description" : "A mountain range region whose communities are known for receiving over 300 days of sunshine each year.",
+      "source_id" : "chunk-0ff29ceebdd52483dce87ca57559d58d"
+    },
+    "OROGRAPHIC LIFT" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A meteorological term describing the rising movement of air forced upward when it encounters a mountain range.",
+      "source_id" : "chunk-0ff29ceebdd52483dce87ca57559d58d"
+    },
+    "HUGION OROS PENINSULA" : {
+      "entity_type" : "GEO",
+      "description" : "A rocky peninsula in Greece associated with orographic weather patterns.",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    },
+    "FORGOTTEN BOOKS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A publisher associated with a text discussing the origin of fiords and historical coasts.",
+      "source_id" : "chunk-0ae0d4588b42b275314626652e934444"
+    },
+    "TROPICAL DEPRESSION 5" : {
+      "entity_type" : "EVENT",
+      "description" : "A tropical weather system whose remnant moisture caused a 17.5 vertical feet of rise.",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    },
+    "ACCIDENT" : {
+      "entity_type" : "EVENT",
+      "description" : "An aviation accident investigated by the NTSB, attributed to the pilot's failure to maintain visual awareness.",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    },
+    "DURHAM UNIVERSITY" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A university that publishes e-Theses, referenced in Volume 2 of its digital thesis collection.",
+      "source_id" : "chunk-f922f231e99639f72dca0bd5156a7e26"
+    },
+    "TILLAMOOK BAY WATERSHED" : {
+      "entity_type" : "GEO",
+      "description" : "A watershed area with stabilized channels that become narrower over time, subject to environmental regulation.",
+      "source_id" : "chunk-f922f231e99639f72dca0bd5156a7e26"
+    },
+    "DIPOLE PATTERN" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A pattern of simulated rainfall arising from a maximum over Indonesia, a meteorological classification.",
+      "source_id" : "chunk-27b69e607cd77f708b66345fb0a7b0dd"
+    },
+    "OROGENIC" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A geological term derived from a Greek word meaning mountain building, describing forces in fold mountain formation.",
+      "source_id" : "chunk-0ae0d4588b42b275314626652e934444"
+    },
+    "OROGRAPHIC" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A type of precipitation derived from Greek 'oros' (mountains), resulting from air rising over terrain.",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    },
+    "SOUTH ATLANTIC" : {
+      "entity_type" : "GEO",
+      "description" : "A body of water with large areas of moisture transport, mentioned alongside the Pacific in a geological/climatic context.",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    },
+    "K.C.'S STORIES" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "A publication or blog platform, referenced in November 2012, page 2.",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    },
+    "CONVERGENCE OF OCEANIC PLATES" : {
+      "entity_type" : "EVENT",
+      "description" : "A geological process in which one oceanic plate sinks beneath another during plate convergence.",
+      "source_id" : "chunk-f922f231e99639f72dca0bd5156a7e26"
+    },
+    "TILLAMOOK BAY" : {
+      "entity_type" : "GEO",
+      "description" : "A bay whose rivers and waterways have been listed due to environmental problems and narrowing channels.",
+      "source_id" : "chunk-f922f231e99639f72dca0bd5156a7e26"
+    },
+    "KENTUCKY" : {
+      "entity_type" : "GEO",
+      "description" : "A US state referenced in the context of daily weather conditions and air stability.",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    },
+    "ATLAS OF THE WORLD'S DESERTS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An eBook covering desert landscapes, rainfall patterns, erosion processes, and atmospheric phenomena.",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    },
+    "MOUNTAIN CLIMATE" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A topic encompassing climatic conditions, air movements, and precipitation patterns associated with mountain regions.",
+      "source_id" : "chunk-0ff29ceebdd52483dce87ca57559d58d"
+    }
+  },
+  "edges" : [ {
+    "source" : "CENTRAL TROPICS",
+    "target" : "EARTH",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The central tropics are a region of Earth's atmosphere where key weather processes occur.",
+      "keywords" : "geography, atmospheric circulation",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    }
+  }, {
+    "source" : "WESTERN TABLE-LAND",
+    "target" : "SOUTH ATLANTIC",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The higher serra of the western table-land is cited as a cause of moisture phenomena affecting the South Atlantic region.",
+      "keywords" : "topographic influence, moisture, causation",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    }
+  }, {
+    "source" : "MINERALS",
+    "target" : "WESTERN TABLE-LAND",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Minerals are observed in the geological context of the western table-land, with one growing between and over grains.",
+      "keywords" : "geology, mineral formation, substrate",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    }
+  }, {
+    "source" : "DURHAM UNIVERSITY",
+    "target" : "TILLAMOOK BAY WATERSHED",
+    "data" : {
+      "weight" : 4.0,
+      "description" : "Durham University is the publishing institution of the e-Thesis document that discusses both geological processes and the Tillamook Bay TMDL.",
+      "keywords" : "academic publication, source document",
+      "source_id" : "chunk-f922f231e99639f72dca0bd5156a7e26"
+    }
+  }, {
+    "source" : "GREEK SOLDIERS",
+    "target" : "TROJAN HORSE STATUE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Greek soldiers were concealed inside the Trojan horse statue as part of a historical narrative.",
+      "keywords" : "concealment, historical narrative, strategy",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    }
+  }, {
+    "source" : "UNIVERSITY OF TORONTO",
+    "target" : "FALKLAND ISLANDS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "University of Toronto is associated with a document about orography that references the Falkland Islands region.",
+      "keywords" : "academic research, geography",
+      "source_id" : "chunk-27b69e607cd77f708b66345fb0a7b0dd"
+    }
+  }, {
+    "source" : "OROGRAPHIC RAIN",
+    "target" : "NIMBO-STRATUS CLOUDS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Orographic rain originates from Nimbo-Stratus clouds as moist air rises over mountain slopes.",
+      "keywords" : "rain formation, cloud type, meteorology",
+      "source_id" : "chunk-f922f231e99639f72dca0bd5156a7e26"
+    }
+  }, {
+    "source" : "MARK WILLIAMS",
+    "target" : "MOUNTAIN CLIMATE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Mark Williams is associated with the topic of Mountain Climate, likely as an author or source.",
+      "keywords" : "authorship, climate topic",
+      "source_id" : "chunk-0ff29ceebdd52483dce87ca57559d58d"
+    }
+  }, {
+    "source" : "PILOT",
+    "target" : "VISUAL FLIGHT RULES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The pilot was required to follow visual flight rules but failed to comply, leading to the accident.",
+      "keywords" : "regulation, compliance, see-and-avoid",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    }
+  }, {
+    "source" : "CLOUDINESS",
+    "target" : "PRECIPITATION",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Cloudiness and humid conditions are associated with precipitation over high ground.",
+      "keywords" : "weather correlation, saturation",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    }
+  }, {
+    "source" : "FOLD MOUNTAINS",
+    "target" : "REVOLVY",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Revolvy is a source that provides information about fold mountains and orogenic processes.",
+      "keywords" : "information source, geology",
+      "source_id" : "chunk-0ae0d4588b42b275314626652e934444"
+    }
+  }, {
+    "source" : "WIENER-NEUSTDTER HUT",
+    "target" : "ZUGSPITZE",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The Wiener-Neustdter Hut is one of three huts located on the top of the Zugspitze mountain.",
+      "keywords" : "location, mountain hut",
+      "source_id" : "chunk-0ae0d4588b42b275314626652e934444"
+    }
+  }, {
+    "source" : "ABC VIDEOS",
+    "target" : "ATLAS OF THE WORLD'S DESERTS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "ABC Videos is associated with launching lectures and discussion related to the content.",
+      "keywords" : "education, multimedia",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    }
+  }, {
+    "source" : "MT. ATNOS",
+    "target" : "HUGION OROS PENINSULA",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Mt. Atnos is located on the rocky Hugion Oros Peninsula in Greece.",
+      "keywords" : "geographic location, terrain",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    }
+  }, {
+    "source" : "CONVERGENCE OF OCEANIC PLATES",
+    "target" : "VOLCANIC NECK",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Plate convergence can lead to volcanic activity that forms volcanic necks when lava erupts and solidifies.",
+      "keywords" : "geological process, volcanic formation, plate tectonics",
+      "source_id" : "chunk-f922f231e99639f72dca0bd5156a7e26"
+    }
+  }, {
+    "source" : "ENCYCLOPEDIA.COM",
+    "target" : "MOUNTAIN CLIMATE",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Encyclopedia.com provides articles and information covering mountain facts, climate, and related topics.",
+      "keywords" : "information source, reference, mountains",
+      "source_id" : "chunk-0ff29ceebdd52483dce87ca57559d58d"
+    }
+  }, {
+    "source" : "VISUAL FLIGHT RULES",
+    "target" : "ACCIDENT",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The accident was linked to a violation or failure under visual flight rules.",
+      "keywords" : "regulatory context, safety violation",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    }
+  }, {
+    "source" : "TILLAMOOK BAY WATERSHED",
+    "target" : "TILLAMOOK BAY",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The watershed encompasses and drains into Tillamook Bay, sharing environmental concerns.",
+      "keywords" : "watershed, bay, geography",
+      "source_id" : "chunk-f922f231e99639f72dca0bd5156a7e26"
+    }
+  }, {
+    "source" : "TEL - HAL",
+    "target" : "OROS",
+    "data" : {
+      "weight" : 4.0,
+      "description" : "Tel - Hal is an academic repository hosting content referencing research by Oros and Simoneit.",
+      "keywords" : "academic repository, research citation",
+      "source_id" : "chunk-0ae0d4588b42b275314626652e934444"
+    }
+  }, {
+    "source" : "OROGENIC",
+    "target" : "FOLD MOUNTAINS",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The term orogenic describes the mountain-building forces responsible for the formation of fold mountains.",
+      "keywords" : "geological terminology, mountain building",
+      "source_id" : "chunk-0ae0d4588b42b275314626652e934444"
+    }
+  }, {
+    "source" : "K.C.'S STORIES",
+    "target" : "ATLAS OF THE WORLD'S DESERTS",
+    "data" : {
+      "weight" : 4.0,
+      "description" : "K.C.'s Stories references or discusses content related to the atlas publication in November 2012.",
+      "keywords" : "publication reference, content sharing",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    }
+  }, {
+    "source" : "HUGION OROS PENINSULA",
+    "target" : "GREECE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The Hugion Oros Peninsula is situated in Greece.",
+      "keywords" : "geographic containment, country",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    }
+  }, {
+    "source" : "TOTAL MAXIMUM DAILY LOAD",
+    "target" : "TILLAMOOK BAY WATERSHED",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The TMDL is a regulatory standard applied to the Tillamook Bay Watershed for water quality management.",
+      "keywords" : "regulation, water quality, environmental policy",
+      "source_id" : "chunk-f922f231e99639f72dca0bd5156a7e26"
+    }
+  }, {
+    "source" : "NTSB",
+    "target" : "ACCIDENT",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The NTSB investigated and concluded the cause of the accident.",
+      "keywords" : "investigation, determination, aviation safety",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    }
+  }, {
+    "source" : "OROGRAPHIC LIFT",
+    "target" : "OROGRAPHIC EFFECT",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Orographic lift is the mechanism that produces the orographic effect (precipitation on windward slopes).",
+      "keywords" : "causal mechanism, precipitation, meteorology",
+      "source_id" : "chunk-0ff29ceebdd52483dce87ca57559d58d"
+    }
+  }, {
+    "source" : "MT. ATNOS",
+    "target" : "GREECE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Mt. Atnos is a mountain in Greece rising to 6670 ft.",
+      "keywords" : "geographic location, elevation",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    }
+  }, {
+    "source" : "FOG",
+    "target" : "HAZE",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Fog and haze are listed together as related atmospheric weather categories.",
+      "keywords" : "atmospheric phenomena, visibility",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    }
+  }, {
+    "source" : "OROGRAPHIC LIFT",
+    "target" : "FRONT RANGE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Orographic lift describes how air rises over mountain ranges such as the Front Range, affecting local climate.",
+      "keywords" : "air movement, mountain geography, climate",
+      "source_id" : "chunk-0ff29ceebdd52483dce87ca57559d58d"
+    }
+  }, {
+    "source" : "TROPICAL DEPRESSION 5",
+    "target" : "KENTUCKY",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Remnant moisture from Tropical Depression 5 affected weather conditions across Kentucky.",
+      "keywords" : "weather impact, moisture transport",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    }
+  }, {
+    "source" : "FORGOTTEN BOOKS",
+    "target" : "ZUGSPITZE",
+    "data" : {
+      "weight" : 4.0,
+      "description" : "Forgotten Books is a publisher associated with a text mentioning the huts on the Zugspitze.",
+      "keywords" : "publication, mountain reference",
+      "source_id" : "chunk-0ae0d4588b42b275314626652e934444"
+    }
+  }, {
+    "source" : "PLATE TECTONICS",
+    "target" : "MOUNTAIN CLIMATE",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Plate tectonics encompasses the geological processes that form mountains and influence their climate.",
+      "keywords" : "geology, mountain formation, encompassing concept",
+      "source_id" : "chunk-0ff29ceebdd52483dce87ca57559d58d"
+    }
+  }, {
+    "source" : "TEPID GROWTH AND SOLVENCY PROBLEMS",
+    "target" : "EUROPE",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The economic problems of tepid growth and solvency are specifically attributed to Europe.",
+      "keywords" : "economy, financial crisis, regional impact",
+      "source_id" : "chunk-3faf7d13ea9f71824c54abe4380d30cb"
+    }
+  }, {
+    "source" : "ATLAS OF THE WORLD'S DESERTS",
+    "target" : "CENTRAL TROPICS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The book discusses how hot, moist air rising at the central tropics influences air mass patterns.",
+      "keywords" : "atmospheric science, weather patterns",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    }
+  }, {
+    "source" : "IUCN",
+    "target" : "MALAYSIA",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "IUCN is involved in conservation efforts in Malaysia as referenced in IUCN Portals.",
+      "keywords" : "conservation, international organization",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    }
+  }, {
+    "source" : "NATHANIEL HARRIS",
+    "target" : "ATLAS OF THE WORLD'S DESERTS",
+    "data" : {
+      "weight" : 10.0,
+      "description" : "Nathaniel Harris is the author of the eBook 'Atlas of the World's Deserts'.",
+      "keywords" : "authorship, publication",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    }
+  }, {
+    "source" : "ROOK-1",
+    "target" : "TEL - HAL",
+    "data" : {
+      "weight" : 3.0,
+      "description" : "Rook-1 is referenced in a document hosted on Tel - Hal discussing cooking classes and road trips.",
+      "keywords" : "document reference, personal activity",
+      "source_id" : "chunk-0ae0d4588b42b275314626652e934444"
+    }
+  }, {
+    "source" : "CHINOOK-WIND",
+    "target" : "MOUNTAIN CLIMATE",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Chinook-Wind is a story character connected to mountain climate narratives and wind phenomena.",
+      "keywords" : "folklore, wind, storytelling",
+      "source_id" : "chunk-0ff29ceebdd52483dce87ca57559d58d"
+    }
+  }, {
+    "source" : "INSURGENCY IN AFRICA",
+    "target" : "AFRICA",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The insurgency is an ongoing event taking place in Africa, where candidates debate how to handle it.",
+      "keywords" : "conflict, location, political debate",
+      "source_id" : "chunk-3faf7d13ea9f71824c54abe4380d30cb"
+    }
+  }, {
+    "source" : "FRONT RANGE",
+    "target" : "MOUNTAIN CLIMATE",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The Front Range is a specific geographic example of mountain climate with over 300 sunny days annually.",
+      "keywords" : "geographic example, sunshine, regional climate",
+      "source_id" : "chunk-0ff29ceebdd52483dce87ca57559d58d"
+    }
+  }, {
+    "source" : "ATLAS OF THE WORLD'S DESERTS",
+    "target" : "CANADA",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "The book content was printed in Canada.",
+      "keywords" : "printing location, publication",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    }
+  }, {
+    "source" : "CLOUDINESS",
+    "target" : "FOG",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Cloudy and humid conditions lead to fog formation, especially near the sea and over high ground.",
+      "keywords" : "weather progression, humidity",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    }
+  }, {
+    "source" : "PILOT",
+    "target" : "ACCIDENT",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The pilot's failure to see and avoid other traffic was identified as the cause of the accident.",
+      "keywords" : "causation, human error, failure",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    }
+  }, {
+    "source" : "SOUTH ATLANTIC",
+    "target" : "PACIFIC",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Both ocean regions are mentioned together as having large areas of moisture transport patterns.",
+      "keywords" : "oceanic moisture, climatic regions",
+      "source_id" : "chunk-370b7a99de46735476b4e6a3d5a58ce5"
+    }
+  }, {
+    "source" : "OROS",
+    "target" : "OROGRAPHIC RAIN",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Oros (mountains in Greek) is the terrain over which moist air rises to produce orographic rain.",
+      "keywords" : "etymology, geography, meteorology",
+      "source_id" : "chunk-f922f231e99639f72dca0bd5156a7e26"
+    }
+  }, {
+    "source" : "OROGRAPHIC",
+    "target" : "EARTH",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Orographic precipitation is a natural atmospheric process occurring on Earth's mountains.",
+      "keywords" : "meteorology, precipitation",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    }
+  }, {
+    "source" : "DIPOLE PATTERN",
+    "target" : "CENTRAL BRAZIL",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The dipole pattern of rainfall extends over Central Brazil as part of the broader atmospheric pattern.",
+      "keywords" : "rainfall distribution, regional climate",
+      "source_id" : "chunk-27b69e607cd77f708b66345fb0a7b0dd"
+    }
+  }, {
+    "source" : "INDONESIA",
+    "target" : "DIPOLE PATTERN",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "The maximum over Indonesia gives rise to the dipole pattern of simulated rainfall.",
+      "keywords" : "rainfall pattern, meteorological maximum",
+      "source_id" : "chunk-27b69e607cd77f708b66345fb0a7b0dd"
+    }
+  }, {
+    "source" : "FOG",
+    "target" : "PRECIPITATION",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Fog and humid cloudy conditions bring rain or snow (precipitation) over high ground near the sea.",
+      "keywords" : "weather correlation, moisture",
+      "source_id" : "chunk-b96748c0ebf890a928863c06416390bb"
+    }
+  }, {
+    "source" : "OROS",
+    "target" : "SIMONEIT",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Oros and Simoneit are co-authors of a 2001 publication on recurring data.",
+      "keywords" : "co-authorship, research collaboration",
+      "source_id" : "chunk-0ae0d4588b42b275314626652e934444"
+    }
+  }, {
+    "source" : "WESTERN",
+    "target" : "ATLAS OF THE WORLD'S DESERTS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "The Western imagination shapes the cultural perception of desert landscapes described in the book.",
+      "keywords" : "cultural perception, geography",
+      "source_id" : "chunk-0c49eefb33d62ebcb61957c2ca583d5d"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 67,
+    "edgeCount" : 50,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_webis/workdirs/pathrag/searchqa_571"
+  }
+}

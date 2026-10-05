@@ -1,0 +1,158 @@
+{
+  "nodes" : [ {
+    "id" : "Azerbaijan",
+    "entity_id" : "Azerbaijan",
+    "entity_type" : "Location",
+    "description" : "The country where the legal reform and judicial system changes took place.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Legal reform in Azerbaijan system",
+    "entity_id" : "Legal reform in Azerbaijan system",
+    "entity_type" : "Concept",
+    "description" : "The reform process that was signed on 19 January 2006, advancing the country's judicial system.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "President of Azerbaijan",
+    "entity_id" : "President of Azerbaijan",
+    "entity_type" : "Person",
+    "description" : "The official who signed the legal reform in Azerbaijan system.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Judicial system",
+    "entity_id" : "Judicial system",
+    "entity_type" : "Concept",
+    "description" : "The system that entered a new phase following the legal reform.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Appeal courts",
+    "entity_id" : "Appeal courts",
+    "entity_type" : "Concept",
+    "description" : "New courts established in the regions of Azerbaijan.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Decree",
+    "entity_id" : "Decree",
+    "entity_type" : "Concept",
+    "description" : "The document based on which the apparatus of courts was upgraded.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Civil Chamber",
+    "entity_id" : "Civil Chamber",
+    "entity_type" : "Concept",
+    "description" : "One of the four chambers appointed to the appeal courts.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Criminal Chamber",
+    "entity_id" : "Criminal Chamber",
+    "entity_type" : "Concept",
+    "description" : "One of the four chambers appointed to the appeal courts.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Military Chamber",
+    "entity_id" : "Military Chamber",
+    "entity_type" : "Concept",
+    "description" : "One of the four chambers appointed to the appeal courts.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  }, {
+    "id" : "Administrative-Economic Chamber",
+    "entity_id" : "Administrative-Economic Chamber",
+    "entity_type" : "Concept",
+    "description" : "One of the four chambers appointed to the appeal courts.",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3"
+  } ],
+  "edges" : [ {
+    "source" : "President of Azerbaijan",
+    "target" : "Legal reform in Azerbaijan system",
+    "weight" : "1.0",
+    "description" : "The President of Azerbaijan signed the legal reform in Azerbaijan system.",
+    "keywords" : "signed, enacted",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "President of Azerbaijan",
+    "tgt_id" : "Legal reform in Azerbaijan system"
+  }, {
+    "source" : "Legal reform in Azerbaijan system",
+    "target" : "Azerbaijan",
+    "weight" : "1.0",
+    "description" : "The legal reform took place within the country of Azerbaijan.",
+    "keywords" : "location, reform",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Legal reform in Azerbaijan system",
+    "tgt_id" : "Azerbaijan"
+  }, {
+    "source" : "Legal reform in Azerbaijan system",
+    "target" : "Judicial system",
+    "weight" : "1.0",
+    "description" : "The legal reform caused the judicial system to enter a new step.",
+    "keywords" : "advanced, changed",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Legal reform in Azerbaijan system",
+    "tgt_id" : "Judicial system"
+  }, {
+    "source" : "Azerbaijan",
+    "target" : "Appeal courts",
+    "weight" : "1.0",
+    "description" : "New appeal courts were established in the regions of Azerbaijan.",
+    "keywords" : "established, region",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Appeal courts",
+    "tgt_id" : "Azerbaijan"
+  }, {
+    "source" : "Judicial system",
+    "target" : "Appeal courts",
+    "weight" : "1.0",
+    "description" : "The judicial system appointed appeal courts in six regions of Azerbaijan.",
+    "keywords" : "appointed, structure",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Judicial system",
+    "tgt_id" : "Appeal courts"
+  }, {
+    "source" : "Appeal courts",
+    "target" : "Civil Chamber",
+    "weight" : "1.0",
+    "description" : "The appeal courts are composed of the Civil Chamber.",
+    "keywords" : "composed of, chamber",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Appeal courts",
+    "tgt_id" : "Civil Chamber"
+  }, {
+    "source" : "Appeal courts",
+    "target" : "Criminal Chamber",
+    "weight" : "1.0",
+    "description" : "The appeal courts are composed of the Criminal Chamber.",
+    "keywords" : "composed of, chamber",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Appeal courts",
+    "tgt_id" : "Criminal Chamber"
+  }, {
+    "source" : "Appeal courts",
+    "target" : "Military Chamber",
+    "weight" : "1.0",
+    "description" : "The appeal courts are composed of the Military Chamber.",
+    "keywords" : "composed of, chamber",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Appeal courts",
+    "tgt_id" : "Military Chamber"
+  }, {
+    "source" : "Appeal courts",
+    "target" : "Administrative-Economic Chamber",
+    "weight" : "1.0",
+    "description" : "The appeal courts are composed of the Administrative-Economic Chamber.",
+    "keywords" : "composed of, chamber",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Appeal courts",
+    "tgt_id" : "Administrative-Economic Chamber"
+  }, {
+    "source" : "Court activities",
+    "target" : "Decree",
+    "weight" : "1.0",
+    "description" : "The apparatus of courts was upgraded based on the Decree.",
+    "keywords" : "upgraded, based on",
+    "source_id" : "0c3cac23fb0286723459334f7542a2d3",
+    "src_id" : "Court activities",
+    "tgt_id" : "Decree"
+  } ],
+  "metadata" : {
+    "nodeCount" : 10,
+    "edgeCount" : 10
+  }
+}

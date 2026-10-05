@@ -1,0 +1,3778 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "statistical reviews",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "home renovation permits",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "home renovation permits",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local temperature averages",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ambient temperature",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "home improvement enthusiasm",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "columns",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ambient temperature",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "summer booms",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "home improvement enthusiasm",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction activity",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "temperature fluctuations",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "home renovation permits",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction activity",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "summer booms",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction activity",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seasoned observers",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "temporal alignment",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local temperature averages",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "temperature fluctuations",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air conditioning units",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "households",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air conditioning units",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "households",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "monthly energy bills",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air conditioning units",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "monthly energy bills",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "appliance efficiency",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "monthly energy bills",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "outdoor temperature",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "monthly energy bills",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "financial changes",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air conditioning units",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "new devices",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air conditioning units",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "households",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electric vehicle registrations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sustainability",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electric vehicle registrations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "renewable energy",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wind turbine installations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sustainability",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wind turbine installations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "renewable energy",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wind turbine installations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "many countries",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electric vehicles",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wind power",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electric vehicle registrations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "policy developments",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electric vehicle registrations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "market developments",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wind turbine installations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "policy developments",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wind turbine installations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "market developments",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "industry analysts",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electric vehicles",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "industry analysts",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wind power",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electric vehicle registrations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "comparable_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wind turbine installations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "street lighting upgrade",
+      "chunk id" : "A1vrPNUO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "street lighting upgrade",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "safety initiative",
+      "chunk id" : "A1vrPNUO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mistaken perception of causality",
+      "chunk id" : "A1vrPNUO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "animal shelter campaign",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pet adoption surge",
+      "chunk id" : "A1vrPNUO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "street lighting upgrade",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pet adoption surge",
+      "chunk id" : "A1vrPNUO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pet adoption surge",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spring",
+      "chunk id" : "A1vrPNUO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pet adoption surge",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "animal shelter campaign",
+      "chunk id" : "A1vrPNUO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mistaken perception of causality",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "street lighting upgrade",
+      "chunk id" : "A1vrPNUO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mistaken perception of causality",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pet adoption surge",
+      "chunk id" : "A1vrPNUO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "safety initiative",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "street lighting upgrade",
+      "chunk id" : "A1vrPNUO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pet adoption rates",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "solar panel installations",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban analysts",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pet adoption rates",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban analysts",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "solar panel installations",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "environmentally conscious citizens",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pet adoption rates",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "environmentally conscious citizens",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "solar panel installations",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "solar panels",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shelter animals",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "solar panel installations",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lively discussions",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coincidence",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "trend",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "last spring",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shelter animals",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "restaurant",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pipe repair",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "restaurant opening",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "water discoloration",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "water discoloration",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "customers",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "water discoloration",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "diners",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "restaurant",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "diners",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "restaurant",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pipe repair",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "water discoloration",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "taps",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "water discoloration",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "customers",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air conditioning units",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "animal shelter campaign",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "appliance efficiency",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "city",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "customers",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "diners",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "financial changes",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "households",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mistaken perception of causality",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "monthly energy bills",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "new devices",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "outdoor temperature",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pet adoption surge",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pipe repair",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "restaurant",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "restaurant opening",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "safety initiative",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "spring",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "street lighting upgrade",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "taps",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "water discoloration",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pet adoption surge",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "pet adoption surge"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pet adoption surge",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "pet adoption surge"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "pet adoption surge"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air conditioning units",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "air conditioning units"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air conditioning units",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "air conditioning units"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "air conditioning units"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "street lighting upgrade",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "street lighting upgrade"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "street lighting upgrade",
+      "chunk id" : "A1vrPNUO"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "street lighting upgrade"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "street lighting upgrade"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "water discoloration",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "water discoloration"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "water discoloration",
+      "chunk id" : "lr_mkg62",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "water discoloration"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "water discoloration"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "residents"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "lF0G8X4l",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "residents"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "residents"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 24 members",
+      "community_id" : "community_1",
+      "node_count" : "24",
+      "edge_count" : "31",
+      "members" : [ "air conditioning units", "animal shelter campaign", "appliance efficiency", "city", "construction", "customers", "diners", "financial changes", "households", "mistaken perception of causality", "monthly energy bills", "neighborhood", "new devices", "outdoor temperature", "pet adoption surge", "pipe repair", "residents", "restaurant", "restaurant opening", "safety initiative", "spring", "street lighting upgrade", "taps", "water discoloration" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ambient temperature",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "ambient temperature", "columns", "construction activity", "home improvement enthusiasm", "home renovation permits", "local temperature averages", "statistical reviews", "summer booms", "temperature fluctuations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "columns",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "ambient temperature", "columns", "construction activity", "home improvement enthusiasm", "home renovation permits", "local temperature averages", "statistical reviews", "summer booms", "temperature fluctuations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction activity",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "ambient temperature", "columns", "construction activity", "home improvement enthusiasm", "home renovation permits", "local temperature averages", "statistical reviews", "summer booms", "temperature fluctuations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "home improvement enthusiasm",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "ambient temperature", "columns", "construction activity", "home improvement enthusiasm", "home renovation permits", "local temperature averages", "statistical reviews", "summer booms", "temperature fluctuations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "home renovation permits",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "ambient temperature", "columns", "construction activity", "home improvement enthusiasm", "home renovation permits", "local temperature averages", "statistical reviews", "summer booms", "temperature fluctuations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local temperature averages",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "ambient temperature", "columns", "construction activity", "home improvement enthusiasm", "home renovation permits", "local temperature averages", "statistical reviews", "summer booms", "temperature fluctuations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "statistical reviews",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "ambient temperature", "columns", "construction activity", "home improvement enthusiasm", "home renovation permits", "local temperature averages", "statistical reviews", "summer booms", "temperature fluctuations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "summer booms",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "ambient temperature", "columns", "construction activity", "home improvement enthusiasm", "home renovation permits", "local temperature averages", "statistical reviews", "summer booms", "temperature fluctuations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "temperature fluctuations",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "ambient temperature", "columns", "construction activity", "home improvement enthusiasm", "home renovation permits", "local temperature averages", "statistical reviews", "summer booms", "temperature fluctuations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "home renovation permits",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "home renovation permits"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "home renovation permits",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "home renovation permits"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "home renovation permits"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "ambient temperature", "columns", "construction activity", "home improvement enthusiasm", "home renovation permits", "local temperature averages", "statistical reviews", "summer booms", "temperature fluctuations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction activity",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "construction activity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "construction activity",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "construction activity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "construction activity"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "ambient temperature", "columns", "construction activity", "home improvement enthusiasm", "home renovation permits", "local temperature averages", "statistical reviews", "summer booms", "temperature fluctuations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local temperature averages",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local temperature averages"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local temperature averages",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local temperature averages"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local temperature averages"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "ambient temperature", "columns", "construction activity", "home improvement enthusiasm", "home renovation permits", "local temperature averages", "statistical reviews", "summer booms", "temperature fluctuations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "home improvement enthusiasm",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "home improvement enthusiasm"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "home improvement enthusiasm",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "home improvement enthusiasm"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "home improvement enthusiasm"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "ambient temperature", "columns", "construction activity", "home improvement enthusiasm", "home renovation permits", "local temperature averages", "statistical reviews", "summer booms", "temperature fluctuations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ambient temperature",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "ambient temperature"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ambient temperature",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "ambient temperature"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "ambient temperature"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "ambient temperature", "columns", "construction activity", "home improvement enthusiasm", "home renovation permits", "local temperature averages", "statistical reviews", "summer booms", "temperature fluctuations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electric vehicle registrations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "electric vehicle registrations", "many countries", "market developments", "policy developments", "renewable energy", "sustainability", "wind turbine installations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "many countries",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "electric vehicle registrations", "many countries", "market developments", "policy developments", "renewable energy", "sustainability", "wind turbine installations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "market developments",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "electric vehicle registrations", "many countries", "market developments", "policy developments", "renewable energy", "sustainability", "wind turbine installations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "policy developments",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "electric vehicle registrations", "many countries", "market developments", "policy developments", "renewable energy", "sustainability", "wind turbine installations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "renewable energy",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "electric vehicle registrations", "many countries", "market developments", "policy developments", "renewable energy", "sustainability", "wind turbine installations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sustainability",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "electric vehicle registrations", "many countries", "market developments", "policy developments", "renewable energy", "sustainability", "wind turbine installations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wind turbine installations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "electric vehicle registrations", "many countries", "market developments", "policy developments", "renewable energy", "sustainability", "wind turbine installations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wind turbine installations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "wind turbine installations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wind turbine installations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "wind turbine installations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "wind turbine installations"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "electric vehicle registrations", "many countries", "market developments", "policy developments", "renewable energy", "sustainability", "wind turbine installations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electric vehicle registrations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "electric vehicle registrations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electric vehicle registrations",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "electric vehicle registrations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "electric vehicle registrations"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "electric vehicle registrations", "many countries", "market developments", "policy developments", "renewable energy", "sustainability", "wind turbine installations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "renewable energy",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "renewable energy"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "renewable energy",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "renewable energy"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "renewable energy"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "electric vehicle registrations", "many countries", "market developments", "policy developments", "renewable energy", "sustainability", "wind turbine installations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "policy developments",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "policy developments"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "policy developments",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "policy developments"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "policy developments"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "electric vehicle registrations", "many countries", "market developments", "policy developments", "renewable energy", "sustainability", "wind turbine installations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "market developments",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "market developments"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "market developments",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "market developments"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "market developments"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "10",
+      "members" : [ "electric vehicle registrations", "many countries", "market developments", "policy developments", "renewable energy", "sustainability", "wind turbine installations" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "environmentally conscious citizens",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "8",
+      "members" : [ "environmentally conscious citizens", "pet adoption rates", "shelter animals", "solar panel installations", "solar panels", "the city", "urban analysts" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pet adoption rates",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "8",
+      "members" : [ "environmentally conscious citizens", "pet adoption rates", "shelter animals", "solar panel installations", "solar panels", "the city", "urban analysts" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shelter animals",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "8",
+      "members" : [ "environmentally conscious citizens", "pet adoption rates", "shelter animals", "solar panel installations", "solar panels", "the city", "urban analysts" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "solar panel installations",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "8",
+      "members" : [ "environmentally conscious citizens", "pet adoption rates", "shelter animals", "solar panel installations", "solar panels", "the city", "urban analysts" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "solar panels",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "8",
+      "members" : [ "environmentally conscious citizens", "pet adoption rates", "shelter animals", "solar panel installations", "solar panels", "the city", "urban analysts" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the city",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "8",
+      "members" : [ "environmentally conscious citizens", "pet adoption rates", "shelter animals", "solar panel installations", "solar panels", "the city", "urban analysts" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban analysts",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "8",
+      "members" : [ "environmentally conscious citizens", "pet adoption rates", "shelter animals", "solar panel installations", "solar panels", "the city", "urban analysts" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "solar panel installations",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "solar panel installations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "solar panel installations",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "solar panel installations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "solar panel installations"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "8",
+      "members" : [ "environmentally conscious citizens", "pet adoption rates", "shelter animals", "solar panel installations", "solar panels", "the city", "urban analysts" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pet adoption rates",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "pet adoption rates"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pet adoption rates",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "pet adoption rates"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "pet adoption rates"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "8",
+      "members" : [ "environmentally conscious citizens", "pet adoption rates", "shelter animals", "solar panel installations", "solar panels", "the city", "urban analysts" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "environmentally conscious citizens",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "environmentally conscious citizens"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "environmentally conscious citizens",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "environmentally conscious citizens"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "environmentally conscious citizens"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "8",
+      "members" : [ "environmentally conscious citizens", "pet adoption rates", "shelter animals", "solar panel installations", "solar panels", "the city", "urban analysts" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shelter animals",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "shelter animals"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shelter animals",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "shelter animals"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "shelter animals"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "8",
+      "members" : [ "environmentally conscious citizens", "pet adoption rates", "shelter animals", "solar panel installations", "solar panels", "the city", "urban analysts" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban analysts",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "urban analysts"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "urban analysts",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "urban analysts"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "urban analysts"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 7 members",
+      "community_id" : "community_4",
+      "node_count" : "7",
+      "edge_count" : "8",
+      "members" : [ "environmentally conscious citizens", "pet adoption rates", "shelter animals", "solar panel installations", "solar panels", "the city", "urban analysts" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electric vehicles",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 3 members",
+      "community_id" : "community_5",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "electric vehicles", "industry analysts", "wind power" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "industry analysts",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 3 members",
+      "community_id" : "community_5",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "electric vehicles", "industry analysts", "wind power" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wind power",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 3 members",
+      "community_id" : "community_5",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "electric vehicles", "industry analysts", "wind power" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electric vehicles",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "electric vehicles"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "electric vehicles",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "electric vehicles"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "electric vehicles"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 3 members",
+      "community_id" : "community_5",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "electric vehicles", "industry analysts", "wind power" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "industry analysts",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "industry analysts"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "industry analysts",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "industry analysts"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "industry analysts"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 3 members",
+      "community_id" : "community_5",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "electric vehicles", "industry analysts", "wind power" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wind power",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "wind power"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wind power",
+      "chunk id" : "Nx2ww7OU",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "wind power"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "wind power"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 3 members",
+      "community_id" : "community_5",
+      "node_count" : "3",
+      "edge_count" : "3",
+      "members" : [ "electric vehicles", "industry analysts", "wind power" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coincidence",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 2 members",
+      "community_id" : "community_6",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "coincidence", "lively discussions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lively discussions",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 2 members",
+      "community_id" : "community_6",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "coincidence", "lively discussions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lively discussions",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "lively discussions"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lively discussions",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "lively discussions"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "lively discussions"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 2 members",
+      "community_id" : "community_6",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "coincidence", "lively discussions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coincidence",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coincidence"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coincidence",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coincidence"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coincidence"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 2 members",
+      "community_id" : "community_6",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "coincidence", "lively discussions" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "last spring",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 2 members",
+      "community_id" : "community_7",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "last spring", "trend" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "trend",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 2 members",
+      "community_id" : "community_7",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "last spring", "trend" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "last spring",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "last spring"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "last spring",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "last spring"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "last spring"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 2 members",
+      "community_id" : "community_7",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "last spring", "trend" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "trend",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "trend"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "trend",
+      "chunk id" : "9hUPC9pX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "trend"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "trend"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 2 members",
+      "community_id" : "community_7",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "last spring", "trend" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seasoned observers",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 2 members",
+      "community_id" : "community_8",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "seasoned observers", "temporal alignment" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "temporal alignment",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 2 members",
+      "community_id" : "community_8",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "seasoned observers", "temporal alignment" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seasoned observers",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "seasoned observers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seasoned observers",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "seasoned observers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "seasoned observers"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 2 members",
+      "community_id" : "community_8",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "seasoned observers", "temporal alignment" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "temporal alignment",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "temporal alignment"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "temporal alignment",
+      "chunk id" : "K4CfreOJ",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "temporal alignment"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "temporal alignment"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 2 members",
+      "community_id" : "community_8",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "seasoned observers", "temporal alignment" ]
+    }
+  }
+} ]

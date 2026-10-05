@@ -24,7 +24,9 @@ five systems to (nodes, edges) and computes:
 Snapshot layouts (produced by the T7 Kotlin snapshot hooks):
   GraphRAG   <sample_workdir>/kg_snapshot/{entities,relationships}.parquet
   LightRAG   <sample_workdir>/kg_snapshot/knowledge-graph.json   ({nodes:[…], edges:[…]})
+             E2: <e2_root>/<sample>/knowledge-graph.json
   PathRAG    <sample_workdir>/kg_snapshot/knowledge-graph.json   ({nodes:{id:…}, edges:[…]})
+             E2: <e2_root>/<sample>/knowledge-graph.json
   HippoRAG   workdirs/<suffix>/snapshots/<sample>/working_dir/graph.json
   YoutuRAG   <sample_workdir>/kg_snapshot/<dataset>_new.json     ([{start_node, relation, end_node}])
 
@@ -200,8 +202,10 @@ def load_youtu(snapshot_dir: Path):
 SNAPSHOT_PATTERNS = {
     # (glob, kind): kind determines loader and where the sample id sits in parts
     "graphrag": ("**/kg_snapshot/entities.parquet", "file"),
-    "lightrag": ("**/kg_snapshot/knowledge-graph.json", "file"),
-    "pathrag": ("**/kg_snapshot/knowledge-graph.json", "file"),
+    # E2 snapshots are written directly below the sample directory, without
+    # the kg_snapshot component used by ordinary per-sample snapshots.
+    "lightrag": ("**/knowledge-graph.json", "file"),
+    "pathrag": ("**/knowledge-graph.json", "file"),
     "youturag": ("**/kg_snapshot/*_new.json", "file"),
     "hipporag": ("**/working_dir/graph.json", "file"),
 }
@@ -272,6 +276,10 @@ def sample_id_from_path(path: Path, system: str) -> str | None:
             if _is_pert_seg(parts[j]):
                 j -= 1
             return parts[j] if j >= 2 else None
+        # E2 LightRAG/PathRAG layout: .../<sample_id>/knowledge-graph.json
+        # The parent directory is the sample id when no kg_snapshot exists.
+        if system in ("lightrag", "pathrag") and path.name == "knowledge-graph.json":
+            return path.parent.name
     elif system == "hipporag":
         if "working_dir" in parts:
             i = parts.index("working_dir")

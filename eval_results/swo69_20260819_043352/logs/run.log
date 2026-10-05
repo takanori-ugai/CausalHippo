@@ -146,4 +146,56 @@
 === [SWO69] 08:33:14 END   hipporag_e1_hipporag_webis_weak rc=0 wall=4s ===
 === [SWO69] 08:33:15 SKIP e2/lightrag — no kg_snapshot under eval_results/swo69_20260819_043352/e0_lightrag_musique (run E0 first) ===
 === [SWO69] 08:33:15 SKIP e2/hipporag — jar lacks the RAG-runner e2 hook (rebuild required, see SWO69/REBUILD.md) ===
-=== [SWO69] 08:33:22 DONE mode=all ===
+=== [SWO69] run dir: eval_results/swo69_20260819_043352 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 04:10:53 SKIP  graphrag_e0_graphrag_musique (output exists) ===
+=== [SWO69] 04:10:53 START lightrag_e0_lightrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] run dir: eval_results/swo69_20260819_043352 (reps=1 limit=15 datasets=musique,causal,webis) ===
+=== [SWO69] 04:12:49 SKIP  graphrag_e0_graphrag_musique (output exists) ===
+=== [SWO69] 04:12:49 START lightrag_e0_lightrag_musique (model_index=qwen3.8:27b model_answer=qwen3.8:27b) ===
+=== [SWO69] 04:39:56 END   lightrag_e0_lightrag_musique rc=0 wall=1743s ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e0_pathrag_musique (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e0_youturag_musique (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e0_hipporag_musique (output exists) ===
+=== [SWO69] 04:39:58 SKIP  graphrag_e0_graphrag_causal (output exists) ===
+=== [SWO69] 04:39:58 SKIP  lightrag_e0_lightrag_causal (output exists) ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e0_pathrag_causal (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e0_youturag_causal (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e0_hipporag_causal (output exists) ===
+=== [SWO69] 04:39:58 SKIP  graphrag_e0_graphrag_webis (output exists) ===
+=== [SWO69] 04:39:58 SKIP  lightrag_e0_lightrag_webis (output exists) ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e0_pathrag_webis (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e0_youturag_webis (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e0_hipporag_webis (output exists) ===
+=== [SWO69] 04:39:58 SKIP  graphrag_e1_graphrag_musique_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  lightrag_e1_lightrag_musique_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e1_pathrag_musique_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e1_youturag_musique_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e1_hipporag_musique_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  graphrag_e1_graphrag_causal_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  lightrag_e1_lightrag_causal_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e1_pathrag_causal_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e1_youturag_causal_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e1_hipporag_causal_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  graphrag_e1_graphrag_webis_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  lightrag_e1_lightrag_webis_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e1_pathrag_webis_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e1_youturag_webis_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e1_hipporag_webis_mid (output exists) ===
+=== [SWO69] 04:39:58 SKIP  graphrag_e1_graphrag_musique_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  lightrag_e1_lightrag_musique_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e1_pathrag_musique_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e1_youturag_musique_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e1_hipporag_musique_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  graphrag_e1_graphrag_causal_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  lightrag_e1_lightrag_causal_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e1_pathrag_causal_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e1_youturag_causal_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e1_hipporag_causal_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  graphrag_e1_graphrag_webis_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  lightrag_e1_lightrag_webis_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  pathrag_e1_pathrag_webis_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  youturag_e1_youturag_webis_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP  hipporag_e1_hipporag_webis_weak (output exists) ===
+=== [SWO69] 04:39:58 SKIP e2/lightrag — no kg_snapshot under eval_results/swo69_20260819_043352/e0_lightrag_musique (run E0 first) ===
+=== [SWO69] 04:39:58 SKIP e2/hipporag — jar lacks the RAG-runner e2 hook (rebuild required, see SWO69/REBUILD.md) ===
+=== [SWO69] 04:40:04 DONE mode=all ===

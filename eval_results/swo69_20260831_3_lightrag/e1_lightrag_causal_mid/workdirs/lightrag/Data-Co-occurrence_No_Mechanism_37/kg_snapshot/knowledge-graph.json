@@ -1,0 +1,413 @@
+{
+  "nodes" : [ {
+    "id" : "University open days",
+    "entity_id" : "University open days",
+    "entity_type" : "Event",
+    "description" : "An event that students joke is always followed by mandatory software updates.",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc"
+  }, {
+    "id" : "Mandatory software updates",
+    "entity_id" : "Mandatory software updates",
+    "entity_type" : "Concept",
+    "description" : "Updates required for campus computers, which are observed after university open days.",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc"
+  }, {
+    "id" : "University IT",
+    "entity_id" : "University IT",
+    "entity_type" : "Organization",
+    "description" : "The department responsible for setting the update schedule on campus computers.",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc"
+  }, {
+    "id" : "Students",
+    "entity_id" : "Students",
+    "entity_type" : "Concept",
+    "description" : "The group of people who joke about the pattern between open days and updates.",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc"
+  }, {
+    "id" : "Student body",
+    "entity_id" : "Student body",
+    "entity_type" : "Concept",
+    "description" : "The collective group of students who are fostering speculation.",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc"
+  }, {
+    "id" : "Heightened Irritability",
+    "entity_id" : "Heightened Irritability",
+    "entity_type" : "Concept",
+    "description" : "A state described by some individuals on mornings after broken sleep.",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001"
+  }, {
+    "id" : "Broken Sleep",
+    "entity_id" : "Broken Sleep",
+    "entity_type" : "Concept",
+    "description" : "A state that precedes heightened irritability.",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001"
+  }, {
+    "id" : "Short Tempers",
+    "entity_id" : "Short Tempers",
+    "entity_type" : "Concept",
+    "description" : "A noticeable symptom that friends might observe.",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001"
+  }, {
+    "id" : "Impatience",
+    "entity_id" : "Impatience",
+    "entity_type" : "Concept",
+    "description" : "A symptom that might be noticed at work.",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001"
+  }, {
+    "id" : "Workload",
+    "entity_id" : "Workload",
+    "entity_type" : "Concept",
+    "description" : "An alternative factor blamed for irritability.",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001"
+  }, {
+    "id" : "Traffic",
+    "entity_id" : "Traffic",
+    "entity_type" : "Concept",
+    "description" : "An alternative factor blamed for irritability.",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001"
+  }, {
+    "id" : "Flip-flops",
+    "entity_id" : "Flip-flops",
+    "entity_type" : "Concept",
+    "description" : "A type of footwear whose sales are observed in shoe stores.",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7"
+  }, {
+    "id" : "Shoe stores",
+    "entity_id" : "Shoe stores",
+    "entity_type" : "Organization",
+    "description" : "Retail establishments where flip-flops are sold.",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7"
+  }, {
+    "id" : "Local swimming pools",
+    "entity_id" : "Local swimming pools",
+    "entity_type" : "Location",
+    "description" : "Places where people visit for swimming.",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7"
+  }, {
+    "id" : "Pool staff",
+    "entity_id" : "Pool staff",
+    "entity_type" : "Person",
+    "description" : "Employees who work at local swimming pools.",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7"
+  }, {
+    "id" : "Shop owners",
+    "entity_id" : "Shop owners",
+    "entity_type" : "Person",
+    "description" : "Owners of shoe stores.",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7"
+  }, {
+    "id" : "Correlation",
+    "entity_id" : "Correlation",
+    "entity_type" : "Concept",
+    "description" : "The observed pattern where increased sales of flip-flops coincide with increased visits to local swimming pools.",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7"
+  }, {
+    "id" : "Urban dog park construction",
+    "entity_id" : "Urban dog park construction",
+    "entity_type" : "Concept",
+    "description" : "A notable increase in the building of dog parks within urban areas.",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50"
+  }, {
+    "id" : "Craft ice cream shop sales",
+    "entity_id" : "Craft ice cream shop sales",
+    "entity_type" : "Concept",
+    "description" : "A rise in the sales of specialized ice cream shops.",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50"
+  }, {
+    "id" : "Dog owners",
+    "entity_id" : "Dog owners",
+    "entity_type" : "Person",
+    "description" : "Local residents who own dogs.",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50"
+  }, {
+    "id" : "Changing urban demographics",
+    "entity_id" : "Changing urban demographics",
+    "entity_type" : "Concept",
+    "description" : "Shifts in the population makeup of urban areas.",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50"
+  }, {
+    "id" : "Community amenities",
+    "entity_id" : "Community amenities",
+    "entity_type" : "Concept",
+    "description" : "A focus on facilities and services that benefit the community.",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50"
+  }, {
+    "id" : "Social drivers",
+    "entity_id" : "Social drivers",
+    "entity_type" : "Concept",
+    "description" : "Underlying social factors that influence trends.",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50"
+  }, {
+    "id" : "Screen time",
+    "entity_id" : "Screen time",
+    "entity_type" : "Concept",
+    "description" : "The increasing amount of time spent viewing digital screens.",
+    "source_id" : "48837a29b442b324303eb691a1dd672f"
+  }, {
+    "id" : "Eye strain",
+    "entity_id" : "Eye strain",
+    "entity_type" : "Concept",
+    "description" : "Reports of discomfort or fatigue in the eyes.",
+    "source_id" : "48837a29b442b324303eb691a1dd672f"
+  }, {
+    "id" : "Tech industries",
+    "entity_id" : "Tech industries",
+    "entity_type" : "Organization",
+    "description" : "Industries employing technology, where employees are particularly vocal about health trends.",
+    "source_id" : "48837a29b442b324303eb691a1dd672f"
+  }, {
+    "id" : "Healthcare providers",
+    "entity_id" : "Healthcare providers",
+    "entity_type" : "Person",
+    "description" : "Medical professionals who are beginning to question habits related to screen use.",
+    "source_id" : "48837a29b442b324303eb691a1dd672f"
+  }, {
+    "id" : "Wellness seminars",
+    "entity_id" : "Wellness seminars",
+    "entity_type" : "Event",
+    "description" : "Settings where the possible connection between screen time and eye strain is discussed.",
+    "source_id" : "48837a29b442b324303eb691a1dd672f"
+  }, {
+    "id" : "Plant-based meal sales",
+    "entity_id" : "Plant-based meal sales",
+    "entity_type" : "Concept",
+    "description" : "The sales of meals derived from plants.",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14"
+  }, {
+    "id" : "Art supply purchases",
+    "entity_id" : "Art supply purchases",
+    "entity_type" : "Concept",
+    "description" : "The buying of materials used for art.",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14"
+  }, {
+    "id" : "Young professionals",
+    "entity_id" : "Young professionals",
+    "entity_type" : "Person",
+    "description" : "A demographic group exhibiting specific purchasing patterns.",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14"
+  }, {
+    "id" : "Lifestyle blogs",
+    "entity_id" : "Lifestyle blogs",
+    "entity_type" : "Organization",
+    "description" : "Online platforms that publish lifestyle content and point out connections between trends.",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14"
+  }, {
+    "id" : "Creative health-conscious movement",
+    "entity_id" : "Creative health-conscious movement",
+    "entity_type" : "Concept",
+    "description" : "A perceived movement linking creativity and health awareness.",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14"
+  } ],
+  "edges" : [ {
+    "source" : "University open days",
+    "target" : "Mandatory software updates",
+    "weight" : "1.0",
+    "description" : "Students joke that the open days are always followed by mandatory software updates.",
+    "keywords" : "Pattern, Correlation, Joke",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc",
+    "src_id" : "University open days",
+    "tgt_id" : "Mandatory software updates"
+  }, {
+    "source" : "Mandatory software updates",
+    "target" : "University IT",
+    "weight" : "1.0",
+    "description" : "University IT insists that the update schedule is set independently of other events.",
+    "keywords" : "Independence, Schedule",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc",
+    "src_id" : "University IT",
+    "tgt_id" : "Mandatory software updates"
+  }, {
+    "source" : "Mandatory software updates",
+    "target" : "Student body",
+    "weight" : "1.0",
+    "description" : "The overlap between the updates and other events continues to foster speculation among the student body.",
+    "keywords" : "Speculation, Overlap",
+    "source_id" : "c06c049faa4bd7da38d9ac1961ba3afc",
+    "src_id" : "Mandatory software updates",
+    "tgt_id" : "Student body"
+  }, {
+    "source" : "Broken Sleep",
+    "target" : "Heightened Irritability",
+    "weight" : "1.0",
+    "description" : "Broken sleep is associated with heightened irritability.",
+    "keywords" : "Cause, Symptom, Morning",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001",
+    "src_id" : "Broken Sleep",
+    "tgt_id" : "Heightened Irritability"
+  }, {
+    "source" : "Broken Sleep",
+    "target" : "Short Tempers",
+    "weight" : "1.0",
+    "description" : "Broken sleep can lead to short tempers.",
+    "keywords" : "Cause, Symptom, Observation",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001",
+    "src_id" : "Broken Sleep",
+    "tgt_id" : "Short Tempers"
+  }, {
+    "source" : "Broken Sleep",
+    "target" : "Impatience",
+    "weight" : "1.0",
+    "description" : "Broken sleep may cause impatience, particularly at work.",
+    "keywords" : "Cause, Symptom, Work",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001",
+    "src_id" : "Broken Sleep",
+    "tgt_id" : "Impatience"
+  }, {
+    "source" : "Heightened Irritability",
+    "target" : "Workload",
+    "weight" : "1.0",
+    "description" : "Workload is cited as an alternative factor contributing to heightened irritability.",
+    "keywords" : "Alternative Factor, Blamed",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001",
+    "src_id" : "Workload",
+    "tgt_id" : "Heightened Irritability"
+  }, {
+    "source" : "Heightened Irritability",
+    "target" : "Traffic",
+    "weight" : "1.0",
+    "description" : "Traffic is cited as an alternative factor contributing to heightened irritability.",
+    "keywords" : "Alternative Factor, Blamed",
+    "source_id" : "850349d060c23e4cbae33d13d48ce001",
+    "src_id" : "Traffic",
+    "tgt_id" : "Heightened Irritability"
+  }, {
+    "source" : "Sale of flip-flops",
+    "target" : "Local swimming pools",
+    "weight" : "1.0",
+    "description" : "An increase in the sale of flip-flops at shoe stores is often associated with an increase in the number of people visiting local swimming pools.",
+    "keywords" : "Increase, Coincidence",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7",
+    "src_id" : "Sale of flip-flops",
+    "tgt_id" : "Local swimming pools"
+  }, {
+    "source" : "Pool staff",
+    "target" : "Correlation",
+    "weight" : "1.0",
+    "description" : "Pool staff have noticed the trend of the correlation each year.",
+    "keywords" : "Observation, Noticed",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7",
+    "src_id" : "Pool staff",
+    "tgt_id" : "Correlation"
+  }, {
+    "source" : "Correlation",
+    "target" : "Shop owners",
+    "weight" : "1.0",
+    "description" : "Shop owners have noticed the trend of the correlation each year.",
+    "keywords" : "Observation, Noticed",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7",
+    "src_id" : "Shop owners",
+    "tgt_id" : "Correlation"
+  }, {
+    "source" : "Correlation",
+    "target" : "Direct connection",
+    "weight" : "1.0",
+    "description" : "The actual relationship between the sales and the visits may be more indirect than a direct connection suggests.",
+    "keywords" : "Indirect, Relationship",
+    "source_id" : "87d0d247dfdc41cdd34f03deb035eab7",
+    "src_id" : "Correlation",
+    "tgt_id" : "Direct connection"
+  }, {
+    "source" : "Urban dog park construction",
+    "target" : "Craft ice cream shop sales",
+    "weight" : "1.0",
+    "description" : "The two trends have been observed increasing simultaneously in urban areas.",
+    "keywords" : "Parallel, Correlation",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50",
+    "src_id" : "Urban dog park construction",
+    "tgt_id" : "Craft ice cream shop sales"
+  }, {
+    "source" : "Urban dog park construction",
+    "target" : "Changing urban demographics",
+    "weight" : "1.0",
+    "description" : "The construction of dog parks is attributed to changing urban demographics.",
+    "keywords" : "Product of, Influenced by",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50",
+    "src_id" : "Urban dog park construction",
+    "tgt_id" : "Changing urban demographics"
+  }, {
+    "source" : "Urban dog park construction",
+    "target" : "Social drivers",
+    "weight" : "1.0",
+    "description" : "The construction of dog parks shares similar underlying social drivers with other trends.",
+    "keywords" : "Share, Driven by",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50",
+    "src_id" : "Urban dog park construction",
+    "tgt_id" : "Social drivers"
+  }, {
+    "source" : "Craft ice cream shop sales",
+    "target" : "Dog owners",
+    "weight" : "1.0",
+    "description" : "Some locals humorously suggest that dog owners are responsible for the increase in ice cream sales.",
+    "keywords" : "Perceived cause, Driving force",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50",
+    "src_id" : "Dog owners",
+    "tgt_id" : "Craft ice cream shop sales"
+  }, {
+    "source" : "Craft ice cream shop sales",
+    "target" : "Community amenities",
+    "weight" : "1.0",
+    "description" : "The rise in ice cream sales is linked to a focus on community amenities.",
+    "keywords" : "Product of, Influenced by",
+    "source_id" : "c866c67c371b3feb8f330ef1c6c98b50",
+    "src_id" : "Craft ice cream shop sales",
+    "tgt_id" : "Community amenities"
+  }, {
+    "source" : "Screen time",
+    "target" : "Eye strain",
+    "weight" : "2.0",
+    "description" : "The possible connection between screen time and eye strain is being discussed in wellness seminars.",
+    "keywords" : "Correlation, Association, Discussion, Connection",
+    "source_id" : "48837a29b442b324303eb691a1dd672f<|#|>48837a29b442b324303eb691a1dd672f",
+    "src_id" : "Screen time",
+    "tgt_id" : "Eye strain"
+  }, {
+    "source" : "Screen time",
+    "target" : "Tech industries",
+    "weight" : "1.0",
+    "description" : "Employees in tech industries are especially vocal regarding the trend of screen time.",
+    "keywords" : "Awareness, Vocal about",
+    "source_id" : "48837a29b442b324303eb691a1dd672f",
+    "src_id" : "Tech industries",
+    "tgt_id" : "Screen time"
+  }, {
+    "source" : "Screen time",
+    "target" : "Healthcare providers",
+    "weight" : "1.0",
+    "description" : "Healthcare providers are starting to ask more questions about habits related to screen time.",
+    "keywords" : "Inquiry, Concern",
+    "source_id" : "48837a29b442b324303eb691a1dd672f",
+    "src_id" : "Healthcare providers",
+    "tgt_id" : "Screen time"
+  }, {
+    "source" : "Plant-based meal sales",
+    "target" : "Art supply purchases",
+    "weight" : "1.0",
+    "description" : "The sales of plant-based meals tend to rise in unison with the purchases of art supplies.",
+    "keywords" : "Correlation, Simultaneous increase",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14",
+    "src_id" : "Plant-based meal sales",
+    "tgt_id" : "Art supply purchases"
+  }, {
+    "source" : "Plant-based meal sales",
+    "target" : "Young professionals",
+    "weight" : "1.0",
+    "description" : "Young professionals are the demographic group associated with the rise in plant-based meal sales.",
+    "keywords" : "Consumer base, Trend",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14",
+    "src_id" : "Young professionals",
+    "tgt_id" : "Plant-based meal sales"
+  }, {
+    "source" : "Lifestyle blogs",
+    "target" : "Creative health-conscious movement",
+    "weight" : "1.0",
+    "description" : "Lifestyle blogs are quick to point out and claim the existence of a creative health-conscious movement.",
+    "keywords" : "Claiming, Reporting",
+    "source_id" : "c5a1730c80dcf838b6646a43978bbd14",
+    "src_id" : "Lifestyle blogs",
+    "tgt_id" : "Creative health-conscious movement"
+  } ],
+  "metadata" : {
+    "nodeCount" : 33,
+    "edgeCount" : 23
+  }
+}

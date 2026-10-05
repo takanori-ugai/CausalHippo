@@ -1,0 +1,800 @@
+{
+  "nodes" : [ {
+    "id" : "Tech Sector",
+    "entity_id" : "Tech Sector",
+    "entity_type" : "Concept",
+    "description" : "The technology sector of the stock market whose prices began to climb over the past quarter, drawing analyst attention.",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b"
+  }, {
+    "id" : "Local Coffee Sales",
+    "entity_id" : "Local Coffee Sales",
+    "entity_type" : "Concept",
+    "description" : "Coffee sales in the local area that experienced a notable uptick coinciding with the rise in tech stock prices.",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b"
+  }, {
+    "id" : "Cafes",
+    "entity_id" : "Cafes",
+    "entity_type" : "Organization",
+    "description" : "Nearby cafes that saw increased visits from employees of major firms during the period of rising tech stock prices.",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b"
+  }, {
+    "id" : "Major Firms",
+    "entity_id" : "Major Firms",
+    "entity_type" : "Organization",
+    "description" : "Several major companies whose employees reported increased visits to nearby cafes during the observed trend.",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b"
+  }, {
+    "id" : "Managers",
+    "entity_id" : "Managers",
+    "entity_type" : "Person",
+    "description" : "Managers at major firms who reportedly encouraged coffee breaks during earnings calls, cited as anecdotal evidence linking market activity to café visits.",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b"
+  }, {
+    "id" : "Earnings Calls",
+    "entity_id" : "Earnings Calls",
+    "entity_type" : "Event",
+    "description" : "Corporate financial events during which managers reportedly encouraged coffee breaks, serving as anecdotal evidence in the speculation.",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b"
+  }, {
+    "id" : "Economic Optimism",
+    "entity_id" : "Economic Optimism",
+    "entity_type" : "Concept",
+    "description" : "Broader economic sentiment identified as a potential common driver behind both the rise in tech stock prices and the uptick in local coffee sales.",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b"
+  }, {
+    "id" : "Café Culture",
+    "entity_id" : "Café Culture",
+    "entity_type" : "Concept",
+    "description" : "The culture of café visits in the city, speculated by some to be boosted by improved market performance in the tech sector.",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b"
+  }, {
+    "id" : "City",
+    "entity_id" : "City",
+    "entity_type" : "Location",
+    "description" : "The local city where both the tech stock price rise and the coffee sales uptick were observed.",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b"
+  }, {
+    "id" : "Flexible remote work policies",
+    "entity_id" : "Flexible remote work policies",
+    "entity_type" : "Concept",
+    "description" : "Policies introduced by many companies this spring that allow employees to work remotely with flexibility.",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040"
+  }, {
+    "id" : "Dandelion growth",
+    "entity_id" : "Dandelion growth",
+    "entity_type" : "Concept",
+    "description" : "Record levels of dandelion growth observed in urban parks this spring, coinciding with the introduction of remote work policies.",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040"
+  }, {
+    "id" : "Urban parks",
+    "entity_id" : "Urban parks",
+    "entity_type" : "Location",
+    "description" : "Parks in urban areas where dandelion growth reached record levels this spring.",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040"
+  }, {
+    "id" : "Garden enthusiasts",
+    "entity_id" : "Garden enthusiasts",
+    "entity_type" : "Person",
+    "description" : "Individuals who hypothesized that fewer people commuting somehow allowed dandelions to flourish.",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040"
+  }, {
+    "id" : "Companies",
+    "entity_id" : "Companies",
+    "entity_type" : "Organization",
+    "description" : "Organizations that introduced more flexible remote work policies.",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c"
+  }, {
+    "id" : "Neighborhood meetings",
+    "entity_id" : "Neighborhood meetings",
+    "entity_type" : "Event",
+    "description" : "Local gatherings where the coincidental correlation between remote work trends and dandelion growth is discussed.",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040"
+  }, {
+    "id" : "Work-from-home trends",
+    "entity_id" : "Work-from-home trends",
+    "entity_type" : "Concept",
+    "description" : "The trend of people working from home, resulting in fewer commuters, which some have linked to dandelion flourishing.",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040"
+  }, {
+    "id" : "Plant biology",
+    "entity_id" : "Plant biology",
+    "entity_type" : "Concept",
+    "description" : "The biological processes governing plant growth, which have no realistic mechanism linking them to work-from-home trends.",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040"
+  }, {
+    "id" : "University lectures",
+    "entity_id" : "University lectures",
+    "entity_type" : "Event",
+    "description" : "University lectures that resumed after the summer break, coinciding with unexpected coffee shortages at local shops.",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf"
+  }, {
+    "id" : "Coffee shops",
+    "entity_id" : "Coffee shops",
+    "entity_type" : "Organization",
+    "description" : "Several coffee shops that reported unexpected coffee shortages during the week university lectures resumed.",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf"
+  }, {
+    "id" : "Returning students",
+    "entity_id" : "Returning students",
+    "entity_type" : "Person",
+    "description" : "Students who returned to campus after summer break and were widely assumed to be responsible for depleted coffee supplies.",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf"
+  }, {
+    "id" : "Shop staff",
+    "entity_id" : "Shop staff",
+    "entity_type" : "Person",
+    "description" : "Employees at the coffee shops who commented on the rush of new faces arriving during the week.",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf"
+  }, {
+    "id" : "Major supplier",
+    "entity_id" : "Major supplier",
+    "entity_type" : "Organization",
+    "description" : "A major supplier that experienced a shipping delay, which contributed to empty shelves at coffee shops.",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf"
+  }, {
+    "id" : "Coffee shortages",
+    "entity_id" : "Coffee shortages",
+    "entity_type" : "Event",
+    "description" : "Unexpected shortages of coffee reported by multiple coffee shops, leading to empty shelves.",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf"
+  }, {
+    "id" : "Shipping delay",
+    "entity_id" : "Shipping delay",
+    "entity_type" : "Event",
+    "description" : "A delay in deliveries from a major supplier that occurred simultaneously with the return of students, explaining the empty shelves.",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf"
+  }, {
+    "id" : "Summer break",
+    "entity_id" : "Summer break",
+    "entity_type" : "Event",
+    "description" : "The period of university closure before lectures resumed, after which students returned to campus.",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf"
+  }, {
+    "id" : "Misleading causality",
+    "entity_id" : "Misleading causality",
+    "entity_type" : "Concept",
+    "description" : "A misleading impression of causality created by the concurrence of student return and a supplier shipping delay, leading people to incorrectly attribute coffee shortages to students.",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf"
+  }, {
+    "id" : "The City",
+    "entity_id" : "The City",
+    "entity_type" : "Location",
+    "description" : "A city that has recently experienced heavy rainfall, resulting in overwhelmed drains, flooded streets, and traffic delays across several neighborhoods.",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b"
+  }, {
+    "id" : "Heavy Rainfall",
+    "entity_id" : "Heavy Rainfall",
+    "entity_type" : "Event",
+    "description" : "Recent heavy rainfall in the city that overwhelmed the drainage system and caused flooding in multiple areas.",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b"
+  }, {
+    "id" : "Drains",
+    "entity_id" : "Drains",
+    "entity_type" : "Concept",
+    "description" : "The drainage infrastructure in the city that residents note appears particularly overwhelmed by the heavy rainfall.",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b"
+  }, {
+    "id" : "Flooded Streets",
+    "entity_id" : "Flooded Streets",
+    "entity_type" : "Event",
+    "description" : "Streets in several neighborhoods that have been flooded due to heavy rainfall, leading to traffic delays and commuting difficulties.",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b"
+  }, {
+    "id" : "Neighborhoods",
+    "entity_id" : "Neighborhoods",
+    "entity_type" : "Location",
+    "description" : "Several neighborhoods within the city that have been affected by flooded streets and traffic delays.",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b"
+  }, {
+    "id" : "Local Government",
+    "entity_id" : "Local Government",
+    "entity_type" : "Organization",
+    "description" : "The governing body of the city that has advised residents to exercise caution while commuting due to flooded street conditions.",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b"
+  }, {
+    "id" : "Traffic Delays",
+    "entity_id" : "Traffic Delays",
+    "entity_type" : "Event",
+    "description" : "Delays in traffic caused by flooded streets in several neighborhoods of the city.",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b"
+  }, {
+    "id" : "City Infrastructure",
+    "entity_id" : "City Infrastructure",
+    "entity_type" : "Concept",
+    "description" : "The overall infrastructure of the city, which some residents believe has not changed much over the years and may be inadequate for handling heavy rainfall.",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b"
+  }, {
+    "id" : "Remote work policies",
+    "entity_id" : "Remote work policies",
+    "entity_type" : "Concept",
+    "description" : "Flexible work policies introduced by companies that allow employees to work from home.",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c"
+  }, {
+    "id" : "Local bike shops",
+    "entity_id" : "Local bike shops",
+    "entity_type" : "Organization",
+    "description" : "Shops that reported a surge in bicycle sales following the introduction of remote work policies.",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c"
+  }, {
+    "id" : "Bicycle sales",
+    "entity_id" : "Bicycle sales",
+    "entity_type" : "Concept",
+    "description" : "The surge in sales of bicycles reported by local bike shops.",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c"
+  }, {
+    "id" : "Residents",
+    "entity_id" : "Residents",
+    "entity_type" : "Person",
+    "description" : "People who speculate that working from home gives more leisure time to cycle and participate in neighborhood conversations about bike sales.",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c"
+  }, {
+    "id" : "Citywide cycling campaign",
+    "entity_id" : "Citywide cycling campaign",
+    "entity_type" : "Event",
+    "description" : "A successful campaign that market analysis attributes as a primary driver of the spike in bicycle sales.",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c"
+  }, {
+    "id" : "Bike lane infrastructure",
+    "entity_id" : "Bike lane infrastructure",
+    "entity_type" : "Concept",
+    "description" : "Improvements in cycling infrastructure that market analysis identifies as a contributing factor to increased bicycle sales.",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c"
+  }, {
+    "id" : "Market analysis",
+    "entity_id" : "Market analysis",
+    "entity_type" : "Concept",
+    "description" : "An analytical assessment that attributes the spike in bicycle sales to the citywide cycling campaign and bike lane infrastructure improvements rather than remote work.",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c"
+  }, {
+    "id" : "Neighborhood conversations",
+    "entity_id" : "Neighborhood conversations",
+    "entity_type" : "Concept",
+    "description" : "Informal discussions among residents where the narrative that remote work drives bike sales is commonly shared.",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c"
+  }, {
+    "id" : "Ocean",
+    "entity_id" : "Ocean",
+    "entity_type" : "Location",
+    "description" : "The body of water that is the source of the cool breeze felt along the coast.",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6"
+  }, {
+    "id" : "Coast",
+    "entity_id" : "Coast",
+    "entity_type" : "Location",
+    "description" : "The coastal area where the scene unfolds, characterized by tall grasses and a refreshing atmosphere.",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6"
+  }, {
+    "id" : "Cool breeze",
+    "entity_id" : "Cool breeze",
+    "entity_type" : "Concept",
+    "description" : "The refreshing wind arriving from the ocean, felt by people standing by the coast.",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6"
+  }, {
+    "id" : "Tall grasses",
+    "entity_id" : "Tall grasses",
+    "entity_type" : "Concept",
+    "description" : "The grasses growing along the shore that sway and ripple in rhythm, creating waves of their own.",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6"
+  }, {
+    "id" : "Shore",
+    "entity_id" : "Shore",
+    "entity_type" : "Location",
+    "description" : "The area along the coast where tall grasses are situated and sway in the breeze.",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6"
+  }, {
+    "id" : "People",
+    "entity_id" : "People",
+    "entity_type" : "Person",
+    "description" : "Individuals who stop to enjoy the refreshing air and observe the coastal landscape.",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6"
+  }, {
+    "id" : "Landscape",
+    "entity_id" : "Landscape",
+    "entity_type" : "Concept",
+    "description" : "The overall coastal scene that feels invigorated by the arrival of the breeze and the movement of the grasses.",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6"
+  }, {
+    "id" : "Natural patterns",
+    "entity_id" : "Natural patterns",
+    "entity_type" : "Concept",
+    "description" : "The rhythmic patterns created by the swaying and rippling of the tall grasses along the shore.",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6"
+  }, {
+    "id" : "Passersby",
+    "entity_id" : "Passersby",
+    "entity_type" : "Person",
+    "description" : "People passing by whose attention is drawn by the natural patterns of the coastal scene.",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6"
+  } ],
+  "edges" : [ {
+    "source" : "Tech Sector",
+    "target" : "Local Coffee Sales",
+    "weight" : "1.0",
+    "description" : "Stock prices in the tech sector climbed at the same time as local coffee sales experienced a notable uptick, stirring speculation about a causal link.",
+    "keywords" : "parallel rise, correlation, speculation",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b",
+    "src_id" : "Tech Sector",
+    "tgt_id" : "Local Coffee Sales"
+  }, {
+    "source" : "Tech Sector",
+    "target" : "Economic Optimism",
+    "weight" : "1.0",
+    "description" : "Broader economic optimism is identified as a potential underlying driver of the improved performance in the tech sector stock prices.",
+    "keywords" : "common driver, market performance",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b",
+    "src_id" : "Economic Optimism",
+    "tgt_id" : "Tech Sector"
+  }, {
+    "source" : "Tech Sector",
+    "target" : "Café Culture",
+    "weight" : "1.0",
+    "description" : "Some circles speculated that improved tech market performance was somehow boosting the city's café culture, though this was not confirmed.",
+    "keywords" : "speculation, causal link, market performance",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b",
+    "src_id" : "Tech Sector",
+    "tgt_id" : "Café Culture"
+  }, {
+    "source" : "Local Coffee Sales",
+    "target" : "Economic Optimism",
+    "weight" : "1.0",
+    "description" : "Broader economic optimism is identified as a potential underlying driver of the notable uptick in local coffee sales.",
+    "keywords" : "common driver, consumer spending",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b",
+    "src_id" : "Economic Optimism",
+    "tgt_id" : "Local Coffee Sales"
+  }, {
+    "source" : "Major Firms",
+    "target" : "Cafes",
+    "weight" : "1.0",
+    "description" : "Employees at several major firms reported increased visits to nearby cafes during the period of rising tech stock prices.",
+    "keywords" : "employee visits, increased traffic",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b",
+    "src_id" : "Major Firms",
+    "tgt_id" : "Cafes"
+  }, {
+    "source" : "Major Firms",
+    "target" : "Managers",
+    "weight" : "1.0",
+    "description" : "Managers are employees of the major firms whose staff reported increased café visits.",
+    "keywords" : "employment, workplace",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b",
+    "src_id" : "Managers",
+    "tgt_id" : "Major Firms"
+  }, {
+    "source" : "Cafes",
+    "target" : "City",
+    "weight" : "1.0",
+    "description" : "The cafes are located in the city where both the tech stock rise and coffee sales uptick were observed.",
+    "keywords" : "location, local business",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b",
+    "src_id" : "Cafes",
+    "tgt_id" : "City"
+  }, {
+    "source" : "Managers",
+    "target" : "Earnings Calls",
+    "weight" : "1.0",
+    "description" : "Managers reportedly encouraged coffee breaks during earnings calls, cited as anecdotal evidence linking market activity to café visits.",
+    "keywords" : "coffee breaks, encouragement, anecdotal evidence",
+    "source_id" : "e9c25d69e303fcb52f2d8bbb97c5347b",
+    "src_id" : "Managers",
+    "tgt_id" : "Earnings Calls"
+  }, {
+    "source" : "Companies",
+    "target" : "Flexible remote work policies",
+    "weight" : "1.0",
+    "description" : "Many companies introduced flexible remote work policies this spring.",
+    "keywords" : "introduced, spring, policy",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040",
+    "src_id" : "Companies",
+    "tgt_id" : "Flexible remote work policies"
+  }, {
+    "source" : "Companies",
+    "target" : "Remote work policies",
+    "weight" : "1.0",
+    "description" : "Companies introduced more flexible remote work policies.",
+    "keywords" : "introduced, flexibility, work",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c",
+    "src_id" : "Companies",
+    "tgt_id" : "Remote work policies"
+  }, {
+    "source" : "Dandelion growth",
+    "target" : "Urban parks",
+    "weight" : "1.0",
+    "description" : "Dandelion growth reached record levels in urban parks this spring.",
+    "keywords" : "record levels, location, growth",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040",
+    "src_id" : "Dandelion growth",
+    "tgt_id" : "Urban parks"
+  }, {
+    "source" : "Dandelion growth",
+    "target" : "Garden enthusiasts",
+    "weight" : "1.0",
+    "description" : "Garden enthusiasts hypothesized that fewer people commuting allowed dandelions to flourish.",
+    "keywords" : "hypothesis, flourishing, connection",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040",
+    "src_id" : "Garden enthusiasts",
+    "tgt_id" : "Dandelion growth"
+  }, {
+    "source" : "Dandelion growth",
+    "target" : "Work-from-home trends",
+    "weight" : "1.0",
+    "description" : "The overlap in timing between dandelion growth and work-from-home trends is a coincidental correlation with no causal link.",
+    "keywords" : "correlation, coincidence, timing",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040",
+    "src_id" : "Dandelion growth",
+    "tgt_id" : "Work-from-home trends"
+  }, {
+    "source" : "Dandelion growth",
+    "target" : "Neighborhood meetings",
+    "weight" : "1.0",
+    "description" : "The dandelion growth and its coincidental timing with remote work policies is often discussed at neighborhood meetings.",
+    "keywords" : "discussion, topic, community",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040",
+    "src_id" : "Neighborhood meetings",
+    "tgt_id" : "Dandelion growth"
+  }, {
+    "source" : "Garden enthusiasts",
+    "target" : "Work-from-home trends",
+    "weight" : "1.0",
+    "description" : "Garden enthusiasts proposed a connection between work-from-home trends and dandelion flourishing, though no realistic mechanism exists.",
+    "keywords" : "hypothesis, commuting, link",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040",
+    "src_id" : "Garden enthusiasts",
+    "tgt_id" : "Work-from-home trends"
+  }, {
+    "source" : "Work-from-home trends",
+    "target" : "Plant biology",
+    "weight" : "1.0",
+    "description" : "There is no realistic mechanism linking work-from-home trends to plant biology.",
+    "keywords" : "no mechanism, no link, biology",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040",
+    "src_id" : "Work-from-home trends",
+    "tgt_id" : "Plant biology"
+  }, {
+    "source" : "Work-from-home trends",
+    "target" : "Neighborhood meetings",
+    "weight" : "1.0",
+    "description" : "Work-from-home trends and their amusing coincidence with dandelion growth are a topic of discussion at neighborhood meetings.",
+    "keywords" : "discussion, topic, community",
+    "source_id" : "23a741ff5b348bc11d6b4da192b14040",
+    "src_id" : "Neighborhood meetings",
+    "tgt_id" : "Work-from-home trends"
+  }, {
+    "source" : "University lectures",
+    "target" : "Summer break",
+    "weight" : "1.0",
+    "description" : "University lectures resumed after the summer break, marking the start of the week in question.",
+    "keywords" : "resumption, timing",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf",
+    "src_id" : "University lectures",
+    "tgt_id" : "Summer break"
+  }, {
+    "source" : "University lectures",
+    "target" : "Returning students",
+    "weight" : "1.0",
+    "description" : "The resumption of university lectures coincided with the return of students to campus and local coffee shops.",
+    "keywords" : "coincided, timing",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf",
+    "src_id" : "University lectures",
+    "tgt_id" : "Returning students"
+  }, {
+    "source" : "Coffee shops",
+    "target" : "Coffee shortages",
+    "weight" : "1.0",
+    "description" : "Several coffee shops reported unexpected coffee shortages during the week lectures resumed.",
+    "keywords" : "reported, experienced",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf",
+    "src_id" : "Coffee shops",
+    "tgt_id" : "Coffee shortages"
+  }, {
+    "source" : "Coffee shops",
+    "target" : "Returning students",
+    "weight" : "1.0",
+    "description" : "Returning students created a rush of new faces at the coffee shops, as noted by shop staff.",
+    "keywords" : "visited, rush",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf",
+    "src_id" : "Returning students",
+    "tgt_id" : "Coffee shops"
+  }, {
+    "source" : "Coffee shortages",
+    "target" : "Shipping delay",
+    "weight" : "1.0",
+    "description" : "The shipping delay from the major supplier explained the empty shelves and was the actual cause of the coffee shortages.",
+    "keywords" : "explained, contributed",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf",
+    "src_id" : "Shipping delay",
+    "tgt_id" : "Coffee shortages"
+  }, {
+    "source" : "Coffee shortages",
+    "target" : "Returning students",
+    "weight" : "1.0",
+    "description" : "Returning students were widely assumed to be responsible for the depleted coffee supplies, though this was a misleading attribution.",
+    "keywords" : "assumed responsible, misattribution",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf",
+    "src_id" : "Returning students",
+    "tgt_id" : "Coffee shortages"
+  }, {
+    "source" : "Coffee shortages",
+    "target" : "Misleading causality",
+    "weight" : "1.0",
+    "description" : "The coffee shortages, occurring simultaneously with student return, created a misleading impression of causality.",
+    "keywords" : "impression, concurrence",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf",
+    "src_id" : "Coffee shortages",
+    "tgt_id" : "Misleading causality"
+  }, {
+    "source" : "Returning students",
+    "target" : "Shop staff",
+    "weight" : "1.0",
+    "description" : "Shop staff commented on the rush of new faces, referring to the returning students.",
+    "keywords" : "observed, commented",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf",
+    "src_id" : "Shop staff",
+    "tgt_id" : "Returning students"
+  }, {
+    "source" : "Major supplier",
+    "target" : "Shipping delay",
+    "weight" : "1.0",
+    "description" : "A major supplier experienced a shipping delay that contributed to empty shelves at coffee shops.",
+    "keywords" : "experienced, caused",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf",
+    "src_id" : "Major supplier",
+    "tgt_id" : "Shipping delay"
+  }, {
+    "source" : "Shipping delay",
+    "target" : "Misleading causality",
+    "weight" : "1.0",
+    "description" : "The shipping delay coincided with the student return, and the concurrence of both events led to the misleading impression of causality.",
+    "keywords" : "concurrence, coincidence",
+    "source_id" : "2f8c9a6b4c69d53c433c30b28462cbaf",
+    "src_id" : "Shipping delay",
+    "tgt_id" : "Misleading causality"
+  }, {
+    "source" : "Heavy Rainfall",
+    "target" : "The City",
+    "weight" : "1.0",
+    "description" : "Heavy rainfall has recently struck the city, causing widespread flooding and infrastructure strain.",
+    "keywords" : "rainfall, flooding, weather",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b",
+    "src_id" : "Heavy Rainfall",
+    "tgt_id" : "The City"
+  }, {
+    "source" : "Heavy Rainfall",
+    "target" : "Drains",
+    "weight" : "1.0",
+    "description" : "The heavy rainfall has overwhelmed the city's drains, which residents note are particularly strained.",
+    "keywords" : "overwhelmed, drainage, capacity",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b",
+    "src_id" : "Heavy Rainfall",
+    "tgt_id" : "Drains"
+  }, {
+    "source" : "The City",
+    "target" : "Local Government",
+    "weight" : "1.0",
+    "description" : "The local government governs the city and has issued advisories regarding commuting safety during the flooding.",
+    "keywords" : "governance, advisory, public safety",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b",
+    "src_id" : "Local Government",
+    "tgt_id" : "The City"
+  }, {
+    "source" : "The City",
+    "target" : "City Infrastructure",
+    "weight" : "1.0",
+    "description" : "The city infrastructure is the physical and systemic framework of the city, including drainage and road systems.",
+    "keywords" : "belonging, urban systems, maintenance",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b",
+    "src_id" : "City Infrastructure",
+    "tgt_id" : "The City"
+  }, {
+    "source" : "The City",
+    "target" : "Flooded Streets",
+    "weight" : "1.0",
+    "description" : "Flooded streets have occurred within the city, raising concerns among residents about whether such conditions are becoming a regular occurrence.",
+    "keywords" : "occurrence, impact, urban flooding",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b",
+    "src_id" : "Flooded Streets",
+    "tgt_id" : "The City"
+  }, {
+    "source" : "Drains",
+    "target" : "City Infrastructure",
+    "weight" : "1.0",
+    "description" : "The drains are a component of the city's broader infrastructure, which some believe has not been significantly updated over the years.",
+    "keywords" : "component, drainage system, aging",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b",
+    "src_id" : "City Infrastructure",
+    "tgt_id" : "Drains"
+  }, {
+    "source" : "Flooded Streets",
+    "target" : "Neighborhoods",
+    "weight" : "1.0",
+    "description" : "Flooded streets are present in several neighborhoods within the city, causing localized disruption.",
+    "keywords" : "flooding, affected areas, location",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b",
+    "src_id" : "Flooded Streets",
+    "tgt_id" : "Neighborhoods"
+  }, {
+    "source" : "Flooded Streets",
+    "target" : "Traffic Delays",
+    "weight" : "1.0",
+    "description" : "Flooded streets in the neighborhoods have led to traffic delays and commuting difficulties.",
+    "keywords" : "causation, disruption, commuting",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b",
+    "src_id" : "Flooded Streets",
+    "tgt_id" : "Traffic Delays"
+  }, {
+    "source" : "Traffic Delays",
+    "target" : "Local Government",
+    "weight" : "1.0",
+    "description" : "The local government has advised residents to exercise caution while commuting due to the traffic delays and flooded conditions.",
+    "keywords" : "advisory, caution, commuting",
+    "source_id" : "a57a3cf2e1d3407624f511690043079b",
+    "src_id" : "Local Government",
+    "tgt_id" : "Traffic Delays"
+  }, {
+    "source" : "Remote work policies",
+    "target" : "Local bike shops",
+    "weight" : "1.0",
+    "description" : "The introduction of remote work policies coincided with a reported surge in bicycle sales at local bike shops.",
+    "keywords" : "temporal association, sales surge",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c",
+    "src_id" : "Remote work policies",
+    "tgt_id" : "Local bike shops"
+  }, {
+    "source" : "Local bike shops",
+    "target" : "Bicycle sales",
+    "weight" : "1.0",
+    "description" : "Local bike shops reported a surge in bicycle sales.",
+    "keywords" : "reported, surge, increase",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c",
+    "src_id" : "Local bike shops",
+    "tgt_id" : "Bicycle sales"
+  }, {
+    "source" : "Bicycle sales",
+    "target" : "Residents",
+    "weight" : "1.0",
+    "description" : "Residents speculate that working from home has given people more leisure time to cycle, thereby driving bicycle sales.",
+    "keywords" : "speculation, leisure time, cycling",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c",
+    "src_id" : "Residents",
+    "tgt_id" : "Bicycle sales"
+  }, {
+    "source" : "Bicycle sales",
+    "target" : "Citywide cycling campaign",
+    "weight" : "1.0",
+    "description" : "The citywide cycling campaign is identified as a primary driver of the spike in bicycle sales.",
+    "keywords" : "driver, increase, promotion",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c",
+    "src_id" : "Citywide cycling campaign",
+    "tgt_id" : "Bicycle sales"
+  }, {
+    "source" : "Bicycle sales",
+    "target" : "Bike lane infrastructure",
+    "weight" : "1.0",
+    "description" : "Improvements in bike lane infrastructure are identified as a contributing factor to increased bicycle sales.",
+    "keywords" : "driver, increase, infrastructure",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c",
+    "src_id" : "Bike lane infrastructure",
+    "tgt_id" : "Bicycle sales"
+  }, {
+    "source" : "Residents",
+    "target" : "Neighborhood conversations",
+    "weight" : "1.0",
+    "description" : "The narrative that remote work drives bike sales is commonly shared in neighborhood conversations among residents.",
+    "keywords" : "narrative, discussion, common belief",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c",
+    "src_id" : "Residents",
+    "tgt_id" : "Neighborhood conversations"
+  }, {
+    "source" : "Market analysis",
+    "target" : "Citywide cycling campaign",
+    "weight" : "1.0",
+    "description" : "Market analysis attributes the spike in bicycle sales to a successful citywide cycling campaign.",
+    "keywords" : "attribution, cause, campaign",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c",
+    "src_id" : "Market analysis",
+    "tgt_id" : "Citywide cycling campaign"
+  }, {
+    "source" : "Market analysis",
+    "target" : "Bike lane infrastructure",
+    "weight" : "1.0",
+    "description" : "Market analysis attributes the spike in bicycle sales to improvements in bike lane infrastructure.",
+    "keywords" : "attribution, cause, infrastructure",
+    "source_id" : "bf107e019ec11b624fe162f2ca434f2c",
+    "src_id" : "Market analysis",
+    "tgt_id" : "Bike lane infrastructure"
+  }, {
+    "source" : "Ocean",
+    "target" : "Cool breeze",
+    "weight" : "1.0",
+    "description" : "The ocean is the source from which the cool breeze originates and travels toward the coast.",
+    "keywords" : "origin, wind, source",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6",
+    "src_id" : "Ocean",
+    "tgt_id" : "Cool breeze"
+  }, {
+    "source" : "Cool breeze",
+    "target" : "Coast",
+    "weight" : "1.0",
+    "description" : "The cool breeze arrives at the coast, where it is felt by those standing nearby.",
+    "keywords" : "arrival, movement, shore",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6",
+    "src_id" : "Cool breeze",
+    "tgt_id" : "Coast"
+  }, {
+    "source" : "Cool breeze",
+    "target" : "Tall grasses",
+    "weight" : "1.0",
+    "description" : "The cool breeze causes the tall grasses along the shore to sway and ripple in rhythm.",
+    "keywords" : "swaying, movement, cause",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6",
+    "src_id" : "Cool breeze",
+    "tgt_id" : "Tall grasses"
+  }, {
+    "source" : "Cool breeze",
+    "target" : "People",
+    "weight" : "1.0",
+    "description" : "People stop to enjoy the refreshing air brought by the cool breeze from the ocean.",
+    "keywords" : "enjoyment, refreshing, experience",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6",
+    "src_id" : "People",
+    "tgt_id" : "Cool breeze"
+  }, {
+    "source" : "Cool breeze",
+    "target" : "Landscape",
+    "weight" : "1.0",
+    "description" : "The arrival of the cool breeze invigorates the landscape, giving it a sense of renewed energy.",
+    "keywords" : "invigoration, change, atmosphere",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6",
+    "src_id" : "Cool breeze",
+    "tgt_id" : "Landscape"
+  }, {
+    "source" : "Coast",
+    "target" : "People",
+    "weight" : "1.0",
+    "description" : "People are present by the coast, observing and experiencing the coastal scene.",
+    "keywords" : "presence, location, observation",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6",
+    "src_id" : "People",
+    "tgt_id" : "Coast"
+  }, {
+    "source" : "Tall grasses",
+    "target" : "Shore",
+    "weight" : "1.0",
+    "description" : "The tall grasses are situated along the shore, where they are visible and move in the wind.",
+    "keywords" : "location, growth, position",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6",
+    "src_id" : "Tall grasses",
+    "tgt_id" : "Shore"
+  }, {
+    "source" : "Tall grasses",
+    "target" : "Natural patterns",
+    "weight" : "1.0",
+    "description" : "The rippling and swaying of the tall grasses create natural patterns that resemble waves.",
+    "keywords" : "creation, rhythm, waves",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6",
+    "src_id" : "Tall grasses",
+    "tgt_id" : "Natural patterns"
+  }, {
+    "source" : "Tall grasses",
+    "target" : "Landscape",
+    "weight" : "1.0",
+    "description" : "The tall grasses are a key element of the coastal landscape, contributing to its overall appearance and movement.",
+    "keywords" : "composition, element, scene",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6",
+    "src_id" : "Tall grasses",
+    "tgt_id" : "Landscape"
+  }, {
+    "source" : "Natural patterns",
+    "target" : "Passersby",
+    "weight" : "1.0",
+    "description" : "The natural patterns created by the grasses draw the attention of passersby who observe the scene.",
+    "keywords" : "attention, attraction, observation",
+    "source_id" : "01246fa19262b4c1f2c452e0eff353f6",
+    "src_id" : "Natural patterns",
+    "tgt_id" : "Passersby"
+  } ],
+  "metadata" : {
+    "nodeCount" : 51,
+    "edgeCount" : 54
+  }
+}

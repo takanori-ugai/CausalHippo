@@ -1,0 +1,2095 @@
+kotlin-logging: initializing... active logger factory: Slf4jLoggerFactory
+12:22:37,468 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found logback-core version 1.5.38
+12:22:37,469 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - No custom configurators were discovered as a service.
+12:22:37,469 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+12:22:37,470 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+12:22:37,474 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+12:22:37,477 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml]
+12:22:37,662 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Scan attribute set to true. Will scan for configuration file changes.
+12:22:37,663 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@15de0b3c - URL [jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml] is not of type file
+12:22:37,667 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "INFO" substituted for "${ROOT_LOG_LEVEL:-INFO}"
+12:22:37,667 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL:-DEBUG}"
+12:22:37,667 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_LOG_LEVEL:-TRACE}"
+12:22:37,667 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL:-TRACE}"
+12:22:37,667 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL:-ERROR}"
+12:22:37,667 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL:-ERROR}"
+12:22:37,667 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL:-ERROR}"
+12:22:37,667 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL:-DEBUG}"
+12:22:37,668 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Missing watchable .xml or .properties files.
+12:22:37,668 |-WARN in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Watching .xml files requires that the main configuration file is reachable as a URL
+12:22:37,668 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Main configuration file URL: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/logback.xml
+12:22:37,669 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - FileWatchList= {}
+12:22:37,669 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - URLWatchList= {}
+12:22:37,671 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+12:22:37,671 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+12:22:37,675 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+12:22:37,726 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - NOTE: Writing to the console can be slow. Try to avoid logging to the 
+12:22:37,726 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - console in production environments, especially in high volume systems.
+12:22:37,726 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also https://logback.qos.ch/codes.html#slowConsole
+12:22:37,726 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${LIGHTRAG_LOG_LEVEL}"
+12:22:37,727 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag] to DEBUG
+12:22:37,730 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag] to false
+12:22:37,730 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag]
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_LOG_LEVEL}"
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.neo4j] to TRACE
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.neo4j] to false
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.neo4j]
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "TRACE" substituted for "${NEO4J_DRIVER_LOG_LEVEL}"
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.neo4j.driver] to TRACE
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.neo4j.driver] to false
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[org.neo4j.driver]
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "DEBUG" substituted for "${VECTOR_MEMORY_LOG_LEVEL}"
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [lightrag.kg.memory] to DEBUG
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [lightrag.kg.memory] to false
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[lightrag.kg.memory]
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_LOG_LEVEL}"
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j] to ERROR
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j] to false
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j]
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.okhttp] to ERROR
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.okhttp] to false
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.okhttp]
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.langchain4j.internal.client.openai] to ERROR
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.langchain4j.internal.client.openai] to false
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.langchain4j.internal.client.openai]
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${LANGCHAIN4J_HTTP_LOG_LEVEL}"
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [okhttp3] to ERROR
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [okhttp3] to false
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[okhttp3]
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "ERROR" substituted for "${OPENAI4J_LOG_LEVEL}"
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [dev.ai4j.openai4j] to ERROR
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [dev.ai4j.openai4j] to false
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[dev.ai4j.openai4j]
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@489115ef - value "INFO" substituted for "${ROOT_LOG_LEVEL}"
+12:22:37,731 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+12:22:37,731 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@3857f613 - End of configuration.
+12:22:37,732 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@198b6731 - Registering current configuration as safe fallback point
+12:22:37,736 |-INFO in ch.qos.logback.classic.util.ContextInitializer@1a677343 - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 262 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+Running 1 conditions on 15 samples
+Parallelism: 1
+Unified API: true
+Unified persistence SPI: false
+Data: data/webis_experiment/webis_train_balanced_30.jsonl
+Output: eval_results/swo69_20260828_e2/e0_youturag_webis
+
+=== Condition: youturag (YoutuRAG (com/youtu/graphrag, unified adapter)) ===
+2026-08-30 12:22:38.468 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_ff9302a2.json
+2026-08-30 12:25:40.402 [DefaultDispatcher-worker-10] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:25:40.404 [DefaultDispatcher-worker-10] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:25:40.455 [DefaultDispatcher-worker-7] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:25:40.456 [DefaultDispatcher-worker-7] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:25:40.718 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 611 relation(s) and 12 chunk(s)
+Aug 30, 2026 12:25:41 PM org.apache.lucene.internal.vectorization.VectorizationProvider lookup
+WARNING: Java vector incubator module is not readable. For optimal vector performance, pass '--add-modules jdk.incubator.vector' to enable Vector API.
+2026-08-30 12:25:41.511 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 611 triples and 12 chunks
+2026-08-30 12:25:50.363 [DefaultDispatcher-worker-7] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1220
+2026-08-30 12:25:50.385 [DefaultDispatcher-worker-2] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1495
+2026-08-30 12:25:50.403 [DefaultDispatcher-worker-10] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1755
+2026-08-30 12:26:07.865 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-30 12:26:12.099 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found placeholder platform from: cu128-linux-x86_64:2.7.1
+2026-08-30 12:26:20.690 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - PyTorch graph executor optimizer is enabled, this may impact your inference latency and throughput. See: https://docs.djl.ai/master/docs/development/inference_performance_optimization.html#graph-executor-optimization
+2026-08-30 12:26:20.707 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - Number of inter-op threads is 96
+2026-08-30 12:26:20.707 [DefaultDispatcher-worker-1] INFO  ai.djl.pytorch.engine.PtEngine - Number of intra-op threads is 16
+2026-08-30 12:26:21.653 [DefaultDispatcher-worker-1] INFO  ai.djl.util.Platform - Found matching platform from: jar:file:/home/aad13623fe/CausalHippo/build/libs/causalrag-0.0.1-all.jar!/native/lib/tokenizers.properties
+2026-08-30 12:26:25.085 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (128, 384)
+2026-08-30 12:26:25.085 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (70, 384)
+2026-08-30 12:26:26.608 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-30 12:26:26.609 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (70, 384)
+2026-08-30 12:26:26.654 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_ff9302a2.json
+2026-08-30 12:29:27.939 [DefaultDispatcher-worker-15] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:29:27.940 [DefaultDispatcher-worker-15] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:29:27.959 [DefaultDispatcher-worker-16] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:29:27.959 [DefaultDispatcher-worker-16] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:29:27.983 [DefaultDispatcher-worker-10] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:29:27.983 [DefaultDispatcher-worker-10] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:29:28.013 [DefaultDispatcher-worker-17] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:29:28.013 [DefaultDispatcher-worker-17] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:29:28.043 [DefaultDispatcher-worker-4] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:29:28.044 [DefaultDispatcher-worker-4] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:29:28.043 [DefaultDispatcher-worker-13] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:29:28.044 [DefaultDispatcher-worker-13] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:29:28.063 [DefaultDispatcher-worker-2] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:29:28.064 [DefaultDispatcher-worker-2] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:29:28.071 [DefaultDispatcher-worker-12] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:29:28.071 [DefaultDispatcher-worker-12] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:29:28.087 [DefaultDispatcher-worker-5] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:29:28.088 [DefaultDispatcher-worker-5] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:29:28.089 [DefaultDispatcher-worker-9] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:29:28.090 [DefaultDispatcher-worker-9] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:29:28.125 [DefaultDispatcher-worker-3] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:29:28.125 [DefaultDispatcher-worker-3] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:29:28.146 [DefaultDispatcher-worker-6] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:29:28.146 [DefaultDispatcher-worker-6] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:29:41.496 [DefaultDispatcher-worker-7] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:29:41.497 [DefaultDispatcher-worker-7] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:29:47.461 [DefaultDispatcher-worker-11] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:29:47.462 [DefaultDispatcher-worker-11] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:30:50.143 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 178 relation(s) and 58 chunk(s)
+2026-08-30 12:30:50.349 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 178 triples and 58 chunks
+2026-08-30 12:30:56.964 [DefaultDispatcher-worker-8] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0100
+2026-08-30 12:30:56.966 [DefaultDispatcher-worker-11] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0117
+2026-08-30 12:30:56.973 [DefaultDispatcher-worker-14] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0185
+2026-08-30 12:31:15.830 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-30 12:31:17.584 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (13, 384)
+2026-08-30 12:31:17.584 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (99, 384)
+2026-08-30 12:31:17.621 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_ff9302a2.json
+2026-08-30 12:31:35.158 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 43 relation(s) and 1 chunk(s)
+2026-08-30 12:31:35.251 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 43 triples and 1 chunks
+2026-08-30 12:31:43.469 [DefaultDispatcher-worker-9] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0715
+2026-08-30 12:31:43.542 [DefaultDispatcher-worker-10] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1432
+2026-08-30 12:31:43.562 [DefaultDispatcher-worker-14] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1650
+2026-08-30 12:31:43.575 [DefaultDispatcher-worker-11] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1780
+2026-08-30 12:32:04.952 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 1 chunks
+2026-08-30 12:32:06.759 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (75, 384)
+2026-08-30 12:32:06.759 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-30 12:32:06.789 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_ff9302a2.json
+2026-08-30 12:35:08.165 [DefaultDispatcher-worker-15] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:35:08.165 [DefaultDispatcher-worker-15] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:35:08.214 [DefaultDispatcher-worker-5] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:35:08.214 [DefaultDispatcher-worker-5] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:35:08.267 [DefaultDispatcher-worker-4] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:35:08.267 [DefaultDispatcher-worker-4] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:35:08.317 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 416 relation(s) and 12 chunk(s)
+2026-08-30 12:35:08.537 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 416 triples and 12 chunks
+2026-08-30 12:35:17.580 [DefaultDispatcher-worker-4] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0202
+2026-08-30 12:35:17.631 [DefaultDispatcher-worker-5] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0721
+2026-08-30 12:36:01.321 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-30 12:36:04.208 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (22, 384)
+2026-08-30 12:36:04.208 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-30 12:36:05.464 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-30 12:36:05.464 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-30 12:36:05.498 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_ff9302a2.json
+2026-08-30 12:37:20.252 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 214 relation(s) and 4 chunk(s)
+2026-08-30 12:37:20.400 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 214 triples and 4 chunks
+2026-08-30 12:37:28.547 [DefaultDispatcher-worker-5] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0452
+2026-08-30 12:37:28.597 [DefaultDispatcher-worker-16] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0952
+2026-08-30 12:37:28.605 [DefaultDispatcher-worker-10] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1019
+2026-08-30 12:37:48.762 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 4 chunks
+2026-08-30 12:37:50.531 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (57, 384)
+2026-08-30 12:37:50.531 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (117, 384)
+2026-08-30 12:37:50.588 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_ff9302a2.json
+2026-08-30 12:40:51.925 [DefaultDispatcher-worker-12] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:40:51.925 [DefaultDispatcher-worker-12] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:40:51.966 [DefaultDispatcher-worker-16] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:40:51.966 [DefaultDispatcher-worker-16] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:40:51.971 [DefaultDispatcher-worker-13] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:40:51.971 [DefaultDispatcher-worker-13] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:40:51.974 [DefaultDispatcher-worker-17] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:40:51.974 [DefaultDispatcher-worker-17] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:40:51.976 [DefaultDispatcher-worker-8] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:40:51.976 [DefaultDispatcher-worker-8] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:40:51.991 [DefaultDispatcher-worker-4] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:40:51.991 [DefaultDispatcher-worker-4] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:40:51.995 [DefaultDispatcher-worker-6] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:40:51.995 [DefaultDispatcher-worker-6] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:40:52.021 [DefaultDispatcher-worker-5] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:40:52.021 [DefaultDispatcher-worker-5] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:40:52.021 [DefaultDispatcher-worker-10] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:40:52.025 [DefaultDispatcher-worker-10] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:40:52.033 [DefaultDispatcher-worker-3] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:40:52.034 [DefaultDispatcher-worker-3] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:40:52.053 [DefaultDispatcher-worker-14] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:40:52.054 [DefaultDispatcher-worker-14] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:40:52.066 [DefaultDispatcher-worker-15] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:40:52.066 [DefaultDispatcher-worker-15] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:40:52.100 [DefaultDispatcher-worker-7] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:40:52.100 [DefaultDispatcher-worker-7] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:41:33.676 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 655 relation(s) and 21 chunk(s)
+2026-08-30 12:41:34.076 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 655 triples and 21 chunks
+2026-08-30 12:41:41.424 [DefaultDispatcher-worker-2] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0400
+2026-08-30 12:41:41.485 [DefaultDispatcher-worker-7] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0984
+2026-08-30 12:41:41.507 [DefaultDispatcher-worker-3] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1209
+2026-08-30 12:41:54.010 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-30 12:41:55.575 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (4, 384)
+2026-08-30 12:41:55.575 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (67, 384)
+2026-08-30 12:41:55.605 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_ff9302a2.json
+2026-08-30 12:42:09.293 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 79 relation(s) and 1 chunk(s)
+2026-08-30 12:42:09.349 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 79 triples and 1 chunks
+2026-08-30 12:42:19.409 [DefaultDispatcher-worker-18] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0042
+2026-08-30 12:42:19.415 [DefaultDispatcher-worker-23] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0120
+2026-08-30 12:42:19.446 [DefaultDispatcher-worker-21] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0412
+2026-08-30 12:42:19.458 [DefaultDispatcher-worker-6] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0543
+2026-08-30 12:42:44.818 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 1 chunks
+2026-08-30 12:42:46.258 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-30 12:42:46.258 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-30 12:42:46.286 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_ff9302a2.json
+2026-08-30 12:43:03.510 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 44 relation(s) and 1 chunk(s)
+2026-08-30 12:43:03.614 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 44 triples and 1 chunks
+2026-08-30 12:43:10.301 [DefaultDispatcher-worker-21] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0023
+2026-08-30 12:43:10.307 [DefaultDispatcher-worker-10] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0088
+2026-08-30 12:43:45.081 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 1 chunks
+2026-08-30 12:43:46.468 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (5, 384)
+2026-08-30 12:43:46.468 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (126, 384)
+2026-08-30 12:43:46.495 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_ff9302a2.json
+2026-08-30 12:46:47.835 [DefaultDispatcher-worker-9] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:46:47.836 [DefaultDispatcher-worker-9] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:46:47.839 [DefaultDispatcher-worker-14] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:46:47.839 [DefaultDispatcher-worker-14] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:46:47.842 [DefaultDispatcher-worker-13] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:46:47.843 [DefaultDispatcher-worker-13] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:46:47.866 [DefaultDispatcher-worker-4] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:46:47.866 [DefaultDispatcher-worker-4] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:46:47.878 [DefaultDispatcher-worker-15] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:46:47.878 [DefaultDispatcher-worker-15] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:46:47.895 [DefaultDispatcher-worker-11] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:46:47.895 [DefaultDispatcher-worker-11] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:46:47.896 [DefaultDispatcher-worker-12] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:46:47.896 [DefaultDispatcher-worker-12] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:46:47.910 [DefaultDispatcher-worker-17] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:46:47.910 [DefaultDispatcher-worker-17] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:46:47.930 [DefaultDispatcher-worker-3] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:46:47.930 [DefaultDispatcher-worker-3] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:46:47.978 [DefaultDispatcher-worker-16] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:46:47.978 [DefaultDispatcher-worker-16] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:46:48.002 [DefaultDispatcher-worker-7] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:46:48.002 [DefaultDispatcher-worker-7] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:47:16.491 [DefaultDispatcher-worker-5] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:47:16.492 [DefaultDispatcher-worker-5] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:48:34.777 [DefaultDispatcher-worker-10] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:48:34.778 [DefaultDispatcher-worker-10] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:49:01.036 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 284 relation(s) and 108 chunk(s)
+2026-08-30 12:49:01.370 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 284 triples and 108 chunks
+2026-08-30 12:49:08.961 [DefaultDispatcher-worker-6] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0103
+2026-08-30 12:49:08.961 [DefaultDispatcher-worker-7] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0041
+2026-08-30 12:49:08.968 [DefaultDispatcher-worker-2] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0174
+2026-08-30 12:49:08.974 [DefaultDispatcher-worker-8] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0236
+2026-08-30 12:49:45.760 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-30 12:49:48.826 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (12, 384)
+2026-08-30 12:49:48.826 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-30 12:49:48.919 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_ff9302a2.json
+2026-08-30 12:51:31.726 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 276 relation(s) and 7 chunk(s)
+2026-08-30 12:51:32.002 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 276 triples and 7 chunks
+2026-08-30 12:51:38.968 [DefaultDispatcher-worker-13] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1502
+2026-08-30 12:51:38.975 [DefaultDispatcher-worker-9] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1597
+2026-08-30 12:51:38.986 [DefaultDispatcher-worker-16] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1702
+2026-08-30 12:51:38.999 [DefaultDispatcher-worker-2] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1817
+2026-08-30 12:52:04.675 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-30 12:52:06.179 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (7, 384)
+2026-08-30 12:52:06.179 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+youturag: processed 10/15
+2026-08-30 12:52:06.208 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_ff9302a2.json
+2026-08-30 12:53:49.194 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 342 relation(s) and 7 chunk(s)
+2026-08-30 12:53:49.313 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 342 triples and 7 chunks
+2026-08-30 12:53:56.705 [DefaultDispatcher-worker-16] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0115
+2026-08-30 12:53:56.799 [DefaultDispatcher-worker-11] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1051
+2026-08-30 12:53:56.816 [DefaultDispatcher-worker-7] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.1225
+2026-08-30 12:54:26.023 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-30 12:54:27.418 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (3, 384)
+2026-08-30 12:54:27.418 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-30 12:54:27.445 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_ff9302a2.json
+2026-08-30 12:57:28.775 [DefaultDispatcher-worker-5] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:57:28.776 [DefaultDispatcher-worker-5] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:57:28.878 [DefaultDispatcher-worker-10] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:57:28.878 [DefaultDispatcher-worker-10] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:57:28.917 [DefaultDispatcher-worker-6] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 12:57:28.917 [DefaultDispatcher-worker-6] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 12:57:28.947 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 281 relation(s) and 12 chunk(s)
+2026-08-30 12:57:29.278 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 281 triples and 12 chunks
+2026-08-30 12:57:35.947 [DefaultDispatcher-worker-5] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0130
+2026-08-30 12:57:36.139 [DefaultDispatcher-worker-15] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.2022
+2026-08-30 12:57:36.158 [DefaultDispatcher-worker-6] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.2234
+2026-08-30 12:57:51.964 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-30 12:57:53.220 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (6, 384)
+2026-08-30 12:57:53.220 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (60, 384)
+2026-08-30 12:57:53.246 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_ff9302a2.json
+2026-08-30 12:58:05.783 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 62 relation(s) and 1 chunk(s)
+2026-08-30 12:58:05.862 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 62 triples and 1 chunks
+2026-08-30 12:58:11.977 [DefaultDispatcher-worker-23] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0028
+2026-08-30 12:58:11.977 [DefaultDispatcher-worker-24] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0032
+2026-08-30 12:58:12.007 [DefaultDispatcher-worker-6] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0332
+2026-08-30 12:58:26.765 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 1 chunks
+2026-08-30 12:58:28.144 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (9, 384)
+2026-08-30 12:58:28.144 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (124, 384)
+2026-08-30 12:58:28.169 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_ff9302a2.json
+2026-08-30 13:01:29.588 [DefaultDispatcher-worker-4] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 13:01:29.589 [DefaultDispatcher-worker-4] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 13:01:29.589 [DefaultDispatcher-worker-16] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 13:01:29.589 [DefaultDispatcher-worker-16] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 13:01:29.617 [DefaultDispatcher-worker-12] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 13:01:29.618 [DefaultDispatcher-worker-12] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 13:01:29.621 [DefaultDispatcher-worker-13] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 13:01:29.622 [DefaultDispatcher-worker-13] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 13:01:29.627 [DefaultDispatcher-worker-17] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 13:01:29.627 [DefaultDispatcher-worker-17] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 13:01:29.638 [DefaultDispatcher-worker-8] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 13:01:29.638 [DefaultDispatcher-worker-8] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 13:01:29.643 [DefaultDispatcher-worker-3] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 13:01:29.646 [DefaultDispatcher-worker-3] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 13:01:29.653 [DefaultDispatcher-worker-6] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 13:01:29.654 [DefaultDispatcher-worker-6] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 13:01:29.664 [DefaultDispatcher-worker-2] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 13:01:29.664 [DefaultDispatcher-worker-2] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 13:01:29.680 [DefaultDispatcher-worker-7] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 13:01:29.680 [DefaultDispatcher-worker-7] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 13:01:29.709 [DefaultDispatcher-worker-15] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 13:01:29.709 [DefaultDispatcher-worker-15] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 13:01:29.769 [DefaultDispatcher-worker-9] WARN  c.y.g.shared.llm.ChatModelLlmClient - ChatModel completion failed
+dev.langchain4j.exception.TimeoutException: request timed out
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:61)
+	at dev.langchain4j.model.ollama.OllamaClient.chat(OllamaClient.java:118)
+	at dev.langchain4j.model.ollama.OllamaChatModel.lambda$doChat$0(OllamaChatModel.java:41)
+	at dev.langchain4j.internal.ExceptionMapper.withExceptionMapper(ExceptionMapper.java:29)
+	at dev.langchain4j.internal.RetryUtils.lambda$withRetryMappingExceptions$1(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils$RetryPolicy.withRetry(RetryUtils.java:208)
+	at dev.langchain4j.internal.RetryUtils.withRetry(RetryUtils.java:267)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:330)
+	at dev.langchain4j.internal.RetryUtils.withRetryMappingExceptions(RetryUtils.java:313)
+	at dev.langchain4j.model.ollama.OllamaChatModel.doChat(OllamaChatModel.java:41)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:61)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:36)
+	at dev.langchain4j.model.chat.ChatModel.chat(ChatModel.java:100)
+	at com.youtu.graphrag.shared.llm.ChatModelLlmClient.complete(LlmClient.kt:31)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.extractChunkKnowledge(KTBuilder.kt:522)
+	at com.youtu.graphrag.shared.constructor.KTBuilder.access$extractChunkKnowledge(KTBuilder.kt:61)
+	at com.youtu.graphrag.shared.constructor.KTBuilder$buildRelationships$chunkExtractions$1$1$1.invokeSuspend(KTBuilder.kt:372)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:807)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:949)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at dev.langchain4j.http.client.jdk.JdkHttpClient.execute(JdkHttpClient.java:52)
+	... 22 common frames omitted
+2026-08-30 13:01:29.770 [DefaultDispatcher-worker-9] WARN  c.y.g.shared.constructor.KTBuilder - Disabling constructor LLM extraction for 'demo' after empty completion response.
+2026-08-30 13:03:35.694 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 462 relation(s) and 58 chunk(s)
+2026-08-30 13:03:36.146 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 462 triples and 58 chunks
+2026-08-30 13:03:44.041 [DefaultDispatcher-worker-5] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0092
+2026-08-30 13:03:44.054 [DefaultDispatcher-worker-14] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0220
+2026-08-30 13:03:44.083 [DefaultDispatcher-worker-11] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0514
+2026-08-30 13:03:44.099 [DefaultDispatcher-worker-7] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0632
+2026-08-30 13:04:24.113 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 5 chunks
+2026-08-30 13:04:27.092 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (23, 384)
+2026-08-30 13:04:27.093 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-30 13:04:28.286 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (8, 384)
+2026-08-30 13:04:28.286 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (128, 384)
+2026-08-30 13:04:28.314 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.config.ConfigManager - Configuration loaded successfully from config/swo69_cfg_qwen3.8_27b_ff9302a2.json
+2026-08-30 13:04:43.135 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.constructor.KTBuilder - Knowledge graph built for 'demo' with 41 relation(s) and 1 chunk(s)
+2026-08-30 13:04:43.198 [DefaultDispatcher-worker-1] INFO  c.y.g.shared.retriever.KTRetriever - Built retrieval indices for 'demo' with 41 triples and 1 chunks
+2026-08-30 13:04:51.307 [DefaultDispatcher-worker-7] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0069
+2026-08-30 13:04:51.344 [DefaultDispatcher-worker-16] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0442
+2026-08-30 13:04:51.362 [DefaultDispatcher-worker-2] INFO  c.y.g.shared.retriever.KTRetriever - retrieval time: 0.0610
+2026-08-30 13:05:03.106 [DefaultDispatcher-worker-1] INFO  c.y.g.s.api.QuestionAnsweringService - Answered question for dataset 'demo' with 5 triples and 1 chunks
+2026-08-30 13:05:04.525 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Ref Embeds Shape: (10, 384)
+2026-08-30 13:05:04.525 [DefaultDispatcher-worker-1] INFO  i.github.ugaikit.bertscore.BertScore - Cand Embeds Shape: (44, 384)
+youturag: processed 15/15
+Wrote 15 rows -> eval_results/swo69_20260828_e2/e0_youturag_webis/per_question/youturag.jsonl
+
+Finished. Aggregate CSV can be produced by scripts/aggregate_experiment_results.py

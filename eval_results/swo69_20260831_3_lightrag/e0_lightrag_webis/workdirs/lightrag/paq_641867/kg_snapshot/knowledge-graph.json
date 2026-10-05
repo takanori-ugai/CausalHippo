@@ -1,0 +1,104 @@
+{
+  "nodes" : [ {
+    "id" : "Chinese furniture",
+    "entity_id" : "Chinese furniture",
+    "entity_type" : "Concept",
+    "description" : "Furniture made from woods that are high in oils and resins, making them dimensionally stable, hardwearing, rot and insect resistant, and highly fragrant when new. The density and toughness of the wood allows construction without glue or nails.",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a"
+  }, {
+    "id" : "Hongmu furniture",
+    "entity_id" : "Hongmu furniture",
+    "entity_type" : "Concept",
+    "description" : "Furniture and carving made from specific woods, referred to in the market as 'hongmu furniture' (紅木家具), literally meaning 'rosewood furniture'.",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a"
+  }, {
+    "id" : "Chinese industry standards",
+    "entity_id" : "Chinese industry standards",
+    "entity_type" : "Organization",
+    "description" : "Standards that classify the woods used in Chinese furniture into eight classes.",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a"
+  }, {
+    "id" : "Rosewood",
+    "entity_id" : "Rosewood",
+    "entity_type" : "Concept",
+    "description" : "A type of wood that is the literal translation of 'hongmu' (紅木), referring to the woods used in traditional Chinese furniture making.",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a"
+  }, {
+    "id" : "Joinery",
+    "entity_id" : "Joinery",
+    "entity_type" : "Concept",
+    "description" : "A woodworking construction technique used in building Chinese furniture without the use of glue or nails, relying on the density and toughness of the wood.",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a"
+  }, {
+    "id" : "Doweling",
+    "entity_id" : "Doweling",
+    "entity_type" : "Concept",
+    "description" : "A woodworking construction technique used alongside joinery to build Chinese furniture without glue or nails.",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a"
+  }, {
+    "id" : "Overlogging",
+    "entity_id" : "Overlogging",
+    "entity_type" : "Event",
+    "description" : "Excessive logging of wood species for furniture production, which has led to most of the species being either threatened or endangered.",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a"
+  } ],
+  "edges" : [ {
+    "source" : "Chinese furniture",
+    "target" : "Hongmu furniture",
+    "weight" : "1.0",
+    "description" : "Furniture and carving made from the specified woods are typically referred to in the market as 'hongmu furniture'.",
+    "keywords" : "market terminology, classification",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a",
+    "src_id" : "Chinese furniture",
+    "tgt_id" : "Hongmu furniture"
+  }, {
+    "source" : "Chinese furniture",
+    "target" : "Chinese industry standards",
+    "weight" : "1.0",
+    "description" : "The Chinese industry standards group the woods used in Chinese furniture into eight classes.",
+    "keywords" : "classification, standards, eight classes",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a",
+    "src_id" : "Chinese industry standards",
+    "tgt_id" : "Chinese furniture"
+  }, {
+    "source" : "Chinese furniture",
+    "target" : "Joinery",
+    "weight" : "1.0",
+    "description" : "Chinese furniture is constructed using joinery alone, without the use of glue or nails, due to the density and toughness of the wood.",
+    "keywords" : "construction, technique, no glue",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a",
+    "src_id" : "Chinese furniture",
+    "tgt_id" : "Joinery"
+  }, {
+    "source" : "Chinese furniture",
+    "target" : "Doweling",
+    "weight" : "1.0",
+    "description" : "Chinese furniture is constructed using doweling alone, without the use of glue or nails, due to the density and toughness of the wood.",
+    "keywords" : "construction, technique, no nails",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a",
+    "src_id" : "Chinese furniture",
+    "tgt_id" : "Doweling"
+  }, {
+    "source" : "Hongmu furniture",
+    "target" : "Rosewood",
+    "weight" : "1.0",
+    "description" : "The term 'hongmu' (紅木) literally translates to 'rosewood,' giving the furniture its market name.",
+    "keywords" : "translation, naming",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a",
+    "src_id" : "Hongmu furniture",
+    "tgt_id" : "Rosewood"
+  }, {
+    "source" : "Hongmu furniture",
+    "target" : "Overlogging",
+    "weight" : "1.0",
+    "description" : "Overlogging for the production of hongmu furniture has resulted in most of the wood species being either threatened or endangered.",
+    "keywords" : "threat, endangered, logging",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a",
+    "src_id" : "Overlogging",
+    "tgt_id" : "Hongmu furniture"
+  } ],
+  "metadata" : {
+    "nodeCount" : 7,
+    "edgeCount" : 6
+  }
+}

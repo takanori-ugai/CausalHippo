@@ -1,0 +1,3185 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "City planners",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Public transportation",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Public transportation",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Urban development",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Urban development",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Public transportation",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Growing cities",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Transit projects",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Areas experiencing urban development",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Public transportation",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Transit projects",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Urban development",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "oven",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bakery",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "oven",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "warm glow",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "warm glow",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "smell of pastries",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "smell of pastries",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pastries",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "smell of pastries",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "street",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "passersby",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "street",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "street",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "passersby",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bakery",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the connection",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the connection",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mornings",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pastries",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bakery",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shop openings",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "uptown neighborhood",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "property prices",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "uptown neighborhood",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shops",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "property prices",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shops",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "area desirability",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "broader economic trends",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shop openings",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "broader economic trends",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "property prices",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shop openings",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shop openings",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "property prices",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shops",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "uptown neighborhood",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "uptown neighborhood",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "static electricity",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "humidity",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "static electricity",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "static electricity",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "indoor environment",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air conditioning",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "environmental adjustments",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "carpeting",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "static electricity",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reports",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "humidity",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "observing static electricity fluctuations",
+      "chunk id" : "JJK29CCp"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "respiratory issues",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air pollution",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "districts",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "respiratory issues",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "smoking",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "healthcare",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air pollution",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "respiratory issues",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "smoking",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "overall health",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "healthcare",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "overall health",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seasonal changes",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "overall health",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "allergy seasons",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "overall health",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local surveys",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air pollution",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "districts",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "smoking",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "districts",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "healthcare",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "districts",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lawn sprinklers",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "l931D3pW"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lawn sprinklers",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighbor",
+      "chunk id" : "l931D3pW"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lawn sprinklers",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sidewalk",
+      "chunk id" : "l931D3pW"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lawn sprinklers",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wet sidewalks",
+      "chunk id" : "l931D3pW"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sidewalk",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "l931D3pW"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "droplets",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sidewalk",
+      "chunk id" : "l931D3pW"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Joggers",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "l931D3pW"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Joggers",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sidewalk",
+      "chunk id" : "l931D3pW"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the sequence",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "l931D3pW"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "People",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the sequence",
+      "chunk id" : "l931D3pW"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the sequence",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lawn sprinklers",
+      "chunk id" : "l931D3pW"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the sequence",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wet sidewalks",
+      "chunk id" : "l931D3pW"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air pollution",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "allergy seasons",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "area desirability",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "bakery",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "broader economic trends",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shop openings",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shops",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "districts",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "healthcare",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local surveys",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mornings",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "oven",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "overall health",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "passersby",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pastries",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "property prices",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "respiratory issues",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seasonal changes",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "smell of pastries",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "smoking",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "street",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the connection",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "uptown neighborhood",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "warm glow",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "residents"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "KqlMB76W",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "residents"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "residents"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shop openings",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coffee shop openings"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "coffee shop openings",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coffee shop openings"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "coffee shop openings"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "uptown neighborhood",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "uptown neighborhood"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "uptown neighborhood",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "uptown neighborhood"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "uptown neighborhood"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "overall health",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "overall health"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "overall health",
+      "chunk id" : "PPXjJbjX",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "overall health"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "overall health"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "property prices",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "property prices"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "property prices",
+      "chunk id" : "TM89jv74",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "property prices"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "property prices"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 25 members",
+      "community_id" : "community_1",
+      "node_count" : "25",
+      "edge_count" : "35",
+      "members" : [ "air pollution", "allergy seasons", "area desirability", "bakery", "broader economic trends", "coffee shop openings", "coffee shops", "districts", "healthcare", "local surveys", "mornings", "oven", "overall health", "passersby", "pastries", "property prices", "residents", "respiratory issues", "seasonal changes", "smell of pastries", "smoking", "street", "the connection", "uptown neighborhood", "warm glow" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Joggers",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Joggers", "People", "droplets", "lawn sprinklers", "neighbor", "neighborhood", "sidewalk", "the sequence", "wet sidewalks" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "People",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Joggers", "People", "droplets", "lawn sprinklers", "neighbor", "neighborhood", "sidewalk", "the sequence", "wet sidewalks" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "droplets",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Joggers", "People", "droplets", "lawn sprinklers", "neighbor", "neighborhood", "sidewalk", "the sequence", "wet sidewalks" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lawn sprinklers",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Joggers", "People", "droplets", "lawn sprinklers", "neighbor", "neighborhood", "sidewalk", "the sequence", "wet sidewalks" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighbor",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Joggers", "People", "droplets", "lawn sprinklers", "neighbor", "neighborhood", "sidewalk", "the sequence", "wet sidewalks" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Joggers", "People", "droplets", "lawn sprinklers", "neighbor", "neighborhood", "sidewalk", "the sequence", "wet sidewalks" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sidewalk",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Joggers", "People", "droplets", "lawn sprinklers", "neighbor", "neighborhood", "sidewalk", "the sequence", "wet sidewalks" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the sequence",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Joggers", "People", "droplets", "lawn sprinklers", "neighbor", "neighborhood", "sidewalk", "the sequence", "wet sidewalks" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wet sidewalks",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Joggers", "People", "droplets", "lawn sprinklers", "neighbor", "neighborhood", "sidewalk", "the sequence", "wet sidewalks" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lawn sprinklers",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "lawn sprinklers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lawn sprinklers",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "lawn sprinklers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "lawn sprinklers"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Joggers", "People", "droplets", "lawn sprinklers", "neighbor", "neighborhood", "sidewalk", "the sequence", "wet sidewalks" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sidewalk",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sidewalk"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sidewalk",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sidewalk"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sidewalk"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Joggers", "People", "droplets", "lawn sprinklers", "neighbor", "neighborhood", "sidewalk", "the sequence", "wet sidewalks" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the sequence",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the sequence"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "the sequence",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the sequence"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "the sequence"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Joggers", "People", "droplets", "lawn sprinklers", "neighbor", "neighborhood", "sidewalk", "the sequence", "wet sidewalks" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "neighborhood"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighborhood",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "neighborhood"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "neighborhood"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Joggers", "People", "droplets", "lawn sprinklers", "neighbor", "neighborhood", "sidewalk", "the sequence", "wet sidewalks" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wet sidewalks",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "wet sidewalks"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "wet sidewalks",
+      "chunk id" : "l931D3pW"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "wet sidewalks"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "wet sidewalks"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Joggers", "People", "droplets", "lawn sprinklers", "neighbor", "neighborhood", "sidewalk", "the sequence", "wet sidewalks" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "carpeting",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "carpeting", "humidity", "indoor environment", "observing static electricity fluctuations", "people", "reports", "static electricity" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "humidity",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "carpeting", "humidity", "indoor environment", "observing static electricity fluctuations", "people", "reports", "static electricity" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "indoor environment",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "carpeting", "humidity", "indoor environment", "observing static electricity fluctuations", "people", "reports", "static electricity" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "observing static electricity fluctuations",
+      "chunk id" : "JJK29CCp"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "carpeting", "humidity", "indoor environment", "observing static electricity fluctuations", "people", "reports", "static electricity" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "carpeting", "humidity", "indoor environment", "observing static electricity fluctuations", "people", "reports", "static electricity" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reports",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "carpeting", "humidity", "indoor environment", "observing static electricity fluctuations", "people", "reports", "static electricity" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "static electricity",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "carpeting", "humidity", "indoor environment", "observing static electricity fluctuations", "people", "reports", "static electricity" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "static electricity",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "static electricity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "static electricity",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "static electricity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "static electricity"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "carpeting", "humidity", "indoor environment", "observing static electricity fluctuations", "people", "reports", "static electricity" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "humidity",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "humidity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "humidity",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "humidity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "humidity"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "carpeting", "humidity", "indoor environment", "observing static electricity fluctuations", "people", "reports", "static electricity" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "people"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "people",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "people"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "people"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "carpeting", "humidity", "indoor environment", "observing static electricity fluctuations", "people", "reports", "static electricity" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "indoor environment",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "indoor environment"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "indoor environment",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "indoor environment"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "indoor environment"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "carpeting", "humidity", "indoor environment", "observing static electricity fluctuations", "people", "reports", "static electricity" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "observing static electricity fluctuations",
+      "chunk id" : "JJK29CCp"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "observing static electricity fluctuations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "observing static electricity fluctuations",
+      "chunk id" : "JJK29CCp"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "observing static electricity fluctuations"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "observing static electricity fluctuations"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 7 members",
+      "community_id" : "community_3",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "carpeting", "humidity", "indoor environment", "observing static electricity fluctuations", "people", "reports", "static electricity" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Areas experiencing urban development",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Areas experiencing urban development", "City planners", "Growing cities", "Public transportation", "Transit projects", "Urban development" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "City planners",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Areas experiencing urban development", "City planners", "Growing cities", "Public transportation", "Transit projects", "Urban development" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Growing cities",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Areas experiencing urban development", "City planners", "Growing cities", "Public transportation", "Transit projects", "Urban development" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Public transportation",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Areas experiencing urban development", "City planners", "Growing cities", "Public transportation", "Transit projects", "Urban development" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Transit projects",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Areas experiencing urban development", "City planners", "Growing cities", "Public transportation", "Transit projects", "Urban development" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Urban development",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Areas experiencing urban development", "City planners", "Growing cities", "Public transportation", "Transit projects", "Urban development" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Public transportation",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Public transportation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Public transportation",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Public transportation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Public transportation"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Areas experiencing urban development", "City planners", "Growing cities", "Public transportation", "Transit projects", "Urban development" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Urban development",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Urban development"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Urban development",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Urban development"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Urban development"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Areas experiencing urban development", "City planners", "Growing cities", "Public transportation", "Transit projects", "Urban development" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Transit projects",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Transit projects"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Transit projects",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Transit projects"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Transit projects"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Areas experiencing urban development", "City planners", "Growing cities", "Public transportation", "Transit projects", "Urban development" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Growing cities",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Growing cities"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Growing cities",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Growing cities"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Growing cities"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Areas experiencing urban development", "City planners", "Growing cities", "Public transportation", "Transit projects", "Urban development" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "City planners",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "City planners"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "City planners",
+      "chunk id" : "TsCTbpJq",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "City planners"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "City planners"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 6 members",
+      "community_id" : "community_4",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Areas experiencing urban development", "City planners", "Growing cities", "Public transportation", "Transit projects", "Urban development" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air conditioning",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 2 members",
+      "community_id" : "community_5",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "air conditioning", "environmental adjustments" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "environmental adjustments",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 2 members",
+      "community_id" : "community_5",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "air conditioning", "environmental adjustments" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air conditioning",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "air conditioning"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "air conditioning",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "air conditioning"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "air conditioning"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 2 members",
+      "community_id" : "community_5",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "air conditioning", "environmental adjustments" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "environmental adjustments",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "environmental adjustments"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "environmental adjustments",
+      "chunk id" : "JJK29CCp",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "environmental adjustments"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "environmental adjustments"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 2 members",
+      "community_id" : "community_5",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "air conditioning", "environmental adjustments" ]
+    }
+  }
+} ]

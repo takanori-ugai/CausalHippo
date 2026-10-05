@@ -1,0 +1,5519 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Minsk Region",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "region",
+      "chunk id" : "A2vceS2M"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Minsk Region",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Belarus",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Minsk",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Minsk Region",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Minsk",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Belarus",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Minsk Region",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Minsk",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bann Na Mohra",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "town",
+      "chunk id" : "z10EHArs"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bann Na Mohra",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Islamabad Capital Territory",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Islamabad Capital Territory",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pakistan",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bann Na Mohra",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pakistan",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Richard Brantley York",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Union Institute Academy",
+      "chunk id" : "bg14Jrjf"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Richard Brantley York",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Methodist",
+      "chunk id" : "bg14Jrjf"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Union Institute Academy",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Randolph County",
+      "chunk id" : "bg14Jrjf"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Randolph County",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "North Carolina",
+      "chunk id" : "bg14Jrjf"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Union Institute Academy",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Duke University",
+      "chunk id" : "bg14Jrjf"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Richard Brantley York",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Duke University",
+      "chunk id" : "bg14Jrjf"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Town of York",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "capital of Upper Canada",
+      "chunk id" : "mCPej-km"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Town of York",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Toronto",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Town of York",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Upper Canada",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Town of York",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John Graves Simcoe",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Town of York",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Prince Frederick, Duke of York and Albany",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John Graves Simcoe",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Upper Canada",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John Graves Simcoe",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "London, Ontario",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Prince Frederick, Duke of York and Albany",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "George III",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John Graves Simcoe",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "arrives_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Britain",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Peter Russell",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John Graves Simcoe",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Peter Russell",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Upper Canada",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Town of York",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "arrives_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "February 1, 1796",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti Municipality",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Vidzeme",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Vidzeme",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Latvia",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti Municipality",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Latvia",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti town",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti Municipality",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti parish",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti Municipality",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti parish",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti town",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti Municipality",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti town",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Cayman Islands",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "British Overseas Territory",
+      "chunk id" : "xFkPunzO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Cayman Islands",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Caribbean Sea",
+      "chunk id" : "xFkPunzO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Grand Cayman",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Cayman Islands",
+      "chunk id" : "xFkPunzO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Cayman Brac",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Cayman Islands",
+      "chunk id" : "xFkPunzO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Little Cayman",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Cayman Islands",
+      "chunk id" : "xFkPunzO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Cayman Islands",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "south of Cuba",
+      "chunk id" : "xFkPunzO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Cayman Islands",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "northeast of Costa Rica",
+      "chunk id" : "xFkPunzO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Cayman Islands",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "north of Panama",
+      "chunk id" : "xFkPunzO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Cayman Islands",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "east of Mexico",
+      "chunk id" : "xFkPunzO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Cayman Islands",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "northwest of Jamaica",
+      "chunk id" : "xFkPunzO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "George Town",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Cayman Islands",
+      "chunk id" : "xFkPunzO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Cayman Islands",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "British",
+      "chunk id" : "xFkPunzO"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Łowicz",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "rural gmina (administrative district)",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Łowicz",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Łowicz County",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Łowicz County",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Łódź Voivodeship",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Łódź Voivodeship",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Poland",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Łowicz (town)",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Łowicz",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Łowicz (town)",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "NOT part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Łowicz",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Pabianice",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "rural gmina (administrative district)",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Pabianice",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pabianice County",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pabianice County",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Łódź Voivodeship",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Łódź Voivodeship",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "central Poland",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "central Poland",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Poland",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pabianice (town)",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Pabianice",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pabianice (town)",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Pabianice",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kiri Territory",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "administrative region",
+      "chunk id" : "aRyUXL2s"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kiri Territory",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mai-Ndombe District",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mai-Ndombe District",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bandundu Province",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bandundu Province",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Democratic Republic of the Congo",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kiri (town)",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kiri Territory",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Gorlice",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "rural gmina",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Gorlice",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "administrative district",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Gorlice",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gorlice County",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gorlice County",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lesser Poland Voivodeship",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lesser Poland Voivodeship",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Poland",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Gorlice",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Poland",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gorlice (town)",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Gorlice",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gorlice (town)",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Gorlice",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Brzeziny",
+      "chunk id" : "3Rc7GbyE",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "administrative district",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Brzeziny",
+      "chunk id" : "3Rc7GbyE",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Brzeziny County",
+      "chunk id" : "3Rc7GbyE",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Brzeziny County",
+      "chunk id" : "3Rc7GbyE",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Łódź Voivodeship",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Łódź Voivodeship",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Poland",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Brzeziny",
+      "chunk id" : "3Rc7GbyE",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "central Poland",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Brzeziny (town)",
+      "chunk id" : "3Rc7GbyE",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Brzeziny",
+      "chunk id" : "3Rc7GbyE",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Brzeziny",
+      "chunk id" : "3Rc7GbyE",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Brzeziny (town)",
+      "chunk id" : "3Rc7GbyE",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nigerian State",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nigeria",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nigerian State",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Federal Government of Nigeria",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Federal Capital Territory (FCT)",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nigeria",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Federal Capital Territory (FCT)",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Federal Government of Nigeria",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Local Government Areas",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nigerian State",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nigerian State",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nigerian Constitution",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "creative_work"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nigerian State",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ratification of constitutional amendments",
+      "chunk id" : "6hX2VWpv"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Darial",
+      "chunk id" : "ZG8WCnLA"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "town",
+      "chunk id" : "z10EHArs"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Darial",
+      "chunk id" : "ZG8WCnLA"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Islamabad Capital Territory",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Darial",
+      "chunk id" : "ZG8WCnLA"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pakistan",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pangi Territory",
+      "chunk id" : "N5fxYiFd",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "administrative area",
+      "chunk id" : "N5fxYiFd",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pangi Territory",
+      "chunk id" : "N5fxYiFd",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Maniema Province",
+      "chunk id" : "N5fxYiFd",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Maniema Province",
+      "chunk id" : "N5fxYiFd",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Democratic Republic of the Congo",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pangi",
+      "chunk id" : "N5fxYiFd",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pangi Territory",
+      "chunk id" : "N5fxYiFd",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pangi",
+      "chunk id" : "N5fxYiFd",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pangi Territory",
+      "chunk id" : "N5fxYiFd",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Brzeziny (town)",
+      "chunk id" : "3Rc7GbyE",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Brzeziny County",
+      "chunk id" : "3Rc7GbyE",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Brzeziny",
+      "chunk id" : "3Rc7GbyE",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Gorlice",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Pabianice",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Łowicz",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gorlice (town)",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gorlice County",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Lesser Poland Voivodeship",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pabianice (town)",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pabianice County",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Poland",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "administrative district",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "central Poland",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "rural gmina",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "rural gmina (administrative district)",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Łowicz (town)",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Łowicz County",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Łódź Voivodeship",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Łódź Voivodeship",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Łódź Voivodeship"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Łódź Voivodeship",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Łódź Voivodeship"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Łódź Voivodeship"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Gorlice",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Gmina Gorlice"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Gorlice",
+      "chunk id" : "orxxqrd7",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Gmina Gorlice"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Gmina Gorlice"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Brzeziny",
+      "chunk id" : "3Rc7GbyE",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Gmina Brzeziny"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Brzeziny",
+      "chunk id" : "3Rc7GbyE",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Gmina Brzeziny"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Gmina Brzeziny"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Poland",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Poland"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Poland",
+      "chunk id" : "Ny2Z0CR6",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Poland"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Poland"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Pabianice",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Gmina Pabianice"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gmina Pabianice",
+      "chunk id" : "JuFl-Bbk",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Gmina Pabianice"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Gmina Pabianice"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 19 members",
+      "community_id" : "community_1",
+      "node_count" : "19",
+      "edge_count" : "28",
+      "members" : [ "Brzeziny (town)", "Brzeziny County", "Gmina Brzeziny", "Gmina Gorlice", "Gmina Pabianice", "Gmina Łowicz", "Gorlice (town)", "Gorlice County", "Lesser Poland Voivodeship", "Pabianice (town)", "Pabianice County", "Poland", "administrative district", "central Poland", "rural gmina", "rural gmina (administrative district)", "Łowicz (town)", "Łowicz County", "Łódź Voivodeship" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "British",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "British Overseas Territory",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Caribbean Sea",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Cayman Brac",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "George Town",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Grand Cayman",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Little Cayman",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Cayman Islands",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "east of Mexico",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "north of Panama",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "northeast of Costa Rica",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "northwest of Jamaica",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "south of Cuba",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Cayman Islands",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "The Cayman Islands"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Cayman Islands",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "The Cayman Islands"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "The Cayman Islands"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "British Overseas Territory",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "British Overseas Territory"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "British Overseas Territory",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "British Overseas Territory"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "British Overseas Territory"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "northwest of Jamaica",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "northwest of Jamaica"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "northwest of Jamaica",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "northwest of Jamaica"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "northwest of Jamaica"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "northeast of Costa Rica",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "northeast of Costa Rica"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "northeast of Costa Rica",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "northeast of Costa Rica"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "northeast of Costa Rica"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Caribbean Sea",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Caribbean Sea"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Caribbean Sea",
+      "chunk id" : "xFkPunzO"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Caribbean Sea"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Caribbean Sea"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 13 members",
+      "community_id" : "community_2",
+      "node_count" : "13",
+      "edge_count" : "12",
+      "members" : [ "British", "British Overseas Territory", "Caribbean Sea", "Cayman Brac", "George Town", "Grand Cayman", "Little Cayman", "The Cayman Islands", "east of Mexico", "north of Panama", "northeast of Costa Rica", "northwest of Jamaica", "south of Cuba" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Britain",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "Britain", "February 1, 1796", "George III", "John Graves Simcoe", "London, Ontario", "Peter Russell", "Prince Frederick, Duke of York and Albany", "The Town of York", "Toronto", "Upper Canada", "capital of Upper Canada" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "February 1, 1796",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "Britain", "February 1, 1796", "George III", "John Graves Simcoe", "London, Ontario", "Peter Russell", "Prince Frederick, Duke of York and Albany", "The Town of York", "Toronto", "Upper Canada", "capital of Upper Canada" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "George III",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "Britain", "February 1, 1796", "George III", "John Graves Simcoe", "London, Ontario", "Peter Russell", "Prince Frederick, Duke of York and Albany", "The Town of York", "Toronto", "Upper Canada", "capital of Upper Canada" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John Graves Simcoe",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "Britain", "February 1, 1796", "George III", "John Graves Simcoe", "London, Ontario", "Peter Russell", "Prince Frederick, Duke of York and Albany", "The Town of York", "Toronto", "Upper Canada", "capital of Upper Canada" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "London, Ontario",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "Britain", "February 1, 1796", "George III", "John Graves Simcoe", "London, Ontario", "Peter Russell", "Prince Frederick, Duke of York and Albany", "The Town of York", "Toronto", "Upper Canada", "capital of Upper Canada" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Peter Russell",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "Britain", "February 1, 1796", "George III", "John Graves Simcoe", "London, Ontario", "Peter Russell", "Prince Frederick, Duke of York and Albany", "The Town of York", "Toronto", "Upper Canada", "capital of Upper Canada" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Prince Frederick, Duke of York and Albany",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "Britain", "February 1, 1796", "George III", "John Graves Simcoe", "London, Ontario", "Peter Russell", "Prince Frederick, Duke of York and Albany", "The Town of York", "Toronto", "Upper Canada", "capital of Upper Canada" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Town of York",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "Britain", "February 1, 1796", "George III", "John Graves Simcoe", "London, Ontario", "Peter Russell", "Prince Frederick, Duke of York and Albany", "The Town of York", "Toronto", "Upper Canada", "capital of Upper Canada" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Toronto",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "Britain", "February 1, 1796", "George III", "John Graves Simcoe", "London, Ontario", "Peter Russell", "Prince Frederick, Duke of York and Albany", "The Town of York", "Toronto", "Upper Canada", "capital of Upper Canada" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Upper Canada",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "Britain", "February 1, 1796", "George III", "John Graves Simcoe", "London, Ontario", "Peter Russell", "Prince Frederick, Duke of York and Albany", "The Town of York", "Toronto", "Upper Canada", "capital of Upper Canada" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "capital of Upper Canada",
+      "chunk id" : "mCPej-km"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "Britain", "February 1, 1796", "George III", "John Graves Simcoe", "London, Ontario", "Peter Russell", "Prince Frederick, Duke of York and Albany", "The Town of York", "Toronto", "Upper Canada", "capital of Upper Canada" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Town of York",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "The Town of York"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "The Town of York",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "The Town of York"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "The Town of York"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "Britain", "February 1, 1796", "George III", "John Graves Simcoe", "London, Ontario", "Peter Russell", "Prince Frederick, Duke of York and Albany", "The Town of York", "Toronto", "Upper Canada", "capital of Upper Canada" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John Graves Simcoe",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "John Graves Simcoe"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "John Graves Simcoe",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "John Graves Simcoe"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "John Graves Simcoe"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "Britain", "February 1, 1796", "George III", "John Graves Simcoe", "London, Ontario", "Peter Russell", "Prince Frederick, Duke of York and Albany", "The Town of York", "Toronto", "Upper Canada", "capital of Upper Canada" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Upper Canada",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Upper Canada"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Upper Canada",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Upper Canada"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Upper Canada"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "Britain", "February 1, 1796", "George III", "John Graves Simcoe", "London, Ontario", "Peter Russell", "Prince Frederick, Duke of York and Albany", "The Town of York", "Toronto", "Upper Canada", "capital of Upper Canada" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Prince Frederick, Duke of York and Albany",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Prince Frederick, Duke of York and Albany"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Prince Frederick, Duke of York and Albany",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Prince Frederick, Duke of York and Albany"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Prince Frederick, Duke of York and Albany"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "Britain", "February 1, 1796", "George III", "John Graves Simcoe", "London, Ontario", "Peter Russell", "Prince Frederick, Duke of York and Albany", "The Town of York", "Toronto", "Upper Canada", "capital of Upper Canada" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Peter Russell",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Peter Russell"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Peter Russell",
+      "chunk id" : "mCPej-km",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Peter Russell"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Peter Russell"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 11 members",
+      "community_id" : "community_3",
+      "node_count" : "11",
+      "edge_count" : "12",
+      "members" : [ "Britain", "February 1, 1796", "George III", "John Graves Simcoe", "London, Ontario", "Peter Russell", "Prince Frederick, Duke of York and Albany", "The Town of York", "Toronto", "Upper Canada", "capital of Upper Canada" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bandundu Province",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 10 members",
+      "community_id" : "community_4",
+      "node_count" : "10",
+      "edge_count" : "10",
+      "members" : [ "Bandundu Province", "Democratic Republic of the Congo", "Kiri (town)", "Kiri Territory", "Mai-Ndombe District", "Maniema Province", "Pangi", "Pangi Territory", "administrative area", "administrative region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Democratic Republic of the Congo",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 10 members",
+      "community_id" : "community_4",
+      "node_count" : "10",
+      "edge_count" : "10",
+      "members" : [ "Bandundu Province", "Democratic Republic of the Congo", "Kiri (town)", "Kiri Territory", "Mai-Ndombe District", "Maniema Province", "Pangi", "Pangi Territory", "administrative area", "administrative region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kiri (town)",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 10 members",
+      "community_id" : "community_4",
+      "node_count" : "10",
+      "edge_count" : "10",
+      "members" : [ "Bandundu Province", "Democratic Republic of the Congo", "Kiri (town)", "Kiri Territory", "Mai-Ndombe District", "Maniema Province", "Pangi", "Pangi Territory", "administrative area", "administrative region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kiri Territory",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 10 members",
+      "community_id" : "community_4",
+      "node_count" : "10",
+      "edge_count" : "10",
+      "members" : [ "Bandundu Province", "Democratic Republic of the Congo", "Kiri (town)", "Kiri Territory", "Mai-Ndombe District", "Maniema Province", "Pangi", "Pangi Territory", "administrative area", "administrative region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mai-Ndombe District",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 10 members",
+      "community_id" : "community_4",
+      "node_count" : "10",
+      "edge_count" : "10",
+      "members" : [ "Bandundu Province", "Democratic Republic of the Congo", "Kiri (town)", "Kiri Territory", "Mai-Ndombe District", "Maniema Province", "Pangi", "Pangi Territory", "administrative area", "administrative region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Maniema Province",
+      "chunk id" : "N5fxYiFd",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 10 members",
+      "community_id" : "community_4",
+      "node_count" : "10",
+      "edge_count" : "10",
+      "members" : [ "Bandundu Province", "Democratic Republic of the Congo", "Kiri (town)", "Kiri Territory", "Mai-Ndombe District", "Maniema Province", "Pangi", "Pangi Territory", "administrative area", "administrative region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pangi",
+      "chunk id" : "N5fxYiFd",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 10 members",
+      "community_id" : "community_4",
+      "node_count" : "10",
+      "edge_count" : "10",
+      "members" : [ "Bandundu Province", "Democratic Republic of the Congo", "Kiri (town)", "Kiri Territory", "Mai-Ndombe District", "Maniema Province", "Pangi", "Pangi Territory", "administrative area", "administrative region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pangi Territory",
+      "chunk id" : "N5fxYiFd",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 10 members",
+      "community_id" : "community_4",
+      "node_count" : "10",
+      "edge_count" : "10",
+      "members" : [ "Bandundu Province", "Democratic Republic of the Congo", "Kiri (town)", "Kiri Territory", "Mai-Ndombe District", "Maniema Province", "Pangi", "Pangi Territory", "administrative area", "administrative region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "administrative area",
+      "chunk id" : "N5fxYiFd",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 10 members",
+      "community_id" : "community_4",
+      "node_count" : "10",
+      "edge_count" : "10",
+      "members" : [ "Bandundu Province", "Democratic Republic of the Congo", "Kiri (town)", "Kiri Territory", "Mai-Ndombe District", "Maniema Province", "Pangi", "Pangi Territory", "administrative area", "administrative region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "administrative region",
+      "chunk id" : "aRyUXL2s"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 10 members",
+      "community_id" : "community_4",
+      "node_count" : "10",
+      "edge_count" : "10",
+      "members" : [ "Bandundu Province", "Democratic Republic of the Congo", "Kiri (town)", "Kiri Territory", "Mai-Ndombe District", "Maniema Province", "Pangi", "Pangi Territory", "administrative area", "administrative region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pangi Territory",
+      "chunk id" : "N5fxYiFd",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Pangi Territory"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pangi Territory",
+      "chunk id" : "N5fxYiFd",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Pangi Territory"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Pangi Territory"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 10 members",
+      "community_id" : "community_4",
+      "node_count" : "10",
+      "edge_count" : "10",
+      "members" : [ "Bandundu Province", "Democratic Republic of the Congo", "Kiri (town)", "Kiri Territory", "Mai-Ndombe District", "Maniema Province", "Pangi", "Pangi Territory", "administrative area", "administrative region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kiri Territory",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kiri Territory"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Kiri Territory",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kiri Territory"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Kiri Territory"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 10 members",
+      "community_id" : "community_4",
+      "node_count" : "10",
+      "edge_count" : "10",
+      "members" : [ "Bandundu Province", "Democratic Republic of the Congo", "Kiri (town)", "Kiri Territory", "Mai-Ndombe District", "Maniema Province", "Pangi", "Pangi Territory", "administrative area", "administrative region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Democratic Republic of the Congo",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Democratic Republic of the Congo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Democratic Republic of the Congo",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Democratic Republic of the Congo"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Democratic Republic of the Congo"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 10 members",
+      "community_id" : "community_4",
+      "node_count" : "10",
+      "edge_count" : "10",
+      "members" : [ "Bandundu Province", "Democratic Republic of the Congo", "Kiri (town)", "Kiri Territory", "Mai-Ndombe District", "Maniema Province", "Pangi", "Pangi Territory", "administrative area", "administrative region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mai-Ndombe District",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Mai-Ndombe District"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Mai-Ndombe District",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Mai-Ndombe District"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Mai-Ndombe District"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 10 members",
+      "community_id" : "community_4",
+      "node_count" : "10",
+      "edge_count" : "10",
+      "members" : [ "Bandundu Province", "Democratic Republic of the Congo", "Kiri (town)", "Kiri Territory", "Mai-Ndombe District", "Maniema Province", "Pangi", "Pangi Territory", "administrative area", "administrative region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bandundu Province",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Bandundu Province"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bandundu Province",
+      "chunk id" : "aRyUXL2s",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Bandundu Province"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Bandundu Province"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 10 members",
+      "community_id" : "community_4",
+      "node_count" : "10",
+      "edge_count" : "10",
+      "members" : [ "Bandundu Province", "Democratic Republic of the Congo", "Kiri (town)", "Kiri Territory", "Mai-Ndombe District", "Maniema Province", "Pangi", "Pangi Territory", "administrative area", "administrative region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Federal Capital Territory (FCT)",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "Federal Capital Territory (FCT)", "Federal Government of Nigeria", "Local Government Areas", "Nigeria", "Nigerian Constitution", "Nigerian State", "ratification of constitutional amendments" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Federal Government of Nigeria",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "Federal Capital Territory (FCT)", "Federal Government of Nigeria", "Local Government Areas", "Nigeria", "Nigerian Constitution", "Nigerian State", "ratification of constitutional amendments" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Local Government Areas",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "Federal Capital Territory (FCT)", "Federal Government of Nigeria", "Local Government Areas", "Nigeria", "Nigerian Constitution", "Nigerian State", "ratification of constitutional amendments" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nigeria",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "Federal Capital Territory (FCT)", "Federal Government of Nigeria", "Local Government Areas", "Nigeria", "Nigerian Constitution", "Nigerian State", "ratification of constitutional amendments" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nigerian Constitution",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "creative_work"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "Federal Capital Territory (FCT)", "Federal Government of Nigeria", "Local Government Areas", "Nigeria", "Nigerian Constitution", "Nigerian State", "ratification of constitutional amendments" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nigerian State",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "Federal Capital Territory (FCT)", "Federal Government of Nigeria", "Local Government Areas", "Nigeria", "Nigerian Constitution", "Nigerian State", "ratification of constitutional amendments" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ratification of constitutional amendments",
+      "chunk id" : "6hX2VWpv"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "Federal Capital Territory (FCT)", "Federal Government of Nigeria", "Local Government Areas", "Nigeria", "Nigerian Constitution", "Nigerian State", "ratification of constitutional amendments" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nigerian State",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Nigerian State"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nigerian State",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Nigerian State"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Nigerian State"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "Federal Capital Territory (FCT)", "Federal Government of Nigeria", "Local Government Areas", "Nigeria", "Nigerian Constitution", "Nigerian State", "ratification of constitutional amendments" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Federal Capital Territory (FCT)",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Federal Capital Territory (FCT)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Federal Capital Territory (FCT)",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Federal Capital Territory (FCT)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Federal Capital Territory (FCT)"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "Federal Capital Territory (FCT)", "Federal Government of Nigeria", "Local Government Areas", "Nigeria", "Nigerian Constitution", "Nigerian State", "ratification of constitutional amendments" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Federal Government of Nigeria",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Federal Government of Nigeria"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Federal Government of Nigeria",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Federal Government of Nigeria"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Federal Government of Nigeria"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "Federal Capital Territory (FCT)", "Federal Government of Nigeria", "Local Government Areas", "Nigeria", "Nigerian Constitution", "Nigerian State", "ratification of constitutional amendments" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nigeria",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Nigeria"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nigeria",
+      "chunk id" : "6hX2VWpv",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Nigeria"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Nigeria"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "Federal Capital Territory (FCT)", "Federal Government of Nigeria", "Local Government Areas", "Nigeria", "Nigerian Constitution", "Nigerian State", "ratification of constitutional amendments" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ratification of constitutional amendments",
+      "chunk id" : "6hX2VWpv"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "ratification of constitutional amendments"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "ratification of constitutional amendments",
+      "chunk id" : "6hX2VWpv"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "ratification of constitutional amendments"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "ratification of constitutional amendments"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "7",
+      "members" : [ "Federal Capital Territory (FCT)", "Federal Government of Nigeria", "Local Government Areas", "Nigeria", "Nigerian Constitution", "Nigerian State", "ratification of constitutional amendments" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Duke University",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 6 members",
+      "community_id" : "community_6",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Duke University", "Methodist", "North Carolina", "Randolph County", "Richard Brantley York", "Union Institute Academy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Methodist",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 6 members",
+      "community_id" : "community_6",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Duke University", "Methodist", "North Carolina", "Randolph County", "Richard Brantley York", "Union Institute Academy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "North Carolina",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 6 members",
+      "community_id" : "community_6",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Duke University", "Methodist", "North Carolina", "Randolph County", "Richard Brantley York", "Union Institute Academy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Randolph County",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 6 members",
+      "community_id" : "community_6",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Duke University", "Methodist", "North Carolina", "Randolph County", "Richard Brantley York", "Union Institute Academy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Richard Brantley York",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 6 members",
+      "community_id" : "community_6",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Duke University", "Methodist", "North Carolina", "Randolph County", "Richard Brantley York", "Union Institute Academy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Union Institute Academy",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 6 members",
+      "community_id" : "community_6",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Duke University", "Methodist", "North Carolina", "Randolph County", "Richard Brantley York", "Union Institute Academy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Union Institute Academy",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Union Institute Academy"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Union Institute Academy",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Union Institute Academy"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Union Institute Academy"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 6 members",
+      "community_id" : "community_6",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Duke University", "Methodist", "North Carolina", "Randolph County", "Richard Brantley York", "Union Institute Academy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Richard Brantley York",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Richard Brantley York"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Richard Brantley York",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Richard Brantley York"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Richard Brantley York"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 6 members",
+      "community_id" : "community_6",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Duke University", "Methodist", "North Carolina", "Randolph County", "Richard Brantley York", "Union Institute Academy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Randolph County",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Randolph County"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Randolph County",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Randolph County"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Randolph County"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 6 members",
+      "community_id" : "community_6",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Duke University", "Methodist", "North Carolina", "Randolph County", "Richard Brantley York", "Union Institute Academy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Duke University",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Duke University"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Duke University",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Duke University"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Duke University"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 6 members",
+      "community_id" : "community_6",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Duke University", "Methodist", "North Carolina", "Randolph County", "Richard Brantley York", "Union Institute Academy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Methodist",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Methodist"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Methodist",
+      "chunk id" : "bg14Jrjf"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Methodist"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Methodist"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 6 members",
+      "community_id" : "community_6",
+      "node_count" : "6",
+      "edge_count" : "6",
+      "members" : [ "Duke University", "Methodist", "North Carolina", "Randolph County", "Richard Brantley York", "Union Institute Academy" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bann Na Mohra",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 5 members",
+      "community_id" : "community_7",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Bann Na Mohra", "Darial", "Islamabad Capital Territory", "Pakistan", "town" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Darial",
+      "chunk id" : "ZG8WCnLA"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 5 members",
+      "community_id" : "community_7",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Bann Na Mohra", "Darial", "Islamabad Capital Territory", "Pakistan", "town" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Islamabad Capital Territory",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 5 members",
+      "community_id" : "community_7",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Bann Na Mohra", "Darial", "Islamabad Capital Territory", "Pakistan", "town" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pakistan",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 5 members",
+      "community_id" : "community_7",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Bann Na Mohra", "Darial", "Islamabad Capital Territory", "Pakistan", "town" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "town",
+      "chunk id" : "z10EHArs"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 5 members",
+      "community_id" : "community_7",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Bann Na Mohra", "Darial", "Islamabad Capital Territory", "Pakistan", "town" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Islamabad Capital Territory",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Islamabad Capital Territory"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Islamabad Capital Territory",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Islamabad Capital Territory"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Islamabad Capital Territory"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 5 members",
+      "community_id" : "community_7",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Bann Na Mohra", "Darial", "Islamabad Capital Territory", "Pakistan", "town" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bann Na Mohra",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Bann Na Mohra"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Bann Na Mohra",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Bann Na Mohra"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Bann Na Mohra"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 5 members",
+      "community_id" : "community_7",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Bann Na Mohra", "Darial", "Islamabad Capital Territory", "Pakistan", "town" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pakistan",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Pakistan"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Pakistan",
+      "chunk id" : "z10EHArs",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Pakistan"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Pakistan"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 5 members",
+      "community_id" : "community_7",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Bann Na Mohra", "Darial", "Islamabad Capital Territory", "Pakistan", "town" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Darial",
+      "chunk id" : "ZG8WCnLA"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Darial"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Darial",
+      "chunk id" : "ZG8WCnLA"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Darial"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Darial"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 5 members",
+      "community_id" : "community_7",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Bann Na Mohra", "Darial", "Islamabad Capital Territory", "Pakistan", "town" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "town",
+      "chunk id" : "z10EHArs"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "town"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "town",
+      "chunk id" : "z10EHArs"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "town"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "town"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 5 members",
+      "community_id" : "community_7",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Bann Na Mohra", "Darial", "Islamabad Capital Territory", "Pakistan", "town" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Latvia",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 5 members",
+      "community_id" : "community_8",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Latvia", "Saulkrasti Municipality", "Saulkrasti parish", "Saulkrasti town", "Vidzeme" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti Municipality",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 5 members",
+      "community_id" : "community_8",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Latvia", "Saulkrasti Municipality", "Saulkrasti parish", "Saulkrasti town", "Vidzeme" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti parish",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 5 members",
+      "community_id" : "community_8",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Latvia", "Saulkrasti Municipality", "Saulkrasti parish", "Saulkrasti town", "Vidzeme" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti town",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 5 members",
+      "community_id" : "community_8",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Latvia", "Saulkrasti Municipality", "Saulkrasti parish", "Saulkrasti town", "Vidzeme" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Vidzeme",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 5 members",
+      "community_id" : "community_8",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Latvia", "Saulkrasti Municipality", "Saulkrasti parish", "Saulkrasti town", "Vidzeme" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti Municipality",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Saulkrasti Municipality"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti Municipality",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Saulkrasti Municipality"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Saulkrasti Municipality"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 5 members",
+      "community_id" : "community_8",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Latvia", "Saulkrasti Municipality", "Saulkrasti parish", "Saulkrasti town", "Vidzeme" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti town",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Saulkrasti town"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti town",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Saulkrasti town"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Saulkrasti town"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 5 members",
+      "community_id" : "community_8",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Latvia", "Saulkrasti Municipality", "Saulkrasti parish", "Saulkrasti town", "Vidzeme" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti parish",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Saulkrasti parish"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Saulkrasti parish",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Saulkrasti parish"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Saulkrasti parish"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 5 members",
+      "community_id" : "community_8",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Latvia", "Saulkrasti Municipality", "Saulkrasti parish", "Saulkrasti town", "Vidzeme" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Vidzeme",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Vidzeme"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Vidzeme",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Vidzeme"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Vidzeme"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 5 members",
+      "community_id" : "community_8",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Latvia", "Saulkrasti Municipality", "Saulkrasti parish", "Saulkrasti town", "Vidzeme" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Latvia",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Latvia"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Latvia",
+      "chunk id" : "PZkurBUb",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Latvia"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Latvia"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 5 members",
+      "community_id" : "community_8",
+      "node_count" : "5",
+      "edge_count" : "7",
+      "members" : [ "Latvia", "Saulkrasti Municipality", "Saulkrasti parish", "Saulkrasti town", "Vidzeme" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Belarus",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 4 members",
+      "community_id" : "community_9",
+      "node_count" : "4",
+      "edge_count" : "5",
+      "members" : [ "Belarus", "Minsk", "Minsk Region", "region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Minsk",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 4 members",
+      "community_id" : "community_9",
+      "node_count" : "4",
+      "edge_count" : "5",
+      "members" : [ "Belarus", "Minsk", "Minsk Region", "region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Minsk Region",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 4 members",
+      "community_id" : "community_9",
+      "node_count" : "4",
+      "edge_count" : "5",
+      "members" : [ "Belarus", "Minsk", "Minsk Region", "region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "region",
+      "chunk id" : "A2vceS2M"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 4 members",
+      "community_id" : "community_9",
+      "node_count" : "4",
+      "edge_count" : "5",
+      "members" : [ "Belarus", "Minsk", "Minsk Region", "region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Minsk Region",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Minsk Region"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Minsk Region",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Minsk Region"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Minsk Region"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 4 members",
+      "community_id" : "community_9",
+      "node_count" : "4",
+      "edge_count" : "5",
+      "members" : [ "Belarus", "Minsk", "Minsk Region", "region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Minsk",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Minsk"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Minsk",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Minsk"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Minsk"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 4 members",
+      "community_id" : "community_9",
+      "node_count" : "4",
+      "edge_count" : "5",
+      "members" : [ "Belarus", "Minsk", "Minsk Region", "region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Belarus",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Belarus"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Belarus",
+      "chunk id" : "A2vceS2M",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Belarus"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Belarus"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 4 members",
+      "community_id" : "community_9",
+      "node_count" : "4",
+      "edge_count" : "5",
+      "members" : [ "Belarus", "Minsk", "Minsk Region", "region" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "region",
+      "chunk id" : "A2vceS2M"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "region"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "region",
+      "chunk id" : "A2vceS2M"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "region"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "region"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 4 members",
+      "community_id" : "community_9",
+      "node_count" : "4",
+      "edge_count" : "5",
+      "members" : [ "Belarus", "Minsk", "Minsk Region", "region" ]
+    }
+  }
+} ]

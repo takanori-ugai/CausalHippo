@@ -1,0 +1,1123 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "President of Azerbaijan",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Judicial system reform",
+      "chunk id" : "Js2tl9o8"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Azerbaijan",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Judicial system reform",
+      "chunk id" : "Js2tl9o8"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "New courts",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Regions of Azerbaijan",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Appeal courts",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "6 regions of Azerbaijan",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Appeal courts",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Civil chamber",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Appeal courts",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Criminal chamber",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Appeal courts",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Military chamber",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Appeal courts",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Administrative-Economic chamber",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "New courts",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Decree",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Court apparatus",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Decree",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Judges",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Courts",
+      "chunk id" : "Js2tl9o8"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Azerbaijan",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Judicial system",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Appeal courts",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "New courts",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "6 regions of Azerbaijan",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "9",
+      "members" : [ "6 regions of Azerbaijan", "Administrative-Economic chamber", "Appeal courts", "Civil chamber", "Court apparatus", "Criminal chamber", "Decree", "Military chamber", "New courts", "Regions of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Administrative-Economic chamber",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "9",
+      "members" : [ "6 regions of Azerbaijan", "Administrative-Economic chamber", "Appeal courts", "Civil chamber", "Court apparatus", "Criminal chamber", "Decree", "Military chamber", "New courts", "Regions of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Appeal courts",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "9",
+      "members" : [ "6 regions of Azerbaijan", "Administrative-Economic chamber", "Appeal courts", "Civil chamber", "Court apparatus", "Criminal chamber", "Decree", "Military chamber", "New courts", "Regions of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Civil chamber",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "9",
+      "members" : [ "6 regions of Azerbaijan", "Administrative-Economic chamber", "Appeal courts", "Civil chamber", "Court apparatus", "Criminal chamber", "Decree", "Military chamber", "New courts", "Regions of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Court apparatus",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "9",
+      "members" : [ "6 regions of Azerbaijan", "Administrative-Economic chamber", "Appeal courts", "Civil chamber", "Court apparatus", "Criminal chamber", "Decree", "Military chamber", "New courts", "Regions of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Criminal chamber",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "9",
+      "members" : [ "6 regions of Azerbaijan", "Administrative-Economic chamber", "Appeal courts", "Civil chamber", "Court apparatus", "Criminal chamber", "Decree", "Military chamber", "New courts", "Regions of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Decree",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "9",
+      "members" : [ "6 regions of Azerbaijan", "Administrative-Economic chamber", "Appeal courts", "Civil chamber", "Court apparatus", "Criminal chamber", "Decree", "Military chamber", "New courts", "Regions of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Military chamber",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "9",
+      "members" : [ "6 regions of Azerbaijan", "Administrative-Economic chamber", "Appeal courts", "Civil chamber", "Court apparatus", "Criminal chamber", "Decree", "Military chamber", "New courts", "Regions of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "New courts",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "9",
+      "members" : [ "6 regions of Azerbaijan", "Administrative-Economic chamber", "Appeal courts", "Civil chamber", "Court apparatus", "Criminal chamber", "Decree", "Military chamber", "New courts", "Regions of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Regions of Azerbaijan",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "9",
+      "members" : [ "6 regions of Azerbaijan", "Administrative-Economic chamber", "Appeal courts", "Civil chamber", "Court apparatus", "Criminal chamber", "Decree", "Military chamber", "New courts", "Regions of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Appeal courts",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Appeal courts"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Appeal courts",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Appeal courts"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Appeal courts"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "9",
+      "members" : [ "6 regions of Azerbaijan", "Administrative-Economic chamber", "Appeal courts", "Civil chamber", "Court apparatus", "Criminal chamber", "Decree", "Military chamber", "New courts", "Regions of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "New courts",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "New courts"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "New courts",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "New courts"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "New courts"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "9",
+      "members" : [ "6 regions of Azerbaijan", "Administrative-Economic chamber", "Appeal courts", "Civil chamber", "Court apparatus", "Criminal chamber", "Decree", "Military chamber", "New courts", "Regions of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Decree",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Decree"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Decree",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Decree"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Decree"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "9",
+      "members" : [ "6 regions of Azerbaijan", "Administrative-Economic chamber", "Appeal courts", "Civil chamber", "Court apparatus", "Criminal chamber", "Decree", "Military chamber", "New courts", "Regions of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Administrative-Economic chamber",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Administrative-Economic chamber"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Administrative-Economic chamber",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Administrative-Economic chamber"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Administrative-Economic chamber"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "9",
+      "members" : [ "6 regions of Azerbaijan", "Administrative-Economic chamber", "Appeal courts", "Civil chamber", "Court apparatus", "Criminal chamber", "Decree", "Military chamber", "New courts", "Regions of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Regions of Azerbaijan",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Regions of Azerbaijan"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Regions of Azerbaijan",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Regions of Azerbaijan"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Regions of Azerbaijan"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "9",
+      "members" : [ "6 regions of Azerbaijan", "Administrative-Economic chamber", "Appeal courts", "Civil chamber", "Court apparatus", "Criminal chamber", "Decree", "Military chamber", "New courts", "Regions of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Azerbaijan",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 4 members",
+      "community_id" : "community_2",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Azerbaijan", "Judicial system", "Judicial system reform", "President of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Judicial system",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 4 members",
+      "community_id" : "community_2",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Azerbaijan", "Judicial system", "Judicial system reform", "President of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Judicial system reform",
+      "chunk id" : "Js2tl9o8"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 4 members",
+      "community_id" : "community_2",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Azerbaijan", "Judicial system", "Judicial system reform", "President of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "President of Azerbaijan",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 4 members",
+      "community_id" : "community_2",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Azerbaijan", "Judicial system", "Judicial system reform", "President of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Judicial system reform",
+      "chunk id" : "Js2tl9o8"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Judicial system reform"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Judicial system reform",
+      "chunk id" : "Js2tl9o8"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Judicial system reform"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Judicial system reform"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 4 members",
+      "community_id" : "community_2",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Azerbaijan", "Judicial system", "Judicial system reform", "President of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Azerbaijan",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Azerbaijan"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Azerbaijan",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Azerbaijan"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Azerbaijan"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 4 members",
+      "community_id" : "community_2",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Azerbaijan", "Judicial system", "Judicial system reform", "President of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "President of Azerbaijan",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "President of Azerbaijan"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "President of Azerbaijan",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "President of Azerbaijan"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "President of Azerbaijan"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 4 members",
+      "community_id" : "community_2",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Azerbaijan", "Judicial system", "Judicial system reform", "President of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Judicial system",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Judicial system"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Judicial system",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Judicial system"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Judicial system"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 4 members",
+      "community_id" : "community_2",
+      "node_count" : "4",
+      "edge_count" : "3",
+      "members" : [ "Azerbaijan", "Judicial system", "Judicial system reform", "President of Azerbaijan" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Courts",
+      "chunk id" : "Js2tl9o8"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 2 members",
+      "community_id" : "community_3",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Courts", "Judges" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Judges",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 2 members",
+      "community_id" : "community_3",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Courts", "Judges" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Courts",
+      "chunk id" : "Js2tl9o8"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Courts"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Courts",
+      "chunk id" : "Js2tl9o8"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Courts"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Courts"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 2 members",
+      "community_id" : "community_3",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Courts", "Judges" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Judges",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Judges"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Judges",
+      "chunk id" : "Js2tl9o8",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Judges"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Judges"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 2 members",
+      "community_id" : "community_3",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Courts", "Judges" ]
+    }
+  }
+} ]

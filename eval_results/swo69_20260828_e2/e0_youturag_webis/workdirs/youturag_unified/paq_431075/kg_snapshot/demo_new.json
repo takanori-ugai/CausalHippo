@@ -1,0 +1,815 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ortiz vs. Shamrock 3: The Final Chapter",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mixed martial arts event",
+      "chunk id" : "dG68Ft4e"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ortiz vs. Shamrock 3: The Final Chapter",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ultimate Fighting Championship",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ortiz vs. Shamrock 3: The Final Chapter",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Seminole Hard Rock Hotel and Casino",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Seminole Hard Rock Hotel and Casino",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hollywood, Florida",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ortiz vs. Shamrock 3: The Final Chapter",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Spike TV",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Spike TV",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "United States",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Spike TV",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Canada",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Tito Ortiz",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ortiz vs. Shamrock 3: The Final Chapter",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ken Shamrock",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ortiz vs. Shamrock 3: The Final Chapter",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Tito Ortiz",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "UFC 61",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ken Shamrock",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "UFC 61",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "UFC 61",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ortiz vs. Shamrock 3: The Final Chapter",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "UFC 61",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ultimate Fighting Championship",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ortiz vs. Shamrock 3: The Final Chapter",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "UFC Fight Night 6.5",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Tito Ortiz",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ken Shamrock",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ortiz vs. Shamrock 3: The Final Chapter",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "October 10, 2006",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Canada",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Hollywood, Florida",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ken Shamrock",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "October 10, 2006",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ortiz vs. Shamrock 3: The Final Chapter",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Seminole Hard Rock Hotel and Casino",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Spike TV",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Tito Ortiz",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "UFC 61",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "UFC Fight Night 6.5",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ultimate Fighting Championship",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "United States",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "mixed martial arts event",
+      "chunk id" : "dG68Ft4e"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ortiz vs. Shamrock 3: The Final Chapter",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Ortiz vs. Shamrock 3: The Final Chapter"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ortiz vs. Shamrock 3: The Final Chapter",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Ortiz vs. Shamrock 3: The Final Chapter"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Ortiz vs. Shamrock 3: The Final Chapter"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "UFC 61",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "UFC 61"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "UFC 61",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "UFC 61"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "UFC 61"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ken Shamrock",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Ken Shamrock"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Ken Shamrock",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Ken Shamrock"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Ken Shamrock"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Tito Ortiz",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Tito Ortiz"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Tito Ortiz",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Tito Ortiz"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Tito Ortiz"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Spike TV",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Spike TV"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Spike TV",
+      "chunk id" : "dG68Ft4e",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Spike TV"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Spike TV"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 13 members",
+      "community_id" : "community_1",
+      "node_count" : "13",
+      "edge_count" : "16",
+      "members" : [ "Canada", "Hollywood, Florida", "Ken Shamrock", "October 10, 2006", "Ortiz vs. Shamrock 3: The Final Chapter", "Seminole Hard Rock Hotel and Casino", "Spike TV", "Tito Ortiz", "UFC 61", "UFC Fight Night 6.5", "Ultimate Fighting Championship", "United States", "mixed martial arts event" ]
+    }
+  }
+} ]

@@ -1,0 +1,491 @@
+{
+  "nodes" : [ {
+    "id" : "Umbrella sales",
+    "entity_id" : "Umbrella sales",
+    "entity_type" : "Concept",
+    "description" : "An observed increase in the purchase of umbrellas in stores.",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b"
+  }, {
+    "id" : "Rainy weather",
+    "entity_id" : "Rainy weather",
+    "entity_type" : "Concept",
+    "description" : "A period of wet weather that arrived in the region.",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b"
+  }, {
+    "id" : "Stores",
+    "entity_id" : "Stores",
+    "entity_type" : "Organization",
+    "description" : "Retail establishments that have seen an uptick in umbrella sales.",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b"
+  }, {
+    "id" : "Shoppers",
+    "entity_id" : "Shoppers",
+    "entity_type" : "Person",
+    "description" : "Consumers who are stocking up on items.",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b"
+  }, {
+    "id" : "Marketing campaigns",
+    "entity_id" : "Marketing campaigns",
+    "entity_type" : "Concept",
+    "description" : "Promotional efforts that may be influencing purchases.",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b"
+  }, {
+    "id" : "Suppliers",
+    "entity_id" : "Suppliers",
+    "entity_type" : "Organization",
+    "description" : "Providers who suggest the sales increase is typical for the season.",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b"
+  }, {
+    "id" : "Season",
+    "entity_id" : "Season",
+    "entity_type" : "Concept",
+    "description" : "The time period for which the sales increase is considered typical.",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b"
+  }, {
+    "id" : "New styles",
+    "entity_id" : "New styles",
+    "entity_type" : "Concept",
+    "description" : "Product variations that may contribute to the sales increase.",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b"
+  }, {
+    "id" : "Sales spike",
+    "entity_id" : "Sales spike",
+    "entity_type" : "Concept",
+    "description" : "The notable increase in sales that remains a talking point.",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b"
+  }, {
+    "id" : "Street musician",
+    "entity_id" : "Street musician",
+    "entity_type" : "Person",
+    "description" : "A musician who performed a lively tune on the street.",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303"
+  }, {
+    "id" : "Passersby",
+    "entity_id" : "Passersby",
+    "entity_type" : "Person",
+    "description" : "People walking by the location who reacted to the performance.",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303"
+  }, {
+    "id" : "Coins",
+    "entity_id" : "Coins",
+    "entity_type" : "Concept",
+    "description" : "Currency dropped into the open guitar case by the passersby.",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303"
+  }, {
+    "id" : "Crowd",
+    "entity_id" : "Crowd",
+    "entity_type" : "Person",
+    "description" : "The group of people present at the location.",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303"
+  }, {
+    "id" : "Street",
+    "entity_id" : "Street",
+    "entity_type" : "Location",
+    "description" : "The public thoroughfare where the events took place.",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303"
+  }, {
+    "id" : "Smiles",
+    "entity_id" : "Smiles",
+    "entity_type" : "Concept",
+    "description" : "Expressions of happiness that spread among the crowd.",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303"
+  }, {
+    "id" : "Energy",
+    "entity_id" : "Energy",
+    "entity_type" : "Concept",
+    "description" : "The palpable feeling present on the street.",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303"
+  }, {
+    "id" : "Visible police patrols",
+    "entity_id" : "Visible police patrols",
+    "entity_type" : "Concept",
+    "description" : "A marked increase in the visible presence of police patrols noticed by neighborhood residents.",
+    "source_id" : "5194952b94506d10d930468c3afa370a"
+  }, {
+    "id" : "Violent crime",
+    "entity_id" : "Violent crime",
+    "entity_type" : "Concept",
+    "description" : "A spike in violent criminal activity reported according to local statistics.",
+    "source_id" : "5194952b94506d10d930468c3afa370a"
+  }, {
+    "id" : "Local statistics",
+    "entity_id" : "Local statistics",
+    "entity_type" : "Concept",
+    "description" : "Data sources used to track and report crime trends in the area.",
+    "source_id" : "5194952b94506d10d930468c3afa370a"
+  }, {
+    "id" : "City papers",
+    "entity_id" : "City papers",
+    "entity_type" : "Organization",
+    "description" : "The media outlets that published editorials commenting on local developments.",
+    "source_id" : "5194952b94506d10d930468c3afa370a"
+  }, {
+    "id" : "Community",
+    "entity_id" : "Community",
+    "entity_type" : "Concept",
+    "description" : "The residents and citizens of the neighborhood who are observing and commenting on the trends.",
+    "source_id" : "5194952b94506d10d930468c3afa370a"
+  }, {
+    "id" : "local stores",
+    "entity_id" : "local stores",
+    "entity_type" : "Organization",
+    "description" : "Stores that reported a spike in printer ink sales during the fall.",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb"
+  }, {
+    "id" : "printer ink sales",
+    "entity_id" : "printer ink sales",
+    "entity_type" : "Concept",
+    "description" : "The reported spike in the sale of printer ink.",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb"
+  }, {
+    "id" : "rising school enrollment",
+    "entity_id" : "rising school enrollment",
+    "entity_type" : "Concept",
+    "description" : "The increase in student enrollment observed during the fall.",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb"
+  }, {
+    "id" : "Parents",
+    "entity_id" : "Parents",
+    "entity_type" : "Person",
+    "description" : "Individuals who comment that the back-to-school season increases demand for printing.",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb"
+  }, {
+    "id" : "teachers",
+    "entity_id" : "teachers",
+    "entity_type" : "Person",
+    "description" : "Educators who comment that the back-to-school season increases demand for printing.",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb"
+  }, {
+    "id" : "back-to-school season",
+    "entity_id" : "back-to-school season",
+    "entity_type" : "Event",
+    "description" : "The time period believed to drive up demand for printing.",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb"
+  }, {
+    "id" : "small businesses",
+    "entity_id" : "small businesses",
+    "entity_type" : "Organization",
+    "description" : "Businesses that purchase ink for projects unrelated to school.",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb"
+  }, {
+    "id" : "causal relationship",
+    "entity_id" : "causal relationship",
+    "entity_type" : "Concept",
+    "description" : "The direct link between printer ink sales and school enrollment.",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb"
+  }, {
+    "id" : "Vitamin D",
+    "entity_id" : "Vitamin D",
+    "entity_type" : "Concept",
+    "description" : "A vitamin whose intake is being tracked by health enthusiasts.",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1"
+  }, {
+    "id" : "Bone Strength",
+    "entity_id" : "Bone Strength",
+    "entity_type" : "Concept",
+    "description" : "A physical attribute that is reported during physical check-ups.",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1"
+  }, {
+    "id" : "Health Enthusiasts",
+    "entity_id" : "Health Enthusiasts",
+    "entity_type" : "Concept",
+    "description" : "Individuals who track their vitamin D intake and monitor bone strength.",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1"
+  }, {
+    "id" : "Physical Check-ups",
+    "entity_id" : "Physical Check-ups",
+    "entity_type" : "Event",
+    "description" : "Medical examinations where bone strength reports are obtained.",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1"
+  }, {
+    "id" : "Doctors",
+    "entity_id" : "Doctors",
+    "entity_type" : "Person",
+    "description" : "Medical professionals who caution that multiple variables influence the results.",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1"
+  }, {
+    "id" : "Local Clinics",
+    "entity_id" : "Local Clinics",
+    "entity_type" : "Location",
+    "description" : "Places where the implications of the findings are often discussed.",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1"
+  }, {
+    "id" : "Transport safety officers",
+    "entity_id" : "Transport safety officers",
+    "entity_type" : "Organization",
+    "description" : "Professionals who monitor and notice patterns in transport safety.",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5"
+  }, {
+    "id" : "Increased traffic accidents",
+    "entity_id" : "Increased traffic accidents",
+    "entity_type" : "Concept",
+    "description" : "Periods characterized by a rise in the number of traffic accidents.",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5"
+  }, {
+    "id" : "Streetlight outages",
+    "entity_id" : "Streetlight outages",
+    "entity_type" : "Concept",
+    "description" : "High numbers of instances where streetlights are not functioning.",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5"
+  }, {
+    "id" : "Storms",
+    "entity_id" : "Storms",
+    "entity_type" : "Event",
+    "description" : "Severe weather events that can knock down power lines.",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5"
+  }, {
+    "id" : "Weather",
+    "entity_id" : "Weather",
+    "entity_type" : "Concept",
+    "description" : "The environmental condition suggested to be the confounding variable affecting multiple outcomes.",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5"
+  } ],
+  "edges" : [ {
+    "source" : "Rainy weather",
+    "target" : "Umbrella sales",
+    "weight" : "1.0",
+    "description" : "The arrival of rainy weather coincided with an uptick in umbrella sales.",
+    "keywords" : "Correlation, Trigger, Coincidence",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b",
+    "src_id" : "Rainy weather",
+    "tgt_id" : "Umbrella sales"
+  }, {
+    "source" : "Umbrella sales",
+    "target" : "Shoppers",
+    "weight" : "1.0",
+    "description" : "Shoppers are actively purchasing and stocking up on umbrellas.",
+    "keywords" : "Action, Stocking up",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b",
+    "src_id" : "Shoppers",
+    "tgt_id" : "Umbrella sales"
+  }, {
+    "source" : "Umbrella sales",
+    "target" : "Marketing campaigns",
+    "weight" : "1.0",
+    "description" : "It is uncertain if marketing campaigns are driving the purchases.",
+    "keywords" : "Influence, Driving purchases",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b",
+    "src_id" : "Marketing campaigns",
+    "tgt_id" : "Umbrella sales"
+  }, {
+    "source" : "Suppliers",
+    "target" : "Season",
+    "weight" : "1.0",
+    "description" : "Suppliers suggest that the sales increase is typical for the current season.",
+    "keywords" : "Typical, Timing, Attribution",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b",
+    "src_id" : "Suppliers",
+    "tgt_id" : "Season"
+  }, {
+    "source" : "New styles",
+    "target" : "Sales spike",
+    "weight" : "1.0",
+    "description" : "New styles are mentioned as a potential factor contributing to the sales spike.",
+    "keywords" : "Factor, Contribution",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b",
+    "src_id" : "New styles",
+    "tgt_id" : "Sales spike"
+  }, {
+    "source" : "Sales spike",
+    "target" : "Stores",
+    "weight" : "1.0",
+    "description" : "Stores have observed the notable sales spike.",
+    "keywords" : "Observation, Experience",
+    "source_id" : "e7613aa61e42f13cbdace233670b713b",
+    "src_id" : "Stores",
+    "tgt_id" : "Sales spike"
+  }, {
+    "source" : "Street musician",
+    "target" : "Passersby",
+    "weight" : "1.0",
+    "description" : "The street musician's performance caused the passersby to pause and react.",
+    "keywords" : "Performance, Reaction, Interaction",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303",
+    "src_id" : "Street musician",
+    "tgt_id" : "Passersby"
+  }, {
+    "source" : "Passersby",
+    "target" : "Coins",
+    "weight" : "1.0",
+    "description" : "The passersby dropped coins into the open guitar case.",
+    "keywords" : "Donation, Action",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303",
+    "src_id" : "Passersby",
+    "tgt_id" : "Coins"
+  }, {
+    "source" : "Smiles",
+    "target" : "Crowd",
+    "weight" : "1.0",
+    "description" : "Smiles spread among the crowd, indicating a positive atmosphere.",
+    "keywords" : "Emotion, Spread, Effect",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303",
+    "src_id" : "Smiles",
+    "tgt_id" : "Crowd"
+  }, {
+    "source" : "Crowd",
+    "target" : "Concept",
+    "weight" : "1.0",
+    "description" : "Some members of the crowd started to dance.",
+    "keywords" : "Activity, Participation",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303",
+    "src_id" : "Crowd",
+    "tgt_id" : "Concept"
+  }, {
+    "source" : "Street",
+    "target" : "Energy",
+    "weight" : "1.0",
+    "description" : "The street possessed a palpable energy due to the events.",
+    "keywords" : "Location, Atmosphere, Feeling",
+    "source_id" : "4559777794f3c86625cbfe7f80c96303",
+    "src_id" : "Street",
+    "tgt_id" : "Energy"
+  }, {
+    "source" : "Community",
+    "target" : "Visible police patrols",
+    "weight" : "2.0",
+    "description" : "Some citizens suggest that the visible police patrols and the crime trends may be related.",
+    "keywords" : "Observation, Increase, Suggests relationship, Correlation",
+    "source_id" : "5194952b94506d10d930468c3afa370a<|#|>5194952b94506d10d930468c3afa370a",
+    "src_id" : "Community",
+    "tgt_id" : "Visible police patrols"
+  }, {
+    "source" : "Visible police patrols",
+    "target" : "City papers",
+    "weight" : "1.0",
+    "description" : "The city papers published editorials commenting on the visible police patrols.",
+    "keywords" : "Commented on, Developments",
+    "source_id" : "5194952b94506d10d930468c3afa370a",
+    "src_id" : "City papers",
+    "tgt_id" : "Visible police patrols"
+  }, {
+    "source" : "Visible police patrols",
+    "target" : "Violent crime",
+    "weight" : "1.0",
+    "description" : "The frequency of police patrols appears to match periods with more reported violent crime.",
+    "keywords" : "Matches, Correlation",
+    "source_id" : "5194952b94506d10d930468c3afa370a",
+    "src_id" : "Visible police patrols",
+    "tgt_id" : "Violent crime"
+  }, {
+    "source" : "Local statistics",
+    "target" : "Violent crime",
+    "weight" : "1.0",
+    "description" : "Local statistics indicate a spike in violent crime.",
+    "keywords" : "Shows, Spike",
+    "source_id" : "5194952b94506d10d930468c3afa370a",
+    "src_id" : "Local statistics",
+    "tgt_id" : "Violent crime"
+  }, {
+    "source" : "Violent crime",
+    "target" : "City papers",
+    "weight" : "1.0",
+    "description" : "The city papers published editorials commenting on the spike in violent crime.",
+    "keywords" : "Commented on, Developments",
+    "source_id" : "5194952b94506d10d930468c3afa370a",
+    "src_id" : "City papers",
+    "tgt_id" : "Violent crime"
+  }, {
+    "source" : "printer ink sales",
+    "target" : "rising school enrollment",
+    "weight" : "2.0",
+    "description" : "The evidence suggests that the link between printer ink sales and rising school enrollment is not necessarily causal.",
+    "keywords" : "concurrent, spike, correlation, lack of evidence, causality",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb<|#|>34a5bf2910c7e76f242f7a20ab2852fb",
+    "src_id" : "printer ink sales",
+    "tgt_id" : "rising school enrollment"
+  }, {
+    "source" : "printer ink sales",
+    "target" : "small businesses",
+    "weight" : "1.0",
+    "description" : "Purchase data shows that ink is sold to small businesses for projects unrelated to school.",
+    "keywords" : "sold to, purchase data, unrelated projects",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb",
+    "src_id" : "printer ink sales",
+    "tgt_id" : "small businesses"
+  }, {
+    "source" : "back-to-school season",
+    "target" : "printing",
+    "weight" : "1.0",
+    "description" : "The back-to-school season is believed to increase the demand for printing.",
+    "keywords" : "drives demand, increases",
+    "source_id" : "34a5bf2910c7e76f242f7a20ab2852fb",
+    "src_id" : "back-to-school season",
+    "tgt_id" : "printing"
+  }, {
+    "source" : "Health Enthusiasts",
+    "target" : "Vitamin D",
+    "weight" : "1.0",
+    "description" : "Health enthusiasts are tracking their vitamin D intake.",
+    "keywords" : "Tracking, Intake",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1",
+    "src_id" : "Health Enthusiasts",
+    "tgt_id" : "Vitamin D"
+  }, {
+    "source" : "Vitamin D",
+    "target" : "Bone Strength",
+    "weight" : "1.0",
+    "description" : "There is an observed overlap in timing between increased vitamin D supplements and positive reports of bone strength.",
+    "keywords" : "Correlation, Supplements",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1",
+    "src_id" : "Vitamin D",
+    "tgt_id" : "Bone Strength"
+  }, {
+    "source" : "Doctors",
+    "target" : "Variables",
+    "weight" : "1.0",
+    "description" : "Doctors warn that many variables play a role in the observed results.",
+    "keywords" : "Caution, Influence",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1",
+    "src_id" : "Doctors",
+    "tgt_id" : "Variables"
+  }, {
+    "source" : "Implications",
+    "target" : "Local Clinics",
+    "weight" : "1.0",
+    "description" : "The implications of the findings are often discussed at local clinics.",
+    "keywords" : "Discussion, Location",
+    "source_id" : "0cb03c7605138f4446f4d286ccf344a1",
+    "src_id" : "Implications",
+    "tgt_id" : "Local Clinics"
+  }, {
+    "source" : "Increased traffic accidents",
+    "target" : "Streetlight outages",
+    "weight" : "1.0",
+    "description" : "The occurrence of increased traffic accidents was observed to overlap with high numbers of streetlight outages.",
+    "keywords" : "Overlap, Correlation",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5",
+    "src_id" : "Increased traffic accidents",
+    "tgt_id" : "Streetlight outages"
+  }, {
+    "source" : "Increased traffic accidents",
+    "target" : "Weather",
+    "weight" : "1.0",
+    "description" : "Weather is suggested to be the confounding variable that affects increased traffic accidents.",
+    "keywords" : "Confounding variable, Affect",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5",
+    "src_id" : "Weather",
+    "tgt_id" : "Increased traffic accidents"
+  }, {
+    "source" : "Streetlight outages",
+    "target" : "Storms",
+    "weight" : "1.0",
+    "description" : "Storms can cause streetlight outages by knocking down power lines.",
+    "keywords" : "Cause, Power failure",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5",
+    "src_id" : "Storms",
+    "tgt_id" : "Streetlight outages"
+  }, {
+    "source" : "Streetlight outages",
+    "target" : "Weather",
+    "weight" : "1.0",
+    "description" : "Weather is suggested to be the confounding variable that affects streetlight outages.",
+    "keywords" : "Confounding variable, Affect",
+    "source_id" : "e30b38f1d94a6a409bedf8ddaa97b9a5",
+    "src_id" : "Weather",
+    "tgt_id" : "Streetlight outages"
+  } ],
+  "metadata" : {
+    "nodeCount" : 40,
+    "edgeCount" : 27
+  }
+}

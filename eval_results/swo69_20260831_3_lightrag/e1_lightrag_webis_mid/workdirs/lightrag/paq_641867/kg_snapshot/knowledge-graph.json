@@ -1,0 +1,83 @@
+{
+  "nodes" : [ {
+    "id" : "Wood",
+    "entity_id" : "Wood",
+    "entity_type" : "Concept",
+    "description" : "The primary material used for constructing furniture, noted for its density, toughness, and high content of oils and resins.",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a"
+  }, {
+    "id" : "Chinese furniture",
+    "entity_id" : "Chinese furniture",
+    "entity_type" : "Concept",
+    "description" : "A category of furniture originating from China, known for its specific construction methods and durable properties.",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a"
+  }, {
+    "id" : "hongmu furniture (紅木家具)",
+    "entity_id" : "hongmu furniture (紅木家具)",
+    "entity_type" : "Concept",
+    "description" : "A specific market term for furniture and carving made from certain woods, literally translating to 'rosewood furniture'.",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a"
+  }, {
+    "id" : "Chinese industry standards",
+    "entity_id" : "Chinese industry standards",
+    "entity_type" : "Organization",
+    "description" : "The standards used to categorize and group woods into eight distinct classes.",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a"
+  }, {
+    "id" : "Species",
+    "entity_id" : "Species",
+    "entity_type" : "Concept",
+    "description" : "The biological source of the wood, which is currently facing threat or endangerment due to overlogging.",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a"
+  } ],
+  "edges" : [ {
+    "source" : "Wood",
+    "target" : "Chinese furniture",
+    "weight" : "1.0",
+    "description" : "The wood possesses properties such as dimensional stability, hardwearing nature, and resistance to rot and insects.",
+    "keywords" : "Properties, Stability, Resistance",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a",
+    "src_id" : "Wood",
+    "tgt_id" : "Chinese furniture"
+  }, {
+    "source" : "Wood",
+    "target" : "joinery and doweling",
+    "weight" : "1.0",
+    "description" : "The density and toughness of the wood allow furniture to be constructed using only joinery and doweling, eliminating the need for glue and nails.",
+    "keywords" : "Construction, Method",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a",
+    "src_id" : "Wood",
+    "tgt_id" : "joinery and doweling"
+  }, {
+    "source" : "Wood",
+    "target" : "Chinese industry standards",
+    "weight" : "1.0",
+    "description" : "The Chinese industry standards group the woods into eight distinct classes.",
+    "keywords" : "Classification, Grouping",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a",
+    "src_id" : "Chinese industry standards",
+    "tgt_id" : "Wood"
+  }, {
+    "source" : "Wood",
+    "target" : "hongmu furniture (紅木家具)",
+    "weight" : "1.0",
+    "description" : "Furniture and carving made from these woods are typically referred to in the market as 'hongmu furniture'.",
+    "keywords" : "Material, Product",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a",
+    "src_id" : "Wood",
+    "tgt_id" : "hongmu furniture (紅木家具)"
+  }, {
+    "source" : "Species",
+    "target" : "overlogging",
+    "weight" : "1.0",
+    "description" : "The species are threatened or endangered due to overlogging for the production of this furniture.",
+    "keywords" : "Threat, Cause",
+    "source_id" : "1958f28bc7d6638856a297fbf017187a",
+    "src_id" : "Species",
+    "tgt_id" : "overlogging"
+  } ],
+  "metadata" : {
+    "nodeCount" : 5,
+    "edgeCount" : 5
+  }
+}

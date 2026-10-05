@@ -1,0 +1,4441 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Officials",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "invested_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation infrastructure",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "traffic congestion",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "altered_over",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "past year",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Urban planners",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "examines",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "new policies",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "new policies",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "traffic congestion",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Commuters",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation infrastructure",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Officials",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "new policies",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Librarians",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "children's book loans",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Librarians",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "playground visits",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "children's book loans",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "school holidays",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "playground visits",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "school holidays",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "time_period"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "families",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "playgrounds",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "families",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "children's book loans",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kids",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reading",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kids",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "outdoor play",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "school holidays",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reading",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "school holidays",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "outdoor play",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "correlation",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shared calendar event",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reading",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "children's book loans",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "outdoor play",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "playground visits",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "educators",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sports participation",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "educators",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "academic performance",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sports",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "belongs_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schools",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schools",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "athletics",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "athletics",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sports",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sports participation",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "academic performance",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "academic performance",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sports participation",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Residents",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Annual holiday parade",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Residents",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Streets",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Floats",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Annual holiday parade",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Marching bands",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Annual holiday parade",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Attendees",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Annual holiday parade",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Emergency road closure",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Streets",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "location"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Authorities",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Emergency road closure",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Water pipe burst",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Emergency road closure",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Annual holiday parade",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Emergency road closure",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local bakery promotions",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire drill alarms",
+      "chunk id" : "EXs0u9C5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire drill alarms",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "business district",
+      "chunk id" : "EXs0u9C5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "office workers",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "business district",
+      "chunk id" : "EXs0u9C5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "office workers",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fresh bread",
+      "chunk id" : "EXs0u9C5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fresh bread",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire drill alarms",
+      "chunk id" : "EXs0u9C5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local bakery promotions",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "promotional campaigns",
+      "chunk id" : "EXs0u9C5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire drill alarms",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "safety drills",
+      "chunk id" : "EXs0u9C5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "promotional campaigns",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "safety drills",
+      "chunk id" : "EXs0u9C5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pastry deals",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire safety protocols",
+      "chunk id" : "EXs0u9C5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pastry deals",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local bakery promotions",
+      "chunk id" : "EXs0u9C5"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "frost",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "located_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lawns",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cold weather",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "frost",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cold weather",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "frost",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "gardeners",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "icy coating",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighbors",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "windshields",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "frost",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seasonal changes",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cold weather",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seasonal changes",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sparkling grass",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "early mornings",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "chilly air",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "early mornings",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "autumn",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seasonal changes",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "gardeners",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "adjusting routines",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighbors",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "participates_in",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "scraping windshields",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pattern",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seasonal changes",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "icy coating",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "frost",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sparkling grass",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "object",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "chilly air",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "natural_phenomenon",
+      "chunk id" : "AEQrkXg1"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "adjusting routines",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "11",
+      "members" : [ "adjusting routines", "autumn", "cold weather", "frost", "gardeners", "icy coating", "lawns", "pattern", "residents", "seasonal changes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "autumn",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "11",
+      "members" : [ "adjusting routines", "autumn", "cold weather", "frost", "gardeners", "icy coating", "lawns", "pattern", "residents", "seasonal changes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cold weather",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "11",
+      "members" : [ "adjusting routines", "autumn", "cold weather", "frost", "gardeners", "icy coating", "lawns", "pattern", "residents", "seasonal changes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "frost",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "11",
+      "members" : [ "adjusting routines", "autumn", "cold weather", "frost", "gardeners", "icy coating", "lawns", "pattern", "residents", "seasonal changes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "gardeners",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "11",
+      "members" : [ "adjusting routines", "autumn", "cold weather", "frost", "gardeners", "icy coating", "lawns", "pattern", "residents", "seasonal changes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "icy coating",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "11",
+      "members" : [ "adjusting routines", "autumn", "cold weather", "frost", "gardeners", "icy coating", "lawns", "pattern", "residents", "seasonal changes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "lawns",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "11",
+      "members" : [ "adjusting routines", "autumn", "cold weather", "frost", "gardeners", "icy coating", "lawns", "pattern", "residents", "seasonal changes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pattern",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "11",
+      "members" : [ "adjusting routines", "autumn", "cold weather", "frost", "gardeners", "icy coating", "lawns", "pattern", "residents", "seasonal changes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "residents",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "11",
+      "members" : [ "adjusting routines", "autumn", "cold weather", "frost", "gardeners", "icy coating", "lawns", "pattern", "residents", "seasonal changes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seasonal changes",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "11",
+      "members" : [ "adjusting routines", "autumn", "cold weather", "frost", "gardeners", "icy coating", "lawns", "pattern", "residents", "seasonal changes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "frost",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "frost"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "frost",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "frost"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "frost"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "11",
+      "members" : [ "adjusting routines", "autumn", "cold weather", "frost", "gardeners", "icy coating", "lawns", "pattern", "residents", "seasonal changes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seasonal changes",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "seasonal changes"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "seasonal changes",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "seasonal changes"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "seasonal changes"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "11",
+      "members" : [ "adjusting routines", "autumn", "cold weather", "frost", "gardeners", "icy coating", "lawns", "pattern", "residents", "seasonal changes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cold weather",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "cold weather"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "cold weather",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "cold weather"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "cold weather"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "11",
+      "members" : [ "adjusting routines", "autumn", "cold weather", "frost", "gardeners", "icy coating", "lawns", "pattern", "residents", "seasonal changes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "icy coating",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "icy coating"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "icy coating",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "icy coating"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "icy coating"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "11",
+      "members" : [ "adjusting routines", "autumn", "cold weather", "frost", "gardeners", "icy coating", "lawns", "pattern", "residents", "seasonal changes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "gardeners",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "gardeners"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "gardeners",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "gardeners"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "gardeners"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 10 members",
+      "community_id" : "community_1",
+      "node_count" : "10",
+      "edge_count" : "11",
+      "members" : [ "adjusting routines", "autumn", "cold weather", "frost", "gardeners", "icy coating", "lawns", "pattern", "residents", "seasonal changes" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Annual holiday parade",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "Annual holiday parade", "Attendees", "Authorities", "Emergency road closure", "Floats", "Marching bands", "Residents", "Streets", "Water pipe burst" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Attendees",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "Annual holiday parade", "Attendees", "Authorities", "Emergency road closure", "Floats", "Marching bands", "Residents", "Streets", "Water pipe burst" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Authorities",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "Annual holiday parade", "Attendees", "Authorities", "Emergency road closure", "Floats", "Marching bands", "Residents", "Streets", "Water pipe burst" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Emergency road closure",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "Annual holiday parade", "Attendees", "Authorities", "Emergency road closure", "Floats", "Marching bands", "Residents", "Streets", "Water pipe burst" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Floats",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "Annual holiday parade", "Attendees", "Authorities", "Emergency road closure", "Floats", "Marching bands", "Residents", "Streets", "Water pipe burst" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Marching bands",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "Annual holiday parade", "Attendees", "Authorities", "Emergency road closure", "Floats", "Marching bands", "Residents", "Streets", "Water pipe burst" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Residents",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "Annual holiday parade", "Attendees", "Authorities", "Emergency road closure", "Floats", "Marching bands", "Residents", "Streets", "Water pipe burst" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Streets",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "Annual holiday parade", "Attendees", "Authorities", "Emergency road closure", "Floats", "Marching bands", "Residents", "Streets", "Water pipe burst" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Water pipe burst",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "Annual holiday parade", "Attendees", "Authorities", "Emergency road closure", "Floats", "Marching bands", "Residents", "Streets", "Water pipe burst" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Annual holiday parade",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Annual holiday parade"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Annual holiday parade",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Annual holiday parade"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Annual holiday parade"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "Annual holiday parade", "Attendees", "Authorities", "Emergency road closure", "Floats", "Marching bands", "Residents", "Streets", "Water pipe burst" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Emergency road closure",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Emergency road closure"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Emergency road closure",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Emergency road closure"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Emergency road closure"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "Annual holiday parade", "Attendees", "Authorities", "Emergency road closure", "Floats", "Marching bands", "Residents", "Streets", "Water pipe burst" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Streets",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Streets"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Streets",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Streets"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Streets"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "Annual holiday parade", "Attendees", "Authorities", "Emergency road closure", "Floats", "Marching bands", "Residents", "Streets", "Water pipe burst" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Residents",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Residents"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Residents",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Residents"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Residents"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "Annual holiday parade", "Attendees", "Authorities", "Emergency road closure", "Floats", "Marching bands", "Residents", "Streets", "Water pipe burst" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Water pipe burst",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Water pipe burst"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Water pipe burst",
+      "chunk id" : "N-JUHHCt",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Water pipe burst"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Water pipe burst"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 9 members",
+      "community_id" : "community_2",
+      "node_count" : "9",
+      "edge_count" : "9",
+      "members" : [ "Annual holiday parade", "Attendees", "Authorities", "Emergency road closure", "Floats", "Marching bands", "Residents", "Streets", "Water pipe burst" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Librarians",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Librarians", "children's book loans", "families", "kids", "outdoor play", "playground visits", "playgrounds", "reading", "school holidays" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "children's book loans",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Librarians", "children's book loans", "families", "kids", "outdoor play", "playground visits", "playgrounds", "reading", "school holidays" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "families",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Librarians", "children's book loans", "families", "kids", "outdoor play", "playground visits", "playgrounds", "reading", "school holidays" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "kids",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Librarians", "children's book loans", "families", "kids", "outdoor play", "playground visits", "playgrounds", "reading", "school holidays" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "outdoor play",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Librarians", "children's book loans", "families", "kids", "outdoor play", "playground visits", "playgrounds", "reading", "school holidays" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "playground visits",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Librarians", "children's book loans", "families", "kids", "outdoor play", "playground visits", "playgrounds", "reading", "school holidays" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "playgrounds",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "location"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Librarians", "children's book loans", "families", "kids", "outdoor play", "playground visits", "playgrounds", "reading", "school holidays" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reading",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Librarians", "children's book loans", "families", "kids", "outdoor play", "playground visits", "playgrounds", "reading", "school holidays" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "school holidays",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Librarians", "children's book loans", "families", "kids", "outdoor play", "playground visits", "playgrounds", "reading", "school holidays" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "children's book loans",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "children's book loans"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "children's book loans",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "children's book loans"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "children's book loans"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Librarians", "children's book loans", "families", "kids", "outdoor play", "playground visits", "playgrounds", "reading", "school holidays" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "school holidays",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "school holidays"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "school holidays",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "school holidays"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "school holidays"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Librarians", "children's book loans", "families", "kids", "outdoor play", "playground visits", "playgrounds", "reading", "school holidays" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "playground visits",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "playground visits"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "playground visits",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "playground visits"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "playground visits"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Librarians", "children's book loans", "families", "kids", "outdoor play", "playground visits", "playgrounds", "reading", "school holidays" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "outdoor play",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "outdoor play"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "outdoor play",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "outdoor play"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "outdoor play"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Librarians", "children's book loans", "families", "kids", "outdoor play", "playground visits", "playgrounds", "reading", "school holidays" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reading",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "reading"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "reading",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "reading"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "reading"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 9 members",
+      "community_id" : "community_3",
+      "node_count" : "9",
+      "edge_count" : "12",
+      "members" : [ "Librarians", "children's book loans", "families", "kids", "outdoor play", "playground visits", "playgrounds", "reading", "school holidays" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "business district",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 9 members",
+      "community_id" : "community_4",
+      "node_count" : "9",
+      "edge_count" : "10",
+      "members" : [ "business district", "fire drill alarms", "fire safety protocols", "fresh bread", "local bakery promotions", "office workers", "pastry deals", "promotional campaigns", "safety drills" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire drill alarms",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 9 members",
+      "community_id" : "community_4",
+      "node_count" : "9",
+      "edge_count" : "10",
+      "members" : [ "business district", "fire drill alarms", "fire safety protocols", "fresh bread", "local bakery promotions", "office workers", "pastry deals", "promotional campaigns", "safety drills" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire safety protocols",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 9 members",
+      "community_id" : "community_4",
+      "node_count" : "9",
+      "edge_count" : "10",
+      "members" : [ "business district", "fire drill alarms", "fire safety protocols", "fresh bread", "local bakery promotions", "office workers", "pastry deals", "promotional campaigns", "safety drills" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fresh bread",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 9 members",
+      "community_id" : "community_4",
+      "node_count" : "9",
+      "edge_count" : "10",
+      "members" : [ "business district", "fire drill alarms", "fire safety protocols", "fresh bread", "local bakery promotions", "office workers", "pastry deals", "promotional campaigns", "safety drills" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local bakery promotions",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 9 members",
+      "community_id" : "community_4",
+      "node_count" : "9",
+      "edge_count" : "10",
+      "members" : [ "business district", "fire drill alarms", "fire safety protocols", "fresh bread", "local bakery promotions", "office workers", "pastry deals", "promotional campaigns", "safety drills" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "office workers",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 9 members",
+      "community_id" : "community_4",
+      "node_count" : "9",
+      "edge_count" : "10",
+      "members" : [ "business district", "fire drill alarms", "fire safety protocols", "fresh bread", "local bakery promotions", "office workers", "pastry deals", "promotional campaigns", "safety drills" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "pastry deals",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 9 members",
+      "community_id" : "community_4",
+      "node_count" : "9",
+      "edge_count" : "10",
+      "members" : [ "business district", "fire drill alarms", "fire safety protocols", "fresh bread", "local bakery promotions", "office workers", "pastry deals", "promotional campaigns", "safety drills" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "promotional campaigns",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 9 members",
+      "community_id" : "community_4",
+      "node_count" : "9",
+      "edge_count" : "10",
+      "members" : [ "business district", "fire drill alarms", "fire safety protocols", "fresh bread", "local bakery promotions", "office workers", "pastry deals", "promotional campaigns", "safety drills" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "safety drills",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 9 members",
+      "community_id" : "community_4",
+      "node_count" : "9",
+      "edge_count" : "10",
+      "members" : [ "business district", "fire drill alarms", "fire safety protocols", "fresh bread", "local bakery promotions", "office workers", "pastry deals", "promotional campaigns", "safety drills" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire drill alarms",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "fire drill alarms"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fire drill alarms",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "fire drill alarms"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "fire drill alarms"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 9 members",
+      "community_id" : "community_4",
+      "node_count" : "9",
+      "edge_count" : "10",
+      "members" : [ "business district", "fire drill alarms", "fire safety protocols", "fresh bread", "local bakery promotions", "office workers", "pastry deals", "promotional campaigns", "safety drills" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local bakery promotions",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local bakery promotions"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "local bakery promotions",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local bakery promotions"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "local bakery promotions"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 9 members",
+      "community_id" : "community_4",
+      "node_count" : "9",
+      "edge_count" : "10",
+      "members" : [ "business district", "fire drill alarms", "fire safety protocols", "fresh bread", "local bakery promotions", "office workers", "pastry deals", "promotional campaigns", "safety drills" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "office workers",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "office workers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "office workers",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "office workers"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "office workers"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 9 members",
+      "community_id" : "community_4",
+      "node_count" : "9",
+      "edge_count" : "10",
+      "members" : [ "business district", "fire drill alarms", "fire safety protocols", "fresh bread", "local bakery promotions", "office workers", "pastry deals", "promotional campaigns", "safety drills" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fresh bread",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "fresh bread"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "fresh bread",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "fresh bread"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "fresh bread"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 9 members",
+      "community_id" : "community_4",
+      "node_count" : "9",
+      "edge_count" : "10",
+      "members" : [ "business district", "fire drill alarms", "fire safety protocols", "fresh bread", "local bakery promotions", "office workers", "pastry deals", "promotional campaigns", "safety drills" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "business district",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "business district"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "business district",
+      "chunk id" : "EXs0u9C5"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "business district"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "business district"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 9 members",
+      "community_id" : "community_4",
+      "node_count" : "9",
+      "edge_count" : "10",
+      "members" : [ "business district", "fire drill alarms", "fire safety protocols", "fresh bread", "local bakery promotions", "office workers", "pastry deals", "promotional campaigns", "safety drills" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Commuters",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Commuters", "Officials", "Urban planners", "new policies", "past year", "public transportation infrastructure", "traffic congestion" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Officials",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Commuters", "Officials", "Urban planners", "new policies", "past year", "public transportation infrastructure", "traffic congestion" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Urban planners",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Commuters", "Officials", "Urban planners", "new policies", "past year", "public transportation infrastructure", "traffic congestion" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "new policies",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Commuters", "Officials", "Urban planners", "new policies", "past year", "public transportation infrastructure", "traffic congestion" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "past year",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "time_period"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Commuters", "Officials", "Urban planners", "new policies", "past year", "public transportation infrastructure", "traffic congestion" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation infrastructure",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Commuters", "Officials", "Urban planners", "new policies", "past year", "public transportation infrastructure", "traffic congestion" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "traffic congestion",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Commuters", "Officials", "Urban planners", "new policies", "past year", "public transportation infrastructure", "traffic congestion" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "new policies",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "new policies"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "new policies",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "new policies"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "new policies"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Commuters", "Officials", "Urban planners", "new policies", "past year", "public transportation infrastructure", "traffic congestion" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "traffic congestion",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "traffic congestion"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "traffic congestion",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "natural_phenomenon"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "traffic congestion"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "traffic congestion"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Commuters", "Officials", "Urban planners", "new policies", "past year", "public transportation infrastructure", "traffic congestion" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation infrastructure",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "public transportation infrastructure"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "public transportation infrastructure",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "public transportation infrastructure"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "public transportation infrastructure"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Commuters", "Officials", "Urban planners", "new policies", "past year", "public transportation infrastructure", "traffic congestion" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Officials",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Officials"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Officials",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Officials"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Officials"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Commuters", "Officials", "Urban planners", "new policies", "past year", "public transportation infrastructure", "traffic congestion" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Urban planners",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Urban planners"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Urban planners",
+      "chunk id" : "QfZVfR_K",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Urban planners"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Urban planners"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 7 members",
+      "community_id" : "community_5",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Commuters", "Officials", "Urban planners", "new policies", "past year", "public transportation infrastructure", "traffic congestion" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "chilly air",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "chilly air", "early mornings", "natural_phenomenon", "object", "sparkling grass" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "early mornings",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "chilly air", "early mornings", "natural_phenomenon", "object", "sparkling grass" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "natural_phenomenon",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "chilly air", "early mornings", "natural_phenomenon", "object", "sparkling grass" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "object",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "chilly air", "early mornings", "natural_phenomenon", "object", "sparkling grass" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sparkling grass",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "chilly air", "early mornings", "natural_phenomenon", "object", "sparkling grass" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "chilly air",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "chilly air"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "chilly air",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "chilly air"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "chilly air"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "chilly air", "early mornings", "natural_phenomenon", "object", "sparkling grass" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sparkling grass",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sparkling grass"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sparkling grass",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sparkling grass"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sparkling grass"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "chilly air", "early mornings", "natural_phenomenon", "object", "sparkling grass" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "early mornings",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "early mornings"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "early mornings",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "early mornings"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "early mornings"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "chilly air", "early mornings", "natural_phenomenon", "object", "sparkling grass" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "natural_phenomenon",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "natural_phenomenon",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "natural_phenomenon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "natural_phenomenon"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "chilly air", "early mornings", "natural_phenomenon", "object", "sparkling grass" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "object",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "object",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "object"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_6",
+      "description" : "Community of 5 members",
+      "community_id" : "community_6",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "chilly air", "early mornings", "natural_phenomenon", "object", "sparkling grass" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "athletics",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "athletics", "schools", "sports", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schools",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "athletics", "schools", "sports", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sports",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "athletics", "schools", "sports", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "athletics", "schools", "sports", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "athletics",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "athletics"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "athletics",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "athletics"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "athletics"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "athletics", "schools", "sports", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sports",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sports"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sports",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sports"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sports"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "athletics", "schools", "sports", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "students"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "students",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "students"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "students"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "athletics", "schools", "sports", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schools",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "schools"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "schools",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "schools"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "schools"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_7",
+      "description" : "Community of 4 members",
+      "community_id" : "community_7",
+      "node_count" : "4",
+      "edge_count" : "4",
+      "members" : [ "athletics", "schools", "sports", "students" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "academic performance",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "4",
+      "members" : [ "academic performance", "educators", "sports participation" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "educators",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "4",
+      "members" : [ "academic performance", "educators", "sports participation" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sports participation",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "4",
+      "members" : [ "academic performance", "educators", "sports participation" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "academic performance",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "academic performance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "academic performance",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "academic performance"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "academic performance"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "4",
+      "members" : [ "academic performance", "educators", "sports participation" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sports participation",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sports participation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "sports participation",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sports participation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "sports participation"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "4",
+      "members" : [ "academic performance", "educators", "sports participation" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "educators",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "educators"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "educators",
+      "chunk id" : "oUpu6ImA",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "educators"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "educators"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_8",
+      "description" : "Community of 3 members",
+      "community_id" : "community_8",
+      "node_count" : "3",
+      "edge_count" : "4",
+      "members" : [ "academic performance", "educators", "sports participation" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighbors",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "neighbors", "scraping windshields", "windshields" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "scraping windshields",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "neighbors", "scraping windshields", "windshields" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "windshields",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "neighbors", "scraping windshields", "windshields" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighbors",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "neighbors"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "neighbors",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "neighbors"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "neighbors"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "neighbors", "scraping windshields", "windshields" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "scraping windshields",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "scraping windshields"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "scraping windshields",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "scraping windshields"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "scraping windshields"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "neighbors", "scraping windshields", "windshields" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "windshields",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "windshields"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "windshields",
+      "chunk id" : "AEQrkXg1"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "windshields"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "windshields"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_9",
+      "description" : "Community of 3 members",
+      "community_id" : "community_9",
+      "node_count" : "3",
+      "edge_count" : "2",
+      "members" : [ "neighbors", "scraping windshields", "windshields" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "correlation",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "correlation", "shared calendar event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shared calendar event",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "correlation", "shared calendar event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "correlation",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "correlation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "correlation",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "correlation"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "correlation"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "correlation", "shared calendar event" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shared calendar event",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "shared calendar event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "shared calendar event",
+      "chunk id" : "60uJrpy0",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "shared calendar event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "shared calendar event"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_10",
+      "description" : "Community of 2 members",
+      "community_id" : "community_10",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "correlation", "shared calendar event" ]
+    }
+  }
+} ]

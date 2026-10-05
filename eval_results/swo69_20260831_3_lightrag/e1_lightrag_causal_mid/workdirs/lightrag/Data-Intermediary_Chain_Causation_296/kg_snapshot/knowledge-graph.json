@@ -1,0 +1,473 @@
+{
+  "nodes" : [ {
+    "id" : "Officials",
+    "entity_id" : "Officials",
+    "entity_type" : "Organization",
+    "description" : "The governing body responsible for investing heavily in public transportation infrastructure.",
+    "source_id" : "1be868e1658b5aef14eca977283ac020"
+  }, {
+    "id" : "Public transportation infrastructure",
+    "entity_id" : "Public transportation infrastructure",
+    "entity_type" : "Concept",
+    "description" : "The system that received heavy investment from officials for improvement.",
+    "source_id" : "1be868e1658b5aef14eca977283ac020"
+  }, {
+    "id" : "Traffic congestion",
+    "entity_id" : "Traffic congestion",
+    "entity_type" : "Concept",
+    "description" : "Patterns of traffic that have altered over the past year.",
+    "source_id" : "1be868e1658b5aef14eca977283ac020"
+  }, {
+    "id" : "Commuter feedback",
+    "entity_id" : "Commuter feedback",
+    "entity_type" : "Concept",
+    "description" : "Feedback provided by commuters, which has been noted as mixed.",
+    "source_id" : "1be868e1658b5aef14eca977283ac020"
+  }, {
+    "id" : "Urban planners",
+    "entity_id" : "Urban planners",
+    "entity_type" : "Organization",
+    "description" : "Professionals who are examining the effects of new policies.",
+    "source_id" : "1be868e1658b5aef14eca977283ac020"
+  }, {
+    "id" : "New policies",
+    "entity_id" : "New policies",
+    "entity_type" : "Concept",
+    "description" : "Policies whose effects are currently being examined by urban planners.",
+    "source_id" : "1be868e1658b5aef14eca977283ac020"
+  }, {
+    "id" : "Children's book loans",
+    "entity_id" : "Children's book loans",
+    "entity_type" : "Concept",
+    "description" : "The increase in borrowing books for children.",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2"
+  }, {
+    "id" : "Playground visits",
+    "entity_id" : "Playground visits",
+    "entity_type" : "Concept",
+    "description" : "The increase in visits to playgrounds.",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2"
+  }, {
+    "id" : "School holidays",
+    "entity_id" : "School holidays",
+    "entity_type" : "Event",
+    "description" : "A period of time when schools are closed.",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2"
+  }, {
+    "id" : "Free time",
+    "entity_id" : "Free time",
+    "entity_type" : "Concept",
+    "description" : "The increased availability of time for children.",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2"
+  }, {
+    "id" : "Reading",
+    "entity_id" : "Reading",
+    "entity_type" : "Concept",
+    "description" : "The activity of reading.",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2"
+  }, {
+    "id" : "Outdoor play",
+    "entity_id" : "Outdoor play",
+    "entity_type" : "Concept",
+    "description" : "Engaging in play outside.",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2"
+  }, {
+    "id" : "Educators",
+    "entity_id" : "Educators",
+    "entity_type" : "Concept",
+    "description" : "Individuals who observe patterns regarding student participation in sports and academic achievement.",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1"
+  }, {
+    "id" : "Sports participation",
+    "entity_id" : "Sports participation",
+    "entity_type" : "Concept",
+    "description" : "The act of students engaging in sports activities.",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1"
+  }, {
+    "id" : "Students",
+    "entity_id" : "Students",
+    "entity_type" : "Person",
+    "description" : "Individuals who are enrolled in schools.",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1"
+  }, {
+    "id" : "Academic performance",
+    "entity_id" : "Academic performance",
+    "entity_type" : "Concept",
+    "description" : "The level of academic achievement demonstrated by students.",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1"
+  }, {
+    "id" : "Schools",
+    "entity_id" : "Schools",
+    "entity_type" : "Organization",
+    "description" : "Institutions responsible for educating students and promoting activities.",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1"
+  }, {
+    "id" : "Athletics",
+    "entity_id" : "Athletics",
+    "entity_type" : "Concept",
+    "description" : "Organized physical sports activities promoted by schools.",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1"
+  }, {
+    "id" : "Residents",
+    "entity_id" : "Residents",
+    "entity_type" : "Person",
+    "description" : "The people who lined the streets for the annual holiday parade.",
+    "source_id" : "e2f6afb6f620f0cb6150fcbd5327a183"
+  }, {
+    "id" : "Annual holiday parade",
+    "entity_id" : "Annual holiday parade",
+    "entity_type" : "Event",
+    "description" : "A yearly celebration involving floats and marching bands.",
+    "source_id" : "e2f6afb6f620f0cb6150fcbd5327a183"
+  }, {
+    "id" : "Emergency road closure",
+    "entity_id" : "Emergency road closure",
+    "entity_type" : "Event",
+    "description" : "A sudden announcement of a road closure nearby.",
+    "source_id" : "e2f6afb6f620f0cb6150fcbd5327a183"
+  }, {
+    "id" : "Authorities",
+    "entity_id" : "Authorities",
+    "entity_type" : "Organization",
+    "description" : "The group responsible for explaining the cause of the road closure.",
+    "source_id" : "e2f6afb6f620f0cb6150fcbd5327a183"
+  }, {
+    "id" : "Water pipe burst",
+    "entity_id" : "Water pipe burst",
+    "entity_type" : "Concept",
+    "description" : "The unrelated incident that caused the road closure.",
+    "source_id" : "e2f6afb6f620f0cb6150fcbd5327a183"
+  }, {
+    "id" : "Local bakery promotions",
+    "entity_id" : "Local bakery promotions",
+    "entity_type" : "Concept",
+    "description" : "Promotions offered by local bakeries.",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238"
+  }, {
+    "id" : "Scheduled fire drill alarms",
+    "entity_id" : "Scheduled fire drill alarms",
+    "entity_type" : "Event",
+    "description" : "Alarms that are scheduled to occur in the business district.",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238"
+  }, {
+    "id" : "Business district",
+    "entity_id" : "Business district",
+    "entity_type" : "Location",
+    "description" : "The area where the promotions and alarms take place.",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238"
+  }, {
+    "id" : "Office workers",
+    "entity_id" : "Office workers",
+    "entity_type" : "Person",
+    "description" : "Workers who joke about the connection between bread smell and alarms.",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238"
+  }, {
+    "id" : "Promotional campaigns",
+    "entity_id" : "Promotional campaigns",
+    "entity_type" : "Concept",
+    "description" : "Marketing efforts related to bakery goods.",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238"
+  }, {
+    "id" : "Safety drills",
+    "entity_id" : "Safety drills",
+    "entity_type" : "Concept",
+    "description" : "Protocols designed for fire safety.",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238"
+  }, {
+    "id" : "Fire safety protocols",
+    "entity_id" : "Fire safety protocols",
+    "entity_type" : "Concept",
+    "description" : "Established procedures for ensuring fire safety.",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238"
+  }, {
+    "id" : "Autumn",
+    "entity_id" : "Autumn",
+    "entity_type" : "Concept",
+    "description" : "The season that deepened, leading to observed changes.",
+    "source_id" : "597481351b30348f1a75b099469c1476"
+  }, {
+    "id" : "Cold weather",
+    "entity_id" : "Cold weather",
+    "entity_type" : "Concept",
+    "description" : "The weather condition noticed by residents.",
+    "source_id" : "597481351b30348f1a75b099469c1476"
+  }, {
+    "id" : "Frost",
+    "entity_id" : "Frost",
+    "entity_type" : "Concept",
+    "description" : "The icy coating observed on lawns.",
+    "source_id" : "597481351b30348f1a75b099469c1476"
+  }, {
+    "id" : "Lawns",
+    "entity_id" : "Lawns",
+    "entity_type" : "Location",
+    "description" : "The area where frost was observed.",
+    "source_id" : "597481351b30348f1a75b099469c1476"
+  }, {
+    "id" : "Gardeners",
+    "entity_id" : "Gardeners",
+    "entity_type" : "Person",
+    "description" : "Individuals who adjusted their routines due to the cold weather.",
+    "source_id" : "597481351b30348f1a75b099469c1476"
+  }, {
+    "id" : "Neighbors",
+    "entity_id" : "Neighbors",
+    "entity_type" : "Person",
+    "description" : "People who commented on scraping their windshields.",
+    "source_id" : "597481351b30348f1a75b099469c1476"
+  }, {
+    "id" : "Seasonal changes",
+    "entity_id" : "Seasonal changes",
+    "entity_type" : "Concept",
+    "description" : "The overall pattern observed in the environment.",
+    "source_id" : "597481351b30348f1a75b099469c1476"
+  } ],
+  "edges" : [ {
+    "source" : "Officials",
+    "target" : "Public transportation infrastructure",
+    "weight" : "1.0",
+    "description" : "Officials invested heavily in improving the public transportation infrastructure.",
+    "keywords" : "Investment, Improvement",
+    "source_id" : "1be868e1658b5aef14eca977283ac020",
+    "src_id" : "Officials",
+    "tgt_id" : "Public transportation infrastructure"
+  }, {
+    "source" : "Public transportation infrastructure",
+    "target" : "Traffic congestion",
+    "weight" : "1.0",
+    "description" : "Improvements to the public transportation infrastructure have caused patterns of traffic congestion to alter.",
+    "keywords" : "Alteration, Effect",
+    "source_id" : "1be868e1658b5aef14eca977283ac020",
+    "src_id" : "Public transportation infrastructure",
+    "tgt_id" : "Traffic congestion"
+  }, {
+    "source" : "Urban planners",
+    "target" : "New policies",
+    "weight" : "1.0",
+    "description" : "Urban planners are examining the effects of new policies.",
+    "keywords" : "Examination, Effect",
+    "source_id" : "1be868e1658b5aef14eca977283ac020",
+    "src_id" : "Urban planners",
+    "tgt_id" : "New policies"
+  }, {
+    "source" : "New policies",
+    "target" : "Commuter feedback",
+    "weight" : "1.0",
+    "description" : "The implementation of new policies has resulted in mixed commuter feedback.",
+    "keywords" : "Impact, Mixed",
+    "source_id" : "1be868e1658b5aef14eca977283ac020",
+    "src_id" : "New policies",
+    "tgt_id" : "Commuter feedback"
+  }, {
+    "source" : "Changes",
+    "target" : "Relationship",
+    "weight" : "1.0",
+    "description" : "The precise relationship between the various changes is still being evaluated.",
+    "keywords" : "Evaluation, Uncertainty",
+    "source_id" : "1be868e1658b5aef14eca977283ac020",
+    "src_id" : "Changes",
+    "tgt_id" : "Relationship"
+  }, {
+    "source" : "Children's book loans",
+    "target" : "School holidays",
+    "weight" : "1.0",
+    "description" : "The increase in book loans occurred during the school holidays.",
+    "keywords" : "Spiked, During",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2",
+    "src_id" : "Children's book loans",
+    "tgt_id" : "School holidays"
+  }, {
+    "source" : "Children's book loans",
+    "target" : "Free time",
+    "weight" : "1.0",
+    "description" : "The increase in book loans is independently prompted by children having more free time.",
+    "keywords" : "Prompted by, Result of",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2",
+    "src_id" : "Children's book loans",
+    "tgt_id" : "Free time"
+  }, {
+    "source" : "Children's book loans",
+    "target" : "Playground visits",
+    "weight" : "1.0",
+    "description" : "The observed correlation between book loans and playground visits is attributed to a shared calendar event.",
+    "keywords" : "Correlation, Shared cause",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2",
+    "src_id" : "Children's book loans",
+    "tgt_id" : "Playground visits"
+  }, {
+    "source" : "School holidays",
+    "target" : "Playground visits",
+    "weight" : "1.0",
+    "description" : "The increase in playground visits occurred during the school holidays.",
+    "keywords" : "Spiked, During",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2",
+    "src_id" : "Playground visits",
+    "tgt_id" : "School holidays"
+  }, {
+    "source" : "Playground visits",
+    "target" : "Free time",
+    "weight" : "1.0",
+    "description" : "The increase in playground visits is independently prompted by children having more free time.",
+    "keywords" : "Prompted by, Result of",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2",
+    "src_id" : "Playground visits",
+    "tgt_id" : "Free time"
+  }, {
+    "source" : "Free time",
+    "target" : "Reading",
+    "weight" : "1.0",
+    "description" : "The availability of free time leads to an increase in reading.",
+    "keywords" : "Resulting in, Prompts",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2",
+    "src_id" : "Free time",
+    "tgt_id" : "Reading"
+  }, {
+    "source" : "Free time",
+    "target" : "Outdoor play",
+    "weight" : "1.0",
+    "description" : "The availability of free time leads to an increase in outdoor play.",
+    "keywords" : "Resulting in, Prompts",
+    "source_id" : "23becc963c6153c23fa194dcec0296a2",
+    "src_id" : "Free time",
+    "tgt_id" : "Outdoor play"
+  }, {
+    "source" : "Sports participation",
+    "target" : "Academic performance",
+    "weight" : "1.0",
+    "description" : "Individuals with better academic performance are more likely to take part in sports.",
+    "keywords" : "more likely, connection",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1",
+    "src_id" : "Academic performance",
+    "tgt_id" : "Sports participation"
+  }, {
+    "source" : "Schools",
+    "target" : "Athletics",
+    "weight" : "1.0",
+    "description" : "Schools often promote athletics due to the observed connection between sports and academic success.",
+    "keywords" : "promote, reason",
+    "source_id" : "cb673b2415f055cc8a98b0cfb2174fa1",
+    "src_id" : "Schools",
+    "tgt_id" : "Athletics"
+  }, {
+    "source" : "Residents",
+    "target" : "Annual holiday parade",
+    "weight" : "1.0",
+    "description" : "The residents were present and enjoying the annual holiday parade.",
+    "keywords" : "attended, enjoyed",
+    "source_id" : "e2f6afb6f620f0cb6150fcbd5327a183",
+    "src_id" : "Residents",
+    "tgt_id" : "Annual holiday parade"
+  }, {
+    "source" : "Annual holiday parade",
+    "target" : "Emergency road closure",
+    "weight" : "1.0",
+    "description" : "Some attendees mistakenly believed the parade was the reason for the road closure.",
+    "keywords" : "misattributed cause, believed",
+    "source_id" : "e2f6afb6f620f0cb6150fcbd5327a183",
+    "src_id" : "Annual holiday parade",
+    "tgt_id" : "Emergency road closure"
+  }, {
+    "source" : "Emergency road closure",
+    "target" : "Water pipe burst",
+    "weight" : "1.0",
+    "description" : "The water pipe burst was the direct, unrelated cause of the emergency road closure.",
+    "keywords" : "caused, due to",
+    "source_id" : "e2f6afb6f620f0cb6150fcbd5327a183",
+    "src_id" : "Water pipe burst",
+    "tgt_id" : "Emergency road closure"
+  }, {
+    "source" : "Authorities",
+    "target" : "Water pipe burst",
+    "weight" : "1.0",
+    "description" : "The authorities explained that the water pipe burst was the actual cause of the closure.",
+    "keywords" : "explained, cause",
+    "source_id" : "e2f6afb6f620f0cb6150fcbd5327a183",
+    "src_id" : "Authorities",
+    "tgt_id" : "Water pipe burst"
+  }, {
+    "source" : "Local bakery promotions",
+    "target" : "Scheduled fire drill alarms",
+    "weight" : "1.0",
+    "description" : "The timing of bakery promotions sometimes appears to align with scheduled fire drill alarms.",
+    "keywords" : "Alignment, Coincidence",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238",
+    "src_id" : "Local bakery promotions",
+    "tgt_id" : "Scheduled fire drill alarms"
+  }, {
+    "source" : "Office workers",
+    "target" : "Fresh bread",
+    "weight" : "1.0",
+    "description" : "Office workers joke that the smell of fresh bread is the cause of the alarms.",
+    "keywords" : "Joke, Cause",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238",
+    "src_id" : "Office workers",
+    "tgt_id" : "Fresh bread"
+  }, {
+    "source" : "Promotional campaigns",
+    "target" : "Safety drills",
+    "weight" : "1.0",
+    "description" : "The coordination between promotional campaigns and safety drills is purely coincidental.",
+    "keywords" : "Coincidence, No mechanism",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238",
+    "src_id" : "Promotional campaigns",
+    "tgt_id" : "Safety drills"
+  }, {
+    "source" : "Pastry deals",
+    "target" : "Fire safety protocols",
+    "weight" : "1.0",
+    "description" : "There is no mechanism connecting pastry deals to fire safety protocols.",
+    "keywords" : "No connection, Mechanism",
+    "source_id" : "46cd15c20a37d9757676fcb90d514238",
+    "src_id" : "Pastry deals",
+    "tgt_id" : "Fire safety protocols"
+  }, {
+    "source" : "Cold weather",
+    "target" : "Frost",
+    "weight" : "1.0",
+    "description" : "Cold weather often corresponded with the presence of frost on the lawns.",
+    "keywords" : "correspondence, presence",
+    "source_id" : "597481351b30348f1a75b099469c1476",
+    "src_id" : "Cold weather",
+    "tgt_id" : "Frost"
+  }, {
+    "source" : "Cold weather",
+    "target" : "Seasonal changes",
+    "weight" : "1.0",
+    "description" : "Cold weather was part of the observed pattern of seasonal changes.",
+    "keywords" : "pattern, correspondence",
+    "source_id" : "597481351b30348f1a75b099469c1476",
+    "src_id" : "Cold weather",
+    "tgt_id" : "Seasonal changes"
+  }, {
+    "source" : "Frost",
+    "target" : "Lawns",
+    "weight" : "1.0",
+    "description" : "Frost was observed on the lawns.",
+    "keywords" : "presence, coating",
+    "source_id" : "597481351b30348f1a75b099469c1476",
+    "src_id" : "Frost",
+    "tgt_id" : "Lawns"
+  }, {
+    "source" : "Gardeners",
+    "target" : "Routines",
+    "weight" : "1.0",
+    "description" : "Gardeners adjusted their routines due to the icy coating.",
+    "keywords" : "adjustment, wary",
+    "source_id" : "597481351b30348f1a75b099469c1476",
+    "src_id" : "Gardeners",
+    "tgt_id" : "Routines"
+  }, {
+    "source" : "Neighbors",
+    "target" : "Windshields",
+    "weight" : "1.0",
+    "description" : "Neighbors commented on scraping their windshields more frequently.",
+    "keywords" : "scraping, frequency",
+    "source_id" : "597481351b30348f1a75b099469c1476",
+    "src_id" : "Neighbors",
+    "tgt_id" : "Windshields"
+  } ],
+  "metadata" : {
+    "nodeCount" : 37,
+    "edgeCount" : 27
+  }
+}

@@ -1,0 +1,633 @@
+{
+  "nodes" : {
+    "LOCALS" : {
+      "entity_type" : "PERSON",
+      "description" : "Residents in urban areas who humorously attribute the ice cream boom to dog owners.",
+      "source_id" : "chunk-c866c67c371b3feb8f330ef1c6c98b50"
+    },
+    "EMPLOYEES IN TECH INDUSTRIES" : {
+      "entity_type" : "PERSON",
+      "description" : "Workers in technology sectors who are especially vocal about the screen time and eye strain connection.",
+      "source_id" : "chunk-48837a29b442b324303eb691a1dd672f"
+    },
+    "STUDENT BODY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The group of university students who observe, joke about, and speculate on the pattern between open days and software updates.",
+      "source_id" : "chunk-c06c049faa4bd7da38d9ac1961ba3afc"
+    },
+    "SHOP OWNERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Owners of shoe stores who have observed the recurring seasonal trend in flip-flop sales.",
+      "source_id" : "chunk-87d0d247dfdc41cdd34f03deb035eab7"
+    },
+    "POOL STAFF" : {
+      "entity_type" : "PERSON",
+      "description" : "Workers at local swimming pools who have noticed the annual trend in visitor numbers.",
+      "source_id" : "chunk-87d0d247dfdc41cdd34f03deb035eab7"
+    },
+    "BROKEN SLEEP" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A sleep condition that leads to heightened irritability the following morning, a link that is quietly accepted but seldom scrutinized.",
+      "source_id" : "chunk-850349d060c23e4cbae33d13d48ce001"
+    },
+    "WELLNESS SEMINARS" : {
+      "entity_type" : "EVENT",
+      "description" : "Forums where the possible connection between rising screen time and eye strain is being discussed.",
+      "source_id" : "chunk-48837a29b442b324303eb691a1dd672f"
+    },
+    "SHOE STORES" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Retail businesses where flip-flops are sold, showing seasonal sales increases that coincide with summer pool activity.",
+      "source_id" : "chunk-87d0d247dfdc41cdd34f03deb035eab7"
+    },
+    "SCREEN TIME" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Rising usage of digital screens that is being linked with reports of eye strain and discussed in wellness contexts.",
+      "source_id" : "chunk-48837a29b442b324303eb691a1dd672f"
+    },
+    "MARKETING PITCHES" : {
+      "entity_type" : "EVENT",
+      "description" : "Business presentations in which the two trends are frequently cited together to support sales arguments.",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    },
+    "CAMPUS COMPUTERS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "The computers located on the university campus that are subject to the mandatory software updates.",
+      "source_id" : "chunk-c06c049faa4bd7da38d9ac1961ba3afc"
+    },
+    "SEASONAL TREND" : {
+      "entity_type" : "EVENT",
+      "description" : "A recurring annual pattern where flip-flop sales and pool visits coincide, with the actual causal relationship being more indirect than it appears.",
+      "source_id" : "chunk-87d0d247dfdc41cdd34f03deb035eab7"
+    },
+    "LIFESTYLE BLOGS" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Media organizations that publicize the supposed connection between creative and health-conscious trends.",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    },
+    "MANDATORY SOFTWARE UPDATES" : {
+      "entity_type" : "EVENT",
+      "description" : "Recurring forced software updates on campus computers that students perceive as consistently following university open days.",
+      "source_id" : "chunk-c06c049faa4bd7da38d9ac1961ba3afc"
+    },
+    "URBAN DEMOGRAPHICS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "Changing demographic patterns in urban areas identified as a shared social driver behind both dog park and ice cream trends.",
+      "source_id" : "chunk-c866c67c371b3feb8f330ef1c6c98b50"
+    },
+    "EYE STRAIN" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A health condition reportedly increasing alongside rising screen time, prompting discussion and concern.",
+      "source_id" : "chunk-48837a29b442b324303eb691a1dd672f"
+    },
+    "TECH INDUSTRIES" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Industry sector where employees are especially vocal about the screen time and eye strain trend.",
+      "source_id" : "chunk-48837a29b442b324303eb691a1dd672f"
+    },
+    "STORES" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "Retail entities catering to both plant-based meals and art supplies, experiencing higher foot traffic during peak periods.",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    },
+    "ART SUPPLY PURCHASES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A product/market category whose purchases are claimed to correlate with plant-based meal sales.",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    },
+    "CRAFT ICE CREAM SHOP SALES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A rising trend in sales at craft ice cream shops, humorously attributed by locals to dog owners but actually driven by broader social factors.",
+      "source_id" : "chunk-c866c67c371b3feb8f330ef1c6c98b50"
+    },
+    "HEIGHTENED IRRITABILITY" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A mood state characterized by short tempers and impatience, described by individuals on mornings after broken sleep.",
+      "source_id" : "chunk-850349d060c23e4cbae33d13d48ce001"
+    },
+    "URBAN" : {
+      "entity_type" : "GEO",
+      "description" : "Urban areas where both the dog park construction and craft ice cream shop trends are observed simultaneously.",
+      "source_id" : "chunk-c866c67c371b3feb8f330ef1c6c98b50"
+    },
+    "COMMUNITY AMENITIES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A focus on community amenities that serves as a common driver for both the rise in dog parks and craft ice cream shops.",
+      "source_id" : "chunk-c866c67c371b3feb8f330ef1c6c98b50"
+    },
+    "PLANT-BASED MEAL SALES" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A product/market category whose sales are claimed to rise alongside art supply purchases among young professionals.",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    },
+    "SOME INDIVIDUALS" : {
+      "entity_type" : "PERSON",
+      "description" : "People who experience and describe heightened irritability on mornings following broken sleep.",
+      "source_id" : "chunk-850349d060c23e4cbae33d13d48ce001"
+    },
+    "UNIVERSITY IT" : {
+      "entity_type" : "ORGANIZATION",
+      "description" : "The university's IT department responsible for managing the update schedule on campus computers.",
+      "source_id" : "chunk-c06c049faa4bd7da38d9ac1961ba3afc"
+    },
+    "SWIMMING POOLS" : {
+      "entity_type" : "GEO",
+      "description" : "Local swimming pool facilities whose visitor numbers increase in tandem with rising flip-flop sales.",
+      "source_id" : "chunk-87d0d247dfdc41cdd34f03deb035eab7"
+    },
+    "CREATIVE HEALTH-CONSCIOUS MOVEMENT" : {
+      "entity_type" : "EVENT",
+      "description" : "A claimed cultural movement linking creative pursuits with health-conscious behavior, promoted by lifestyle blogs.",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    },
+    "TRAFFIC" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An alternative factor blamed for short tempers, serving as a red herring for the underlying sleep-irritability link.",
+      "source_id" : "chunk-850349d060c23e4cbae33d13d48ce001"
+    },
+    "YOUNG PROFESSIONALS" : {
+      "entity_type" : "PERSON",
+      "description" : "A demographic group noted for concurrent increases in plant-based meal sales and art supply purchases.",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    },
+    "FRIENDS" : {
+      "entity_type" : "PERSON",
+      "description" : "Individuals who notice short tempers or impatience in others, particularly at work.",
+      "source_id" : "chunk-850349d060c23e4cbae33d13d48ce001"
+    },
+    "WORKLOAD" : {
+      "entity_type" : "CATEGORY",
+      "description" : "An alternative factor commonly blamed for irritability and impatience as a distraction from the sleep link.",
+      "source_id" : "chunk-850349d060c23e4cbae33d13d48ce001"
+    },
+    "UNIVERSITY OPEN DAYS" : {
+      "entity_type" : "EVENT",
+      "description" : "A recurring university event that students associate with subsequent mandatory software updates on campus computers.",
+      "source_id" : "chunk-c06c049faa4bd7da38d9ac1961ba3afc"
+    },
+    "HEALTHCARE PROVIDERS" : {
+      "entity_type" : "PERSON",
+      "description" : "Medical professionals starting to ask more questions about screen-related habits and their effects.",
+      "source_id" : "chunk-48837a29b442b324303eb691a1dd672f"
+    },
+    "WORK" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A setting where short tempers and impatience are observed and where the effects of broken sleep manifest.",
+      "source_id" : "chunk-850349d060c23e4cbae33d13d48ce001"
+    },
+    "URBAN DOG PARK CONSTRUCTION" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A notable increase in the building of dog parks in urban areas, identified as a trend without direct causal link to other trends.",
+      "source_id" : "chunk-c866c67c371b3feb8f330ef1c6c98b50"
+    },
+    "FLIP-FLOPS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A footwear category whose sales increase correlates with rising pool visits, serving as an indicator of seasonal swimming activity.",
+      "source_id" : "chunk-87d0d247dfdc41cdd34f03deb035eab7"
+    },
+    "DOG OWNERS" : {
+      "entity_type" : "CATEGORY",
+      "description" : "A demographic group humorously pointed to by locals as a driving force behind the craft ice cream sales boom.",
+      "source_id" : "chunk-c866c67c371b3feb8f330ef1c6c98b50"
+    }
+  },
+  "edges" : [ {
+    "source" : "COMMUNITY AMENITIES",
+    "target" : "CRAFT ICE CREAM SHOP SALES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "A focus on community amenities contributes to the growth of craft ice cream shops.",
+      "keywords" : "amenities, community focus, local business",
+      "source_id" : "chunk-c866c67c371b3feb8f330ef1c6c98b50"
+    }
+  }, {
+    "source" : "HEALTHCARE PROVIDERS",
+    "target" : "SCREEN TIME",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Healthcare providers are starting to ask more questions about screen time habits and their impact.",
+      "keywords" : "medical inquiry, habit assessment",
+      "source_id" : "chunk-48837a29b442b324303eb691a1dd672f"
+    }
+  }, {
+    "source" : "LIFESTYLE BLOGS",
+    "target" : "CREATIVE HEALTH-CONSCIOUS MOVEMENT",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Lifestyle blogs promote the narrative that a creative health-conscious movement is afoot.",
+      "keywords" : "media amplification, trend narrative",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    }
+  }, {
+    "source" : "URBAN DEMOGRAPHICS",
+    "target" : "URBAN DOG PARK CONSTRUCTION",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Changing urban demographics are identified as a social driver behind the increase in dog park construction.",
+      "keywords" : "demographics, urban development, social drivers",
+      "source_id" : "chunk-c866c67c371b3feb8f330ef1c6c98b50"
+    }
+  }, {
+    "source" : "FRIENDS",
+    "target" : "HEIGHTENED IRRITABILITY",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Friends notice the short tempers and impatience resulting from heightened irritability.",
+      "keywords" : "observation, social awareness",
+      "source_id" : "chunk-850349d060c23e4cbae33d13d48ce001"
+    }
+  }, {
+    "source" : "STUDENT BODY",
+    "target" : "MANDATORY SOFTWARE UPDATES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Students notice the temporal overlap with open days and foster ongoing speculation about a link.",
+      "keywords" : "speculation, perceived correlation",
+      "source_id" : "chunk-c06c049faa4bd7da38d9ac1961ba3afc"
+    }
+  }, {
+    "source" : "BROKEN SLEEP",
+    "target" : "TRAFFIC",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Traffic is blamed as another alternative factor for short tempers, distracting from the sleep connection.",
+      "keywords" : "alternative cause, red herring",
+      "source_id" : "chunk-850349d060c23e4cbae33d13d48ce001"
+    }
+  }, {
+    "source" : "YOUNG PROFESSIONALS",
+    "target" : "ART SUPPLY PURCHASES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Young professionals are the demographic whose art supply purchases rise concurrently with meal sales.",
+      "keywords" : "demographic, purchasing behavior",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    }
+  }, {
+    "source" : "UNIVERSITY OPEN DAYS",
+    "target" : "MANDATORY SOFTWARE UPDATES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Students perceive a recurring temporal overlap between university open days and the software updates, though University IT denies a link.",
+      "keywords" : "temporal correlation, speculation",
+      "source_id" : "chunk-c06c049faa4bd7da38d9ac1961ba3afc"
+    }
+  }, {
+    "source" : "SHOP OWNERS",
+    "target" : "SEASONAL TREND",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Shop owners have observed the recurring annual trend in flip-flop sales each year.",
+      "keywords" : "observation, annual pattern, retail awareness",
+      "source_id" : "chunk-87d0d247dfdc41cdd34f03deb035eab7"
+    }
+  }, {
+    "source" : "LIFESTYLE BLOGS",
+    "target" : "PLANT-BASED MEAL SALES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Lifestyle blogs point out the supposed connection of plant-based meal sales to the creative trend.",
+      "keywords" : "media coverage, trend promotion",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    }
+  }, {
+    "source" : "URBAN DOG PARK CONSTRUCTION",
+    "target" : "CRAFT ICE CREAM SHOP SALES",
+    "data" : {
+      "weight" : 4.0,
+      "description" : "Both trends expanded simultaneously in urban areas but research shows no direct causal relationship between them.",
+      "keywords" : "correlation, no causation, parallel trends",
+      "source_id" : "chunk-c866c67c371b3feb8f330ef1c6c98b50"
+    }
+  }, {
+    "source" : "SCREEN TIME",
+    "target" : "EYE STRAIN",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Rising screen time appears to go hand in hand with reports of eye strain, suggesting a possible connection.",
+      "keywords" : "correlation, health impact, digital usage",
+      "source_id" : "chunk-48837a29b442b324303eb691a1dd672f"
+    }
+  }, {
+    "source" : "FLIP-FLOPS",
+    "target" : "SHOE STORES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Flip-flops are a product category sold at shoe stores, whose sales increase signals seasonal demand.",
+      "keywords" : "product sales, retail, seasonal demand",
+      "source_id" : "chunk-87d0d247dfdc41cdd34f03deb035eab7"
+    }
+  }, {
+    "source" : "FLIP-FLOPS",
+    "target" : "SWIMMING POOLS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Increased flip-flop sales coincides with more people visiting local swimming pools, suggesting an indirect causal link.",
+      "keywords" : "correlation, seasonal activity, indirect relationship",
+      "source_id" : "chunk-87d0d247dfdc41cdd34f03deb035eab7"
+    }
+  }, {
+    "source" : "SOME INDIVIDUALS",
+    "target" : "BROKEN SLEEP",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Some individuals experience broken sleep, which triggers their heightened irritability the next morning.",
+      "keywords" : "experience, sleep disruption",
+      "source_id" : "chunk-850349d060c23e4cbae33d13d48ce001"
+    }
+  }, {
+    "source" : "BROKEN SLEEP",
+    "target" : "WORKLOAD",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Workload is cited as an alternative explanation for irritability, obscuring the sleep link.",
+      "keywords" : "alternative cause, deflection",
+      "source_id" : "chunk-850349d060c23e4cbae33d13d48ce001"
+    }
+  }, {
+    "source" : "STUDENT BODY",
+    "target" : "UNIVERSITY IT",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Students' speculation stands in contrast to University IT's insistence that the update schedule is independent.",
+      "keywords" : "skepticism, conflicting narratives",
+      "source_id" : "chunk-c06c049faa4bd7da38d9ac1961ba3afc"
+    }
+  }, {
+    "source" : "POOL STAFF",
+    "target" : "SWIMMING POOLS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Pool staff work at the swimming pools and have observed the annual trend in visitor numbers.",
+      "keywords" : "workplace, observation, trend awareness",
+      "source_id" : "chunk-87d0d247dfdc41cdd34f03deb035eab7"
+    }
+  }, {
+    "source" : "MARKETING PITCHES",
+    "target" : "ART SUPPLY PURCHASES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The art supply purchases trend is cited alongside meal sales in marketing pitches.",
+      "keywords" : "business strategy, trend citation",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    }
+  }, {
+    "source" : "COMMUNITY AMENITIES",
+    "target" : "URBAN DOG PARK CONSTRUCTION",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "A focus on community amenities contributes to the increase in urban dog park construction.",
+      "keywords" : "amenities, community focus, infrastructure",
+      "source_id" : "chunk-c866c67c371b3feb8f330ef1c6c98b50"
+    }
+  }, {
+    "source" : "EMPLOYEES IN TECH INDUSTRIES",
+    "target" : "TECH INDUSTRIES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Employees work within tech industries where the screen time and eye strain trend is especially vocal.",
+      "keywords" : "employment, industry affiliation",
+      "source_id" : "chunk-48837a29b442b324303eb691a1dd672f"
+    }
+  }, {
+    "source" : "WELLNESS SEMINARS",
+    "target" : "SCREEN TIME",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The possible connection involving screen time is being discussed in wellness seminars.",
+      "keywords" : "discussion forum, wellness focus",
+      "source_id" : "chunk-48837a29b442b324303eb691a1dd672f"
+    }
+  }, {
+    "source" : "STORES",
+    "target" : "ART SUPPLY PURCHASES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Stores catering to art supplies see higher foot traffic during the same peak periods.",
+      "keywords" : "retail impact, foot traffic",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    }
+  }, {
+    "source" : "LOCALS",
+    "target" : "DOG OWNERS",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "Locals humorously point to dog owners as a driving force behind the craft ice cream sales boom.",
+      "keywords" : "humor, attribution, causal claim",
+      "source_id" : "chunk-c866c67c371b3feb8f330ef1c6c98b50"
+    }
+  }, {
+    "source" : "URBAN DEMOGRAPHICS",
+    "target" : "CRAFT ICE CREAM SHOP SALES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Changing urban demographics are identified as a social driver behind the rise in craft ice cream sales.",
+      "keywords" : "demographics, consumer trend, social drivers",
+      "source_id" : "chunk-c866c67c371b3feb8f330ef1c6c98b50"
+    }
+  }, {
+    "source" : "PLANT-BASED MEAL SALES",
+    "target" : "ART SUPPLY PURCHASES",
+    "data" : {
+      "weight" : 5.0,
+      "description" : "The two categories are claimed to rise in unison, though the text notes the relationship is more apparent than real.",
+      "keywords" : "correlation, spurious relationship",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    }
+  }, {
+    "source" : "URBAN DOG PARK CONSTRUCTION",
+    "target" : "URBAN",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The increase in dog park construction takes place specifically in urban areas.",
+      "keywords" : "location, urban development",
+      "source_id" : "chunk-c866c67c371b3feb8f330ef1c6c98b50"
+    }
+  }, {
+    "source" : "MANDATORY SOFTWARE UPDATES",
+    "target" : "CAMPUS COMPUTERS",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "The mandatory updates are applied to the computers located on the university campus.",
+      "keywords" : "target systems, application",
+      "source_id" : "chunk-c06c049faa4bd7da38d9ac1961ba3afc"
+    }
+  }, {
+    "source" : "POOL STAFF",
+    "target" : "SEASONAL TREND",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Pool staff have noticed the recurring annual trend of increasing pool visits coinciding with flip-flop sales.",
+      "keywords" : "observation, annual pattern, awareness",
+      "source_id" : "chunk-87d0d247dfdc41cdd34f03deb035eab7"
+    }
+  }, {
+    "source" : "EMPLOYEES IN TECH INDUSTRIES",
+    "target" : "EYE STRAIN",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Tech industry employees report and vocalize concerns about eye strain linked to their work habits.",
+      "keywords" : "workplace health, symptom reporting",
+      "source_id" : "chunk-48837a29b442b324303eb691a1dd672f"
+    }
+  }, {
+    "source" : "SHOE STORES",
+    "target" : "SWIMMING POOLS",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Sales increases at shoe stores coincide with rising visitor numbers at local swimming pools each year.",
+      "keywords" : "coincidence, seasonal pattern, correlation",
+      "source_id" : "chunk-87d0d247dfdc41cdd34f03deb035eab7"
+    }
+  }, {
+    "source" : "STUDENT BODY",
+    "target" : "UNIVERSITY OPEN DAYS",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Students observe university open days as the starting point of a recurring pattern they find noteworthy.",
+      "keywords" : "observation, pattern recognition",
+      "source_id" : "chunk-c06c049faa4bd7da38d9ac1961ba3afc"
+    }
+  }, {
+    "source" : "YOUNG PROFESSIONALS",
+    "target" : "PLANT-BASED MEAL SALES",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Young professionals are the demographic whose plant-based meal sales rise in the observed pattern.",
+      "keywords" : "demographic, purchasing behavior",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    }
+  }, {
+    "source" : "STORES",
+    "target" : "PLANT-BASED MEAL SALES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Stores catering to plant-based meals see higher foot traffic during the cited peak periods.",
+      "keywords" : "retail impact, foot traffic",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    }
+  }, {
+    "source" : "MARKETING PITCHES",
+    "target" : "PLANT-BASED MEAL SALES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "The plant-based meal sales trend is cited in marketing pitches to support business narratives.",
+      "keywords" : "business strategy, trend citation",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    }
+  }, {
+    "source" : "EMPLOYEES IN TECH INDUSTRIES",
+    "target" : "SCREEN TIME",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Tech industry employees are especially vocal about the rising screen time trend and its effects.",
+      "keywords" : "workplace habits, vocal concern",
+      "source_id" : "chunk-48837a29b442b324303eb691a1dd672f"
+    }
+  }, {
+    "source" : "HEIGHTENED IRRITABILITY",
+    "target" : "WORK",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Heightened irritability manifests as short tempers and impatience at the workplace.",
+      "keywords" : "manifestation, workplace behavior",
+      "source_id" : "chunk-850349d060c23e4cbae33d13d48ce001"
+    }
+  }, {
+    "source" : "SHOP OWNERS",
+    "target" : "SHOE STORES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Shop owners operate the shoe stores and have noticed the recurring seasonal trend in flip-flop sales.",
+      "keywords" : "ownership, retail observation, trend awareness",
+      "source_id" : "chunk-87d0d247dfdc41cdd34f03deb035eab7"
+    }
+  }, {
+    "source" : "BROKEN SLEEP",
+    "target" : "HEIGHTENED IRRITABILITY",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "Broken sleep is the underlying cause of heightened irritability, a link that is quietly accepted but seldom scrutinized.",
+      "keywords" : "causation, sleep impact, irritability",
+      "source_id" : "chunk-850349d060c23e4cbae33d13d48ce001"
+    }
+  }, {
+    "source" : "LOCALS",
+    "target" : "CRAFT ICE CREAM SHOP SALES",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Locals observe and comment on the rise in craft ice cream shop sales in their communities.",
+      "keywords" : "observation, community trend",
+      "source_id" : "chunk-c866c67c371b3feb8f330ef1c6c98b50"
+    }
+  }, {
+    "source" : "CREATIVE HEALTH-CONSCIOUS MOVEMENT",
+    "target" : "PLANT-BASED MEAL SALES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The claimed movement is built around the supposed link to health-conscious eating trends.",
+      "keywords" : "cultural narrative, lifestyle branding",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    }
+  }, {
+    "source" : "HEALTHCARE PROVIDERS",
+    "target" : "EYE STRAIN",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Healthcare providers are inquiring about eye strain as a potential consequence of screen habits.",
+      "keywords" : "clinical concern, symptom inquiry",
+      "source_id" : "chunk-48837a29b442b324303eb691a1dd672f"
+    }
+  }, {
+    "source" : "WELLNESS SEMINARS",
+    "target" : "EYE STRAIN",
+    "data" : {
+      "weight" : 6.0,
+      "description" : "Eye strain and its relationship to screen habits is a topic discussed in wellness seminars.",
+      "keywords" : "discussion forum, health topic",
+      "source_id" : "chunk-48837a29b442b324303eb691a1dd672f"
+    }
+  }, {
+    "source" : "SOME INDIVIDUALS",
+    "target" : "HEIGHTENED IRRITABILITY",
+    "data" : {
+      "weight" : 8.0,
+      "description" : "Some individuals describe and report heightened irritability on mornings after broken sleep.",
+      "keywords" : "symptom, self-report",
+      "source_id" : "chunk-850349d060c23e4cbae33d13d48ce001"
+    }
+  }, {
+    "source" : "UNIVERSITY IT",
+    "target" : "MANDATORY SOFTWARE UPDATES",
+    "data" : {
+      "weight" : 9.0,
+      "description" : "University IT manages and controls the schedule for mandatory software updates on campus.",
+      "keywords" : "management, scheduling",
+      "source_id" : "chunk-c06c049faa4bd7da38d9ac1961ba3afc"
+    }
+  }, {
+    "source" : "LIFESTYLE BLOGS",
+    "target" : "ART SUPPLY PURCHASES",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "Lifestyle blogs highlight art supply purchases as evidence of the claimed creative movement.",
+      "keywords" : "media coverage, trend promotion",
+      "source_id" : "chunk-c5a1730c80dcf838b6646a43978bbd14"
+    }
+  }, {
+    "source" : "CRAFT ICE CREAM SHOP SALES",
+    "target" : "URBAN",
+    "data" : {
+      "weight" : 7.0,
+      "description" : "The rise in craft ice cream shop sales is observed in urban settings.",
+      "keywords" : "location, urban commerce",
+      "source_id" : "chunk-c866c67c371b3feb8f330ef1c6c98b50"
+    }
+  } ],
+  "metadata" : {
+    "nodeCount" : 38,
+    "edgeCount" : 48,
+    "graphStorage" : "NetworkXStorage",
+    "workingDir" : "eval_results/swo69_20260828_e2/e0_pathrag_causal/workdirs/pathrag/Data-Co-occurrence_No_Mechanism_37"
+  }
+}

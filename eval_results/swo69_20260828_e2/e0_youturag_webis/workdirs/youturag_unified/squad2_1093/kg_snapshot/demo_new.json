@@ -1,0 +1,757 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2008 study",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Napoleon",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2008 study",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Arsenic",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2007 study",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Arsenic",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2007 study",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Napoleon",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2007 study",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "precedes",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2008 study",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Napoleon's hair",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Napoleon",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Arsenic",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Napoleon's hair",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Peptic ulcer",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Napoleon",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gastric cancer",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Napoleon",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Glues",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Arsenic",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Dyes",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Arsenic",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2008 study",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Researchers",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "organization"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Autopsy finding",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Napoleon",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "person"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2007 study",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Autopsy finding",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2008 study",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Autopsy finding",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2007 study",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "15",
+      "members" : [ "2007 study", "2008 study", "Arsenic", "Autopsy finding", "Dyes", "Gastric cancer", "Glues", "Napoleon", "Napoleon's hair", "Peptic ulcer", "Researchers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2008 study",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "15",
+      "members" : [ "2007 study", "2008 study", "Arsenic", "Autopsy finding", "Dyes", "Gastric cancer", "Glues", "Napoleon", "Napoleon's hair", "Peptic ulcer", "Researchers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Arsenic",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "15",
+      "members" : [ "2007 study", "2008 study", "Arsenic", "Autopsy finding", "Dyes", "Gastric cancer", "Glues", "Napoleon", "Napoleon's hair", "Peptic ulcer", "Researchers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Autopsy finding",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "15",
+      "members" : [ "2007 study", "2008 study", "Arsenic", "Autopsy finding", "Dyes", "Gastric cancer", "Glues", "Napoleon", "Napoleon's hair", "Peptic ulcer", "Researchers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Dyes",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "15",
+      "members" : [ "2007 study", "2008 study", "Arsenic", "Autopsy finding", "Dyes", "Gastric cancer", "Glues", "Napoleon", "Napoleon's hair", "Peptic ulcer", "Researchers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Gastric cancer",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "15",
+      "members" : [ "2007 study", "2008 study", "Arsenic", "Autopsy finding", "Dyes", "Gastric cancer", "Glues", "Napoleon", "Napoleon's hair", "Peptic ulcer", "Researchers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Glues",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "15",
+      "members" : [ "2007 study", "2008 study", "Arsenic", "Autopsy finding", "Dyes", "Gastric cancer", "Glues", "Napoleon", "Napoleon's hair", "Peptic ulcer", "Researchers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Napoleon",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "15",
+      "members" : [ "2007 study", "2008 study", "Arsenic", "Autopsy finding", "Dyes", "Gastric cancer", "Glues", "Napoleon", "Napoleon's hair", "Peptic ulcer", "Researchers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Napoleon's hair",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "15",
+      "members" : [ "2007 study", "2008 study", "Arsenic", "Autopsy finding", "Dyes", "Gastric cancer", "Glues", "Napoleon", "Napoleon's hair", "Peptic ulcer", "Researchers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Peptic ulcer",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "15",
+      "members" : [ "2007 study", "2008 study", "Arsenic", "Autopsy finding", "Dyes", "Gastric cancer", "Glues", "Napoleon", "Napoleon's hair", "Peptic ulcer", "Researchers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Researchers",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "15",
+      "members" : [ "2007 study", "2008 study", "Arsenic", "Autopsy finding", "Dyes", "Gastric cancer", "Glues", "Napoleon", "Napoleon's hair", "Peptic ulcer", "Researchers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Napoleon",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Napoleon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Napoleon",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "person"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Napoleon"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Napoleon"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "15",
+      "members" : [ "2007 study", "2008 study", "Arsenic", "Autopsy finding", "Dyes", "Gastric cancer", "Glues", "Napoleon", "Napoleon's hair", "Peptic ulcer", "Researchers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2008 study",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "2008 study"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2008 study",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "2008 study"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "2008 study"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "15",
+      "members" : [ "2007 study", "2008 study", "Arsenic", "Autopsy finding", "Dyes", "Gastric cancer", "Glues", "Napoleon", "Napoleon's hair", "Peptic ulcer", "Researchers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Arsenic",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Arsenic"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Arsenic",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Arsenic"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Arsenic"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "15",
+      "members" : [ "2007 study", "2008 study", "Arsenic", "Autopsy finding", "Dyes", "Gastric cancer", "Glues", "Napoleon", "Napoleon's hair", "Peptic ulcer", "Researchers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2007 study",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "2007 study"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "2007 study",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "2007 study"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "2007 study"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "15",
+      "members" : [ "2007 study", "2008 study", "Arsenic", "Autopsy finding", "Dyes", "Gastric cancer", "Glues", "Napoleon", "Napoleon's hair", "Peptic ulcer", "Researchers" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Autopsy finding",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Autopsy finding"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Autopsy finding",
+      "chunk id" : "2LQopZhv",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Autopsy finding"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Autopsy finding"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 11 members",
+      "community_id" : "community_1",
+      "node_count" : "11",
+      "edge_count" : "15",
+      "members" : [ "2007 study", "2008 study", "Arsenic", "Autopsy finding", "Dyes", "Gastric cancer", "Glues", "Napoleon", "Napoleon's hair", "Peptic ulcer", "Researchers" ]
+    }
+  }
+} ]

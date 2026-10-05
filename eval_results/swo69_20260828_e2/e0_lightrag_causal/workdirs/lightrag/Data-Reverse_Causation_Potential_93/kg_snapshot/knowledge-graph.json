@@ -1,0 +1,602 @@
+{
+  "nodes" : [ {
+    "id" : "Financial Literacy",
+    "entity_id" : "Financial Literacy",
+    "entity_type" : "Concept",
+    "description" : "The knowledge and understanding of financial matters, which appears to be more prevalent among individuals who achieve investment success.",
+    "source_id" : "3b15607be817db4be84db76078c70ba8"
+  }, {
+    "id" : "Investment Success",
+    "entity_id" : "Investment Success",
+    "entity_type" : "Concept",
+    "description" : "The achievement of positive outcomes in financial investments, often associated with higher levels of financial literacy.",
+    "source_id" : "3b15607be817db4be84db76078c70ba8"
+  }, {
+    "id" : "Successful Investors",
+    "entity_id" : "Successful Investors",
+    "entity_type" : "Person",
+    "description" : "Individuals who tend to be more financially literate and have a history of making smart investment decisions.",
+    "source_id" : "3b15607be817db4be84db76078c70ba8"
+  }, {
+    "id" : "Finance Seminars",
+    "entity_id" : "Finance Seminars",
+    "entity_type" : "Event",
+    "description" : "Educational events in the finance domain that attract people with a history of smart investments.",
+    "source_id" : "3b15607be817db4be84db76078c70ba8"
+  }, {
+    "id" : "Economists",
+    "entity_id" : "Economists",
+    "entity_type" : "Person",
+    "description" : "Professionals who are curious about the relationship between fuel prices and public transportation usage.",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b"
+  }, {
+    "id" : "Knowledge-Achievement Link",
+    "entity_id" : "Knowledge-Achievement Link",
+    "entity_type" : "Concept",
+    "description" : "The much-discussed relationship between financial knowledge and achievement in the investment domain, whose direction is still under study.",
+    "source_id" : "3b15607be817db4be84db76078c70ba8"
+  }, {
+    "id" : "Bicycle sales",
+    "entity_id" : "Bicycle sales",
+    "entity_type" : "Concept",
+    "description" : "The surge in bicycle sales in the metropolitan area over the last decade, coinciding with declining air pollution levels.",
+    "source_id" : "8a4668759f634b40a752c228884536da"
+  }, {
+    "id" : "Metropolitan area",
+    "entity_id" : "Metropolitan area",
+    "entity_type" : "Location",
+    "description" : "The urban region where bicycle sales increased and air pollution levels decreased over the last decade.",
+    "source_id" : "8a4668759f634b40a752c228884536da"
+  }, {
+    "id" : "Air pollution",
+    "entity_id" : "Air pollution",
+    "entity_type" : "Concept",
+    "description" : "The levels of air pollution in the metropolitan area that began to drop over the last decade.",
+    "source_id" : "8a4668759f634b40a752c228884536da"
+  }, {
+    "id" : "Residents",
+    "entity_id" : "Residents",
+    "entity_type" : "Person",
+    "description" : "People living in the metropolitan area who attributed cleaner air to the popularity of cycling.",
+    "source_id" : "8a4668759f634b40a752c228884536da"
+  }, {
+    "id" : "Cycling",
+    "entity_id" : "Cycling",
+    "entity_type" : "Concept",
+    "description" : "The popular mode of transportation in the metropolitan area, which residents associated with environmental improvements.",
+    "source_id" : "8a4668759f634b40a752c228884536da"
+  }, {
+    "id" : "Environmental improvements",
+    "entity_id" : "Environmental improvements",
+    "entity_type" : "Concept",
+    "description" : "The improvements in air quality in the metropolitan area that residents commonly attributed to the biking boom.",
+    "source_id" : "8a4668759f634b40a752c228884536da"
+  }, {
+    "id" : "Biking boom",
+    "entity_id" : "Biking boom",
+    "entity_type" : "Event",
+    "description" : "The surge in bicycle usage and sales in the metropolitan area over the last decade, which residents linked to cleaner air.",
+    "source_id" : "8a4668759f634b40a752c228884536da"
+  }, {
+    "id" : "Fuel Prices",
+    "entity_id" : "Fuel Prices",
+    "entity_type" : "Concept",
+    "description" : "A factor experiencing a notable recent change, which is being studied in relation to public transportation usage.",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b"
+  }, {
+    "id" : "Public Transportation",
+    "entity_id" : "Public Transportation",
+    "entity_type" : "Concept",
+    "description" : "A transportation system whose usage appears to shift in connection with changes in fuel prices.",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b"
+  }, {
+    "id" : "Commuters",
+    "entity_id" : "Commuters",
+    "entity_type" : "Person",
+    "description" : "Individuals who share their experiences regarding fuel prices and public transportation on social media.",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b"
+  }, {
+    "id" : "Social Media",
+    "entity_id" : "Social Media",
+    "entity_type" : "Concept",
+    "description" : "A platform where commuters share their experiences related to fuel prices and public transportation.",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b"
+  }, {
+    "id" : "City Planners",
+    "entity_id" : "City Planners",
+    "entity_type" : "Person",
+    "description" : "Professionals who examine trends in fuel prices and public transportation to optimize resources.",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b"
+  }, {
+    "id" : "Resource Optimization",
+    "entity_id" : "Resource Optimization",
+    "entity_type" : "Concept",
+    "description" : "The goal of city planners in examining trends related to fuel prices and public transportation.",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b"
+  }, {
+    "id" : "Classrooms",
+    "entity_id" : "Classrooms",
+    "entity_type" : "Location",
+    "description" : "Physical spaces in a school where windows remain closed throughout the school day, resulting in stagnant and stuffy air.",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf"
+  }, {
+    "id" : "Students",
+    "entity_id" : "Students",
+    "entity_type" : "Person",
+    "description" : "Individuals in classrooms who occasionally complain of headaches by the afternoon, often attributing them to studying or noise rather than air quality.",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf"
+  }, {
+    "id" : "Teachers",
+    "entity_id" : "Teachers",
+    "entity_type" : "Person",
+    "description" : "Individuals in classrooms who mention feeling slightly off but attribute it to usual end-of-day fatigue.",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf"
+  }, {
+    "id" : "Stagnant Air",
+    "entity_id" : "Stagnant Air",
+    "entity_type" : "Concept",
+    "description" : "The stuffy, poorly circulated air present in classrooms due to windows remaining closed throughout the school day.",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf"
+  }, {
+    "id" : "Headaches",
+    "entity_id" : "Headaches",
+    "entity_type" : "Concept",
+    "description" : "Symptoms experienced by students by the afternoon, often blamed on too much studying or noise rather than environmental factors.",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf"
+  }, {
+    "id" : "Poor Ventilation",
+    "entity_id" : "Poor Ventilation",
+    "entity_type" : "Concept",
+    "description" : "The condition of inadequate air circulation in classrooms, speculated by some to influence symptoms, though no clear link is established.",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf"
+  }, {
+    "id" : "End-of-Day Fatigue",
+    "entity_id" : "End-of-Day Fatigue",
+    "entity_type" : "Concept",
+    "description" : "The explanation teachers use to account for feeling slightly off, rather than attributing it to air quality issues.",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf"
+  }, {
+    "id" : "School Day",
+    "entity_id" : "School Day",
+    "entity_type" : "Event",
+    "description" : "The daily period during which classroom windows remain closed and air quality deteriorates.",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf"
+  }, {
+    "id" : "Spring",
+    "entity_id" : "Spring",
+    "entity_type" : "Concept",
+    "description" : "The season whose arrival coincides with people keeping windows open and a reported spike in allergy symptoms.",
+    "source_id" : "12649adf9347df6992fec31217d004ac"
+  }, {
+    "id" : "Open Windows",
+    "entity_id" : "Open Windows",
+    "entity_type" : "Concept",
+    "description" : "The practice of keeping windows open to enjoy fresh air, commonly adopted by many people during spring.",
+    "source_id" : "12649adf9347df6992fec31217d004ac"
+  }, {
+    "id" : "Fresh Air",
+    "entity_id" : "Fresh Air",
+    "entity_type" : "Concept",
+    "description" : "The desired benefit that motivates people to keep their windows open during the spring season.",
+    "source_id" : "12649adf9347df6992fec31217d004ac"
+  }, {
+    "id" : "Allergy Symptoms",
+    "entity_id" : "Allergy Symptoms",
+    "entity_type" : "Concept",
+    "description" : "A reported spike in allergy symptoms that coincides with the arrival of spring and the practice of keeping windows open.",
+    "source_id" : "12649adf9347df6992fec31217d004ac"
+  }, {
+    "id" : "Pollen Levels",
+    "entity_id" : "Pollen Levels",
+    "entity_type" : "Concept",
+    "description" : "A natural environmental factor suggested by some as an alternative explanation for the spike in allergy symptoms.",
+    "source_id" : "12649adf9347df6992fec31217d004ac"
+  }, {
+    "id" : "Changing Weather",
+    "entity_id" : "Changing Weather",
+    "entity_type" : "Concept",
+    "description" : "A weather-related factor suggested by others as an alternative explanation for the spike in allergy symptoms.",
+    "source_id" : "12649adf9347df6992fec31217d004ac"
+  }, {
+    "id" : "The Neighborhood",
+    "entity_id" : "The Neighborhood",
+    "entity_type" : "Location",
+    "description" : "The local area where the true cause of the allergy symptom spike remains uncertain and debated among residents.",
+    "source_id" : "12649adf9347df6992fec31217d004ac"
+  }, {
+    "id" : "Neighborhood",
+    "entity_id" : "Neighborhood",
+    "entity_type" : "Location",
+    "description" : "A local residential area where elevated noise levels and sleep disturbances have been reported by residents in recent months.",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98"
+  }, {
+    "id" : "Noise levels",
+    "entity_id" : "Noise levels",
+    "entity_type" : "Concept",
+    "description" : "Elevated noise in the neighborhood that has drawn attention from residents in recent months.",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98"
+  }, {
+    "id" : "Sleep disturbances",
+    "entity_id" : "Sleep disturbances",
+    "entity_type" : "Concept",
+    "description" : "Reports of disrupted sleep that appeared to rise during the same period as increased noise complaints in the neighborhood.",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98"
+  }, {
+    "id" : "Community members",
+    "entity_id" : "Community members",
+    "entity_type" : "Concept",
+    "description" : "Residents of the neighborhood who discussed the noise and sleep issues in local forums and wondered about potential links between the two.",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98"
+  }, {
+    "id" : "Local forums",
+    "entity_id" : "Local forums",
+    "entity_type" : "Location",
+    "description" : "Discussion platforms where community members raised concerns about noise levels and sleep disturbances.",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98"
+  } ],
+  "edges" : [ {
+    "source" : "Financial Literacy",
+    "target" : "Investment Success",
+    "weight" : "1.0",
+    "description" : "Reports indicate that better financial literacy seems present among those who achieve investment success, suggesting a positive association between the two.",
+    "keywords" : "correlation, positive association, reports",
+    "source_id" : "3b15607be817db4be84db76078c70ba8",
+    "src_id" : "Financial Literacy",
+    "tgt_id" : "Investment Success"
+  }, {
+    "source" : "Financial Literacy",
+    "target" : "Successful Investors",
+    "weight" : "1.0",
+    "description" : "Successful investors tend to be more financially literate, indicating a connection between their investment outcomes and their financial knowledge.",
+    "keywords" : "tendency, higher literacy, association",
+    "source_id" : "3b15607be817db4be84db76078c70ba8",
+    "src_id" : "Successful Investors",
+    "tgt_id" : "Financial Literacy"
+  }, {
+    "source" : "Financial Literacy",
+    "target" : "Knowledge-Achievement Link",
+    "weight" : "1.0",
+    "description" : "Financial literacy represents the knowledge component of the much-discussed link between knowledge and achievement in the investment area.",
+    "keywords" : "component, knowledge side, foundation",
+    "source_id" : "3b15607be817db4be84db76078c70ba8",
+    "src_id" : "Financial Literacy",
+    "tgt_id" : "Knowledge-Achievement Link"
+  }, {
+    "source" : "Investment Success",
+    "target" : "Knowledge-Achievement Link",
+    "weight" : "1.0",
+    "description" : "Investment success represents the achievement component of the much-discussed link between knowledge and achievement in the investment area.",
+    "keywords" : "component, achievement side, outcome",
+    "source_id" : "3b15607be817db4be84db76078c70ba8",
+    "src_id" : "Investment Success",
+    "tgt_id" : "Knowledge-Achievement Link"
+  }, {
+    "source" : "Successful Investors",
+    "target" : "Finance Seminars",
+    "weight" : "1.0",
+    "description" : "Finance seminars attract people who have a history of making smart investments, linking educational events to experienced investors.",
+    "keywords" : "attraction, smart investments, participation",
+    "source_id" : "3b15607be817db4be84db76078c70ba8",
+    "src_id" : "Finance Seminars",
+    "tgt_id" : "Successful Investors"
+  }, {
+    "source" : "Economists",
+    "target" : "Knowledge-Achievement Link",
+    "weight" : "1.0",
+    "description" : "Economists continue to study the direction of the relationship between financial knowledge and investment achievement.",
+    "keywords" : "study, research, direction",
+    "source_id" : "3b15607be817db4be84db76078c70ba8",
+    "src_id" : "Economists",
+    "tgt_id" : "Knowledge-Achievement Link"
+  }, {
+    "source" : "Economists",
+    "target" : "Fuel Prices",
+    "weight" : "1.0",
+    "description" : "Economists are studying fuel prices as part of their investigation into the relationship with public transportation.",
+    "keywords" : "study, analysis, relationship",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b",
+    "src_id" : "Economists",
+    "tgt_id" : "Fuel Prices"
+  }, {
+    "source" : "Economists",
+    "target" : "Public Transportation",
+    "weight" : "1.0",
+    "description" : "Economists are examining the relationship between fuel prices and public transportation usage.",
+    "keywords" : "study, analysis, relationship",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b",
+    "src_id" : "Economists",
+    "tgt_id" : "Public Transportation"
+  }, {
+    "source" : "Bicycle sales",
+    "target" : "Metropolitan area",
+    "weight" : "1.0",
+    "description" : "Bicycle sales surged in the metropolitan area over the last decade.",
+    "keywords" : "surge, location, decade",
+    "source_id" : "8a4668759f634b40a752c228884536da",
+    "src_id" : "Bicycle sales",
+    "tgt_id" : "Metropolitan area"
+  }, {
+    "source" : "Bicycle sales",
+    "target" : "Air pollution",
+    "weight" : "1.0",
+    "description" : "Bicycle sales and declining air pollution levels appeared to align year after year, but the apparent connection is misleading upon closer investigation.",
+    "keywords" : "correlation, misleading, alignment",
+    "source_id" : "8a4668759f634b40a752c228884536da",
+    "src_id" : "Bicycle sales",
+    "tgt_id" : "Air pollution"
+  }, {
+    "source" : "Metropolitan area",
+    "target" : "Air pollution",
+    "weight" : "1.0",
+    "description" : "Air pollution levels began to drop in the metropolitan area over the last decade.",
+    "keywords" : "decrease, location, levels",
+    "source_id" : "8a4668759f634b40a752c228884536da",
+    "src_id" : "Air pollution",
+    "tgt_id" : "Metropolitan area"
+  }, {
+    "source" : "Air pollution",
+    "target" : "Cycling",
+    "weight" : "1.0",
+    "description" : "Cycling was associated with reduced air pollution by residents, but the connection is misleading upon closer investigation.",
+    "keywords" : "correlation, misleading, association",
+    "source_id" : "8a4668759f634b40a752c228884536da",
+    "src_id" : "Cycling",
+    "tgt_id" : "Air pollution"
+  }, {
+    "source" : "Residents",
+    "target" : "Cycling",
+    "weight" : "1.0",
+    "description" : "Residents pointed to the popularity of cycling as the reason for cleaner air in the metropolitan area.",
+    "keywords" : "attribution, popularity, credit",
+    "source_id" : "8a4668759f634b40a752c228884536da",
+    "src_id" : "Residents",
+    "tgt_id" : "Cycling"
+  }, {
+    "source" : "Residents",
+    "target" : "Environmental improvements",
+    "weight" : "1.0",
+    "description" : "Residents commonly attributed environmental improvements to the biking boom.",
+    "keywords" : "attribution, credit, cause",
+    "source_id" : "8a4668759f634b40a752c228884536da",
+    "src_id" : "Residents",
+    "tgt_id" : "Environmental improvements"
+  }, {
+    "source" : "Environmental improvements",
+    "target" : "Biking boom",
+    "weight" : "1.0",
+    "description" : "The biking boom was commonly linked to environmental improvements, but this apparent connection is misleading.",
+    "keywords" : "misleading, correlation, causation",
+    "source_id" : "8a4668759f634b40a752c228884536da",
+    "src_id" : "Biking boom",
+    "tgt_id" : "Environmental improvements"
+  }, {
+    "source" : "Fuel Prices",
+    "target" : "Public Transportation",
+    "weight" : "1.0",
+    "description" : "A notable change in fuel prices coincides with a shift in public transportation usage, drawing attention from multiple groups.",
+    "keywords" : "correlation, shift, usage",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b",
+    "src_id" : "Fuel Prices",
+    "tgt_id" : "Public Transportation"
+  }, {
+    "source" : "Public Transportation",
+    "target" : "City Planners",
+    "weight" : "1.0",
+    "description" : "City planners examine trends related to public transportation usage to inform resource allocation.",
+    "keywords" : "trends, examination, planning",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b",
+    "src_id" : "City Planners",
+    "tgt_id" : "Public Transportation"
+  }, {
+    "source" : "Commuters",
+    "target" : "Social Media",
+    "weight" : "1.0",
+    "description" : "Commuters share their experiences regarding fuel prices and public transportation on social media.",
+    "keywords" : "sharing, experiences, platform",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b",
+    "src_id" : "Commuters",
+    "tgt_id" : "Social Media"
+  }, {
+    "source" : "City Planners",
+    "target" : "Resource Optimization",
+    "weight" : "1.0",
+    "description" : "City planners examine trends in fuel prices and public transportation to optimize resources.",
+    "keywords" : "trends, optimization, planning",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b",
+    "src_id" : "City Planners",
+    "tgt_id" : "Resource Optimization"
+  }, {
+    "source" : "Classrooms",
+    "target" : "Stagnant Air",
+    "weight" : "1.0",
+    "description" : "Classrooms develop stagnant and stuffy air because windows remain closed throughout the school day.",
+    "keywords" : "closed windows, air quality, stuffiness",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf",
+    "src_id" : "Classrooms",
+    "tgt_id" : "Stagnant Air"
+  }, {
+    "source" : "Classrooms",
+    "target" : "Poor Ventilation",
+    "weight" : "1.0",
+    "description" : "The practice of keeping windows closed in classrooms results in poor ventilation and stagnant air.",
+    "keywords" : "cause, closed windows, air circulation",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf",
+    "src_id" : "Classrooms",
+    "tgt_id" : "Poor Ventilation"
+  }, {
+    "source" : "Classrooms",
+    "target" : "School Day",
+    "weight" : "1.0",
+    "description" : "The school day is the period during which classroom windows remain closed and air quality deteriorates.",
+    "keywords" : "duration, setting, time period",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf",
+    "src_id" : "School Day",
+    "tgt_id" : "Classrooms"
+  }, {
+    "source" : "Stagnant Air",
+    "target" : "Students",
+    "weight" : "1.0",
+    "description" : "Students are exposed to stagnant air in classrooms, which may contribute to their afternoon complaints.",
+    "keywords" : "exposure, symptoms, environment",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf",
+    "src_id" : "Students",
+    "tgt_id" : "Stagnant Air"
+  }, {
+    "source" : "Stagnant Air",
+    "target" : "Teachers",
+    "weight" : "1.0",
+    "description" : "Teachers are exposed to stagnant air in classrooms, which may contribute to their feeling of being slightly off.",
+    "keywords" : "exposure, well-being, environment",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf",
+    "src_id" : "Teachers",
+    "tgt_id" : "Stagnant Air"
+  }, {
+    "source" : "Students",
+    "target" : "Headaches",
+    "weight" : "1.0",
+    "description" : "Students occasionally complain of headaches by the afternoon, though they often blame studying or noise.",
+    "keywords" : "symptoms, afternoon, complaints",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf",
+    "src_id" : "Students",
+    "tgt_id" : "Headaches"
+  }, {
+    "source" : "Headaches",
+    "target" : "Poor Ventilation",
+    "weight" : "1.0",
+    "description" : "Some speculate that poor ventilation could influence headaches, but no clear link is established.",
+    "keywords" : "speculation, causation, unproven link",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf",
+    "src_id" : "Poor Ventilation",
+    "tgt_id" : "Headaches"
+  }, {
+    "source" : "Teachers",
+    "target" : "End-of-Day Fatigue",
+    "weight" : "1.0",
+    "description" : "Teachers attribute their feeling of being slightly off to usual end-of-day fatigue rather than environmental factors.",
+    "keywords" : "attribution, fatigue, well-being",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf",
+    "src_id" : "Teachers",
+    "tgt_id" : "End-of-Day Fatigue"
+  }, {
+    "source" : "Spring",
+    "target" : "Open Windows",
+    "weight" : "1.0",
+    "description" : "The arrival of spring prompts many people to keep their windows open to enjoy fresh air.",
+    "keywords" : "season, habit, fresh air",
+    "source_id" : "12649adf9347df6992fec31217d004ac",
+    "src_id" : "Spring",
+    "tgt_id" : "Open Windows"
+  }, {
+    "source" : "Spring",
+    "target" : "Allergy Symptoms",
+    "weight" : "1.0",
+    "description" : "A spike in allergy symptoms has been reported around the same time as the arrival of spring.",
+    "keywords" : "coincidence, spike, season",
+    "source_id" : "12649adf9347df6992fec31217d004ac",
+    "src_id" : "Spring",
+    "tgt_id" : "Allergy Symptoms"
+  }, {
+    "source" : "Open Windows",
+    "target" : "Fresh Air",
+    "weight" : "1.0",
+    "description" : "People keep their windows open specifically to enjoy fresh air during the spring season.",
+    "keywords" : "purpose, benefit, ventilation",
+    "source_id" : "12649adf9347df6992fec31217d004ac",
+    "src_id" : "Open Windows",
+    "tgt_id" : "Fresh Air"
+  }, {
+    "source" : "Open Windows",
+    "target" : "Allergy Symptoms",
+    "weight" : "1.0",
+    "description" : "Some suggest that keeping windows open may be connected to the spike in allergy symptoms, though the cause remains uncertain.",
+    "keywords" : "possible connection, correlation, debate",
+    "source_id" : "12649adf9347df6992fec31217d004ac",
+    "src_id" : "Open Windows",
+    "tgt_id" : "Allergy Symptoms"
+  }, {
+    "source" : "Allergy Symptoms",
+    "target" : "Pollen Levels",
+    "weight" : "1.0",
+    "description" : "Others blame elevated pollen levels as the cause of the reported spike in allergy symptoms.",
+    "keywords" : "alternative cause, environmental factor",
+    "source_id" : "12649adf9347df6992fec31217d004ac",
+    "src_id" : "Pollen Levels",
+    "tgt_id" : "Allergy Symptoms"
+  }, {
+    "source" : "Allergy Symptoms",
+    "target" : "Changing Weather",
+    "weight" : "1.0",
+    "description" : "Others attribute the spike in allergy symptoms to changing weather conditions during the season.",
+    "keywords" : "alternative cause, weather, environmental factor",
+    "source_id" : "12649adf9347df6992fec31217d004ac",
+    "src_id" : "Changing Weather",
+    "tgt_id" : "Allergy Symptoms"
+  }, {
+    "source" : "Allergy Symptoms",
+    "target" : "The Neighborhood",
+    "weight" : "1.0",
+    "description" : "In the neighborhood, the true cause of the allergy symptom spike remains uncertain, though the overlap with spring and open windows is hard to ignore.",
+    "keywords" : "uncertainty, local concern, debate",
+    "source_id" : "12649adf9347df6992fec31217d004ac",
+    "src_id" : "The Neighborhood",
+    "tgt_id" : "Allergy Symptoms"
+  }, {
+    "source" : "Noise levels",
+    "target" : "Neighborhood",
+    "weight" : "1.0",
+    "description" : "The elevated noise levels are situated in the neighborhood and have drawn attention from its residents.",
+    "keywords" : "location, attention, residents",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98",
+    "src_id" : "Noise levels",
+    "tgt_id" : "Neighborhood"
+  }, {
+    "source" : "Noise levels",
+    "target" : "Community members",
+    "weight" : "1.0",
+    "description" : "Community members repeatedly brought up the noise levels as a concern in their discussions.",
+    "keywords" : "discussion, concern, complaints",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98",
+    "src_id" : "Community members",
+    "tgt_id" : "Noise levels"
+  }, {
+    "source" : "Noise levels",
+    "target" : "Sleep disturbances",
+    "weight" : "1.0",
+    "description" : "Some people wondered about a potential connection between the noise levels and sleep disturbances, though no official statement confirmed such a link.",
+    "keywords" : "potential link, speculation, unconfirmed",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98",
+    "src_id" : "Noise levels",
+    "tgt_id" : "Sleep disturbances"
+  }, {
+    "source" : "Neighborhood",
+    "target" : "Sleep disturbances",
+    "weight" : "1.0",
+    "description" : "Reports of sleep disturbances rose in the neighborhood during the same period as the noise complaints.",
+    "keywords" : "location, reports, period",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98",
+    "src_id" : "Sleep disturbances",
+    "tgt_id" : "Neighborhood"
+  }, {
+    "source" : "Sleep disturbances",
+    "target" : "Community members",
+    "weight" : "1.0",
+    "description" : "Community members also raised the issue of rising sleep disturbances alongside the noise complaints.",
+    "keywords" : "discussion, concern, reports",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98",
+    "src_id" : "Community members",
+    "tgt_id" : "Sleep disturbances"
+  }, {
+    "source" : "Community members",
+    "target" : "Local forums",
+    "weight" : "1.0",
+    "description" : "Community members used local forums to discuss the changes in noise levels and sleep disturbances.",
+    "keywords" : "discussion, platform, residents",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98",
+    "src_id" : "Community members",
+    "tgt_id" : "Local forums"
+  } ],
+  "metadata" : {
+    "nodeCount" : 39,
+    "edgeCount" : 40
+  }
+}

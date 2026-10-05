@@ -1,0 +1,27 @@
+{
+  "nodes": [
+    {
+      "id": "john wayne",
+      "entity_name": "John Wayne",
+      "description": "",
+      "source_id": "c1"
+    },
+    {
+      "id": "true grit",
+      "entity_name": "True Grit",
+      "description": "",
+      "source_id": "c1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "john wayne",
+      "target": "true grit",
+      "description": ""
+    }
+  ],
+  "metadata": {
+    "nodeCount": 2,
+    "edgeCount": 1
+  }
+}

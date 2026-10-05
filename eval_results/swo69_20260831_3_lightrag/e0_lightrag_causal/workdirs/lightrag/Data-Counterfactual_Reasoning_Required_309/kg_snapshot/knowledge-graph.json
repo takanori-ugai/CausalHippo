@@ -1,0 +1,695 @@
+{
+  "nodes" : [ {
+    "id" : "Startup",
+    "entity_id" : "Startup",
+    "entity_type" : "Organization",
+    "description" : "A company where employees work and discuss patterns of caffeine intake and alertness during project sprints.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Employees",
+    "entity_id" : "Employees",
+    "entity_type" : "Person",
+    "description" : "Workers at the startup who report increased caffeine intake and heightened alertness during project sprints, with some viewing the pattern as coincidence and others noting its recurrence.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Caffeine intake",
+    "entity_id" : "Caffeine intake",
+    "entity_type" : "Concept",
+    "description" : "The consumption of caffeinated beverages that increases among employees during project sprints.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Project sprints",
+    "entity_id" : "Project sprints",
+    "entity_type" : "Event",
+    "description" : "Periods of intensive work at the startup during which employees report increased caffeine consumption and heightened alertness.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Heightened alertness",
+    "entity_id" : "Heightened alertness",
+    "entity_type" : "Concept",
+    "description" : "A state of increased awareness and focus reported by employees during project sprints, potentially linked to caffeine consumption.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Break rooms",
+    "entity_id" : "Break rooms",
+    "entity_type" : "Location",
+    "description" : "Areas within the startup where employees discuss the perceived connection between caffeine intake and heightened alertness.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Beverage choice",
+    "entity_id" : "Beverage choice",
+    "entity_type" : "Concept",
+    "description" : "The fluctuating selection of drinks consumed by employees, which varies during project sprints while working hours and pressure remain consistent.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Working hours and pressure",
+    "entity_id" : "Working hours and pressure",
+    "entity_type" : "Concept",
+    "description" : "Consistent factors during project sprints that remain unchanged, distinguishing them from the fluctuating beverage choice.",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3"
+  }, {
+    "id" : "Coffee sales",
+    "entity_id" : "Coffee sales",
+    "entity_type" : "Concept",
+    "description" : "Sales of coffee in the city's cafés that tend to be higher during weeks with increased rainfall, as indicated by data over the past decade.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Rainfall",
+    "entity_id" : "Rainfall",
+    "entity_type" : "Concept",
+    "description" : "Increased rainfall during certain weeks that appears to correlate with higher coffee sales in the city's cafés.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "City's cafés",
+    "entity_id" : "City's cafés",
+    "entity_type" : "Location",
+    "description" : "Cafés in the city where data on coffee sales has been collected over the past decade, revealing patterns related to weather.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Patrons",
+    "entity_id" : "Patrons",
+    "entity_type" : "Person",
+    "description" : "Customers of the city's cafés who have made observations linking weather conditions to their desire for warm beverages and noted coincidences between bustling mornings and wet forecasts.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Gloomy weather",
+    "entity_id" : "Gloomy weather",
+    "entity_type" : "Concept",
+    "description" : "Overcast or rainy weather conditions that patrons suggest put them in the mood for a warm beverage such as coffee.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Warm beverage",
+    "entity_id" : "Warm beverage",
+    "entity_type" : "Concept",
+    "description" : "A type of drink, such as coffee, that patrons desire during gloomy weather conditions.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Bustling mornings",
+    "entity_id" : "Bustling mornings",
+    "entity_type" : "Concept",
+    "description" : "Busy morning periods at the cafés that patrons note coincide with wet weather forecasts.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Wet forecasts",
+    "entity_id" : "Wet forecasts",
+    "entity_type" : "Concept",
+    "description" : "Weather predictions indicating rain that patrons observe coincide with bustling mornings at the cafés.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Direct tie",
+    "entity_id" : "Direct tie",
+    "entity_type" : "Concept",
+    "description" : "A potential causal relationship between rainfall and coffee sales that remains unclear despite surface-level patterns appearing to align.",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2"
+  }, {
+    "id" : "Young adults",
+    "entity_id" : "Young adults",
+    "entity_type" : "Person",
+    "description" : "A demographic group that frequently reports lower self-esteem associated with high social media use and describes changes in self-image after spending time online.",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "Social media",
+    "entity_id" : "Social media",
+    "entity_type" : "Concept",
+    "description" : "Digital platforms and online activities, including scrolling and spending time online, that young adults engage with at high frequency.",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "Self-esteem",
+    "entity_id" : "Self-esteem",
+    "entity_type" : "Concept",
+    "description" : "A psychological state of confidence and self-worth that young adults report as lower in association with high social media use.",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "Digital habits",
+    "entity_id" : "Digital habits",
+    "entity_type" : "Concept",
+    "description" : "Online behaviors and routines, such as scrolling, that are linked to changes in self-perception and are widely discussed in relation to mental well-being.",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "Self-perception",
+    "entity_id" : "Self-perception",
+    "entity_type" : "Concept",
+    "description" : "An individual's internal view of themselves, which is described as having an intricate and non-linear relationship with digital habits.",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "Self-image",
+    "entity_id" : "Self-image",
+    "entity_type" : "Concept",
+    "description" : "An individual's perception of their own identity and appearance, which some young adults report changes after spending time online.",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7"
+  }, {
+    "id" : "Cafeteria",
+    "entity_id" : "Cafeteria",
+    "entity_type" : "Location",
+    "description" : "A workplace dining area where new desserts were introduced, leading to changes in employees' dietary patterns.",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "New Desserts",
+    "entity_id" : "New Desserts",
+    "entity_type" : "Concept",
+    "description" : "New food items introduced in the cafeteria that were associated with an increase in sugar intake among employees.",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "Sugar Intake",
+    "entity_id" : "Sugar Intake",
+    "entity_type" : "Concept",
+    "description" : "The increased consumption of sugar noticed by many employees after the introduction of new desserts in the cafeteria.",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "Coworkers",
+    "entity_id" : "Coworkers",
+    "entity_type" : "Person",
+    "description" : "Employees who reported experiencing more frequent mood swings and engaged in discussions about potential causes.",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "Mood Swings",
+    "entity_id" : "Mood Swings",
+    "entity_type" : "Concept",
+    "description" : "More frequent emotional fluctuations reported by coworkers, with the actual cause remaining unclear.",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "Workload Changes",
+    "entity_id" : "Workload Changes",
+    "entity_type" : "Concept",
+    "description" : "A speculated cause for the increased mood swings, attributed by some coworkers to shifts in their work responsibilities.",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "Dietary Effects",
+    "entity_id" : "Dietary Effects",
+    "entity_type" : "Concept",
+    "description" : "A speculated cause for the mood swings, linked to changes in eating habits and increased sugar consumption.",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "Eating Habits",
+    "entity_id" : "Eating Habits",
+    "entity_type" : "Concept",
+    "description" : "A common topic of conversation among coworkers during lunch, related to dietary choices and their potential effects.",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b"
+  }, {
+    "id" : "Solar Eclipse",
+    "entity_id" : "Solar Eclipse",
+    "entity_type" : "Event",
+    "description" : "A highly anticipated solar eclipse that reached its peak around noon, coinciding with a stock market crash.",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Stock Market Crash",
+    "entity_id" : "Stock Market Crash",
+    "entity_type" : "Event",
+    "description" : "A sudden and significant decline in financial markets that occurred on the morning of the solar eclipse and made headlines by noon.",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Financial Markets",
+    "entity_id" : "Financial Markets",
+    "entity_type" : "Concept",
+    "description" : "The financial markets that opened with unexpected volatility on the morning of the solar eclipse.",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Analysts",
+    "entity_id" : "Analysts",
+    "entity_type" : "Person",
+    "description" : "Television analysts who compared charts during the broadcast covering the stock market crash and solar eclipse.",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Viewers",
+    "entity_id" : "Viewers",
+    "entity_type" : "Person",
+    "description" : "Television viewers who glanced between eclipse glasses and stock tickers while watching the broadcast.",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Eclipse Glasses",
+    "entity_id" : "Eclipse Glasses",
+    "entity_type" : "Concept",
+    "description" : "Protective eyewear used by viewers to safely observe the solar eclipse.",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Stock Tickers",
+    "entity_id" : "Stock Tickers",
+    "entity_type" : "Concept",
+    "description" : "Display devices showing real-time stock prices that viewers monitored alongside the eclipse.",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Coincidence",
+    "entity_id" : "Coincidence",
+    "entity_type" : "Concept",
+    "description" : "The speculated alignment of the solar eclipse and the stock market crash, with some questioning whether the timing was more than mere coincidence.",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c"
+  }, {
+    "id" : "Road Construction Projects",
+    "entity_id" : "Road Construction Projects",
+    "entity_type" : "Event",
+    "description" : "Construction activities whose onset is observed to coincide with an increase in local restaurant revenues.",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Local Restaurants",
+    "entity_id" : "Local Restaurants",
+    "entity_type" : "Organization",
+    "description" : "Restaurants in the area that experience increased revenues when road construction projects begin nearby.",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Detours",
+    "entity_id" : "Detours",
+    "entity_type" : "Concept",
+    "description" : "Alternative traffic routes created by road construction that are speculated to bring new customers to unfamiliar neighborhoods.",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Restaurateurs",
+    "entity_id" : "Restaurateurs",
+    "entity_type" : "Person",
+    "description" : "Restaurant owners who notice the coincidence between construction and revenue changes and adjust their operating hours accordingly.",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Community Forums",
+    "entity_id" : "Community Forums",
+    "entity_type" : "Organization",
+    "description" : "Online or local discussion platforms where residents debate whether traffic patterns are influencing dining trends.",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Urban Economists",
+    "entity_id" : "Urban Economists",
+    "entity_type" : "Person",
+    "description" : "Experts who analyze the relationship between road construction and restaurant revenues, suggesting the connection is not straightforward.",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Traffic Patterns",
+    "entity_id" : "Traffic Patterns",
+    "entity_type" : "Concept",
+    "description" : "The flow and routing of vehicles in an area, which community members speculate may influence dining trends.",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  }, {
+    "id" : "Dining Trends",
+    "entity_id" : "Dining Trends",
+    "entity_type" : "Concept",
+    "description" : "Patterns in restaurant patronage and customer behavior that may be affected by changes in traffic and construction activity.",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7"
+  } ],
+  "edges" : [ {
+    "source" : "Employees",
+    "target" : "Startup",
+    "weight" : "1.0",
+    "description" : "Employees are workers at the startup where the caffeine and alertness discussions take place.",
+    "keywords" : "workplace, employment",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Employees",
+    "tgt_id" : "Startup"
+  }, {
+    "source" : "Employees",
+    "target" : "Caffeine intake",
+    "weight" : "1.0",
+    "description" : "Employees report an increased caffeine intake, particularly during project sprints.",
+    "keywords" : "consumption, increased intake",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Employees",
+    "tgt_id" : "Caffeine intake"
+  }, {
+    "source" : "Employees",
+    "target" : "Heightened alertness",
+    "weight" : "1.0",
+    "description" : "Several employees notice heightened alertness during project sprints, which they associate with increased caffeine consumption.",
+    "keywords" : "awareness, perception",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Employees",
+    "tgt_id" : "Heightened alertness"
+  }, {
+    "source" : "Employees",
+    "target" : "Break rooms",
+    "weight" : "1.0",
+    "description" : "Employees discuss the perceived connection between caffeine and alertness in the break rooms of the startup.",
+    "keywords" : "discussion, social space",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Employees",
+    "tgt_id" : "Break rooms"
+  }, {
+    "source" : "Caffeine intake",
+    "target" : "Project sprints",
+    "weight" : "1.0",
+    "description" : "Caffeine intake increases during project sprints, forming a recurring pattern noted by some employees.",
+    "keywords" : "temporal correlation, increased consumption",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Caffeine intake",
+    "tgt_id" : "Project sprints"
+  }, {
+    "source" : "Caffeine intake",
+    "target" : "Heightened alertness",
+    "weight" : "1.0",
+    "description" : "The connection between caffeine intake and heightened alertness is debated among employees, with some viewing it as coincidence and others noting a recurring pattern.",
+    "keywords" : "correlation, causation debate",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Caffeine intake",
+    "tgt_id" : "Heightened alertness"
+  }, {
+    "source" : "Caffeine intake",
+    "target" : "Beverage choice",
+    "weight" : "1.0",
+    "description" : "Beverage choice fluctuates during project sprints, which is the primary variable changing alongside caffeine intake.",
+    "keywords" : "fluctuation, variation",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Beverage choice",
+    "tgt_id" : "Caffeine intake"
+  }, {
+    "source" : "Project sprints",
+    "target" : "Heightened alertness",
+    "weight" : "1.0",
+    "description" : "Heightened alertness is reported to occur during project sprints, coinciding with increased caffeine intake.",
+    "keywords" : "temporal association, state of focus",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Heightened alertness",
+    "tgt_id" : "Project sprints"
+  }, {
+    "source" : "Project sprints",
+    "target" : "Working hours and pressure",
+    "weight" : "1.0",
+    "description" : "Working hours and pressure remain consistent during project sprints, serving as controlled factors that do not fluctuate like beverage choice.",
+    "keywords" : "consistency, unchanged factors",
+    "source_id" : "3bfa2efe7b783c84d4ee81e66f07dfa3",
+    "src_id" : "Working hours and pressure",
+    "tgt_id" : "Project sprints"
+  }, {
+    "source" : "Coffee sales",
+    "target" : "Rainfall",
+    "weight" : "1.0",
+    "description" : "Coffee sales tend to be higher during weeks with increased rainfall, though a direct causal link remains unconfirmed.",
+    "keywords" : "correlation, weather, sales pattern",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2",
+    "src_id" : "Coffee sales",
+    "tgt_id" : "Rainfall"
+  }, {
+    "source" : "Coffee sales",
+    "target" : "City's cafés",
+    "weight" : "1.0",
+    "description" : "Data collected from the city's cafés over the past decade indicates patterns in coffee sales related to rainfall.",
+    "keywords" : "data source, sales records",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2",
+    "src_id" : "City's cafés",
+    "tgt_id" : "Coffee sales"
+  }, {
+    "source" : "Rainfall",
+    "target" : "Direct tie",
+    "weight" : "1.0",
+    "description" : "It remains unclear whether there is a truly direct causal tie between rainfall and coffee sales, despite surface-level patterns appearing to align.",
+    "keywords" : "causality, uncertainty, correlation",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2",
+    "src_id" : "Rainfall",
+    "tgt_id" : "Direct tie"
+  }, {
+    "source" : "City's cafés",
+    "target" : "Patrons",
+    "weight" : "1.0",
+    "description" : "Patrons are customers who frequent the city's cafés and make observations about their coffee consumption habits.",
+    "keywords" : "customer, patronage",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2",
+    "src_id" : "Patrons",
+    "tgt_id" : "City's cafés"
+  }, {
+    "source" : "Patrons",
+    "target" : "Gloomy weather",
+    "weight" : "1.0",
+    "description" : "Patrons suggest that gloomy weather puts them in the mood for a warm beverage.",
+    "keywords" : "observation, mood, preference",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2",
+    "src_id" : "Patrons",
+    "tgt_id" : "Gloomy weather"
+  }, {
+    "source" : "Patrons",
+    "target" : "Bustling mornings",
+    "weight" : "1.0",
+    "description" : "Patrons note that bustling mornings at the cafés coincide with wet forecasts.",
+    "keywords" : "observation, coincidence, activity",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2",
+    "src_id" : "Patrons",
+    "tgt_id" : "Bustling mornings"
+  }, {
+    "source" : "Gloomy weather",
+    "target" : "Warm beverage",
+    "weight" : "1.0",
+    "description" : "Gloomy weather is associated by patrons with a desire for a warm beverage such as coffee.",
+    "keywords" : "association, desire, comfort",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2",
+    "src_id" : "Gloomy weather",
+    "tgt_id" : "Warm beverage"
+  }, {
+    "source" : "Bustling mornings",
+    "target" : "Wet forecasts",
+    "weight" : "1.0",
+    "description" : "Bustling mornings at the cafés are observed to coincide with wet weather forecasts.",
+    "keywords" : "coincidence, timing, weather",
+    "source_id" : "76c6f1a405c77a8356e276e96c0f77f2",
+    "src_id" : "Bustling mornings",
+    "tgt_id" : "Wet forecasts"
+  }, {
+    "source" : "Young adults",
+    "target" : "Social media",
+    "weight" : "1.0",
+    "description" : "Young adults with high social media use frequently engage in scrolling, particularly during times when they feel less confident.",
+    "keywords" : "high use, scrolling, engagement",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7",
+    "src_id" : "Young adults",
+    "tgt_id" : "Social media"
+  }, {
+    "source" : "Young adults",
+    "target" : "Self-esteem",
+    "weight" : "1.0",
+    "description" : "Young adults with high social media use frequently report lower self-esteem as a consequence of their online engagement.",
+    "keywords" : "lower self-esteem, reporting, correlation",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7",
+    "src_id" : "Young adults",
+    "tgt_id" : "Self-esteem"
+  }, {
+    "source" : "Young adults",
+    "target" : "Self-perception",
+    "weight" : "1.0",
+    "description" : "Young adults report that their self-perception and self-image shift after spending time online, indicating a direct link between digital engagement and self-view.",
+    "keywords" : "self-image change, online influence",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7",
+    "src_id" : "Young adults",
+    "tgt_id" : "Self-perception"
+  }, {
+    "source" : "Social media",
+    "target" : "Self-image",
+    "weight" : "1.0",
+    "description" : "Spending time on social media is reported by some young adults as causing changes in their self-image.",
+    "keywords" : "impact, online time, change",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7",
+    "src_id" : "Social media",
+    "tgt_id" : "Self-image"
+  }, {
+    "source" : "Digital habits",
+    "target" : "Self-perception",
+    "weight" : "1.0",
+    "description" : "The relationship between digital habits and self-perception is described as intricate, widely discussed, and not always linear.",
+    "keywords" : "intricate relationship, non-linear, widely discussed",
+    "source_id" : "d55323a083157e2f3f37321475d4f1c7",
+    "src_id" : "Digital habits",
+    "tgt_id" : "Self-perception"
+  }, {
+    "source" : "New Desserts",
+    "target" : "Cafeteria",
+    "weight" : "1.0",
+    "description" : "New desserts were introduced in the cafeteria, prompting changes in employees' dietary patterns.",
+    "keywords" : "introduced, location",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "New Desserts",
+    "tgt_id" : "Cafeteria"
+  }, {
+    "source" : "New Desserts",
+    "target" : "Sugar Intake",
+    "weight" : "1.0",
+    "description" : "The introduction of new desserts in the cafeteria was associated with a noticeable increase in sugar intake among employees.",
+    "keywords" : "caused, increase",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "New Desserts",
+    "tgt_id" : "Sugar Intake"
+  }, {
+    "source" : "Sugar Intake",
+    "target" : "Dietary Effects",
+    "weight" : "1.0",
+    "description" : "The increased sugar intake is considered a potential dietary effect that may contribute to the reported mood swings.",
+    "keywords" : "related, consumption",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "Sugar Intake",
+    "tgt_id" : "Dietary Effects"
+  }, {
+    "source" : "Coworkers",
+    "target" : "Mood Swings",
+    "weight" : "1.0",
+    "description" : "Several coworkers reported experiencing more frequent mood swings shortly after the new desserts were introduced.",
+    "keywords" : "experienced, reported",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "Coworkers",
+    "tgt_id" : "Mood Swings"
+  }, {
+    "source" : "Coworkers",
+    "target" : "Workload Changes",
+    "weight" : "1.0",
+    "description" : "Some coworkers attributed the increased mood swings to changes in their workload rather than dietary factors.",
+    "keywords" : "attributed, speculated",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "Coworkers",
+    "tgt_id" : "Workload Changes"
+  }, {
+    "source" : "Coworkers",
+    "target" : "Dietary Effects",
+    "weight" : "1.0",
+    "description" : "Other coworkers speculated that the mood swings could be linked to dietary effects, particularly increased sugar consumption.",
+    "keywords" : "speculated, dietary",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "Coworkers",
+    "tgt_id" : "Dietary Effects"
+  }, {
+    "source" : "Coworkers",
+    "target" : "Eating Habits",
+    "weight" : "1.0",
+    "description" : "Conversations about eating habits are common among coworkers during lunch, reflecting ongoing interest in dietary choices.",
+    "keywords" : "discussed, conversation",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "Coworkers",
+    "tgt_id" : "Eating Habits"
+  }, {
+    "source" : "Mood Swings",
+    "target" : "Workload Changes",
+    "weight" : "1.0",
+    "description" : "Workload changes are one of the speculated but unconfirmed causes of the increased mood swings.",
+    "keywords" : "speculated cause, uncertainty",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "Mood Swings",
+    "tgt_id" : "Workload Changes"
+  }, {
+    "source" : "Mood Swings",
+    "target" : "Dietary Effects",
+    "weight" : "1.0",
+    "description" : "Dietary effects are another speculated but unconfirmed cause of the increased mood swings, with the actual cause remaining unclear.",
+    "keywords" : "speculated cause, uncertainty",
+    "source_id" : "a928c4bbf19c6878330df01d0add1c3b",
+    "src_id" : "Mood Swings",
+    "tgt_id" : "Dietary Effects"
+  }, {
+    "source" : "Solar Eclipse",
+    "target" : "Stock Market Crash",
+    "weight" : "1.0",
+    "description" : "The stock market crash coincided with the peak of the solar eclipse, capturing public attention and sparking speculation about the timing.",
+    "keywords" : "coincidence, timing, alignment",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c",
+    "src_id" : "Solar Eclipse",
+    "tgt_id" : "Stock Market Crash"
+  }, {
+    "source" : "Solar Eclipse",
+    "target" : "Coincidence",
+    "weight" : "1.0",
+    "description" : "The alignment of the solar eclipse with the stock market crash led some to speculate whether the timing was more than just coincidence.",
+    "keywords" : "speculation, alignment, rare events",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c",
+    "src_id" : "Solar Eclipse",
+    "tgt_id" : "Coincidence"
+  }, {
+    "source" : "Stock Market Crash",
+    "target" : "Financial Markets",
+    "weight" : "1.0",
+    "description" : "Financial markets opened with unexpected volatility on the morning of the eclipse, which escalated into a full stock market crash by noon.",
+    "keywords" : "volatility, crash, opening",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c",
+    "src_id" : "Financial Markets",
+    "tgt_id" : "Stock Market Crash"
+  }, {
+    "source" : "Stock Market Crash",
+    "target" : "Analysts",
+    "weight" : "1.0",
+    "description" : "Analysts on television compared charts to explain and contextualize the stock market crash.",
+    "keywords" : "analysis, charts, television",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c",
+    "src_id" : "Analysts",
+    "tgt_id" : "Stock Market Crash"
+  }, {
+    "source" : "Stock Market Crash",
+    "target" : "Coincidence",
+    "weight" : "1.0",
+    "description" : "The stock market crash, occurring simultaneously with the solar eclipse, fueled public speculation about whether the two events were connected.",
+    "keywords" : "speculation, timing, public attention",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c",
+    "src_id" : "Stock Market Crash",
+    "tgt_id" : "Coincidence"
+  }, {
+    "source" : "Viewers",
+    "target" : "Eclipse Glasses",
+    "weight" : "1.0",
+    "description" : "Viewers used eclipse glasses to safely observe the solar eclipse while watching the television broadcast.",
+    "keywords" : "observation, viewing, eclipse",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c",
+    "src_id" : "Viewers",
+    "tgt_id" : "Eclipse Glasses"
+  }, {
+    "source" : "Viewers",
+    "target" : "Stock Tickers",
+    "weight" : "1.0",
+    "description" : "Viewers monitored stock tickers to follow the market movements during the crash.",
+    "keywords" : "monitoring, tracking, prices",
+    "source_id" : "258a2f6df48e4f11a9a6a1d5f32e548c",
+    "src_id" : "Viewers",
+    "tgt_id" : "Stock Tickers"
+  }, {
+    "source" : "Road Construction Projects",
+    "target" : "Local Restaurants",
+    "weight" : "1.0",
+    "description" : "The onset of road construction projects is observed to align with an increase in local restaurant revenues.",
+    "keywords" : "revenue, coincidence, onset",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Road Construction Projects",
+    "tgt_id" : "Local Restaurants"
+  }, {
+    "source" : "Road Construction Projects",
+    "target" : "Urban Economists",
+    "weight" : "1.0",
+    "description" : "Urban economists suggest that the relationship between road construction projects and restaurant revenue is not straightforward.",
+    "keywords" : "analysis, complexity, relationship",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Urban Economists",
+    "tgt_id" : "Road Construction Projects"
+  }, {
+    "source" : "Local Restaurants",
+    "target" : "Detours",
+    "weight" : "1.0",
+    "description" : "Detours are speculated to bring new customers to unfamiliar neighborhoods, benefiting local restaurants.",
+    "keywords" : "customers, neighborhoods, speculation",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Detours",
+    "tgt_id" : "Local Restaurants"
+  }, {
+    "source" : "Local Restaurants",
+    "target" : "Restaurateurs",
+    "weight" : "1.0",
+    "description" : "Restaurateurs notice the coincidence between construction and revenue changes and adjust their restaurant hours accordingly.",
+    "keywords" : "hours, adjustment, observation",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Restaurateurs",
+    "tgt_id" : "Local Restaurants"
+  }, {
+    "source" : "Community Forums",
+    "target" : "Traffic Patterns",
+    "weight" : "1.0",
+    "description" : "Community forums discuss whether traffic patterns are influencing dining trends in the area.",
+    "keywords" : "discussion, influence, debate",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Community Forums",
+    "tgt_id" : "Traffic Patterns"
+  }, {
+    "source" : "Community Forums",
+    "target" : "Dining Trends",
+    "weight" : "1.0",
+    "description" : "Community forums serve as a platform for debating the factors behind changing dining trends.",
+    "keywords" : "discussion, trends, debate",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Community Forums",
+    "tgt_id" : "Dining Trends"
+  }, {
+    "source" : "Traffic Patterns",
+    "target" : "Dining Trends",
+    "weight" : "1.0",
+    "description" : "Traffic patterns are speculated by community members to potentially influence dining trends, though economists question the simplicity of this link.",
+    "keywords" : "influence, causation, speculation",
+    "source_id" : "2fec7dc3374034f53b3fd347ffb17cd7",
+    "src_id" : "Traffic Patterns",
+    "tgt_id" : "Dining Trends"
+  } ],
+  "metadata" : {
+    "nodeCount" : 47,
+    "edgeCount" : 45
+  }
+}

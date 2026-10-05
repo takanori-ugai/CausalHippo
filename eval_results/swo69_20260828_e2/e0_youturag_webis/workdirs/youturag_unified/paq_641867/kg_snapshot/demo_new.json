@@ -1,0 +1,1410 @@
+[ {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Chinese furniture",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Oils",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "part_of",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Resins",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Joinery",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Furniture construction",
+      "chunk id" : "f3zd4shp"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Doweling",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "used_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Furniture construction",
+      "chunk id" : "f3zd4shp"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Glue",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Furniture construction",
+      "chunk id" : "f3zd4shp"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nail",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Furniture construction",
+      "chunk id" : "f3zd4shp"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "hongmu furniture (紅木家具)",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Chinese furniture",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "hongmu furniture (紅木家具)",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "created_by",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rosewood",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Chinese industry standards",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "related_to",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood classification (eight classes)",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "concept"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Overlogging",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood species (threatened/endangered)",
+      "chunk id" : "f3zd4shp"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood density and toughness",
+      "chunk id" : "f3zd4shp"
+    }
+  },
+  "relation" : "influences",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Furniture construction method (joinery and doweling)",
+      "chunk id" : "f3zd4shp"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rosewood",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "is_a",
+  "end_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood species",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "biological_entity"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Chinese furniture",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Chinese furniture", "Oils", "Resins", "Rosewood", "Wood", "Wood species", "hongmu furniture (紅木家具)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Oils",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Chinese furniture", "Oils", "Resins", "Rosewood", "Wood", "Wood species", "hongmu furniture (紅木家具)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Resins",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Chinese furniture", "Oils", "Resins", "Rosewood", "Wood", "Wood species", "hongmu furniture (紅木家具)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rosewood",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Chinese furniture", "Oils", "Resins", "Rosewood", "Wood", "Wood species", "hongmu furniture (紅木家具)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Chinese furniture", "Oils", "Resins", "Rosewood", "Wood", "Wood species", "hongmu furniture (紅木家具)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood species",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Chinese furniture", "Oils", "Resins", "Rosewood", "Wood", "Wood species", "hongmu furniture (紅木家具)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "hongmu furniture (紅木家具)",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Chinese furniture", "Oils", "Resins", "Rosewood", "Wood", "Wood species", "hongmu furniture (紅木家具)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "hongmu furniture (紅木家具)",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "hongmu furniture (紅木家具)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "hongmu furniture (紅木家具)",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "hongmu furniture (紅木家具)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "hongmu furniture (紅木家具)"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Chinese furniture", "Oils", "Resins", "Rosewood", "Wood", "Wood species", "hongmu furniture (紅木家具)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Wood"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Wood"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Wood"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Chinese furniture", "Oils", "Resins", "Rosewood", "Wood", "Wood species", "hongmu furniture (紅木家具)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Chinese furniture",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Chinese furniture"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Chinese furniture",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Chinese furniture"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Chinese furniture"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Chinese furniture", "Oils", "Resins", "Rosewood", "Wood", "Wood species", "hongmu furniture (紅木家具)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rosewood",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Rosewood"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Rosewood",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Rosewood"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Rosewood"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Chinese furniture", "Oils", "Resins", "Rosewood", "Wood", "Wood species", "hongmu furniture (紅木家具)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood species",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Wood species"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood species",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "biological_entity"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Wood species"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Wood species"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_1",
+      "description" : "Community of 7 members",
+      "community_id" : "community_1",
+      "node_count" : "7",
+      "edge_count" : "6",
+      "members" : [ "Chinese furniture", "Oils", "Resins", "Rosewood", "Wood", "Wood species", "hongmu furniture (紅木家具)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Doweling",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 5 members",
+      "community_id" : "community_2",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Doweling", "Furniture construction", "Glue", "Joinery", "Nail" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Furniture construction",
+      "chunk id" : "f3zd4shp"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 5 members",
+      "community_id" : "community_2",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Doweling", "Furniture construction", "Glue", "Joinery", "Nail" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Glue",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 5 members",
+      "community_id" : "community_2",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Doweling", "Furniture construction", "Glue", "Joinery", "Nail" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Joinery",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 5 members",
+      "community_id" : "community_2",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Doweling", "Furniture construction", "Glue", "Joinery", "Nail" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nail",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 5 members",
+      "community_id" : "community_2",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Doweling", "Furniture construction", "Glue", "Joinery", "Nail" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Furniture construction",
+      "chunk id" : "f3zd4shp"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Furniture construction"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Furniture construction",
+      "chunk id" : "f3zd4shp"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Furniture construction"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Furniture construction"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 5 members",
+      "community_id" : "community_2",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Doweling", "Furniture construction", "Glue", "Joinery", "Nail" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Joinery",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Joinery"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Joinery",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Joinery"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Joinery"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 5 members",
+      "community_id" : "community_2",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Doweling", "Furniture construction", "Glue", "Joinery", "Nail" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Doweling",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Doweling"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Doweling",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Doweling"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Doweling"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 5 members",
+      "community_id" : "community_2",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Doweling", "Furniture construction", "Glue", "Joinery", "Nail" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nail",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Nail"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Nail",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Nail"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Nail"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 5 members",
+      "community_id" : "community_2",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Doweling", "Furniture construction", "Glue", "Joinery", "Nail" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Glue",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Glue"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Glue",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "object"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Glue"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Glue"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_2",
+      "description" : "Community of 5 members",
+      "community_id" : "community_2",
+      "node_count" : "5",
+      "edge_count" : "4",
+      "members" : [ "Doweling", "Furniture construction", "Glue", "Joinery", "Nail" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Chinese industry standards",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 2 members",
+      "community_id" : "community_3",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Chinese industry standards", "Wood classification (eight classes)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood classification (eight classes)",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 2 members",
+      "community_id" : "community_3",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Chinese industry standards", "Wood classification (eight classes)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood classification (eight classes)",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Wood classification (eight classes)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood classification (eight classes)",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "concept"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Wood classification (eight classes)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Wood classification (eight classes)"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 2 members",
+      "community_id" : "community_3",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Chinese industry standards", "Wood classification (eight classes)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Chinese industry standards",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Chinese industry standards"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Chinese industry standards",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "organization"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Chinese industry standards"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Chinese industry standards"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_3",
+      "description" : "Community of 2 members",
+      "community_id" : "community_3",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Chinese industry standards", "Wood classification (eight classes)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Furniture construction method (joinery and doweling)",
+      "chunk id" : "f3zd4shp"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 2 members",
+      "community_id" : "community_4",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Furniture construction method (joinery and doweling)", "Wood density and toughness" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood density and toughness",
+      "chunk id" : "f3zd4shp"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 2 members",
+      "community_id" : "community_4",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Furniture construction method (joinery and doweling)", "Wood density and toughness" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Furniture construction method (joinery and doweling)",
+      "chunk id" : "f3zd4shp"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Furniture construction method (joinery and doweling)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Furniture construction method (joinery and doweling)",
+      "chunk id" : "f3zd4shp"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Furniture construction method (joinery and doweling)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Furniture construction method (joinery and doweling)"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 2 members",
+      "community_id" : "community_4",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Furniture construction method (joinery and doweling)", "Wood density and toughness" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood density and toughness",
+      "chunk id" : "f3zd4shp"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Wood density and toughness"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood density and toughness",
+      "chunk id" : "f3zd4shp"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Wood density and toughness"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Wood density and toughness"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_4",
+      "description" : "Community of 2 members",
+      "community_id" : "community_4",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Furniture construction method (joinery and doweling)", "Wood density and toughness" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Overlogging",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 2 members",
+      "community_id" : "community_5",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Overlogging", "Wood species (threatened/endangered)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood species (threatened/endangered)",
+      "chunk id" : "f3zd4shp"
+    }
+  },
+  "relation" : "member_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 2 members",
+      "community_id" : "community_5",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Overlogging", "Wood species (threatened/endangered)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Overlogging",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Overlogging"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Overlogging",
+      "chunk id" : "f3zd4shp",
+      "schema_type" : "event"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Overlogging"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Overlogging"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 2 members",
+      "community_id" : "community_5",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Overlogging", "Wood species (threatened/endangered)" ]
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood species (threatened/endangered)",
+      "chunk id" : "f3zd4shp"
+    }
+  },
+  "relation" : "represented_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Wood species (threatened/endangered)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "entity",
+    "properties" : {
+      "name" : "Wood species (threatened/endangered)",
+      "chunk id" : "f3zd4shp"
+    }
+  },
+  "relation" : "kw_filter_by",
+  "end_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Wood species (threatened/endangered)"
+    }
+  }
+}, {
+  "start_node" : {
+    "label" : "keyword",
+    "properties" : {
+      "name" : "Wood species (threatened/endangered)"
+    }
+  },
+  "relation" : "keyword_of",
+  "end_node" : {
+    "label" : "community",
+    "properties" : {
+      "name" : "Community_5",
+      "description" : "Community of 2 members",
+      "community_id" : "community_5",
+      "node_count" : "2",
+      "edge_count" : "1",
+      "members" : [ "Overlogging", "Wood species (threatened/endangered)" ]
+    }
+  }
+} ]

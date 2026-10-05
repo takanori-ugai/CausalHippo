@@ -1,0 +1,392 @@
+{
+  "nodes" : [ {
+    "id" : "Finance Seminars",
+    "entity_id" : "Finance Seminars",
+    "entity_type" : "Organization",
+    "description" : "Events that attract people with a history of smart investments.",
+    "source_id" : "3b15607be817db4be84db76078c70ba8"
+  }, {
+    "id" : "Investment Success",
+    "entity_id" : "Investment Success",
+    "entity_type" : "Concept",
+    "description" : "Achieving financial success through smart investment decisions.",
+    "source_id" : "3b15607be817db4be84db76078c70ba8"
+  }, {
+    "id" : "Economists",
+    "entity_id" : "Economists",
+    "entity_type" : "Person",
+    "description" : "Professionals studying the economy",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b"
+  }, {
+    "id" : "Financial Literacy",
+    "entity_id" : "Financial Literacy",
+    "entity_type" : "Concept",
+    "description" : "The ability to understand and manage personal finances effectively.",
+    "source_id" : "3b15607be817db4be84db76078c70ba8"
+  }, {
+    "id" : "Reports",
+    "entity_id" : "Reports",
+    "entity_type" : "Document",
+    "description" : "Written accounts of data or research findings.",
+    "source_id" : "3b15607be817db4be84db76078c70ba8"
+  }, {
+    "id" : "Bicycle Sales",
+    "entity_id" : "Bicycle Sales",
+    "entity_type" : "Concept",
+    "description" : "The number of bicycles sold in the metropolitan area.",
+    "source_id" : "8a4668759f634b40a752c228884536da"
+  }, {
+    "id" : "Air Pollution Levels",
+    "entity_id" : "Air Pollution Levels",
+    "entity_type" : "Concept",
+    "description" : "The amount of pollutants in the air in the metropolitan area.",
+    "source_id" : "8a4668759f634b40a752c228884536da"
+  }, {
+    "id" : "Cycling",
+    "entity_id" : "Cycling",
+    "entity_type" : "Concept",
+    "description" : "The act of riding a bicycle.",
+    "source_id" : "8a4668759f634b40a752c228884536da"
+  }, {
+    "id" : "Metropolitan Area",
+    "entity_id" : "Metropolitan Area",
+    "entity_type" : "Location",
+    "description" : "The urban area surrounding a city.",
+    "source_id" : "8a4668759f634b40a752c228884536da"
+  }, {
+    "id" : "Environmental Improvements",
+    "entity_id" : "Environmental Improvements",
+    "entity_type" : "Concept",
+    "description" : "Positive changes to the environment.",
+    "source_id" : "8a4668759f634b40a752c228884536da"
+  }, {
+    "id" : "Fuel Prices",
+    "entity_id" : "Fuel Prices",
+    "entity_type" : "Concept",
+    "description" : "The cost of fuel",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b"
+  }, {
+    "id" : "Public Transportation",
+    "entity_id" : "Public Transportation",
+    "entity_type" : "Concept",
+    "description" : "The use of public transportation",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b"
+  }, {
+    "id" : "Commuters",
+    "entity_id" : "Commuters",
+    "entity_type" : "Person",
+    "description" : "Individuals traveling to work or school",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b"
+  }, {
+    "id" : "City Planners",
+    "entity_id" : "City Planners",
+    "entity_type" : "Person",
+    "description" : "Professionals designing and managing cities",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b"
+  }, {
+    "id" : "Poor Ventilation",
+    "entity_id" : "Poor Ventilation",
+    "entity_type" : "Concept",
+    "description" : "The lack of proper air circulation in classrooms",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf"
+  }, {
+    "id" : "Headaches",
+    "entity_id" : "Headaches",
+    "entity_type" : "Concept",
+    "description" : "Physical discomfort experienced by students",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf"
+  }, {
+    "id" : "End-of-Day Fatigue",
+    "entity_id" : "End-of-Day Fatigue",
+    "entity_type" : "Concept",
+    "description" : "Physical and mental exhaustion experienced by teachers",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf"
+  }, {
+    "id" : "Studying",
+    "entity_id" : "Studying",
+    "entity_type" : "Concept",
+    "description" : "Academic activity performed by students",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf"
+  }, {
+    "id" : "Noise",
+    "entity_id" : "Noise",
+    "entity_type" : "Concept",
+    "description" : "Environmental sound that may cause discomfort",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf"
+  }, {
+    "id" : "Stuffiness",
+    "entity_id" : "Stuffiness",
+    "entity_type" : "Concept",
+    "description" : "Uncomfortable feeling caused by poor air quality",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf"
+  }, {
+    "id" : "Spring",
+    "entity_id" : "Spring",
+    "entity_type" : "Event",
+    "description" : "The arrival of spring",
+    "source_id" : "12649adf9347df6992fec31217d004ac"
+  }, {
+    "id" : "Allergy symptoms",
+    "entity_id" : "Allergy symptoms",
+    "entity_type" : "Concept",
+    "description" : "Increased symptoms of allergies",
+    "source_id" : "12649adf9347df6992fec31217d004ac"
+  }, {
+    "id" : "Pollen levels",
+    "entity_id" : "Pollen levels",
+    "entity_type" : "Concept",
+    "description" : "Amount of pollen in the air",
+    "source_id" : "12649adf9347df6992fec31217d004ac"
+  }, {
+    "id" : "Weather",
+    "entity_id" : "Weather",
+    "entity_type" : "Concept",
+    "description" : "Current weather conditions",
+    "source_id" : "12649adf9347df6992fec31217d004ac"
+  }, {
+    "id" : "noise levels",
+    "entity_id" : "noise levels",
+    "entity_type" : "Location",
+    "description" : "The noise levels in the neighborhood",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98"
+  }, {
+    "id" : "sleep disturbances",
+    "entity_id" : "sleep disturbances",
+    "entity_type" : "Concept",
+    "description" : "Reports of sleep disturbances",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98"
+  }, {
+    "id" : "community members",
+    "entity_id" : "community members",
+    "entity_type" : "Person",
+    "description" : "Residents who discussed the changes",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98"
+  }, {
+    "id" : "local forums",
+    "entity_id" : "local forums",
+    "entity_type" : "Location",
+    "description" : "Online platforms where community members discussed",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98"
+  } ],
+  "edges" : [ {
+    "source" : "Finance Seminars",
+    "target" : "Investment Success",
+    "weight" : "1.0",
+    "description" : "Finance seminars are attended by individuals who have achieved investment success.",
+    "keywords" : "Financial Education, Investment Strategies",
+    "source_id" : "3b15607be817db4be84db76078c70ba8",
+    "src_id" : "Finance Seminars",
+    "tgt_id" : "Investment Success"
+  }, {
+    "source" : "Investment Success",
+    "target" : "Financial Literacy",
+    "weight" : "1.0",
+    "description" : "Financial literacy is linked to investment success.",
+    "keywords" : "Knowledge, Achievement",
+    "source_id" : "3b15607be817db4be84db76078c70ba8",
+    "src_id" : "Financial Literacy",
+    "tgt_id" : "Investment Success"
+  }, {
+    "source" : "Financial Literacy",
+    "target" : "Economists",
+    "weight" : "1.0",
+    "description" : "Economists study the relationship between financial literacy and investment success.",
+    "keywords" : "Research, Data Analysis",
+    "source_id" : "3b15607be817db4be84db76078c70ba8",
+    "src_id" : "Economists",
+    "tgt_id" : "Financial Literacy"
+  }, {
+    "source" : "Financial Literacy",
+    "target" : "Reports",
+    "weight" : "1.0",
+    "description" : "Reports provide data and insights on financial literacy.",
+    "keywords" : "Data, Insights",
+    "source_id" : "3b15607be817db4be84db76078c70ba8",
+    "src_id" : "Reports",
+    "tgt_id" : "Financial Literacy"
+  }, {
+    "source" : "Economists",
+    "target" : "Fuel Prices",
+    "weight" : "1.0",
+    "description" : "Economists study the relationship between fuel prices and the economy",
+    "keywords" : "economy, market trends",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b",
+    "src_id" : "Economists",
+    "tgt_id" : "Fuel Prices"
+  }, {
+    "source" : "Bicycle Sales",
+    "target" : "Air Pollution Levels",
+    "weight" : "1.0",
+    "description" : "A decrease in air pollution levels has been observed in correlation with an increase in bicycle sales.",
+    "keywords" : "decrease, pollution",
+    "source_id" : "8a4668759f634b40a752c228884536da",
+    "src_id" : "Bicycle Sales",
+    "tgt_id" : "Air Pollution Levels"
+  }, {
+    "source" : "Bicycle Sales",
+    "target" : "Metropolitan Area",
+    "weight" : "1.0",
+    "description" : "The metropolitan area has seen a growth in bicycle sales.",
+    "keywords" : "growth, sales",
+    "source_id" : "8a4668759f634b40a752c228884536da",
+    "src_id" : "Metropolitan Area",
+    "tgt_id" : "Bicycle Sales"
+  }, {
+    "source" : "Air Pollution Levels",
+    "target" : "Environmental Improvements",
+    "weight" : "1.0",
+    "description" : "A decrease in air pollution levels has been observed, contributing to environmental improvements.",
+    "keywords" : "decrease, pollution",
+    "source_id" : "8a4668759f634b40a752c228884536da",
+    "src_id" : "Air Pollution Levels",
+    "tgt_id" : "Environmental Improvements"
+  }, {
+    "source" : "Cycling",
+    "target" : "Environmental Improvements",
+    "weight" : "1.0",
+    "description" : "Cycling is often attributed as having a positive impact on environmental improvements.",
+    "keywords" : "positive impact, environment",
+    "source_id" : "8a4668759f634b40a752c228884536da",
+    "src_id" : "Cycling",
+    "tgt_id" : "Environmental Improvements"
+  }, {
+    "source" : "Fuel Prices",
+    "target" : "Public Transportation",
+    "weight" : "1.0",
+    "description" : "Changes in fuel prices affect public transportation usage",
+    "keywords" : "transportation costs, fuel efficiency",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b",
+    "src_id" : "Fuel Prices",
+    "tgt_id" : "Public Transportation"
+  }, {
+    "source" : "Public Transportation",
+    "target" : "Commuters",
+    "weight" : "1.0",
+    "description" : "Commuters share their experiences with public transportation on social media",
+    "keywords" : "commuting options, travel time",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b",
+    "src_id" : "Commuters",
+    "tgt_id" : "Public Transportation"
+  }, {
+    "source" : "Public Transportation",
+    "target" : "City Planners",
+    "weight" : "1.0",
+    "description" : "City planners examine trends to optimize public transportation resources",
+    "keywords" : "resource optimization, transportation infrastructure",
+    "source_id" : "9df9554956a3a1f5ea033f1cde9cb21b",
+    "src_id" : "City Planners",
+    "tgt_id" : "Public Transportation"
+  }, {
+    "source" : "Poor Ventilation",
+    "target" : "Headaches",
+    "weight" : "1.0",
+    "description" : "Speculation that poor ventilation may contribute to headaches",
+    "keywords" : "air quality, discomfort",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf",
+    "src_id" : "Poor Ventilation",
+    "tgt_id" : "Headaches"
+  }, {
+    "source" : "Poor Ventilation",
+    "target" : "Stuffiness",
+    "weight" : "1.0",
+    "description" : "Link between poor ventilation and stuffiness",
+    "keywords" : "air quality, discomfort",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf",
+    "src_id" : "Poor Ventilation",
+    "tgt_id" : "Stuffiness"
+  }, {
+    "source" : "Poor Ventilation",
+    "target" : "End-of-Day Fatigue",
+    "weight" : "1.0",
+    "description" : "Speculation that poor ventilation may contribute to end-of-day fatigue",
+    "keywords" : "air quality, discomfort",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf",
+    "src_id" : "Poor Ventilation",
+    "tgt_id" : "End-of-Day Fatigue"
+  }, {
+    "source" : "Headaches",
+    "target" : "Studying",
+    "weight" : "1.0",
+    "description" : "Common cause of headaches among students",
+    "keywords" : "stress, concentration",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf",
+    "src_id" : "Studying",
+    "tgt_id" : "Headaches"
+  }, {
+    "source" : "Headaches",
+    "target" : "Noise",
+    "weight" : "1.0",
+    "description" : "Potential contributor to headaches",
+    "keywords" : "sound, discomfort",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf",
+    "src_id" : "Noise",
+    "tgt_id" : "Headaches"
+  }, {
+    "source" : "Stuffiness",
+    "target" : "End-of-Day Fatigue",
+    "weight" : "1.0",
+    "description" : "Link between end-of-day fatigue and stuffiness",
+    "keywords" : "physical exhaustion, mental fatigue",
+    "source_id" : "77274dfe411da4cd26446dbe20e6fabf",
+    "src_id" : "End-of-Day Fatigue",
+    "tgt_id" : "Stuffiness"
+  }, {
+    "source" : "Spring",
+    "target" : "Allergy symptoms",
+    "weight" : "1.0",
+    "description" : "Reported increase in allergy symptoms during spring",
+    "keywords" : "allergy, symptoms, spring",
+    "source_id" : "12649adf9347df6992fec31217d004ac",
+    "src_id" : "Spring",
+    "tgt_id" : "Allergy symptoms"
+  }, {
+    "source" : "Allergy symptoms",
+    "target" : "Pollen levels",
+    "weight" : "1.0",
+    "description" : "Possible cause of increased allergy symptoms",
+    "keywords" : "pollen, allergy, symptoms",
+    "source_id" : "12649adf9347df6992fec31217d004ac",
+    "src_id" : "Pollen levels",
+    "tgt_id" : "Allergy symptoms"
+  }, {
+    "source" : "Allergy symptoms",
+    "target" : "Weather",
+    "weight" : "1.0",
+    "description" : "Possible cause of increased allergy symptoms",
+    "keywords" : "weather, allergy, symptoms",
+    "source_id" : "12649adf9347df6992fec31217d004ac",
+    "src_id" : "Weather",
+    "tgt_id" : "Allergy symptoms"
+  }, {
+    "source" : "noise levels",
+    "target" : "sleep disturbances",
+    "weight" : "1.0",
+    "description" : "Reports of sleep disturbances were linked to noise levels",
+    "keywords" : "disturbances, noise",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98",
+    "src_id" : "noise levels",
+    "tgt_id" : "sleep disturbances"
+  }, {
+    "source" : "noise levels",
+    "target" : "community members",
+    "weight" : "1.0",
+    "description" : "Community members discussed the noise levels",
+    "keywords" : "noise levels, disturbances",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98",
+    "src_id" : "community members",
+    "tgt_id" : "noise levels"
+  }, {
+    "source" : "community members",
+    "target" : "local forums",
+    "weight" : "1.0",
+    "description" : "Community members discussed the changes on local forums",
+    "keywords" : "discussions, community",
+    "source_id" : "c7e6786820c41799e8c060c66e742a98",
+    "src_id" : "community members",
+    "tgt_id" : "local forums"
+  } ],
+  "metadata" : {
+    "nodeCount" : 28,
+    "edgeCount" : 24
+  }
+}
