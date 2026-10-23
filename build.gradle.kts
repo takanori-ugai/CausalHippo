@@ -58,7 +58,7 @@ dependencies {
     implementation("io.ktor:ktor-server-swagger")
     implementation("io.ktor:ktor-server-cors")
     implementation("ch.qos.logback:logback-classic:1.6.3")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.12.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
     implementation("io.github.oshai:kotlin-logging-jvm:8.0.4")
     implementation("com.github.haifengl:smile-core:4.4.2")
