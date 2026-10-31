@@ -59,7 +59,7 @@ dependencies {
     implementation("io.ktor:ktor-server-cors")
     implementation("ch.qos.logback:logback-classic:1.6.3")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.12.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0")
     implementation("io.github.oshai:kotlin-logging-jvm:8.0.4")
     implementation("com.github.haifengl:smile-core:4.4.2")
     implementation("gg.jte:jte-kotlin:3.2.4")
@@ -73,10 +73,10 @@ dependencies {
     // LangChain4j dependencies
     implementation("dev.langchain4j:langchain4j:1.22.0")
     implementation("dev.langchain4j:langchain4j-open-ai:1.22.0")
-    implementation("dev.langchain4j:langchain4j-open-ai-official:1.21.0-beta31")
+    implementation("dev.langchain4j:langchain4j-open-ai-official:1.22.0-beta32")
     implementation("dev.langchain4j:langchain4j-google-ai-gemini:1.22.0")
     implementation("dev.langchain4j:langchain4j-ollama:1.22.0")
-    implementation("dev.langchain4j:langchain4j-community-neo4j:1.21.0-beta31")
+    implementation("dev.langchain4j:langchain4j-community-neo4j:1.22.0-beta32")
 
     implementation("com.auth0:java-jwt:4.6.1")
     // JTokkit
@@ -86,7 +86,7 @@ dependencies {
     implementation("org.mongodb:mongodb-driver-kotlin-coroutine:5.13.0")
     implementation("org.mongodb:bson-kotlinx:5.13.0")
     implementation("org.neo4j.driver:neo4j-java-driver:6.2.1")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:2.4.20")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:2.4.21")
     testImplementation("io.mockk:mockk:1.14.11")
 
     implementation("org.openjfx:javafx-base:$javafxVersion:$javafxPlatform")
