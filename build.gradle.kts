@@ -78,7 +78,7 @@ dependencies {
     implementation("dev.langchain4j:langchain4j-ollama:1.22.0")
     implementation("dev.langchain4j:langchain4j-community-neo4j:1.22.0-beta32")
 
-    implementation("com.auth0:java-jwt:4.6.1")
+    implementation("com.auth0:java-jwt:4.6.2")
     // JTokkit
     implementation("com.knuddels:jtokkit:1.1.0")
 
