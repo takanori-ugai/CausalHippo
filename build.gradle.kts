@@ -71,7 +71,7 @@ dependencies {
     implementation("io.github.ugaikit:bertscore:0.1.0")
 
     // LangChain4j dependencies
-    implementation("dev.langchain4j:langchain4j:1.22.0")
+    implementation("dev.langchain4j:langchain4j:1.23.0")
     implementation("dev.langchain4j:langchain4j-open-ai:1.22.0")
     implementation("dev.langchain4j:langchain4j-open-ai-official:1.22.0-beta32")
     implementation("dev.langchain4j:langchain4j-google-ai-gemini:1.22.0")
