@@ -70,7 +70,7 @@ STRUCT_COLS = [
     "n_nodes", "n_edges", "density", "avg_degree", "max_degree", "degree_gini",
     "n_components", "r_lcc", "inr", "smr",
 ]
-GOLD_COLS = ["ser", "er", "ep", "der", "rr", "rr_true", "rr_false"]
+GOLD_COLS = ["ser", "er", "ep", "der", "rp", "rp_cooccur", "rr", "rr_true", "rr_false"]
 META_COLS = ["n_gold_entities", "n_gold_edges", "corpus_chars"]
 
 ROW_FIELDS = [
@@ -406,6 +406,32 @@ def gold_metrics(
             sum(1.0 for w in weights if w < 1.0) / len(edges) if weights else None
         )
 
+    # EP (document-grounding rate) — gold-free, applicable to all datasets
+    if nodes and corpus_text:
+        grounded = sum(1 for n in nodes if surface_in_text(n["surface"], corpus_text))
+        out["ep"] = grounded / len(nodes)
+
+    # DER — gold-free, applicable to all datasets
+    out["der"] = duplicate_ratio(nodes)
+
+    # RP (relation precision / edge grounding rate) — gold-free, applicable to all datasets
+    if edges and corpus_text:
+        nodes_dict = {n["id"]: n["surface"] for n in nodes}
+        ep_grounded = 0
+        cooccur_grounded = 0
+        paragraphs = extras.get("paragraphs") or [corpus_text]
+        for src, dst in edges:
+            src_surf = str(nodes_dict.get(src, src))
+            dst_surf = str(nodes_dict.get(dst, dst))
+            src_in = surface_in_text(src_surf, corpus_text)
+            dst_in = surface_in_text(dst_surf, corpus_text)
+            if src_in and dst_in:
+                ep_grounded += 1
+            if any(surface_in_text(src_surf, p) and surface_in_text(dst_surf, p) for p in paragraphs):
+                cooccur_grounded += 1
+        out["rp"] = ep_grounded / len(edges)
+        out["rp_cooccur"] = cooccur_grounded / len(edges)
+
     if not gold or not gold.get("has_gold"):
         return out
 
@@ -426,14 +452,6 @@ def gold_metrics(
         )
         out["er"] = matched / len(gold_entities)
     out["n_gold_entities"] = float(len(gold_entities))
-
-    # EP (document-grounding rate)
-    if nodes and corpus_text:
-        grounded = sum(1 for n in nodes if surface_in_text(n["surface"], corpus_text))
-        out["ep"] = grounded / len(nodes)
-
-    # DER
-    out["der"] = duplicate_ratio(nodes)
 
     # RR
     if dataset == "causal":
@@ -588,7 +606,9 @@ def main(argv: list[str] | None = None) -> int:
             if hit is None:
                 skipped.append((system, sample_id, "no matching dataset row"))
                 continue
-            dataset, (_data_row, gold, corpus_text) = hit
+            dataset, (data_row, gold, corpus_text) = hit
+            if data_row:
+                extras["paragraphs"] = [p.get("paragraph_text", "") for p in data_row.get("paragraphs", []) if p.get("paragraph_text")]
 
             row = {
                 "system": system,
