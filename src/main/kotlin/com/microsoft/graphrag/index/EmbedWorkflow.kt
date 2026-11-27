@@ -4,8 +4,7 @@ import com.microsoft.graphrag.logger.ProgressHandler
 import com.microsoft.graphrag.logger.progressTicker
 import dev.langchain4j.model.embedding.EmbeddingModel
 import dev.langchain4j.model.openai.OpenAiEmbeddingModel
-import dev.langchain4j.model.output.Response
-import io.github.oshai.kotlinlogging.KotlinLogging
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -37,15 +36,12 @@ class EmbedWorkflow(
         withContext(Dispatchers.IO) {
             val ticker = progressTicker(progress, chunks.size, description)
             val results =
-                chunks.mapNotNull { chunk ->
+                chunks.map { chunk ->
+                    val vector = embed(chunk.text, "chunk ${chunk.id}")
                     ticker()
-                    val vector = embed(chunk.text) ?: return@mapNotNull null
                     TextEmbedding(chunkId = chunk.id, vector = vector)
                 }
             ticker.done()
-            check(results.size == chunks.size) {
-                "Text embedding incomplete: ${results.size}/${chunks.size} chunks succeeded"
-            }
             results
         }
 
@@ -66,41 +62,26 @@ class EmbedWorkflow(
         withContext(Dispatchers.IO) {
             val ticker = progressTicker(progress, entities.size, description)
             val results =
-                entities.mapNotNull { entity ->
+                entities.map { entity ->
+                    val vector = embed(entity.name, "entity ${entity.id}")
                     ticker()
-                    val vector = embed(entity.name) ?: return@mapNotNull null
                     EntityEmbedding(entityId = entity.id, vector = vector)
                 }
             ticker.done()
-            check(results.size == entities.size) {
-                "Entity embedding incomplete: ${results.size}/${entities.size} entities succeeded"
-            }
             results
         }
 
-    /**
-     * Computes the embedding vector for the given text.
-     *
-     * @param text The input text to embed.
-     * @return `List<Double>` containing the embedding vector, or `null` if an error occurs while obtaining the
-     * embedding.
-     */
-    private fun embed(text: String): List<Double>? =
-        runCatching {
-            val response: Response<dev.langchain4j.data.embedding.Embedding> = embeddingModel.embed(text)
-            response
-                .content()
-                .vector()
-                .asList()
-                .map { it.toDouble() }
-        }.getOrElse { e ->
-            logger.warn(e) { "Embedding failed for text: ${text.take(50)}..." }
-            null
+    private fun embed(
+        text: String,
+        item: String,
+    ): List<Double> =
+        try {
+            embeddingModel.embed(text).content().vector().map { it.toDouble() }
+        } catch (error: CancellationException) {
+            throw error
+        } catch (error: RuntimeException) {
+            throw IllegalStateException("GraphRAG embedding failed for $item", error)
         }
-
-    companion object {
-        private val logger = KotlinLogging.logger {}
-    }
 }
 
 /**
