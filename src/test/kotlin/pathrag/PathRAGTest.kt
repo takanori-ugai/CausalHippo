@@ -16,6 +16,7 @@ import java.io.File
 import kotlin.test.AfterTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
@@ -358,6 +359,25 @@ class PathRAGTest {
                 }
             }
         }
+
+    @Test
+    fun `malformed extraction leaves no chunk vectors from the failed insert`() {
+        runBlocking {
+            mockkStatic("pathrag.llm.LlmKt")
+            coEvery { pathrag.llm.openAiComplete(any(), any(), any(), any(), any(), any(), any(), any(), any()) } returns "invalid"
+            coEvery { pathrag.llm.openAiEmbedding(any(), any()) } answers {
+                firstArg<List<String>>().map { DoubleArray(1536) { 0.02 } }
+            }
+
+            PathRAG(chunkTokenSize = 32, chunkOverlapTokenSize = 8).use { rag ->
+                assertFailsWith<IllegalStateException> { rag.ainsert("The failed document must not become searchable.") }
+                coVerify(exactly = 2) {
+                    pathrag.llm.openAiComplete(any(), any(), any(), any(), any(), any(), any(), any(), any())
+                }
+                coVerify(exactly = 0) { pathrag.llm.openAiEmbedding(any(), any()) }
+            }
+        }
+    }
 
     @Test
     fun insertSingleAndListWithMockedChatAndEmbeddingModels() =

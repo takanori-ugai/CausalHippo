@@ -169,4 +169,5 @@ data class OpenieDoc(
     val passage: String,
     @SerialName("extracted_entities") val extractedEntities: List<String>,
     @SerialName("extracted_triples") val extractedTriples: List<List<String>>,
+    @SerialName("extraction_errors") val extractionErrors: List<String> = emptyList(),
 )

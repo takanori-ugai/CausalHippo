@@ -172,12 +172,24 @@ suspend fun extractEntities(
                                         "examples" to examples,
                                     ),
                                 )
-                            val response = llm(prompt, null, emptyList(), false, false, maxTokensForExtraction, null)
 
-                            fun decodePayload(raw: String): ExtractionPayload =
-                                runCatching { Json.decodeFromString<ExtractionPayload>(extractJsonPayload(raw)) }
-                                    .onFailure { logger.warn { "Failed to parse LLM extraction for chunk $chunkId: ${it.message}" } }
-                                    .getOrElse { ExtractionPayload() }
+                            suspend fun requestExtraction(
+                                prompt: String,
+                                history: List<Map<String, String>>,
+                            ): Pair<String, ExtractionPayload> {
+                                val response = llm(prompt, null, history, false, false, maxTokensForExtraction, null)
+                                return try {
+                                    response to Json.decodeFromString<ExtractionPayload>(extractJsonPayload(response))
+                                } catch (first: IllegalArgumentException) {
+                                    logger.warn(first) { "Retrying malformed extraction for chunk $chunkId" }
+                                    val retry = llm(prompt, null, history, false, false, maxTokensForExtraction, null)
+                                    try {
+                                        retry to Json.decodeFromString<ExtractionPayload>(extractJsonPayload(retry))
+                                    } catch (second: IllegalArgumentException) {
+                                        throw IllegalStateException("Invalid PathRAG extraction JSON for chunk $chunkId", second)
+                                    }
+                                }
+                            }
 
                             fun appendHistory(
                                 history: MutableList<Map<String, String>>,
@@ -187,25 +199,17 @@ suspend fun extractEntities(
                                 history.add(mapOf("role" to role, "content" to message))
                             }
 
-                            var payload = decodePayload(response)
+                            val (response, initialPayload) = requestExtraction(prompt, emptyList())
+                            var payload = initialPayload
                             val history = mutableListOf<Map<String, String>>()
                             appendHistory(history, "user", prompt)
                             appendHistory(history, "assistant", response)
                             if (entityExtractMaxGleaning > 0) {
                                 for (gleanIndex in 0 until entityExtractMaxGleaning) {
-                                    val gleanResponse =
-                                        llm(
-                                            Prompts.ENTITY_CONTINUE_JSON,
-                                            null,
-                                            history,
-                                            false,
-                                            false,
-                                            maxTokensForExtraction,
-                                            null,
-                                        )
+                                    val (gleanResponse, gleanPayload) =
+                                        requestExtraction(Prompts.ENTITY_CONTINUE_JSON, history)
                                     appendHistory(history, "user", Prompts.ENTITY_CONTINUE_JSON)
                                     appendHistory(history, "assistant", gleanResponse)
-                                    val gleanPayload = decodePayload(gleanResponse)
                                     payload =
                                         ExtractionPayload(
                                             entities = payload.entities + gleanPayload.entities,

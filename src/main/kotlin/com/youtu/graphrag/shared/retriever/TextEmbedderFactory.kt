@@ -16,13 +16,11 @@ class OpenAiTextEmbedder(
     private val baseUrl: String,
     private val apiKey: String,
     override val dimensions: Int,
-    private val fallback: TextEmbedder,
     private val timeout: Duration = Duration.ofSeconds(30),
     private val httpClient: HttpClient = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(10)).build(),
     private val objectMapper: ObjectMapper = jacksonObjectMapper(),
 ) : TextEmbedder {
-    private val logger = KotlinLogging.logger {}
-    override val modelTag: String = "openai:$modelName:$dimensions@${baseUrl.trimEnd('/')}"
+    override val modelTag: String = "openai-strict:$modelName:$dimensions@${baseUrl.trimEnd('/')}"
 
     override fun embed(text: String): FloatArray {
         if (text.isBlank()) {
@@ -52,8 +50,7 @@ class OpenAiTextEmbedder(
             }
             parseEmbedding(response.body())
         }.getOrElse { error ->
-            logger.warn(error) { "OpenAI-compatible embedding request failed. Falling back to hash embedder." }
-            fallback.embed(text)
+            throw IllegalStateException("OpenAI-compatible embedding request failed", error)
         }
     }
 
@@ -100,10 +97,8 @@ class GeminiTextEmbedder(
     private val baseUrl: String,
     private val apiKey: String,
     override val dimensions: Int,
-    private val fallback: TextEmbedder,
     private val timeout: Duration = Duration.ofSeconds(30),
 ) : TextEmbedder {
-    private val logger = KotlinLogging.logger {}
     private val delegate =
         GoogleAiEmbeddingModel
             .builder()
@@ -114,7 +109,7 @@ class GeminiTextEmbedder(
             .logRequests(true)
             .build()
 
-    override val modelTag: String = "gemini:$modelName:$dimensions@${baseUrl.trimEnd('/')}"
+    override val modelTag: String = "gemini-strict:$modelName:$dimensions@${baseUrl.trimEnd('/')}"
 
     override fun embed(text: String): FloatArray {
         if (text.isBlank()) {
@@ -125,8 +120,7 @@ class GeminiTextEmbedder(
             val vector = delegate.embed(text).content().vector()
             normalizeDimensions(vector)
         }.getOrElse { error ->
-            logger.warn(error) { "Gemini embedding request failed. Falling back to hash embedder." }
-            fallback.embed(text)
+            throw IllegalStateException("Gemini embedding request failed", error)
         }
     }
 
@@ -201,7 +195,6 @@ object RetrieverEmbedderFactory {
             baseUrl = baseUrl,
             apiKey = apiKey,
             dimensions = dimensions,
-            fallback = fallback,
         )
     }
 
@@ -227,7 +220,6 @@ object RetrieverEmbedderFactory {
             baseUrl = baseUrl,
             apiKey = apiKey,
             dimensions = dimensions,
-            fallback = fallback,
         )
     }
 

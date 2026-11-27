@@ -10,6 +10,7 @@ import com.youtu.graphrag.shared.graph.GraphRelationship
 import com.youtu.graphrag.shared.llm.LlmClient
 import com.youtu.graphrag.shared.llm.LlmClientFactory
 import com.youtu.graphrag.shared.llm.LlmOutputParser
+import com.youtu.graphrag.shared.llm.NoopLlmClient
 import com.youtu.graphrag.shared.treecomm.FastTreeComm
 import com.youtu.graphrag.shared.treecomm.TreeCommOptions
 import io.github.oshai.kotlinlogging.KotlinLogging
@@ -70,7 +71,6 @@ class KTBuilder(
     private val mapper = jacksonObjectMapper()
     private val schemaFile: Path = resolvePath(schemaPath)
     private var schema: MutableMap<String, Any?> = loadSchema(schemaFile)
-    private var llmExtractionDisabled = false
     private val tokenizer: Encoding = TOKENIZER_REGISTRY.getEncoding(EncodingType.CL100K_BASE)
 
     fun buildKnowledgeGraph(corpusPath: String): List<GraphRelationship> {
@@ -85,8 +85,8 @@ class KTBuilder(
         val documents = loadDocuments(corpusFile)
         val chunks = createChunks(documents)
 
-        writeChunksFile(chunks)
         val relationships = buildRelationships(chunks)
+        writeChunksFile(chunks)
         writeGraphFile(relationships)
 
         logger.info {
@@ -369,7 +369,7 @@ class KTBuilder(
                     .map { chunk ->
                         async {
                             semaphore.withPermit {
-                                chunk to extractChunkKnowledge(chunk.text)
+                                chunk to extractChunkKnowledge(chunk.id, chunk.text)
                             }
                         }
                     }.awaitAll()
@@ -513,22 +513,20 @@ class KTBuilder(
         }
     }
 
-    private fun extractChunkKnowledge(chunkText: String): ExtractionPayload {
-        if (llmExtractionDisabled) {
-            return emptyExtractionPayload()
-        }
+    private fun extractChunkKnowledge(
+        chunkId: String,
+        chunkText: String,
+    ): ExtractionPayload {
+        if (llmClient is NoopLlmClient) return emptyExtractionPayload()
 
         val prompt = renderConstructionPrompt(chunkText)
-        val llmResponse = llmClient.complete(prompt)
-        if (llmResponse.isBlank()) {
-            llmExtractionDisabled = true
-            logger.warn { "Disabling constructor LLM extraction for '$datasetName' after empty completion response." }
-            return emptyExtractionPayload()
-        }
-        val parsed = LlmOutputParser.parseJsonObject(llmResponse)
-        if (parsed == null) {
-            return emptyExtractionPayload()
-        }
+        val response =
+            runCatching { llmClient.completeForExtraction(prompt) }
+                .getOrElse { throw IllegalStateException("YoutuRAG extraction failed for chunk $chunkId", it) }
+        val parsed =
+            checkNotNull(LlmOutputParser.parseJsonObject(response)) {
+                "Missing or invalid YoutuRAG extraction JSON for chunk $chunkId"
+            }
 
         return ExtractionPayload(
             attributes = normalizeAttributes(parsed["attributes"]),

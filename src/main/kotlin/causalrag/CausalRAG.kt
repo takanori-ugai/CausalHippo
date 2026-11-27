@@ -24,6 +24,7 @@ import shared.config.CaualRagConfig
 import shared.config.CommonRagConfigLoader
 import shared.rag.CommonRag
 import shared.rag.CommonVectorStorage
+import shared.rag.IndexingReport
 import shared.rag.spi.persistence.GraphEdgeRecord
 import shared.rag.spi.persistence.GraphNodeRecord
 import shared.rag.spi.persistence.GraphSnapshot
@@ -148,6 +149,9 @@ class CausalRAG(
             ensureUnifiedSpiIndexInitialized()
         }
     }
+
+    val lastIndexingReport: IndexingReport
+        get() = graphBuilder.lastIndexingReport
 
     override fun upsert(data: String) = runBlocking { aupsert(data) }
 
