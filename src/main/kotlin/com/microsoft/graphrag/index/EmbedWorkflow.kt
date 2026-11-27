@@ -26,8 +26,8 @@ class EmbedWorkflow(
      * @param chunks The document chunks to embed.
      * @param progress Optional progress handler that receives periodic updates during embedding.
      * @param description Description passed to the progress ticker for display or logging.
-     * @return A list of `TextEmbedding` objects for chunks whose embeddings were successfully computed; chunks
-     * that fail to embed are omitted.
+     * @return A list of `TextEmbedding` objects, one per chunk.
+     * @throws IllegalStateException if any chunk fails to embed.
      */
     suspend fun embedChunks(
         chunks: List<DocumentChunk>,
@@ -43,6 +43,9 @@ class EmbedWorkflow(
                     TextEmbedding(chunkId = chunk.id, vector = vector)
                 }
             ticker.done()
+            check(results.size == chunks.size) {
+                "Text embedding incomplete: ${results.size}/${chunks.size} chunks succeeded"
+            }
             results
         }
 
@@ -52,8 +55,8 @@ class EmbedWorkflow(
      * @param entities The entities to embed; each entity's `name` is used to compute its embedding.
      * @param progress Optional progress handler called as each embedding completes.
      * @param description Human-readable description forwarded to the progress ticker.
-     * @return A list of EntityEmbedding objects pairing `entityId` with the computed embedding vector; entities
-     * whose embeddings fail are omitted.
+     * @return A list of EntityEmbedding objects pairing each `entityId` with its embedding vector.
+     * @throws IllegalStateException if any entity fails to embed.
      */
     suspend fun embedEntities(
         entities: List<Entity>,
@@ -69,6 +72,9 @@ class EmbedWorkflow(
                     EntityEmbedding(entityId = entity.id, vector = vector)
                 }
             ticker.done()
+            check(results.size == entities.size) {
+                "Entity embedding incomplete: ${results.size}/${entities.size} entities succeeded"
+            }
             results
         }
 
