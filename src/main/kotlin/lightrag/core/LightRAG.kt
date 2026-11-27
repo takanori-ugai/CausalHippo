@@ -253,7 +253,14 @@ class LightRAG(
      * @param docId The ID of the document to delete.
      * @return A map of the status.
      */
-    suspend fun deleteByDocId(docId: String): Map<String, String> = ingestionService.deleteByDocId(docId)
+    suspend fun deleteByDocId(docId: String): Map<String, String> {
+        val result = ingestionService.deleteByDocId(docId)
+        if (result["status"] == "success" && unifiedSpiEnabled) {
+            syncUnifiedSpiFromLocal()
+            unifiedSpiInitialized = true
+        }
+        return result
+    }
 
     private suspend fun saveLocalSnapshot(path: String) {
         val payload = inspectGraphFromLocal()
