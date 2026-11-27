@@ -11,7 +11,7 @@ import io.mockk.verify
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import kotlin.test.assertFailsWith
-import kotlin.test.assertSame
+import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class IndexingFailureTest {
@@ -32,8 +32,10 @@ class IndexingFailureTest {
                     workflow.embedEntities(listOf(Entity("e1", "first", "type", "c1"), Entity("e2", "second", "type", "c2")))
                 }
 
-            assertSame(failure, chunkError.cause)
-            assertSame(failure, entityError.cause)
+            assertEquals("GraphRAG embedding failed for chunk c1", chunkError.message)
+            assertEquals("GraphRAG embedding failed for entity e1", entityError.message)
+            assertTrue(generateSequence<Throwable>(chunkError) { it.cause }.any { it === failure })
+            assertTrue(generateSequence<Throwable>(entityError) { it.cause }.any { it === failure })
             verify(exactly = 0) { model.embed("second") }
         }
     }
