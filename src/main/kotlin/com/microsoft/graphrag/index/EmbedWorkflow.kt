@@ -76,7 +76,11 @@ class EmbedWorkflow(
         item: String,
     ): List<Double> =
         try {
-            embeddingModel.embed(text).content().vector().map { it.toDouble() }
+            embeddingModel
+                .embed(text)
+                .content()
+                .vector()
+                .map { it.toDouble() }
         } catch (error: CancellationException) {
             throw error
         } catch (error: RuntimeException) {
