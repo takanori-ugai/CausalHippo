@@ -1,8 +1,10 @@
 package lightrag.services
 
 import io.github.oshai.kotlinlogging.KotlinLogging
+import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
+import kotlinx.coroutines.withContext
 import lightrag.core.types.DocStatus
 import lightrag.utils.generateTrackId
 import java.time.Instant
@@ -181,7 +183,6 @@ class IngestionService(
             if (processedDocs.isNotEmpty() && (graphEmpty || chunksEmpty)) {
                 logger.warn { "Rebuilding derived stores from processed documents" }
                 documentProcessor.rebuildDerivedStorage(processedDocs)
-                storageManager.persist()
             }
         }
 
@@ -205,11 +206,21 @@ class IngestionService(
             }
 
             val retained = storageManager.docStatusStorage.getDocsByStatus(DocStatus.PROCESSED) - docId
-            documentProcessor.rebuildDerivedStorage(retained)
-            storageManager.persist()
-            storageManager.fullDocs.delete(listOf(docId))
-            storageManager.docStatusStorage.delete(listOf(docId))
-            storageManager.persist()
+            documentProcessor.rebuildDerivedStorage(retained) {
+                try {
+                    storageManager.fullDocs.delete(listOf(docId))
+                    storageManager.docStatusStorage.delete(listOf(docId))
+                    storageManager.persist()
+                } catch (error: Exception) {
+                    withContext(NonCancellable) {
+                        runCatching {
+                            if (doc != null) storageManager.fullDocs.upsert(mapOf(docId to doc))
+                            if (status != null) storageManager.docStatusStorage.upsert(mapOf(docId to status))
+                        }.exceptionOrNull()?.let(error::addSuppressed)
+                    }
+                    throw error
+                }
+            }
             mapOf("status" to "success", "doc_id" to docId)
         }
 }

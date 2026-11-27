@@ -2,6 +2,8 @@ package lightrag.services
 
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import lightrag.core.types.DocProcessingStatus
@@ -66,12 +68,48 @@ class DocumentProcessor(
      * Rebuilds derived data from documents that will remain indexed.
      * Resolve all source contents and extractions before touching the current index.
      */
-    suspend fun rebuildDerivedStorage(documents: Map<String, DocProcessingStatus>) {
+    suspend fun rebuildDerivedStorage(
+        documents: Map<String, DocProcessingStatus>,
+        afterPublish: suspend () -> Unit = {},
+    ) {
         val prepared = documents.map { (id, status) -> prepareDocument(id, status) }
-        storageManager.dropDerivedStorage()
+        // The staging stores are in memory and never initialized, persisted, or dropped on disk.
+        val staging =
+            StorageManager(
+                workingDir = ".",
+                embeddingModel = storageManager.chunksVdb.embeddingFunc,
+                globalConfig = emptyMap(),
+            )
         for (document in prepared) {
-            writeDocument(document)
+            writeDerivedDocument(document, staging)
         }
+        val knownChunks = prepared.flatMap { it.chunks.keys }.toSet()
+        val replacement = DerivedIndex.capture(staging, knownChunks)
+        val previous = DerivedIndex.capture(storageManager, knownChunks + existingDocumentChunkIds())
+        try {
+            replacement.restore(storageManager)
+            storageManager.persist()
+            afterPublish()
+        } catch (error: Exception) {
+            withContext(NonCancellable) {
+                runCatching {
+                    previous.restore(storageManager)
+                    storageManager.persist()
+                }.exceptionOrNull()?.let(error::addSuppressed)
+            }
+            throw error
+        }
+    }
+
+    private suspend fun existingDocumentChunkIds(): Set<String> {
+        val chunkSize = globalConfig["chunk_token_size"] as? Int ?: DEFAULT_CHUNK_TOKEN_SIZE
+        val overlap = globalConfig["chunk_overlap_token_size"] as? Int ?: DEFAULT_CHUNK_OVERLAP_TOKEN_SIZE
+        val documentIds = DocStatus.entries.flatMap { storageManager.docStatusStorage.getDocsByStatus(it).keys }.toSet()
+        return documentIds
+            .flatMap { id ->
+                val content = storageManager.fullDocs.getById(id)?.get("content") as? String ?: return@flatMap emptyList()
+                chunkDocument(content, chunkSize, overlap).map { computeMd5(it.content) }
+            }.toSet()
     }
 
     private suspend fun prepareDocument(
@@ -99,17 +137,24 @@ class DocumentProcessor(
         storageManager.fullDocs.upsert(
             mapOf(document.id to (document.source + ("graph_extraction" to Json.encodeToString(document.extraction)))),
         )
+        writeDerivedDocument(document, storageManager)
+    }
+
+    private suspend fun writeDerivedDocument(
+        document: PreparedDocument,
+        stores: StorageManager,
+    ) {
         mergeNodesAndEdges(
             nodes = document.extraction.nodes,
             edges = document.extraction.edges,
-            knowledgeGraphInst = storageManager.chunkEntityRelationGraph,
-            entitiesVdb = storageManager.entitiesVdb,
-            relationshipsVdb = storageManager.relationshipsVdb,
-            fullEntities = storageManager.fullEntities,
-            fullRelations = storageManager.fullRelations,
+            knowledgeGraphInst = stores.chunkEntityRelationGraph,
+            entitiesVdb = stores.entitiesVdb,
+            relationshipsVdb = stores.relationshipsVdb,
+            fullEntities = stores.fullEntities,
+            fullRelations = stores.fullRelations,
         )
-        storageManager.chunksVdb.upsert(document.chunks)
-        storageManager.textChunks.upsert(document.chunks)
+        stores.chunksVdb.upsert(document.chunks)
+        stores.textChunks.upsert(document.chunks)
     }
 
     private suspend fun updateStatus(

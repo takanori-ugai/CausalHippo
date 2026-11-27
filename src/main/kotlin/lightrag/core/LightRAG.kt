@@ -2,6 +2,8 @@ package lightrag.core
 
 import dev.langchain4j.model.embedding.EmbeddingModel
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import lightrag.services.IngestionService
@@ -89,6 +91,7 @@ class LightRAG(
     private val persistenceNamespacePrefix: String = "lightrag",
 ) : CommonRag<QueryParam, QueryResult?> {
     private val objectMapper = jacksonObjectMapper()
+    private val indexMutex = Mutex()
 
     private val unifiedSpiSession = persistenceSession
     private val unifiedSpiEnabled = useUnifiedSpiForRetrievalAndIndex && unifiedSpiSession != null
@@ -114,7 +117,10 @@ class LightRAG(
     suspend fun insert(
         input: String,
         fileSource: String? = null,
-    ): String = ingestionService.insert(input, fileSource)
+    ): String =
+        indexMutex.withLock {
+            ingestionService.insert(input, fileSource).also { publishUnifiedIndex() }
+        }
 
     /**
      * Inserts multiple documents.
@@ -125,7 +131,10 @@ class LightRAG(
     suspend fun insert(
         input: List<String>,
         fileSources: List<String>? = null,
-    ): String = ingestionService.insert(input, fileSources)
+    ): String =
+        indexMutex.withLock {
+            ingestionService.insert(input, fileSources).also { publishUnifiedIndex() }
+        }
 
     override fun upsert(data: String) = runBlocking { aupsert(data) }
 
@@ -138,10 +147,6 @@ class LightRAG(
             return
         }
         insert(doc)
-        if (unifiedSpiEnabled) {
-            syncUnifiedSpiFromLocal()
-            unifiedSpiInitialized = true
-        }
     }
 
     override suspend fun aupsert(data: Collection<String>) {
@@ -154,17 +159,18 @@ class LightRAG(
             return
         }
         insert(docs)
-        if (unifiedSpiEnabled) {
-            syncUnifiedSpiFromLocal()
-            unifiedSpiInitialized = true
-        }
     }
 
     /**
      * Rebuilds the derived storage if it is empty.
      */
-    suspend fun rebuildDerivedStorageIfEmpty() {
-        ingestionService.rebuildDerivedStorageIfEmpty()
+    suspend fun rebuildDerivedStorageIfEmpty() =
+        indexMutex.withLock {
+            ingestionService.rebuildDerivedStorageIfEmpty()
+            publishUnifiedIndex()
+        }
+
+    private suspend fun publishUnifiedIndex() {
         if (unifiedSpiEnabled) {
             syncUnifiedSpiFromLocal()
             unifiedSpiInitialized = true
@@ -185,29 +191,36 @@ class LightRAG(
     override suspend fun aquery(
         query: String,
         param: QueryParam,
-    ): QueryResult? {
-        if (unifiedSpiEnabled) {
-            ensureUnifiedSpiIndexInitializedInternal()
-            if (param.onlyNeedContext) {
-                val contextItems = retrieveContextFromUnifiedSpi(query, param.chunkTopK.coerceAtLeast(1))
-                return QueryResult(
-                    content = contextItems.joinToString(separator = "\n\n"),
-                    rawData = mapOf("data" to mapOf("context" to contextItems)),
-                )
+    ): QueryResult? =
+        indexMutex.withLock {
+            if (unifiedSpiEnabled) {
+                ensureUnifiedSpiIndexInitializedInternal()
+                if (param.onlyNeedContext) {
+                    val contextItems = retrieveContextFromUnifiedSpi(query, param.chunkTopK.coerceAtLeast(1))
+                    return@withLock QueryResult(
+                        content = contextItems.joinToString(separator = "\n\n"),
+                        rawData = mapOf("data" to mapOf("context" to contextItems)),
+                    )
+                }
             }
+            queryService.query(query, param)
         }
-        return queryService.query(query, param)
-    }
 
     override fun drop() = runBlocking { adrop() }
 
     override suspend fun adrop() {
-        storageManager.drop()
-        if (unifiedSpiEnabled) {
-            clearUnifiedSpiState()
-            unifiedSpiInitialized = true
-        }
+        dropStorage()
     }
+
+    internal suspend fun dropStorage(): Map<String, Map<String, String>> =
+        indexMutex.withLock {
+            storageManager.drop().also {
+                if (unifiedSpiEnabled) {
+                    clearUnifiedSpiState()
+                    unifiedSpiInitialized = true
+                }
+            }
+        }
 
     override fun inspectGraph(): Map<String, Any?> = runBlocking { ainspectGraph() }
 
@@ -233,14 +246,15 @@ class LightRAG(
     override fun loadGraph(path: String) = runBlocking { aloadGraph(path) }
 
     @Suppress("TooGenericExceptionCaught", "UNCHECKED_CAST")
-    override suspend fun aloadGraph(path: String) {
-        require(path.isNotBlank()) { "path must not be blank" }
-        if (unifiedSpiEnabled) {
-            loadUnifiedSpiCheckpoint(path)
-            return
+    override suspend fun aloadGraph(path: String) =
+        indexMutex.withLock {
+            require(path.isNotBlank()) { "path must not be blank" }
+            if (unifiedSpiEnabled) {
+                loadUnifiedSpiCheckpoint(path)
+            } else {
+                loadLocalSnapshot(path)
+            }
         }
-        loadLocalSnapshot(path)
-    }
 
     /**
      * Gets the processing status of the documents.
@@ -253,14 +267,12 @@ class LightRAG(
      * @param docId The ID of the document to delete.
      * @return A map of the status.
      */
-    suspend fun deleteByDocId(docId: String): Map<String, String> {
-        val result = ingestionService.deleteByDocId(docId)
-        if (result["status"] == "success" && unifiedSpiEnabled) {
-            syncUnifiedSpiFromLocal()
-            unifiedSpiInitialized = true
+    suspend fun deleteByDocId(docId: String): Map<String, String> =
+        indexMutex.withLock {
+            ingestionService.deleteByDocId(docId).also { result ->
+                if (result["status"] == "success") publishUnifiedIndex()
+            }
         }
-        return result
-    }
 
     private suspend fun saveLocalSnapshot(path: String) {
         val payload = inspectGraphFromLocal()

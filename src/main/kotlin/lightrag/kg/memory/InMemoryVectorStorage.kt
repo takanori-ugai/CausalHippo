@@ -200,17 +200,13 @@ private class InMemoryVectorStorageDelegate(
             val content = meta["content"] as? String
             val vector =
                 when {
-                    content != null -> embedText(embeddingFunc, content, logger)
                     meta["vector"] != null -> (meta["vector"] as? List<*>)?.mapNotNull { (it as? Number)?.toFloat() } ?: emptyList()
+                    content != null -> embedText(embeddingFunc, content, logger)
                     else -> emptyList()
                 }
 
-            if (vector.isNotEmpty()) {
-                vectors[id] = vector
-            } else if (!vectors.containsKey(id)) {
-                logger.warn { "Upsert skipped for '$id' due to missing content or vector." }
-                return@forEach
-            }
+            check(vector.isNotEmpty()) { "Missing embedding for '$id' in '$namespace'" }
+            vectors[id] = vector
 
             val mapped = mapToMetadata(meta)
             metadata[id] = mapped
