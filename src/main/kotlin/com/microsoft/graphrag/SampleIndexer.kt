@@ -51,7 +51,11 @@ fun main() {
 
     runBlocking {
         runPipeline(pipeline, config, callbacks).collect { result ->
-            println("Workflow '${result.workflow}' completed; errors=${result.errors?.joinToString()}")
+            val errors = result.errors.orEmpty()
+            check(errors.isEmpty()) {
+                "GraphRAG indexing failed at '${result.workflow}': ${errors.joinToString("; ")}"
+            }
+            println("Workflow '${result.workflow}' completed")
         }
     }
 

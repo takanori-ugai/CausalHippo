@@ -74,11 +74,15 @@ class IndexRunner(
                 callbacks = NoopWorkflowCallbacks(),
                 isUpdateRun = options.isUpdate,
             ).collect { result: PipelineRunResult ->
-                out.println("Workflow ${result.workflow} completed (errors=${result.errors?.size ?: 0})")
+                val errors = result.errors.orEmpty()
+                check(errors.isEmpty()) {
+                    "GraphRAG indexing failed at '${result.workflow}': ${errors.joinToString("; ")}"
+                }
+                out.println("Workflow ${result.workflow} completed")
             }
         }
 
-        out.println("Index pipeline completed (placeholder).")
+        out.println("Index pipeline completed.")
     }
 
     private fun printOptions(options: IndexOptions) {
