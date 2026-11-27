@@ -87,9 +87,10 @@ class ExtractGraphWorkflow(
         entities: MutableMap<String, EntityAccumulator>,
         relationships: MutableMap<Pair<String, String>, RelationshipAccumulator>,
     ): Pair<Int, Int> {
-        val json = checkNotNull(extractJsonObject(raw)) {
-            "Missing graph extraction JSON for chunk $sourceChunkId"
-        }
+        val json =
+            checkNotNull(extractJsonObject(raw)) {
+                "Missing graph extraction JSON for chunk $sourceChunkId"
+            }
         val parsed =
             runCatching { objectMapper.readValue(json, GraphExtractionResponse::class.java) }
                 .getOrElse {
