@@ -374,11 +374,14 @@ class PathRAG(
             logger.warn { "No documents provided for insertion." }
             return
         }
-        val newDocs =
+        val documents =
             inputs.associate { text ->
-                val id = computeMdHashId(text.trim(), prefix = "doc-")
-                id to mapOf("content" to text.trim())
+                val content = text.trim()
+                computeMdHashId(content, prefix = "doc-") to mapOf("content" to content)
             }
+        val newDocIds = fullDocs.filterKeys(documents.keys.toList())
+        val newDocs = documents.filterKeys { it in newDocIds }
+        if (newDocs.isEmpty()) return
         val chunkMap = mutableMapOf<String, Map<String, Any>>()
         newDocs.forEach { (docKey, doc) ->
             val content = doc["content"] as String
@@ -394,18 +397,22 @@ class PathRAG(
                 chunkMap[id] = chunk + mapOf("content" to content, "full_doc_id" to docKey)
             }
         }
+        val newChunkIds = textChunks.filterKeys(chunkMap.keys.toList())
+        val newChunks = chunkMap.filterKeys { it in newChunkIds }
         try {
-            chunksVdb.upsert(chunkMap)
-            chunkEntityRelationGraph =
-                extractEntities(
-                    chunkMap,
-                    chunkEntityRelationGraph,
-                    entitiesVdb,
-                    relationshipsVdb,
-                    globalConfig(),
-                )
+            if (newChunks.isNotEmpty()) {
+                chunkEntityRelationGraph =
+                    extractEntities(
+                        newChunks,
+                        chunkEntityRelationGraph,
+                        entitiesVdb,
+                        relationshipsVdb,
+                        globalConfig(),
+                    )
+                chunksVdb.upsert(newChunks)
+                textChunks.upsert(newChunks)
+            }
             fullDocs.upsert(newDocs)
-            textChunks.upsert(chunkMap)
             if (unifiedSpiEnabled) {
                 syncUnifiedSpiFromLocal()
                 unifiedSpiInitialized = true

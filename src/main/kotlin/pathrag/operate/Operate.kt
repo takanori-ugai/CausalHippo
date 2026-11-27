@@ -371,8 +371,7 @@ suspend fun extractEntities(
                             "source_id" to (ent["source_id"] ?: ""),
                         )
                 }.toMap()
-        runCatching { entityVdb.upsert(toStore) }
-            .onFailure { logger.error(it) { "Failed to upsert ${toStore.size} entities into VDB" } }
+        entityVdb.upsert(toStore)
     }
 
     if (allRelationshipsData.isNotEmpty()) {
@@ -394,8 +393,7 @@ suspend fun extractEntities(
                             "source_id" to (edge["source_id"]?.toString() ?: ""),
                         )
                 }.toMap()
-        runCatching { relationshipsVdb.upsert(toStore) }
-            .onFailure { logger.error(it) { "Failed to upsert ${toStore.size} relationships into VDB" } }
+        relationshipsVdb.upsert(toStore)
     }
 
     return knowledgeGraphInst
@@ -473,7 +471,9 @@ private suspend fun mergeEdgesThenUpsert(
     }
 
     val weight =
-        edgesData.mapNotNull { (it["weight"] as? Number)?.toDouble() } + alreadyWeights
+        edgesData
+            .filterNot { it["source_id"] in alreadySourceIds }
+            .mapNotNull { (it["weight"] as? Number)?.toDouble() } + alreadyWeights
     var description =
         (edgesData.mapNotNull { it["description"]?.toString() } + alreadyDescriptions)
             .filter { it.isNotBlank() }
@@ -610,52 +610,22 @@ suspend fun kgQuery(
     hashingKv: ResponseCache? = null,
 ): String =
     withContext(Dispatchers.Default) {
-        val argsHash = computeArgsHash(queryParam, query)
-        val cached = hashingKv?.handleCache(argsHash, query, queryParam.mode, allowSimilar = false)
-        if (cached != null) return@withContext cached
-
         val (llKeywords, hlKeywords) = extractKeywords(llmModel, query, globalConfig)
-
-        val systemContext = "PathRAG (Kotlin) | nodes=${knowledgeGraphInst.nodes().size} | mode=${queryParam.mode}"
-        val response =
-            when (queryParam.mode.lowercase()) {
+        val mode = queryParam.mode.lowercase()
+        val sections =
+            when (mode) {
                 "local" -> {
-                    runLocalMode(
-                        llKeywords,
-                        queryParam,
-                        entitiesVdb,
-                        knowledgeGraphInst,
-                        textChunksDb,
-                        llmModel,
-                        systemContext,
-                    )
+                    listOf(getNodeData(llKeywords, knowledgeGraphInst, entitiesVdb, textChunksDb, queryParam))
                 }
 
                 "global" -> {
-                    runGlobalMode(
-                        hlKeywords,
-                        queryParam,
-                        knowledgeGraphInst,
-                        relationshipsVdb,
-                        textChunksDb,
-                        llmModel,
-                        systemContext,
-                    )
+                    listOf(getEdgeData(hlKeywords, knowledgeGraphInst, relationshipsVdb, textChunksDb, queryParam))
                 }
 
                 "hybrid" -> {
-                    runHybridMode(
-                        llKeywords,
-                        hlKeywords,
-                        query,
-                        queryParam,
-                        knowledgeGraphInst,
-                        entitiesVdb,
-                        relationshipsVdb,
-                        textChunksDb,
-                        llmModel,
-                        systemContext,
-                        hashingKv,
+                    listOf(
+                        getEdgeData(hlKeywords, knowledgeGraphInst, relationshipsVdb, textChunksDb, queryParam),
+                        getNodeData(llKeywords, knowledgeGraphInst, entitiesVdb, textChunksDb, queryParam),
                     )
                 }
 
@@ -663,73 +633,86 @@ suspend fun kgQuery(
                     throw IllegalArgumentException("Unknown query mode: ${queryParam.mode}. Supported modes: local, global, hybrid")
                 }
             }
-        hashingKv?.upsert(queryParam.mode, argsHash, response, query)
+        val context =
+            if (mode == "hybrid") {
+                renderWithinBudget(sections, queryParam.maxTokenForTextUnit)
+            } else {
+                sections.single().render()
+            }
+        if (queryParam.onlyNeedContext) return@withContext context
+
+        val requestPrompt =
+            Prompts.render(
+                Prompts.RAG_RESPONSE,
+                mapOf("context_data" to context, "response_type" to queryParam.responseType),
+            )
+        val systemPrompt = "PathRAG (Kotlin) | nodes=${knowledgeGraphInst.nodes().size} | mode=$mode\n$requestPrompt"
+        if (queryParam.onlyNeedPrompt) return@withContext systemPrompt
+
+        val responseCache = hashingKv.takeUnless { queryParam.stream }
+        val argsHash = computeArgsHash(queryParam, query, systemPrompt)
+        val cached = responseCache?.handleCache(argsHash, query, queryParam.mode, allowSimilar = false)
+        if (cached != null) return@withContext cached
+
+        val maxOutputTokens = if (mode == "global") queryParam.maxTokenForGlobalContext else queryParam.maxTokenForTextUnit
+        val response = llmModel(query, systemPrompt, emptyList(), false, queryParam.stream, maxOutputTokens, null)
+        responseCache?.upsert(queryParam.mode, argsHash, response, query)
         response
     }
 
-private suspend fun runLocalMode(
-    query: String,
-    queryParam: QueryParam,
-    entitiesVdb: BaseVectorStorage,
-    knowledgeGraphInst: BaseGraphStorage,
-    textChunksDb: BaseKVStorage<Map<String, Any>>,
-    llmModel: suspend (
-        prompt: String,
-        systemPrompt: String?,
-        historyMessages: List<Map<String, String>>,
-        keywordExtraction: Boolean,
-        stream: Boolean,
-        maxTokens: Int?,
-        hashingKv: Any?,
-    ) -> String,
-    systemContext: String,
+private data class ContextTable(
+    val title: String,
+    val headers: List<String>,
+    val rows: List<List<String>> = emptyList(),
+) {
+    fun render(rowCount: Int = rows.size): String = "-----$title-----\n```csv\n${toCsv(headers, rows.take(rowCount))}\n```"
+}
+
+private data class ContextSection(
+    val name: String,
+    val tables: List<ContextTable>,
+) {
+    fun render(): String = "-----$name-information-----\n" + tables.joinToString("\n") { it.render() }
+}
+
+private fun renderWithinBudget(
+    sections: List<ContextSection>,
+    maxTokens: Int,
 ): String {
-    val (entitiesCsv, relationsCsv, textCsv) =
-        getNodeData(
-            query,
-            knowledgeGraphInst,
-            entitiesVdb,
-            textChunksDb,
-            queryParam,
-        )
+    val fullContext = sections.joinToString("\n") { it.render() }
+    if (Tokenizer.count(fullContext) <= maxTokens) return fullContext
 
-    val context =
-        """
-        -----local-information-----
-        -----low-level entity information-----
-        ```csv
-        $entitiesCsv
-        ```
-        -----low-level relationship information-----
-        ```csv
-        $relationsCsv
-        ```
-        -----Sources-----
-        ```csv
-        $textCsv
-        ```
-        """.trimIndent()
+    val tables = sections.flatMap { it.tables }
+    val rowCounts = IntArray(tables.size)
+    val tableOrder = tables.indices.sortedBy { if (tables[it].title == "Sources") 0 else 1 }
 
-    if (queryParam.onlyNeedContext) return context
+    fun render(): String {
+        var index = 0
+        return sections.joinToString("\n") { section ->
+            "-----${section.name}-information-----\n" +
+                section.tables.joinToString("\n") { table -> table.render(rowCounts[index++]) }
+        }
+    }
 
-    val sysPrompt =
-        Prompts.render(
-            Prompts.RAG_RESPONSE,
-            mapOf(
-                "context_data" to context,
-                "response_type" to queryParam.responseType,
-            ),
-        )
-
-    return llmModel(
-        query,
-        "$systemContext\n$sysPrompt",
-        emptyList(),
-        false,
-        queryParam.stream,
-        queryParam.maxTokenForTextUnit,
-        null,
-    )
+    var context = render()
+    if (Tokenizer.count(context) > maxTokens) return ""
+    val exhausted = BooleanArray(tables.size)
+    while (true) {
+        var added = false
+        for (index in tableOrder) {
+            if (exhausted[index] || rowCounts[index] >= tables[index].rows.size) continue
+            rowCounts[index] += 1
+            val candidate = render()
+            if (Tokenizer.count(candidate) <= maxTokens) {
+                context = candidate
+                added = true
+            } else {
+                rowCounts[index] -= 1
+                exhausted[index] = true
+            }
+        }
+        if (!added) return context
+    }
 }
 
 private suspend fun getNodeData(
@@ -738,16 +721,8 @@ private suspend fun getNodeData(
     entitiesVdb: BaseVectorStorage,
     textChunksDb: BaseKVStorage<Map<String, Any>>,
     queryParam: QueryParam,
-): Triple<String, String, String> {
+): ContextSection {
     val results = entitiesVdb.query(keywords, topK = queryParam.topK)
-    if (results.isEmpty()) {
-        return Triple(
-            emptyCsv(listOf("id", "entity", "type", "description", "rank")),
-            emptyCsv(listOf("context")),
-            emptyCsv(listOf("id", "content")),
-        )
-    }
-
     val nodeDatas =
         results.mapNotNull { res ->
             val name = res["entity_name"]?.toString() ?: res["content"]?.toString()
@@ -760,7 +735,7 @@ private suspend fun getNodeData(
                     "entity_type" to (node?.get("entity_type") ?: "UNKNOWN"),
                     "description" to (desc ?: ""),
                     "rank" to degree,
-                    "source_id" to (node?.get("source_id") ?: res["full_doc_id"] ?: ""),
+                    "source_id" to (node?.get("source_id") ?: res["source_id"] ?: res["full_doc_id"] ?: ""),
                 )
             } else {
                 null
@@ -768,10 +743,11 @@ private suspend fun getNodeData(
         }
 
     val textUnits = findMostRelatedTextUnitFromEntities(nodeDatas, queryParam, textChunksDb)
-    val relations = buildPathRelations(nodeDatas, knowledgeGraphInst, queryParam) // Explore paths between entities
+    val paths = buildPathRelations(nodeDatas, knowledgeGraphInst, queryParam)
 
-    val entitiesCsv =
-        toCsv(
+    val entities =
+        ContextTable(
+            "low-level entity information",
             listOf("id", "entity", "type", "description", "rank"),
             nodeDatas.mapIndexed { idx, n ->
                 listOf(
@@ -783,20 +759,22 @@ private suspend fun getNodeData(
                 )
             },
         )
-    val relationsCsv =
-        toCsv(
+    val relations =
+        ContextTable(
+            "low-level relationship information",
             listOf("context"),
-            relations.map { listOf(it) },
+            paths.map { listOf(it) },
         )
-    val textCsv =
-        toCsv(
+    val sources =
+        ContextTable(
+            "Sources",
             listOf("id", "content"),
             textUnits.mapIndexed { idx, t ->
                 listOf(idx.toString(), t["content"].toString())
             },
         )
 
-    return Triple(entitiesCsv, relationsCsv, textCsv)
+    return ContextSection("local", listOf(entities, relations, sources))
 }
 
 private suspend fun findMostRelatedTextUnitFromEntities(
@@ -808,7 +786,7 @@ private suspend fun findMostRelatedTextUnitFromEntities(
         nodeDatas.flatMap { node ->
             node["source_id"]
                 ?.toString()
-                ?.split(",")
+                ?.split(Prompts.GRAPH_FIELD_SEP, ",")
                 ?.map { it.trim() }
                 ?.filter { it.isNotEmpty() }
                 ?: emptyList()
@@ -956,15 +934,12 @@ private suspend fun buildPathRelations(
         }
     }
     val sortedResults = allResults.sortedByDescending { it.second }
-    val seen = mutableSetOf<String>()
-    val resultEdge = mutableListOf<Pair<List<String>, Double>>()
-    for ((p, w) in sortedResults) {
-        val key = p.sorted().joinToString("|")
-        if (key !in seen) {
-            seen.add(key)
-            resultEdge.add(p to w)
+    val seen = mutableSetOf<List<String>>()
+    val resultEdge =
+        sortedResults.filter { (path, _) ->
+            val canonicalPath = if (path.first() <= path.last()) path else path.reversed()
+            seen.add(canonicalPath)
         }
-    }
 
     val length1 = oneHopPaths.size / 2
     val length2 = twoHopPaths.size / 2
@@ -1046,143 +1021,6 @@ private suspend fun buildPathRelations(
     return truncated
 }
 
-private suspend fun runGlobalMode(
-    query: String,
-    queryParam: QueryParam,
-    knowledgeGraphInst: BaseGraphStorage,
-    relationshipsVdb: BaseVectorStorage,
-    textChunksDb: BaseKVStorage<Map<String, Any>>,
-    llmModel: suspend (
-        prompt: String,
-        systemPrompt: String?,
-        historyMessages: List<Map<String, String>>,
-        keywordExtraction: Boolean,
-        stream: Boolean,
-        maxTokens: Int?,
-        hashingKv: Any?,
-    ) -> String,
-    systemContext: String,
-): String {
-    val (entitiesCsv, relationsCsv, textCsv) =
-        getEdgeData(query, knowledgeGraphInst, relationshipsVdb, textChunksDb, queryParam)
-
-    val context =
-        """
-        -----global-information-----
-        -----high-level entity information-----
-        ```csv
-        $entitiesCsv
-        ```
-        -----high-level relationship information-----
-        ```csv
-        $relationsCsv
-        ```
-        -----Sources-----
-        ```csv
-        $textCsv
-        ```
-        """.trimIndent()
-
-    if (queryParam.onlyNeedContext) return context
-
-    val sysPrompt =
-        Prompts.render(
-            Prompts.RAG_RESPONSE,
-            mapOf(
-                "context_data" to context,
-                "response_type" to queryParam.responseType,
-            ),
-        )
-
-    return llmModel(
-        query,
-        "$systemContext\n$sysPrompt",
-        emptyList(),
-        false,
-        queryParam.stream,
-        queryParam.maxTokenForGlobalContext,
-        null,
-    )
-}
-
-private suspend fun runHybridMode(
-    llKeywords: String,
-    hlKeywords: String,
-    userQuery: String,
-    queryParam: QueryParam,
-    knowledgeGraphInst: BaseGraphStorage,
-    entitiesVdb: BaseVectorStorage,
-    relationshipsVdb: BaseVectorStorage,
-    textChunksDb: BaseKVStorage<Map<String, Any>>,
-    llmModel: suspend (
-        prompt: String,
-        systemPrompt: String?,
-        historyMessages: List<Map<String, String>>,
-        keywordExtraction: Boolean,
-        stream: Boolean,
-        maxTokens: Int?,
-        hashingKv: Any?,
-    ) -> String,
-    systemContext: String,
-    hashingKv: ResponseCache?,
-): String {
-    val (hlEntities, hlRelations, hlText) =
-        getEdgeData(hlKeywords, knowledgeGraphInst, relationshipsVdb, textChunksDb, queryParam)
-    val (llEntities, llRelations, llText) =
-        getNodeData(llKeywords, knowledgeGraphInst, entitiesVdb, textChunksDb, queryParam)
-
-    val mergedContext =
-        """
-        -----global-information-----
-        -----high-level entity information-----
-        ```csv
-        $hlEntities
-        ```
-        -----high-level relationship information-----
-        ```csv
-        $hlRelations
-        ```
-        -----Sources-----
-        ```csv
-        $hlText
-        ```
-        -----local-information-----
-        -----low-level entity information-----
-        ```csv
-        $llEntities
-        ```
-        -----low-level relationship information-----
-        ```csv
-        $llRelations
-        ```
-        -----Sources-----
-        ```csv
-        $llText
-        ```
-        """.trimIndent()
-
-    if (queryParam.onlyNeedContext) return mergedContext
-
-    val sysPrompt =
-        Prompts.render(
-            Prompts.RAG_RESPONSE,
-            mapOf(
-                "context_data" to mergedContext,
-                "response_type" to queryParam.responseType,
-            ),
-        )
-
-    return llmModel(
-        userQuery,
-        "$systemContext\n$sysPrompt",
-        emptyList(),
-        false,
-        queryParam.stream,
-        queryParam.maxTokenForTextUnit,
-        hashingKv,
-    )
-}
-
 private fun truncateByToken(
     list: List<Map<String, Any>>,
     maxToken: Int,
@@ -1205,8 +1043,6 @@ private fun toCsv(
     val allRows = listOf(headers) + rows
     return allRows.joinToString("\n") { row -> row.joinToString(",") { escapeCsvField(it) } }
 }
-
-private fun emptyCsv(headers: List<String>): String = headers.joinToString(",")
 
 private fun escapeCsvField(value: String): String {
     val needsQuotes = value.contains(',') || value.contains('\n') || value.contains('"')
@@ -1266,16 +1102,8 @@ private suspend fun getEdgeData(
     relationshipsVdb: BaseVectorStorage,
     textChunksDb: BaseKVStorage<Map<String, Any>>,
     queryParam: QueryParam,
-): Triple<String, String, String> {
+): ContextSection {
     val results = relationshipsVdb.query(keywords, topK = queryParam.topK)
-    if (results.isEmpty()) {
-        return Triple(
-            emptyCsv(listOf("id", "entity", "type", "description", "rank")),
-            emptyCsv(listOf("id", "source", "target", "description", "keywords", "weight")),
-            emptyCsv(listOf("id", "content")),
-        )
-    }
-
     val edges =
         results.mapNotNull { res ->
             val src = res["src_id"]?.toString()
@@ -1292,7 +1120,7 @@ private suspend fun getEdgeData(
             }
         }
 
-    val entities =
+    val entityIds =
         edges
             .flatMap { e ->
                 listOfNotNull(
@@ -1301,7 +1129,7 @@ private suspend fun getEdgeData(
                 )
             }.distinct()
     val nodeDatas =
-        entities.mapNotNull { name ->
+        entityIds.mapNotNull { name ->
             val node = knowledgeGraphInst.getNode(name)
             val degree = knowledgeGraphInst.nodeDegree(name)
             node?.let {
@@ -1317,8 +1145,9 @@ private suspend fun getEdgeData(
 
     val textUnits = findRelatedTextUnitFromRelationships(edges, textChunksDb, queryParam)
 
-    val entitiesCsv =
-        toCsv(
+    val entities =
+        ContextTable(
+            "high-level entity information",
             listOf("id", "entity", "type", "description", "rank"),
             nodeDatas.mapIndexed { idx, n ->
                 listOf(
@@ -1331,8 +1160,9 @@ private suspend fun getEdgeData(
             },
         )
 
-    val relationsCsv =
-        toCsv(
+    val relations =
+        ContextTable(
+            "high-level relationship information",
             listOf("id", "source", "target", "description", "keywords", "weight"),
             edges.mapIndexed { idx, e ->
                 listOf(
@@ -1346,15 +1176,16 @@ private suspend fun getEdgeData(
             },
         )
 
-    val textCsv =
-        toCsv(
+    val sources =
+        ContextTable(
+            "Sources",
             listOf("id", "content"),
             textUnits.mapIndexed { idx, t ->
                 listOf(idx.toString(), t["content"].toString())
             },
         )
 
-    return Triple(entitiesCsv, relationsCsv, textCsv)
+    return ContextSection("global", listOf(entities, relations, sources))
 }
 
 private suspend fun findRelatedTextUnitFromRelationships(
@@ -1366,7 +1197,7 @@ private suspend fun findRelatedTextUnitFromRelationships(
         edges.flatMap { e ->
             e["source_id"]
                 ?.toString()
-                ?.split(",")
+                ?.split(Prompts.GRAPH_FIELD_SEP, ",")
                 ?.map { it.trim() }
                 ?.filter { it.isNotEmpty() }
                 ?: emptyList()
