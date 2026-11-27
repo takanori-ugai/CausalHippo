@@ -279,14 +279,11 @@ class HippoRag(
 
         val (allOpenieInfo, chunkKeysToProcess) = loadExistingOpenie(chunkToRows.keys.toList())
         val newOpenieRows = chunkToRows.filterKeys { it in chunkKeysToProcess }
+        val retryingFailedChunks = allOpenieInfo.any { it.idx in newOpenieRows }
 
         if (chunkKeysToProcess.isNotEmpty()) {
             val (newNerResults, newTripleResults) = openie.batchOpenie(newOpenieRows)
             mergeOpenieResults(allOpenieInfo, newOpenieRows, newNerResults, newTripleResults)
-        }
-
-        if (globalConfig.saveOpenie) {
-            saveOpenieResults(allOpenieInfo)
         }
 
         lastIndexingReport =
@@ -308,19 +305,26 @@ class HippoRag(
             }
 
         val (entityNodes, chunkTripleEntities) = extractEntityNodes(chunkTriples)
-        val facts = flattenFacts(chunkTriples)
+        val facts = flattenFacts(chunkTriples).map { it.toString() }
 
         logger.info { "Encoding Entities" }
         entityEmbeddingStore.insertStrings(entityNodes)
 
         logger.info { "Encoding Facts" }
-        factEmbeddingStore.insertStrings(facts.map { it.toString() })
+        factEmbeddingStore.insertStrings(facts)
 
         logger.info { "Constructing Graph" }
 
         nodeToNodeStats = mutableMapOf()
         entNodeToChunkIds = mutableMapOf()
 
+        // Existing passage nodes may now have different evidence after a retry.
+        if (retryingFailedChunks) {
+            removeSupersededEmbeddings(entityEmbeddingStore, entityNodes.toSet())
+            removeSupersededEmbeddings(factEmbeddingStore, facts.toSet())
+            readyToRetrieve = false
+            graph.deleteVertices(graph.vertexNames())
+        }
         addFactEdges(chunkIds, chunkTriples)
         val numNewChunks = addPassageEdges(chunkIds, chunkTripleEntities)
 
@@ -329,6 +333,10 @@ class HippoRag(
             addSynonymyEdges()
             augmentGraph()
             saveIgraph()
+            readyToRetrieve = false
+        }
+        if (globalConfig.saveOpenie) {
+            saveOpenieResults(allOpenieInfo)
         }
     }
 
@@ -696,6 +704,14 @@ class HippoRag(
         }
     }
 
+    private fun removeSupersededEmbeddings(
+        store: EmbeddingStore,
+        retained: Set<String>,
+    ) {
+        val obsolete = store.getAllIdToRows().filterValues { it.content !in retained }.keys
+        store.delete(obsolete)
+    }
+
     private fun addPassageEdges(
         chunkIds: List<String>,
         chunkTripleEntities: List<List<String>>,
@@ -802,7 +818,7 @@ class HippoRag(
                     }
                 }
 
-                val existingKeys = scopedExisting.map { it.idx }.toSet()
+                val existingKeys = scopedExisting.filter { it.extractionErrors.isEmpty() }.map { it.idx }.toSet()
 
                 for (chunkKey in chunkKeys) {
                     if (chunkKey !in existingKeys) {
@@ -825,6 +841,7 @@ class HippoRag(
         nerResultsDict: Map<String, NerRawOutput>,
         tripleResultsDict: Map<String, TripleRawOutput>,
     ) {
+        allOpenieInfo.removeAll { it.idx in chunksToSave }
         for ((chunkKey, row) in chunksToSave) {
             val passage = row.content
             val nerOutput = nerResultsDict[chunkKey]

@@ -395,7 +395,6 @@ class PathRAG(
             }
         }
         try {
-            chunksVdb.upsert(chunkMap)
             chunkEntityRelationGraph =
                 extractEntities(
                     chunkMap,
@@ -404,6 +403,7 @@ class PathRAG(
                     relationshipsVdb,
                     globalConfig(),
                 )
+            chunksVdb.upsert(chunkMap)
             fullDocs.upsert(newDocs)
             textChunks.upsert(chunkMap)
             if (unifiedSpiEnabled) {

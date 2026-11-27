@@ -818,7 +818,7 @@ class KTRetrieverTest {
     }
 
     @Test
-    fun `buildIndices ingests npz embedding caches`() {
+    fun `buildIndices rebuilds untagged legacy vectors under the hash model`() {
         val root = Files.createTempDirectory("youtu-graphrag-retriever-npz-cache-load-test")
         val config = createTestConfig(root)
         val datasetName = "npz_cache_load_ds"
@@ -881,8 +881,10 @@ class KTRetrieverTest {
                 .path(0)
                 .asDouble()
 
-        assertEquals(1.0, tripleFirst)
-        assertEquals(1.0, chunkFirst)
+        assertTrue(tripleCacheTree.path("modelTag").asText().startsWith("hash:"))
+        assertTrue(chunkCacheTree.path("modelTag").asText().startsWith("hash:"))
+        assertTrue(tripleFirst != 1.0)
+        assertTrue(chunkFirst != 1.0)
         assertTrue(cacheRoot.resolve("triple_embedding_cache.npz").exists())
         assertTrue(cacheRoot.resolve("chunk_embedding_cache.npz").exists())
     }
