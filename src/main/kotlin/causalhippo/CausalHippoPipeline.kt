@@ -18,10 +18,10 @@ import shared.chunking.DEFAULT_INGEST_CHUNK_TOKEN_SIZE
 import shared.chunking.DEFAULT_PROMPT_CONTEXT_TOKEN_BUDGET
 import shared.chunking.DEFAULT_TIKTOKEN_MODEL
 import shared.chunking.chunkByTokenSizeWithOverlap
-import shared.rag.IndexingReport
 import shared.chunking.hardTruncateStringsByTokenBudget
 import shared.config.CaualRagConfig
 import shared.config.CommonRagConfigLoader
+import shared.rag.IndexingReport
 import java.nio.file.Files
 import java.nio.file.Path
 

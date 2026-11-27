@@ -34,7 +34,13 @@ class ChatModelLlmClient(
     }
 
     override fun completeForExtraction(prompt: String): String =
-        LlmOutputParser.cleanLlmContent(chatModel.chat(UserMessage.from(prompt)).aiMessage().text().orEmpty())
+        LlmOutputParser.cleanLlmContent(
+            chatModel
+                .chat(UserMessage.from(prompt))
+                .aiMessage()
+                .text()
+                .orEmpty(),
+        )
 }
 
 object LlmClientFactory {

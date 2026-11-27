@@ -172,6 +172,7 @@ suspend fun extractEntities(
                                         "examples" to examples,
                                     ),
                                 )
+
                             suspend fun requestExtraction(
                                 prompt: String,
                                 history: List<Map<String, String>>,

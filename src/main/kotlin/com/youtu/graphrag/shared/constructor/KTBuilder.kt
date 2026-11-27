@@ -9,8 +9,8 @@ import com.youtu.graphrag.shared.graph.GraphNode
 import com.youtu.graphrag.shared.graph.GraphRelationship
 import com.youtu.graphrag.shared.llm.LlmClient
 import com.youtu.graphrag.shared.llm.LlmClientFactory
-import com.youtu.graphrag.shared.llm.NoopLlmClient
 import com.youtu.graphrag.shared.llm.LlmOutputParser
+import com.youtu.graphrag.shared.llm.NoopLlmClient
 import com.youtu.graphrag.shared.treecomm.FastTreeComm
 import com.youtu.graphrag.shared.treecomm.TreeCommOptions
 import io.github.oshai.kotlinlogging.KotlinLogging
@@ -523,9 +523,10 @@ class KTBuilder(
         val response =
             runCatching { llmClient.completeForExtraction(prompt) }
                 .getOrElse { throw IllegalStateException("YoutuRAG extraction failed for chunk $chunkId", it) }
-        val parsed = checkNotNull(LlmOutputParser.parseJsonObject(response)) {
-            "Missing or invalid YoutuRAG extraction JSON for chunk $chunkId"
-        }
+        val parsed =
+            checkNotNull(LlmOutputParser.parseJsonObject(response)) {
+                "Missing or invalid YoutuRAG extraction JSON for chunk $chunkId"
+            }
 
         return ExtractionPayload(
             attributes = normalizeAttributes(parsed["attributes"]),
