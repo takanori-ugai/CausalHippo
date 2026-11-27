@@ -279,7 +279,9 @@ private fun extractNamedEntitiesFromResponse(
             .mapNotNull { (it as? JsonPrimitive)?.contentOrNull?.trim() }
             .filter { it.isNotEmpty() }
     }
-    val jsonObject = extractJsonObjectWithKey(response, "named_entities", json) ?: return emptyList()
+    val jsonObject = checkNotNull(extractJsonObjectWithKey(response, "named_entities", json)) {
+        "Missing OpenIE named_entities JSON"
+    }
     val entities = jsonObject["named_entities"]?.jsonArray ?: return emptyList()
     return entities
         .mapNotNull { (it as? JsonPrimitive)?.contentOrNull?.trim() }
@@ -290,7 +292,9 @@ private fun extractTriplesFromResponse(
     response: String,
     json: Json,
 ): List<List<String>> {
-    val jsonObject = extractJsonObjectWithKey(response, "triples", json) ?: return emptyList()
+    val jsonObject = checkNotNull(extractJsonObjectWithKey(response, "triples", json)) {
+        "Missing OpenIE triples JSON"
+    }
     val triplesArray = jsonObject["triples"]?.jsonArray ?: return emptyList()
     val triples = mutableListOf<List<String>>()
     for (tripleEl in triplesArray) {

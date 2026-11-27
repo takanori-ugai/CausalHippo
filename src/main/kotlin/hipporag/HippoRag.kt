@@ -38,6 +38,8 @@ import hipporag.utils.textProcessing
 import io.github.oshai.kotlinlogging.KotlinLogging
 import shared.chunking.DEFAULT_TIKTOKEN_MODEL
 import shared.chunking.chunkByTokenSizeWithOverlap
+import shared.rag.IndexingFailure
+import shared.rag.IndexingReport
 import java.io.File
 import java.util.Locale
 import kotlin.math.min
@@ -246,10 +248,14 @@ class HippoRag(
         logger.info { "Offline OpenIE complete. Run online indexing for future retrieval." }
     }
 
+    var lastIndexingReport: IndexingReport = IndexingReport()
+        private set
+
     /**
      * Indexes documents into the graph and embedding stores.
      */
     fun index(docs: List<String>) {
+        lastIndexingReport = IndexingReport()
         logger.info { "Indexing Documents" }
         logger.info { "Performing OpenIE" }
 
@@ -283,6 +289,12 @@ class HippoRag(
             saveOpenieResults(allOpenieInfo)
         }
 
+        lastIndexingReport =
+            IndexingReport(
+                allOpenieInfo.flatMap { doc ->
+                    doc.extractionErrors.map { reason -> IndexingFailure("openie", doc.idx, reason) }
+                },
+            )
         val (nerResults, tripleResults) = reformatOpenieResults(allOpenieInfo)
 
         check(chunkToRows.size == nerResults.size && chunkToRows.size == tripleResults.size) {
@@ -826,10 +838,25 @@ class HippoRag(
                     passage = passage,
                     extractedEntities = nerOutput?.uniqueEntities ?: emptyList(),
                     extractedTriples = tripleOutput?.triples ?: emptyList(),
+                    extractionErrors =
+                        listOfNotNull(
+                            openieError("NER", nerOutput?.metadata),
+                            openieError("Triple extraction", tripleOutput?.metadata),
+                        ),
                 )
             allOpenieInfo.add(chunkOpenieInfo)
         }
     }
+
+    private fun openieError(
+        operation: String,
+        metadata: Map<String, Any?>?,
+    ): String? =
+        if (metadata == null) {
+            "$operation result is missing"
+        } else {
+            metadata["error"]?.let { "$operation failed: $it" }
+        }
 
     private fun retrieveInternal(
         queries: List<String>,

@@ -6,6 +6,7 @@ import java.net.InetSocketAddress
 import java.util.concurrent.Executors
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
 
 class TextEmbedderFactoryTest {
@@ -23,14 +24,12 @@ class TextEmbedderFactoryTest {
 
         try {
             val port = server.address.port
-            val fallback = HashTextEmbedder(dimensions = 3, modelName = "fallback")
             val embedder =
                 OpenAiTextEmbedder(
                     modelName = "text-embedding-3-small",
                     baseUrl = "http://127.0.0.1:$port/v1",
                     apiKey = "test-key",
                     dimensions = 3,
-                    fallback = fallback,
                 )
 
             val vector = embedder.embed("who discovered gravity?")
@@ -45,7 +44,7 @@ class TextEmbedderFactoryTest {
     }
 
     @Test
-    fun `openai text embedder falls back to hash embedding on request failure`() {
+    fun `openai text embedder rejects request failures`() {
         val server =
             createMockServer("/v1/embeddings") { exchange ->
                 exchange.sendResponseHeaders(500, 0)
@@ -55,21 +54,15 @@ class TextEmbedderFactoryTest {
 
         try {
             val port = server.address.port
-            val fallback = HashTextEmbedder(dimensions = 5, modelName = "fallback")
             val embedder =
                 OpenAiTextEmbedder(
                     modelName = "text-embedding-3-small",
                     baseUrl = "http://127.0.0.1:$port/v1",
                     apiKey = "test-key",
                     dimensions = 5,
-                    fallback = fallback,
                 )
 
-            val input = "alpha beta gamma"
-            val vector = embedder.embed(input)
-            val expected = fallback.embed(input)
-
-            assertTrue(vector.contentEquals(expected))
+            assertFailsWith<IllegalStateException> { embedder.embed("alpha beta gamma") }
         } finally {
             stopMockServer(server)
         }

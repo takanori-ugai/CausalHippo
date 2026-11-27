@@ -1098,7 +1098,9 @@ private class IndexBuilder(
         cachePath: Path,
         cacheNpzPath: Path,
     ): MutableMap<String, FloatArray> {
-        if (cacheNpzPath.exists()) {
+        // Legacy NPZ files have no model metadata and may contain mixed provider/hash vectors.
+        val requiresModelMetadata = embedder is OpenAiTextEmbedder || embedder is GeminiTextEmbedder
+        if (!requiresModelMetadata && !cachePath.exists() && cacheNpzPath.exists()) {
             val npzVectors =
                 runCatching {
                     NpzEmbeddingCache.read(cacheNpzPath, expectedDimensions = embedder.dimensions)

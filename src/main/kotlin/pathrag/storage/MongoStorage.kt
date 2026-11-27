@@ -262,12 +262,6 @@ class MongoVectorStorage(
         val validPairs = items.zip(contents).filter { it.second.isNotBlank() }
         if (validPairs.isEmpty()) return
         val embeddings = embeddingFunc(validPairs.map { it.second })
-        if (embeddings.size != validPairs.size) {
-            log().warn {
-                "MongoVectorStorage upsert skipped: embeddings (${embeddings.size}) != items (${validPairs.size}) for namespace=$namespace"
-            }
-            return
-        }
         val opts = ReplaceOptions().upsert(true)
         val writes =
             validPairs.mapIndexedNotNull { idx, pair ->
