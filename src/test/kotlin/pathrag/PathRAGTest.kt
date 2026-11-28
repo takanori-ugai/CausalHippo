@@ -361,6 +361,28 @@ class PathRAGTest {
         }
 
     @Test
+    fun `reinserting a document does not re-extract or increase relation weight`() {
+        runBlocking {
+            mockkStatic("pathrag.llm.LlmKt")
+            val extraction =
+                """{"entities":[],"relationships":[{"src_id":"ALPHA","tgt_id":"BETA","description":"link","keywords":"k","weight":1.0}]}"""
+            coEvery { pathrag.llm.openAiComplete(any(), any(), any(), any(), any(), any(), any(), any(), any()) } returns extraction
+            coEvery { pathrag.llm.openAiEmbedding(any(), any()) } answers {
+                firstArg<List<String>>().map { DoubleArray(1536) { 0.02 } }
+            }
+
+            PathRAG(chunkTokenSize = 32, chunkOverlapTokenSize = 8).use { rag ->
+                rag.ainsert("Alpha and Beta are related.")
+                rag.ainsert("Alpha and Beta are related.")
+                coVerify(exactly = 1) {
+                    pathrag.llm.openAiComplete(any(), any(), any(), any(), any(), any(), any(), any(), any())
+                }
+                assertEquals(1.0, rag.graph().getEdge("ALPHA", "BETA")?.get("weight"))
+            }
+        }
+    }
+
+    @Test
     fun `malformed extraction leaves no chunk vectors from the failed insert`() {
         runBlocking {
             mockkStatic("pathrag.llm.LlmKt")

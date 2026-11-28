@@ -1,5 +1,6 @@
 package pathrag.storage
 
+import com.mongodb.client.model.DeleteManyModel
 import com.mongodb.client.model.Filters
 import com.mongodb.client.model.ReplaceOneModel
 import com.mongodb.client.model.ReplaceOptions
@@ -14,7 +15,9 @@ import pathrag.utils.EmbeddingFunc
 import pathrag.utils.computeMdHashId
 import pathrag.utils.computePagerankLocal
 import pathrag.utils.cosineSimilarity
+import pathrag.utils.legacyRelationshipVectorIds
 import pathrag.utils.log
+import pathrag.utils.relationshipVectorId
 
 /**
  * MongoDB-backed key-value storage that persists documents per namespace.
@@ -264,10 +267,10 @@ class MongoVectorStorage(
         val embeddings = embeddingFunc(validPairs.map { it.second })
         val opts = ReplaceOptions().upsert(true)
         val writes =
-            validPairs.mapIndexedNotNull { idx, pair ->
+            validPairs.mapIndexed { idx, pair ->
                 val (entry, content) = pair
                 val vector = embeddings[idx]
-                val meta = entry.value.filterKeys { metaFields.contains(it) }
+                val meta = vectorMetadata(entry, metaFields)
                 val doc =
                     org.bson.Document(
                         mapOf(
@@ -278,9 +281,18 @@ class MongoVectorStorage(
                     )
                 ReplaceOneModel(Filters.eq("_id", entry.key), doc, opts)
             }
-        if (writes.isNotEmpty()) {
-            collection.bulkWrite(writes)
-        }
+        val legacyDeletes =
+            validPairs.mapNotNull { (entry, _) ->
+                val (src, tgt) = orderedRelationshipEndpoints(entry) ?: return@mapNotNull null
+                DeleteManyModel<org.bson.Document>(
+                    Filters.and(
+                        Filters.`in`("_id", legacyRelationshipVectorIds(src, tgt)),
+                        Filters.eq("src_id", src),
+                        Filters.eq("tgt_id", tgt),
+                    ),
+                )
+            }
+        collection.bulkWrite(writes + legacyDeletes)
     }
 
     /**
@@ -313,7 +325,7 @@ class MongoVectorStorage(
     /**
      * Delete the relation between two entities identified by their IDs.
      *
-     * Deletes a relation document using the legacy hashed relation ID and also removes any documents
+     * Deletes the current relationship vector by ID and removes legacy documents
      * whose `src_id` and `tgt_id` fields match the provided IDs.
      *
      * @param srcId ID of the source entity.
@@ -323,8 +335,8 @@ class MongoVectorStorage(
         srcId: String,
         tgtId: String,
     ) {
-        val relId = computeMdHashId(srcId + tgtId, prefix = "rel-")
-        // Delete by both the hashed id (legacy) and the src/tgt metadata.
+        val relId = relationshipVectorId(srcId, tgtId)
+        // Match legacy records by endpoints because their hashed IDs can collide.
         collection.deleteOne(Filters.eq("_id", relId))
         collection.deleteMany(Filters.and(Filters.eq("src_id", srcId), Filters.eq("tgt_id", tgtId)))
     }

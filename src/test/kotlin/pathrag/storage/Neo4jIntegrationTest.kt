@@ -17,18 +17,22 @@ import org.neo4j.driver.TransactionContext
 import org.neo4j.driver.Value
 import org.neo4j.driver.Values
 import pathrag.PathRAG
+import pathrag.utils.computeMdHashId
 import java.util.function.Function
 import kotlin.test.AfterTest
 import kotlin.test.Test
+import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class Neo4jIntegrationTest {
     private val queries = mutableListOf<String>()
+    private val parameters = mutableMapOf<String, Value>()
 
     @AfterTest
     fun tearDown() {
         unmockkAll()
         queries.clear()
+        parameters.clear()
     }
 
     @Test
@@ -55,6 +59,7 @@ class Neo4jIntegrationTest {
             every { tx.run(any<String>(), any<Value>()) } answers {
                 val q = firstArg<String>()
                 queries.add(q)
+                parameters[q] = secondArg<Value>()
                 stubResult()
             }
             every { tx.run(any<String>()) } answers {
@@ -96,5 +101,15 @@ class Neo4jIntegrationTest {
             val hasMerge = queries.any { it.startsWith("MERGE") || it.contains("MERGE (") }
             assertTrue(hasNamespaceQuery, "Expected queries against the chunk_entity_relation namespace")
             assertTrue(hasMerge, "Expected at least one MERGE query to be issued")
+            val migration =
+                parameters.entries
+                    .single { (query, _) ->
+                        query.contains("relationships_vdb", ignoreCase = true) &&
+                            "src_id:\$src, tgt_id:\$tgt" in query &&
+                            "v.id IN \$ids DETACH DELETE" in query
+                    }.value
+            assertTrue(computeMdHashId("ALPHABETA", prefix = "rel-") in migration["ids"].asList { it.asString() })
+            assertEquals("ALPHA", migration["src"].asString())
+            assertEquals("BETA", migration["tgt"].asString())
         }
 }
