@@ -179,6 +179,19 @@ class GlobalSearchEngine(
      * context-building step.
      */
     @Suppress("LongMethod", "CyclomaticComplexMethod")
+    internal suspend fun retrieveContext(
+        question: String,
+        conversationHistory: List<String>,
+    ): QueryResult {
+        val context = buildContextChunks(question, conversationHistory)
+        return QueryResult(
+            answer = "",
+            context = emptyList(),
+            contextRecords = context.contextRecords.toImmutableContextRecords(),
+            contextText = context.chunks.joinToString("\n\n"),
+        )
+    }
+
     private suspend fun buildContextChunks(
         question: String,
         conversationHistory: List<String>,
@@ -190,14 +203,11 @@ class GlobalSearchEngine(
         val ratingLookup = selection.contextRecords["reports"]?.associateBy { it["id"] ?: "" }.orEmpty()
 
         val chunks = mutableListOf<String>()
-        var current =
-            StringBuilder().apply {
-                if (conversationSection.isNotBlank()) {
-                    append(conversationSection).append("\n\n")
-                }
-                append("-----Reports-----\n$header\n")
-            }
-        var tokens = tokenCount(current.toString())
+        val batchHeader = "-----Reports-----\n$header\n"
+        val historyPrefix = if (conversationSection.isBlank()) "" else "$conversationSection\n\n"
+        var current = StringBuilder(batchHeader)
+        var hasRows = false
+        var includedHistory = false
         val records = mutableListOf<MutableMap<String, String>>()
         for (report in selection.reports) {
             val rowParts =
@@ -208,14 +218,20 @@ class GlobalSearchEngine(
                     (report.rank ?: 0.0).toString(),
                 )
             val row = rowParts.joinToString("|") + "\n"
-            val rowTokens = tokenCount(row)
-            if (tokens + rowTokens > maxContextTokens && current.isNotEmpty()) {
+            if (tokenCount(batchHeader + row) > maxContextTokens) continue
+            if (hasRows && tokenCount(current.toString() + row) > maxContextTokens) {
                 chunks += current.toString().trimEnd()
-                current = StringBuilder("-----Reports-----\n$header\n")
-                tokens = tokenCount(current.toString())
+                current = StringBuilder(batchHeader)
+                hasRows = false
+            }
+            if (!hasRows && chunks.isEmpty() && historyPrefix.isNotEmpty() &&
+                tokenCount(historyPrefix + batchHeader + row) <= maxContextTokens
+            ) {
+                current.insert(0, historyPrefix)
+                includedHistory = true
             }
             current.append(row)
-            tokens += rowTokens
+            hasRows = true
             records +=
                 header
                     .split("|")
@@ -227,13 +243,11 @@ class GlobalSearchEngine(
                         ratingLookup[report.communityId.toString()]?.get("rating")?.let { this["rating"] = it }
                     }
         }
-        if (current.isNotEmpty()) chunks += current.toString().trimEnd()
+        if (hasRows) chunks += current.toString().trimEnd()
         val contextRecords =
             selection.contextRecords.toMutableMap().apply {
-                if (records.isNotEmpty()) {
-                    this["reports"] = records
-                }
-                if (conversationRecords.isNotEmpty()) {
+                this["reports"] = records
+                if (includedHistory && conversationRecords.isNotEmpty()) {
                     this["conversation"] = conversationRecords.toMutableList()
                 }
             }

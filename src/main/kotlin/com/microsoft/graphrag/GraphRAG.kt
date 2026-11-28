@@ -19,6 +19,8 @@ import dev.langchain4j.model.openai.OpenAiStreamingChatModel
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import shared.rag.CommonRag
 import shared.rag.CommonVectorStorage
 import java.nio.file.Files
@@ -28,6 +30,10 @@ import java.security.MessageDigest
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.Comparator
+
+private const val SNAPSHOT_INPUT = ".graphrag-input"
+private const val QUERY_ONLY_MARKER = ".graphrag-query-only"
+private const val EMBEDDING_MODEL_FILE = ".graphrag-embedding-model"
 
 private fun defaultGraphRagWorkingDir(): Path =
     Path.of(
@@ -51,6 +57,7 @@ data class QueryParam(
     val maxIterations: Int = 3,
     val chatModelName: String? = null,
     val embeddingModelName: String? = null,
+    val includeAnswer: Boolean = true,
 )
 
 class GraphRAG(
@@ -65,6 +72,7 @@ class GraphRAG(
     AutoCloseable {
     private val logger = KotlinLogging.logger("GraphRAG")
     private val callbacks = NoopWorkflowCallbacks()
+    private val indexMutex = Mutex()
     private val indexDataLock = Any()
 
     @Volatile
@@ -74,8 +82,6 @@ class GraphRAG(
     init {
         ensureDirectories()
     }
-
-    private fun config(): GraphRagConfig = GraphRagConfig(rootDir, inputDir, outputDir, updateOutputDir)
 
     override fun upsert(data: String) = runBlocking { aupsert(data) }
 
@@ -94,40 +100,50 @@ class GraphRAG(
             return
         }
 
-        invalidateLoadedState()
-        ensureDirectories()
-        persistInputDocuments(documents)
-
-        val pipeline = defaultPipeline()
-        val errors = mutableListOf<String>()
-        runPipeline(
-            pipeline = pipeline,
-            config = config(),
-            callbacks = callbacks,
-        ).collect { result ->
-            val stepErrors = result.errors.orEmpty()
-            if (stepErrors.isNotEmpty()) {
-                errors.addAll(stepErrors)
+        indexMutex.withLock {
+            check(!Files.exists(outputDir.resolve(QUERY_ONLY_MARKER))) {
+                "This GraphRAG snapshot has no source documents. Restore a full checkpoint before upserting."
             }
-        }
-        if (errors.isNotEmpty()) {
-            throw IllegalStateException("GraphRAG indexing failed: ${errors.joinToString("; ")}")
+            withStagedDirectories(listOf(inputDir, outputDir)) { (input, output) ->
+                copyDirectory(inputDir, input.content)
+                persistInputDocuments(documents, input.content)
+
+                val errors = mutableListOf<String>()
+                val config =
+                    GraphRagConfig(
+                        rootDir,
+                        input.content,
+                        output.content,
+                        updateOutputDir,
+                        embeddingModelName = defaultEmbeddingModelName,
+                        sourceInputDir = inputDir,
+                    )
+                runPipeline(defaultPipeline(), config, callbacks).collect { errors.addAll(it.errors.orEmpty()) }
+                check(errors.isEmpty()) { "GraphRAG indexing failed: ${errors.joinToString("; ")}" }
+                validateIndex(output.content)
+                Files.writeString(output.content.resolve(EMBEDDING_MODEL_FILE), config.embeddingModelName)
+                publishDirectories(listOf(input, output))
+                invalidateLoadedState()
+            }
         }
     }
 
     override fun drop() = runBlocking { adrop() }
 
-    override suspend fun adrop() {
-        deleteDirectory(inputDir)
-        deleteDirectory(outputDir)
-        deleteDirectory(updateOutputDir)
-        invalidateLoadedState()
-        ensureDirectories()
-    }
+    override suspend fun adrop() =
+        indexMutex.withLock {
+            deleteDirectory(inputDir)
+            deleteDirectory(outputDir)
+            deleteDirectory(updateOutputDir)
+            invalidateLoadedState()
+            ensureDirectories()
+        }
 
     override fun inspectGraph(): Map<String, Any?> = runBlocking { ainspectGraph() }
 
-    override suspend fun ainspectGraph(): Map<String, Any?> {
+    override suspend fun ainspectGraph(): Map<String, Any?> = indexMutex.withLock { inspectIndex() }
+
+    private fun inspectIndex(): Map<String, Any?> {
         val indexData =
             runCatching { loadIndexDataOrThrow("Failed to load GraphRAG index from '$outputDir'.") }.getOrElse { ex ->
                 logger.warn(ex) { "GraphRAG inspection skipped: failed to load index from '$outputDir'." }
@@ -180,29 +196,140 @@ class GraphRAG(
 
     override fun saveGraph(path: String) = runBlocking { asaveGraph(path) }
 
-    override suspend fun asaveGraph(path: String) {
-        val source = outputDir.toAbsolutePath().normalize()
-        require(Files.exists(source) && Files.isDirectory(source)) {
-            "GraphRAG output directory does not exist: $source"
+    override suspend fun asaveGraph(path: String) =
+        indexMutex.withLock {
+            require(path.isNotBlank()) { "Snapshot path must not be blank" }
+            val target =
+                Path
+                    .of(path)
+                    .toFile()
+                    .canonicalFile
+                    .toPath()
+            checkSnapshotPath(target)
+            withStagedDirectories(listOf(target)) { (snapshot) ->
+                copyDirectory(outputDir, snapshot.content)
+                validateIndex(snapshot.content)
+                if (!Files.exists(outputDir.resolve(QUERY_ONLY_MARKER))) {
+                    copyDirectory(inputDir, snapshot.content.resolve(SNAPSHOT_INPUT))
+                }
+                publishDirectories(listOf(snapshot))
+            }
         }
-
-        val target = Path.of(path).toAbsolutePath().normalize()
-        deleteDirectory(target)
-        copyDirectory(source, target)
-        logger.info { "Saved GraphRAG graph artifacts from '$source' to '$target'." }
-    }
 
     override fun loadGraph(path: String) = runBlocking { aloadGraph(path) }
 
-    override suspend fun aloadGraph(path: String) {
-        val source = Path.of(path).toAbsolutePath().normalize()
-        require(Files.exists(source) && Files.isDirectory(source)) {
-            "Graph snapshot directory not found: $source"
+    override suspend fun aloadGraph(path: String) =
+        indexMutex.withLock {
+            require(path.isNotBlank()) { "Snapshot path must not be blank" }
+            val source =
+                Path
+                    .of(path)
+                    .toFile()
+                    .canonicalFile
+                    .toPath()
+            require(Files.isDirectory(source)) { "Graph snapshot directory not found: $source" }
+            checkSnapshotPath(source)
+            withStagedDirectories(listOf(inputDir, outputDir)) { (input, output) ->
+                copyDirectory(source, output.content)
+                val snapshotInput = output.content.resolve(SNAPSHOT_INPUT)
+                if (Files.isDirectory(snapshotInput)) {
+                    copyDirectory(snapshotInput, input.content)
+                    deleteDirectory(snapshotInput)
+                    Files.deleteIfExists(output.content.resolve(QUERY_ONLY_MARKER))
+                } else {
+                    Files.writeString(output.content.resolve(QUERY_ONLY_MARKER), "Source documents are absent.")
+                }
+                validateIndex(output.content)
+                publishDirectories(listOf(input, output))
+                invalidateLoadedState()
+            }
         }
-        invalidateLoadedState()
-        deleteDirectory(outputDir)
-        copyDirectory(source, outputDir)
-        logger.info { "Loaded GraphRAG graph artifacts from '$source' into '$outputDir'." }
+
+    private fun checkSnapshotPath(path: Path) {
+        for (live in listOf(inputDir, outputDir, updateOutputDir)) {
+            val canonical = live.toFile().canonicalFile.toPath()
+            require(!path.startsWith(canonical) && !canonical.startsWith(path)) {
+                "GraphRAG snapshot overlaps an active index directory: $path"
+            }
+        }
+    }
+
+    private fun validateIndex(directory: Path) {
+        val index = QueryIndexLoader(directory).load()
+        val chunkIds = index.textUnits.map { it.chunkId }.toSet()
+        val vectors = index.vectorStore.load()?.textEmbeddings ?: index.textEmbeddings
+        require(chunkIds.isNotEmpty() && vectors.map { it.chunkId }.toSet().containsAll(chunkIds)) {
+            "GraphRAG index is missing text units or aligned embeddings: $directory"
+        }
+        val dimension = vectors.first().vector.size
+        require(dimension > 0 && vectors.all { it.vector.size == dimension && it.vector.all(Double::isFinite) }) {
+            "GraphRAG index contains invalid text embeddings: $directory"
+        }
+    }
+
+    private data class StagedDirectory(
+        val target: Path,
+        val staging: Path,
+    ) {
+        val content: Path = staging.resolve("content")
+        val backup: Path = staging.resolve("previous")
+    }
+
+    private suspend fun withStagedDirectories(
+        targets: List<Path>,
+        action: suspend (List<StagedDirectory>) -> Unit,
+    ) {
+        val canonicalTargets = targets.map { it.toFile().canonicalFile.toPath() }
+        require(
+            canonicalTargets.indices.all { i ->
+                canonicalTargets.indices.none { j -> i != j && canonicalTargets[i].startsWith(canonicalTargets[j]) }
+            },
+        ) { "GraphRAG index directories must be disjoint" }
+
+        val staged = mutableListOf<StagedDirectory>()
+        try {
+            for (target in targets) {
+                val absolute = target.toAbsolutePath().normalize()
+                Files.createDirectories(absolute.parent)
+                val slot = StagedDirectory(absolute, Files.createTempDirectory(absolute.parent, ".graphrag-"))
+                staged.add(slot)
+                Files.createDirectory(slot.content)
+            }
+            action(staged)
+        } finally {
+            for (slot in staged) {
+                if (!Files.exists(slot.backup)) {
+                    runCatching { deleteDirectory(slot.staging) }
+                        .onFailure { logger.warn(it) { "Could not clean up GraphRAG staging directory ${slot.staging}" } }
+                }
+            }
+        }
+    }
+
+    private fun publishDirectories(staged: List<StagedDirectory>) {
+        val published = mutableListOf<StagedDirectory>()
+        try {
+            for (slot in staged) {
+                if (Files.exists(slot.target)) Files.move(slot.target, slot.backup)
+                Files.move(slot.content, slot.target)
+                published.add(slot)
+            }
+        } catch (failure: Exception) {
+            for (slot in staged.asReversed()) {
+                try {
+                    if (slot in published) deleteDirectory(slot.target)
+                    if (Files.exists(slot.backup)) Files.move(slot.backup, slot.target)
+                } catch (rollback: Exception) {
+                    failure.addSuppressed(rollback)
+                    logger.error(rollback) { "GraphRAG backup retained at ${slot.backup}" }
+                }
+            }
+            throw failure
+        }
+        staged.forEach { slot ->
+            runCatching { deleteDirectory(slot.backup) }
+                .onFailure { logger.warn(it) { "Could not remove GraphRAG backup ${slot.backup}" } }
+        }
     }
 
     override fun query(
@@ -216,8 +343,11 @@ class GraphRAG(
         param: QueryParam,
     ): QueryResult {
         val mode = param.mode.lowercase()
-        val indexData = loadIndexDataOrThrow("Failed to load GraphRAG index from '$outputDir'. Run upsert() first.")
-
+        val (indexData, indexedEmbeddingModel) =
+            indexMutex.withLock {
+                loadIndexDataOrThrow("Failed to load GraphRAG index from '$outputDir'. Run upsert() first.") to
+                    resolveEmbeddingModel(param.embeddingModelName)
+            }
         val apiKey = System.getenv("OPENAI_API_KEY") ?: error("OPENAI_API_KEY environment variable is required for GraphRAG query.")
         val callbackCollector = CollectingQueryCallbacks()
         val callbackList: List<QueryCallbacks> = listOf(callbackCollector)
@@ -235,12 +365,8 @@ class GraphRAG(
                 .modelName(modelName ?: defaultChatModelName)
                 .build()
 
-        fun buildEmbeddingModel(modelName: String?): EmbeddingModel = defaultEmbeddingModel(apiKey, modelName ?: defaultEmbeddingModelName)
-
-        val queryEmbeddingModel = buildEmbeddingModel(param.embeddingModelName)
-        val backend = createVectorStorageBackend(indexData, queryEmbeddingModel)
-        vectorStorageBackend = backend
-        val localVectorStore = backend.asLocalVectorStore()
+        val queryEmbeddingModel = defaultEmbeddingModel(apiKey, indexedEmbeddingModel)
+        val localVectorStore = indexData.vectorStore
 
         fun createLocalEngine(callbacks: List<QueryCallbacks>): LocalQueryEngine =
             LocalQueryEngine(
@@ -287,7 +413,7 @@ class GraphRAG(
                         maxContextTokens = param.maxContextTokens,
                         callbacks = callbackList,
                     )
-                if (param.streaming) {
+                if (param.streaming && param.includeAnswer) {
                     val streamed = StringBuilder()
                     engine.streamAnswer(query, param.responseType).collect { partial -> streamed.append(partial) }
                     QueryResult(
@@ -296,13 +422,13 @@ class GraphRAG(
                         contextRecords = callbackCollector.contextRecords,
                     )
                 } else {
-                    engine.answer(query, param.responseType)
+                    engine.answer(query, param.responseType, includeAnswer = param.includeAnswer)
                 }
             }
 
             "local" -> {
                 val engine = createLocalEngine(callbackList)
-                if (param.streaming) {
+                if (param.streaming && param.includeAnswer) {
                     val streamed = StringBuilder()
                     engine
                         .streamAnswer(
@@ -323,13 +449,15 @@ class GraphRAG(
                         responseType = param.responseType,
                         conversationHistory = param.conversationHistory,
                         driftQuery = param.driftQuery,
+                        includeAnswer = param.includeAnswer,
                     )
                 }
             }
 
             "global" -> {
                 val engine = createGlobalEngine(callbackList)
-                if (param.streaming) {
+                if (!param.includeAnswer) return engine.retrieveContext(query, param.conversationHistory)
+                if (param.streaming && param.includeAnswer) {
                     val streamed = StringBuilder()
                     engine
                         .streamSearch(
@@ -364,6 +492,22 @@ class GraphRAG(
             }
 
             "drift" -> {
+                if (!param.includeAnswer) {
+                    val reports = createGlobalEngine(emptyList()).retrieveContext(query, param.conversationHistory)
+                    val local =
+                        createLocalEngine(emptyList()).answer(
+                            query,
+                            param.responseType,
+                            param.conversationHistory,
+                            includeAnswer = false,
+                        )
+                    val groups = reports.contextRecords.keys + local.contextRecords.keys
+                    return local.copy(
+                        context = emptyList(),
+                        contextText = listOf(reports.contextText, local.contextText).filter { it.isNotBlank() }.joinToString("\n\n"),
+                        contextRecords = groups.associateWith { reports.contextRecords[it].orEmpty() + local.contextRecords[it].orEmpty() },
+                    )
+                }
                 val driftCollector = CollectingQueryCallbacks()
                 val driftCallbacks: List<QueryCallbacks> = listOf(driftCollector)
                 val localEngine = createLocalEngine(driftCallbacks)
@@ -378,7 +522,7 @@ class GraphRAG(
                         responseType = param.responseType,
                         maxIterations = param.maxIterations,
                     )
-                if (param.streaming) {
+                if (param.streaming && param.includeAnswer) {
                     val streamed = StringBuilder()
                     engine
                         .streamSearch(
@@ -425,22 +569,25 @@ class GraphRAG(
     override suspend fun query(
         query: String,
         topK: Int,
-    ): List<Map<String, Any?>> = ensureVectorStorageBackend().query(query, topK)
+    ): List<Map<String, Any?>> = indexMutex.withLock { ensureVectorStorageBackend().query(query, topK) }
 
-    override suspend fun upsert(data: Map<String, Map<String, Any?>>) {
-        ensureVectorStorageBackend().upsert(data)
-        invalidateLoadedState()
-    }
+    override suspend fun upsert(data: Map<String, Map<String, Any?>>) =
+        indexMutex.withLock {
+            ensureVectorStorageBackend().upsert(data)
+            invalidateLoadedState()
+        }
 
-    override suspend fun deleteEntity(entityName: String) {
-        ensureVectorStorageBackend().deleteEntity(entityName)
-        invalidateLoadedState()
-    }
+    override suspend fun deleteEntity(entityName: String) =
+        indexMutex.withLock {
+            ensureVectorStorageBackend().deleteEntity(entityName)
+            invalidateLoadedState()
+        }
 
-    override suspend fun deleteEntityRelation(entityName: String) {
-        ensureVectorStorageBackend().deleteEntityRelation(entityName)
-        invalidateLoadedState()
-    }
+    override suspend fun deleteEntityRelation(entityName: String) =
+        indexMutex.withLock {
+            ensureVectorStorageBackend().deleteEntityRelation(entityName)
+            invalidateLoadedState()
+        }
 
     private fun ensureDirectories() {
         Files.createDirectories(rootDir)
@@ -464,8 +611,17 @@ class GraphRAG(
         val indexData = loadIndexDataOrThrow("Failed to load GraphRAG vector index from '$outputDir'. Run upsert() first.")
         val apiKey =
             System.getenv("OPENAI_API_KEY") ?: error("OPENAI_API_KEY environment variable is required for GraphRAG vector operations.")
-        val embeddingModel = defaultEmbeddingModel(apiKey, defaultEmbeddingModelName)
+        val embeddingModel = defaultEmbeddingModel(apiKey, resolveEmbeddingModel(null))
         return createVectorStorageBackend(indexData, embeddingModel).also { vectorStorageBackend = it }
+    }
+
+    private fun resolveEmbeddingModel(requested: String?): String {
+        val identityFile = outputDir.resolve(EMBEDDING_MODEL_FILE)
+        val indexed = if (Files.isRegularFile(identityFile)) Files.readString(identityFile).trim() else "text-embedding-3-small"
+        require(requested == null || requested == indexed) {
+            "GraphRAG index uses '$indexed'; cannot query it with '$requested'. Rebuild with the requested model."
+        }
+        return indexed
     }
 
     private fun loadIndexDataOrThrow(errorMessage: String): QueryIndexData {
@@ -488,12 +644,15 @@ class GraphRAG(
         }
     }
 
-    private fun persistInputDocuments(documents: List<String>) {
+    private fun persistInputDocuments(
+        documents: List<String>,
+        directory: Path,
+    ) {
         documents.forEach { content ->
             val contentBytes = content.toByteArray(Charsets.UTF_8)
             val contentSize = contentBytes.size.toLong()
             val digest = md5(contentBytes)
-            var target = inputDir.resolve("doc-$digest.txt")
+            var target = directory.resolve("doc-$digest.txt")
             var suffix = 1
             while (Files.exists(target)) {
                 val sameSize = runCatching { Files.size(target) == contentSize }.getOrDefault(false)
@@ -503,7 +662,7 @@ class GraphRAG(
                         break
                     }
                 }
-                target = inputDir.resolve("doc-$digest-$suffix.txt")
+                target = directory.resolve("doc-$digest-$suffix.txt")
                 suffix += 1
             }
             if (!Files.exists(target)) {

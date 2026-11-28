@@ -60,6 +60,8 @@ data class GraphRagConfig(
     val inputDir: Path,
     val outputDir: Path,
     val updateOutputDir: Path,
+    val embeddingModelName: String = "text-embedding-3-small",
+    val sourceInputDir: Path = inputDir,
 )
 
 /**

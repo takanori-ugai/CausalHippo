@@ -79,7 +79,7 @@ private suspend fun loadInputDocuments(
     context: PipelineRunContext,
 ): WorkflowResult {
     val chunker = DocumentChunker()
-    val chunks = chunker.loadAndChunk(config.inputDir)
+    val chunks = chunker.loadAndChunk(config.inputDir, config.sourceInputDir)
     context.state["chunks"] = chunks
     context.state["text_units"] = chunker.toTextUnits(chunks)
     context.outputStorage.set("documents_loaded.txt", "Loaded ${chunks.size} chunks at ${Instant.now()}")
@@ -156,7 +156,7 @@ private suspend fun embedText(
     context: PipelineRunContext,
 ): WorkflowResult {
     val chunks = stateList<DocumentChunk>(context.state, "chunks")
-    val embedder = EmbedWorkflow(defaultEmbeddingModel(openAiApiKey))
+    val embedder = EmbedWorkflow(defaultEmbeddingModel(openAiApiKey, config.embeddingModelName))
     val textEmbeddings =
         embedder.embedChunks(
             chunks,
@@ -185,7 +185,7 @@ private suspend fun embedGraph(
     context: PipelineRunContext,
 ): WorkflowResult {
     val entities = stateList<Entity>(context.state, "entities")
-    val embedder = EmbedWorkflow(defaultEmbeddingModel(openAiApiKey))
+    val embedder = EmbedWorkflow(defaultEmbeddingModel(openAiApiKey, config.embeddingModelName))
     val entityEmbeddings =
         embedder.embedEntities(
             entities,

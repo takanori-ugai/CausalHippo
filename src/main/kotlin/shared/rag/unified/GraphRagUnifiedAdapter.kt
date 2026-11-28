@@ -82,6 +82,7 @@ class GraphRagUnifiedAdapter(
             maxIterations = query.intExtra("maxIterations", 3),
             chatModelName = query.stringExtra("chatModelName"),
             embeddingModelName = query.stringExtra("embeddingModelName"),
+            includeAnswer = query.includeAnswer || query.includeFollowUps,
         )
 
     private fun modeFor(mode: UnifiedMode): String =
@@ -121,7 +122,8 @@ class GraphRagUnifiedAdapter(
         val references =
             if (query.includeReferences) {
                 contextRecords.entries.flatMap { (group, rows) ->
-                    rows.mapIndexed { index, row ->
+                    rows.mapIndexedNotNull { index, row ->
+                        if (row["in_context"].equals("false", ignoreCase = true)) return@mapIndexedNotNull null
                         val snippet = row["content"] ?: row["text"] ?: row["description"] ?: row.toString()
                         ReferenceItem(
                             id = "$group:$index",
