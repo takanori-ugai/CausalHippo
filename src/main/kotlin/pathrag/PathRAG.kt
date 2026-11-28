@@ -28,6 +28,8 @@ import pathrag.storage.Neo4jVectorStorage
 import pathrag.storage.NetworkXStorage
 import pathrag.utils.ResponseCache
 import pathrag.utils.computeMdHashId
+import pathrag.utils.entityVectorData
+import pathrag.utils.relationshipVectorData
 import pathrag.utils.relationshipVectorId
 import shared.config.CommonRagConfigLoader
 import shared.rag.CommonRag
@@ -489,10 +491,12 @@ class PathRAG(
             val entities = customKg.entities.mapNotNull { it.toCustomEntity() }
             val relationships = customKg.relationships.mapNotNull { it.toCustomRelationship() }
 
+            val chunkIdsBySource = mutableMapOf<String, String>()
             val chunkData =
                 chunks.associate { chunk ->
                     val content = chunk.content.trim()
                     val id = computeMdHashId(content, prefix = "chunk-")
+                    chunk.sourceId?.takeIf { it.isNotBlank() }?.let { chunkIdsBySource[it] = id }
                     id to mapOf("content" to content, "source_id" to chunk.sourceId.orEmpty())
                 }
             if (chunkData.isNotEmpty()) {
@@ -505,31 +509,45 @@ class PathRAG(
                 }
             }
 
-            entities.forEach { entity ->
-                val name = entity.entityName.trim('"').uppercase()
-                val nodeData =
-                    mapOf(
-                        "entity_type" to entity.entityType.ifBlank { "UNKNOWN" },
-                        "description" to entity.description.ifBlank { "No description provided" },
-                        "source_id" to entity.sourceId.ifBlank { "UNKNOWN" },
-                    )
-                runCatching { chunkEntityRelationGraph.upsertNode(name, nodeData) }
-                    .onFailure { ex -> logger.error(ex) { "Failed to upsert node $name" } }
-            }
+            fun resolveSource(id: String): String = chunkIdsBySource[id] ?: id.ifBlank { "UNKNOWN" }
 
-            relationships.forEach { rel ->
-                val src = rel.srcId.trim('"').uppercase()
-                val tgt = rel.tgtId.trim('"').uppercase()
-                val data =
-                    mapOf(
-                        "weight" to rel.weight,
-                        "description" to rel.description,
-                        "keywords" to rel.keywords,
-                        "source_id" to rel.sourceId.ifBlank { "UNKNOWN" },
-                    )
-                runCatching { chunkEntityRelationGraph.upsertEdge(src, tgt, data) }
-                    .onFailure { ex -> logger.error(ex) { "Failed to upsert edge $src -> $tgt" } }
-            }
+            val entityVectors =
+                entities.associate { entity ->
+                    val name = entity.entityName.trim('"').uppercase()
+                    val nodeData =
+                        mapOf(
+                            "entity_type" to entity.entityType.ifBlank { "UNKNOWN" },
+                            "description" to entity.description.ifBlank { "No description provided" },
+                            "source_id" to resolveSource(entity.sourceId),
+                        )
+                    chunkEntityRelationGraph.upsertNode(name, nodeData)
+                    computeMdHashId(name, prefix = "ent-") to entityVectorData(name, nodeData)
+                }
+            if (entityVectors.isNotEmpty()) entitiesVdb.upsert(entityVectors)
+
+            val relationVectors =
+                relationships.associate { rel ->
+                    val src = rel.srcId.trim('"').uppercase()
+                    val tgt = rel.tgtId.trim('"').uppercase()
+                    val data =
+                        mapOf(
+                            "weight" to rel.weight,
+                            "description" to rel.description,
+                            "keywords" to rel.keywords,
+                            "source_id" to resolveSource(rel.sourceId),
+                        )
+                    for (endpoint in listOf(src, tgt)) {
+                        if (!chunkEntityRelationGraph.hasNode(endpoint)) {
+                            chunkEntityRelationGraph.upsertNode(
+                                endpoint,
+                                mapOf("entity_type" to "UNKNOWN", "description" to "UNKNOWN", "source_id" to data.getValue("source_id")),
+                            )
+                        }
+                    }
+                    chunkEntityRelationGraph.upsertEdge(src, tgt, data)
+                    relationshipVectorId(src, tgt) to relationshipVectorData(src, tgt, data)
+                }
+            if (relationVectors.isNotEmpty()) relationshipsVdb.upsert(relationVectors)
             if (unifiedSpiEnabled) {
                 publishUnifiedIndex()
             }
@@ -957,16 +975,7 @@ class PathRAG(
             val nodeData = (rawNodeData as? Map<*, *>)?.entries?.associate { it.key.toString() to it.value } ?: emptyMap()
             chunkEntityRelationGraph.upsertNode(nodeId, nodeData)
             val vectorId = computeMdHashId(nodeId, prefix = "ent-")
-            entitiesVdb.upsert(
-                mapOf(
-                    vectorId to
-                        mapOf(
-                            "content" to nodeData["description"]?.toString().orEmpty(),
-                            "entity_name" to nodeId,
-                            "source_id" to nodeData["source_id"]?.toString().orEmpty(),
-                        ),
-                ),
-            )
+            entitiesVdb.upsert(mapOf(vectorId to entityVectorData(nodeId, nodeData)))
         }
 
         edgesRaw.forEach { rawEdge ->
@@ -976,22 +985,8 @@ class PathRAG(
             if (source.isBlank() || target.isBlank()) return@forEach
             val edgeData = (edge["data"] as? Map<*, *>)?.entries?.associate { it.key.toString() to it.value } ?: emptyMap()
             chunkEntityRelationGraph.upsertEdge(source, target, edgeData)
-            val description = edgeData["description"]?.toString().orEmpty()
-            val keywords = edgeData["keywords"]?.toString().orEmpty()
             val relId = relationshipVectorId(source, target)
-            relationshipsVdb.upsert(
-                mapOf(
-                    relId to
-                        mapOf(
-                            "src_id" to source,
-                            "tgt_id" to target,
-                            "content" to (description + keywords),
-                            "keywords" to keywords,
-                            "description" to description,
-                            "source_id" to edgeData["source_id"]?.toString().orEmpty(),
-                        ),
-                ),
-            )
+            relationshipsVdb.upsert(mapOf(relId to relationshipVectorData(source, target, edgeData)))
         }
 
         logger.info { "Loaded graph snapshot from '$path' with ${nodesRaw.size} nodes and ${edgesRaw.size} edges." }
@@ -1039,16 +1034,7 @@ class PathRAG(
         runCatching { chunkEntityRelationGraph.upsertNode(key, nodeData) }
             .onFailure { ex -> logger.error(ex) { "Failed to upsert node $key" } }
         runCatching {
-            entitiesVdb.upsert(
-                mapOf(
-                    vectorId to
-                        mapOf(
-                            "content" to description,
-                            "entity_name" to key,
-                            "source_id" to (sourceId ?: ""),
-                        ),
-                ),
-            )
+            entitiesVdb.upsert(mapOf(vectorId to entityVectorData(key, nodeData)))
         }.onFailure { ex -> logger.error(ex) { "Failed to upsert entity vector $vectorId" } }
         if (unifiedSpiEnabled) publishUnifiedIndex()
         logger.info { "Entity '$key' upserted." }
@@ -1071,7 +1057,7 @@ class PathRAG(
      *
      * The entity identifiers are normalized (trimmed of quoting and uppercased) before upsertion. The graph edge is
      * stored with metadata including `weight`, `description`, `keywords`, and `source_id`. A relationship vector entry
-     * is created/updated with `src_id`, `tgt_id`, concatenated `content` (description + keywords), `keywords`,
+     * is created/updated with `src_id`, `tgt_id`, concatenated `content` (keywords, source, target, description), `keywords`,
      * `description`, and `source_id`.
      *
      * Failures during graph or vector upsertion are logged and do not propagate exceptions.
@@ -1105,19 +1091,7 @@ class PathRAG(
             .onFailure { ex -> logger.error(ex) { "Failed to upsert edge $srcKey -> $tgtKey" } }
         val relId = relationshipVectorId(srcKey, tgtKey)
         runCatching {
-            relationshipsVdb.upsert(
-                mapOf(
-                    relId to
-                        mapOf(
-                            "src_id" to srcKey,
-                            "tgt_id" to tgtKey,
-                            "content" to (description + keywords),
-                            "keywords" to keywords,
-                            "description" to description,
-                            "source_id" to (sourceId ?: ""),
-                        ),
-                ),
-            )
+            relationshipsVdb.upsert(mapOf(relId to relationshipVectorData(srcKey, tgtKey, data)))
         }.onFailure { ex -> logger.error(ex) { "Failed to upsert relationship vector $relId" } }
         if (unifiedSpiEnabled) publishUnifiedIndex()
         logger.info { "Edge '$srcKey' -> '$tgtKey' upserted." }
@@ -1303,45 +1277,20 @@ class PathRAG(
     ): List<VectorRecord> {
         val records = mutableListOf<VectorRecord>()
 
-        val entityContents = nodes.map { node -> "${node.id}\n${node.data["description"]?.toString().orEmpty()}".trim() }
-        val entityVectors = if (entityContents.isEmpty()) emptyList() else embeddingFunc(entityContents)
+        val entityRows = nodes.map { entityVectorData(it.id, it.data) }
+        val entityVectors = if (entityRows.isEmpty()) emptyList() else embeddingFunc(entityRows.map { it.getValue("content") })
         nodes.forEachIndexed { index, node ->
-            val vector = entityVectors[index].toList()
-            records +=
-                VectorRecord(
-                    id = "entity:${node.id}",
-                    vector = vector,
-                    metadata =
-                        mapOf(
-                            "kind" to "entity",
-                            "entity_name" to node.id,
-                            "source_id" to (node.data["source_id"]?.toString().orEmpty()),
-                            "content" to entityContents[index],
-                        ),
-                )
+            records += VectorRecord("entity:${node.id}", entityVectors[index].toList(), entityRows[index] + ("kind" to "entity"))
         }
 
-        val relationContents =
-            edges.map { edge ->
-                val description = edge.data["description"]?.toString().orEmpty()
-                val keywords = edge.data["keywords"]?.toString().orEmpty()
-                "$keywords ${edge.source} ${edge.target} $description".trim()
-            }
-        val relationVectors = if (relationContents.isEmpty()) emptyList() else embeddingFunc(relationContents)
+        val relationRows = edges.map { relationshipVectorData(it.source, it.target, it.data) }
+        val relationVectors = if (relationRows.isEmpty()) emptyList() else embeddingFunc(relationRows.map { it.getValue("content") })
         edges.forEachIndexed { index, edge ->
-            val vector = relationVectors[index].toList()
             records +=
                 VectorRecord(
-                    id = relationshipVectorId(edge.source, edge.target),
-                    vector = vector,
-                    metadata =
-                        mapOf(
-                            "kind" to "relation",
-                            "src_id" to edge.source,
-                            "tgt_id" to edge.target,
-                            "source_id" to (edge.data["source_id"]?.toString().orEmpty()),
-                            "content" to relationContents[index],
-                        ),
+                    relationshipVectorId(edge.source, edge.target),
+                    relationVectors[index].toList(),
+                    relationRows[index] + ("kind" to "relation"),
                 )
         }
 
@@ -1407,12 +1356,7 @@ class PathRAG(
 
         val entityUpserts =
             graphSnapshot.nodes.associate { node ->
-                computeMdHashId(node.id, prefix = "ent-") to
-                    mapOf(
-                        "content" to node.data["description"]?.toString().orEmpty(),
-                        "entity_name" to node.id,
-                        "source_id" to node.data["source_id"]?.toString().orEmpty(),
-                    )
+                computeMdHashId(node.id, prefix = "ent-") to entityVectorData(node.id, node.data)
             }
         if (entityUpserts.isNotEmpty()) {
             entitiesVdb.upsert(entityUpserts)
@@ -1420,17 +1364,7 @@ class PathRAG(
 
         val relationUpserts =
             graphSnapshot.edges.associate { edge ->
-                val description = edge.data["description"]?.toString().orEmpty()
-                val keywords = edge.data["keywords"]?.toString().orEmpty()
-                relationshipVectorId(edge.source, edge.target) to
-                    mapOf(
-                        "src_id" to edge.source,
-                        "tgt_id" to edge.target,
-                        "content" to (description + keywords),
-                        "keywords" to keywords,
-                        "description" to description,
-                        "source_id" to edge.data["source_id"]?.toString().orEmpty(),
-                    )
+                relationshipVectorId(edge.source, edge.target) to relationshipVectorData(edge.source, edge.target, edge.data)
             }
         if (relationUpserts.isNotEmpty()) {
             relationshipsVdb.upsert(relationUpserts)

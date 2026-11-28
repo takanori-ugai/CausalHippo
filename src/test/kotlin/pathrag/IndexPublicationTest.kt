@@ -110,7 +110,7 @@ class IndexPublicationTest {
         exercise { directory ->
             PathRAG(workingDir = directory).use { rag ->
                 var fail = true
-                coEvery { pathrag.llm.openAiEmbedding(match { "relatedlink" in it }, any()) } answers {
+                coEvery { pathrag.llm.openAiEmbedding(match { "linkALPHABETArelated" in it }, any()) } answers {
                     check(!fail) { "injected relationship embedding failure" }
                     firstArg<List<String>>().map { DoubleArray(1536) { 0.02 } }
                 }
@@ -147,9 +147,14 @@ class IndexPublicationTest {
             val secondDocument = "Evidence for Gamma and Delta."
             InMemoryPersistenceBackend().open(emptyMap()).use { session ->
                 var failUnified = true
+                var alphaRelationBatches = 0
                 coEvery { pathrag.llm.openAiEmbedding(any(), any()) } answers {
                     val texts = firstArg<List<String>>()
-                    check(texts.none { it == "secondlink" || (failUnified && it.startsWith("link ALPHA BETA ")) })
+                    if ("linkALPHABETArelated" in texts) {
+                        alphaRelationBatches++
+                        check(!failUnified || alphaRelationBatches == 1)
+                    }
+                    check("linkGAMMADELTAsecond" !in texts)
                     texts.map { DoubleArray(1536) { 0.02 } }
                 }
                 PathRAG(workingDir = directory, persistenceSession = session, useUnifiedSpiForRetrievalAndIndex = true).use { rag ->
@@ -221,8 +226,11 @@ class IndexPublicationTest {
     fun clearingCancelsPendingPublication() =
         exercise { directory ->
             InMemoryPersistenceBackend().open(emptyMap()).use { session ->
-                coEvery { pathrag.llm.openAiEmbedding(match { batch -> batch.any { it.startsWith("link ALPHA BETA ") } }, any()) } throws
-                    IllegalStateException("injected unified embedding failure")
+                var alphaRelationBatches = 0
+                coEvery { pathrag.llm.openAiEmbedding(match { "linkALPHABETArelated" in it }, any()) } answers {
+                    check(++alphaRelationBatches == 1) { "injected unified embedding failure" }
+                    firstArg<List<String>>().map { DoubleArray(1536) { 0.02 } }
+                }
                 PathRAG(workingDir = directory, persistenceSession = session, useUnifiedSpiForRetrievalAndIndex = true).use { rag ->
                     assertFailsWith<IllegalStateException> { rag.ainsert(document) }
                     rag.aclear()
