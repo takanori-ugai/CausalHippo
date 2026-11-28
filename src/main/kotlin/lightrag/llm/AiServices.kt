@@ -6,19 +6,7 @@ import dev.langchain4j.service.V
 import lightrag.operate.ExtractionResult
 import lightrag.operate.KeywordsExtractionResult
 
-/**
- * An AI service for extracting entities and relationships from text.
- */
-interface EntityExtractor {
-    /**
-     * Extracts entities and relationships from the given text.
-     * @param text The text to extract from.
-     * @param entityTypes The types of entities to extract.
-     * @param language The language of the text.
-     * @return An [ExtractionResult] containing the extracted entities and relationships.
-     */
-    @SystemMessage(
-        """---Role---
+internal const val ENTITY_EXTRACTION_INSTRUCTIONS = """---Role---
 You are a Knowledge Graph Specialist responsible for extracting entities and relationships from the input text.
 
 ---Instructions---
@@ -65,8 +53,20 @@ You are a Knowledge Graph Specialist responsible for extracting entities and rel
     ]
 }
 ```
-""",
-    )
+"""
+
+/**
+ * An AI service for extracting entities and relationships from text.
+ */
+@SystemMessage(ENTITY_EXTRACTION_INSTRUCTIONS)
+interface EntityExtractor {
+    /**
+     * Extracts entities and relationships from the given text.
+     * @param text The text to extract from.
+     * @param entityTypes The types of entities to extract.
+     * @param language The language of the text.
+     * @return An [ExtractionResult] containing the extracted entities and relationships.
+     */
     fun extract(
         @V("input_text")
         @UserMessage(
@@ -91,6 +91,12 @@ Extract entities and relationships from the input text in Data to be Processed b
 """,
         )
         text: String,
+        @V("entity_types") entityTypes: String,
+        @V("language") language: String,
+    ): ExtractionResult
+
+    fun correct(
+        @V("review_request") @UserMessage("{{review_request}}") request: String,
         @V("entity_types") entityTypes: String,
         @V("language") language: String,
     ): ExtractionResult
