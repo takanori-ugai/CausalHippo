@@ -195,13 +195,41 @@ class SimpleGraph(
         file.writeText(json.encodeToString(GraphData.serializer(), data))
     }
 
+    internal fun edgeKeys(): Set<Pair<String, String>> =
+        edges
+            .mapNotNull { edge ->
+                val source = vertices[edge.source]["name"]?.toString()
+                val target = vertices[edge.target]["name"]?.toString()
+                if (source != null && target != null) source to target else null
+            }.toSet()
+
+    internal fun copy(): SimpleGraph =
+        SimpleGraph(directed).also { copy ->
+            copy.vertices.addAll(vertices.map { it.toMutableMap() })
+            copy.edges.addAll(edges)
+            copy.nameToIndex.putAll(nameToIndex)
+        }
+
     companion object {
         /**
          * Loads a [SimpleGraph] from [file].
          */
-        fun load(file: File): SimpleGraph {
+        fun load(
+            file: File,
+            strict: Boolean = false,
+        ): SimpleGraph {
             val json = jsonWithDefaults { ignoreUnknownKeys = true }
             val data = json.decodeFromString(GraphData.serializer(), file.readText())
+            if (strict) {
+                require(data.vertices.all { it["name"] is String && it["name"].toString().isNotBlank() }) {
+                    "Graph snapshot contains unnamed vertices: $file"
+                }
+                require(
+                    data.edges.all { it.source in data.vertices.indices && it.target in data.vertices.indices && it.weight.isFinite() },
+                ) {
+                    "Graph snapshot contains invalid edges: $file"
+                }
+            }
             val graph = SimpleGraph(data.directed)
             val attributes = mutableMapOf<String, MutableList<Any>>()
             if (data.vertices.isNotEmpty()) {
