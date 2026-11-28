@@ -224,6 +224,33 @@ class DirectedGraph {
         return components
     }
 
+    /** Retrieves simple paths between distinct relevant endpoints in increasing hop count. */
+    internal fun shortestRelevantPaths(
+        endpoints: List<String>,
+        maxPaths: Int,
+        minNodes: Int = 2,
+        maxHops: Int = 4,
+    ): List<List<String>> {
+        if (maxPaths <= 0 || endpoints.size < 2) return emptyList()
+        val result = mutableListOf<List<String>>()
+        val nodes = endpoints.distinct()
+        for (hops in (minNodes.coerceAtLeast(2) - 1)..minOf(maxHops, numberOfNodes() - 1)) {
+            for (i in nodes.indices) {
+                for (j in i + 1 until nodes.size) {
+                    for ((start, end) in listOf(nodes[i] to nodes[j], nodes[j] to nodes[i])) {
+                        if (hops == 1) {
+                            if (end in successors(start)) result.add(listOf(start, end))
+                        } else {
+                            result.addAll(findPaths(start, end, hops, maxPaths - result.size, minDepth = hops))
+                        }
+                        if (result.size == maxPaths) return result
+                    }
+                }
+            }
+        }
+        return result
+    }
+
     /**
      * Finds simple directed paths between two nodes.
      *
@@ -238,6 +265,7 @@ class DirectedGraph {
         end: String,
         maxDepth: Int,
         limit: Int = Int.MAX_VALUE,
+        minDepth: Int = 0,
     ): List<List<String>> {
         val results = mutableListOf<List<String>>()
 
@@ -249,7 +277,7 @@ class DirectedGraph {
             visited: MutableSet<String>,
         ) {
             if (current == target) {
-                results.add(path.toList())
+                if (depth >= minDepth && results.size < limit) results.add(path.toList())
                 return
             }
             if (depth >= maxDepth || results.size >= limit) return

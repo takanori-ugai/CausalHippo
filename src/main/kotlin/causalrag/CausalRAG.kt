@@ -4,6 +4,7 @@ import causalrag.causalgraph.builder.CausalGraphBuilder
 import causalrag.causalgraph.builder.CausalTriple
 import causalrag.causalgraph.graph.DirectedGraph
 import causalrag.causalgraph.retriever.CausalPathRetriever
+import causalrag.causalgraph.retriever.expandPathNodes
 import causalrag.generator.llm.LLMInterface
 import causalrag.generator.promptbuilder.PromptBuilder
 import causalrag.reranker.CausalPathReranker
@@ -294,10 +295,11 @@ class CausalRAG(
         maxPaths: Int = 3,
     ): List<List<String>> =
         synchronized(indexLock) {
+            if (maxPaths <= 0) return@synchronized emptyList()
             if (unifiedSpiEnabled) {
-                retrieveCausalPathsFromUnifiedSpi(query, maxPaths.coerceAtLeast(1))
+                retrieveCausalPathsFromUnifiedSpi(query, maxPaths)
             } else {
-                graphRetriever.retrievePaths(query, maxPaths = maxPaths.coerceAtLeast(1))
+                graphRetriever.retrievePaths(query, maxPaths = maxPaths)
             }
         }
 
@@ -749,42 +751,33 @@ class CausalRAG(
     }
 
     private fun retrievePathNodesFromUnifiedSpi(
+        graph: DirectedGraph,
+        nodeText: Map<String, String>,
         query: String,
         topK: Int = 5,
         maxHops: Int = 2,
     ): List<String> {
-        val session = unifiedSpiSession ?: return emptyList()
-        val snapshot = session.graph(unifiedSpiGraphNamespace).snapshot()
-        val (graph, nodeText) = graphFromSnapshot(snapshot)
         if (nodeText.isEmpty()) return emptyList()
 
         val queryEmbedding = vectorRetriever.encodeForQuery(query)
-        val rankedNodes =
+        val embeddings = mutableMapOf<String, DoubleArray>()
+        val seeds =
             nodeText
-                .entries
-                .map { (nodeId, text) ->
+                .map { (id, label) ->
+                    val vector = queryEmbedding?.let { vectorRetriever.encodeForQuery(label) }
                     val score =
-                        if (queryEmbedding != null) {
-                            val nodeEmbedding = vectorRetriever.encodeForQuery(text)
-                            if (nodeEmbedding != null && nodeEmbedding.size == queryEmbedding.size) {
-                                cosineSimilarity(queryEmbedding, nodeEmbedding)
-                            } else {
-                                lexicalMatchScore(query, text)
-                            }
+                        if (queryEmbedding != null && vector != null && vector.size == queryEmbedding.size) {
+                            embeddings[id] = vector
+                            cosineSimilarity(queryEmbedding, vector)
                         } else {
-                            lexicalMatchScore(query, text)
+                            lexicalMatchScore(query, label)
                         }
-                    nodeId to score
-                }.sortedByDescending { it.second }
-
-        val seeds = rankedNodes.take(topK).map { it.first }
-        val pathNodes = mutableSetOf<String>()
-        for (nodeId in seeds) {
-            pathNodes.add(nodeId)
-            pathNodes.addAll(expandDescendants(graph, nodeId, maxHops))
-            pathNodes.addAll(expandAncestors(graph, nodeId, maxHops))
-        }
-        return pathNodes.toList()
+                    id to score
+                }.filter { it.second >= 0.5 }
+                .sortedByDescending { it.second }
+                .take(topK)
+                .map { it.first }
+        return expandPathNodes(graph, seeds, maxHops, embeddings)
     }
 
     private fun retrieveCausalPathsFromUnifiedSpi(
@@ -794,31 +787,8 @@ class CausalRAG(
         val session = unifiedSpiSession ?: return emptyList()
         val snapshot = session.graph(unifiedSpiGraphNamespace).snapshot()
         val (graph, nodeText) = graphFromSnapshot(snapshot)
-        val relevantNodes = retrievePathNodesFromUnifiedSpi(query, topK = 5, maxHops = 1)
-        if (relevantNodes.size < 2) return emptyList()
-
-        val paths = mutableListOf<Pair<List<String>, List<String>>>()
-        val maxTotal = maxPaths.coerceAtLeast(1) * 3
-        for (i in relevantNodes.indices) {
-            for (j in i + 1 until relevantNodes.size) {
-                if (paths.size >= maxTotal) break
-                val src = relevantNodes[i]
-                val tgt = relevantNodes[j]
-                if (src == tgt) continue
-                for ((start, end) in listOf(src to tgt, tgt to src)) {
-                    if (paths.size >= maxTotal) break
-                    val found = graph.findPaths(start, end, maxDepth = 4, limit = maxTotal - paths.size)
-                    for (path in found) {
-                        if (path.size >= 2) {
-                            val labeledPath = path.map { nodeId -> nodeText[nodeId] ?: nodeId }
-                            paths.add(path to labeledPath)
-                            if (paths.size >= maxTotal) break
-                        }
-                    }
-                }
-            }
-        }
-        return paths.sortedBy { it.first.size }.take(maxPaths.coerceAtLeast(1)).map { it.second }
+        val relevantNodes = retrievePathNodesFromUnifiedSpi(graph, nodeText, query, topK = 5, maxHops = 1)
+        return graph.shortestRelevantPaths(relevantNodes, maxPaths).map { path -> path.map { nodeText[it] ?: it } }
     }
 
     private fun graphFromSnapshot(snapshot: GraphSnapshot): Pair<DirectedGraph, Map<String, String>> {
@@ -834,44 +804,6 @@ class CausalRAG(
             nodeText.putIfAbsent(edge.target, edge.target)
         }
         return graph to nodeText
-    }
-
-    private fun expandDescendants(
-        graph: DirectedGraph,
-        node: String,
-        maxHops: Int,
-    ): Set<String> {
-        val descendants = mutableSetOf<String>()
-        var frontier = setOf(node)
-        repeat(maxHops.coerceAtLeast(0)) {
-            val next = mutableSetOf<String>()
-            for (current in frontier) {
-                next.addAll(graph.successors(current))
-            }
-            descendants.addAll(next)
-            frontier = next
-            if (frontier.isEmpty()) return@repeat
-        }
-        return descendants
-    }
-
-    private fun expandAncestors(
-        graph: DirectedGraph,
-        node: String,
-        maxHops: Int,
-    ): Set<String> {
-        val ancestors = mutableSetOf<String>()
-        var frontier = setOf(node)
-        repeat(maxHops.coerceAtLeast(0)) {
-            val next = mutableSetOf<String>()
-            for (current in frontier) {
-                next.addAll(graph.predecessors(current))
-            }
-            ancestors.addAll(next)
-            frontier = next
-            if (frontier.isEmpty()) return@repeat
-        }
-        return ancestors
     }
 
     private fun lexicalMatchScore(

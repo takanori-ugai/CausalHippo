@@ -11,6 +11,9 @@ import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonNull
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
+import shared.rag.spi.persistence.GraphEdgeRecord
+import shared.rag.spi.persistence.GraphNodeRecord
+import shared.rag.spi.persistence.GraphSnapshot
 import shared.rag.spi.persistence.InMemoryPersistenceBackend
 import shared.rag.spi.persistence.PersistenceSession
 import shared.rag.spi.persistence.VectorIndexStore
@@ -315,6 +318,41 @@ class TestPipeline {
                 assertEquals(listOf(testDocs[0]), local.retrieveContext("climate change", 5))
             }
         }
+
+    @Test
+    fun unifiedPathSearchRequiresARelevantSeedAndExpandsSimilarNodes() {
+        mockkConstructor(VectorStoreRetriever::class)
+        try {
+            val vectors =
+                mapOf(
+                    "query" to doubleArrayOf(1.0, 0.0),
+                    "unrelated" to doubleArrayOf(-1.0, 0.0),
+                    "seed" to doubleArrayOf(0.6, 0.8),
+                    "similar" to doubleArrayOf(0.4, 0.92),
+                    "effect" to doubleArrayOf(0.0, -1.0),
+                )
+            every { anyConstructed<VectorStoreRetriever>().encodeForQuery(any()) } answers { vectors[firstArg<String>()] }
+            InMemoryPersistenceBackend().open(emptyMap()).use { session ->
+                val rag =
+                    CausalRAG(
+                        configPath = configPath.toString(),
+                        persistenceSession = session,
+                        useUnifiedSpiForRetrievalAndIndex = true,
+                    )
+                session.graph("causalrag_graph").restore(
+                    GraphSnapshot(
+                        nodes = listOf("seed", "effect", "similar").map { GraphNodeRecord(it) },
+                        edges = listOf(GraphEdgeRecord("seed", "effect"), GraphEdgeRecord("similar", "effect")),
+                    ),
+                )
+                assertEquals(setOf(listOf("seed", "effect"), listOf("similar", "effect")), rag.retrieveCausalPaths("query").toSet())
+                assertTrue(rag.retrieveCausalPaths("unrelated").isEmpty())
+                assertTrue(rag.retrieveCausalPaths("query", maxPaths = 0).isEmpty())
+            }
+        } finally {
+            unmockkConstructor(VectorStoreRetriever::class)
+        }
+    }
 
     @Test
     fun retrievesUnifiedEvidenceFromLegacyContentAndRecordIds() =
