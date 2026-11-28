@@ -13,11 +13,13 @@ private val logger = KotlinLogging.logger {}
  *
  * @param builder Causal graph builder that provides graph structure, node text, and embeddings.
  * @param similarNodeThreshold Similarity threshold for adding semantically related nodes during path expansion.
+ * @param restrictToExpandedSubgraph Use CausalHippo discovery with a seed endpoint inside the expanded neighborhood.
  */
 @Suppress("TooGenericExceptionCaught")
 class CausalPathRetriever(
     private val builder: CausalGraphBuilder,
     private val similarNodeThreshold: Double = 0.8,
+    private val restrictToExpandedSubgraph: Boolean = false,
 ) {
     private val graph: DirectedGraph
         get() = builder.getGraph()
@@ -81,10 +83,32 @@ class CausalPathRetriever(
         topK: Int = 5,
         maxHops: Int = 2,
         includeSimilar: Boolean = true,
-    ): List<String> {
+    ): List<String> = neighborhood(query, topK, maxHops, includeSimilar).nodes
+
+    private data class Neighborhood(
+        val graph: DirectedGraph,
+        val seeds: Set<String>,
+        val nodes: List<String>,
+    )
+
+    private fun neighborhood(
+        query: String,
+        topK: Int,
+        maxHops: Int,
+        includeSimilar: Boolean,
+    ): Neighborhood {
         val embeddings = builder.nodeEmbeddings
         val seeds = retrieveNodes(query, topK, 0.5, embeddings).map { it.first }
-        return expandPathNodes(graph, seeds, maxHops, if (includeSimilar) embeddings else emptyMap(), similarNodeThreshold)
+        val snapshot = graph
+        val nodes = expandPathNodes(snapshot, seeds, maxHops, if (includeSimilar) embeddings else emptyMap(), similarNodeThreshold)
+        if (!restrictToExpandedSubgraph) return Neighborhood(snapshot, seeds.toSet(), nodes)
+        val members = nodes.toSet()
+        val connected =
+            nodes.filter { node ->
+                snapshot.successors(node).any { it != node && it in members } ||
+                    snapshot.predecessors(node).any { it != node && it in members }
+            }
+        return Neighborhood(snapshot, seeds.toSet(), connected)
     }
 
     /**
@@ -102,9 +126,11 @@ class CausalPathRetriever(
         minPathLength: Int = 2,
         maxPathLength: Int = 4,
     ): List<List<String>> {
-        val relevantNodes = retrievePathNodes(query, topK = 5, maxHops = 1)
-        return graph
-            .shortestRelevantPaths(relevantNodes, maxPaths, minPathLength, maxPathLength)
+        if (maxPaths <= 0) return emptyList()
+        val region = neighborhood(query, topK = 5, maxHops = if (restrictToExpandedSubgraph) 2 else 1, includeSimilar = true)
+        val searchGraph = if (restrictToExpandedSubgraph) region.graph.subgraph(region.nodes.toSet()) else region.graph
+        return searchGraph
+            .shortestRelevantPaths(region.nodes, maxPaths, minPathLength, maxPathLength, region.seeds.takeIf { restrictToExpandedSubgraph })
             .map { path -> path.map { nodeText[it] ?: it } }
     }
 

@@ -104,7 +104,7 @@ class CausalHippoPipeline(
         val bm25 = Bm25Retriever()
         val passages = hippo.indexedPassages()
         if (passages.isNotEmpty()) bm25.indexDocuments(passages)
-        val paths = CausalPathRetriever(graph)
+        val paths = CausalPathRetriever(graph, restrictToExpandedSubgraph = true)
         val hybrid =
             HybridRetriever(
                 semanticRetriever = HippoRagSemanticRetrieverAdapter(hippo, mode = effectiveHippoSemanticMode),
@@ -206,7 +206,7 @@ class CausalHippoPipeline(
     fun retrieveCausalPaths(
         query: String,
         maxPaths: Int = 3,
-    ): List<List<String>> = current.paths.retrievePaths(query, maxPaths = maxPaths.coerceAtLeast(1))
+    ): List<List<String>> = current.paths.retrievePaths(query, maxPaths = maxPaths.coerceAtLeast(0))
 
     @Synchronized
     internal fun preparePrompt(

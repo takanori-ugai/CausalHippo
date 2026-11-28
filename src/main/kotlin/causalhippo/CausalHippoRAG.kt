@@ -156,7 +156,7 @@ class CausalHippoRAG(
         param: CausalHippoQueryParam,
     ): CausalRagRunResult {
         val topK = param.topK.coerceAtLeast(1)
-        val maxPaths = param.maxPaths.coerceAtLeast(1)
+        val maxPaths = param.maxPaths.coerceAtLeast(0)
 
         if (param.onlyNeedContext) {
             val evidence = pipeline.preparePrompt(query, topK, maxPaths, summarize = false)

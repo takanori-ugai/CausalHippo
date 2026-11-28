@@ -1,8 +1,12 @@
 package causalhippo
 
 import causalrag.causalgraph.builder.CausalGraphBuilder
+import causalrag.causalgraph.graph.DirectedGraph
+import causalrag.causalgraph.retriever.CausalPathRetriever
 import causalrag.generator.llm.LLMInterface
 import causalrag.generator.promptbuilder.PromptBuilder
+import causalrag.retriever.HybridRetriever
+import causalrag.retriever.SemanticRetriever
 import hipporag.config.BaseConfig
 import hipporag.embeddingmodel.BaseEmbeddingModel
 import hipporag.embeddingmodel.EmbeddingModelFactory
@@ -28,6 +32,58 @@ class HybridIntegrityTest {
     private val first = "Rainfall causes river flooding."
     private val second = "River flooding causes soil erosion."
     private val third = "Heat causes ice melting."
+
+    @Test
+    fun adaptiveWeightsMatchThePublishedEquations() {
+        val graph = mockk<CausalPathRetriever>()
+        val semantic = mockk<SemanticRetriever>()
+        every { semantic.searchWithScores(any(), any()) } returns listOf("rain causes flooding" to 0.8, "weather" to 0.6)
+        every { graph.retrievePathNodes(any(), any(), any(), any()) } returns listOf("rain", "flooding")
+        every { graph.retrievePaths(any(), any(), any(), any()) } returns listOf(listOf("rain", "flooding"))
+        every { graph.retrieveNodes(any(), any(), any()) } returns listOf("rain" to 1.0, "flooding" to 0.5)
+        val retriever =
+            HybridRetriever(
+                semanticRetriever = semantic,
+                graphRetriever = graph,
+                semanticWeight = 0.4,
+                causalWeight = 0.5,
+                bm25Weight = 0.1,
+                dynamicWeightingEnabled = true,
+                confidenceBasedSwitchEnabled = true,
+                twoPassAdaptiveEnabled = true,
+            )
+        val details = retriever.retrieveWithDetails("rain", topK = 1).single()["details"] as Map<*, *>
+        // One path, full node coverage and ambiguity 0.5. Confidence is 1/3 and mean alignment is 1/2.
+        val logit = 2.0 / 3.0 + 2.0 - 1.5 * 0.5 - 0.5
+        val gated = 0.9 / (1.0 + kotlin.math.exp(-logit))
+        val expected = 0.3 * gated / 3.0 + 0.7 * 0.9 * 0.5
+        assertEquals(expected, details["causal_weight"] as Double, 1e-12)
+        assertEquals(0.9 - expected, details["semantic_weight"] as Double, 1e-12)
+        assertEquals(0.1, details["bm25_weight"])
+    }
+
+    @Test
+    fun causalEvidenceUsesConnectedNodesInTheTwoHopNeighborhood() {
+        val graph = DirectedGraph()
+        graph.addEdge("rain", "flood", 1.0)
+        graph.addEdge("flood", "erosion", 1.0)
+        graph.addEdge("erosion", "outside", 1.0)
+        graph.addEdge("isolated", "isolated", 1.0)
+        val vector = doubleArrayOf(1.0, 0.0)
+        val builder = mockk<CausalGraphBuilder>()
+        every { builder.getGraph() } returns graph
+        every { builder.nodeText } returns emptyMap()
+        every { builder.nodeEmbeddings } returns mapOf("rain" to vector, "isolated" to vector)
+        every { builder.getEncoder() } returns mockk { every { encode("query") } returns vector }
+        val retriever = CausalPathRetriever(builder, restrictToExpandedSubgraph = true)
+
+        assertEquals(setOf("rain", "flood", "erosion"), retriever.retrievePathNodes("query").toSet())
+        assertEquals(
+            listOf(listOf("rain", "flood"), listOf("rain", "flood", "erosion")),
+            retriever.retrievePaths("query"),
+        )
+        assertTrue(retriever.retrievePaths("query", maxPaths = 0).isEmpty())
+    }
 
     @Test
     fun indexesOneCorpusAcrossIncrementalWritesAndReplacement() =
