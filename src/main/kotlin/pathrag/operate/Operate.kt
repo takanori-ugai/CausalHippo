@@ -708,15 +708,16 @@ private data class ContextTable(
     val headers: List<String>,
     val rows: List<List<String>> = emptyList(),
     val sourceIds: List<String> = emptyList(),
+    val reverseForPrompt: Boolean = false,
 ) {
     private val serializedRows = rows.map(::serializeCsvRow)
     private val header = serializeCsvRow(headers)
 
-    fun render(indices: Iterable<Int> = rows.indices): String =
+    fun render(indices: List<Int> = rows.indices.toList()): String =
         buildString {
             append("-----$title-----\n```csv\n")
             append(header)
-            for (index in indices) append('\n').append(serializedRows[index])
+            for (index in if (reverseForPrompt) indices.asReversed() else indices) append('\n').append(serializedRows[index])
             append("\n```")
         }
 
@@ -833,6 +834,7 @@ private suspend fun getNodeData(
             "low-level relationship information",
             listOf("context"),
             paths.map { listOf(it) },
+            reverseForPrompt = true,
         )
     val sources =
         ContextTable(
