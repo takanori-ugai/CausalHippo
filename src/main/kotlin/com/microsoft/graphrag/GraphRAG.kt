@@ -33,7 +33,7 @@ import java.util.Comparator
 
 private const val SNAPSHOT_INPUT = ".graphrag-input"
 private const val QUERY_ONLY_MARKER = ".graphrag-query-only"
-private const val EMBEDDING_MODEL_FILE = ".graphrag-embedding-model"
+internal const val EMBEDDING_MODEL_FILE = ".graphrag-embedding-model"
 
 private fun queryApiKey(): String =
     System.getenv("OPENAI_API_KEY") ?: error("OPENAI_API_KEY environment variable is required for GraphRAG queries and vector operations.")
@@ -240,7 +240,7 @@ class GraphRAG internal constructor(
             withStagedDirectories(listOf(target)) { (snapshot) ->
                 copyDirectory(outputDir, snapshot.content)
                 validateIndex(snapshot.content)
-                if (!Files.exists(outputDir.resolve(QUERY_ONLY_MARKER))) {
+                if (!Files.exists(outputDir.resolve(QUERY_ONLY_MARKER)) && hasSourceDocuments(inputDir)) {
                     copyDirectory(inputDir, snapshot.content.resolve(SNAPSHOT_INPUT))
                 }
                 publishDirectories(listOf(snapshot))
@@ -263,18 +263,25 @@ class GraphRAG internal constructor(
             withStagedDirectories(listOf(inputDir, outputDir)) { (input, output) ->
                 copyDirectory(source, output.content)
                 val snapshotInput = output.content.resolve(SNAPSHOT_INPUT)
-                if (Files.isDirectory(snapshotInput)) {
+                if (hasSourceDocuments(snapshotInput)) {
                     copyDirectory(snapshotInput, input.content)
-                    deleteDirectory(snapshotInput)
                     Files.deleteIfExists(output.content.resolve(QUERY_ONLY_MARKER))
                 } else {
                     Files.writeString(output.content.resolve(QUERY_ONLY_MARKER), "Source documents are absent.")
                 }
+                deleteDirectory(snapshotInput)
                 validateIndex(output.content)
+                QueryIndexLoader(output.content).embeddingModelIdentity()
                 publishDirectories(listOf(input, output))
                 invalidateLoadedState()
             }
         }
+
+    private fun hasSourceDocuments(directory: Path): Boolean =
+        Files.isDirectory(directory) &&
+            Files.walk(directory).use { paths ->
+                paths.anyMatch { Files.isRegularFile(it) && Files.readString(it).isNotBlank() }
+            }
 
     private fun checkSnapshotPath(path: Path) {
         for (live in listOf(inputDir, outputDir, updateOutputDir)) {
@@ -644,8 +651,7 @@ class GraphRAG internal constructor(
     }
 
     private fun resolveEmbeddingModel(requested: String?): String {
-        val identityFile = outputDir.resolve(EMBEDDING_MODEL_FILE)
-        val indexed = if (Files.isRegularFile(identityFile)) Files.readString(identityFile).trim() else "text-embedding-3-small"
+        val indexed = QueryIndexLoader(outputDir).embeddingModelIdentity() ?: "text-embedding-3-small"
         require(requested == null || requested == indexed) {
             "GraphRAG index uses '$indexed'; cannot query it with '$requested'. Rebuild with the requested model."
         }
