@@ -18,7 +18,13 @@ import kotlin.test.assertTrue
 class PersistenceBackendContainerTest {
     @BeforeTest
     fun requireDocker() {
-        assumeTrue("Testcontainers requires a reachable Docker daemon", DockerClientFactory.instance().isDockerAvailable)
+        val available = DockerClientFactory.instance().isDockerAvailable
+        val message = "Testcontainers requires a reachable Docker daemon"
+        if (System.getenv("GITHUB_ACTIONS") == "true") {
+            assertTrue(available, message)
+        } else {
+            assumeTrue(message, available)
+        }
     }
 
     @Test
@@ -57,6 +63,8 @@ class PersistenceBackendContainerTest {
         try {
             val checkpoint = root.resolve("checkpoint").toString()
             val alpha = mapOf("label" to "Alpha")
+            val forward = GraphEdgeRecord("a", "b", mapOf("relation" to "causes"))
+            val reverse = GraphEdgeRecord("b", "a", mapOf("relation" to "describes"))
             val firstVector = VectorRecord("alpha", listOf(1.0, 0.0), mapOf("text" to "Alpha"))
             val secondVector = VectorRecord("beta", listOf(0.0, 1.0))
             val bytes = byteArrayOf(0, 1, -1)
@@ -66,7 +74,8 @@ class PersistenceBackendContainerTest {
                 val graph = session.graph("knowledge")
                 graph.upsertNode("a", alpha)
                 graph.upsertNode("b", mapOf("label" to "Beta"))
-                graph.upsertEdge("a", "b", mapOf("relation" to "causes"))
+                graph.upsertEdge(forward.source, forward.target, forward.data)
+                graph.upsertEdge(reverse.source, reverse.target, reverse.data)
                 val vectors = session.vector("passages", dimensions = 2)
                 vectors.upsert(listOf(firstVector, secondVector))
                 assertFailsWith<IllegalArgumentException> { vectors.upsert(VectorRecord("bad", listOf(1.0))) }
@@ -77,7 +86,7 @@ class PersistenceBackendContainerTest {
             backend.open(config).use { session ->
                 val graph = session.graph("knowledge")
                 assertEquals(alpha, graph.nodes().single { it.id == "a" }.data)
-                assertEquals(GraphEdgeRecord("a", "b", mapOf("relation" to "causes")), graph.edges().single())
+                assertEquals(setOf(forward, reverse), graph.edges().toSet())
                 val vectors = session.vector("passages", dimensions = 2)
                 assertEquals(listOf(firstVector), vectors.query(listOf(1.0, 0.0), topK = 1))
                 assertEquals(listOf(secondVector), vectors.query(listOf(0.0, 1.0), topK = 1))
@@ -94,15 +103,16 @@ class PersistenceBackendContainerTest {
                 assertEquals("documents", manifest.kv.single().namespace)
                 assertEquals("files", manifest.artifacts.single().namespace)
 
-                graph.deleteEdge("a", "b")
+                graph.deleteEdge(forward.source, forward.target)
+                assertEquals(listOf(reverse), graph.edges())
                 graph.deleteNode("b")
+                assertTrue(graph.edges().isEmpty())
                 vectors.delete("beta")
                 kv.delete("doc")
                 artifacts.delete("nested/evidence.bin")
                 val discarded = session.graph("discarded")
                 discarded.upsertEdge("extra", "target", emptyMap())
                 assertEquals(setOf("extra", "target"), discarded.nodes().map { it.id }.toSet())
-                assertTrue(graph.edges().isEmpty())
                 assertEquals(listOf("a"), graph.nodes().map { it.id })
                 assertEquals(listOf(firstVector), vectors.snapshot().records)
                 assertNull(kv.get("doc"))
@@ -112,7 +122,7 @@ class PersistenceBackendContainerTest {
                 assertTrue(session.graph("discarded").nodes().isEmpty())
                 val restored = session.graph("knowledge")
                 assertEquals(mapOf("a" to alpha, "b" to mapOf("label" to "Beta")), restored.nodes().associate { it.id to it.data })
-                assertEquals(GraphEdgeRecord("a", "b", mapOf("relation" to "causes")), restored.edges().single())
+                assertEquals(setOf(forward, reverse), restored.edges().toSet())
                 assertEquals(listOf(secondVector), session.vector("passages", dimensions = 2).query(listOf(0.0, 1.0), topK = 1))
                 assertEquals(metadata, session.kv("documents").get("doc"))
                 assertContentEquals(bytes, session.artifacts("files").readBytes("nested/evidence.bin"))
