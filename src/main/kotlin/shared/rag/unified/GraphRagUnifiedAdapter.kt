@@ -121,7 +121,7 @@ class GraphRagUnifiedAdapter(
 
         val references =
             if (query.includeReferences) {
-                contextRecords.entries.flatMap { (group, rows) ->
+                contextRecords.entries.filterNot { it.key == "actions" }.flatMap { (group, rows) ->
                     rows.mapIndexedNotNull { index, row ->
                         if (row["in_context"].equals("false", ignoreCase = true)) return@mapIndexedNotNull null
                         val snippet = row["content"] ?: row["text"] ?: row["description"] ?: row.toString()
