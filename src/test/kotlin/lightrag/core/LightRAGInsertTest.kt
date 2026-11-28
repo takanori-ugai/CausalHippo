@@ -292,6 +292,79 @@ class LightRAGInsertTest {
         }
     }
 
+    @Test
+    fun `failed chunk embedding publishes no graph evidence`() {
+        runBlocking {
+            val dir =
+                kotlin.io.path
+                    .createTempDirectory("lightrag-insert-embedding")
+                    .toFile()
+            try {
+                val embedding = mockk<EmbeddingModel>().also(::mockEmbeddings)
+                val rag = buildMockedRag(dir, embedding).first
+                val document = "Apple announces a new iPhone."
+                every { embedding.embed(document) } throws IllegalStateException("unavailable")
+                rag.insert(document)
+
+                assertEquals(
+                    setOf(computeMd5(document)),
+                    rag.storageManager.docStatusStorage
+                        .getDocsByStatus(DocStatus.FAILED)
+                        .keys,
+                )
+                assertNull(rag.storageManager.chunkEntityRelationGraph.getNode("Apple"))
+                assertNull(rag.storageManager.textChunks.getById(computeMd5(document)))
+            } finally {
+                dir.deleteRecursively()
+            }
+        }
+    }
+
+    @Test
+    fun `persistent chunk clear failure preserves other stores`() {
+        runBlocking {
+            val dir =
+                kotlin.io.path
+                    .createTempDirectory("lightrag-delete-clear")
+                    .toFile()
+            try {
+                val embedding = mockk<EmbeddingModel>().also(::mockEmbeddings)
+                val storage = JsonKVStorage("text_chunks", "default", mapOf("working_dir" to dir.path), embedding)
+                val chunks =
+                    object : BaseKVStorage by storage {
+                        override suspend fun drop(): Map<String, String> = mapOf("status" to "error")
+                    }
+                val rag = buildMockedRag(dir, embedding, chunks).first
+                val document = "Apple announces an iPhone."
+                rag.insert(document)
+                val id = computeMd5(document)
+                assertFailsWith<IllegalStateException> { rag.deleteByDocId(id) }
+
+                assertNotNull(rag.storageManager.chunkEntityRelationGraph.getEdge("Apple", "iPhone"))
+                assertNotNull(rag.storageManager.chunksVdb.getById(id))
+                assertNotNull(rag.storageManager.fullDocs.getById(id))
+            } finally {
+                dir.deleteRecursively()
+            }
+        }
+    }
+
+    @Test
+    fun `delete preserves imported graph without document provenance`() {
+        runBlocking {
+            withMockedRag { rag, dir ->
+                val document = "Apple announces an iPhone."
+                rag.insert(document)
+                val snapshot = dir.resolve("imported-graph.json")
+                snapshot.writeText("""{"nodes":[{"id":"Imported entity"}],"edges":[]}""")
+                rag.aloadGraph(snapshot.path)
+
+                assertFailsWith<IllegalStateException> { rag.deleteByDocId(computeMd5(document)) }
+                assertNotNull(rag.storageManager.chunkEntityRelationGraph.getNode("Imported entity"))
+            }
+        }
+    }
+
     private suspend fun withMockedRag(block: suspend (LightRAG, File) -> Unit) {
         val tempDir = File("build/tmp/test_rag_storage_mockk_${System.currentTimeMillis()}").apply { mkdirs() }
         val (rag) = buildMockedRag(tempDir)

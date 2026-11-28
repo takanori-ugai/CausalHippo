@@ -51,8 +51,8 @@ class DocumentProcessor(
     suspend fun pipelineProcessEnqueueDocuments() {
         val pendingDocs = storageManager.docStatusStorage.getDocsByStatus(DocStatus.PENDING)
         for ((docId, status) in pendingDocs) {
-            updateStatus(docId, DocStatus.PROCESSING)
             try {
+                updateStatus(docId, DocStatus.PROCESSING)
                 writeDocument(prepareDocument(docId, status))
                 updateStatus(docId, DocStatus.PROCESSED)
             } catch (error: CancellationException) {
@@ -92,10 +92,10 @@ class DocumentProcessor(
             afterPublish()
         } catch (error: Exception) {
             withContext(NonCancellable) {
-                runCatching {
-                    previous.restore(storageManager)
-                    storageManager.persist()
-                }.exceptionOrNull()?.let(error::addSuppressed)
+                runCatching { previous.restore(storageManager, continueOnFailure = true) }
+                    .exceptionOrNull()
+                    ?.let(error::addSuppressed)
+                runCatching { storageManager.persist() }.exceptionOrNull()?.let(error::addSuppressed)
             }
             throw error
         }
@@ -137,13 +137,25 @@ class DocumentProcessor(
         storageManager.fullDocs.upsert(
             mapOf(document.id to (document.source + ("graph_extraction" to Json.encodeToString(document.extraction)))),
         )
-        writeDerivedDocument(document, storageManager)
+        val previous = DerivedIndex.capture(storageManager, document.chunks.keys)
+        try {
+            writeDerivedDocument(document, storageManager)
+        } catch (error: Exception) {
+            withContext(NonCancellable) {
+                runCatching { previous.restore(storageManager, continueOnFailure = true) }.exceptionOrNull()?.let(error::addSuppressed)
+            }
+            throw error
+        }
     }
 
     private suspend fun writeDerivedDocument(
         document: PreparedDocument,
         stores: StorageManager,
     ) {
+        stores.chunksVdb.upsert(document.chunks)
+        val chunkVectors = stores.chunksVdb.getVectorsByIds(document.chunks.keys.toList())
+        check(document.chunks.keys.all { !chunkVectors[it].isNullOrEmpty() }) { "Incomplete document chunk embeddings" }
+        stores.textChunks.upsert(document.chunks)
         mergeNodesAndEdges(
             nodes = document.extraction.nodes,
             edges = document.extraction.edges,
@@ -153,8 +165,6 @@ class DocumentProcessor(
             fullEntities = stores.fullEntities,
             fullRelations = stores.fullRelations,
         )
-        stores.chunksVdb.upsert(document.chunks)
-        stores.textChunks.upsert(document.chunks)
     }
 
     private suspend fun updateStatus(

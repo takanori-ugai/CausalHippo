@@ -89,8 +89,8 @@ class MongoGraphStorage(
      * @return A map with the status of the operation.
      */
     override suspend fun drop(): Map<String, String> {
-        // Implement drop logic if needed, e.g., drop collection
-        return emptyMap()
+        nodesCollection.deleteMany(Filters.`in`("type", "node", "edge"))
+        return mapOf("status" to "success")
     }
 
     /**

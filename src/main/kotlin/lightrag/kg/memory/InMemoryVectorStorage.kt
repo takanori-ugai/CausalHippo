@@ -19,6 +19,7 @@ import kotlinx.serialization.json.doubleOrNull
 import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.longOrNull
 import lightrag.core.types.BaseVectorStorage
+import lightrag.utils.writeStorageFileAtomically
 import java.io.File
 import java.io.IOException
 
@@ -109,12 +110,14 @@ private class InMemoryVectorStorageDelegate(
                     },
                 )
             val content = json.encodeToString(jsonObject)
-            file.writeText(content)
+            writeStorageFileAtomically(file, content)
             logger.debug { "[$namespace/$workspace] Persisted ${vectors.size} vectors to ${file.absolutePath}" }
         } catch (e: IOException) {
             logger.error(e) { "I/O error saving vector storage to ${file.absolutePath}" }
+            throw e
         } catch (e: SerializationException) {
             logger.error(e) { "Serialization error saving vector storage to ${file.absolutePath}" }
+            throw e
         }
     }
 
@@ -251,6 +254,8 @@ private fun embedText(
     try {
         val response = embeddingModel.embed(text)
         response.content().vector().toList()
+    } catch (e: java.util.concurrent.CancellationException) {
+        throw e
     } catch (e: IllegalStateException) {
         logger.error(e) { "Illegal state embedding text: '$text'" }
         emptyList()

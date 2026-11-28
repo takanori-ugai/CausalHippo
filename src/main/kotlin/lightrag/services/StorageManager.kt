@@ -287,23 +287,6 @@ class StorageManager(
         relationshipsVdb.indexDoneCallback()
     }
 
-    suspend fun dropDerivedStorage() {
-        val stores =
-            listOf(
-                chunkEntityRelationGraph,
-                chunksVdb,
-                entitiesVdb,
-                relationshipsVdb,
-                fullEntities,
-                fullRelations,
-                textChunks,
-            )
-        for (store in stores) {
-            val result = store.drop()
-            check(result["status"] == "success") { "Could not clear ${store.namespace}: ${result["message"]}" }
-        }
-    }
-
     suspend fun drop(): Map<String, Map<String, String>> =
         mapOf(
             "doc_status" to docStatusStorage.drop(),

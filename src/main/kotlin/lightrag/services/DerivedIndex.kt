@@ -3,6 +3,8 @@ package lightrag.services
 import lightrag.core.Constants
 import lightrag.core.types.BaseKVStorage
 import lightrag.core.types.BaseVectorStorage
+import lightrag.core.types.StorageNameSpace
+import lightrag.operate.relationKey
 import lightrag.utils.computeMd5
 
 /** Captures derived records, including their existing embeddings, without writing to the stores. */
@@ -16,20 +18,40 @@ internal class DerivedIndex private constructor(
     private val entityVectors: Map<String, Map<String, Any>>,
     private val relationVectors: Map<String, Map<String, Any>>,
 ) {
-    suspend fun restore(stores: StorageManager) {
-        stores.dropDerivedStorage()
-        for ((id, properties) in nodes) {
-            stores.chunkEntityRelationGraph.upsertNode(id, properties)
+    suspend fun restore(
+        stores: StorageManager,
+        continueOnFailure: Boolean = false,
+    ) {
+        val graph = stores.chunkEntityRelationGraph
+        val operations =
+            listOf<Pair<StorageNameSpace, suspend () -> Unit>>(
+                stores.textChunks to { stores.textChunks.upsert(chunks) },
+                graph to {
+                    for ((id, properties) in nodes) graph.upsertNode(id, properties)
+                    for ((endpoints, properties) in edges) graph.upsertEdge(endpoints.first, endpoints.second, properties)
+                },
+                stores.fullEntities to { stores.fullEntities.upsert(entities) },
+                stores.fullRelations to { stores.fullRelations.upsert(relations) },
+                stores.chunksVdb to { restoreVectors(stores.chunksVdb, chunkVectors) },
+                stores.entitiesVdb to { restoreVectors(stores.entitiesVdb, entityVectors) },
+                stores.relationshipsVdb to { restoreVectors(stores.relationshipsVdb, relationVectors) },
+            )
+        var failure: Exception? = null
+        for ((store, restoreRecords) in operations) {
+            try {
+                val result = store.drop()
+                check(result["status"] == "success") { "Could not clear ${store.namespace}: ${result["message"]}" }
+                restoreRecords()
+            } catch (error: Exception) {
+                if (!continueOnFailure) throw error
+                if (failure == null) {
+                    failure = error
+                } else if (failure !== error) {
+                    failure.addSuppressed(error)
+                }
+            }
         }
-        for ((endpoints, properties) in edges) {
-            stores.chunkEntityRelationGraph.upsertEdge(endpoints.first, endpoints.second, properties)
-        }
-        stores.textChunks.upsert(chunks)
-        stores.fullEntities.upsert(entities)
-        stores.fullRelations.upsert(relations)
-        restoreVectors(stores.chunksVdb, chunkVectors)
-        restoreVectors(stores.entitiesVdb, entityVectors)
-        restoreVectors(stores.relationshipsVdb, relationVectors)
+        failure?.let { throw it }
     }
 
     private suspend fun restoreVectors(
@@ -61,11 +83,15 @@ internal class DerivedIndex private constructor(
                     endpoints to (row - setOf("source", "target")).mapValues { it.value.toString() }
                 }
             val chunkIds =
-                knownChunks + stores.textChunks.keys().orEmpty() +
+                knownChunks + checkNotNull(stores.textChunks.keys()) { "Cannot snapshot all rows in ${stores.textChunks.namespace}" } +
                     (nodes.values + edges.values).flatMap {
                         it["source_id"].orEmpty().split(Constants.GRAPH_FIELD_SEP).filter(String::isNotBlank)
                     }
-            val edgeIds = edges.keys.flatMap { (source, target) -> listOf("$source#$target", "$target#$source") }.toSet()
+            val edgeIds =
+                edges.keys
+                    .flatMap { (source, target) ->
+                        listOf(relationKey(source, target), relationKey(target, source), "$source#$target", "$target#$source")
+                    }.toSet()
             return DerivedIndex(
                 nodes,
                 edges,
@@ -94,6 +120,9 @@ internal class DerivedIndex private constructor(
         ): Map<String, Map<String, Any>> =
             buildMap {
                 for ((id, vector) in store.getVectorsByIds(ids.toList())) {
+                    check(vector.isNotEmpty() && vector.all(Float::isFinite)) {
+                        "Unrestorable vector $id in ${store.namespace}"
+                    }
                     val row = checkNotNull(store.getById(id)) { "Missing metadata for vector $id in ${store.namespace}" }
                     put(id, row + ("vector" to vector))
                 }

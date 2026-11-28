@@ -290,10 +290,15 @@ suspend fun mergeNodesAndEdges(
     }
 }
 
-private fun relationKey(
+internal fun relationKey(
     source: String,
     target: String,
-): String = "$source#$target"
+): String =
+    if ('#' in source || '#' in target) {
+        "${source.length}#$source#$target"
+    } else {
+        "$source#$target"
+    }
 
 private fun mergeGraphField(
     existing: String?,

@@ -20,6 +20,7 @@ import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.longOrNull
 import lightrag.core.types.BaseKVStorage
 import lightrag.kg.json.KVEntry
+import lightrag.utils.writeStorageFileAtomically
 import java.io.File
 
 private val logger = KotlinLogging.logger {}
@@ -98,12 +99,14 @@ class JsonKVStorage(
         mutex.withLock {
             try {
                 val content = json.encodeToString(data)
-                file.writeText(content)
+                writeStorageFileAtomically(file, content)
                 logger.debug { "Saved ${data.size} records to ${file.absolutePath}" }
             } catch (e: java.io.IOException) {
                 logger.error(e) { "I/O error saving KV storage to ${file.absolutePath}" }
+                throw e
             } catch (e: SerializationException) {
                 logger.error(e) { "Serialization error saving KV storage to ${file.absolutePath}" }
+                throw e
             }
         }
     }
