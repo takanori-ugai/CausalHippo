@@ -257,13 +257,18 @@ class GraphRAG(
     private fun validateIndex(directory: Path) {
         val index = QueryIndexLoader(directory).load()
         val chunkIds = index.textUnits.map { it.chunkId }.toSet()
-        val vectors = index.vectorStore.load()?.textEmbeddings ?: index.textEmbeddings
+        val payload = index.vectorStore.load()
+        val vectors = payload?.textEmbeddings ?: index.textEmbeddings
         require(chunkIds.isNotEmpty() && vectors.map { it.chunkId }.toSet().containsAll(chunkIds)) {
             "GraphRAG index is missing text units or aligned embeddings: $directory"
         }
         val dimension = vectors.first().vector.size
         require(dimension > 0 && vectors.all { it.vector.size == dimension && it.vector.all(Double::isFinite) }) {
             "GraphRAG index contains invalid text embeddings: $directory"
+        }
+        val entities = payload?.entityEmbeddings ?: index.entityEmbeddings
+        require(entities.all { it.vector.size == dimension && it.vector.all(Double::isFinite) }) {
+            "GraphRAG index contains invalid entity embeddings: $directory"
         }
     }
 

@@ -108,6 +108,37 @@ class GraphRagIntegrityTest {
         }
 
     @Test
+    fun incompatibleEntityEmbeddingsRejectRestoreBeforePublication() =
+        withPipeline { root ->
+            val sourceRoot = root.resolve("source")
+            GraphRAG(sourceRoot).upsert("Original corpus")
+            val output = sourceRoot.resolve("output")
+            ParquetWriterHelper().writeEntityEmbeddings(
+                output.resolve("entity_embeddings.parquet"),
+                listOf(
+                    com.microsoft.graphrag.index
+                        .EntityEmbedding("entity", emptyList()),
+                ),
+            )
+            val staged =
+                com.microsoft.graphrag.query
+                    .QueryIndexLoader(output)
+                    .load()
+            assertEquals(1, staged.entityEmbeddings.size)
+            assertTrue(
+                staged.entityEmbeddings
+                    .single()
+                    .vector
+                    .isEmpty(),
+            )
+            val targetRoot = root.resolve("target")
+            val target = GraphRAG(targetRoot)
+            target.upsert("Existing corpus")
+            assertFailsWith<IllegalArgumentException> { target.loadGraph(output.toString()) }
+            assertEquals("Existing corpus", Files.readString(targetRoot.resolve("output/corpus.txt")))
+        }
+
+    @Test
     fun basicContextOnlyDoesNotCallChatModel() =
         withPipeline { root ->
             runBlocking {
@@ -183,6 +214,7 @@ class GraphRagIntegrityTest {
                     context = emptyList(),
                     contextRecords =
                         mapOf(
+                            "actions" to listOf(mapOf("answer" to "generated action", "in_context" to "true")),
                             "sources" to
                                 listOf(
                                     mapOf("text" to "included", "in_context" to "true"),
