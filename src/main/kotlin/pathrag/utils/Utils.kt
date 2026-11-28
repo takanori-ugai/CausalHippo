@@ -489,3 +489,9 @@ private data class Quadruple<A, B, C, D>(
     val third: C,
     val fourth: D,
 )
+
+/** Unambiguous ID for an ordered relationship. */
+internal fun relationshipVectorId(
+    source: String,
+    target: String,
+): String = computeMdHashId("${source.length}:$source$target", prefix = "rel-")

@@ -25,6 +25,7 @@ import pathrag.utils.ResponseCache
 import pathrag.utils.Tokenizer
 import pathrag.utils.computeArgsHash
 import pathrag.utils.computeMdHashId
+import pathrag.utils.relationshipVectorId
 import shared.chunking.chunkByTokenSizeWithOverlap
 import shared.chunking.hardTruncateStringsByTokenBudget
 import kotlin.math.pow
@@ -382,7 +383,7 @@ suspend fun extractEntities(
                     val tgt = edge["tgt_id"]?.toString() ?: return@mapNotNull null
                     val description = edge["description"]?.toString() ?: ""
                     val keywords = edge["keywords"]?.toString() ?: ""
-                    val id = computeMdHashId(src + tgt, prefix = "rel-")
+                    val id = relationshipVectorId(src, tgt)
                     id to
                         mapOf(
                             "src_id" to src,

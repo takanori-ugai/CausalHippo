@@ -10,6 +10,7 @@ import pathrag.utils.EmbeddingFunc
 import pathrag.utils.computeMdHashId
 import pathrag.utils.computePagerankLocal
 import pathrag.utils.cosineSimilarity
+import pathrag.utils.relationshipVectorId
 import java.util.concurrent.ConcurrentHashMap
 import kotlin.math.abs
 
@@ -87,7 +88,7 @@ class NanoVectorDBStorage(
     override val namespace: String,
     override val globalConfig: Map<String, Any?>,
     private val embeddingFunc: EmbeddingFunc,
-    private val metaFields: Set<String> = setOf("entity_name", "full_doc_id", "source_id"),
+    private val metaFields: Set<String> = setOf("entity_name", "full_doc_id", "source_id", "src_id", "tgt_id"),
 ) : BaseVectorStorage(namespace, globalConfig) {
     private val logger = KotlinLogging.logger("PathRAG-NanoVectorDBStorage")
     private val mutex = Mutex()
@@ -170,6 +171,9 @@ class NanoVectorDBStorage(
                 logger.error(e) { "Embedding generation failed during upsert in namespace '$namespace'." }
                 throw e
             }
+        check(embeddings.size == validPairs.size) {
+            "Embedding count mismatch for '$namespace': expected ${validPairs.size}, got ${embeddings.size}"
+        }
         mutex.withLock {
             embeddings.forEachIndexed { index, vector ->
                 val (entry, content) = validPairs[index]
@@ -223,9 +227,10 @@ class NanoVectorDBStorage(
         srcId: String,
         tgtId: String,
     ) {
-        val relId = computeMdHashId(srcId + tgtId, prefix = "rel-")
+        val relId = relationshipVectorId(srcId, tgtId)
         mutex.withLock {
             entries.remove(relId)
+            entries.entries.removeIf { (_, stored) -> stored.meta["src_id"] == srcId && stored.meta["tgt_id"] == tgtId }
         }
     }
 

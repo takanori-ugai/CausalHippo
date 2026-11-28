@@ -13,6 +13,7 @@ import org.neo4j.driver.Values
 import pathrag.base.BaseVectorStorage
 import pathrag.utils.EmbeddingFunc
 import pathrag.utils.computeMdHashId
+import pathrag.utils.relationshipVectorId
 
 /**
  * Neo4j-backed vector storage using native vector indexes when available.
@@ -148,6 +149,9 @@ class Neo4jVectorStorage(
                 logger.error(e) { "Failed to embed content for Neo4jVectorStorage ($namespace)" }
                 throw e
             }
+        check(embeddings.size == valid.size) {
+            "Embedding count mismatch for '$namespace': expected ${valid.size}, got ${embeddings.size}"
+        }
         runCatching { ensureVectorIndex(embeddings.firstOrNull()?.size ?: 0) }
             .onFailure { ex ->
                 logger.warn(ex) { "Unable to ensure vector index for Neo4jVectorStorage ($namespace); continuing without index." }
@@ -205,7 +209,7 @@ class Neo4jVectorStorage(
         srcId: String,
         tgtId: String,
     ) {
-        val relId = computeMdHashId(srcId + tgtId, prefix = "rel-")
+        val relId = relationshipVectorId(srcId, tgtId)
         write { tx ->
             tx.run(
                 "MATCH (v:$nodeLabel) WHERE v.id = \$id OR (v.src_id = \$src AND v.tgt_id = \$tgt) DETACH DELETE v",

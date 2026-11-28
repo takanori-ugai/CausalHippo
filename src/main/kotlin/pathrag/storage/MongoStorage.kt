@@ -15,6 +15,7 @@ import pathrag.utils.computeMdHashId
 import pathrag.utils.computePagerankLocal
 import pathrag.utils.cosineSimilarity
 import pathrag.utils.log
+import pathrag.utils.relationshipVectorId
 
 /**
  * MongoDB-backed key-value storage that persists documents per namespace.
@@ -262,11 +263,8 @@ class MongoVectorStorage(
         val validPairs = items.zip(contents).filter { it.second.isNotBlank() }
         if (validPairs.isEmpty()) return
         val embeddings = embeddingFunc(validPairs.map { it.second })
-        if (embeddings.size != validPairs.size) {
-            log().warn {
-                "MongoVectorStorage upsert skipped: embeddings (${embeddings.size}) != items (${validPairs.size}) for namespace=$namespace"
-            }
-            return
+        check(embeddings.size == validPairs.size) {
+            "Embedding count mismatch for '$namespace': expected ${validPairs.size}, got ${embeddings.size}"
         }
         val opts = ReplaceOptions().upsert(true)
         val writes =
@@ -329,8 +327,8 @@ class MongoVectorStorage(
         srcId: String,
         tgtId: String,
     ) {
-        val relId = computeMdHashId(srcId + tgtId, prefix = "rel-")
-        // Delete by both the hashed id (legacy) and the src/tgt metadata.
+        val relId = relationshipVectorId(srcId, tgtId)
+        // Match legacy records by endpoints because their hashed IDs can collide.
         collection.deleteOne(Filters.eq("_id", relId))
         collection.deleteMany(Filters.and(Filters.eq("src_id", srcId), Filters.eq("tgt_id", tgtId)))
     }

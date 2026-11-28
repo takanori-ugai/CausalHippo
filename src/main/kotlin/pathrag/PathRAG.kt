@@ -1,6 +1,8 @@
 package pathrag
 
 import io.github.oshai.kotlinlogging.KotlinLogging
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import pathrag.base.AddonParams
 import pathrag.base.BaseGraphStorage
 import pathrag.base.BaseKVStorage
@@ -26,6 +28,7 @@ import pathrag.storage.Neo4jVectorStorage
 import pathrag.storage.NetworkXStorage
 import pathrag.utils.ResponseCache
 import pathrag.utils.computeMdHashId
+import pathrag.utils.relationshipVectorId
 import shared.config.CommonRagConfigLoader
 import shared.rag.CommonRag
 import shared.rag.spi.persistence.GraphEdgeRecord
@@ -217,7 +220,9 @@ class PathRAG(
     private val unifiedSpiVectorNamespace = "${unifiedSpiNamespacePrefix}_vector"
     private val unifiedSpiChunksNamespace = "${unifiedSpiNamespacePrefix}_chunks"
     private val unifiedSpiMetadataNamespace = "${unifiedSpiNamespacePrefix}_metadata"
+    private val indexMutex = Mutex()
     private var unifiedSpiInitialized = false
+    private var unifiedPublicationPending = false
 
     private data class CustomKgEntity(
         val entityName: String,
@@ -363,7 +368,9 @@ class PathRAG(
      * @throws IllegalStateException If embedding generation or any storage upsert fails during insertion.
      */
     @Suppress("TooGenericExceptionCaught")
-    suspend fun ainsert(stringOrStrings: Any) {
+    suspend fun ainsert(stringOrStrings: Any) = indexMutex.withLock { insertDocuments(stringOrStrings) }
+
+    private suspend fun insertDocuments(stringOrStrings: Any) {
         val inputs =
             when (stringOrStrings) {
                 is String -> listOf(stringOrStrings)
@@ -381,7 +388,10 @@ class PathRAG(
             }
         val newDocIds = fullDocs.filterKeys(documents.keys.toList())
         val newDocs = documents.filterKeys { it in newDocIds }
-        if (newDocs.isEmpty()) return
+        if (newDocs.isEmpty()) {
+            if (unifiedPublicationPending) publishUnifiedIndex()
+            return
+        }
         val chunkMap = mutableMapOf<String, Map<String, Any>>()
         newDocs.forEach { (docKey, doc) ->
             val content = doc["content"] as String
@@ -401,6 +411,7 @@ class PathRAG(
         val newChunks = chunkMap.filterKeys { it in newChunkIds }
         try {
             if (newChunks.isNotEmpty()) {
+                chunksVdb.upsert(newChunks)
                 chunkEntityRelationGraph =
                     extractEntities(
                         newChunks,
@@ -409,14 +420,10 @@ class PathRAG(
                         relationshipsVdb,
                         globalConfig(),
                     )
-                chunksVdb.upsert(newChunks)
                 textChunks.upsert(newChunks)
             }
             fullDocs.upsert(newDocs)
-            if (unifiedSpiEnabled) {
-                syncUnifiedSpiFromLocal()
-                unifiedSpiInitialized = true
-            }
+            if (unifiedSpiEnabled) publishUnifiedIndex()
         } catch (e: IllegalStateException) {
             logger.error(e) { "Failed to insert documents; embedding or storage update error occurred." }
             throw e
@@ -623,28 +630,29 @@ class PathRAG(
     override suspend fun aquery(
         query: String,
         param: QueryParam,
-    ): String {
-        if (unifiedSpiEnabled) {
-            ensureUnifiedSpiIndexInitialized()
-            if (param.onlyNeedContext) {
-                val context = retrieveContextFromUnifiedSpi(query, param.topK.coerceAtLeast(1))
-                return context.joinToString(separator = "\n\n")
+    ): String =
+        indexMutex.withLock {
+            if (unifiedSpiEnabled) {
+                ensureUnifiedSpiIndexInitialized()
+                if (param.onlyNeedContext) {
+                    val context = retrieveContextFromUnifiedSpi(query, param.topK.coerceAtLeast(1))
+                    return@withLock context.joinToString(separator = "\n\n")
+                }
             }
+            val response =
+                kgQuery(
+                    query,
+                    chunkEntityRelationGraph,
+                    entitiesVdb,
+                    relationshipsVdb,
+                    textChunks,
+                    param,
+                    globalConfig(),
+                    llmModelFunc,
+                    llmResponseCache,
+                )
+            response
         }
-        val response =
-            kgQuery(
-                query,
-                chunkEntityRelationGraph,
-                entitiesVdb,
-                relationshipsVdb,
-                textChunks,
-                param,
-                globalConfig(),
-                llmModelFunc,
-                llmResponseCache,
-            )
-        return response
-    }
 
     suspend fun aquery(query: String): String = aquery(query, QueryParam())
 
@@ -814,6 +822,7 @@ class PathRAG(
         if (unifiedSpiEnabled) {
             clearUnifiedSpiState()
             unifiedSpiInitialized = true
+            unifiedPublicationPending = false
         }
         logger.info { "All PathRAG storages dropped." }
     }
@@ -823,11 +832,13 @@ class PathRAG(
     override fun inspectGraph(): Map<String, Any?> = runBlockingMaybe { ainspectGraph() }
 
     override suspend fun ainspectGraph(): Map<String, Any?> =
-        if (unifiedSpiEnabled) {
-            ensureUnifiedSpiIndexInitialized()
-            inspectGraphFromUnifiedSpi()
-        } else {
-            buildGraphInspectionPayload()
+        indexMutex.withLock {
+            if (unifiedSpiEnabled) {
+                ensureUnifiedSpiIndexInitialized()
+                inspectGraphFromUnifiedSpi()
+            } else {
+                buildGraphInspectionPayload()
+            }
         }
 
     override fun saveGraph(path: String) = runBlockingMaybe { asaveGraph(path) }
@@ -931,7 +942,7 @@ class PathRAG(
             chunkEntityRelationGraph.upsertEdge(source, target, edgeData)
             val description = edgeData["description"]?.toString().orEmpty()
             val keywords = edgeData["keywords"]?.toString().orEmpty()
-            val relId = computeMdHashId(source + target, prefix = "rel-")
+            val relId = relationshipVectorId(source, target)
             relationshipsVdb.upsert(
                 mapOf(
                     relId to
@@ -1054,7 +1065,7 @@ class PathRAG(
             )
         runCatching { chunkEntityRelationGraph.upsertEdge(srcKey, tgtKey, data) }
             .onFailure { ex -> logger.error(ex) { "Failed to upsert edge $srcKey -> $tgtKey" } }
-        val relId = computeMdHashId(srcKey + tgtKey, prefix = "rel-")
+        val relId = relationshipVectorId(srcKey, tgtKey)
         runCatching {
             relationshipsVdb.upsert(
                 mapOf(
@@ -1074,8 +1085,17 @@ class PathRAG(
         logger.info { "Edge '$srcKey' -> '$tgtKey' upserted." }
     }
 
+    private suspend fun publishUnifiedIndex() {
+        unifiedPublicationPending = true
+        syncUnifiedSpiFromLocal()
+        unifiedSpiInitialized = true
+        unifiedPublicationPending = false
+    }
+
     private suspend fun ensureUnifiedSpiIndexInitialized() {
-        if (!unifiedSpiEnabled || unifiedSpiInitialized) return
+        if (!unifiedSpiEnabled) return
+        if (unifiedPublicationPending) publishUnifiedIndex()
+        if (unifiedSpiInitialized) return
         val session = unifiedSpiSession ?: return
         try {
             val graphSnapshot = session.graph(unifiedSpiGraphNamespace).snapshot()
@@ -1116,6 +1136,7 @@ class PathRAG(
         session.restore(checkpointPath)
         hydrateLocalIndexFromUnifiedSpi()
         unifiedSpiInitialized = true
+        unifiedPublicationPending = false
     }
 
     private fun clearUnifiedSpiState() {
@@ -1316,7 +1337,7 @@ class PathRAG(
             graphSnapshot.edges.associate { edge ->
                 val description = edge.data["description"]?.toString().orEmpty()
                 val keywords = edge.data["keywords"]?.toString().orEmpty()
-                computeMdHashId(edge.source + edge.target, prefix = "rel-") to
+                relationshipVectorId(edge.source, edge.target) to
                     mapOf(
                         "src_id" to edge.source,
                         "tgt_id" to edge.target,
