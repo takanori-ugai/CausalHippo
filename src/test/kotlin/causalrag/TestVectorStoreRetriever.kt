@@ -118,6 +118,65 @@ class TestVectorStoreRetriever {
     }
 
     @Test
+    fun invalidEmbeddingResponsesLeaveTheLiveIndexUnchanged() {
+        var rows = listOf(doubleArrayOf(1.0, 0.0))
+        val encoder =
+            object : EmbeddingModel {
+                override fun encode(text: String): DoubleArray = doubleArrayOf(1.0, 0.0)
+
+                override fun encodeAll(texts: List<String>): List<DoubleArray> = rows
+            }
+        val retriever = VectorStoreRetriever(dimension = 2, embeddingModelOverride = encoder)
+        retriever.indexCorpus(listOf("existing"))
+        for (bad in listOf(emptyList(), listOf(doubleArrayOf()), listOf(doubleArrayOf(1.0)), listOf(doubleArrayOf(Double.NaN, 0.0)))) {
+            rows = bad
+            assertFailsWith<IllegalStateException> { retriever.appendCorpus(listOf("new")) }
+            assertEquals(listOf("existing"), retriever.getPassages())
+        }
+    }
+
+    @Test
+    fun corruptAndForeignProviderCachesPreserveTheLiveIndex() {
+        val cache = Files.createDirectory(tempDir.resolve("corrupt-cache"))
+        val metadata = cache.resolve("metadata.json")
+        val vectors = cache.resolve("vectors.json")
+        val reader = VectorStoreRetriever(dimension = 2)
+        reader.indexCorpus(listOf("existing"))
+        val cases =
+            listOf(
+                "[[1.0, 0.0]]" to """{"passages":["other"],"embedding_provider":"foreign"}""",
+                "[[1.0, 0.0]]" to """{"passages":["other"],"vector_dimension":3}""",
+                "[[1.0, 0.0]]" to """{}""",
+                "[[]]" to """{"passages":["other"]}""",
+                "[[1.0, 0.0], [1.0]]" to """{"passages":["one","two"]}""",
+                """[["NaN",0.0]]""" to """{"passages":["other"]}""",
+            )
+        for ((vectorJson, metadataJson) in cases) {
+            Files.writeString(vectors, vectorJson)
+            Files.writeString(metadata, metadataJson)
+            assertFalse(reader.loadCached(cache.toString()), metadataJson)
+            assertEquals(listOf("existing"), reader.getPassages())
+        }
+    }
+
+    @Test
+    fun legacyCacheWithoutMetadataRowsOrIdsRestoresWithStableDefaults() {
+        val cache = Files.createDirectory(tempDir.resolve("legacy-cache"))
+        Files.writeString(cache.resolve("vectors.json"), "[[1.0,0.0],[0.0,1.0]]")
+        Files.writeString(cache.resolve("metadata.json"), """{"passages":["one","two"],"metadata":[{"verified":true,"weight":1.5}]}""")
+        val reader = VectorStoreRetriever(dimension = 2)
+        assertTrue(reader.loadCached(cache.toString()))
+        assertEquals(listOf("one", "two"), reader.getPassages())
+        assertEquals(mapOf("id" to "0", "position" to 0, "verified" to true, "weight" to 1.5), reader.getMetadata().first())
+        assertEquals(mapOf("id" to "1", "position" to 1), reader.getMetadata().last())
+
+        Files.writeString(cache.resolve("vectors.json"), "[]")
+        Files.writeString(cache.resolve("metadata.json"), """{"passages":[]}""")
+        assertTrue(reader.loadCached(cache.toString()))
+        assertTrue(reader.getPassages().isEmpty())
+    }
+
+    @Test
     fun testFailedEmbeddingBatchKeepsPreviousIndex() {
         val encoder =
             object : EmbeddingModel {
