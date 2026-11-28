@@ -36,6 +36,7 @@ import kotlin.math.min
  * @property llmCallsCategories LLM call counts grouped by stage.
  * @property promptTokensCategories Prompt token counts grouped by stage.
  * @property outputTokensCategories Output token counts grouped by stage.
+ * @property followUpQueries Follow-up questions parsed from the final response.
  */
 data class GlobalSearchResult(
     val answer: String,
@@ -48,6 +49,7 @@ data class GlobalSearchResult(
     val llmCallsCategories: Map<String, Int>,
     val promptTokensCategories: Map<String, Int>,
     val outputTokensCategories: Map<String, Int>,
+    val followUpQueries: List<String> = emptyList(),
 )
 
 private data class ContextBuildResult(
@@ -159,6 +161,7 @@ class GlobalSearchEngine(
                 llmCallsCategories = llmCallsCategories,
                 promptTokensCategories = promptTokensCategories,
                 outputTokensCategories = outputTokensCategories,
+                followUpQueries = reduceResult.followUpQueries,
             )
         }
 
@@ -178,7 +181,6 @@ class GlobalSearchEngine(
      * and aggregated LLM usage counts (llmCalls, promptTokens, outputTokens) attributable to the
      * context-building step.
      */
-    @Suppress("LongMethod", "CyclomaticComplexMethod")
     internal suspend fun retrieveContext(
         question: String,
         conversationHistory: List<String>,
@@ -225,15 +227,17 @@ class GlobalSearchEngine(
                 )
             val row = rowParts.joinToString("|") + "\n"
             if (tokenCount(batchHeader + row) > maxContextTokens) continue
-            if (hasRows && tokenCount(current.toString() + row) > maxContextTokens) {
+            val history =
+                historyPrefix
+                    .takeIf {
+                        !includedHistory && it.isNotEmpty() && tokenCount(it + batchHeader + row) <= maxContextTokens
+                    }.orEmpty()
+            if (hasRows && tokenCount(history + current.toString() + row) > maxContextTokens) {
                 chunks += current.toString().trimEnd()
                 current = StringBuilder(batchHeader)
-                hasRows = false
             }
-            if (!hasRows && chunks.isEmpty() && historyPrefix.isNotEmpty() &&
-                tokenCount(historyPrefix + batchHeader + row) <= maxContextTokens
-            ) {
-                current.insert(0, historyPrefix)
+            if (history.isNotEmpty()) {
+                current.insert(0, history)
                 includedHistory = true
             }
             current.append(row)
@@ -257,12 +261,11 @@ class GlobalSearchEngine(
                     this["conversation"] = conversationRecords.toMutableList()
                 }
             }
-        val chunkTokens = chunks.sumOf { tokenCount(it) }
         return ContextBuildResult(
             chunks = chunks,
             contextRecords = contextRecords,
             llmCalls = selection.llmCalls,
-            promptTokens = selection.promptTokens + chunkTokens,
+            promptTokens = selection.promptTokens,
             outputTokens = selection.outputTokens,
         )
     }
