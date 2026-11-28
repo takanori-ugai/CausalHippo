@@ -122,22 +122,19 @@ private suspend fun getVectorContext(
  * @return A pair of the list of references and the list of processed chunks.
  */
 fun generateReferenceListFromChunks(chunks: List<Map<String, Any?>>): Pair<List<Map<String, String>>, List<Map<String, Any?>>> {
-    val referenceList = mutableListOf<Map<String, String>>()
-    val processedChunks = mutableListOf<Map<String, Any?>>()
-    val seenFilePaths = mutableSetOf<String>()
-
-    for ((index, chunk) in chunks.withIndex()) {
-        val referenceId = (index + 1).toString()
-        val filePath = chunk["file_path"] as? String ?: "unknown_source"
-
-        if (!seenFilePaths.contains(filePath)) {
-            referenceList.add(mapOf("reference_id" to referenceId, "file_path" to filePath))
-            seenFilePaths.add(filePath)
-        }
-
-        processedChunks.add(chunk + ("reference_id" to referenceId))
-    }
-    return referenceList to processedChunks
+    val fileToReference =
+        chunks
+            .mapNotNull { it["file_path"] as? String }
+            .filter { it.isNotBlank() && it != "unknown_source" }
+            .groupingBy { it }
+            .eachCount()
+            .entries
+            .sortedByDescending { it.value }
+            .mapIndexed { index, entry -> entry.key to (index + 1).toString() }
+            .toMap()
+    val references = fileToReference.map { (path, id) -> mapOf("reference_id" to id, "file_path" to path) }
+    val withReferences = chunks.map { chunk -> chunk + ("reference_id" to fileToReference[chunk["file_path"]].orEmpty()) }
+    return references to withReferences
 }
 
 // Simplified version of python's process_chunks_unified, focusing on truncation
@@ -447,7 +444,7 @@ private fun buildNaivePromptContext(
             .replace("{content_data}", contextContent)
 
     val promptContent = listOf(sysPrompt, "---User Query---", params.query).joinToString("\n\n")
-    val argsHash = computeArgsHash(params, maxTotalTokens)
+    val argsHash = computeArgsHash(params, maxTotalTokens, promptContent)
 
     return PromptContext(
         rawData = rawData,
@@ -536,6 +533,7 @@ private fun buildContextContent(
 private fun computeArgsHash(
     params: NaiveQueryParams,
     maxTotalTokens: Int,
+    promptContent: String,
 ): String =
     computeMd5(
         listOf(
@@ -549,6 +547,7 @@ private fun computeArgsHash(
             maxTotalTokens.toString(),
             params.queryParam.userPrompt ?: "",
             params.queryParam.enableRerank.toString(),
+            promptContent,
         ).joinToString("|"),
     )
 

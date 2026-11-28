@@ -126,7 +126,7 @@ fun Application.configureDocumentRoutes(rag: LightRAG) {
             }
 
             delete("/drop") {
-                val result = rag.storageManager.drop()
+                val result = rag.dropStorage()
                 call.respond(result)
             }
         }

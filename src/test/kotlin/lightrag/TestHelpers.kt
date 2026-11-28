@@ -4,6 +4,7 @@ import dev.langchain4j.model.chat.ChatModel
 import dev.langchain4j.model.embedding.EmbeddingModel
 import lightrag.core.AddonConfig
 import lightrag.core.LightRAG
+import lightrag.core.types.BaseKVStorage
 import lightrag.services.IngestionService
 import lightrag.services.QueryService
 import lightrag.services.StorageManager
@@ -16,6 +17,7 @@ fun buildTestLightRag(
     chatModel: ChatModel,
     embeddingModel: EmbeddingModel,
     workingDir: File,
+    textChunks: BaseKVStorage? = null,
 ): LightRAG {
     val globalConfig =
         mapOf(
@@ -42,6 +44,7 @@ fun buildTestLightRag(
         StorageManager(
             workingDir = workingDir.absolutePath,
             embeddingModel = embeddingModel,
+            textChunksStorageOverride = textChunks,
             addonConfig = AddonConfig(),
             globalConfig = globalConfig,
         )
