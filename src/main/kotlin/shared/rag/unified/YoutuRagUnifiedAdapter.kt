@@ -291,27 +291,26 @@ class YoutuRagUnifiedAdapter(
         val chunksFile = chunksPath(selectedDataset)
         val corpusFile = corpusPath(selectedDataset)
 
-        val normalized =
-            DatasetArtifacts.read(graphFile) {
-                val fileEntries = mutableMapOf<String, Any?>()
-                if (graphFile.exists()) fileEntries["graph_json"] = Files.readString(graphFile)
-                if (chunksFile.exists()) fileEntries["chunks_text"] = Files.readString(chunksFile)
-                if (corpusFile.exists()) fileEntries["corpus_json"] = Files.readString(corpusFile)
-                if (fileEntries.isNotEmpty()) {
-                    session.kv(filesNamespace(selectedDataset)).putAll(fileEntries)
-                }
-                normalizeInspectionFromVisualization(selectedDataset)
+        DatasetArtifacts.read(graphFile) {
+            val fileEntries = mutableMapOf<String, Any?>()
+            if (graphFile.exists()) fileEntries["graph_json"] = Files.readString(graphFile)
+            if (chunksFile.exists()) fileEntries["chunks_text"] = Files.readString(chunksFile)
+            if (corpusFile.exists()) fileEntries["corpus_json"] = Files.readString(corpusFile)
+            if (fileEntries.isNotEmpty()) {
+                session.kv(filesNamespace(selectedDataset)).putAll(fileEntries)
             }
-        session.graph(graphNamespace(selectedDataset)).restore(toGraphSnapshot(normalized))
-        session.kv(metadataNamespace(selectedDataset)).putAll(
-            mapOf(
-                "datasetName" to selectedDataset,
-                "updatedAt" to Instant.now().toString(),
-                "persistenceBackend" to session.backendId,
-                "nodeCount" to ((normalized["metadata"] as? Map<*, *>)?.get("nodeCount") ?: 0),
-                "edgeCount" to ((normalized["metadata"] as? Map<*, *>)?.get("edgeCount") ?: 0),
-            ),
-        )
+            val normalized = normalizeInspectionFromVisualization(selectedDataset)
+            session.graph(graphNamespace(selectedDataset)).restore(toGraphSnapshot(normalized))
+            session.kv(metadataNamespace(selectedDataset)).putAll(
+                mapOf(
+                    "datasetName" to selectedDataset,
+                    "updatedAt" to Instant.now().toString(),
+                    "persistenceBackend" to session.backendId,
+                    "nodeCount" to ((normalized["metadata"] as? Map<*, *>)?.get("nodeCount") ?: 0),
+                    "edgeCount" to ((normalized["metadata"] as? Map<*, *>)?.get("edgeCount") ?: 0),
+                ),
+            )
+        }
         hydratedDatasets += selectedDataset
     }
 
