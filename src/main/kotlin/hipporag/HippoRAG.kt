@@ -261,27 +261,28 @@ class HippoRAG(
     ): QuerySolution =
         indexMutex.withLock {
             val topK = param.topK.coerceAtLeast(1)
-            val mode = param.mode.lowercase()
-
-            val retrievalSolutions =
-                when (mode) {
-                    "graph", "hippo" -> hippoRag.retrieve(listOf(query), numToRetrieve = topK).first
-                    "dpr" -> hippoRag.retrieveDpr(listOf(query), numToRetrieve = topK).first
+            val useDpr =
+                when (val mode = param.mode.lowercase()) {
+                    "graph", "hippo" -> false
+                    "dpr" -> true
                     else -> throw IllegalArgumentException("Unsupported HippoRAG query mode '$mode'. Use one of: graph, dpr.")
                 }
-            var solution = retrievalSolutions.firstOrNull() ?: QuerySolution(question = query, docs = emptyList())
+            val queries = listOf(query)
+            val retrieval =
+                if (useDpr) {
+                    hippoRag.retrieveDpr(
+                        queries,
+                        numToRetrieve = topK,
+                    )
+                } else {
+                    hippoRag.retrieve(queries, numToRetrieve = topK)
+                }
+            val solution = retrieval.first.single()
+            if (!param.includeAnswer) return@withLock solution
 
-            if (param.includeAnswer) {
-                val qaResult =
-                    when (mode) {
-                        "graph", "hippo" -> hippoRag.ragQaWithSolutions(listOf(solution))
-                        "dpr" -> hippoRag.ragQaDprWithSolutions(listOf(solution))
-                        else -> error("Unreachable mode branch.")
-                    }
-                solution = qaResult.solutions.firstOrNull() ?: solution
-            }
-
-            solution
+            val evidence = listOf(solution)
+            val qaResult = if (useDpr) hippoRag.ragQaDprWithSolutions(evidence) else hippoRag.ragQaWithSolutions(evidence)
+            qaResult.solutions.single()
         }
 
     private fun reinitialize(forceIndexFromScratch: Boolean = config.forceIndexFromScratch) {
