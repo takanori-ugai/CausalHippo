@@ -219,7 +219,13 @@ class OperateTest {
 
             val options = QueryParam(mode = "hybrid", topK = 5)
             val evidence = "word ".repeat(250)
-            assertEquals(1, run(options.copy(onlyNeedContext = true)).split(evidence).size - 1)
+            val contextOptions = options.copy(onlyNeedContext = true)
+            val fullContext = run(contextOptions)
+            assertEquals(1, fullContext.split(evidence).size - 1)
+            val budget = Tokenizer.count(fullContext) - 1
+            val trimmedContext = run(contextOptions.copy(maxTokenForTextUnit = budget))
+            assertTrue(evidence in trimmedContext)
+            assertTrue(Tokenizer.count(trimmedContext) <= budget)
             assertTrue(evidence in run(options.copy(mode = "local", onlyNeedContext = true)))
             val first = run(options)
             assertEquals(first, run(options))

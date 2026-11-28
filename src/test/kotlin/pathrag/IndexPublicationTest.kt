@@ -200,6 +200,24 @@ class IndexPublicationTest {
         }
 
     @Test
+    fun localCheckpointReloadsGraphAndRelationshipVectors() =
+        exercise { directory ->
+            PathRAG(workingDir = directory).use { rag ->
+                rag.ainsert(document)
+                val checkpoint = "$directory/local-graph.json"
+                rag.asaveGraph(checkpoint)
+                rag.adropGraph()
+                assertFalse(rag.graph().hasEdge("ALPHA", "BETA"))
+                withTimeout(5_000) { rag.aloadGraph(checkpoint) }
+                assertTrue(rag.graph().hasEdge("ALPHA", "BETA"))
+                coEvery { pathrag.llm.openAiComplete(any(), any(), any(), any(), any(), any(), any(), any(), any()) } returns
+                    """{"high_level_keywords":["link"],"low_level_keywords":[]}"""
+                val context = rag.aquery("link", QueryParam(mode = "global", onlyNeedContext = true))
+                assertTrue(document in context)
+            }
+        }
+
+    @Test
     fun clearingCancelsPendingPublication() =
         exercise { directory ->
             InMemoryPersistenceBackend().open(emptyMap()).use { session ->

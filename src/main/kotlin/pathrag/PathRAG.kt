@@ -875,27 +875,28 @@ class PathRAG(
 
     override fun saveGraph(path: String) = runBlockingMaybe { asaveGraph(path) }
 
+    override suspend fun asaveGraph(path: String) = indexMutex.withLock { saveGraphSnapshot(path) }
+
     @Suppress("TooGenericExceptionCaught")
-    override suspend fun asaveGraph(path: String) =
-        indexMutex.withLock {
-            if (unifiedSpiEnabled) {
-                saveUnifiedSpiCheckpoint(path)
-                return@withLock
-            }
-            val payload = buildGraphInspectionPayload()
-            val metadata = payload["metadata"] as? Map<*, *> ?: emptyMap<Any?, Any?>()
-            val nodeCount = metadata["nodeCount"] as? Int ?: 0
-            val edgeCount = metadata["edgeCount"] as? Int ?: 0
-            val output = File(path)
-            output.parentFile?.mkdirs()
-            try {
-                output.writeText(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(payload))
-                logger.info { "Saved graph snapshot to '$path' with $nodeCount nodes and $edgeCount edges." }
-            } catch (e: Exception) {
-                logger.error(e) { "Failed to save graph snapshot to '$path'." }
-                throw e
-            }
+    private suspend fun saveGraphSnapshot(path: String) {
+        if (unifiedSpiEnabled) {
+            saveUnifiedSpiCheckpoint(path)
+            return
         }
+        val payload = buildGraphInspectionPayload()
+        val metadata = payload["metadata"] as? Map<*, *> ?: emptyMap<Any?, Any?>()
+        val nodeCount = metadata["nodeCount"] as? Int ?: 0
+        val edgeCount = metadata["edgeCount"] as? Int ?: 0
+        val output = File(path)
+        output.parentFile?.mkdirs()
+        try {
+            output.writeText(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(payload))
+            logger.info { "Saved graph snapshot to '$path' with $nodeCount nodes and $edgeCount edges." }
+        } catch (e: Exception) {
+            logger.error(e) { "Failed to save graph snapshot to '$path'." }
+            throw e
+        }
+    }
 
     private suspend fun buildGraphInspectionPayload(): Map<String, Any?> {
         val nodeIds = chunkEntityRelationGraph.nodes()
@@ -927,73 +928,74 @@ class PathRAG(
 
     override fun loadGraph(path: String) = runBlockingMaybe { aloadGraph(path) }
 
+    override suspend fun aloadGraph(path: String) = indexMutex.withLock { loadGraphSnapshot(path) }
+
     @Suppress("TooGenericExceptionCaught", "UNCHECKED_CAST")
-    override suspend fun aloadGraph(path: String) =
-        indexMutex.withLock {
-            if (unifiedSpiEnabled) {
-                loadUnifiedSpiCheckpoint(path)
-                return@withLock
-            }
-            val input = File(path)
-            require(input.exists()) { "Graph snapshot file not found: $path" }
-            val payloadType = object : TypeReference<Map<String, Any?>>() {}
-            val payload =
-                try {
-                    objectMapper.readValue(input, payloadType)
-                } catch (e: Exception) {
-                    logger.error(e) { "Failed to parse graph snapshot from '$path'." }
-                    throw e
-                }
-            val nodesRaw = payload["nodes"] as? Map<*, *> ?: emptyMap<Any?, Any?>()
-            val edgesRaw = payload["edges"] as? List<*> ?: emptyList<Any?>()
-
-            dropLocalGraph()
-
-            nodesRaw.forEach { (rawNodeId, rawNodeData) ->
-                val nodeId = rawNodeId?.toString()?.trim().orEmpty()
-                if (nodeId.isBlank()) return@forEach
-                val nodeData = (rawNodeData as? Map<*, *>)?.entries?.associate { it.key.toString() to it.value } ?: emptyMap()
-                chunkEntityRelationGraph.upsertNode(nodeId, nodeData)
-                val vectorId = computeMdHashId(nodeId, prefix = "ent-")
-                entitiesVdb.upsert(
-                    mapOf(
-                        vectorId to
-                            mapOf(
-                                "content" to nodeData["description"]?.toString().orEmpty(),
-                                "entity_name" to nodeId,
-                                "source_id" to nodeData["source_id"]?.toString().orEmpty(),
-                            ),
-                    ),
-                )
-            }
-
-            edgesRaw.forEach { rawEdge ->
-                val edge = rawEdge as? Map<*, *> ?: return@forEach
-                val source = edge["source"]?.toString()?.trim().orEmpty()
-                val target = edge["target"]?.toString()?.trim().orEmpty()
-                if (source.isBlank() || target.isBlank()) return@forEach
-                val edgeData = (edge["data"] as? Map<*, *>)?.entries?.associate { it.key.toString() to it.value } ?: emptyMap()
-                chunkEntityRelationGraph.upsertEdge(source, target, edgeData)
-                val description = edgeData["description"]?.toString().orEmpty()
-                val keywords = edgeData["keywords"]?.toString().orEmpty()
-                val relId = relationshipVectorId(source, target)
-                relationshipsVdb.upsert(
-                    mapOf(
-                        relId to
-                            mapOf(
-                                "src_id" to source,
-                                "tgt_id" to target,
-                                "content" to (description + keywords),
-                                "keywords" to keywords,
-                                "description" to description,
-                                "source_id" to edgeData["source_id"]?.toString().orEmpty(),
-                            ),
-                    ),
-                )
-            }
-
-            logger.info { "Loaded graph snapshot from '$path' with ${nodesRaw.size} nodes and ${edgesRaw.size} edges." }
+    private suspend fun loadGraphSnapshot(path: String) {
+        if (unifiedSpiEnabled) {
+            loadUnifiedSpiCheckpoint(path)
+            return
         }
+        val input = File(path)
+        require(input.exists()) { "Graph snapshot file not found: $path" }
+        val payloadType = object : TypeReference<Map<String, Any?>>() {}
+        val payload =
+            try {
+                objectMapper.readValue(input, payloadType)
+            } catch (e: Exception) {
+                logger.error(e) { "Failed to parse graph snapshot from '$path'." }
+                throw e
+            }
+        val nodesRaw = payload["nodes"] as? Map<*, *> ?: emptyMap<Any?, Any?>()
+        val edgesRaw = payload["edges"] as? List<*> ?: emptyList<Any?>()
+
+        dropLocalGraph()
+
+        nodesRaw.forEach { (rawNodeId, rawNodeData) ->
+            val nodeId = rawNodeId?.toString()?.trim().orEmpty()
+            if (nodeId.isBlank()) return@forEach
+            val nodeData = (rawNodeData as? Map<*, *>)?.entries?.associate { it.key.toString() to it.value } ?: emptyMap()
+            chunkEntityRelationGraph.upsertNode(nodeId, nodeData)
+            val vectorId = computeMdHashId(nodeId, prefix = "ent-")
+            entitiesVdb.upsert(
+                mapOf(
+                    vectorId to
+                        mapOf(
+                            "content" to nodeData["description"]?.toString().orEmpty(),
+                            "entity_name" to nodeId,
+                            "source_id" to nodeData["source_id"]?.toString().orEmpty(),
+                        ),
+                ),
+            )
+        }
+
+        edgesRaw.forEach { rawEdge ->
+            val edge = rawEdge as? Map<*, *> ?: return@forEach
+            val source = edge["source"]?.toString()?.trim().orEmpty()
+            val target = edge["target"]?.toString()?.trim().orEmpty()
+            if (source.isBlank() || target.isBlank()) return@forEach
+            val edgeData = (edge["data"] as? Map<*, *>)?.entries?.associate { it.key.toString() to it.value } ?: emptyMap()
+            chunkEntityRelationGraph.upsertEdge(source, target, edgeData)
+            val description = edgeData["description"]?.toString().orEmpty()
+            val keywords = edgeData["keywords"]?.toString().orEmpty()
+            val relId = relationshipVectorId(source, target)
+            relationshipsVdb.upsert(
+                mapOf(
+                    relId to
+                        mapOf(
+                            "src_id" to source,
+                            "tgt_id" to target,
+                            "content" to (description + keywords),
+                            "keywords" to keywords,
+                            "description" to description,
+                            "source_id" to edgeData["source_id"]?.toString().orEmpty(),
+                        ),
+                ),
+            )
+        }
+
+        logger.info { "Loaded graph snapshot from '$path' with ${nodesRaw.size} nodes and ${edgesRaw.size} edges." }
+    }
 
     /**
      * Synchronously upserts an entity into the graph and entity vector stores.
