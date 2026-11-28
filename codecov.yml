@@ -8,3 +8,19 @@ coverage:
       default:
         target: 80%
         threshold: 0%
+
+component_management:
+  individual_components:
+    - component_id: eval-bertscore
+      name: BERTScore evaluation
+      paths:
+        - eval/bertscore/src/main/**
+    - component_id: eval-ragas
+      name: Ragas evaluation
+      paths:
+        - eval/ragas/src/main/**
+    - component_id: eval-causal
+      name: Causal evaluation
+      paths:
+        - src/main/kotlin/causalrag/evaluation/**
+        - src/main/kotlin/causalrag/examples/CausalDataExperiment.kt

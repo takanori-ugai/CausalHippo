@@ -157,6 +157,7 @@ class EvaluationParityHooksTest {
             evaluate(
                 dataset = dataset,
                 metrics = listOf(ThrowingMetric()),
+                runConfig = RunConfig(maxRetries = 1),
                 callbacks = listOf(callback),
                 raiseExceptions = true,
             )
