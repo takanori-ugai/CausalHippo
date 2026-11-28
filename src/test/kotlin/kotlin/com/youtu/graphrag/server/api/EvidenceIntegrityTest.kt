@@ -32,6 +32,28 @@ class EvidenceIntegrityTest {
     }
 
     @Test
+    fun `failed first graph publication leaves no chunk file`() {
+        val root = Files.createTempDirectory("youtu-artifact-first-publication")
+        try {
+            val graph = Files.createDirectory(root.resolve("graph.json"))
+            Files.writeString(graph.resolve("marker"), "existing directory")
+            val chunks = root.resolve("chunks.txt")
+            assertFailsWith<IOException> {
+                DatasetArtifacts.publish(graph, "new graph".encodeToByteArray(), chunks, "new chunk".encodeToByteArray())
+            }
+            assertTrue(Files.notExists(chunks))
+        } finally {
+            root.toFile().deleteRecursively()
+        }
+    }
+
+    @Test
+    fun `a question that exceeds the budget on its own produces no prompt`() {
+        val result = buildBoundedPrompt(emptyList(), emptyList(), 5) { _, _ -> "long question ".repeat(30) }
+        kotlin.test.assertNull(result)
+    }
+
+    @Test
     fun `config overrides affect only the requesting query`() {
         val config = ConfigManager("config/base_config.json")
         val originalMode = config.triggers.mode
