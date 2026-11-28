@@ -921,85 +921,16 @@ private suspend fun buildPathRelations(
     }
     for (seed in targetNodes) visit(listOf(seed))
 
-    fun bfsWeightedPaths(
-        source: String,
-        target: String,
-        paths: List<List<String>>,
-        threshold: Double,
-        alpha: Double,
-    ): List<Pair<List<String>, Double>> {
-        if (paths.isEmpty()) return emptyList()
-        val follow = mutableMapOf<String, MutableSet<String>>()
-        paths.forEach { p ->
-            p.windowed(2).forEach { (u, v) ->
-                follow.computeIfAbsent(u) { mutableSetOf() }.add(v)
-            }
-        }
-        val edgeWeights = mutableMapOf<Pair<String, String>, Double>()
-
-        fun incEdge(
-            u: String,
-            v: String,
-            add: Double,
-        ) {
-            edgeWeights[u to v] = (edgeWeights[u to v] ?: 0.0) + add
-        }
-
-        for (n in follow[source].orEmpty()) {
-            incEdge(source, n, 1.0 / follow[source]!!.size)
-            if (n == target) {
-                continue
-            }
-            if ((edgeWeights[source to n] ?: 0.0) > threshold) {
-                for (m in follow[n].orEmpty()) {
-                    val w = (edgeWeights[source to n] ?: 0.0) * alpha / follow[n]!!.size
-                    incEdge(n, m, w)
-                    if (m == target) {
-                        continue
-                    }
-                    if ((edgeWeights[n to m] ?: 0.0) > threshold) {
-                        for (k in follow[m].orEmpty()) {
-                            val w2 = (edgeWeights[n to m] ?: 0.0) * alpha / follow[m]!!.size
-                            incEdge(m, k, w2)
-                        }
-                    }
-                }
-            }
-        }
-        return paths.map { p ->
-            val pw =
-                if (p.size < 2) {
-                    0.0
-                } else {
-                    var sum = 0.0
-                    p.windowed(2).forEach { (u, v) -> sum += edgeWeights[u to v] ?: 0.0 }
-                    sum / (p.size - 1)
-                }
-            p to pw
-        }
-    }
-
-    val threshold = 0.3
-    val alpha = 0.8
-    val allResults = mutableListOf<Pair<List<String>, Double>>()
-    for (n1 in targetNodes) {
-        for (n2 in targetNodes) {
-            if (n1 != n2) {
-                val paths = routes[n1 to n2] ?: continue
-                val scored = bfsWeightedPaths(n1, n2, paths, threshold, alpha)
-                allResults.addAll(scored)
-            }
-        }
-    }
-    val sortedResults = allResults.sortedByDescending { it.second }
-    val seen = mutableSetOf<List<String>>()
-    val resultEdge =
-        sortedResults.filter { (path, _) ->
-            val canonicalPath = if (path.first() <= path.last()) path else path.reversed()
-            seen.add(canonicalPath)
-        }
-
-    val finalPaths = resultEdge.take(15).map { it.first }
+    val seedRank = targetNodes.withIndex().associate { it.value to it.index }
+    val rankedPaths =
+        routes
+            .flatMap { (endpoints, paths) -> scorePathFlows(endpoints.first, endpoints.second, paths) }
+            .sortedWith(
+                compareByDescending<Pair<List<String>, Double>> { it.second }
+                    .thenBy { seedRank.getValue(it.first.first()) }
+                    .thenBy { seedRank.getValue(it.first.last()) }
+                    .thenComparator { a, b -> compareNodeSequences(a.first, b.first) },
+            )
 
     suspend fun describePath(path: List<String>): String? {
         suspend fun nodeDesc(id: String): String {
@@ -1052,9 +983,14 @@ private suspend fun buildPathRelations(
     }
 
     val described = mutableListOf<String>()
-    for (p in finalPaths) {
-        val d = describePath(p)
-        if (d != null) described.add(d)
+    val seen = mutableSetOf<List<String>>()
+    for ((path, _) in rankedPaths) {
+        val key = if (path.first() <= path.last()) path else path.asReversed()
+        if (key in seen) continue
+        val description = describePath(path) ?: continue
+        seen.add(key)
+        described.add(description)
+        if (described.size == 15) break
     }
 
     val truncated =
