@@ -10,6 +10,7 @@ import pathrag.base.QueryParam
 import pathrag.operate.chunkingByTokenSize
 import pathrag.operate.extractEntities
 import pathrag.operate.kgQuery
+import pathrag.prompt.Prompts
 import pathrag.utils.ResponseCache
 import pathrag.utils.Tokenizer
 import kotlin.test.Test
@@ -90,8 +91,11 @@ private class FakeVectorStorage(
         topK: Int,
     ): List<Map<String, Any?>> = results.take(topK)
 
+    val stored = mutableMapOf<String, Map<String, Any?>>()
+
     override suspend fun upsert(data: Map<String, Map<String, Any?>>) {
         writeError?.let { throw it }
+        stored.putAll(data)
     }
 }
 
@@ -272,11 +276,12 @@ class OperateTest {
             val graph = FakeGraphStorage()
             val llm: suspend (String, String?, List<Map<String, String>>, Boolean, Boolean, Int?, Any?) -> String =
                 { _, _, _, _, _, _, _ ->
-                    """{"entities":[{"entity_name":"ALPHA","entity_type":"THING","description":"A"}],
+                    """{"entities":[{"entity_name":" ALPHA ","entity_type":"THING","description":"A"},
+                        {"entity_name":"alpha","entity_type":"THING","description":"other"}],
                         "relationships":[{"src_id":"ALPHA","tgt_id":"BETA","description":"link","keywords":"k","weight":1.0}]}"""
                 }
             val chunks = mapOf("chunk" to mapOf("content" to "Alpha and Beta"))
-            val config = mapOf("llm_model_func" to llm)
+            val config = mapOf("llm_model_func" to llm, "entity_extract_max_gleaning" to 0)
             val entities = FakeVectorStorage("entities", emptyList())
             assertFailsWith<IllegalStateException> {
                 extractEntities(
@@ -287,7 +292,10 @@ class OperateTest {
                     config,
                 )
             }
-            extractEntities(chunks, graph, entities, FakeVectorStorage("relations", emptyList()), config)
+            val relations = FakeVectorStorage("relations", emptyList())
+            extractEntities(chunks, graph, entities, relations, config)
+            assertEquals("ALPHAA${Prompts.GRAPH_FIELD_SEP}other", entities.stored.values.single()["content"])
+            assertEquals("kALPHABETAlink", relations.stored.values.single()["content"])
             assertEquals(1.0, graph.getEdge("ALPHA", "BETA")?.get("weight"))
         }
     }

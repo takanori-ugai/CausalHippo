@@ -27,6 +27,8 @@ import pathrag.utils.ResponseCache
 import pathrag.utils.Tokenizer
 import pathrag.utils.computeArgsHash
 import pathrag.utils.computeMdHashId
+import pathrag.utils.entityVectorData
+import pathrag.utils.relationshipVectorData
 import pathrag.utils.relationshipVectorId
 import shared.chunking.chunkByTokenSizeWithOverlap
 import shared.chunking.hardTruncateStringsByTokenBudget
@@ -149,7 +151,7 @@ suspend fun extractEntities(
         } else {
             Prompts.ENTITY_EXTRACTION_EXAMPLES.joinToString("\n")
         }
-    val entityExtractMaxGleaning = (globalConfig["entity_extract_max_gleaning"] as? Number)?.toInt() ?: 0
+    val entityExtractMaxGleaning = (globalConfig["entity_extract_max_gleaning"] as? Number)?.toInt() ?: 1
 
     val orderedChunks = chunks.entries.toList()
     val maxTokensForExtraction = (globalConfig["max_tokens_for_extraction"] as? Int) ?: 2048
@@ -401,12 +403,7 @@ suspend fun extractEntities(
                 .mapNotNull { ent ->
                     val entityName = ent["entity_name"] ?: return@mapNotNull null
                     val id = computeMdHashId(entityName, prefix = "ent-")
-                    id to
-                        mapOf(
-                            "content" to (ent["description"] ?: ""),
-                            "entity_name" to entityName,
-                            "source_id" to (ent["source_id"] ?: ""),
-                        )
+                    id to entityVectorData(entityName, ent)
                 }.toMap()
         entityVdb.upsert(toStore)
     }
@@ -417,18 +414,7 @@ suspend fun extractEntities(
                 .mapNotNull { edge ->
                     val src = edge["src_id"]?.toString() ?: return@mapNotNull null
                     val tgt = edge["tgt_id"]?.toString() ?: return@mapNotNull null
-                    val description = edge["description"]?.toString() ?: ""
-                    val keywords = edge["keywords"]?.toString() ?: ""
-                    val id = relationshipVectorId(src, tgt)
-                    id to
-                        mapOf(
-                            "src_id" to src,
-                            "tgt_id" to tgt,
-                            "content" to (description + keywords),
-                            "keywords" to keywords,
-                            "description" to description,
-                            "source_id" to (edge["source_id"]?.toString() ?: ""),
-                        )
+                    relationshipVectorId(src, tgt) to relationshipVectorData(src, tgt, edge)
                 }.toMap()
         relationshipsVdb.upsert(toStore)
     }
@@ -452,7 +438,7 @@ private suspend fun mergeNodesThenUpsert(
     if (alreadyNode != null) {
         alreadyEntityTypes.add(alreadyNode["entity_type"]?.toString().orEmpty())
         alreadySourceIds.addAll(splitBySep(alreadyNode["source_id"]?.toString().orEmpty(), Prompts.GRAPH_FIELD_SEP))
-        alreadyDescriptions.add(alreadyNode["description"]?.toString().orEmpty())
+        alreadyDescriptions.addAll(splitBySep(alreadyNode["description"]?.toString().orEmpty(), Prompts.GRAPH_FIELD_SEP))
     }
 
     val entityType =
@@ -503,7 +489,7 @@ private suspend fun mergeEdgesThenUpsert(
     if (alreadyEdge != null) {
         alreadyWeights.add((alreadyEdge["weight"] as? Number)?.toDouble() ?: 0.0)
         alreadySourceIds.addAll(splitBySep(alreadyEdge["source_id"]?.toString().orEmpty(), Prompts.GRAPH_FIELD_SEP))
-        alreadyDescriptions.add(alreadyEdge["description"]?.toString().orEmpty())
+        alreadyDescriptions.addAll(splitBySep(alreadyEdge["description"]?.toString().orEmpty(), Prompts.GRAPH_FIELD_SEP))
         alreadyKeywords.addAll(splitBySep(alreadyEdge["keywords"]?.toString().orEmpty(), Prompts.GRAPH_FIELD_SEP))
     }
 
@@ -605,7 +591,12 @@ private fun extractJsonPayload(response: String): String {
  * @param id The identifier to normalize; may include surrounding double quotes.
  * @return The normalized identifier with no surrounding double quotes and in uppercase.
  */
-private fun normalizeId(id: String): String = id.trim('"').uppercase()
+private fun normalizeId(id: String): String =
+    id
+        .trim()
+        .trim('"')
+        .trim()
+        .uppercase()
 
 /**
  * Run a retrieval-augmented generation (RAG) query backed by the knowledge graph using the configured mode.
