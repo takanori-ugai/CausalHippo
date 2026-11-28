@@ -88,6 +88,7 @@ class UnifiedRagContractTest {
         val pathDelegate =
             mockk<PathRAG>().also { delegate ->
                 coEvery { delegate.aquery(any(), any()) } returns "path-payload"
+                coEvery { delegate.answerFromContext(any(), any(), "path-payload") } returns "path-answer"
                 every { delegate.inspectGraph() } returns
                     mapOf(
                         "nodes" to mapOf("P1" to mapOf("entity_name" to "P1")),

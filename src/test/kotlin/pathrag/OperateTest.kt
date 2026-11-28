@@ -201,6 +201,74 @@ class OperateTest {
     }
 
     @Test
+    fun hybridPromptKeepsSourcesIntactAndEndsWithTheStrongestPath() =
+        runBlocking {
+            val graph = FakeGraphStorage()
+            graph.upsertNode("A", mapOf("source_id" to "shared<SEP>local"))
+            graph.upsertNode("B", emptyMap())
+            graph.upsertEdge("A", "B", mapOf("description" to "direct evidence", "source_id" to "shared<SEP>global"))
+            val literal = "One, \"two\".\n```\n````\n{{response_type}}"
+            val chunks =
+                FakeKVStorage(
+                    "chunks",
+                    mapOf(
+                        "shared" to mapOf("content" to literal),
+                        "global" to mapOf("content" to "first\rsecond"),
+                        "local" to mapOf("content" to "local evidence"),
+                    ),
+                )
+            var delivered = ""
+
+            suspend fun run(param: QueryParam): String =
+                kgQuery(
+                    "What connects A and B?",
+                    graph,
+                    FakeVectorStorage("entities", listOf(mapOf("entity_name" to "A"), mapOf("entity_name" to "B"))),
+                    FakeVectorStorage("relations", listOf(mapOf("src_id" to "A", "tgt_id" to "B"))),
+                    chunks,
+                    param,
+                    mapOf("fixed_low_level_keywords" to listOf("A", "B"), "fixed_high_level_keywords" to listOf("link")),
+                    { question, system, _, _, _, _, _ ->
+                        assertEquals("What connects A and B?", question)
+                        delivered = requireNotNull(system)
+                        "answer"
+                    },
+                )
+            val options = QueryParam(mode = "hybrid")
+            val context = run(options.copy(onlyNeedContext = true))
+            assertEquals(1, context.split("-----Sources-----").size - 1)
+            assertTrue("-----Sources-----\n`````csv\nid,content\n0,\"One, \"\"two\"\".\n```\n````\n{{response_type}}\"" in context)
+            assertTrue("1,\"first\rsecond\"\n2,local evidence\n`````" in context)
+            assertTrue(context.substringAfterLast("-----low-level relationship information-----").contains("through edge(direct evidence)"))
+            val prompt = run(options.copy(onlyNeedPrompt = true))
+            assertTrue(prompt.trimEnd().endsWith(context))
+            assertEquals("answer", run(options))
+            assertEquals(prompt, delivered)
+        }
+
+    @Test
+    fun smallHybridBudgetKeepsEvidenceWithoutChargingForEmptyTables() =
+        runBlocking {
+            val graph = FakeGraphStorage()
+            graph.upsertNode("A", mapOf("source_id" to "source", "description" to "large ".repeat(200)))
+            val param = QueryParam(mode = "hybrid", onlyNeedContext = true, maxTokenForTextUnit = 50)
+            val context =
+                kgQuery(
+                    "query",
+                    graph,
+                    FakeVectorStorage("entities", listOf(mapOf("entity_name" to "A"))),
+                    FakeVectorStorage("relations", emptyList()),
+                    FakeKVStorage("chunks", mapOf("source" to mapOf("content" to "small evidence"))),
+                    param,
+                    mapOf("fixed_low_level_keywords" to listOf("A")),
+                    { _, _, _, _, _, _, _ -> error("unexpected model call") },
+                )
+            assertTrue("small evidence" in context)
+            assertFalse("csv\nid,entity" in context)
+            assertTrue(Tokenizer.count(context) <= param.maxTokenForTextUnit)
+        }
+
+    @Test
     fun kgQuery_hybridBoundsCompleteContextAndInvalidatesAnswerWhenItChanges() {
         runBlocking {
             val graph = FakeGraphStorage()
