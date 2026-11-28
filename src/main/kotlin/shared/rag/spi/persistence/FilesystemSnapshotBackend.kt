@@ -35,9 +35,9 @@ private class FilesystemSnapshotSession(
                 supportsIncrementalCheckpoint = false,
                 supportsCrossBackendImport = true,
             ),
-        manifestMetadata = metadata,
+        checkpointMetadata = metadata,
     ) {
-    override fun resolvePath(path: String): Path {
+    override fun resolveCheckpointPath(path: String): Path {
         val raw = Path.of(path)
         return when {
             raw.isAbsolute -> raw.normalize()

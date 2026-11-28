@@ -23,5 +23,5 @@ private class InMemoryPersistenceSession(
                 supportsIncrementalCheckpoint = false,
                 supportsCrossBackendImport = true,
             ),
-        manifestMetadata = metadata,
+        checkpointMetadata = metadata,
     )
