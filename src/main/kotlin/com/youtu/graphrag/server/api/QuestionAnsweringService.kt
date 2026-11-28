@@ -38,16 +38,21 @@ private data class SubQuestionRetrieval(
     val index: Int,
     val subQuestionText: String,
     val triples: List<String>,
-    val triplesFormatted: List<String>,
     val chunkIds: List<String>,
     val chunkContents: Map<String, String>,
     val processingTime: Double,
 )
 
-private data class TripleEntry(
+internal data class TripleEntry(
     val raw: String,
     val formatted: String,
 )
+
+internal fun toTripleEntries(triples: List<String>): List<TripleEntry> =
+    triples.mapNotNull { triple ->
+        val identity = tripleIdentity(triple)
+        if (identity.isBlank()) null else TripleEntry(raw = identity, formatted = triple.trim())
+    }
 
 class QuestionAnsweringService(
     private val config: ConfigManager,
@@ -128,7 +133,7 @@ class QuestionAnsweringService(
 
         val mergedSubQuestionTriples = mutableListOf<TripleEntry>()
         subQuestionRetrievals.forEach { retrieval ->
-            mergedSubQuestionTriples += zipTripleEntries(retrieval.triples, retrieval.triplesFormatted)
+            mergedSubQuestionTriples += toTripleEntries(retrieval.triples)
             retrieval.chunkIds.forEach { chunkId ->
                 val chunkContent = retrieval.chunkContents[chunkId]
                 if (chunkContent != null) {
@@ -142,7 +147,7 @@ class QuestionAnsweringService(
                 ReasoningStep(
                     type = "sub_question",
                     question = retrieval.subQuestionText,
-                    triples = retrieval.triplesFormatted.take(10),
+                    triples = retrieval.triples.take(10),
                     triplesCount = retrieval.triples.size,
                     chunkContents = chunkPreview,
                     chunksCount = retrieval.chunkIds.size,
@@ -158,7 +163,7 @@ class QuestionAnsweringService(
                             "index" to (retrieval.index + 1),
                             "total" to subQuestions.size,
                             "question" to retrieval.subQuestionText,
-                            "triples_preview" to retrieval.triplesFormatted.distinct().take(5),
+                            "triples_preview" to retrieval.triples.distinct().take(5),
                             "triples_count" to step.triplesCount,
                             "chunks_count" to step.chunksCount,
                             "processing_time" to step.processingTime,
@@ -499,7 +504,6 @@ class QuestionAnsweringService(
             index = index,
             subQuestionText = subQuestionText,
             triples = triples,
-            triplesFormatted = triples,
             chunkIds = chunkIds,
             chunkContents =
                 parseChunkContentMap(
@@ -517,7 +521,6 @@ class QuestionAnsweringService(
         chunkById: MutableMap<String, String>,
     ) {
         val triples = parseStringList(retrievalResults["triples"])
-        val triplesFormatted = parseStringList(retrievalResults["triples_formatted"]).ifEmpty { triples }
         val chunkIds = parseStringList(retrievalResults["chunk_ids"])
         val chunkContents =
             parseChunkContentMap(
@@ -526,7 +529,7 @@ class QuestionAnsweringService(
                 chunkContentsByIdRaw = null,
             )
 
-        zipTripleEntries(triples, triplesFormatted).forEach { entry ->
+        toTripleEntries(triples).forEach { entry ->
             tripleEntriesByRaw.putIfAbsent(entry.raw, entry.formatted)
         }
         chunkIds.forEach { chunkId ->
@@ -547,29 +550,6 @@ class QuestionAnsweringService(
             append("\n=== Final Chunks ===\n")
             append(chunks.joinToString("\n"))
         }
-
-    private fun zipTripleEntries(
-        triples: List<String>,
-        triplesFormatted: List<String>,
-    ): List<TripleEntry> {
-        if (triples.isEmpty()) {
-            return emptyList()
-        }
-
-        return triples.mapIndexedNotNull { index, raw ->
-            val rawNormalized = tripleIdentity(raw)
-            if (rawNormalized.isBlank()) {
-                return@mapIndexedNotNull null
-            }
-            val formatted =
-                triplesFormatted
-                    .getOrNull(index)
-                    ?.trim()
-                    ?.takeIf { value -> value.isNotBlank() }
-                    ?: raw.trim()
-            TripleEntry(raw = rawNormalized, formatted = formatted)
-        }
-    }
 
     private fun selectTopTriplesForQuestion(
         entries: List<TripleEntry>,

@@ -67,14 +67,14 @@ internal object DatasetArtifacts {
                             null
                         }
                     var recovered = true
-                    var published = false
+                    var retainMarker = previouslyUnhealthy
                     try {
                         if (backup != null) Files.copy(absoluteChunks, backup, REPLACE_EXISTING)
                         if (!previouslyUnhealthy) Files.createFile(marker)
                         move(stagedChunks, absoluteChunks)
                         try {
                             move(stagedGraph, absoluteGraph)
-                            published = true
+                            retainMarker = false
                         } catch (error: Exception) {
                             runCatching {
                                 if (backup == null) {
@@ -84,12 +84,13 @@ internal object DatasetArtifacts {
                                 }
                             }.exceptionOrNull()?.let {
                                 recovered = false
+                                retainMarker = true
                                 error.addSuppressed(IllegalStateException("Previous chunks could not be restored from $backup", it))
                             }
                             throw error
                         }
                     } finally {
-                        if (published || (recovered && !previouslyUnhealthy)) Files.deleteIfExists(marker)
+                        if (!retainMarker) Files.deleteIfExists(marker)
                         if (backup != null && recovered) Files.deleteIfExists(backup)
                     }
                 }
