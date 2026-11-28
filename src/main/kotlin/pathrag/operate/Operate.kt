@@ -676,9 +676,7 @@ internal suspend fun generateAnswerFromContext(
     val cached = responseCache?.handleCache(argsHash, query, queryParam.mode, allowSimilar = false)
     if (cached != null) return cached
 
-    val maxOutputTokens =
-        if (queryParam.mode.equals("global", ignoreCase = true)) queryParam.maxTokenForGlobalContext else queryParam.maxTokenForTextUnit
-    val response = llmModel(query, systemPrompt, emptyList(), false, queryParam.stream, maxOutputTokens, null)
+    val response = llmModel(query, systemPrompt, emptyList(), false, queryParam.stream, null, null)
     responseCache?.upsert(queryParam.mode, argsHash, response, query)
     return response
 }

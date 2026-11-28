@@ -1,6 +1,7 @@
 package pathrag
 
 import io.github.oshai.kotlinlogging.KotlinLogging
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import lightrag.utils.writeStorageFileAtomically
@@ -675,8 +676,18 @@ class PathRAG(
         query: String,
         param: QueryParam,
     ): String {
-        if (unifiedSpiEnabled && param.onlyNeedContext) {
-            return retrieveContextFromUnifiedSpi(query, param)
+        if (unifiedSpiEnabled) {
+            val context =
+                try {
+                    retrieveContextFromUnifiedSpi(query, param)
+                } catch (ex: RuntimeException) {
+                    if (ex is CancellationException || param.onlyNeedContext) throw ex
+                    logger.warn(ex) { "PathRAG unified context retrieval failed; using the local index for the answer prompt." }
+                    null
+                }
+            if (context != null) {
+                return if (param.onlyNeedContext) context else answerFromContext(query, param, context)
+            }
         }
         return kgQuery(
             query,
