@@ -32,6 +32,7 @@ import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
 import shared.chunking.countTokensWithJTokKit
 import shared.rag.unified.GraphRagUnifiedAdapter
+import shared.rag.unified.UnifiedMode
 import shared.rag.unified.UnifiedQuery
 import java.nio.file.Files
 import java.nio.file.Path
@@ -39,6 +40,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFails
 import kotlin.test.assertFailsWith
+import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
 class GraphRagIntegrityTest {
@@ -391,6 +393,86 @@ class GraphRagIntegrityTest {
             streamingModelFactory = { chat },
         )
     }
+
+    @Test
+    fun blankBundledCorpusRestoresInQueryOnlyMode() =
+        withPipeline { root ->
+            val source = GraphRAG(root.resolve("source"))
+            source.upsert("Original corpus")
+            val snapshot = root.resolve("snapshot")
+            source.saveGraph(snapshot.toString())
+            val input = snapshot.resolve(".graphrag-input")
+            Files.list(input).use { paths -> paths.forEach { Files.writeString(it, "   ") } }
+            val target = ragWithModels(root.resolve("target"), mockk())
+            target.loadGraph(snapshot.toString())
+            assertFailsWith<IllegalStateException> { target.upsert("Additional corpus") }
+            assertEquals(listOf("Original corpus"), runBlocking { target.query("question", 1) }.map { it["content"] })
+        }
+
+    @Test
+    fun nestedIndexUsesItsRecordedModelAndRejectsConflictingModels() =
+        withPipeline { root ->
+            val nested = root.resolve("nested")
+            GraphRAG(nested, defaultEmbeddingModelName = "text-embedding-3-large").upsert("Nested evidence")
+            val models = mutableListOf<String>()
+            val target = ragWithModels(root.resolve("target"), mockk(), models)
+            target.loadGraph(nested.toString())
+            val param = QueryParam(mode = "basic", includeAnswer = false, embeddingModelName = "text-embedding-3-large")
+            assertEquals(listOf("Nested evidence"), target.query("question", param).context.map { it.text })
+            assertEquals(listOf("Nested evidence"), runBlocking { target.query("question", 1) }.map { it["content"] })
+            assertEquals(List(2) { "text-embedding-3-large" }, models)
+
+            GraphRAG(nested.resolve("second")).upsert("Other evidence")
+            assertFailsWith<IllegalArgumentException> { target.loadGraph(nested.toString()) }
+            assertEquals(listOf("Nested evidence"), target.query("question", param).context.map { it.text })
+        }
+
+    @Test
+    fun dynamicGlobalContextReportsCommunityRatingUsage() =
+        runBlocking {
+            val chat = mockk<OpenAiStreamingChatModel>()
+            every { chat.chat(any<List<ChatMessage>>(), any<StreamingChatResponseHandler>()) } answers {
+                complete(secondArg(), """{"rating":5}""")
+            }
+            val engine = GlobalSearchEngine(chat, listOf(CommunityReport(1, "Relevant evidence")), dynamicCommunitySelection = true)
+            val result = engine.retrieveContext("question", emptyList())
+            assertEquals(1, result.llmCalls)
+            assertTrue(result.promptTokens > 0)
+            assertTrue(result.outputTokens > 0)
+            assertEquals(mapOf("build_context" to 1), result.llmCallsCategories)
+            assertEquals(mapOf("build_context" to result.promptTokens), result.promptTokensCategories)
+            assertEquals(mapOf("build_context" to result.outputTokens), result.outputTokensCategories)
+        }
+
+    @Test
+    fun localStreamingRequestRetainsFollowUpsWithoutReturningTheAnswer() =
+        withPipeline { root ->
+            val chat = mockk<OpenAiStreamingChatModel>()
+            every { chat.chat(any<List<ChatMessage>>(), any<StreamingChatResponseHandler>()) } answers {
+                complete(secondArg(), """{"response":"answer","follow_up_queries":["What comes next?"]}""")
+            }
+            val rag = ragWithModels(root, chat)
+            rag.upsert("Original evidence")
+            val result =
+                GraphRagUnifiedAdapter(rag).query(
+                    "question",
+                    UnifiedQuery(mode = UnifiedMode.LOCAL, includeAnswer = false, includeFollowUps = true, streaming = true),
+                )
+            assertNull(result.answer)
+            assertEquals(listOf("What comes next?"), result.followUpQueries)
+        }
+
+    @Test
+    fun driftStreamsSynthesisAfterCompletingALocalAction() =
+        runBlocking {
+            val local = mockk<LocalQueryEngine>()
+            coEvery { local.answer(any(), any(), any(), any(), any()) } returns
+                QueryResult(answer = "Completed local action", context = emptyList())
+            val engine =
+                DriftSearchEngine(model(), listOf(CommunityReport(1, "evidence")), localQueryEngine = local, maxIterations = 1)
+            assertEquals(listOf("""{"response":"final"}"""), engine.streamSearch("query", listOf("follow-up")).toList())
+            io.mockk.coVerify(exactly = 1) { local.answer("follow-up", any(), any(), "query", any()) }
+        }
 
     @Test
     fun driftStreamsOnlySynthesis() =

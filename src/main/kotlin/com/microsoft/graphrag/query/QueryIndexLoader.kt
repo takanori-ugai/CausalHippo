@@ -1,5 +1,6 @@
 package com.microsoft.graphrag.query
 
+import com.microsoft.graphrag.EMBEDDING_MODEL_FILE
 import com.microsoft.graphrag.index.Claim
 import com.microsoft.graphrag.index.CommunityAssignment
 import com.microsoft.graphrag.index.CommunityReport
@@ -126,6 +127,17 @@ class QueryIndexLoader(
 
         val partials = resolvedOutputs.map { loadOutput(it) }
         return mergeOutputs(resolvedOutputs, partials)
+    }
+
+    internal fun embeddingModelIdentity(): String? {
+        val identities =
+            resolveOutputs(outputDirs)
+                .mapNotNull { output ->
+                    val marker = output.path.resolve(EMBEDDING_MODEL_FILE)
+                    if (Files.isRegularFile(marker)) Files.readString(marker).trim().takeIf { it.isNotEmpty() } else null
+                }.distinct()
+        require(identities.size <= 1) { "GraphRAG index directories use different embedding models: ${identities.joinToString()}" }
+        return identities.singleOrNull()
     }
 
     /**

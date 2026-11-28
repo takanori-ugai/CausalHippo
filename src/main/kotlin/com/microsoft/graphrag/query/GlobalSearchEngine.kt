@@ -189,6 +189,12 @@ class GlobalSearchEngine(
             context = emptyList(),
             contextRecords = context.contextRecords.toImmutableContextRecords(),
             contextText = context.chunks.joinToString("\n\n"),
+            llmCalls = context.llmCalls,
+            promptTokens = context.promptTokens,
+            outputTokens = context.outputTokens,
+            llmCallsCategories = mapOf("build_context" to context.llmCalls),
+            promptTokensCategories = mapOf("build_context" to context.promptTokens),
+            outputTokensCategories = mapOf("build_context" to context.outputTokens),
         )
     }
 
