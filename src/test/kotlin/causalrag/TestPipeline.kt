@@ -1,5 +1,9 @@
 package causalrag
 
+import causalrag.generator.llm.LLMInterface
+import io.mockk.every
+import io.mockk.mockkConstructor
+import io.mockk.unmockkConstructor
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonNull
@@ -10,6 +14,8 @@ import java.nio.file.Path
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
@@ -108,6 +114,62 @@ class TestPipeline {
         assertTrue(contextResult.context.isNotEmpty())
         val pathResult = rag2.query("What is climate change?", QueryParam(maxPaths = 3, onlyNeedCausalPaths = true))
         assertTrue(pathResult.causalPaths.isNotEmpty())
+    }
+
+    @Test
+    fun testRepeatedUpsertPreservesPreviouslyIndexedPassages() {
+        val rag = CausalRAG(configPath = configPath.toString())
+        testDocs.forEach(rag::upsert)
+
+        assertEquals(testDocs.toSet(), rag.retrieveContext("coastal flooding", topK = 10).toSet())
+    }
+
+    @Test
+    fun testCorruptSnapshotPreservesLiveIndex() {
+        val rag = CausalRAG(configPath = configPath.toString())
+        rag.upsert(testDocs)
+        val graph = rag.inspectGraph()
+        val query = "coastal flooding"
+        val context = rag.retrieveContext(query, topK = 5)
+        val replacement = CausalRAG(configPath = configPath.toString())
+        replacement.upsert("Heavy rainfall causes river flooding.")
+        val snapshot = tempDir.resolve("corrupt-snapshot")
+        replacement.saveGraph(snapshot.toString())
+        Files.writeString(snapshot.resolve("vector_cache/vectors.json"), "[[1.0], [1.0, 0.0]]")
+
+        assertFailsWith<IllegalStateException> { rag.loadGraph(snapshot.toString()) }
+        assertEquals(graph, rag.inspectGraph())
+        assertEquals(context, rag.retrieveContext(query, topK = 5))
+    }
+
+    @Test
+    fun testAnswerAndContextOnlyUseTheSameEvidence() {
+        mockkConstructor(LLMInterface::class)
+        try {
+            val prompts = mutableListOf<String>()
+            every { anyConstructed<LLMInterface>().generate(any(), any(), any(), any(), any(), any()) } answers {
+                prompts.add(firstArg())
+                "[]"
+            }
+            val rag = CausalRAG(configPath = configPath.toString())
+            rag.upsert(testDocs)
+            val query = "What causes coastal flooding?"
+            val params = QueryParam(topK = 3, maxPaths = 1)
+            val allPaths = rag.retrieveCausalPaths(query, maxPaths = 3)
+            assertTrue(allPaths.size > 1)
+            val answer = rag.query(query, params)
+            val evidence = rag.query(query, params.copy(onlyNeedContext = true, onlyNeedCausalPaths = true))
+
+            assertEquals(answer.context, evidence.context)
+            assertEquals(answer.causalPaths, evidence.causalPaths)
+            assertEquals(1, answer.causalPaths.size)
+            assertTrue(answer.causalPaths.single().joinToString(" → ") in prompts.last())
+            for (path in allPaths - answer.causalPaths.toSet()) {
+                assertTrue(path.joinToString(" → ") !in prompts.last())
+            }
+        } finally {
+            unmockkConstructor(LLMInterface::class)
+        }
     }
 
     private fun writeTestConfig(path: Path) {

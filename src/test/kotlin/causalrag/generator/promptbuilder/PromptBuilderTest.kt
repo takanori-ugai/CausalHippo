@@ -1,7 +1,10 @@
 package causalrag.generator.promptbuilder
 
+import shared.chunking.countTokensWithJTokKit
 import kotlin.test.Test
 import kotlin.test.assertContains
+import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 class PromptBuilderTest {
     private val query = "What causes coastal flooding?"
@@ -67,5 +70,27 @@ class PromptBuilderTest {
         assertContains(prompt, "\"answer\":\"<short answer span>\"")
         assertContains(prompt, "\"explanation\":\"<causal explanation>\"")
         assertContains(prompt, "JSON response:")
+    }
+
+    @Test
+    fun budgetCountsTheRenderedPromptAndKeepsShorterEvidence() {
+        val builder = PromptBuilder(templateStyle = "detailed")
+        val short = passages.last()
+        val usablePath = causalPaths.single()
+        val budget = countTokensWithJTokKit(builder.buildPrompt(query, listOf(short), listOf(usablePath)))
+        val oversized = "unrelated material ".repeat(budget)
+
+        val result =
+            builder.buildBudgetedPrompt(
+                query,
+                listOf(oversized, short),
+                listOf(listOf(oversized, "flooding"), usablePath),
+                budget,
+                summarize = false,
+            )
+
+        assertEquals(listOf(short), result.passages)
+        assertEquals(listOf(usablePath), result.paths)
+        assertTrue(countTokensWithJTokKit(result.text) <= budget)
     }
 }

@@ -15,6 +15,11 @@ class CausalRAGVectorStorage(
     override suspend fun query(
         query: String,
         topK: Int,
+    ): List<Map<String, Any?>> = search(query, topK)
+
+    internal fun search(
+        query: String,
+        topK: Int,
     ): List<Map<String, Any?>> {
         val safeTopK = topK.coerceAtLeast(1)
         return vectorRetriever
@@ -29,7 +34,9 @@ class CausalRAGVectorStorage(
             }
     }
 
-    override suspend fun upsert(data: Map<String, Map<String, Any?>>) {
+    override suspend fun upsert(data: Map<String, Map<String, Any?>>) = upsertEntries(data)
+
+    internal fun upsertEntries(data: Map<String, Map<String, Any?>>) {
         if (data.isEmpty()) return
 
         val existing = snapshotEntries().toMutableMap()
@@ -60,7 +67,9 @@ class CausalRAGVectorStorage(
         reindexEntries(existing)
     }
 
-    override suspend fun deleteEntity(entityName: String) {
+    override suspend fun deleteEntity(entityName: String) = removeEntity(entityName)
+
+    internal fun removeEntity(entityName: String) {
         val filtered =
             snapshotEntries()
                 .filterValues { entry ->
@@ -71,7 +80,9 @@ class CausalRAGVectorStorage(
         reindexEntries(filtered)
     }
 
-    override suspend fun deleteEntityRelation(entityName: String) {
+    override suspend fun deleteEntityRelation(entityName: String) = removeEntityRelation(entityName)
+
+    internal fun removeEntityRelation(entityName: String) {
         val filtered =
             snapshotEntries()
                 .filterValues { entry ->

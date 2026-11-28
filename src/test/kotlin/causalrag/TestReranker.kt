@@ -339,4 +339,16 @@ class TestReranker {
         assertTrue(semanticWeight > causalWeight)
         assertEquals("enabled", diagnostics["confidence_switch"])
     }
+
+    @Test
+    fun testHybridCacheRespectsRequestedTopK() {
+        val semanticRetriever = mockk<SemanticRetriever>()
+        val graphRetriever = mockk<CausalPathRetriever>(relaxed = true)
+        val ranked = (1..10).map { "evidence $it" to (1.0 / it) }
+        every { semanticRetriever.searchWithScores(any(), any()) } answers { ranked.take(secondArg()) }
+        val retriever = HybridRetriever(semanticRetriever, graphRetriever, rerankingFactor = 1)
+
+        assertEquals(1, retriever.retrieve("evidence", topK = 1).size)
+        assertEquals(5, retriever.retrieve("evidence", topK = 5).size)
+    }
 }
