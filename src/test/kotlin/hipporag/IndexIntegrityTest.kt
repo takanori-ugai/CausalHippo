@@ -126,6 +126,72 @@ class IndexIntegrityTest {
         }
 
     @Test
+    fun failedSnapshotRollbackPreservesOtherArtifactsAndReportsTheMissingBackup() =
+        withRag { config, _ ->
+            val rag = HippoRAG(config)
+            rag.upsert(first)
+            val root = Path.of(config.saveDir)
+            val snapshot = root.resolve("snapshot")
+            rag.saveGraph(snapshot.toString())
+            rag.upsert(second)
+            val before = rag.inspectGraph()
+            val originalFactory = getEmbeddingModel()
+            val failingFactory = mockk<EmbeddingModelFactory>()
+            val displacedBackup = root.resolve("original-provenance.json")
+            every { failingFactory.create(any(), any()) } answers {
+                val staging =
+                    Files.list(root).use { files ->
+                        files.filter { it.fileName.toString().startsWith(".hipporag-snapshot-") }.findFirst().orElseThrow()
+                    }
+                Files.move(staging.resolve("previous-1"), displacedBackup)
+                error("injected initialization failure")
+            }
+            every { getEmbeddingModel() } returns failingFactory
+            val failure = assertFails { rag.loadGraph(snapshot.toString()) }
+            assertEquals("injected initialization failure", failure.message)
+            assertEquals(1, failure.suppressed.size)
+            assertEquals(before, rag.inspectGraph())
+            assertEquals(setOf(first, second), rag.query("query", QueryParam("dpr", includeAnswer = false)).docs.toSet())
+
+            Files.move(displacedBackup, root.resolve("openie_results_ner_${config.llmName}.json"))
+            every { getEmbeddingModel() } returns originalFactory
+            assertEquals(before, HippoRAG(config).inspectGraph())
+        }
+
+    @Test
+    fun emptyUpsertKeepsAnEmptySnapshotRestorable() =
+        withRag { config, _ ->
+            val index = HippoRag(config)
+            val rag = HippoRAG(index)
+            rag.upsert(first)
+            index.delete(listOf(first))
+            rag.upsert(listOf("", "   "))
+            val snapshot = Path.of(config.saveDir, "empty-snapshot")
+            rag.saveGraph(snapshot.toString())
+            rag.upsert(first)
+            rag.loadGraph(snapshot.toString())
+            assertTrue(rag.query("query", QueryParam("dpr", includeAnswer = false)).docs.isEmpty())
+            assertTrue((rag.inspectGraph()["nodes"] as List<*>).isEmpty())
+            assertFails { rag.query("query", QueryParam("unsupported", includeAnswer = true)) }
+        }
+
+    @Test
+    fun restartCheckpointCopiesPersistedProvenanceAndOfflineRestoreUsesIt() =
+        withRag { config, _ ->
+            HippoRAG(config).upsert(first)
+            val restarted = HippoRAG(config)
+            val before = restarted.inspectGraph()
+            val snapshot = Path.of(config.saveDir, "restart-snapshot")
+            restarted.saveGraph(snapshot.toString())
+            val provenance = Path.of(config.saveDir, "openie_results_ner_${config.llmName}.json")
+            assertEquals(Files.readString(provenance), Files.readString(snapshot.resolve(provenance.fileName)))
+
+            val offline = HippoRAG(config.copy(saveDir = Path.of(config.saveDir, "offline").toString(), openieMode = "offline"))
+            offline.loadGraph(snapshot.toString())
+            assertEquals(before, offline.inspectGraph())
+        }
+
+    @Test
     fun deletingUnknownThenLastDocumentKeepsStoresConsistent() =
         withRag { config, _ ->
             val rag = HippoRag(config)
@@ -322,6 +388,63 @@ class IndexIntegrityTest {
             rag.upsert(second)
             assertEquals(setOf(first, second), rag.query("query", QueryParam("dpr", includeAnswer = false)).docs.toSet())
             assertEquals(5, (rag.inspectGraph()["nodes"] as List<*>).size)
+        }
+
+    @Test
+    fun preservesGraphBackupWhenAnIndexRollbackCannotReplaceTheLiveFile() =
+        withRag { config, embedding ->
+            val rag = HippoRAG(config)
+            rag.upsert(first)
+            val root = Path.of(config.saveDir)
+            val graph = root.resolve("test_test/graph.json")
+            val original = Files.readString(graph)
+            every { embedding.batchEncode(match { it.any { text -> text.startsWith("[") } }, any(), any()) } answers {
+                Files.delete(graph)
+                Files.createDirectory(graph)
+                Files.writeString(graph.resolve("blocking-file"), "simulated storage error")
+                error("fact encoder down")
+            }
+
+            val failure = assertFails { rag.upsert(second) }
+            assertEquals("fact encoder down", failure.message)
+            assertEquals(1, failure.suppressed.size)
+            val backup =
+                Files.list(root).use { files ->
+                    files.filter { it.fileName.toString().startsWith(".index-backup-") }.findFirst().orElseThrow()
+                }
+            val graphBackup = backup.resolve("3")
+            assertEquals(original, Files.readString(graphBackup))
+            assertEquals(listOf(first), rag.query("query", QueryParam("dpr", includeAnswer = false)).docs)
+
+            graph.toFile().deleteRecursively()
+            Files.move(graphBackup, graph)
+            assertEquals(listOf(first), HippoRAG(config).query("query", QueryParam("dpr", includeAnswer = false)).docs)
+        }
+
+    @Test
+    fun sharedFactConnectsBothPassagesWhenItsWeightAccumulates() =
+        withRag { config, embedding ->
+            every { embedding.batchEncode(any(), any(), any()) } answers {
+                firstArg<List<String>>()
+                    .map { text ->
+                        if (text == "beta") doubleArrayOf(0.0, 1.0) else doubleArrayOf(1.0, 0.0)
+                    }.toTypedArray()
+            }
+            val paraphrase = "Alpha connects to Beta in another report."
+            val rag = HippoRAG(config)
+            rag.upsert(listOf(first, paraphrase))
+            assertEquals(setOf(first, paraphrase), rag.query("query", QueryParam("graph", includeAnswer = false)).docs.toSet())
+            val graph = rag.inspectGraph()
+            val nodes = graph["nodes"] as List<*>
+            val edges = graph["edges"] as List<*>
+            val entityIndices =
+                nodes.indices.filter { index -> (nodes[index] as Map<*, *>)["content"] in setOf("alpha", "beta") }.toSet()
+            assertEquals(2, entityIndices.size)
+            assertTrue(
+                edges.map { it as Map<*, *> }.any { edge ->
+                    edge["source"] in entityIndices && edge["target"] in entityIndices && (edge["weight"] as Number).toDouble() == 2.0
+                },
+            )
         }
 
     @Test

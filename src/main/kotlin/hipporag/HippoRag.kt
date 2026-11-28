@@ -334,7 +334,6 @@ class HippoRag(
         logger.info { "Constructing Graph" }
 
         nodeToNodeStats = mutableMapOf()
-        entNodeToChunkIds = mutableMapOf()
 
         // Existing passage nodes may now have different evidence after a retry.
         val existingPassages = graph.vertexNames().toSet()
@@ -722,6 +721,8 @@ class HippoRag(
         chunkTriples: List<List<List<String>>>,
     ) {
         val currentGraphNodes = graph.vertexNames().toSet()
+        val chunksByEntity = mutableMapOf<String, MutableSet<String>>()
+        entNodeToChunkIds = chunksByEntity
         logger.info { "Adding OpenIE triples to graph." }
 
         chunkIds.zip(chunkTriples).forEach { (chunkKey, triples) ->
@@ -730,8 +731,8 @@ class HippoRag(
                 val source = computeMdHashId(triple[0], prefix = "entity-")
                 val target = computeMdHashId(triple[2], prefix = "entity-")
 
-                entNodeToChunkIds?.getOrPut(source) { mutableSetOf() }?.add(chunkKey)
-                entNodeToChunkIds?.getOrPut(target) { mutableSetOf() }?.add(chunkKey)
+                chunksByEntity.getOrPut(source) { mutableSetOf() }.add(chunkKey)
+                chunksByEntity.getOrPut(target) { mutableSetOf() }.add(chunkKey)
                 if (chunkKey !in currentGraphNodes) {
                     nodeToNodeStats[source to target] = (nodeToNodeStats[source to target] ?: 0.0) + 1.0
                     nodeToNodeStats[target to source] = (nodeToNodeStats[target to source] ?: 0.0) + 1.0
@@ -1281,7 +1282,6 @@ class HippoRag(
                 }
 
             nodeToNodeStats = mutableMapOf()
-            entNodeToChunkIds = mutableMapOf()
             addFactEdges(passageNodeKeys, chunkTriples)
         }
 
