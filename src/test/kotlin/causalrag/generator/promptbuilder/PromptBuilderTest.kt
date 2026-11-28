@@ -4,6 +4,7 @@ import shared.chunking.countTokensWithJTokKit
 import kotlin.test.Test
 import kotlin.test.assertContains
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
 
 class PromptBuilderTest {
@@ -93,6 +94,28 @@ class PromptBuilderTest {
         } finally {
             directory.toFile().deleteRecursively()
         }
+    }
+
+    @Test
+    fun rejectsQuestionsThatCannotFitTheBarePrompt() {
+        val builder = PromptBuilder(templateStyle = "basic")
+        val failure =
+            assertFailsWith<IllegalArgumentException> {
+                builder.buildBudgetedPrompt(query, passages, causalPaths, 1, summarize = false)
+            }
+        assertContains(failure.message.orEmpty(), "exceed")
+    }
+
+    @Test
+    fun summarizesLongPathsWithAndWithoutABudget() {
+        val llm = io.mockk.mockk<causalrag.generator.llm.LLMInterface>()
+        io.mockk.every { llm.generate(any(), any(), any(), any(), any(), any()) } returns "Short causal summary."
+        val builder = PromptBuilder(templateStyle = "detailed", llmInterface = llm)
+        val paths = listOf(listOf("rain", "river", "flood", "displacement"))
+        val bounded = builder.buildBudgetedPrompt(query, emptyList(), paths, 1_000, summarize = true)
+        assertContains(bounded.text, "Short causal summary.")
+        assertContains(builder.buildPrompt(query, emptyList(), paths), "Short causal summary.")
+        io.mockk.verify(exactly = 2) { llm.generate(match { it.contains("Causal path:") }, any(), any(), any(), any(), any()) }
     }
 
     @Test

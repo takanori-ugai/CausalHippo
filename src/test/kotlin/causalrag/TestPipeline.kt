@@ -151,7 +151,7 @@ class TestPipeline {
     fun failedSpiPublicationRestoresGraphVectorsAndMetadataBeforeRetry() =
         runBlocking {
             InMemoryPersistenceBackend().open(emptyMap()).use { backing ->
-                var failNextRestore = false
+                val restoreFailures = ArrayDeque<IllegalStateException>()
                 val session =
                     object : PersistenceSession by backing {
                         override fun vector(
@@ -162,10 +162,7 @@ class TestPipeline {
                             val store = backing.vector(namespace, dimensions, metric)
                             return object : VectorIndexStore by store {
                                 override fun restore(snapshot: VectorSnapshot) {
-                                    if (failNextRestore) {
-                                        failNextRestore = false
-                                        error("injected SPI vector publication failure")
-                                    }
+                                    restoreFailures.removeFirstOrNull()?.let { throw it }
                                     store.restore(snapshot)
                                 }
                             }
@@ -177,13 +174,19 @@ class TestPipeline {
                 val graph = backing.graph("causalrag_graph").snapshot()
                 val vectors = backing.vector("causalrag_vector").snapshot()
                 val metadata = backing.kv("causalrag_metadata").snapshot()
-                failNextRestore = true
-
-                assertFailsWith<IllegalStateException> { rag.aupsert(testDocs[1]) }
-                assertEquals(graph, backing.graph("causalrag_graph").snapshot())
-                assertEquals(vectors, backing.vector("causalrag_vector").snapshot())
-                assertEquals(metadata, backing.kv("causalrag_metadata").snapshot())
-                assertEquals(listOf(testDocs.first()), rag.retrieveContext("climate change", 10))
+                val writeFailure = IllegalStateException("injected SPI vector publication failure")
+                val rollbackFailure = IllegalStateException("injected SPI rollback failure")
+                for (rollback in listOf(null, rollbackFailure, writeFailure)) {
+                    restoreFailures.add(writeFailure)
+                    rollback?.let(restoreFailures::add)
+                    val error = assertFailsWith<IllegalStateException> { rag.aupsert(testDocs[1]) }
+                    assertTrue(error === writeFailure)
+                    if (rollback === rollbackFailure) assertTrue(rollbackFailure in error.suppressed)
+                    assertEquals(graph, backing.graph("causalrag_graph").snapshot())
+                    assertEquals(vectors, backing.vector("causalrag_vector").snapshot())
+                    assertEquals(metadata, backing.kv("causalrag_metadata").snapshot())
+                    assertEquals(listOf(testDocs.first()), rag.retrieveContext("climate change", 10))
+                }
 
                 rag.aupsert(testDocs[1])
                 assertEquals(testDocs.take(2).toSet(), rag.retrieveContext("coastal flooding", 10).toSet())
@@ -191,6 +194,54 @@ class TestPipeline {
                     CausalRAG(configPath = configPath.toString(), persistenceSession = backing, useUnifiedSpiForRetrievalAndIndex = true)
                 assertEquals(testDocs.take(2).toSet(), restarted.retrieveContext("coastal flooding", 10).toSet())
             }
+        }
+
+    @Test
+    fun unifiedReplacementPublishesNewEvidenceAndDropClearsTheBackend() =
+        runBlocking {
+            InMemoryPersistenceBackend().open(emptyMap()).use { session ->
+                val rag =
+                    CausalRAG(configPath = configPath.toString(), persistenceSession = session, useUnifiedSpiForRetrievalAndIndex = true)
+                rag.aupsert(testDocs)
+                rag.areindex(listOf(testDocs[1]))
+                assertEquals(listOf(testDocs[1]), rag.retrieveContext("coastal flooding", 10))
+                assertTrue(((rag.ainspectGraph()["metadata"] as Map<*, *>)["edgeCount"] as Int) > 0)
+                rag.areindex(emptyList())
+                assertTrue(rag.retrieveContext("coastal flooding", 10).isEmpty())
+                rag.aupsert(testDocs.first())
+                rag.adrop()
+                assertTrue(
+                    session
+                        .vector("causalrag_vector")
+                        .snapshot()
+                        .records
+                        .isEmpty(),
+                )
+                assertTrue(
+                    session
+                        .graph("causalrag_graph")
+                        .snapshot()
+                        .edges
+                        .isEmpty(),
+                )
+                assertTrue(
+                    session
+                        .kv("causalrag_metadata")
+                        .snapshot()
+                        .entries
+                        .isEmpty(),
+                )
+            }
+        }
+
+    @Test
+    fun shortPassageDoesNotRequireCausalExtraction() =
+        runBlocking {
+            val rag = CausalRAG(configPath = configPath.toString())
+            rag.aupsert("rainfall")
+            assertTrue(rag.lastIndexingReport.failures.isEmpty())
+            assertEquals(listOf("rainfall"), rag.retrieveContext("rainfall"))
+            assertEquals(0, (rag.inspectGraph()["metadata"] as Map<*, *>)["edgeCount"])
         }
 
     @Test
@@ -344,6 +395,7 @@ class TestPipeline {
             for (path in allPaths - answer.causalPaths.toSet()) {
                 assertTrue(path.joinToString(" → ") !in prompts.last())
             }
+            assertEquals("[]", rag.run(query, topK = 3))
         } finally {
             unmockkConstructor(LLMInterface::class)
         }
