@@ -82,6 +82,23 @@ class TestCausalGraph {
         assertEquals(original.numberOfEdges(), reloaded.numberOfEdges(), "Edge count mismatch after reload")
     }
 
+    @Test
+    fun blankPassagesAreMarkedCompleteWithoutChangingTheGraph() {
+        val nodeCount = builder.getGraph().numberOfNodes()
+        val edgeCount = builder.getGraph().numberOfEdges()
+        builder.indexDocuments(listOf("   "))
+        assertTrue(builder.hasCompletedPassage("   "))
+        assertEquals(nodeCount, builder.getGraph().numberOfNodes())
+        assertEquals(edgeCount, builder.getGraph().numberOfEdges())
+    }
+
+    @Test
+    fun snapshotKeepsValidCompletedPassagesAlongsideUnknownEntries() {
+        Files.writeString(tempFile, """{"completedPassages":["example",{},[]]}""")
+        assertTrue(builder.load(tempFile.toString()))
+        assertEquals(setOf("example"), builder.completedPassages)
+    }
+
     /**
      * Verifies that loader accepts legacy `vertices` + index-based edge schema.
      */
