@@ -2,6 +2,7 @@ package hipporag
 
 import hipporag.config.BaseConfig
 import hipporag.embeddingmodel.BaseEmbeddingModel
+import hipporag.embeddingmodel.EmbeddingModelFactory
 import hipporag.embeddingmodel.getEmbeddingModel
 import hipporag.llm.BaseLLM
 import hipporag.llm.getLlm
@@ -94,6 +95,64 @@ class IndexIntegrityTest {
             live.upsert(second)
             assertFails { live.loadGraph(snapshot.toString()) }
             assertEquals(listOf(second), live.query("query", QueryParam("dpr", includeAnswer = false)).docs)
+        }
+
+    @Test
+    fun initializationFailureAfterSnapshotPublicationRestoresLiveFiles() =
+        withRag { config, encoder ->
+            val rag = HippoRAG(config)
+            rag.upsert(first)
+            val snapshot = Path.of(config.saveDir, "rollback")
+            rag.saveGraph(snapshot.toString())
+            rag.upsert(second)
+            val before = rag.inspectGraph()
+            val originalFactory = getEmbeddingModel()
+            val failingFactory = mockk<EmbeddingModelFactory>()
+            every { failingFactory.create(any(), any()) } throws IllegalStateException("injected initialization failure")
+            every { getEmbeddingModel() } returns failingFactory
+
+            val failure = assertFails { rag.loadGraph(snapshot.toString()) }
+            assertEquals("injected initialization failure", failure.message)
+            assertEquals(before, rag.inspectGraph())
+            assertEquals(setOf(first, second), rag.query("query", QueryParam("dpr", includeAnswer = false)).docs.toSet())
+
+            every { originalFactory.create(any(), any()) } returns encoder
+            every { getEmbeddingModel() } returns originalFactory
+            assertEquals(before, HippoRAG(config).inspectGraph())
+            rag.loadGraph(snapshot.toString())
+            assertEquals(listOf(first), rag.query("query", QueryParam("dpr", includeAnswer = false)).docs)
+        }
+
+    @Test
+    fun deletingUnknownThenLastDocumentKeepsStoresConsistent() =
+        withRag { config, _ ->
+            val rag = HippoRag(config)
+            rag.index(listOf(first))
+            rag.delete(listOf("missing document"))
+            assertEquals(listOf(first), HippoRAG(rag).query("query", QueryParam("dpr", includeAnswer = false)).docs)
+
+            rag.delete(listOf(first))
+            val openie = Path.of(config.saveDir, "openie_results_ner_${config.llmName}.json")
+            assertTrue(Files.notExists(openie))
+            assertTrue(HippoRAG(config).query("query", QueryParam("dpr", includeAnswer = false)).docs.isEmpty())
+        }
+
+    @Test
+    fun rejectsMismatchedEmbeddingStoresBeforePublishing() =
+        withRag { config, _ ->
+            val rag = HippoRAG(config)
+            rag.upsert(first)
+            val snapshot = Path.of(config.saveDir, "mixed-dimensions")
+            rag.saveGraph(snapshot.toString())
+            val file = snapshot.resolve("working_dir/entity_embeddings/vdb_entity.json")
+            val data = Json.parseToJsonElement(Files.readString(file)) as JsonObject
+            val rows = data.getValue("embeddings") as JsonArray
+            val mismatched =
+                JsonObject(data + ("embeddings" to JsonArray(rows.map { vector -> JsonArray((vector as JsonArray).take(1)) })))
+            Files.writeString(file, mismatched.toString())
+            val error = assertFails { rag.loadGraph(snapshot.toString()) }
+            assertTrue(error.message.orEmpty().contains("inconsistent embedding dimensions"))
+            assertEquals(listOf(first), rag.query("query", QueryParam("dpr", includeAnswer = false)).docs)
         }
 
     @Test
