@@ -2,6 +2,7 @@ package com.youtu.graphrag.server.api
 
 import com.youtu.graphrag.shared.config.ConfigManager
 import com.youtu.graphrag.shared.constructor.KTBuilder
+import com.youtu.graphrag.shared.graph.DatasetArtifacts
 import com.youtu.graphrag.shared.graph.GraphRelationship
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.serialization.json.Json
@@ -108,20 +109,20 @@ class GraphConstructionService(
     fun loadGraphVisualization(datasetName: String): JsonObject? {
         val safeDatasetName = requireSafeDatasetName(datasetName)
         val graphFile = graphsDir.resolve("${safeDatasetName}_new.json")
-        if (!graphFile.exists()) {
-            return null
+        return DatasetArtifacts.read(graphFile) {
+            if (!graphFile.exists()) return@read null
+
+            val relationships =
+                runCatching {
+                    mapper.readValue(graphFile.toFile(), object : TypeReference<List<GraphRelationship>>() {})
+                }.getOrElse { error ->
+                    logger.warn(error) { "Failed to parse graph file: $graphFile" }
+                    emptyList()
+                }
+
+            val payload = buildVisualization(relationships)
+            json.parseToJsonElement(mapper.writeValueAsString(payload)).jsonObject
         }
-
-        val relationships =
-            runCatching {
-                mapper.readValue(graphFile.toFile(), object : TypeReference<List<GraphRelationship>>() {})
-            }.getOrElse { error ->
-                logger.warn(error) { "Failed to parse graph file: $graphFile" }
-                emptyList()
-            }
-
-        val payload = buildVisualization(relationships)
-        return json.parseToJsonElement(mapper.writeValueAsString(payload)).jsonObject
     }
 
     fun clearCacheFiles(datasetName: String) {

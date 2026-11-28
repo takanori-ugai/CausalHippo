@@ -199,10 +199,10 @@ class QuestionAnsweringService(
             ReasoningStep(
                 type = "initial_answer",
                 question = question,
-                triples = initialTriplesFormatted.take(10),
-                triplesCount = tripleEntriesByRaw.size,
-                chunkContents = initialChunks.take(3),
-                chunksCount = initialChunks.size,
+                triples = initialPrompt?.triples.orEmpty().take(10),
+                triplesCount = initialPrompt?.triples.orEmpty().size,
+                chunkContents = initialPrompt?.chunks.orEmpty().take(3),
+                chunksCount = initialPrompt?.chunks.orEmpty().size,
                 thought = initialAnswer.take(300),
             ),
         )
@@ -257,17 +257,17 @@ class QuestionAnsweringService(
 
                 thoughts.add(thought)
 
-                val triplesSnapshotAfter = tripleEntriesByRaw.values.toList()
-                val chunksSnapshotAfter = chunkById.values.toList()
+                val stepTriples = stepPrompt?.triples.orEmpty()
+                val stepChunks = stepPrompt?.chunks.orEmpty()
 
                 val ircotStep =
                     ReasoningStep(
                         type = "ircot_step",
                         question = currentQuery,
-                        triples = triplesSnapshotAfter.take(10),
-                        triplesCount = triplesSnapshotAfter.size,
-                        chunkContents = chunksSnapshotAfter.take(3),
-                        chunksCount = chunksSnapshotAfter.size,
+                        triples = stepTriples.take(10),
+                        triplesCount = stepTriples.size,
+                        chunkContents = stepChunks.take(3),
+                        chunksCount = stepChunks.size,
                         processingTime = stepElapsedMs / 1000.0,
                         thought = thought.take(300),
                     )

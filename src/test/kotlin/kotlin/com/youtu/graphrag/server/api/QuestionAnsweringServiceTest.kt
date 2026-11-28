@@ -549,6 +549,39 @@ class QuestionAnsweringServiceTest {
         assertTrue(response.retrievedChunks.isNotEmpty())
     }
 
+    @Test
+    fun `generation steps exclude evidence that exceeds the prompt budget`() {
+        val root = createRootDir()
+        val config = createTestConfig(root)
+        config.overrideConfig(
+            mapOf(
+                "triggers" to mapOf("mode" to "agent"),
+                "retrieval" to mapOf("maxPromptTokens" to 1, "agent" to mapOf("enableIrcot" to true)),
+            ),
+        )
+        writeCorpus(root, "tight_budget_ds", listOf(mapOf("title" to "A", "text" to "Evidence for this question.")))
+        GraphConstructionService(config = config, rootDir = root).constructGraph("tight_budget_ds")
+        val client =
+            object : LlmClient {
+                override fun complete(prompt: String): String = ""
+
+                override fun completeStrict(prompt: String): String = error("Generation should not receive an over-budget prompt")
+            }
+        val response =
+            runBlocking {
+                QuestionAnsweringService(config, root, client).answerQuestion("tight_budget_ds", "What is the evidence?")
+            }
+        val initial = response.reasoningSteps.single { it.type == "initial_answer" }
+        val reasoning = response.reasoningSteps.single { it.type == "ircot_step" }
+        for (step in listOf(initial, reasoning)) {
+            assertEquals(0, step.triplesCount)
+            assertEquals(0, step.chunksCount)
+            assertTrue(step.triples.isEmpty())
+            assertTrue(step.chunkContents.isEmpty())
+        }
+        assertTrue(response.reasoningSteps.any { it.type == "sub_question" && it.chunksCount > 0 })
+    }
+
     private fun createMockLlmClient(): LlmClient =
         object : LlmClient {
             override fun complete(prompt: String): String =
