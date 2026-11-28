@@ -130,6 +130,9 @@ interface BaseVectorStorage :
 interface BaseKVStorage : StorageNameSpace {
     val embeddingFunc: EmbeddingModel
 
+    /** Returns known record IDs when the backend supports enumeration. */
+    suspend fun keys(): Set<String>? = null
+
     /**
      * Gets an item by its ID.
      * @param id The ID of the item to get.

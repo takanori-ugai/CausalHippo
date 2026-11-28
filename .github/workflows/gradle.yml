@@ -36,8 +36,9 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v6.4.1 # v4.0.0
 
-    - name: Build with Gradle Wrapper
-      run: ./gradlew build
+    # Generate the report from the full suite before the filtered contract gates rerun the test task.
+    - name: Build and generate coverage
+      run: ./gradlew build jacocoTestReport
 
     - name: Unified API Contract Gate
       run: ./gradlew test --tests "shared.rag.unified.*"
@@ -61,3 +62,12 @@ jobs:
         --max-max-abs-diff 0.02
         --max-missing-ratio 0.0
         --min-prediction-match 1.0
+
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: build/reports/jacoco/test/jacocoTestReport.xml
+        disable_search: true
+        fail_ci_if_error: true
