@@ -123,7 +123,9 @@ class PathRAGTest {
                     any(),
                     any(),
                 )
-            } returns "LLM-ANSWER"
+            } answers {
+                if (it.invocation.args[4] == true) """{"low_level_keywords":["Alpha"],"high_level_keywords":["link"]}""" else "LLM-ANSWER"
+            }
 
             PathRAG(chunkTokenSize = 16, chunkOverlapTokenSize = 4).use { rag ->
                 rag.aupsertEntity("Alpha", "desc", "TYPE", "src")
@@ -348,8 +350,7 @@ class PathRAGTest {
                         QueryParam(mode = "hybrid", onlyNeedContext = true, topK = 5),
                     )
 
-                assertTrue(context.contains("local-information"))
-                assertTrue(context.contains("global-information"))
+                assertEquals("", context)
 
                 coVerify(exactly = 1) {
                     pathrag.llm.openAiComplete(
@@ -568,7 +569,7 @@ class PathRAGTest {
                         "Tell me about Alpha",
                         QueryParam(mode = "local", onlyNeedContext = true, topK = 3),
                     )
-                assertTrue(context.contains("local-information"), "Context was: $context")
+                assertEquals("", context)
             }
         }
 
@@ -651,7 +652,7 @@ class PathRAGTest {
                     val memResult = mem.query("Tell me about Alpha", param)
                     val neoResult = neoRag.query("Tell me about Alpha", param)
                     assertEquals(memResult, neoResult)
-                    assertEquals("ANSWER", memResult)
+                    assertEquals(Prompts.FAIL_RESPONSE, memResult)
                 }
             }
         }

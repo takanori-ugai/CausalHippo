@@ -153,7 +153,7 @@ class OperateTest {
                     textChunksDb = kv,
                     queryParam = QueryParam(mode = "local", onlyNeedContext = true, topK = 5),
                     globalConfig = emptyMap(),
-                    llmModel = { prompt, system, _, _, _, _, _ -> "llm-$prompt-$system" },
+                    llmModel = { _, _, _, _, _, _, _ -> """{"low_level_keywords":["NODE"]}""" },
                 )
             assertTrue(context.contains("local-information"))
             assertTrue(context.contains("NODE"))
@@ -244,6 +244,47 @@ class OperateTest {
             assertTrue(prompt.trimEnd().endsWith(context))
             assertEquals("answer", run(options))
             assertEquals(prompt, delivered)
+        }
+
+    @Test
+    fun eachModeUsesItsOwnKeywordsAndHonorsTheWholeContextLimit() =
+        runBlocking {
+            val graph = FakeGraphStorage()
+            graph.upsertNode("LOCAL", mapOf("description" to "long ".repeat(300), "source_id" to "local"))
+            graph.upsertNode("X", mapOf("description" to "long ".repeat(300)))
+            graph.upsertEdge("X", "Y", mapOf("description" to "global link", "source_id" to "global"))
+            val entities = FakeVectorStorage("entities", listOf(mapOf("entity_name" to "LOCAL")))
+            val relations = FakeVectorStorage("relations", listOf(mapOf("src_id" to "X", "tgt_id" to "Y")))
+            val chunks = FakeKVStorage("chunks", listOf("local", "global").associateWith { mapOf("content" to "$it passage") })
+
+            suspend fun context(
+                mode: String,
+                low: String,
+                high: String,
+                limit: Int? = null,
+            ): String =
+                kgQuery(
+                    "question",
+                    graph,
+                    entities,
+                    relations,
+                    chunks,
+                    QueryParam(mode = mode, onlyNeedContext = true, maxContextTokens = limit),
+                    mapOf("fixed_low_level_keywords" to listOf(low), "fixed_high_level_keywords" to listOf(high)),
+                    { _, _, _, _, _, _, _ -> error("Unexpected model call") },
+                )
+
+            for (mode in listOf("local", "global", "hybrid")) {
+                val text = context(mode, "entity", "relation", 65)
+                assertTrue(Tokenizer.count(text) <= 65, mode)
+                assertEquals(mode != "global", "local passage" in text, mode)
+                assertEquals(mode != "local", "global passage" in text, mode)
+                assertEquals("", context(mode, "entity", "relation", 1))
+            }
+            assertEquals("", context("local", "", "relation"))
+            assertEquals("", context("global", "entity", ""))
+            assertEquals(context("local", "entity", ""), context("hybrid", "entity", ""))
+            assertEquals(context("global", "", "relation"), context("hybrid", "", "relation"))
         }
 
     @Test

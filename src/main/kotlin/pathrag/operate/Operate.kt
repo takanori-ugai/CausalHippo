@@ -645,8 +645,8 @@ suspend fun kgQuery(
             renderGraphContext(
                 queryParam,
                 knowledgeGraphInst,
-                { entitiesVdb.query(llKeywords, queryParam.topK) },
-                { relationshipsVdb.query(hlKeywords, queryParam.topK) },
+                { if (llKeywords.isBlank()) emptyList() else entitiesVdb.query(llKeywords, queryParam.topK) },
+                { if (hlKeywords.isBlank()) emptyList() else relationshipsVdb.query(hlKeywords, queryParam.topK) },
                 { ids -> textChunksDb.getByIds(ids) },
             )
         val context = contextLock?.withLock { buildContext() } ?: buildContext()
@@ -668,6 +668,8 @@ internal suspend fun generateAnswerFromContext(
             mapOf("response_type" to queryParam.responseType, "context_data" to context),
         )
     if (queryParam.onlyNeedPrompt) return systemPrompt
+
+    if (context.isBlank()) return Prompts.FAIL_RESPONSE
 
     val responseCache = hashingKv.takeUnless { queryParam.stream }
     val argsHash = computeArgsHash(queryParam, query, systemPrompt)
@@ -708,7 +710,7 @@ internal suspend fun renderGraphContext(
             else -> {
                 throw IllegalArgumentException("Unknown query mode: ${param.mode}. Supported modes: local, global, hybrid")
             }
-        }
+        }.filter { it.entities.rows.isNotEmpty() || it.relations.rows.isNotEmpty() || it.sources.isNotEmpty() }
     val sources = sections.flatMap { it.sources }.distinctBy { it.getValue("_chunk_id") }
     val sourceTable =
         ContextTable(
@@ -731,11 +733,16 @@ internal suspend fun renderGraphContext(
         var index = 0
         return buildString {
             for ((n, section) in sections.withIndex()) {
-                if (n > 0) append('\n')
-                append("-----${section.name}-information-----")
+                var needsHeading = true
                 for (table in tablesBySection[n]) {
                     val indices = selection[index++]
-                    if (indices.isNotEmpty()) append('\n').append(table.render(indices))
+                    if (indices.isEmpty()) continue
+                    if (needsHeading) {
+                        if (isNotEmpty()) append('\n')
+                        append("-----${section.name}-information-----")
+                        needsHeading = false
+                    }
+                    append('\n').append(table.render(indices))
                 }
             }
         }
@@ -743,10 +750,18 @@ internal suspend fun renderGraphContext(
 
     val candidates = tables.map { it.rows.indices.toList() }
     val full = render(candidates)
-    if (sections.size == 1 || Tokenizer.count(full) <= param.maxTokenForTextUnit) return full
+    val budget =
+        if (param.mode.equals("hybrid", ignoreCase = true)) {
+            minOf(param.maxTokenForTextUnit, param.maxContextTokens ?: Int.MAX_VALUE)
+        } else {
+            param.maxContextTokens ?: return full
+        }
+    if (budget <= 0) return ""
+    if (Tokenizer.count(full) <= budget) return full
     val selected = tables.map { mutableListOf<Int>() }
-    var remaining = param.maxTokenForTextUnit - Tokenizer.count(render(selected))
-    if (remaining < 0) return ""
+    var remaining = budget
+    val sectionForTable = tablesBySection.flatMapIndexed { section, entries -> entries.map { section } }
+    val selectedSections = mutableSetOf<Int>()
     val order = tables.indices.sortedBy { if (tables[it] === sourceTable) 0 else 1 }
     val positions = IntArray(tables.size)
     val additions = mutableListOf<Int>()
@@ -756,17 +771,20 @@ internal suspend fun renderGraphContext(
             val row = candidates[index].getOrNull(positions[index]++) ?: continue
             hasCandidate = true
             val cost = tables[index].rowTokens(row, first = selected[index].isEmpty())
-            if (cost > remaining) continue
+            val section = sectionForTable[index]
+            val headingCost = if (section in selectedSections) 0 else Tokenizer.count("\n-----${sections[section].name}-information-----")
+            if (cost + headingCost > remaining) continue
+            selectedSections.add(section)
             selected[index].add(row)
             additions.add(index)
-            remaining -= cost
+            remaining -= cost + headingCost
         }
         if (!hasCandidate) break
     }
 
     // CSV row boundaries and Markdown fences affect the final token count.
     var context = render(selected)
-    while (Tokenizer.count(context) > param.maxTokenForTextUnit && additions.isNotEmpty()) {
+    while (Tokenizer.count(context) > budget && additions.isNotEmpty()) {
         selected[additions.removeLast()].removeLast()
         context = render(selected)
     }
@@ -1080,8 +1098,8 @@ internal suspend fun extractKeywords(
     val parsed =
         runCatching { Json.decodeFromString<KeywordPayload>(extractJsonPayload(raw)) }
             .getOrElse { KeywordPayload() }
-    val hl = parsed.highLevel.joinToString(", ")
-    val ll = parsed.lowLevel.joinToString(", ")
+    val hl = parsed.highLevel.filter(String::isNotBlank).joinToString(", ")
+    val ll = parsed.lowLevel.filter(String::isNotBlank).joinToString(", ")
     return ll to hl
 }
 

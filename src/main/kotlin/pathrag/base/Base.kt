@@ -15,6 +15,7 @@ import shared.rag.CommonVectorStorage
  * @property maxTokenForTextUnit token cap for text units, and for the complete rendered context in hybrid mode.
  * @property maxTokenForGlobalContext token cap for global context.
  * @property maxTokenForLocalContext token cap for local context.
+ * @property maxContextTokens optional cap for the complete rendered context in any mode.
  */
 data class QueryParam(
     val mode: String = "hybrid",
@@ -26,7 +27,14 @@ data class QueryParam(
     val maxTokenForTextUnit: Int = 4000,
     val maxTokenForGlobalContext: Int = 3000,
     val maxTokenForLocalContext: Int = 5000,
-)
+    val maxContextTokens: Int? = null,
+) {
+    init {
+        require(
+            mode.lowercase() in setOf("local", "global", "hybrid"),
+        ) { "Unknown query mode: $mode. Supported modes: local, global, hybrid" }
+    }
+}
 
 /**
  * Optional addon parameters for LLM prompts/extraction.

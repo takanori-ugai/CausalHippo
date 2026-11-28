@@ -1439,10 +1439,10 @@ class PathRAG(
             kind: String,
             keywords: String,
         ): List<Map<String, Any?>> {
+            if (keywords.isBlank()) return emptyList()
             val candidates = vectors.filter { it.metadata["kind"] == kind }
             if (candidates.isEmpty()) return emptyList()
-            val text = keywords.ifBlank { query }
-            val embedding = embeddings.getOrPut(text) { embeddingFunc(listOf(text)).first() }
+            val embedding = embeddings.getOrPut(keywords) { embeddingFunc(listOf(keywords)).first() }
             return candidates
                 .filter { it.vector.size == embedding.size }
                 .map { cosineSimilarity(embedding, it.vector.toDoubleArray()) to it.metadata }
@@ -1492,7 +1492,13 @@ class PathRAG(
                     emptyList()
                 }
             }
-        return truncateTextByTokenSize(selected.joinToString("\n\n"), param.maxTokenForTextUnit)
+        return truncateTextByTokenSize(
+            selected.joinToString("\n\n"),
+            minOf(
+                param.maxTokenForTextUnit,
+                param.maxContextTokens ?: Int.MAX_VALUE,
+            ),
+        )
     }
 
     private suspend fun embedTexts(texts: List<String>): List<DoubleArray> {
