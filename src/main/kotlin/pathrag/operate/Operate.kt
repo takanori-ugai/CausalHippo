@@ -643,33 +643,14 @@ suspend fun kgQuery(
         val mode = queryParam.mode.lowercase()
 
         suspend fun buildContext(): Pair<String, Int> {
-            val sections =
-                when (mode) {
-                    "local" -> {
-                        listOf(getNodeData(llKeywords, knowledgeGraphInst, entitiesVdb, textChunksDb, queryParam))
-                    }
-
-                    "global" -> {
-                        listOf(getEdgeData(hlKeywords, knowledgeGraphInst, relationshipsVdb, textChunksDb, queryParam))
-                    }
-
-                    "hybrid" -> {
-                        listOf(
-                            getEdgeData(hlKeywords, knowledgeGraphInst, relationshipsVdb, textChunksDb, queryParam),
-                            getNodeData(llKeywords, knowledgeGraphInst, entitiesVdb, textChunksDb, queryParam),
-                        )
-                    }
-
-                    else -> {
-                        throw IllegalArgumentException("Unknown query mode: ${queryParam.mode}. Supported modes: local, global, hybrid")
-                    }
-                }
             val context =
-                if (mode == "hybrid") {
-                    renderWithinBudget(sections, queryParam.maxTokenForTextUnit)
-                } else {
-                    sections.single().render()
-                }
+                renderGraphContext(
+                    queryParam,
+                    knowledgeGraphInst,
+                    { entitiesVdb.query(llKeywords, queryParam.topK) },
+                    { relationshipsVdb.query(hlKeywords, queryParam.topK) },
+                    { ids -> textChunksDb.getByIds(ids) },
+                )
             return context to if (queryParam.onlyNeedContext) 0 else knowledgeGraphInst.nodes().size
         }
         val (context, nodeCount) = contextLock?.withLock { buildContext() } ?: buildContext()
@@ -692,6 +673,34 @@ suspend fun kgQuery(
         val response = llmModel(query, systemPrompt, emptyList(), false, queryParam.stream, maxOutputTokens, null)
         responseCache?.upsert(queryParam.mode, argsHash, response, query)
         response
+    }
+
+internal suspend fun renderGraphContext(
+    param: QueryParam,
+    graph: BaseGraphStorage,
+    entityHits: suspend () -> List<Map<String, Any?>>,
+    relationshipHits: suspend () -> List<Map<String, Any?>>,
+    loadChunks: suspend (List<String>) -> List<Map<String, Any>?>,
+): String =
+    when (param.mode.lowercase()) {
+        "local" -> {
+            getNodeData(entityHits(), graph, loadChunks, param).render()
+        }
+
+        "global" -> {
+            getEdgeData(relationshipHits(), graph, loadChunks, param).render()
+        }
+
+        "hybrid" -> {
+            renderWithinBudget(
+                listOf(getEdgeData(relationshipHits(), graph, loadChunks, param), getNodeData(entityHits(), graph, loadChunks, param)),
+                param.maxTokenForTextUnit,
+            )
+        }
+
+        else -> {
+            throw IllegalArgumentException("Unknown query mode: ${param.mode}. Supported modes: local, global, hybrid")
+        }
     }
 
 private data class ContextTable(
@@ -777,33 +786,31 @@ private fun firstSourceId(vararg values: Any?): String =
     values.firstNotNullOfOrNull { it?.toString()?.takeIf(String::isNotBlank) }.orEmpty()
 
 private suspend fun getNodeData(
-    keywords: String,
+    results: List<Map<String, Any?>>,
     knowledgeGraphInst: BaseGraphStorage,
-    entitiesVdb: BaseVectorStorage,
-    textChunksDb: BaseKVStorage<Map<String, Any>>,
+    loadChunks: suspend (List<String>) -> List<Map<String, Any>?>,
     queryParam: QueryParam,
 ): ContextSection {
-    val results = entitiesVdb.query(keywords, topK = queryParam.topK)
     val nodeDatas =
         results.mapNotNull { res ->
             val name = res["entity_name"]?.toString() ?: res["content"]?.toString()
             if (name != null) {
-                val node = knowledgeGraphInst.getNode(name)
+                val node = knowledgeGraphInst.getNode(name) ?: return@mapNotNull null
                 val degree = knowledgeGraphInst.nodeDegree(name)
-                val desc = node?.get("description") ?: res["content"]
+                val desc = node["description"] ?: res["content"]
                 mapOf(
                     "entity_name" to name,
-                    "entity_type" to (node?.get("entity_type") ?: "UNKNOWN"),
+                    "entity_type" to (node["entity_type"] ?: "UNKNOWN"),
                     "description" to (desc ?: ""),
                     "rank" to degree,
-                    "source_id" to firstSourceId(node?.get("source_id"), res["source_id"], res["full_doc_id"]),
+                    "source_id" to firstSourceId(node["source_id"], res["source_id"], res["full_doc_id"]),
                 )
             } else {
                 null
             }
         }
 
-    val textUnits = findMostRelatedTextUnitFromEntities(nodeDatas, queryParam, textChunksDb)
+    val textUnits = findMostRelatedTextUnitFromEntities(nodeDatas, knowledgeGraphInst, queryParam, loadChunks)
     val paths = buildPathRelations(nodeDatas, knowledgeGraphInst, queryParam)
 
     val entities =
@@ -842,22 +849,45 @@ private suspend fun getNodeData(
 
 private suspend fun findMostRelatedTextUnitFromEntities(
     nodeDatas: List<Map<String, Any>>,
+    graph: BaseGraphStorage,
     queryParam: QueryParam,
-    textChunksDb: BaseKVStorage<Map<String, Any>>,
+    loadChunks: suspend (List<String>) -> List<Map<String, Any>?>,
 ): List<Map<String, Any>> {
-    val ids =
-        nodeDatas.flatMap { node ->
-            node["source_id"]
-                ?.toString()
-                ?.split(Prompts.GRAPH_FIELD_SEP, ",")
-                ?.map { it.trim() }
-                ?.filter { it.isNotEmpty() }
-                ?: emptyList()
+    val firstSeed = mutableMapOf<String, Int>()
+    val support = mutableMapOf<String, Int>()
+    val neighborSources = mutableMapOf<String, Set<String>>()
+    nodeDatas.forEachIndexed { index, node ->
+        val sources = sourceIds(node)
+        val name = node.getValue("entity_name").toString()
+        for (id in sources) firstSeed.putIfAbsent(id, index)
+        for ((source, target) in graph.getNodeEdges(name).orEmpty()) {
+            if (source != name) continue
+            val shared = neighborSources.getOrPut(target) { sourceIds(graph.getNode(target).orEmpty()).toSet() }
+            for (id in sources) if (id in shared) support[id] = support.getOrDefault(id, 0) + 1
         }
-    val uniqueIds = ids.distinct()
-    val chunks = textChunksDb.getByIds(uniqueIds)
-    val valid = uniqueIds.zip(chunks).mapNotNull { (id, chunk) -> chunk?.plus("_chunk_id" to id) }.take(queryParam.topK)
-    return truncateByToken(valid, queryParam.maxTokenForTextUnit)
+    }
+    val ordered = firstSeed.keys.sortedWith(compareBy<String> { firstSeed.getValue(it) }.thenByDescending { support.getOrDefault(it, 0) })
+    return readSources(ordered, queryParam, loadChunks)
+}
+
+private fun sourceIds(row: Map<String, Any?>): List<String> =
+    row["source_id"]
+        ?.toString()
+        ?.split(Prompts.GRAPH_FIELD_SEP, ",")
+        ?.map { it.trim() }
+        ?.filter { it.isNotEmpty() }
+        .orEmpty()
+
+private suspend fun readSources(
+    ids: List<String>,
+    param: QueryParam,
+    loadChunks: suspend (List<String>) -> List<Map<String, Any>?>,
+): List<Map<String, Any>> {
+    val valid =
+        ids.zip(loadChunks(ids)).mapNotNull { (id, chunk) ->
+            chunk?.takeIf { !it["content"]?.toString().isNullOrBlank() }?.plus("_chunk_id" to id)
+        }
+    return truncateByToken(valid, param.maxTokenForTextUnit)
 }
 
 private suspend fun buildPathRelations(
@@ -876,48 +906,20 @@ private suspend fun buildPathRelations(
     }
     if (adjacency.isEmpty()) return emptyList()
 
-    data class PathBucket(
-        val paths: MutableList<List<String>> = mutableListOf(),
-        val edges: MutableSet<Pair<String, String>> = mutableSetOf(),
-    )
-    val result = mutableMapOf<Pair<String, String>, PathBucket>()
-    val oneHopPaths = mutableListOf<List<String>>()
-    val twoHopPaths = mutableListOf<List<String>>()
-    val threeHopPaths = mutableListOf<List<String>>()
+    val targets = targetNodes.toSet()
+    val routes = mutableMapOf<Pair<String, String>, MutableList<List<String>>>()
 
-    fun dfs(
-        current: String,
-        target: String,
-        path: List<String>,
-        depth: Int,
-    ) {
-        if (depth > 3) return
-        if (current == target) {
-            val key = path.first() to target
-            val bucket = result.getOrPut(key) { PathBucket() }
-            bucket.paths.add(path)
-            path.windowed(2).forEach { (u, v) -> bucket.edges.add(if (u <= v) u to v else v to u) }
-            when (depth) {
-                1 -> oneHopPaths.add(path)
-                2 -> twoHopPaths.add(path)
-                3 -> threeHopPaths.add(path)
-            }
-            return
+    fun visit(path: List<String>) {
+        val current = path.last()
+        if (path.size > 1 && current in targets) {
+            routes.getOrPut(path.first() to current) { mutableListOf() }.add(path)
         }
-        adjacency[current].orEmpty().forEach { n ->
-            if (n !in path) {
-                dfs(n, target, path + n, depth + 1)
-            }
+        if (path.size == 4) return
+        for (neighbor in adjacency[current].orEmpty()) {
+            if (neighbor !in path) visit(path + neighbor)
         }
     }
-
-    for (n1 in targetNodes) {
-        for (n2 in targetNodes) {
-            if (n1 != n2) {
-                dfs(n1, n2, listOf(n1), 0)
-            }
-        }
-    }
+    for (seed in targetNodes) visit(listOf(seed))
 
     fun bfsWeightedPaths(
         source: String,
@@ -934,7 +936,6 @@ private suspend fun buildPathRelations(
             }
         }
         val edgeWeights = mutableMapOf<Pair<String, String>, Double>()
-        val results = mutableListOf<List<String>>()
 
         fun incEdge(
             u: String,
@@ -947,7 +948,6 @@ private suspend fun buildPathRelations(
         for (n in follow[source].orEmpty()) {
             incEdge(source, n, 1.0 / follow[source]!!.size)
             if (n == target) {
-                results.add(listOf(source, n))
                 continue
             }
             if ((edgeWeights[source to n] ?: 0.0) > threshold) {
@@ -955,16 +955,12 @@ private suspend fun buildPathRelations(
                     val w = (edgeWeights[source to n] ?: 0.0) * alpha / follow[n]!!.size
                     incEdge(n, m, w)
                     if (m == target) {
-                        results.add(listOf(source, n, m))
                         continue
                     }
                     if ((edgeWeights[n to m] ?: 0.0) > threshold) {
                         for (k in follow[m].orEmpty()) {
                             val w2 = (edgeWeights[n to m] ?: 0.0) * alpha / follow[m]!!.size
                             incEdge(m, k, w2)
-                            if (k == target) {
-                                results.add(listOf(source, n, m, k))
-                            }
                         }
                     }
                 }
@@ -989,8 +985,7 @@ private suspend fun buildPathRelations(
     for (n1 in targetNodes) {
         for (n2 in targetNodes) {
             if (n1 != n2) {
-                val bucket = result[n1 to n2] ?: continue
-                val paths = bucket.paths
+                val paths = routes[n1 to n2] ?: continue
                 val scored = bfsWeightedPaths(n1, n2, paths, threshold, alpha)
                 allResults.addAll(scored)
             }
@@ -1004,23 +999,7 @@ private suspend fun buildPathRelations(
             seen.add(canonicalPath)
         }
 
-    val length1 = oneHopPaths.size / 2
-    val length2 = twoHopPaths.size / 2
-    val length3 = threeHopPaths.size / 2
-    val baseResults = mutableListOf<List<String>>()
-    if (oneHopPaths.isNotEmpty()) baseResults.addAll(oneHopPaths.take(length1))
-    if (twoHopPaths.isNotEmpty()) baseResults.addAll(twoHopPaths.take(length2))
-    if (threeHopPaths.isNotEmpty()) baseResults.addAll(threeHopPaths.take(length3))
-
-    var totalEdges = 15
-    if (baseResults.size < totalEdges) totalEdges = baseResults.size
-    val sortResult =
-        if (resultEdge.isNotEmpty()) {
-            if (resultEdge.size > totalEdges) resultEdge.take(totalEdges) else resultEdge
-        } else {
-            emptyList()
-        }
-    val finalPaths = sortResult.map { it.first }
+    val finalPaths = resultEdge.take(15).map { it.first }
 
     suspend fun describePath(path: List<String>): String? {
         suspend fun nodeDesc(id: String): String {
@@ -1084,14 +1063,15 @@ private suspend fun buildPathRelations(
     return truncated
 }
 
-private fun truncateByToken(
-    list: List<Map<String, Any>>,
+private fun <T : Map<String, Any?>> truncateByToken(
+    list: List<T>,
     maxToken: Int,
     model: String = "gpt-4o-mini",
-): List<Map<String, Any>> {
+    field: String = "content",
+): List<T> {
     val keptContents =
         hardTruncateStringsByTokenBudget(
-            items = list.map { it["content"]?.toString().orEmpty() },
+            items = list.map { it[field]?.toString().orEmpty() },
             maxTokenSize = maxToken,
             model = model,
             includePartialLastItem = false,
@@ -1108,7 +1088,7 @@ private fun escapeCsvField(value: String): String {
     return "\"$escaped\""
 }
 
-private suspend fun extractKeywords(
+internal suspend fun extractKeywords(
     llmModel: suspend (
         prompt: String,
         systemPrompt: String?,
@@ -1154,14 +1134,15 @@ private suspend fun extractKeywords(
 }
 
 private suspend fun getEdgeData(
-    keywords: String,
+    results: List<Map<String, Any?>>,
     knowledgeGraphInst: BaseGraphStorage,
-    relationshipsVdb: BaseVectorStorage,
-    textChunksDb: BaseKVStorage<Map<String, Any>>,
+    loadChunks: suspend (List<String>) -> List<Map<String, Any>?>,
     queryParam: QueryParam,
 ): ContextSection {
-    val results = relationshipsVdb.query(keywords, topK = queryParam.topK)
-    val edges =
+    val degrees = mutableMapOf<String, Int>()
+
+    suspend fun degree(id: String): Int = degrees.getOrPut(id) { knowledgeGraphInst.nodeDegree(id) }
+    val candidates =
         results
             .mapNotNull { res ->
                 val src = res["src_id"]?.toString()
@@ -1171,6 +1152,7 @@ private suspend fun getEdgeData(
                     if (edge != null) {
                         edge +
                             mapOf(
+                                "rank" to degree(src) + degree(tgt),
                                 "src_id" to src,
                                 "tgt_id" to tgt,
                                 "source_id" to firstSourceId(edge["source_id"], res["source_id"], res["full_doc_id"]),
@@ -1183,6 +1165,12 @@ private suspend fun getEdgeData(
                 }
             }.distinctBy { it["src_id"] to it["tgt_id"] }
 
+    val ranked =
+        candidates.sortedWith(
+            compareByDescending<Map<String, Any?>> { it["rank"] as Int }.thenByDescending { (it["weight"] as? Number)?.toDouble() ?: 1.0 },
+        )
+    val edges = truncateByToken(ranked, queryParam.maxTokenForGlobalContext, field = "description")
+
     val entityIds =
         edges
             .flatMap { e ->
@@ -1191,10 +1179,10 @@ private suspend fun getEdgeData(
                     e["tgt_id"]?.toString(),
                 )
             }.distinct()
-    val nodeDatas =
+    val endpoints =
         entityIds.mapNotNull { name ->
             val node = knowledgeGraphInst.getNode(name)
-            val degree = knowledgeGraphInst.nodeDegree(name)
+            val degree = degree(name)
             node?.let {
                 mapOf(
                     "entity_name" to name,
@@ -1206,7 +1194,8 @@ private suspend fun getEdgeData(
             }
         }
 
-    val textUnits = findRelatedTextUnitFromRelationships(edges, textChunksDb, queryParam)
+    val nodeDatas = truncateByToken(endpoints, queryParam.maxTokenForLocalContext, field = "description")
+    val textUnits = readSources(edges.flatMap(::sourceIds).distinct(), queryParam, loadChunks)
 
     val entities =
         ContextTable(
@@ -1226,7 +1215,7 @@ private suspend fun getEdgeData(
     val relations =
         ContextTable(
             "high-level relationship information",
-            listOf("id", "source", "target", "description", "keywords", "weight"),
+            listOf("id", "source", "target", "description", "keywords", "weight", "rank"),
             edges.mapIndexed { idx, e ->
                 listOf(
                     idx.toString(),
@@ -1235,6 +1224,7 @@ private suspend fun getEdgeData(
                     e["description"]?.toString() ?: "",
                     e["keywords"]?.toString() ?: "",
                     e["weight"]?.toString() ?: "1.0",
+                    e["rank"].toString(),
                 )
             },
         )
@@ -1250,24 +1240,4 @@ private suspend fun getEdgeData(
         )
 
     return ContextSection("global", listOf(entities, relations, sources))
-}
-
-private suspend fun findRelatedTextUnitFromRelationships(
-    edges: List<Map<String, Any?>>,
-    textChunksDb: BaseKVStorage<Map<String, Any>>,
-    queryParam: QueryParam,
-): List<Map<String, Any>> {
-    val ids =
-        edges.flatMap { e ->
-            e["source_id"]
-                ?.toString()
-                ?.split(Prompts.GRAPH_FIELD_SEP, ",")
-                ?.map { it.trim() }
-                ?.filter { it.isNotEmpty() }
-                ?: emptyList()
-        }
-    val unique = ids.distinct()
-    val chunks = textChunksDb.getByIds(unique)
-    val valid = unique.zip(chunks).mapNotNull { (id, chunk) -> chunk?.plus("_chunk_id" to id) }.take(queryParam.topK)
-    return truncateByToken(valid, queryParam.maxTokenForTextUnit)
 }
