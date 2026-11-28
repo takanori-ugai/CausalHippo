@@ -230,6 +230,7 @@ class DirectedGraph {
         maxPaths: Int,
         minNodes: Int = 2,
         maxHops: Int = 4,
+        requiredEndpoints: Set<String>? = null,
     ): List<List<String>> {
         if (maxPaths <= 0 || endpoints.size < 2) return emptyList()
         val result = mutableListOf<List<String>>()
@@ -237,6 +238,7 @@ class DirectedGraph {
         for (hops in (minNodes.coerceAtLeast(2) - 1)..minOf(maxHops, numberOfNodes() - 1)) {
             for (i in nodes.indices) {
                 for (j in i + 1 until nodes.size) {
+                    if (requiredEndpoints != null && nodes[i] !in requiredEndpoints && nodes[j] !in requiredEndpoints) continue
                     for ((start, end) in listOf(nodes[i] to nodes[j], nodes[j] to nodes[i])) {
                         if (hops == 1) {
                             if (end in successors(start)) result.add(listOf(start, end))

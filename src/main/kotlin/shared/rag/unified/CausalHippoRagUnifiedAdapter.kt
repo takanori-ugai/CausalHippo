@@ -67,7 +67,7 @@ class CausalHippoRagUnifiedAdapter(
     private fun buildParam(query: UnifiedQuery): CausalHippoQueryParam =
         CausalHippoQueryParam(
             topK = query.coercedTopK(),
-            maxPaths = query.intExtra("maxPaths", 3).coerceAtLeast(1),
+            maxPaths = query.intExtra("maxPaths", 3).coerceAtLeast(0),
             onlyNeedContext = !query.includeAnswer && query.includeContext,
             onlyNeedCausalPaths = !query.includeAnswer && query.includeGraphPaths,
         )
@@ -91,7 +91,7 @@ class CausalHippoRagUnifiedAdapter(
                     extra =
                         mapOf(
                             "topK" to query.coercedTopK(),
-                            "maxPaths" to query.intExtra("maxPaths", 3).coerceAtLeast(1),
+                            "maxPaths" to query.intExtra("maxPaths", 3).coerceAtLeast(0),
                         ),
                 ),
             raw = this,
