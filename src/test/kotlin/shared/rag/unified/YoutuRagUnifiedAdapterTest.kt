@@ -238,6 +238,55 @@ class YoutuRagUnifiedAdapterTest {
         }
     }
 
+    @Test
+    fun `SPI hydration keeps complete local artifacts and fills only incomplete pairs`() {
+        val root = Files.createTempDirectory("youtu-spi-hydration")
+        try {
+            val config = ConfigManager(writeMinimalYoutuConfig(root).toString())
+            InMemoryPersistenceBackend().open(emptyMap()).use { session ->
+                fun adapter(dataset: String) =
+                    YoutuRagUnifiedAdapter(
+                        config,
+                        datasetName = dataset,
+                        rootDir = root,
+                        persistenceSession = session,
+                        useUnifiedSpiForRetrievalAndIndex = true,
+                    )
+
+                val graphs = Files.createDirectories(root.resolve("output/graphs"))
+                val chunks = Files.createDirectories(root.resolve("output/chunks"))
+                val localGraph = graphs.resolve("local_new.json")
+                val localChunks = chunks.resolve("local.txt")
+                Files.writeString(localGraph, "[]")
+                Files.writeString(localChunks, "local chunks")
+                session.kv("youturag_local_files").putAll(mapOf("graph_json" to "stale graph", "chunks_text" to "stale chunks"))
+
+                adapter("local").inspectGraph()
+                assertEquals("[]", Files.readString(localGraph))
+                assertEquals("local chunks", Files.readString(localChunks))
+
+                Files.writeString(graphs.resolve("incomplete_new.json"), "stale graph")
+                session.kv("youturag_incomplete_files").put("graph_json", "[]")
+                adapter("incomplete").inspectGraph()
+                assertEquals("[]", Files.readString(graphs.resolve("incomplete_new.json")))
+                assertEquals("", Files.readString(chunks.resolve("incomplete.txt")))
+
+                val corpus = """[{"text":"corpus without published evidence"}]"""
+                session.kv("youturag_empty_files").put("corpus_json", corpus)
+                val empty = adapter("empty")
+                empty.inspectGraph()
+                assertEquals(corpus, Files.readString(root.resolve("data/uploaded/empty/corpus.json")))
+                val snapshot = root.resolve("empty-snapshot")
+                empty.saveGraph(snapshot.toString())
+                assertTrue(Files.notExists(snapshot.resolve("empty_new.json")))
+                empty.loadGraph(snapshot.toString())
+                assertTrue(Files.notExists(graphs.resolve("empty_new.json")))
+            }
+        } finally {
+            root.toFile().deleteRecursively()
+        }
+    }
+
     private fun writeMinimalYoutuConfig(root: java.nio.file.Path): java.nio.file.Path {
         val configPath = root.resolve("base_config.yaml")
         Files.writeString(configPath, "{}")

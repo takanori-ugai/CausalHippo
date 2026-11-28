@@ -292,15 +292,15 @@ class YoutuRagUnifiedAdapter(
             if (fileEntries.isNotEmpty()) {
                 session.kv(filesNamespace(selectedDataset)).putAll(fileEntries)
             }
-            val normalized = normalizeInspectionFromVisualization(selectedDataset)
-            session.graph(graphNamespace(selectedDataset)).restore(toGraphSnapshot(normalized))
+            val snapshot = toGraphSnapshot(normalizeInspectionFromVisualization(selectedDataset))
+            session.graph(graphNamespace(selectedDataset)).restore(snapshot)
             session.kv(metadataNamespace(selectedDataset)).putAll(
                 mapOf(
                     "datasetName" to selectedDataset,
                     "updatedAt" to Instant.now().toString(),
                     "persistenceBackend" to session.backendId,
-                    "nodeCount" to ((normalized["metadata"] as? Map<*, *>)?.get("nodeCount") ?: 0),
-                    "edgeCount" to ((normalized["metadata"] as? Map<*, *>)?.get("edgeCount") ?: 0),
+                    "nodeCount" to snapshot.metadata.getValue("nodeCount"),
+                    "edgeCount" to snapshot.metadata.getValue("edgeCount"),
                 ),
             )
         }
