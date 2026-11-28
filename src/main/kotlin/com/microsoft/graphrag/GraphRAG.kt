@@ -33,6 +33,7 @@ import java.util.Comparator
 
 private const val SNAPSHOT_INPUT = ".graphrag-input"
 private const val QUERY_ONLY_MARKER = ".graphrag-query-only"
+internal const val LEGACY_EMBEDDING_MODEL = "text-embedding-3-small"
 internal const val EMBEDDING_MODEL_FILE = ".graphrag-embedding-model"
 
 private fun queryApiKey(): String =
@@ -81,7 +82,7 @@ class GraphRAG internal constructor(
         outputDir: Path = rootDir.resolve("output"),
         updateOutputDir: Path = rootDir.resolve("update_output"),
         defaultChatModelName: String = "gpt-4o-mini",
-        defaultEmbeddingModelName: String = "text-embedding-3-small",
+        defaultEmbeddingModelName: String = LEGACY_EMBEDDING_MODEL,
     ) : this(
         rootDir,
         inputDir,
@@ -518,6 +519,7 @@ class GraphRAG internal constructor(
                         context = emptyList(),
                         contextRecords = result.contextRecords,
                         contextText = result.reduceContextText,
+                        followUpQueries = result.followUpQueries,
                         llmCalls = result.llmCalls,
                         promptTokens = result.promptTokens,
                         outputTokens = result.outputTokens,
@@ -651,7 +653,7 @@ class GraphRAG internal constructor(
     }
 
     private fun resolveEmbeddingModel(requested: String?): String {
-        val indexed = QueryIndexLoader(outputDir).embeddingModelIdentity() ?: "text-embedding-3-small"
+        val indexed = QueryIndexLoader(outputDir).embeddingModelIdentity() ?: LEGACY_EMBEDDING_MODEL
         require(requested == null || requested == indexed) {
             "GraphRAG index uses '$indexed'; cannot query it with '$requested'. Rebuild with the requested model."
         }

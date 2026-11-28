@@ -71,7 +71,7 @@ class GraphRagUnifiedAdapter(
         GraphQueryParam(
             mode = mode,
             responseType = query.stringExtra("responseType", DEFAULT_RESPONSE_TYPE) ?: DEFAULT_RESPONSE_TYPE,
-            streaming = query.streaming && (mode != "local" || !query.includeFollowUps),
+            streaming = query.streaming && !(query.includeFollowUps && (mode == "local" || mode == "global")),
             topK = query.coercedTopK(),
             maxContextTokens = query.intExtra("maxContextTokens", query.maxContextTokens ?: 12000),
             topKEntities = query.intExtra("topKEntities", 5),

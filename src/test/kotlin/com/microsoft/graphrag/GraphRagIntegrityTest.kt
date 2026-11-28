@@ -428,16 +428,97 @@ class GraphRagIntegrityTest {
         }
 
     @Test
+    fun nestedLegacyIndexUsesDefaultAndCannotMixWithACustomIndex() =
+        withPipeline { root ->
+            val nested = root.resolve("mixed")
+            GraphRAG(nested).upsert("Legacy evidence")
+            val legacyMarker = nested.resolve("output/.graphrag-embedding-model")
+            Files.delete(legacyMarker)
+            val models = mutableListOf<String>()
+            val target = ragWithModels(root.resolve("target"), mockk(), models)
+            target.loadGraph(nested.toString())
+            val param = QueryParam(mode = "basic", includeAnswer = false)
+            assertEquals(listOf("Legacy evidence"), target.query("question", param).context.map { it.text })
+            assertEquals(listOf("text-embedding-3-small"), models)
+
+            GraphRAG(nested.resolve("second"), defaultEmbeddingModelName = "custom-model").upsert("Custom evidence")
+            for (blankMarker in listOf(false, true)) {
+                if (blankMarker) Files.writeString(legacyMarker, " ")
+                assertFailsWith<IllegalArgumentException> { target.loadGraph(nested.toString()) }
+            }
+            assertEquals(listOf("Legacy evidence"), target.query("question", param).context.map { it.text })
+        }
+
+    @Test
+    fun globalContextFitsHistoryWithALaterReportAndReportsNoStaticUsage() =
+        runBlocking {
+            val chat = mockk<OpenAiStreamingChatModel>()
+            val large = "alpha ".repeat(30).trim()
+            val small = "short evidence"
+            val history = "Earlier topic ".repeat(10).trim()
+            val engine =
+                GlobalSearchEngine(
+                    chat,
+                    listOf(CommunityReport(1, large, rank = 2.0), CommunityReport(2, small)),
+                    maxContextTokens = 60,
+                )
+            val result = engine.retrieveContext("question", listOf(history))
+            val batches = result.contextText.split("\n\n")
+            assertTrue(large in batches.first())
+            assertTrue(history !in batches.first())
+            assertTrue(small in result.contextText.substringAfter(history))
+            assertEquals(1, result.contextText.split(history).size - 1)
+            assertEquals(listOf(history), result.contextRecords.getValue("conversation").map { it["content"] })
+            assertEquals(0, result.llmCalls)
+            assertEquals(0, result.promptTokens)
+            assertEquals(0, result.outputTokens)
+            verify { chat wasNot Called }
+        }
+
+    @Test
+    fun unifiedGlobalRequestsReturnReducerFollowUpsWithOrWithoutStreaming() =
+        withPipeline { root ->
+            val chat = mockk<OpenAiStreamingChatModel>()
+            var calls = 0
+            every { chat.chat(any<List<ChatMessage>>(), any<StreamingChatResponseHandler>()) } answers {
+                val response =
+                    if (calls++ % 2 == 0) {
+                        """{"points":[{"description":"Community evidence","score":80}]}"""
+                    } else {
+                        """{"response":"answer","follow_up_queries":["What comes next?"]}"""
+                    }
+                complete(secondArg(), response)
+            }
+            val rag = ragWithModels(root, chat)
+            rag.upsert("Evidence")
+            Files.writeString(root.resolve("output/community_reports.json"), """[{"communityId":1,"summary":"Community evidence"}]""")
+            val adapter = GraphRagUnifiedAdapter(rag)
+            for (streaming in listOf(false, true)) {
+                val result =
+                    adapter.query(
+                        "question",
+                        UnifiedQuery(mode = UnifiedMode.GLOBAL, includeAnswer = false, includeFollowUps = true, streaming = streaming),
+                    )
+                assertNull(result.answer)
+                assertEquals(listOf("What comes next?"), result.followUpQueries)
+            }
+            assertEquals(4, calls)
+        }
+
+    @Test
     fun dynamicGlobalContextReportsCommunityRatingUsage() =
         runBlocking {
             val chat = mockk<OpenAiStreamingChatModel>()
+            var ratingPrompt = ""
             every { chat.chat(any<List<ChatMessage>>(), any<StreamingChatResponseHandler>()) } answers {
+                ratingPrompt = (firstArg<List<ChatMessage>>().first() as dev.langchain4j.data.message.SystemMessage).text()
                 complete(secondArg(), """{"rating":5}""")
             }
             val engine = GlobalSearchEngine(chat, listOf(CommunityReport(1, "Relevant evidence")), dynamicCommunitySelection = true)
             val result = engine.retrieveContext("question", emptyList())
             assertEquals(1, result.llmCalls)
             assertTrue(result.promptTokens > 0)
+            assertEquals(countTokensWithJTokKit(ratingPrompt), result.promptTokens)
             assertTrue(result.outputTokens > 0)
             assertEquals(mapOf("build_context" to 1), result.llmCallsCategories)
             assertEquals(mapOf("build_context" to result.promptTokens), result.promptTokensCategories)
