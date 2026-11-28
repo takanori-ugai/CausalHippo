@@ -5,7 +5,6 @@ import hipporag.utils.LlmResult
 import io.mockk.every
 import io.mockk.mockk
 import kotlin.test.Test
-import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class DSPyFilterTest {
@@ -83,8 +82,8 @@ class DSPyFilterTest {
                 lenAfterRerank = 2,
             )
 
-        assertEquals(candidateIndices.take(2), indices)
-        assertEquals(candidateFacts.take(2), facts)
+        assertTrue(indices.isEmpty())
+        assertTrue(facts.isEmpty())
     }
 
     @Test
@@ -140,8 +139,8 @@ class DSPyFilterTest {
                 lenAfterRerank = 2,
             )
 
-        assertEquals(candidateIndices.take(2), indices)
-        assertEquals(candidateFacts.take(2), facts)
+        assertTrue(indices.isEmpty())
+        assertTrue(facts.isEmpty())
         assertTrue(metadata.containsKey("error"))
     }
 
@@ -228,7 +227,8 @@ class DSPyFilterTest {
                 lenAfterRerank = 1,
             )
 
-        assertTrue(indices.isNotEmpty() || facts.isNotEmpty() || indices.isEmpty())
+        assertTrue(indices.isEmpty())
+        assertTrue(facts.isEmpty())
     }
 
     @Test
@@ -236,7 +236,14 @@ class DSPyFilterTest {
         val llmModel = mockk<BaseLLM>()
         every { llmModel.infer(any()) } returns
             LlmResult(
-                response = """{"fact": []}""",
+                response =
+                    """
+                    [[ ## fact_before_filter ## ]]
+                    {"fact": [["A", "relates", "B"]]}
+                    [[ ## fact_after_filter ## ]]
+                    {"fact": []}
+                    [[ ## completed ## ]]
+                    """.trimIndent(),
                 metadata = emptyMap(),
             )
 
@@ -257,8 +264,8 @@ class DSPyFilterTest {
                 lenAfterRerank = 2,
             )
 
-        assertEquals(candidateIndices.take(2), indices)
-        assertEquals(candidateFacts.take(2), facts)
+        assertTrue(indices.isEmpty())
+        assertTrue(facts.isEmpty())
     }
 
     @Test
