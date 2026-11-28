@@ -3,8 +3,8 @@ package shared.rag.unified
 import com.youtu.graphrag.server.api.GraphConstructionService
 import com.youtu.graphrag.server.api.QuestionAnsweringService
 import com.youtu.graphrag.server.api.contracts.QuestionResponse
-import com.youtu.graphrag.shared.graph.DatasetArtifacts
 import com.youtu.graphrag.shared.config.ConfigManager
+import com.youtu.graphrag.shared.graph.DatasetArtifacts
 import com.youtu.graphrag.shared.retriever.IrcotPromptSource
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.JsonArray
