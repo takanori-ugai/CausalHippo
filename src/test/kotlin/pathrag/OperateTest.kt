@@ -10,6 +10,7 @@ import pathrag.base.QueryParam
 import pathrag.operate.chunkingByTokenSize
 import pathrag.operate.extractEntities
 import pathrag.operate.kgQuery
+import pathrag.operate.scorePathFlows
 import pathrag.prompt.Prompts
 import pathrag.utils.ResponseCache
 import pathrag.utils.Tokenizer
@@ -329,6 +330,57 @@ class OperateTest {
             assertEquals(routeRows.takeLast(3), retained)
         }
     }
+
+    @Test
+    fun overlappingRoutesDoNotPropagateThirdHopFlowAgain() {
+        val routes = listOf(listOf("S", "A", "D", "T"), listOf("S", "A", "T"), listOf("S", "C", "A", "T"))
+        for (ordered in listOf(routes, routes.reversed())) {
+            val scores = scorePathFlows("S", "T", ordered).toMap()
+            // S-A and S-C each get 0.5. C-A gets 0.4. A-D and A-T each get 0.2 + 0.16.
+            // Only 0.2 reached A-D on hop two, so D-T receives zero.
+            assertEquals(0.86 / 3, scores.getValue(routes[0]), 1e-12)
+            assertEquals(0.43, scores.getValue(routes[1]), 1e-12)
+            assertEquals(0.42, scores.getValue(routes[2]), 1e-12)
+        }
+    }
+
+    @Test
+    fun equalScoresRetainTheSameFifteenUsableRoutesInEitherStorageOrder() =
+        runBlocking {
+            val labels = (0..16).map { "bridge" + it.toString().padStart(2, '0') }
+            for (order in listOf(labels, labels.reversed())) {
+                val graph = FakeGraphStorage()
+                graph.upsertNode("A", emptyMap())
+                graph.upsertNode("Z", emptyMap())
+                for (label in order) {
+                    graph.upsertNode(label, emptyMap())
+                    graph.upsertEdge("A", label, if (label == labels.first()) emptyMap() else mapOf("description" to label))
+                    graph.upsertEdge(label, "Z", mapOf("description" to label))
+                }
+                val context =
+                    kgQuery(
+                        "query",
+                        graph,
+                        FakeVectorStorage("entities", listOf(mapOf("entity_name" to "A"), mapOf("entity_name" to "Z"))),
+                        FakeVectorStorage("relations", emptyList()),
+                        FakeKVStorage("chunks", emptyMap()),
+                        QueryParam(mode = "local", onlyNeedContext = true),
+                        mapOf("fixed_low_level_keywords" to listOf("A", "Z")),
+                        { _, _, _, _, _, _, _ -> error("unexpected model call") },
+                    )
+                val kept =
+                    context
+                        .lineSequence()
+                        .filter { "through edge(" in it }
+                        .map {
+                            it
+                                .substringAfter(
+                                    "through edge(",
+                                ).substringBefore(")")
+                        }.toList()
+                assertEquals(labels.drop(1).take(15).reversed(), kept)
+            }
+        }
 
     @Test
     fun extractEntities_propagatesVectorWriteFailureAndRetryKeepsEdgeWeight() {
