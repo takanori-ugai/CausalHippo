@@ -1196,6 +1196,26 @@ class KTRetrieverTest {
         }
     }
 
+    @Test
+    fun `excluded relations do not consume the top K quota`() {
+        val root = Files.createTempDirectory("youtu-topk-eligible")
+        val config = createTestConfig(root)
+        config.overrideConfig(mapOf("retrieval" to mapOf("strategy" to mapOf("enabled" to listOf("lexical_triple")))))
+        val graph = root.resolve("output/graphs/sample_new.json")
+        writeGraph(
+            graph,
+            listOf(
+                relationship("Alpha", "entity", "represented_by", "Beta", "entity", "c1"),
+                relationship("Alpha", "entity", "links_to", "Gamma", "entity", "c2"),
+            ),
+        )
+        val retriever = createRetriever("sample", config, graph.toString(), root, topK = 1)
+        val (results, _) = retriever.processRetrievalResults("Alpha represented_by Beta")
+        val triples = results["triples"] as List<*>
+        assertEquals(1, triples.size)
+        assertTrue(triples.single().toString().contains("links_to"))
+    }
+
     private fun createRetriever(
         datasetName: String,
         config: ConfigManager,

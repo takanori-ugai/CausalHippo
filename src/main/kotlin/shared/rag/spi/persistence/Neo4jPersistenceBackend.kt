@@ -218,10 +218,10 @@ private class Neo4jPersistenceSession(
         }
     }
 
-    private fun <T> writeTx(block: (TransactionContext) -> T): T {
+    private fun writeTx(block: (TransactionContext) -> Any?) {
         checkOpen()
-        return session().use { neo4jSession ->
-            neo4jSession.executeWrite { tx -> block(tx) }
+        session().use { neo4jSession ->
+            neo4jSession.executeWriteWithoutResult { tx -> block(tx) }
         }
     }
 

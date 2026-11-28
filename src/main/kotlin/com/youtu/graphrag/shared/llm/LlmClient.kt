@@ -10,7 +10,9 @@ import io.github.oshai.kotlinlogging.KotlinLogging
 interface LlmClient {
     fun complete(prompt: String): String
 
-    fun completeForExtraction(prompt: String): String = complete(prompt)
+    fun completeStrict(prompt: String): String = complete(prompt)
+
+    fun completeForExtraction(prompt: String): String = completeStrict(prompt)
 }
 
 class NoopLlmClient : LlmClient {
@@ -27,13 +29,13 @@ class ChatModelLlmClient(
             return ""
         }
 
-        return runCatching { completeForExtraction(prompt) }.getOrElse { error ->
+        return runCatching { completeStrict(prompt) }.getOrElse { error ->
             logger.warn(error) { "ChatModel completion failed" }
             ""
         }
     }
 
-    override fun completeForExtraction(prompt: String): String =
+    override fun completeStrict(prompt: String): String =
         LlmOutputParser.cleanLlmContent(
             chatModel
                 .chat(UserMessage.from(prompt))

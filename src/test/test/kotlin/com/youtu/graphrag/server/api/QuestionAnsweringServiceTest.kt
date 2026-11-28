@@ -72,7 +72,7 @@ class QuestionAnsweringServiceTest {
     }
 
     @Test
-    fun `answer question falls back to demo graph when dataset graph missing`() {
+    fun `answer question rejects missing dataset graph even when demo exists`() {
         val root = createRootDir()
         val config = createTestConfig(root)
 
@@ -98,13 +98,11 @@ class QuestionAnsweringServiceTest {
                 rootDir = root,
                 llmClient = createMockLlmClient(),
             )
-        val response =
-            runBlocking {
+        runBlocking {
+            assertFailsWith<GraphArtifactNotFoundException> {
                 qaService.answerQuestion("missing_ds", "What does demo mention?")
             }
-
-        assertTrue(response.answer.isNotBlank())
-        assertTrue(response.retrievedTriples.isEmpty())
+        }
     }
 
     @Test
@@ -499,6 +497,55 @@ class QuestionAnsweringServiceTest {
                 qaService.answerQuestion("absent_ds", "Any question")
             }
         }
+    }
+
+    @Test
+    fun `provider failure does not turn an evidence excerpt into an answer`() {
+        val root = createRootDir()
+        val config = createTestConfig(root)
+        config.overrideConfig(mapOf("triggers" to mapOf("mode" to "noagent")))
+        writeCorpus(root, "outage_ds", listOf(mapOf("title" to "A", "text" to "Evidence for this question.")))
+        GraphConstructionService(config = config, rootDir = root).constructGraph("outage_ds")
+
+        var attempts = 0
+        val client =
+            object : LlmClient {
+                override fun complete(prompt: String): String = ""
+                override fun completeStrict(prompt: String): String {
+                    attempts += 1
+                    error("provider unavailable")
+                }
+            }
+        val response =
+            runBlocking {
+                QuestionAnsweringService(config, root, client).answerQuestion("outage_ds", "What is the evidence?")
+            }
+        assertEquals("unavailable", response.answerStatus)
+        assertEquals("", response.answer)
+        assertTrue(response.retrievedChunks.isNotEmpty())
+        assertEquals(2, attempts)
+    }
+
+    @Test
+    fun `initial answer remains available when final generation fails`() {
+        val root = createRootDir()
+        val config = createTestConfig(root)
+        config.overrideConfig(mapOf("triggers" to mapOf("mode" to "noagent")))
+        writeCorpus(root, "fallback_ds", listOf(mapOf("title" to "A", "text" to "Evidence for this question.")))
+        GraphConstructionService(config = config, rootDir = root).constructGraph("fallback_ds")
+
+        var attempts = 0
+        val client =
+            object : LlmClient {
+                override fun complete(prompt: String): String = ""
+
+                override fun completeStrict(prompt: String): String =
+                    if (++attempts == 1) "Initial grounded answer" else error("provider unavailable")
+            }
+        val response = runBlocking { QuestionAnsweringService(config, root, client).answerQuestion("fallback_ds", "What is the evidence?") }
+        assertEquals("fallback", response.answerStatus)
+        assertEquals("Initial grounded answer", response.answer)
+        assertTrue(response.retrievedChunks.isNotEmpty())
     }
 
     private fun createMockLlmClient(): LlmClient =

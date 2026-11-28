@@ -54,6 +54,7 @@ data class QuerySolution(
     var answer: String? = null,
     var goldAnswers: MutableList<String>? = null,
     var goldDocs: MutableList<String>? = null,
+    val answerContext: List<String>? = null,
 )
 
 /**

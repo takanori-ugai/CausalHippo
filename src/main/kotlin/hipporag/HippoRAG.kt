@@ -1,8 +1,14 @@
 package hipporag
 
 import hipporag.config.BaseConfig
+import hipporag.embeddingstore.EmbeddingStore
+import hipporag.graph.SimpleGraph
+import hipporag.utils.OpenieResults
 import hipporag.utils.QuerySolution
+import hipporag.utils.jsonWithDefaults
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import shared.config.CommonRagConfigLoader
 import shared.rag.CommonRag
 import tools.jackson.core.type.TypeReference
@@ -22,6 +28,7 @@ class HippoRAG(
     private var hippoRag: HippoRag,
 ) : CommonRag<QueryParam, QuerySolution> {
     private var config: BaseConfig = hippoRag.globalConfig.copy()
+    private val indexMutex = Mutex()
     private val objectMapper = jacksonObjectMapper()
 
     constructor(
@@ -57,85 +64,171 @@ class HippoRAG(
 
     override suspend fun aupsert(data: String) = aupsert(listOf(data))
 
-    override suspend fun aupsert(data: Collection<String>) {
-        val documents = normalizeDocuments(data)
-        if (documents.isEmpty()) return
-        hippoRag.index(documents)
-    }
+    override suspend fun aupsert(data: Collection<String>) =
+        indexMutex.withLock {
+            val documents = normalizeDocuments(data)
+            if (documents.isNotEmpty()) hippoRag.index(documents)
+        }
 
     override fun drop() = runBlocking { adrop() }
 
-    override suspend fun adrop() {
-        deleteDirectory(workingDir())
-        Files.deleteIfExists(openIeResultsPath())
-        reinitialize()
-    }
+    override suspend fun adrop() =
+        indexMutex.withLock {
+            deleteDirectory(workingDir())
+            Files.deleteIfExists(openIeResultsPath())
+            reinitialize()
+        }
 
     override fun saveGraph(path: String) = runBlocking { asaveGraph(path) }
 
-    override suspend fun asaveGraph(path: String) {
-        require(path.isNotBlank()) { "path must not be blank" }
-        val target = Path.of(path).toAbsolutePath().normalize()
-        deleteDirectory(target)
-        Files.createDirectories(target)
+    override suspend fun asaveGraph(path: String) =
+        indexMutex.withLock {
+            require(path.isNotBlank()) { "path must not be blank" }
+            val target =
+                Path
+                    .of(path)
+                    .toFile()
+                    .canonicalFile
+                    .toPath()
+            val working = workingDir()
+            val openie = openIeResultsPath()
+            requireDisjoint(target, working)
+            requireDisjoint(target, openie)
 
-        val sourceWorkingDir = workingDir()
-        require(Files.exists(sourceWorkingDir) && Files.isDirectory(sourceWorkingDir)) {
-            "HippoRAG working directory does not exist: $sourceWorkingDir"
+            Files.createDirectories(target.parent)
+            withSnapshotStaging(target.parent) { staging ->
+                val snapshot = Files.createDirectory(staging.resolve("snapshot"))
+                copyDirectory(working, snapshot.resolve("working_dir"))
+                validateSnapshot(snapshot.resolve("working_dir"))
+                val provenance = hippoRag.checkpointOpenie()
+                val targetOpenie = snapshot.resolve(openie.fileName)
+                if (provenance != null) {
+                    Files.writeString(targetOpenie, provenance)
+                } else if (Files.isRegularFile(openie)) {
+                    Files.copy(openie, targetOpenie)
+                }
+                publishSnapshot(staging, mapOf(target to snapshot))
+            }
         }
-        copyDirectory(sourceWorkingDir, target.resolve("working_dir"))
-
-        val sourceOpenie = openIeResultsPath()
-        if (Files.exists(sourceOpenie) && Files.isRegularFile(sourceOpenie)) {
-            Files.copy(
-                sourceOpenie,
-                target.resolve(sourceOpenie.fileName.toString()),
-                StandardCopyOption.REPLACE_EXISTING,
-                StandardCopyOption.COPY_ATTRIBUTES,
-            )
-        }
-    }
 
     override fun loadGraph(path: String) = runBlocking { aloadGraph(path) }
 
-    override suspend fun aloadGraph(path: String) {
-        require(path.isNotBlank()) { "path must not be blank" }
-        val sourceRoot = Path.of(path).toAbsolutePath().normalize()
-        require(Files.exists(sourceRoot) && Files.isDirectory(sourceRoot)) {
-            "HippoRAG snapshot directory not found: $sourceRoot"
-        }
+    override suspend fun aloadGraph(path: String) =
+        indexMutex.withLock {
+            require(path.isNotBlank()) { "path must not be blank" }
+            val source =
+                Path
+                    .of(path)
+                    .toFile()
+                    .canonicalFile
+                    .toPath()
+            val working = workingDir()
+            val openie = openIeResultsPath()
+            requireDisjoint(source, working)
+            requireDisjoint(source, openie)
+            val sourceWorking = source.resolve("working_dir").takeIf(Files::isDirectory) ?: source
+            require(Files.isDirectory(sourceWorking)) { "HippoRAG snapshot directory not found: $sourceWorking" }
+            requireDisjoint(sourceWorking, working)
 
-        val sourceWorkingDirCandidate = sourceRoot.resolve("working_dir")
-        val sourceWorkingDir =
-            when {
-                Files.exists(sourceWorkingDirCandidate) && Files.isDirectory(sourceWorkingDirCandidate) -> sourceWorkingDirCandidate
-                Files.exists(sourceRoot.resolve("graph.json")) -> sourceRoot
-                else -> error("Invalid HippoRAG snapshot: expected 'working_dir/' or 'graph.json' in $sourceRoot")
+            withSnapshotStaging(working.parent) { staging ->
+                val stagedWorking = staging.resolve("working_dir")
+                copyDirectory(sourceWorking, stagedWorking)
+                validateSnapshot(stagedWorking, verifyEncoder = true)
+                val stagedOpenie =
+                    source.resolve(openie.fileName).takeIf(Files::isRegularFile)?.let { sourceOpenie ->
+                        val json = jsonWithDefaults { ignoreUnknownKeys = true }
+                        json.decodeFromString(OpenieResults.serializer(), Files.readString(sourceOpenie))
+                        Files.copy(sourceOpenie, staging.resolve(openie.fileName))
+                    }
+                publishSnapshot(staging, mapOf(working to stagedWorking, openie to stagedOpenie)) {
+                    reinitialize(forceIndexFromScratch = false)
+                }
             }
-
-        val targetWorkingDir = workingDir()
-        deleteDirectory(targetWorkingDir)
-        copyDirectory(sourceWorkingDir, targetWorkingDir)
-
-        val targetOpenie = openIeResultsPath()
-        Files.createDirectories(targetOpenie.parent)
-        Files.deleteIfExists(targetOpenie)
-        val sourceOpenie = sourceRoot.resolve(targetOpenie.fileName.toString())
-        if (Files.exists(sourceOpenie) && Files.isRegularFile(sourceOpenie)) {
-            Files.copy(
-                sourceOpenie,
-                targetOpenie,
-                StandardCopyOption.REPLACE_EXISTING,
-                StandardCopyOption.COPY_ATTRIBUTES,
-            )
         }
 
-        reinitialize()
+    private fun requireDisjoint(
+        first: Path,
+        second: Path,
+    ) {
+        val a = first.toFile().canonicalFile.toPath()
+        val b = second.toFile().canonicalFile.toPath()
+        require(!a.startsWith(b) && !b.startsWith(a)) { "HippoRAG snapshot overlaps the live index: $first" }
+    }
+
+    private fun validateSnapshot(
+        path: Path,
+        verifyEncoder: Boolean = false,
+    ) {
+        val graph = SimpleGraph.load(path.resolve("graph.json").toFile(), strict = true)
+        val (chunks, chunkDimension) = EmbeddingStore.validateFile(path.resolve("chunk_embeddings/vdb_chunk.json").toFile())
+        val (entities, entityDimension) = EmbeddingStore.validateFile(path.resolve("entity_embeddings/vdb_entity.json").toFile())
+        val (facts, factDimension) = EmbeddingStore.validateFile(path.resolve("fact_embeddings/vdb_fact.json").toFile())
+        val dimensions = listOfNotNull(chunkDimension, entityDimension, factDimension).toSet()
+        require(dimensions.size <= 1) { "HippoRAG snapshot has inconsistent embedding dimensions: $path" }
+        if (verifyEncoder && dimensions.isNotEmpty()) {
+            val expected = hippoRag.checkpointEmbeddingDimension()
+            require(expected == null || dimensions.single() == expected) {
+                "HippoRAG snapshot embeddings are incompatible with the active encoder: $path"
+            }
+        }
+        require(graph.vertexNames().toSet() == chunks + entities && (entities.isEmpty() || facts.isNotEmpty())) {
+            "HippoRAG snapshot graph and embedding stores are inconsistent: $path"
+        }
+    }
+
+    private fun withSnapshotStaging(
+        directory: Path,
+        action: (Path) -> Unit,
+    ) {
+        val staging = Files.createTempDirectory(directory, ".hipporag-snapshot-")
+        try {
+            action(staging)
+        } finally {
+            // If rollback itself failed, keep the backup so the prior index can be recovered.
+            val hasBackup = Files.list(staging).use { paths -> paths.anyMatch { it.fileName.toString().startsWith("previous-") } }
+            if (!hasBackup) deleteDirectory(staging)
+        }
+    }
+
+    private fun publishSnapshot(
+        staging: Path,
+        replacements: Map<Path, Path?>,
+        initialize: () -> Unit = {},
+    ) {
+        val previous = mutableMapOf<Path, Path>()
+        val published = mutableListOf<Path>()
+        try {
+            replacements.entries.forEachIndexed { index, (target, replacement) ->
+                if (Files.exists(target)) {
+                    val backup = staging.resolve("previous-$index")
+                    Files.move(target, backup)
+                    previous[target] = backup
+                }
+                if (replacement != null) {
+                    Files.move(replacement, target)
+                    published.add(target)
+                }
+            }
+            initialize()
+        } catch (failure: Exception) {
+            for (target in replacements.keys.reversed()) {
+                try {
+                    if (target in published) deleteDirectory(target)
+                    previous[target]?.let { Files.move(it, target) }
+                } catch (rollbackFailure: Exception) {
+                    failure.addSuppressed(rollbackFailure)
+                }
+            }
+            throw failure
+        }
+        previous.values.forEach(::deleteDirectory)
     }
 
     override fun inspectGraph(): Map<String, Any?> = runBlocking { ainspectGraph() }
 
-    override suspend fun ainspectGraph(): Map<String, Any?> {
+    override suspend fun ainspectGraph(): Map<String, Any?> = indexMutex.withLock { inspectGraphFromDisk() }
+
+    private fun inspectGraphFromDisk(): Map<String, Any?> {
         val graphPath = workingDir().resolve("graph.json")
         if (!Files.exists(graphPath) || !Files.isRegularFile(graphPath)) {
             return emptyGraphInspection()
@@ -165,34 +258,37 @@ class HippoRAG(
     override suspend fun aquery(
         query: String,
         param: QueryParam,
-    ): QuerySolution {
-        val topK = param.topK.coerceAtLeast(1)
-        val mode = param.mode.lowercase()
-
-        val retrievalSolutions =
-            when (mode) {
-                "graph", "hippo" -> hippoRag.retrieve(listOf(query), numToRetrieve = topK).first
-                "dpr" -> hippoRag.retrieveDpr(listOf(query), numToRetrieve = topK).first
-                else -> throw IllegalArgumentException("Unsupported HippoRAG query mode '$mode'. Use one of: graph, dpr.")
-            }
-        var solution = retrievalSolutions.firstOrNull() ?: QuerySolution(question = query, docs = emptyList())
-
-        if (param.includeAnswer) {
-            val qaResult =
-                when (mode) {
-                    "graph", "hippo" -> hippoRag.ragQaWithSolutions(listOf(solution))
-                    "dpr" -> hippoRag.ragQaDprWithSolutions(listOf(solution))
-                    else -> error("Unreachable mode branch.")
+    ): QuerySolution =
+        indexMutex.withLock {
+            val topK = param.topK.coerceAtLeast(1)
+            val useDpr =
+                when (val mode = param.mode.lowercase()) {
+                    "graph", "hippo" -> false
+                    "dpr" -> true
+                    else -> throw IllegalArgumentException("Unsupported HippoRAG query mode '$mode'. Use one of: graph, dpr.")
                 }
-            solution = qaResult.solutions.firstOrNull() ?: solution
+            val queries = listOf(query)
+            val retrieval =
+                if (useDpr) {
+                    hippoRag.retrieveDpr(
+                        queries,
+                        numToRetrieve = topK,
+                    )
+                } else {
+                    hippoRag.retrieve(queries, numToRetrieve = topK)
+                }
+            val solution = retrieval.first.single()
+            if (!param.includeAnswer) return@withLock solution
+
+            val evidence = listOf(solution)
+            val qaResult = if (useDpr) hippoRag.ragQaDprWithSolutions(evidence) else hippoRag.ragQaWithSolutions(evidence)
+            qaResult.solutions.single()
         }
 
-        return solution
-    }
-
-    private fun reinitialize() {
-        hippoRag = HippoRag(initialConfig = config.copy())
-        config = hippoRag.globalConfig.copy()
+    private fun reinitialize(forceIndexFromScratch: Boolean = config.forceIndexFromScratch) {
+        val replacement = HippoRag(initialConfig = config.copy(forceIndexFromScratch = forceIndexFromScratch))
+        hippoRag = replacement
+        config = replacement.globalConfig.copy()
     }
 
     private fun normalizeDocuments(data: Collection<String>): List<String> =

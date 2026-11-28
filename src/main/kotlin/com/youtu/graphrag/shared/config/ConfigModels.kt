@@ -81,6 +81,7 @@ data class RetrievalStrategyConfig(
 )
 
 data class RetrievalConfig(
+    val maxPromptTokens: Int = 8192,
     val topK: Int = 5,
     val recallPaths: Int = 2,
     val topKFilter: Int = 20,

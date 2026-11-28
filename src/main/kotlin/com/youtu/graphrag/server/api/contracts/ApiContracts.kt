@@ -50,6 +50,7 @@ data class QuestionResponse(
     @SerialName("retrieved_chunks") val retrievedChunks: List<String> = emptyList(),
     @SerialName("reasoning_steps") val reasoningSteps: List<ReasoningStep> = emptyList(),
     @SerialName("visualization_data") val visualizationData: JsonObject,
+    @SerialName("answer_status") val answerStatus: String = "generated",
 )
 
 @Serializable

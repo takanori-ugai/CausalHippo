@@ -4,6 +4,7 @@ import com.youtu.graphrag.server.api.GraphConstructionService
 import com.youtu.graphrag.server.api.QuestionAnsweringService
 import com.youtu.graphrag.server.api.contracts.QuestionResponse
 import com.youtu.graphrag.shared.config.ConfigManager
+import com.youtu.graphrag.shared.graph.DatasetArtifacts
 import com.youtu.graphrag.shared.retriever.IrcotPromptSource
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.JsonArray
@@ -97,8 +98,10 @@ class YoutuRagUnifiedAdapter(
         if (!target.exists()) target.createDirectories()
         require(target.isDirectory()) { "saveGraph path must be a directory: $target" }
 
-        copyIfExists(graph, target.resolve(graph.fileName))
-        copyIfExists(chunks, target.resolve(chunks.fileName))
+        DatasetArtifacts.readPair(graph, chunks)?.let { (graphBytes, chunkBytes) ->
+            // A graph without a chunk artifact is published with empty chunks, as in loadGraph.
+            DatasetArtifacts.publish(target.resolve(graph.fileName), graphBytes, target.resolve(chunks.fileName), chunkBytes)
+        }
         copyIfExists(corpus, target.resolve(corpus.fileName))
         if (unifiedSpiEnabled) {
             syncUnifiedSpiFromLocal(selectedDataset)
@@ -117,8 +120,11 @@ class YoutuRagUnifiedAdapter(
         require(source.exists() && source.isDirectory()) { "loadGraph path must be an existing directory: $source" }
 
         val selectedDataset = datasetName
-        copyIfExists(source.resolve("${selectedDataset}_new.json"), graphPath(selectedDataset))
-        copyIfExists(source.resolve("$selectedDataset.txt"), chunksPath(selectedDataset))
+        val sourceGraph = source.resolve("${selectedDataset}_new.json")
+        val sourceChunks = source.resolve("$selectedDataset.txt")
+        DatasetArtifacts.readPair(sourceGraph, sourceChunks)?.let { (graphBytes, chunkBytes) ->
+            DatasetArtifacts.publish(graphPath(selectedDataset), graphBytes, chunksPath(selectedDataset), chunkBytes)
+        }
         copyIfExists(source.resolve("corpus.json"), corpusPath(selectedDataset))
         if (unifiedSpiEnabled) {
             runBlocking {
@@ -168,24 +174,16 @@ class YoutuRagUnifiedAdapter(
         val effectiveMode = modeFor(param.mode)
         val selectedDataset = effectiveDatasetName(param)
         ensureLocalStateHydratedFromSpi(selectedDataset)
-        applyQueryOverrides(effectiveMode, param.coercedTopK())
-
-        val result = qaService.answerQuestion(datasetName = selectedDataset, question = query)
+        val requestConfig =
+            config.withOverrides(
+                mapOf(
+                    "triggers" to mapOf("mode" to effectiveMode),
+                    "retrieval" to mapOf("topK" to param.coercedTopK(), "topKFilter" to param.coercedTopK()),
+                ),
+            )
+        val result = qaService.withConfig(requestConfig).answerQuestion(datasetName = selectedDataset, question = query)
         if (unifiedSpiEnabled) syncUnifiedSpiFromLocal(selectedDataset)
         return result.toUnifiedResponse(param, effectiveMode, collectUnsupported(param, capabilities), selectedDataset)
-    }
-
-    private fun applyQueryOverrides(
-        mode: String,
-        topK: Int,
-    ) {
-        config.overrideConfig(
-            mapOf(
-                "triggers" to mapOf("mode" to mode),
-                "construction" to mapOf("mode" to mode),
-                "retrieval" to mapOf("topK" to topK, "topKFilter" to topK),
-            ),
-        )
     }
 
     private fun effectiveDatasetName(query: UnifiedQuery): String =
@@ -221,6 +219,7 @@ class YoutuRagUnifiedAdapter(
                     extra =
                         mapOf(
                             "datasetName" to selectedDataset,
+                            "answerStatus" to answerStatus,
                             "subQuestionCount" to subQuestions.size,
                             "retrievedTriplesCount" to retrievedTriples.size,
                             "retrievedChunksCount" to retrievedChunks.size,
@@ -265,11 +264,12 @@ class YoutuRagUnifiedAdapter(
         val chunksPayload = files["chunks_text"] as? String
         val corpusPayload = files["corpus_json"] as? String
 
-        if (force || !graphPath(selectedDataset).exists()) {
-            graphPayload?.let { writeText(graphPath(selectedDataset), it) }
-        }
-        if (force || !chunksPath(selectedDataset).exists()) {
-            chunksPayload?.let { writeText(chunksPath(selectedDataset), it) }
+        if (graphPayload != null) {
+            val graph = graphPath(selectedDataset)
+            val chunks = chunksPath(selectedDataset)
+            DatasetArtifacts.publish(graph, graphPayload.encodeToByteArray(), chunks, chunksPayload.orEmpty().encodeToByteArray()) {
+                force || !graph.exists() || !chunks.exists()
+            }
         }
         if (force || !corpusPath(selectedDataset).exists()) {
             corpusPayload?.let { writeText(corpusPath(selectedDataset), it) }
@@ -284,25 +284,26 @@ class YoutuRagUnifiedAdapter(
         val chunksFile = chunksPath(selectedDataset)
         val corpusFile = corpusPath(selectedDataset)
 
-        val fileEntries = mutableMapOf<String, Any?>()
-        if (graphFile.exists()) fileEntries["graph_json"] = Files.readString(graphFile)
-        if (chunksFile.exists()) fileEntries["chunks_text"] = Files.readString(chunksFile)
-        if (corpusFile.exists()) fileEntries["corpus_json"] = Files.readString(corpusFile)
-        if (fileEntries.isNotEmpty()) {
-            session.kv(filesNamespace(selectedDataset)).putAll(fileEntries)
+        DatasetArtifacts.read(graphFile) {
+            val fileEntries = mutableMapOf<String, Any?>()
+            if (graphFile.exists()) fileEntries["graph_json"] = Files.readString(graphFile)
+            if (chunksFile.exists()) fileEntries["chunks_text"] = Files.readString(chunksFile)
+            if (corpusFile.exists()) fileEntries["corpus_json"] = Files.readString(corpusFile)
+            if (fileEntries.isNotEmpty()) {
+                session.kv(filesNamespace(selectedDataset)).putAll(fileEntries)
+            }
+            val snapshot = toGraphSnapshot(normalizeInspectionFromVisualization(selectedDataset))
+            session.graph(graphNamespace(selectedDataset)).restore(snapshot)
+            session.kv(metadataNamespace(selectedDataset)).putAll(
+                mapOf(
+                    "datasetName" to selectedDataset,
+                    "updatedAt" to Instant.now().toString(),
+                    "persistenceBackend" to session.backendId,
+                    "nodeCount" to snapshot.metadata.getValue("nodeCount"),
+                    "edgeCount" to snapshot.metadata.getValue("edgeCount"),
+                ),
+            )
         }
-
-        val normalized = normalizeInspectionFromVisualization(selectedDataset)
-        session.graph(graphNamespace(selectedDataset)).restore(toGraphSnapshot(normalized))
-        session.kv(metadataNamespace(selectedDataset)).putAll(
-            mapOf(
-                "datasetName" to selectedDataset,
-                "updatedAt" to Instant.now().toString(),
-                "persistenceBackend" to session.backendId,
-                "nodeCount" to ((normalized["metadata"] as? Map<*, *>)?.get("nodeCount") ?: 0),
-                "edgeCount" to ((normalized["metadata"] as? Map<*, *>)?.get("edgeCount") ?: 0),
-            ),
-        )
         hydratedDatasets += selectedDataset
     }
 

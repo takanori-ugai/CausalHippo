@@ -430,7 +430,7 @@ class CausalGraphBuilder(
     ingestChunkTokenSize: Int = DEFAULT_INGEST_CHUNK_TOKEN_SIZE,
     ingestChunkOverlapTokenSize: Int = DEFAULT_INGEST_CHUNK_OVERLAP_TOKEN_SIZE,
 ) {
-    private val graph = DirectedGraph()
+    private var graph = DirectedGraph()
     private val _nodeText: MutableMap<String, String> = mutableMapOf()
 
     /**
@@ -516,13 +516,6 @@ class CausalGraphBuilder(
         return text
     }
 
-    internal val completedPassages = mutableSetOf<String>()
-
-    internal fun hasCompletedPassage(text: String): Boolean = passageIdentity(text) in completedPassages
-
-    private fun passageIdentity(text: String): String =
-        HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(text.encodeToByteArray()))
-
     var lastIndexingReport: IndexingReport = IndexingReport()
         private set
 
@@ -586,6 +579,45 @@ class CausalGraphBuilder(
      * @return Snapshot of the current graph state.
      */
     fun getGraph(): DirectedGraph = graph.copy()
+
+    internal val completedPassages = mutableSetOf<String>()
+
+    internal fun hasCompletedPassage(text: String): Boolean = passageIdentity(text) in completedPassages
+
+    private fun passageIdentity(text: String): String =
+        HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(text.encodeToByteArray()))
+
+    internal data class IndexState(
+        val graph: DirectedGraph,
+        val labels: Map<String, String>,
+        val variants: Map<String, List<String>>,
+        val embeddings: Map<String, DoubleArray>,
+        val report: IndexingReport,
+        val completedPassages: Set<String>,
+    )
+
+    internal fun snapshotState(): IndexState =
+        IndexState(
+            graph.copy(),
+            _nodeText.toMap(),
+            nodeVariants.mapValues { it.value.toList() },
+            _nodeEmbeddings.toMap(),
+            lastIndexingReport,
+            completedPassages.toSet(),
+        )
+
+    internal fun restoreState(state: IndexState) {
+        graph = state.graph
+        _nodeText.clear()
+        _nodeText.putAll(state.labels)
+        nodeVariants.clear()
+        state.variants.forEach { (id, variants) -> nodeVariants[id] = variants.toMutableList() }
+        _nodeEmbeddings.clear()
+        _nodeEmbeddings.putAll(state.embeddings)
+        lastIndexingReport = state.report
+        completedPassages.clear()
+        completedPassages.addAll(state.completedPassages)
+    }
 
     /**
      * Clears all indexed graph state, node metadata, and cached embeddings.

@@ -22,6 +22,8 @@ class EmbeddingStore(
 ) {
     private val logger = KotlinLogging.logger {}
 
+    internal val storageFile: File
+        get() = File(filename)
     private val filename: String
 
     private val hashIds = mutableListOf<String>()
@@ -180,6 +182,21 @@ class EmbeddingStore(
         saveData()
     }
 
+    internal fun backup(): () -> Unit {
+        val savedIds = hashIds.toList()
+        val savedTexts = texts.toList()
+        val savedEmbeddings = embeddings.toList()
+        return {
+            hashIds.clear()
+            hashIds.addAll(savedIds)
+            texts.clear()
+            texts.addAll(savedTexts)
+            embeddings.clear()
+            embeddings.addAll(savedEmbeddings)
+            rebuildIndexes()
+        }
+    }
+
     private fun loadData() {
         val file = File(filename)
         if (!file.exists()) {
@@ -243,6 +260,24 @@ class EmbeddingStore(
             )
         }
         logger.info { "Saved ${hashIds.size} records to $filename" }
+    }
+
+    companion object {
+        internal fun validateFile(file: File): Pair<Set<String>, Int?> {
+            if (!file.exists()) return emptySet<String>() to null
+            val data =
+                jsonWithDefaults { ignoreUnknownKeys = true }
+                    .decodeFromString(EmbeddingStoreData.serializer(), file.readText())
+            val dimension = data.embeddings.firstOrNull()?.size
+            require(data.hashIds.size == data.texts.size && data.texts.size == data.embeddings.size) {
+                "Misaligned embedding store: $file"
+            }
+            require(
+                data.hashIds.toSet().size == data.hashIds.size &&
+                    data.embeddings.all { it.isNotEmpty() && it.size == dimension && it.all(Double::isFinite) },
+            ) { "Invalid embedding store: $file" }
+            return data.hashIds.toSet() to dimension
+        }
     }
 
     private fun rebuildIndexes() {

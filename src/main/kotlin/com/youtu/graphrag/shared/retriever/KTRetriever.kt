@@ -1,6 +1,7 @@
 package com.youtu.graphrag.shared.retriever
 
 import com.youtu.graphrag.shared.config.ConfigManager
+import com.youtu.graphrag.shared.graph.DatasetArtifacts
 import com.youtu.graphrag.shared.graph.GraphRelationship
 import com.youtu.graphrag.shared.retriever.nlp.QueryNlp
 import com.youtu.graphrag.shared.retriever.nlp.QueryNlpFactory
@@ -157,10 +158,14 @@ class KTRetriever private constructor(
             val builder = IndexBuilder(datasetName, config, rootDir, embedder)
             val queryNlp = QueryNlpFactory.create(config = config, rootDir = rootDir)
 
-            val triples = builder.loadTriples(builder.resolvePath(graphPath))
+            val resolvedGraphPath = builder.resolvePath(graphPath)
+            val (triples, chunks) =
+                DatasetArtifacts.read(resolvedGraphPath) {
+                    builder.loadTriples(resolvedGraphPath) to
+                        builder.loadChunks(builder.resolvePath("${config.output.chunksDir}/$datasetName.txt"))
+                }
             val adjacency = builder.buildAdjacency(triples)
             val tripleOrdinal = triples.withIndex().associate { (index, record) -> record to index }
-            val chunks = builder.loadChunks(builder.resolvePath("${config.output.chunksDir}/$datasetName.txt"))
             val chunkRecords = chunks.entries.map { (chunkId, text) -> RetrievalChunk(id = chunkId, text = text) }
 
             val tripleVectors = builder.prepareTripleVectors(triples, embedder)
@@ -298,16 +303,10 @@ class KTRetriever private constructor(
                 }.sortedWith(
                     compareByDescending<ScoredTriple> { value -> value.score }
                         .thenBy { value -> value.ordinal },
-                ).take(normalizedTopK)
-        val selectedTripleRaw =
-            selectedTripleRankings
-                .map { ranking -> ranking.record }
-                .filterNot { record -> record.relation.lowercase(Locale.ROOT) in EXCLUDED_OUTPUT_RELATIONS }
-        val selectedTripleFormatted =
-            selectedTripleRaw.map { record ->
-                val score = selectedTripleRankings.firstOrNull { ranking -> ranking.record == record }?.score ?: 0.0
-                formatTripleWithScore(record, score)
-            }
+                ).filterNot { it.record.relation.lowercase(Locale.ROOT) in EXCLUDED_OUTPUT_RELATIONS }
+                .take(normalizedTopK)
+        val selectedTripleRaw = selectedTripleRankings.map { it.record }
+        val selectedTripleFormatted = selectedTripleRankings.map { formatTripleWithScore(it.record, it.score) }
 
         val chunkIdsFromTriples =
             linkedSetOf<String>().apply {

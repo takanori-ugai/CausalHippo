@@ -5,6 +5,7 @@ import com.knuddels.jtokkit.api.Encoding
 import com.knuddels.jtokkit.api.EncodingType
 import com.knuddels.jtokkit.api.IntArrayList
 import com.youtu.graphrag.shared.config.ConfigManager
+import com.youtu.graphrag.shared.graph.DatasetArtifacts
 import com.youtu.graphrag.shared.graph.GraphNode
 import com.youtu.graphrag.shared.graph.GraphRelationship
 import com.youtu.graphrag.shared.llm.LlmClient
@@ -26,7 +27,6 @@ import tools.jackson.databind.ObjectMapper
 import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.nio.file.Files
 import java.nio.file.Path
-import java.nio.file.StandardOpenOption
 import java.security.MessageDigest
 import java.util.Base64
 import kotlin.io.path.createDirectories
@@ -86,8 +86,12 @@ class KTBuilder(
         val chunks = createChunks(documents)
 
         val relationships = buildRelationships(chunks)
-        writeChunksFile(chunks)
-        writeGraphFile(relationships)
+        DatasetArtifacts.publish(
+            graph = resolveOutputPath(config.output.graphsDir).resolve("${datasetName}_new.json"),
+            graphBytes = mapper.writerWithDefaultPrettyPrinter().writeValueAsBytes(relationships),
+            chunks = resolveOutputPath(config.output.chunksDir).resolve("$datasetName.txt"),
+            chunkBytes = serializeChunks(chunks).toByteArray(Charsets.UTF_8),
+        )
 
         logger.info {
             "Knowledge graph built for '$datasetName' with ${relationships.size} relation(s) and ${chunks.size} chunk(s)"
@@ -931,40 +935,21 @@ class KTBuilder(
             newSchemaTypes = emptyMap(),
         )
 
-    private fun writeChunksFile(chunks: List<ChunkRecord>) {
-        val chunkFile = resolveOutputPath(config.output.chunksDir).resolve("$datasetName.txt")
-        chunkFile.parent?.createDirectories()
-
-        val content =
-            buildString {
-                chunks.forEach { chunk ->
-                    append("id: ")
-                    append(chunk.id)
-                    append('\t')
-                    append("Chunk: ")
-                    append(
-                        chunk.text
-                            .replace("\n", "\\n")
-                            .replace("\t", "\\t"),
-                    )
-                    append('\n')
-                }
+    private fun serializeChunks(chunks: List<ChunkRecord>): String =
+        buildString {
+            chunks.forEach { chunk ->
+                append("id: ")
+                append(chunk.id)
+                append('\t')
+                append("Chunk: ")
+                append(
+                    chunk.text
+                        .replace("\n", "\\n")
+                        .replace("\t", "\\t"),
+                )
+                append('\n')
             }
-
-        Files.writeString(
-            chunkFile,
-            content,
-            StandardOpenOption.CREATE,
-            StandardOpenOption.TRUNCATE_EXISTING,
-            StandardOpenOption.WRITE,
-        )
-    }
-
-    private fun writeGraphFile(relationships: List<GraphRelationship>) {
-        val graphFile = resolveOutputPath(config.output.graphsDir).resolve("${datasetName}_new.json")
-        graphFile.parent?.createDirectories()
-        mapper.writerWithDefaultPrettyPrinter().writeValue(graphFile.toFile(), relationships)
-    }
+        }
 
     private fun resolveOutputPath(configPath: String): Path {
         val configured = Path.of(configPath)
