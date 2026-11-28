@@ -58,17 +58,9 @@ class Neo4jVectorStorage(
     private suspend fun <T> read(block: (TransactionContext) -> T): T =
         withContext(Dispatchers.IO) { driver.session().use { session -> session.executeRead { tx -> block(tx) } } }
 
-    /**
-     * Execute a write transaction against the Neo4j driver and return the block's result.
-     *
-     * The provided `block` is invoked with a `TransactionContext` inside a write transaction and its
-     * return value is propagated to the caller.
-     *
-     * @param block Lambda that performs operations within the write transaction using the `TransactionContext`.
-     * @return The value returned by `block`.
-     */
-    private suspend fun <T> write(block: (TransactionContext) -> T): T =
+    private suspend fun write(block: (TransactionContext) -> Unit) {
         withContext(Dispatchers.IO) { driver.session().use { session -> session.executeWrite { tx -> block(tx) } } }
+    }
 
     /**
      * Find the most relevant stored vectors for the given text, preferring a Neo4j vector index and falling back to
