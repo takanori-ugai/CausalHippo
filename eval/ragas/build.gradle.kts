@@ -3,6 +3,7 @@ import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 plugins {
     kotlin("jvm") version "2.4.10"
     application
+    jacoco
     id("com.gradleup.shadow") version "9.6.1"
     kotlin("plugin.serialization") version "2.4.21"
     id("org.jlleitschuh.gradle.ktlint") version "14.2.0"
@@ -49,6 +50,14 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:2.4.21")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0")
     testImplementation("io.mockk:mockk:1.14.12")
+}
+
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+    reports {
+        xml.required = true
+        xml.outputLocation = layout.buildDirectory.file("reports/jacoco/test/jacocoTestReport.xml")
+    }
 }
 
 tasks {
