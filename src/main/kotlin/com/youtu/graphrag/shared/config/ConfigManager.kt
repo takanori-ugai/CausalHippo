@@ -13,9 +13,12 @@ import java.nio.file.Files
 import java.nio.file.Path
 import java.util.Locale
 
-class ConfigManager(
-    configPath: String? = null,
+class ConfigManager private constructor(
+    configPath: String?,
+    snapshot: Map<String, Any?>?,
 ) {
+    constructor(configPath: String? = null) : this(configPath, null)
+
     private val logger = KotlinLogging.logger {}
     private val jsonMapper: ObjectMapper = createMapper()
     private val yamlMapper: ObjectMapper = createMapper(YAMLFactory())
@@ -25,7 +28,13 @@ class ConfigManager(
     private var parsedConfig: AppConfig = AppConfig()
 
     init {
-        loadConfig()
+        if (snapshot == null) {
+            loadConfig()
+        } else {
+            rawConfig = snapshot.toMutableMap()
+            parseConfig()
+            validateConfig()
+        }
     }
 
     val datasets: Map<String, DatasetConfig>
@@ -125,6 +134,9 @@ class ConfigManager(
         validateConfig()
     }
 
+    fun withOverrides(overrides: Map<String, Any?>): ConfigManager =
+        ConfigManager(configPath.toString(), toMap()).also { it.overrideConfig(overrides) }
+
     fun saveConfig(outputPath: String) {
         val path = Path.of(outputPath)
         val normalizedPath = path.toString().lowercase(Locale.ROOT)
@@ -174,6 +186,7 @@ class ConfigManager(
             "Invalid construction mode: ${construction.mode}"
         }
         require(retrieval.topK > 0) { "top_k must be positive" }
+        require(retrieval.maxPromptTokens > 0) { "max_prompt_tokens must be positive" }
         require(retrieval.strategy.timeoutMs > 0) {
             "retrieval.strategy.timeout_ms must be positive"
         }

@@ -9,6 +9,7 @@ import com.youtu.graphrag.shared.llm.LlmClientFactory
 import com.youtu.graphrag.shared.retriever.IrcotPromptSource
 import com.youtu.graphrag.shared.retriever.KTRetriever
 import io.github.oshai.kotlinlogging.KotlinLogging
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -31,11 +32,6 @@ class GraphArtifactNotFoundException(
 data class QaStageUpdate(
     val stage: String,
     val payload: Map<String, Any?> = emptyMap(),
-)
-
-private data class GraphResolution(
-    val graphPath: Path,
-    val usedDemoFallback: Boolean,
 )
 
 private data class SubQuestionRetrieval(
@@ -61,6 +57,9 @@ class QuestionAnsweringService(
 ) {
     private val logger = KotlinLogging.logger {}
 
+    internal fun withConfig(requestConfig: ConfigManager): QuestionAnsweringService =
+        QuestionAnsweringService(requestConfig, rootDir, llmClient, ircotPromptSource)
+
     private fun requireSafeDatasetName(datasetName: String): String {
         require(Regex("^[A-Za-z0-9_-]+$").matches(datasetName)) {
             "Invalid dataset name"
@@ -74,10 +73,8 @@ class QuestionAnsweringService(
         onQaUpdate: suspend (QaStageUpdate) -> Unit = {},
     ): QuestionResponse {
         val safeDatasetName = requireSafeDatasetName(datasetName)
-        val graphResolution =
-            resolveGraphPathWithDemoFallback(safeDatasetName)
-                ?: throw GraphArtifactNotFoundException("Graph not found. Please construct graph first.")
-        val graphPath = graphResolution.graphPath
+        val graphPath = resolvePath("${config.output.graphsDir}/${safeDatasetName}_new.json")
+        if (!graphPath.exists()) throw GraphArtifactNotFoundException("Graph not found. Please construct graph first.")
         val schemaPath = resolveSchemaPath(safeDatasetName)
 
         val graphq = GraphQ(safeDatasetName, config, llmClient = llmClient)
@@ -171,7 +168,7 @@ class QuestionAnsweringService(
         }
 
         val topLimit = config.retrieval.topKFilter.coerceAtLeast(1)
-        val initialTripleEntries = selectTopTriplesForQuestion(mergedSubQuestionTriples, question, topLimit)
+        val initialTripleEntries = selectTopTriplesForQuestion(mergedSubQuestionTriples.distinctBy { it.raw }, question, topLimit)
         initialTripleEntries.forEach { entry ->
             tripleEntriesByRaw.putIfAbsent(entry.raw, entry.formatted)
         }
@@ -189,18 +186,11 @@ class QuestionAnsweringService(
 
         val initialTriplesFormatted = tripleEntriesByRaw.values.toList()
         val initialChunks = chunkById.values.toList()
-        val initialContext =
-            ktRetriever.buildKnowledgeContext(
-                triples = initialTriplesFormatted,
-                chunks = initialChunks,
-                tripleLimit = Int.MAX_VALUE,
-                chunkLimit = Int.MAX_VALUE,
-            )
-        val initialAnswer =
-            generateAnswerWithFallback(
-                prompt = ktRetriever.generatePrompt(question, initialContext),
-                fallback = synthesizeAnswer(tripleEntriesByRaw.keys.toList(), initialChunks),
-            )
+        val initialPrompt =
+            buildBoundedPrompt(initialTriplesFormatted, initialChunks, config.retrieval.maxPromptTokens) { triples, chunks ->
+                ktRetriever.generatePrompt(question, ktRetriever.buildKnowledgeContext(triples, chunks, tripleLimit = triples.size, chunkLimit = chunks.size))
+            }
+        val initialAnswer = generateAnswer(initialPrompt?.text).orEmpty()
         var finalAnswer = initialAnswer
 
         reasoningSteps.add(
@@ -236,34 +226,23 @@ class QuestionAnsweringService(
 
                 val stepElapsedMs =
                     measureTimeMillis {
-                        val loopContext =
-                            ktRetriever.buildKnowledgeContext(
-                                triples = triplesSnapshotBefore,
-                                chunks = chunksSnapshotBefore,
-                                tripleLimit = Int.MAX_VALUE,
-                                chunkLimit = Int.MAX_VALUE,
-                            )
                         val previousThoughts = thoughts.joinToString(" | ").ifBlank { "None" }
                         val ircotPrompt =
-                            ktRetriever.generateIrcotPrompt(
-                                currentQuery = currentQuery,
-                                originalQuestion = question,
-                                context = loopContext,
-                                previousThoughts = previousThoughts,
-                                step = stepIndex,
-                                promptSource = ircotPromptSource,
-                            )
-                        val heuristicFallback =
-                            if (tripleEntriesByRaw.isNotEmpty() || chunksSnapshotBefore.isNotEmpty()) {
-                                "So the answer is: ${synthesizeAnswer(tripleEntriesByRaw.keys.toList(), chunksSnapshotBefore)}"
-                            } else {
-                                "The new query is: ${buildFollowUpQuery(question, currentQuery, thoughts)}"
+                            buildBoundedPrompt(
+                                triplesSnapshotBefore,
+                                chunksSnapshotBefore,
+                                config.retrieval.maxPromptTokens,
+                            ) { triples, chunks ->
+                                ktRetriever.generateIrcotPrompt(
+                                    currentQuery = currentQuery,
+                                    originalQuestion = question,
+                                    context = ktRetriever.buildKnowledgeContext(triples, chunks, tripleLimit = triples.size, chunkLimit = chunks.size),
+                                    previousThoughts = previousThoughts,
+                                    step = stepIndex,
+                                    promptSource = ircotPromptSource,
+                                )
                             }
-                        thought =
-                            withContext(Dispatchers.IO) {
-                                llmClient.complete(ircotPrompt)
-                            }.trim()
-                                .ifBlank { heuristicFallback }
+                        thought = generateAnswer(ircotPrompt?.text).orEmpty()
                     }
 
                 thoughts.add(thought)
@@ -303,13 +282,11 @@ class QuestionAnsweringService(
                 }
 
                 if (!containsNewQueryMarker(thought)) {
-                    finalAnswer = finalAnswer.ifBlank { thought }
                     break
                 }
 
                 val newQuery = extractNewQuery(thought)
                 if (newQuery.isNullOrBlank() || isRepeatedQuery(newQuery, currentQuery)) {
-                    finalAnswer = finalAnswer.ifBlank { thought }
                     break
                 }
 
@@ -326,38 +303,41 @@ class QuestionAnsweringService(
             }
         }
 
-        val finalTriples = tripleEntriesByRaw.keys.toList()
-        val finalTriplesFormatted = tripleEntriesByRaw.values.toList()
-        val finalChunks = chunkById.values.toList()
-        val responseTriples =
-            if (graphResolution.usedDemoFallback) {
-                emptyList()
-            } else {
-                finalTriples
+        val finalPrompt =
+            buildBoundedPrompt(
+                tripleEntriesByRaw.values.toList(),
+                chunkById.values.toList(),
+                config.retrieval.maxPromptTokens,
+            ) { triples, chunks ->
+                ktRetriever.generatePrompt(question, buildFinalKnowledgeContext(triples, chunks))
             }
-
-        val finalContext = buildFinalKnowledgeContext(finalTriplesFormatted, finalChunks)
-        finalAnswer =
-            generateAnswerWithFallback(
-                prompt = ktRetriever.generatePrompt(question, finalContext),
-                fallback = finalAnswer.ifBlank { synthesizeAnswer(finalTriples, finalChunks) },
-            )
+        val finalTriples = finalPrompt?.triples.orEmpty().map(::tripleIdentity)
+        val finalChunks = finalPrompt?.chunks.orEmpty()
+        val generated = generateAnswer(finalPrompt?.text)
+        val responseAnswer = generated ?: finalAnswer
+        val answerStatus =
+            when {
+                generated != null -> "generated"
+                responseAnswer.isNotBlank() -> "fallback"
+                else -> "unavailable"
+            }
 
         logger.info {
             "Answered question for dataset '$datasetName' with ${finalTriples.size} triples and ${finalChunks.size} chunks"
         }
 
         return QuestionResponse(
-            answer = finalAnswer,
+            answer = responseAnswer,
+            answerStatus = answerStatus,
             subQuestions = subQuestions,
-            retrievedTriples = responseTriples,
+            retrievedTriples = finalTriples,
             retrievedChunks = finalChunks,
             reasoningSteps = reasoningSteps,
             visualizationData =
                 buildVisualizationData(
                     subQuestions = subQuestions,
                     reasoningSteps = reasoningSteps,
-                    finalTriples = responseTriples,
+                    finalTriples = finalTriples,
                     finalChunks = finalChunks,
                 ),
         )
@@ -365,22 +345,21 @@ class QuestionAnsweringService(
 
     private fun shouldRunIrcot(): Boolean = config.triggers.mode == "agent" && config.retrieval.agent.enableIrcot
 
-    private suspend fun generateAnswerWithFallback(
-        prompt: String,
-        fallback: String,
-    ): String {
-        val maxRetries = 20
-        repeat(maxRetries) {
+    private suspend fun generateAnswer(prompt: String?): String? {
+        if (prompt == null) return null
+        repeat(2) {
             val response =
-                runCatching {
-                    withContext(Dispatchers.IO) { llmClient.complete(prompt) }
-                }.getOrDefault("")
-                    .trim()
-            if (response.isNotBlank()) {
-                return response
-            }
+                try {
+                    withContext(Dispatchers.IO) { llmClient.completeStrict(prompt) }.trim()
+                } catch (error: CancellationException) {
+                    throw error
+                } catch (error: RuntimeException) {
+                    logger.warn(error) { "YoutuRAG answer generation failed" }
+                    return null
+                }
+            if (response.isNotBlank()) return response
         }
-        return fallback
+        return null
     }
 
     private fun extractFinalAnswer(thought: String): String? {
@@ -546,21 +525,6 @@ class QuestionAnsweringService(
         }
     }
 
-    private fun synthesizeAnswer(
-        triples: List<String>,
-        chunks: List<String>,
-    ): String {
-        if (chunks.isNotEmpty()) {
-            return chunks.first().take(400)
-        }
-
-        if (triples.isNotEmpty()) {
-            return triples.first()
-        }
-
-        return "I do not have enough knowledge context to answer this question."
-    }
-
     private fun buildFinalKnowledgeContext(
         triples: List<String>,
         chunks: List<String>,
@@ -572,27 +536,6 @@ class QuestionAnsweringService(
             append(chunks.joinToString("\n"))
         }
 
-    private fun buildFollowUpQuery(
-        originalQuestion: String,
-        currentQuery: String,
-        thoughts: List<String>,
-    ): String {
-        val lastThought = thoughts.lastOrNull().orEmpty()
-        val tokens = tokenize(originalQuestion).filter { token -> token !in tokenize(lastThought) }
-        val refinement = tokens.take(5).joinToString(" ")
-
-        if (refinement.isBlank()) {
-            return currentQuery
-        }
-
-        return "$currentQuery $refinement".trim()
-    }
-
-    private fun tokenize(input: String): Set<String> {
-        val tokenRegex = Regex("[\\p{L}\\p{N}_]{2,}")
-        return tokenRegex.findAll(input.lowercase()).map { it.value }.toSet()
-    }
-
     private fun zipTripleEntries(
         triples: List<String>,
         triplesFormatted: List<String>,
@@ -602,7 +545,7 @@ class QuestionAnsweringService(
         }
 
         return triples.mapIndexedNotNull { index, raw ->
-            val rawNormalized = raw.trim()
+            val rawNormalized = tripleIdentity(raw)
             if (rawNormalized.isBlank()) {
                 return@mapIndexedNotNull null
             }
@@ -611,7 +554,7 @@ class QuestionAnsweringService(
                     .getOrNull(index)
                     ?.trim()
                     ?.takeIf { value -> value.isNotBlank() }
-                    ?: rawNormalized
+                    ?: raw.trim()
             TripleEntry(raw = rawNormalized, formatted = formatted)
         }
     }
@@ -864,26 +807,6 @@ class QuestionAnsweringService(
         } else {
             null
         }
-    }
-
-    private fun resolveGraphPathWithDemoFallback(datasetName: String): GraphResolution? {
-        val datasetGraph = resolvePath("${config.output.graphsDir}/${datasetName}_new.json")
-        if (datasetGraph.exists()) {
-            return GraphResolution(
-                graphPath = datasetGraph,
-                usedDemoFallback = false,
-            )
-        }
-
-        val demoGraph = resolvePath("${config.output.graphsDir}/demo_new.json")
-        if (demoGraph.exists()) {
-            return GraphResolution(
-                graphPath = demoGraph,
-                usedDemoFallback = true,
-            )
-        }
-
-        return null
     }
 
     private fun resolveSchemaPath(datasetName: String): Path {
