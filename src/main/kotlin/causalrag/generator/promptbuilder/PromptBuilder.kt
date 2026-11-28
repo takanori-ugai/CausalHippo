@@ -2,6 +2,7 @@ package causalrag.generator.promptbuilder
 
 import causalrag.generator.llm.LLMInterface
 import io.github.oshai.kotlinlogging.KotlinLogging
+import shared.chunking.countTokensWithJTokKit
 import java.nio.file.Files
 import java.nio.file.Path
 
@@ -42,6 +43,64 @@ class PromptBuilder(
             } else {
                 null
             }
+        return renderPrompt(query, passages, normalizedPaths, causalNodes, causalGraphSummary, pathSummaries)
+    }
+
+    internal data class BudgetedPrompt(
+        val text: String,
+        val passages: List<String>,
+        val paths: List<List<String>>,
+    )
+
+    internal fun buildBudgetedPrompt(
+        query: String,
+        passages: List<String>,
+        paths: List<List<String>>,
+        budget: Int,
+        summarize: Boolean,
+    ): BudgetedPrompt {
+        fun render(
+            selectedPassages: List<String>,
+            selectedPaths: List<List<String>>,
+            summaries: List<String>? = null,
+        ): String = renderPrompt(query, selectedPassages, selectedPaths, null, null, summaries)
+
+        val selectedPassages = mutableListOf<String>()
+        val selectedPaths = mutableListOf<List<String>>()
+        var prompt = render(selectedPassages, selectedPaths)
+        require(countTokensWithJTokKit(prompt) <= budget) { "Question and prompt template exceed the CausalRAG prompt token budget" }
+
+        for (passage in passages) {
+            val candidate = render(selectedPassages + passage, selectedPaths)
+            if (countTokensWithJTokKit(candidate) <= budget) {
+                selectedPassages.add(passage)
+                prompt = candidate
+            }
+        }
+        for (path in paths) {
+            val candidate = render(selectedPassages, selectedPaths + listOf(path))
+            if (countTokensWithJTokKit(candidate) <= budget) {
+                selectedPaths.add(path)
+                prompt = candidate
+            }
+        }
+
+        if (summarize && selectedPaths.isNotEmpty() && llmInterface != null) {
+            val summaries = generateCausalSummaries(selectedPaths, query, budget)
+            val candidate = render(selectedPassages, selectedPaths, summaries)
+            if (countTokensWithJTokKit(candidate) <= budget) prompt = candidate
+        }
+        return BudgetedPrompt(prompt, selectedPassages, selectedPaths)
+    }
+
+    private fun renderPrompt(
+        query: String,
+        passages: List<String>,
+        normalizedPaths: List<List<String>>?,
+        causalNodes: List<String>?,
+        causalGraphSummary: String?,
+        pathSummaries: List<String>?,
+    ): String {
         val jteRendered =
             jteRenderer.render(
                 templateStyle,
@@ -81,6 +140,7 @@ class PromptBuilder(
     private fun generateCausalSummaries(
         causalPaths: List<List<String>>,
         query: String,
+        budget: Int = Int.MAX_VALUE,
     ): List<String> {
         if (llmInterface == null) return emptyList()
         val maxPathsToSummarize = 5
@@ -93,6 +153,7 @@ Causal paths:
 $allPathsText
 
 Provide a concise summary (1-2 sentences) that captures the key causal mechanisms:"""
+            if (countTokensWithJTokKit(overviewPrompt) > budget) return emptyList()
             val overview = llmInterface.generate(overviewPrompt, temperature = 1.0, maxTokens = 150)
             val summaries = mutableListOf<String>()
             summaries.add(overview.trim())
@@ -106,6 +167,7 @@ Provide a concise summary (1-2 sentences) that captures the key causal mechanism
 Causal path: $pathText
 
 Write a concise explanation using simple natural language that maintains all the causal relationships:"""
+                    if (countTokensWithJTokKit(summaryPrompt) > budget) return emptyList()
                     summaries.add(llmInterface.generate(summaryPrompt, temperature = 0.3, maxTokens = 100).trim())
                 }
             }

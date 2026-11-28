@@ -67,11 +67,11 @@ class HybridRetriever(
         val diagnostics: Map<String, Any>,
     )
 
-    private val queryCache: MutableMap<String, List<Map<String, Any>>> =
+    private val queryCache: MutableMap<Pair<String, Int>, List<Map<String, Any>>> =
         if (cacheResults) {
             Collections.synchronizedMap(
-                object : LinkedHashMap<String, List<Map<String, Any>>>(16, 0.75f, true) {
-                    override fun removeEldestEntry(eldest: MutableMap.MutableEntry<String, List<Map<String, Any>>>?): Boolean =
+                object : LinkedHashMap<Pair<String, Int>, List<Map<String, Any>>>(16, 0.75f, true) {
+                    override fun removeEldestEntry(eldest: MutableMap.MutableEntry<Pair<String, Int>, List<Map<String, Any>>>?): Boolean =
                         size > cacheMaxEntries
                 },
             )
@@ -189,7 +189,7 @@ class HybridRetriever(
         topK: Int = 5,
     ): List<Map<String, Any>> {
         if (cacheResults) {
-            val cached = queryCache[query]
+            val cached = queryCache[query to topK]
             if (cached != null) {
                 return cached.take(topK)
             }
@@ -295,7 +295,7 @@ class HybridRetriever(
 
         val sorted = scoredResults.sortedByDescending { it["score"] as Double }
         if (cacheResults) {
-            queryCache[query] = sorted
+            queryCache[query to topK] = sorted
         }
         return sorted.take(topK)
     }
@@ -318,10 +318,12 @@ class HybridRetriever(
         val fallbackMessage =
             "This passage was retrieved as relevant to the query: $query. " +
                 "No detailed scoring information is available."
-        val cached = queryCache[query] ?: return fallbackMessage
         val result =
-            cached.firstOrNull { it["passage"] == passage }
-                ?: return fallbackMessage
+            synchronized(queryCache) {
+                queryCache.entries.toList().asReversed().firstNotNullOfOrNull { (key, results) ->
+                    results.firstOrNull { key.first == query && it["passage"] == passage }
+                }
+            } ?: return fallbackMessage
         val details = result["details"] as Map<*, *>
         val explanation = mutableListOf("Hybrid retrieval explanation for: $query")
         val semanticScore = details["semantic_score"] as? Double ?: 0.0
