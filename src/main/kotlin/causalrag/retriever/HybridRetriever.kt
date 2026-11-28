@@ -59,6 +59,7 @@ class HybridRetriever(
     private val confidencePathTarget: Double = 3.0,
     private val cacheResults: Boolean = true,
     private val cacheMaxEntries: Int = 1000,
+    private val pathEvidenceMatcher: ((String, String, String) -> Boolean)? = null,
 ) {
     private data class QueryWeights(
         val semantic: Double,
@@ -122,14 +123,10 @@ class HybridRetriever(
                 val cause = path[i].lowercase()
                 val effect = path[i + 1].lowercase()
                 totalPairs += 1
-                if (passageLower.contains(cause) && passageLower.contains(effect)) {
-                    val causePos = passageLower.indexOf(cause)
-                    val effectPos = passageLower.indexOf(effect)
-                    // Heuristic assumes cause appears before effect; reversed phrasing may be missed.
-                    if (causePos < effectPos) {
-                        pathMatches.add(cause to effect)
-                    }
-                }
+                val matched =
+                    pathEvidenceMatcher?.invoke(passageLower, cause, effect)
+                        ?: (passageLower.indexOf(cause).let { it >= 0 && it < passageLower.indexOf(effect) })
+                if (matched) pathMatches.add(cause to effect)
             }
         }
         val overallPathScore = if (totalPairs > 0) pathMatches.size.toDouble() / totalPairs else 0.0
