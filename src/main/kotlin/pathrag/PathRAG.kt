@@ -17,6 +17,7 @@ import pathrag.llm.openAiComplete
 import pathrag.operate.chunkingByTokenSize
 import pathrag.operate.extractEntities
 import pathrag.operate.extractKeywords
+import pathrag.operate.generateAnswerFromContext
 import pathrag.operate.kgQuery
 import pathrag.operate.renderGraphContext
 import pathrag.storage.JsonKVStorage
@@ -685,6 +686,12 @@ class PathRAG(
             contextLock = indexMutex,
         )
     }
+
+    internal suspend fun answerFromContext(
+        query: String,
+        param: QueryParam,
+        context: String,
+    ): String = generateAnswerFromContext(query, param, context, llmModelFunc, llmResponseCache)
 
     suspend fun aquery(query: String): String = aquery(query, QueryParam())
 

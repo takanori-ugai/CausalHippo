@@ -71,13 +71,10 @@ class PathRagUnifiedAdapter(
             }
 
         val answerText =
-            if (param.includeAnswer) {
-                delegate.aquery(
-                    query,
-                    pathParamBase.copy(onlyNeedContext = false),
-                )
-            } else {
-                null
+            when {
+                !param.includeAnswer -> null
+                contextText != null -> delegate.answerFromContext(query, pathParamBase, contextText)
+                else -> delegate.aquery(query, pathParamBase)
             }
 
         val contextItems =
