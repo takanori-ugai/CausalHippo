@@ -263,8 +263,8 @@ class EmbeddingStore(
     }
 
     companion object {
-        internal fun validateFile(file: File): Set<String> {
-            if (!file.exists()) return emptySet()
+        internal fun validateFile(file: File): Pair<Set<String>, Int?> {
+            if (!file.exists()) return emptySet<String>() to null
             val data =
                 jsonWithDefaults { ignoreUnknownKeys = true }
                     .decodeFromString(EmbeddingStoreData.serializer(), file.readText())
@@ -276,7 +276,7 @@ class EmbeddingStore(
                 data.hashIds.toSet().size == data.hashIds.size &&
                     data.embeddings.all { it.isNotEmpty() && it.size == dimension && it.all(Double::isFinite) },
             ) { "Invalid embedding store: $file" }
-            return data.hashIds.toSet()
+            return data.hashIds.toSet() to dimension
         }
     }
 

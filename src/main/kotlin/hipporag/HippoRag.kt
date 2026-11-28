@@ -101,6 +101,15 @@ class HippoRag(
 
     private val openieResultsPath: String
     private var unsavedOpenie: List<OpenieDoc>? = null
+
+    internal fun checkpointOpenie(): String? =
+        unsavedOpenie?.let { docs ->
+            jsonWithDefaults {}.encodeToString(OpenieResults.serializer(), OpenieResults(docs, 0.0, 0.0))
+        }
+
+    internal fun checkpointEmbeddingDimension(): Int? =
+        embeddingModel?.batchEncode(listOf("HippoRAG checkpoint dimension check"), norm = true)?.single()?.size
+
     private val rerankFilter: DSPyFilter
 
     private var readyToRetrieve: Boolean = false

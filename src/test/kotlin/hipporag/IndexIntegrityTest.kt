@@ -67,6 +67,36 @@ class IndexIntegrityTest {
         }
 
     @Test
+    fun preservesUnsavedProvenanceInCheckpoint() =
+        withRag { base, _ ->
+            val config = base.copy(saveOpenie = false)
+            val original = HippoRag(config)
+            original.index(listOf(first, second))
+            val snapshot = Path.of(config.saveDir, "provenance")
+            HippoRAG(original).saveGraph(snapshot.toString())
+            HippoRAG(config).loadGraph(snapshot.toString())
+            val restored = HippoRag(config)
+            restored.delete(listOf(first))
+            assertEquals(listOf(second), HippoRAG(restored).query("query", QueryParam("dpr", includeAnswer = false)).docs)
+        }
+
+    @Test
+    fun incompatibleRestorePreservesLiveIndex() =
+        withRag { config, encoder ->
+            val original = HippoRAG(config)
+            original.upsert(first)
+            val snapshot = Path.of(config.saveDir, "dimensions")
+            original.saveGraph(snapshot.toString())
+            every { encoder.batchEncode(any(), any(), any()) } answers {
+                Array(firstArg<List<String>>().size) { doubleArrayOf(1.0, 0.0, 0.0) }
+            }
+            val live = HippoRAG(config.copy(saveDir = Path.of(config.saveDir, "other").toString()))
+            live.upsert(second)
+            assertFails { live.loadGraph(snapshot.toString()) }
+            assertEquals(listOf(second), live.query("query", QueryParam("dpr", includeAnswer = false)).docs)
+        }
+
+    @Test
     fun retainsSharedEntityWhenDeletingAfterRestart() =
         withRag { config, _ ->
             HippoRag(config).index(listOf(first, second))
