@@ -5,11 +5,6 @@ import causalrag.retriever.HippoRagSemanticMode
 import hipporag.config.BaseConfig
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.coroutines.runBlocking
-import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonObject
-import kotlinx.serialization.json.JsonPrimitive
-import kotlinx.serialization.json.contentOrNull
-import kotlinx.serialization.json.jsonArray
 import shared.config.CommonRagConfigLoader
 import shared.rag.CommonRag
 import shared.rag.IndexingReport
@@ -17,8 +12,6 @@ import tools.jackson.core.type.TypeReference
 import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.nio.file.Files
 import java.nio.file.Path
-import java.nio.file.StandardCopyOption
-import java.util.Comparator
 
 data class CausalHippoQueryParam(
     val topK: Int = 5,
@@ -38,9 +31,9 @@ class CausalHippoRAG(
     causalWeight: Double = 0.5,
     bm25Weight: Double = 0.1,
     minCausalMatches: Int = 0,
-    dynamicWeightingEnabled: Boolean = false,
-    twoPassAdaptiveEnabled: Boolean = false,
-    confidenceBasedSwitchEnabled: Boolean = false,
+    dynamicWeightingEnabled: Boolean = true,
+    twoPassAdaptiveEnabled: Boolean = true,
+    confidenceBasedSwitchEnabled: Boolean = true,
 ) : CommonRag<CausalHippoQueryParam, CausalRagRunResult> {
     private data class PipelineArgs(
         val modelName: String,
@@ -59,7 +52,6 @@ class CausalHippoRAG(
     )
 
     private val logger = KotlinLogging.logger("CausalHippoRAG")
-    private val json = Json { ignoreUnknownKeys = true }
     private val objectMapper = jacksonObjectMapper()
     private val args =
         PipelineArgs(
@@ -77,7 +69,7 @@ class CausalHippoRAG(
             twoPassAdaptiveEnabled = twoPassAdaptiveEnabled,
             confidenceBasedSwitchEnabled = confidenceBasedSwitchEnabled,
         )
-    private var pipeline: CausalHippoPipeline = createPipeline()
+    private val pipeline: CausalHippoPipeline = createPipeline()
 
     companion object {
         fun fromCommonConfig(configPath: String): CausalHippoRAG {
@@ -111,112 +103,31 @@ class CausalHippoRAG(
             return
         }
         pipeline.index(documents)
-        pipeline.hybridRetriever.clearCache()
     }
 
     override fun drop() = runBlocking { adrop() }
 
-    override suspend fun adrop() {
-        pipeline.hybridRetriever.clearCache()
-        pipeline.graphBuilder.clear()
-        pipeline.bm25Retriever.clear()
-        val hippoConfig = pipeline.hippoRag.globalConfig
-        deleteDirectory(hippoWorkingDir(hippoConfig))
-        Files.deleteIfExists(hippoOpenieFile(hippoConfig))
-        recreatePipeline()
-    }
+    override suspend fun adrop() = pipeline.reindex(emptyList())
 
     override fun saveGraph(path: String) = runBlocking { asaveGraph(path) }
 
     override suspend fun asaveGraph(path: String) {
         require(path.isNotBlank()) { "path must not be blank" }
-        val target = Path.of(path).toAbsolutePath().normalize()
-        deleteDirectory(target)
-        Files.createDirectories(target)
-
-        val hippoConfig = pipeline.hippoRag.globalConfig
-        val hippoSourceDir = hippoWorkingDir(hippoConfig)
-        require(Files.exists(hippoSourceDir) && Files.isDirectory(hippoSourceDir)) {
-            "Hippo working directory does not exist: $hippoSourceDir"
-        }
-        copyDirectory(hippoSourceDir, target.resolve("hippo_working_dir"))
-
-        val openieSource = hippoOpenieFile(hippoConfig)
-        if (Files.exists(openieSource) && Files.isRegularFile(openieSource)) {
-            Files.copy(
-                openieSource,
-                target.resolve(openieSource.fileName.toString()),
-                StandardCopyOption.REPLACE_EXISTING,
-                StandardCopyOption.COPY_ATTRIBUTES,
-            )
-        }
-
-        val causalGraphPath = target.resolve("causal_graph.json")
-        check(pipeline.graphBuilder.save(causalGraphPath.toString())) {
-            "Failed to save causal graph to '$causalGraphPath'."
-        }
+        pipeline.saveSnapshot(Path.of(path))
     }
 
     override fun loadGraph(path: String) = runBlocking { aloadGraph(path) }
 
     override suspend fun aloadGraph(path: String) {
         require(path.isNotBlank()) { "path must not be blank" }
-        val sourceRoot = Path.of(path).toAbsolutePath().normalize()
-        require(Files.exists(sourceRoot) && Files.isDirectory(sourceRoot)) {
-            "CausalHippo snapshot directory not found: $sourceRoot"
-        }
-
-        val sourceHippoDir =
-            when {
-                Files.exists(sourceRoot.resolve("hippo_working_dir")) &&
-                    Files.isDirectory(sourceRoot.resolve("hippo_working_dir")) -> sourceRoot.resolve("hippo_working_dir")
-
-                Files.exists(sourceRoot.resolve("graph.json")) -> sourceRoot
-
-                else -> error("Invalid CausalHippo snapshot: expected 'hippo_working_dir/' or Hippo graph.json in $sourceRoot")
-            }
-
-        val sourceCausalGraph = sourceRoot.resolve("causal_graph.json")
-        require(Files.exists(sourceCausalGraph) && Files.isRegularFile(sourceCausalGraph)) {
-            "Causal graph snapshot not found: $sourceCausalGraph"
-        }
-
-        val currentHippoConfig = pipeline.hippoRag.globalConfig
-        val targetHippoDir = hippoWorkingDir(currentHippoConfig)
-        deleteDirectory(targetHippoDir)
-        copyDirectory(sourceHippoDir, targetHippoDir)
-
-        val targetOpenie = hippoOpenieFile(currentHippoConfig)
-        Files.createDirectories(targetOpenie.parent)
-        Files.deleteIfExists(targetOpenie)
-        val sourceOpenie = sourceRoot.resolve(targetOpenie.fileName.toString())
-        if (Files.exists(sourceOpenie) && Files.isRegularFile(sourceOpenie)) {
-            Files.copy(
-                sourceOpenie,
-                targetOpenie,
-                StandardCopyOption.REPLACE_EXISTING,
-                StandardCopyOption.COPY_ATTRIBUTES,
-            )
-        }
-
-        recreatePipeline()
-        check(pipeline.graphBuilder.load(sourceCausalGraph.toString())) {
-            "Failed to load causal graph from '$sourceCausalGraph'."
-        }
-
-        val bm25Docs = readHippoChunkTexts(pipeline.hippoRag.globalConfig)
-        pipeline.bm25Retriever.clear()
-        if (bm25Docs.isNotEmpty()) {
-            pipeline.bm25Retriever.indexDocuments(bm25Docs)
-        } else {
-            logger.warn { "No Hippo chunk texts found after load; BM25 retriever remains empty." }
-        }
-        pipeline.hybridRetriever.clearCache()
+        pipeline.loadSnapshot(Path.of(path))
     }
 
     override fun inspectGraph(): Map<String, Any?> = runBlocking { ainspectGraph() }
 
-    override suspend fun ainspectGraph(): Map<String, Any?> {
+    override suspend fun ainspectGraph(): Map<String, Any?> = synchronized(pipeline) { inspect() }
+
+    private fun inspect(): Map<String, Any?> {
         val causalSnapshot = inspectCausalGraph()
         val hippoSnapshot = inspectHippoGraph()
         val causalMeta = causalSnapshot["metadata"] as? Map<*, *> ?: emptyMap<Any?, Any?>()
@@ -247,28 +158,14 @@ class CausalHippoRAG(
         val topK = param.topK.coerceAtLeast(1)
         val maxPaths = param.maxPaths.coerceAtLeast(1)
 
-        if (param.onlyNeedContext || param.onlyNeedCausalPaths) {
-            val context =
-                if (param.onlyNeedContext) {
-                    pipeline.retrieveContext(query, topK = topK)
-                } else {
-                    emptyList()
-                }
-            val causalPaths =
-                if (param.onlyNeedCausalPaths) {
-                    pipeline.retrieveCausalPaths(query, maxPaths = maxPaths)
-                } else {
-                    emptyList()
-                }
-            return CausalRagRunResult(answer = "", context = context, causalPaths = causalPaths)
+        if (param.onlyNeedContext) {
+            val evidence = pipeline.preparePrompt(query, topK, maxPaths, summarize = false)
+            return CausalRagRunResult("", evidence.passages, if (param.onlyNeedCausalPaths) evidence.paths else emptyList())
         }
-
-        val result = pipeline.runWithContext(query, topK = topK)
-        return if (maxPaths == 3) {
-            result
-        } else {
-            result.copy(causalPaths = pipeline.retrieveCausalPaths(query, maxPaths = maxPaths))
+        if (param.onlyNeedCausalPaths) {
+            return CausalRagRunResult("", emptyList(), pipeline.retrieveCausalPaths(query, maxPaths))
         }
+        return pipeline.runWithContext(query, topK, maxPaths)
     }
 
     private fun createPipeline(): CausalHippoPipeline =
@@ -288,10 +185,6 @@ class CausalHippoRAG(
             confidenceBasedSwitchEnabled = args.confidenceBasedSwitchEnabled,
         )
 
-    private fun recreatePipeline() {
-        pipeline = createPipeline()
-    }
-
     private fun normalizeDocuments(data: Collection<String>): List<String> =
         data
             .map { it.trim() }
@@ -301,65 +194,6 @@ class CausalHippoRAG(
         val llmLabel = config.llmName.replace("/", "_")
         val embeddingLabel = config.embeddingModelName.replace("/", "_")
         return Path.of(config.saveDir, "${llmLabel}_$embeddingLabel").toAbsolutePath().normalize()
-    }
-
-    private fun hippoOpenieFile(config: BaseConfig): Path {
-        val llmLabel = config.llmName.replace("/", "_")
-        return Path.of(config.saveDir, "openie_results_ner_$llmLabel.json").toAbsolutePath().normalize()
-    }
-
-    private fun readHippoChunkTexts(config: BaseConfig): List<String> {
-        val chunkStore = hippoWorkingDir(config).resolve("chunk_embeddings").resolve("vdb_chunk.json")
-        if (!Files.exists(chunkStore) || !Files.isRegularFile(chunkStore)) return emptyList()
-        return runCatching {
-            val root = json.parseToJsonElement(Files.readString(chunkStore)) as JsonObject
-            val rawTexts = root["texts"]
-            if (rawTexts == null) {
-                emptyList<String>()
-            } else {
-                rawTexts
-                    .jsonArray
-                    .mapNotNull { (it as? JsonPrimitive)?.contentOrNull?.trim() }
-                    .filter { it.isNotBlank() }
-            }
-        }.getOrElse { ex ->
-            logger.warn(ex) { "Failed to parse Hippo chunk store from '$chunkStore'." }
-            emptyList()
-        }
-    }
-
-    private fun copyDirectory(
-        source: Path,
-        target: Path,
-    ) {
-        Files.walk(source).use { stream ->
-            stream.forEach { from ->
-                val relative = source.relativize(from)
-                val to = target.resolve(relative.toString())
-                if (Files.isDirectory(from)) {
-                    Files.createDirectories(to)
-                } else {
-                    Files.createDirectories(to.parent)
-                    Files.copy(
-                        from,
-                        to,
-                        StandardCopyOption.REPLACE_EXISTING,
-                        StandardCopyOption.COPY_ATTRIBUTES,
-                    )
-                }
-            }
-        }
-    }
-
-    private fun deleteDirectory(path: Path) {
-        if (!Files.exists(path)) return
-        val normalized = path.toAbsolutePath().normalize()
-        require(normalized.nameCount > 1) { "Refusing to delete unsafe path: $normalized" }
-        Files.walk(normalized).use { stream ->
-            stream
-                .sorted(Comparator.reverseOrder())
-                .forEach { Files.deleteIfExists(it) }
-        }
     }
 
     private fun inspectCausalGraph(): Map<String, Any?> {

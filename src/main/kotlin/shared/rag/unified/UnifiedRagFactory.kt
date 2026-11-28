@@ -125,9 +125,9 @@ object UnifiedRagFactory {
                 causalWeight = effective.double("causalWeight") ?: 0.5,
                 bm25Weight = effective.double("bm25Weight") ?: 0.1,
                 minCausalMatches = effective.int("minCausalMatches") ?: 0,
-                dynamicWeightingEnabled = effective.bool("dynamicWeightingEnabled") ?: false,
-                twoPassAdaptiveEnabled = effective.bool("twoPassAdaptiveEnabled") ?: false,
-                confidenceBasedSwitchEnabled = effective.bool("confidenceBasedSwitchEnabled") ?: false,
+                dynamicWeightingEnabled = effective.bool("dynamicWeightingEnabled") ?: true,
+                twoPassAdaptiveEnabled = effective.bool("twoPassAdaptiveEnabled") ?: true,
+                confidenceBasedSwitchEnabled = effective.bool("confidenceBasedSwitchEnabled") ?: true,
             )
         val adapter = CausalHippoRagUnifiedAdapter(rag)
         return UnifiedRagHandle(

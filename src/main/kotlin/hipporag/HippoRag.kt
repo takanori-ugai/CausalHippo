@@ -273,8 +273,16 @@ class HippoRag(
             return
         }
 
-        val ingestChunks = chunkDocsForIngest(cleanedDocs)
-        chunkEmbeddingStore.insertStrings(ingestChunks)
+        indexPreparedChunks(chunkDocsForIngest(cleanedDocs))
+    }
+
+    internal fun indexedPassages(): List<String> = chunkEmbeddingStore.getAllIdToRows().values.map { it.content }
+
+    internal fun indexPreparedChunks(chunks: List<String>) {
+        lastIndexingReport = IndexingReport()
+        check(!globalConfig.openieMode.equals("offline", ignoreCase = true)) { "Prepared chunks require online indexing" }
+        if (chunks.isEmpty()) return
+        chunkEmbeddingStore.insertStrings(chunks)
         val chunkToRows = chunkEmbeddingStore.getAllIdToRows()
 
         val (allOpenieInfo, chunkKeysToProcess) = loadExistingOpenie(chunkToRows.keys.toList())

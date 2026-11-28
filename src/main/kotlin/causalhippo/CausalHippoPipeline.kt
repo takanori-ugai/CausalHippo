@@ -4,8 +4,7 @@ import causalrag.CausalRagRunResult
 import causalrag.causalgraph.builder.CausalGraphBuilder
 import causalrag.causalgraph.retriever.CausalPathRetriever
 import causalrag.generator.llm.LLMInterface
-import causalrag.generator.promptbuilder.buildPrompt
-import causalrag.reranker.CausalPathReranker
+import causalrag.generator.promptbuilder.PromptBuilder
 import causalrag.retriever.Bm25Retriever
 import causalrag.retriever.HippoRagSemanticMode
 import causalrag.retriever.HippoRagSemanticRetrieverAdapter
@@ -18,7 +17,6 @@ import shared.chunking.DEFAULT_INGEST_CHUNK_TOKEN_SIZE
 import shared.chunking.DEFAULT_PROMPT_CONTEXT_TOKEN_BUDGET
 import shared.chunking.DEFAULT_TIKTOKEN_MODEL
 import shared.chunking.chunkByTokenSizeWithOverlap
-import shared.chunking.hardTruncateStringsByTokenBudget
 import shared.config.CaualRagConfig
 import shared.config.CommonRagConfigLoader
 import shared.rag.IndexingReport
@@ -41,13 +39,13 @@ class CausalHippoPipeline(
     templateStyle: String? = null,
     hippoConfig: BaseConfig? = null,
     hippoSemanticMode: HippoRagSemanticMode = HippoRagSemanticMode.GRAPH,
-    semanticWeight: Double = 0.4,
-    causalWeight: Double = 0.5,
-    bm25Weight: Double = 0.1,
+    private val semanticWeight: Double = 0.4,
+    private val causalWeight: Double = 0.5,
+    private val bm25Weight: Double = 0.1,
     minCausalMatches: Int = 0,
-    dynamicWeightingEnabled: Boolean = false,
-    twoPassAdaptiveEnabled: Boolean = false,
-    confidenceBasedSwitchEnabled: Boolean = false,
+    private val dynamicWeightingEnabled: Boolean = true,
+    private val twoPassAdaptiveEnabled: Boolean = true,
+    private val confidenceBasedSwitchEnabled: Boolean = true,
 ) {
     private val config: CaualRagConfig? = configPath?.let { loadConfig(it) }
     private val effectiveModelName = config?.modelName ?: modelName
@@ -65,7 +63,8 @@ class CausalHippoPipeline(
         config?.ingestChunkOverlapTokenSize ?: DEFAULT_INGEST_CHUNK_OVERLAP_TOKEN_SIZE
     private val effectivePromptContextTokenBudget =
         config?.promptContextTokenBudget ?: DEFAULT_PROMPT_CONTEXT_TOKEN_BUDGET
-    private var indexedDocs: List<String> = emptyList()
+    private val liveFiles = HybridIndexFiles(resolveHippoConfig(hippoConfig))
+    private val promptBuilder by lazy { PromptBuilder(templateStyle = effectiveTemplateStyle, llmInterface = llm) }
 
     internal val llm: LLMInterface =
         LLMInterface(
@@ -74,148 +73,167 @@ class CausalHippoPipeline(
             apiKey = effectiveLlmApiKey,
             baseUrl = effectiveLlmBaseUrl,
         )
-    internal val graphBuilder: CausalGraphBuilder =
+
+    private data class Index(
+        val hippo: HippoRag,
+        val graph: CausalGraphBuilder,
+        val bm25: Bm25Retriever,
+        val paths: CausalPathRetriever,
+        val hybrid: HybridRetriever,
+    )
+
+    private fun createGraph(): CausalGraphBuilder =
         CausalGraphBuilder(
             modelName = effectiveEmbeddingModel,
-            graphPath = effectiveGraphPath,
             embeddingApiKey = effectiveEmbeddingApiKey,
             extractorMethod = "hybrid",
             llmInterface = llm,
             ingestChunkTokenSize = effectiveIngestChunkTokenSize,
             ingestChunkOverlapTokenSize = effectiveIngestChunkOverlapTokenSize,
         )
-    internal val hippoRag: HippoRag = HippoRag(resolveHippoConfig(hippoConfig))
-    internal val semanticRetriever = HippoRagSemanticRetrieverAdapter(hippoRag, mode = effectiveHippoSemanticMode)
-    internal val bm25Retriever: Bm25Retriever = Bm25Retriever()
-    internal val graphRetriever: CausalPathRetriever = CausalPathRetriever(graphBuilder)
-    internal val hybridRetriever: HybridRetriever =
-        HybridRetriever(
-            semanticRetriever = semanticRetriever,
-            graphRetriever = graphRetriever,
-            semanticWeight = semanticWeight,
-            causalWeight = causalWeight,
-            bm25Weight = bm25Weight,
-            minCausalMatches = effectiveMinCausalMatches,
-            bm25Retriever = bm25Retriever,
-            dynamicWeightingEnabled = dynamicWeightingEnabled,
-            twoPassAdaptiveEnabled = twoPassAdaptiveEnabled,
-            confidenceBasedSwitchEnabled = confidenceBasedSwitchEnabled,
+
+    private fun readGraph(path: Path?): CausalGraphBuilder =
+        createGraph().also { builder ->
+            if (path != null) check(builder.load(path.toString())) { "Could not load causal graph from '$path'" }
+        }
+
+    private fun createIndex(
+        hippo: HippoRag,
+        graph: CausalGraphBuilder,
+    ): Index {
+        val bm25 = Bm25Retriever()
+        val passages = hippo.indexedPassages()
+        if (passages.isNotEmpty()) bm25.indexDocuments(passages)
+        val paths = CausalPathRetriever(graph)
+        val hybrid =
+            HybridRetriever(
+                semanticRetriever = HippoRagSemanticRetrieverAdapter(hippo, mode = effectiveHippoSemanticMode),
+                graphRetriever = paths,
+                semanticWeight = semanticWeight,
+                causalWeight = causalWeight,
+                bm25Weight = bm25Weight,
+                minCausalMatches = effectiveMinCausalMatches,
+                bm25Retriever = bm25,
+                dynamicWeightingEnabled = dynamicWeightingEnabled,
+                twoPassAdaptiveEnabled = twoPassAdaptiveEnabled,
+                confidenceBasedSwitchEnabled = confidenceBasedSwitchEnabled,
+                pathEvidenceMatcher = ::supportsDirectedRelation,
+            )
+        return Index(hippo, graph, bm25, paths, hybrid)
+    }
+
+    private var current =
+        createIndex(
+            HippoRag(liveFiles.config),
+            readGraph(liveFiles.causalGraph.takeIf(Files::isRegularFile) ?: effectiveGraphPath?.let(Path::of)),
         )
-    internal val reranker: CausalPathReranker = CausalPathReranker(graphRetriever)
+
+    internal val hippoRag get() = current.hippo
+    internal val graphBuilder get() = current.graph
+    internal val graphRetriever get() = current.paths
+    internal val bm25Retriever get() = current.bm25
+    internal val hybridRetriever get() = current.hybrid
 
     var lastIndexingReport: IndexingReport = IndexingReport()
         private set
 
-    /**
-     * Indexes documents into both HippoRAG and the causal graph.
-     */
+    /** Adds chunks to a staged copy of the current corpus. */
+    @Synchronized
     fun index(documents: List<String>) {
-        lastIndexingReport = IndexingReport()
-        val prepared = chunkDocumentsForIngest(documents)
-        if (prepared.isEmpty()) return
-        hippoRag.index(prepared)
-        graphBuilder.indexDocuments(prepared)
-        bm25Retriever.indexDocuments(prepared)
-        indexedDocs = prepared
-        lastIndexingReport = IndexingReport(graphBuilder.lastIndexingReport.failures + hippoRag.lastIndexingReport.failures)
+        val prepared = chunkDocumentsForIngest(documents).distinct()
+        if (prepared.isNotEmpty()) updateIndex(prepared, replace = false)
     }
 
-    /**
-     * Replaces the current in-memory indexes with [documents].
-     *
-     * This preserves heavyweight clients while preventing cross-sample index contamination.
-     */
+    /** Replaces the complete corpus after all three retrieval indexes can be built. */
+    @Synchronized
     fun reindex(documents: List<String>) {
-        lastIndexingReport = IndexingReport()
-        val prepared = chunkDocumentsForIngest(documents)
-        hybridRetriever.clearCache()
-        if (indexedDocs.isNotEmpty()) {
-            hippoRag.delete(indexedDocs)
-        }
-        indexedDocs = emptyList()
-        graphBuilder.clear()
-        bm25Retriever.clear()
-        if (prepared.isEmpty()) return
+        updateIndex(chunkDocumentsForIngest(documents).distinct(), replace = true)
+    }
 
-        try {
-            hippoRag.index(prepared)
-            graphBuilder.indexDocuments(prepared)
-            bm25Retriever.indexDocuments(prepared)
-            indexedDocs = prepared
-            lastIndexingReport = IndexingReport(graphBuilder.lastIndexingReport.failures + hippoRag.lastIndexingReport.failures)
-        } catch (e: Exception) {
-            // Best-effort rollback to preserve per-sample index isolation after partial failures.
-            runCatching { hippoRag.delete(prepared) }
-            runCatching { graphBuilder.clear() }
-            runCatching { bm25Retriever.clear() }
-            indexedDocs = emptyList()
-            throw e
+    private fun updateIndex(
+        prepared: List<String>,
+        replace: Boolean,
+    ) {
+        liveFiles.withStaging { staged ->
+            if (!replace) liveFiles.copyTo(staged)
+            val stagedHippo = HippoRag(staged.config)
+            val oldPassages = stagedHippo.indexedPassages().toSet()
+            val hasCausalGraph = Files.isRegularFile(staged.causalGraph)
+            val graph = readGraph(staged.causalGraph.takeIf { hasCausalGraph })
+            stagedHippo.indexPreparedChunks(prepared)
+            val allPassages = stagedHippo.indexedPassages()
+            check(allPassages.toSet() == oldPassages + prepared) { "HippoRAG did not index the complete corpus" }
+            val causalInputs = if (hasCausalGraph) allPassages.filterNot { it in oldPassages } else allPassages
+            graph.indexDocuments(causalInputs)
+            check(graph.save(staged.causalGraph.toString())) { "Could not stage causal graph" }
+            val report = IndexingReport(graph.lastIndexingReport.failures + stagedHippo.lastIndexingReport.failures)
+            publish(staged, graph)
+            lastIndexingReport = report
         }
     }
 
-    /**
-     * Retrieves supporting passages after HippoRAG recall and causal reranking.
-     */
+    private fun publish(
+        staged: HybridIndexFiles,
+        graph: CausalGraphBuilder,
+    ) {
+        liveFiles.install(staged) {
+            current = createIndex(HippoRag(liveFiles.config), graph)
+        }
+    }
+
+    @Synchronized
+    internal fun saveSnapshot(target: Path) {
+        liveFiles.saveSnapshot(target, graphBuilder)
+    }
+
+    @Synchronized
+    internal fun loadSnapshot(source: Path) {
+        liveFiles.withStaging { staged ->
+            liveFiles.readSnapshot(source, staged)
+            val graph = readGraph(staged.causalGraph)
+            publish(staged, graph)
+            lastIndexingReport = IndexingReport()
+        }
+    }
+
+    @Synchronized
     fun retrieveContext(
         query: String,
         topK: Int = 5,
-    ): List<String> {
-        val candidateDetails = hybridRetriever.retrieveWithDetails(query, topK = topK)
-        val candidates = candidateDetails.map { it["passage"] as String }
-        val metadata = candidateDetails.map { mapOf("score" to (it["score"] as Double)) }
-        val topPassages = reranker.rerank(query, candidates, metadata).map { it.first }.take(topK)
-        return hardTruncateStringsByTokenBudget(
-            items = topPassages,
-            maxTokenSize = effectivePromptContextTokenBudget,
-            model = DEFAULT_TIKTOKEN_MODEL,
-            includePartialLastItem = false,
-        )
-    }
+    ): List<String> = preparePrompt(query, topK, maxPaths = 3, summarize = false).passages
 
-    /**
-     * Retrieves causal paths relevant to the query.
-     */
+    @Synchronized
     fun retrieveCausalPaths(
         query: String,
         maxPaths: Int = 3,
-    ): List<List<String>> = graphRetriever.retrievePaths(query, maxPaths = maxPaths)
+    ): List<List<String>> = current.paths.retrievePaths(query, maxPaths = maxPaths.coerceAtLeast(1))
 
-    /**
-     * Runs retrieval, causal reranking, prompt construction, and answer generation.
-     */
+    @Synchronized
+    internal fun preparePrompt(
+        query: String,
+        topK: Int,
+        maxPaths: Int,
+        summarize: Boolean,
+    ): PromptBuilder.BudgetedPrompt =
+        promptBuilder.buildBudgetedPrompt(
+            query,
+            current.hybrid.retrieve(query, topK = topK.coerceAtLeast(1)),
+            retrieveCausalPaths(query, maxPaths),
+            effectivePromptContextTokenBudget,
+            summarize,
+        )
+
+    @Synchronized
     fun runWithContext(
         query: String,
         topK: Int = 5,
+        maxPaths: Int = 3,
     ): CausalRagRunResult {
-        val candidateDetails = hybridRetriever.retrieveWithDetails(query, topK = topK)
-        val candidates = candidateDetails.map { it["passage"] as String }
-        val metadata = candidateDetails.map { mapOf("score" to (it["score"] as Double)) }
-        val topPassages = reranker.rerank(query, candidates, metadata).map { it.first }.take(topK)
-        val rerankedPassages =
-            hardTruncateStringsByTokenBudget(
-                items = topPassages,
-                maxTokenSize = effectivePromptContextTokenBudget,
-                model = DEFAULT_TIKTOKEN_MODEL,
-                includePartialLastItem = false,
-            )
-        val causalNodes = graphRetriever.retrievePathNodes(query)
-        val causalPaths = graphRetriever.retrievePaths(query, maxPaths = 3)
-        val prompt =
-            buildPrompt(
-                query,
-                rerankedPassages,
-                causalPaths = causalPaths,
-                causalNodes = causalNodes,
-                templateStyle = effectiveTemplateStyle,
-                llmInterface = llm,
-            )
-        val answer = llm.generate(prompt, jsonMode = requiresJsonResponseFormat(effectiveTemplateStyle))
-        return CausalRagRunResult(answer, rerankedPassages, causalPaths)
+        val evidence = preparePrompt(query, topK, maxPaths, summarize = true)
+        val answer = llm.generate(evidence.text, jsonMode = requiresJsonResponseFormat(effectiveTemplateStyle))
+        return CausalRagRunResult(answer, evidence.passages, evidence.paths)
     }
 
-    /**
-     * Convenience wrapper around [runWithContext].
-     */
     fun run(
         query: String,
         topK: Int = 5,
