@@ -2,8 +2,11 @@ package lightrag.core
 
 import dev.langchain4j.model.embedding.EmbeddingModel
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import lightrag.operate.relationKey
 import lightrag.services.IngestionService
 import lightrag.services.QueryService
 import lightrag.services.StorageManager
@@ -89,6 +92,7 @@ class LightRAG(
     private val persistenceNamespacePrefix: String = "lightrag",
 ) : CommonRag<QueryParam, QueryResult?> {
     private val objectMapper = jacksonObjectMapper()
+    private val indexMutex = Mutex()
 
     private val unifiedSpiSession = persistenceSession
     private val unifiedSpiEnabled = useUnifiedSpiForRetrievalAndIndex && unifiedSpiSession != null
@@ -98,6 +102,8 @@ class LightRAG(
     private val unifiedSpiChunksNamespace = "${unifiedSpiNamespacePrefix}_chunks"
     private val unifiedSpiMetadataNamespace = "${unifiedSpiNamespacePrefix}_metadata"
     private var unifiedSpiInitialized = false
+    private var unifiedSpiPublicationPending = false
+    private var importedGraphWithoutChunkProvenance = false
 
     init {
         if (unifiedSpiEnabled) {
@@ -114,7 +120,10 @@ class LightRAG(
     suspend fun insert(
         input: String,
         fileSource: String? = null,
-    ): String = ingestionService.insert(input, fileSource)
+    ): String =
+        indexMutex.withLock {
+            ingestionService.insert(input, fileSource).also { publishUnifiedIndex() }
+        }
 
     /**
      * Inserts multiple documents.
@@ -125,7 +134,10 @@ class LightRAG(
     suspend fun insert(
         input: List<String>,
         fileSources: List<String>? = null,
-    ): String = ingestionService.insert(input, fileSources)
+    ): String =
+        indexMutex.withLock {
+            ingestionService.insert(input, fileSources).also { publishUnifiedIndex() }
+        }
 
     override fun upsert(data: String) = runBlocking { aupsert(data) }
 
@@ -138,10 +150,6 @@ class LightRAG(
             return
         }
         insert(doc)
-        if (unifiedSpiEnabled) {
-            syncUnifiedSpiFromLocal()
-            unifiedSpiInitialized = true
-        }
     }
 
     override suspend fun aupsert(data: Collection<String>) {
@@ -154,20 +162,23 @@ class LightRAG(
             return
         }
         insert(docs)
-        if (unifiedSpiEnabled) {
-            syncUnifiedSpiFromLocal()
-            unifiedSpiInitialized = true
-        }
     }
 
     /**
      * Rebuilds the derived storage if it is empty.
      */
-    suspend fun rebuildDerivedStorageIfEmpty() {
-        ingestionService.rebuildDerivedStorageIfEmpty()
+    suspend fun rebuildDerivedStorageIfEmpty() =
+        indexMutex.withLock {
+            ingestionService.rebuildDerivedStorageIfEmpty()
+            publishUnifiedIndex()
+        }
+
+    private suspend fun publishUnifiedIndex() {
         if (unifiedSpiEnabled) {
+            unifiedSpiPublicationPending = true
             syncUnifiedSpiFromLocal()
             unifiedSpiInitialized = true
+            unifiedSpiPublicationPending = false
         }
     }
 
@@ -185,62 +196,72 @@ class LightRAG(
     override suspend fun aquery(
         query: String,
         param: QueryParam,
-    ): QueryResult? {
-        if (unifiedSpiEnabled) {
-            ensureUnifiedSpiIndexInitializedInternal()
-            if (param.onlyNeedContext) {
-                val contextItems = retrieveContextFromUnifiedSpi(query, param.chunkTopK.coerceAtLeast(1))
-                return QueryResult(
-                    content = contextItems.joinToString(separator = "\n\n"),
-                    rawData = mapOf("data" to mapOf("context" to contextItems)),
-                )
+    ): QueryResult? =
+        indexMutex.withLock {
+            if (unifiedSpiEnabled) {
+                ensureUnifiedSpiIndexInitializedInternal()
+                if (param.onlyNeedContext) {
+                    val contextItems = retrieveContextFromUnifiedSpi(query, param.chunkTopK.coerceAtLeast(1))
+                    return@withLock QueryResult(
+                        content = contextItems.joinToString(separator = "\n\n"),
+                        rawData = mapOf("data" to mapOf("context" to contextItems)),
+                    )
+                }
             }
+            queryService.query(query, param)
         }
-        return queryService.query(query, param)
-    }
 
     override fun drop() = runBlocking { adrop() }
 
     override suspend fun adrop() {
-        storageManager.drop()
-        if (unifiedSpiEnabled) {
-            clearUnifiedSpiState()
-            unifiedSpiInitialized = true
-        }
+        dropStorage()
     }
+
+    internal suspend fun dropStorage(): Map<String, Map<String, String>> =
+        indexMutex.withLock {
+            storageManager.drop().also {
+                importedGraphWithoutChunkProvenance = false
+                if (unifiedSpiEnabled) {
+                    clearUnifiedSpiState()
+                    unifiedSpiInitialized = true
+                    unifiedSpiPublicationPending = false
+                }
+            }
+        }
 
     override fun inspectGraph(): Map<String, Any?> = runBlocking { ainspectGraph() }
 
     override suspend fun ainspectGraph(): Map<String, Any?> =
-        if (unifiedSpiEnabled) {
-            inspectGraphFromUnifiedSpi()
-        } else {
-            inspectGraphFromLocal()
+        indexMutex.withLock {
+            if (unifiedSpiEnabled) {
+                ensureUnifiedSpiIndexInitializedInternal()
+                inspectGraphFromUnifiedSpi()
+            } else {
+                inspectGraphFromLocal()
+            }
         }
 
     override fun saveGraph(path: String) = runBlocking { asaveGraph(path) }
 
     @Suppress("TooGenericExceptionCaught")
-    override suspend fun asaveGraph(path: String) {
-        require(path.isNotBlank()) { "path must not be blank" }
-        if (unifiedSpiEnabled) {
-            saveUnifiedSpiCheckpoint(path)
-            return
+    override suspend fun asaveGraph(path: String) =
+        indexMutex.withLock {
+            require(path.isNotBlank()) { "path must not be blank" }
+            if (unifiedSpiEnabled) saveUnifiedSpiCheckpoint(path) else saveLocalSnapshot(path)
         }
-        saveLocalSnapshot(path)
-    }
 
     override fun loadGraph(path: String) = runBlocking { aloadGraph(path) }
 
     @Suppress("TooGenericExceptionCaught", "UNCHECKED_CAST")
-    override suspend fun aloadGraph(path: String) {
-        require(path.isNotBlank()) { "path must not be blank" }
-        if (unifiedSpiEnabled) {
-            loadUnifiedSpiCheckpoint(path)
-            return
+    override suspend fun aloadGraph(path: String) =
+        indexMutex.withLock {
+            require(path.isNotBlank()) { "path must not be blank" }
+            if (unifiedSpiEnabled) {
+                loadUnifiedSpiCheckpoint(path)
+            } else {
+                loadLocalSnapshot(path)
+            }
         }
-        loadLocalSnapshot(path)
-    }
 
     /**
      * Gets the processing status of the documents.
@@ -253,7 +274,13 @@ class LightRAG(
      * @param docId The ID of the document to delete.
      * @return A map of the status.
      */
-    suspend fun deleteByDocId(docId: String): Map<String, String> = ingestionService.deleteByDocId(docId)
+    suspend fun deleteByDocId(docId: String): Map<String, String> =
+        indexMutex.withLock {
+            check(!importedGraphWithoutChunkProvenance) { "Cannot delete documents from an imported graph without chunk provenance" }
+            ingestionService.deleteByDocId(docId).also { result ->
+                if (result["status"] == "success" || unifiedSpiPublicationPending) publishUnifiedIndex()
+            }
+        }
 
     private suspend fun saveLocalSnapshot(path: String) {
         val payload = inspectGraphFromLocal()
@@ -292,6 +319,7 @@ class LightRAG(
         val edgesRaw = payload["edges"] as? List<*> ?: emptyList<Any?>()
 
         resetLocalDerivedState()
+        importedGraphWithoutChunkProvenance = nodesRaw.isNotEmpty() || edgesRaw.isNotEmpty()
 
         nodesRaw.forEach { rawNode ->
             val nodeMap = asStringMap(rawNode)
@@ -321,7 +349,7 @@ class LightRAG(
 
             storageManager.chunkEntityRelationGraph.upsertEdge(source, target, edgeData)
 
-            val edgeKey = "$source#$target"
+            val edgeKey = relationKey(source, target)
             storageManager.fullRelations.upsert(mapOf(edgeKey to edgeData.mapValues { it.value as Any }))
             val relContent =
                 "${edgeData["keywords"].orEmpty()}\t$source\n$target\n${edgeData["description"].orEmpty()}"
@@ -344,7 +372,7 @@ class LightRAG(
 
     private suspend fun saveUnifiedSpiCheckpoint(path: String) {
         val session = unifiedSpiSession ?: return
-        syncUnifiedSpiFromLocal()
+        publishUnifiedIndex()
         session.checkpoint(path)
         session.kv(unifiedSpiMetadataNamespace).put("lastCheckpointPath", path)
     }
@@ -354,10 +382,13 @@ class LightRAG(
         session.restore(path)
         hydrateLocalIndexFromUnifiedSpi()
         unifiedSpiInitialized = true
+        unifiedSpiPublicationPending = false
     }
 
     private suspend fun ensureUnifiedSpiIndexInitializedInternal() {
-        if (!unifiedSpiEnabled || unifiedSpiInitialized) return
+        if (!unifiedSpiEnabled) return
+        if (unifiedSpiPublicationPending) publishUnifiedIndex()
+        if (unifiedSpiInitialized) return
         val session = unifiedSpiSession ?: return
         val graphSnapshot = session.graph(unifiedSpiGraphNamespace).snapshot()
         val chunksSnapshot = session.kv(unifiedSpiChunksNamespace).snapshot()
@@ -476,6 +507,8 @@ class LightRAG(
         val vectorSnapshot = session.vector(unifiedSpiVectorNamespace).snapshot()
 
         resetLocalDerivedState()
+        importedGraphWithoutChunkProvenance =
+            chunkSnapshot.entries.isEmpty() && (graphSnapshot.nodes.isNotEmpty() || graphSnapshot.edges.isNotEmpty())
 
         graphSnapshot.nodes.forEach { node ->
             val nodeData = nodeStorageData(asStringMap(node.data), node.id)
@@ -485,7 +518,7 @@ class LightRAG(
         graphSnapshot.edges.forEach { edge ->
             val edgeData = edgeStorageData(asStringMap(edge.data), edge.source, edge.target)
             storageManager.chunkEntityRelationGraph.upsertEdge(edge.source, edge.target, edgeData)
-            val edgeKey = "${edge.source}#${edge.target}"
+            val edgeKey = relationKey(edge.source, edge.target)
             storageManager.fullRelations.upsert(mapOf(edgeKey to edgeData.mapValues { it.value as Any }))
         }
 

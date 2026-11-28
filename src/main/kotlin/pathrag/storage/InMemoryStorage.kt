@@ -10,6 +10,8 @@ import pathrag.utils.EmbeddingFunc
 import pathrag.utils.computeMdHashId
 import pathrag.utils.computePagerankLocal
 import pathrag.utils.cosineSimilarity
+import pathrag.utils.legacyRelationshipVectorIds
+import pathrag.utils.relationshipVectorId
 import java.util.concurrent.ConcurrentHashMap
 import kotlin.math.abs
 
@@ -87,7 +89,7 @@ class NanoVectorDBStorage(
     override val namespace: String,
     override val globalConfig: Map<String, Any?>,
     private val embeddingFunc: EmbeddingFunc,
-    private val metaFields: Set<String> = setOf("entity_name", "full_doc_id", "source_id"),
+    private val metaFields: Set<String> = setOf("entity_name", "full_doc_id", "source_id", "src_id", "tgt_id"),
 ) : BaseVectorStorage(namespace, globalConfig) {
     private val logger = KotlinLogging.logger("PathRAG-NanoVectorDBStorage")
     private val mutex = Mutex()
@@ -174,9 +176,13 @@ class NanoVectorDBStorage(
             embeddings.forEachIndexed { index, vector ->
                 val (entry, content) = validPairs[index]
                 val key = entry.key
-                val value = entry.value
-                val meta = value.filterKeys { metaFields.contains(it) }
-                entries[key] = StoredVector(vector, content, meta)
+                entries[key] = StoredVector(vector, content, vectorMetadata(entry, metaFields))
+                orderedRelationshipEndpoints(entry)?.let { (src, tgt) ->
+                    for (legacyId in legacyRelationshipVectorIds(src, tgt)) {
+                        val legacy = entries[legacyId]
+                        if (legacy?.meta?.get("src_id") == src && legacy.meta["tgt_id"] == tgt) entries.remove(legacyId)
+                    }
+                }
             }
         }
     }
@@ -223,9 +229,10 @@ class NanoVectorDBStorage(
         srcId: String,
         tgtId: String,
     ) {
-        val relId = computeMdHashId(srcId + tgtId, prefix = "rel-")
+        val relId = relationshipVectorId(srcId, tgtId)
         mutex.withLock {
             entries.remove(relId)
+            entries.entries.removeIf { (_, stored) -> stored.meta["src_id"] == srcId && stored.meta["tgt_id"] == tgtId }
         }
     }
 

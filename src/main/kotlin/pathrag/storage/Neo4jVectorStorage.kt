@@ -13,6 +13,8 @@ import org.neo4j.driver.Values
 import pathrag.base.BaseVectorStorage
 import pathrag.utils.EmbeddingFunc
 import pathrag.utils.computeMdHashId
+import pathrag.utils.legacyRelationshipVectorIds
+import pathrag.utils.relationshipVectorId
 
 /**
  * Neo4j-backed vector storage using native vector indexes when available.
@@ -56,17 +58,9 @@ class Neo4jVectorStorage(
     private suspend fun <T> read(block: (TransactionContext) -> T): T =
         withContext(Dispatchers.IO) { driver.session().use { session -> session.executeRead { tx -> block(tx) } } }
 
-    /**
-     * Execute a write transaction against the Neo4j driver and return the block's result.
-     *
-     * The provided `block` is invoked with a `TransactionContext` inside a write transaction and its
-     * return value is propagated to the caller.
-     *
-     * @param block Lambda that performs operations within the write transaction using the `TransactionContext`.
-     * @return The value returned by `block`.
-     */
-    private suspend fun <T> write(block: (TransactionContext) -> T): T =
+    private suspend fun write(block: (TransactionContext) -> Unit) {
         withContext(Dispatchers.IO) { driver.session().use { session -> session.executeWrite { tx -> block(tx) } } }
+    }
 
     /**
      * Find the most relevant stored vectors for the given text, preferring a Neo4j vector index and falling back to
@@ -155,13 +149,19 @@ class Neo4jVectorStorage(
         write { tx ->
             embeddings.forEachIndexed { idx, vector ->
                 val (entry, content) = valid[idx]
-                val meta = entry.value.filterKeys { metaFields.contains(it) }
+                val meta = vectorMetadata(entry, metaFields)
                 tx.run(
                     "MERGE (v:$nodeLabel {id:\$id}) " +
                         "SET v.content = \$content, v.embedding = \$embedding " +
                         "SET v += \$meta",
                     Values.parameters("id", entry.key, "content", content, "embedding", vector.toList(), "meta", meta),
                 )
+                orderedRelationshipEndpoints(entry)?.let { (src, tgt) ->
+                    tx.run(
+                        "MATCH (v:$nodeLabel {src_id:\$src, tgt_id:\$tgt}) WHERE v.id IN \$ids DETACH DELETE v",
+                        Values.parameters("ids", legacyRelationshipVectorIds(src, tgt), "src", src, "tgt", tgt),
+                    )
+                }
             }
         }
     }
@@ -205,7 +205,7 @@ class Neo4jVectorStorage(
         srcId: String,
         tgtId: String,
     ) {
-        val relId = computeMdHashId(srcId + tgtId, prefix = "rel-")
+        val relId = relationshipVectorId(srcId, tgtId)
         write { tx ->
             tx.run(
                 "MATCH (v:$nodeLabel) WHERE v.id = \$id OR (v.src_id = \$src AND v.tgt_id = \$tgt) DETACH DELETE v",
