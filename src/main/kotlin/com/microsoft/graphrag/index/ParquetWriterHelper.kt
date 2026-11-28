@@ -3,6 +3,8 @@ package com.microsoft.graphrag.index
 import blue.strategic.parquet.Dehydrator
 import blue.strategic.parquet.ParquetWriter
 import blue.strategic.parquet.ValueWriter
+import org.apache.parquet.example.data.simple.SimpleGroupFactory
+import org.apache.parquet.hadoop.example.ExampleParquetWriter
 import org.apache.parquet.schema.LogicalTypeAnnotation
 import org.apache.parquet.schema.MessageType
 import org.apache.parquet.schema.PrimitiveType.PrimitiveTypeName
@@ -10,6 +12,7 @@ import org.apache.parquet.schema.Types
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
+import org.apache.hadoop.fs.Path as HadoopPath
 
 /**
  * Writes index artifacts to Parquet files.
@@ -78,15 +81,7 @@ class ParquetWriterHelper {
         path: Path,
         embeddings: List<TextEmbedding>,
     ) {
-        val schema =
-            message("TextEmbedding") {
-                addField(requiredString("chunkId"))
-                addField(repeatedDouble("vector"))
-            }
-        write(path, schema, embeddings) { e, w ->
-            w.write("chunkId", e.chunkId)
-            e.vector.forEach { v -> w.write("vector", v) }
-        }
+        writeEmbeddings(path, "TextEmbedding", "chunkId", embeddings.map { it.chunkId to it.vector })
     }
 
     /**
@@ -99,15 +94,7 @@ class ParquetWriterHelper {
         path: Path,
         embeddings: List<EntityEmbedding>,
     ) {
-        val schema =
-            message("EntityEmbedding") {
-                addField(requiredString("entityId"))
-                addField(repeatedDouble("vector"))
-            }
-        write(path, schema, embeddings) { e, w ->
-            w.write("entityId", e.entityId)
-            e.vector.forEach { v -> w.write("vector", v) }
-        }
+        writeEmbeddings(path, "EntityEmbedding", "entityId", embeddings.map { it.entityId to it.vector })
     }
 
     /**
@@ -208,6 +195,32 @@ class ParquetWriterHelper {
             w.write("entityId", s.entityId)
             w.write("summary", s.summary)
         }
+    }
+
+    private fun writeEmbeddings(
+        path: Path,
+        schemaName: String,
+        idField: String,
+        embeddings: List<Pair<String, List<Double>>>,
+    ) {
+        val schema =
+            message(schemaName) {
+                addField(requiredString(idField))
+                addField(repeatedDouble("vector"))
+            }
+        ensureParent(path)
+        val groups = SimpleGroupFactory(schema)
+        ExampleParquetWriter
+            .builder(HadoopPath(path.toUri()))
+            .withType(schema)
+            .build()
+            .use { writer ->
+                for ((id, vector) in embeddings) {
+                    val row = groups.newGroup().append(idField, id)
+                    vector.forEach { value -> row.add("vector", value) }
+                    writer.write(row)
+                }
+            }
     }
 
     private fun requiredString(name: String) = Types.required(PrimitiveTypeName.BINARY).`as`(LogicalTypeAnnotation.stringType()).named(name)

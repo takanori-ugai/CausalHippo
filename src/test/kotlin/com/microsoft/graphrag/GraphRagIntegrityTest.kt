@@ -267,6 +267,132 @@ class GraphRagIntegrityTest {
         }
 
     @Test
+    fun queryModesReturnTheirEvidenceWithoutCallingChat() =
+        withPipeline { root ->
+            val chat = mockk<OpenAiStreamingChatModel>()
+            val models = mutableListOf<String>()
+            val rag = ragWithModels(root, chat, models)
+            rag.upsert("Local evidence")
+            Files.writeString(root.resolve("output/community_reports.json"), """[{"communityId":1,"summary":"Community evidence"}]""")
+
+            for (mode in listOf("basic", "local", "global", "drift")) {
+                val result = rag.query("question", QueryParam(mode = mode, includeAnswer = false, streaming = true))
+                assertEquals("", result.answer, mode)
+                assertEquals(0, result.llmCalls, mode)
+                if (mode != "global") {
+                    assertTrue(result.context.any { it.text.contains("Local evidence") } || "Local evidence" in result.contextText, mode)
+                }
+                if (mode == "global" || mode == "drift") {
+                    assertTrue("Community evidence" in result.contextText, mode)
+                    assertTrue(result.contextRecords.getValue("reports").isNotEmpty(), mode)
+                }
+            }
+            assertEquals(List(4) { "fixture-embedding" }, models)
+            verify { chat wasNot Called }
+        }
+
+    @Test
+    fun queryStreamsAnswersFromEachMode() =
+        withPipeline { root ->
+            val rag = ragWithModels(root, model())
+            rag.upsert("Local evidence")
+            Files.writeString(root.resolve("output/community_reports.json"), """[{"communityId":1,"summary":"Community evidence"}]""")
+            for (mode in listOf("basic", "local", "global", "drift")) {
+                val result = rag.query("question", QueryParam(mode = mode, maxIterations = 0, streaming = true))
+                assertTrue(result.answer.isNotBlank(), mode)
+            }
+        }
+
+    @Test
+    fun vectorOperationsPersistRowsAndDeleteOnlyTheRequestedEntity() =
+        withPipeline { root ->
+            runBlocking {
+                val models = mutableListOf<String>()
+                val rag = ragWithModels(root, mockk(), models)
+                rag.upsert("Local evidence")
+                val original = rag.query("question", 10)
+                assertEquals(listOf("Local evidence"), original.map { it["content"] })
+                rag.upsert(
+                    mapOf(
+                        "fixture-entity" to mapOf("kind" to "entity", "vector" to listOf(1.0, 0.0)),
+                        "fixture-text" to mapOf("vector" to listOf(1.0, 0.0)),
+                    ),
+                )
+                val store = LocalVectorStore(root.resolve("output/vector_store.json"))
+                rag.deleteEntityRelation("fixture-entity")
+                assertEquals(listOf("fixture-entity"), store.load()?.entityEmbeddings?.map { it.entityId })
+                assertEquals(original.map { it["id"] }.toSet() + "fixture-text", rag.query("question", 10).map { it["id"] }.toSet())
+                rag.deleteEntity("fixture-entity")
+                assertTrue(
+                    store
+                        .load()
+                        ?.entityEmbeddings
+                        .orEmpty()
+                        .none { it.entityId == "fixture-entity" },
+                )
+                assertEquals(original.map { it["id"] }.toSet() + "fixture-text", rag.query("question", 10).map { it["id"] }.toSet())
+                assertTrue(models.all { it == "fixture-embedding" })
+            }
+        }
+
+    @Test
+    fun invalidSnapshotPathsAndTextVectorsPreserveTheCommittedIndex() =
+        withPipeline { root ->
+            val sourceRoot = root.resolve("source")
+            GraphRAG(sourceRoot).upsert("Original corpus")
+            val source = sourceRoot.resolve("output")
+            val embeddings = source.resolve("text_embeddings.parquet")
+            val targetRoot = root.resolve("target")
+            val target = GraphRAG(targetRoot)
+            target.upsert("Existing corpus")
+            assertFailsWith<IllegalArgumentException> { target.saveGraph(" ") }
+            assertFailsWith<IllegalArgumentException> { target.loadGraph(" ") }
+            assertFailsWith<IllegalArgumentException> { target.loadGraph(root.resolve("missing").toString()) }
+            assertFailsWith<IllegalArgumentException> { target.saveGraph(targetRoot.toString()) }
+
+            val chunkId =
+                com.microsoft.graphrag.query
+                    .QueryIndexLoader(source)
+                    .load()
+                    .textUnits
+                    .single()
+                    .chunkId
+            for ((vectors, message) in listOf(
+                listOf(TextEmbedding("another-chunk", listOf(1.0, 0.0))) to "missing text units or aligned embeddings",
+                listOf(TextEmbedding(chunkId, emptyList())) to "invalid text embeddings",
+                listOf(TextEmbedding(chunkId, listOf(Double.NaN, 0.0))) to "invalid text embeddings",
+            )) {
+                Files.delete(embeddings)
+                ParquetWriterHelper().writeTextEmbeddings(embeddings, vectors)
+                val error = assertFailsWith<IllegalArgumentException> { target.loadGraph(source.toString()) }
+                assertTrue(message in error.message.orEmpty(), error.message)
+                assertEquals("Existing corpus", Files.readString(targetRoot.resolve("output/corpus.txt")))
+            }
+        }
+
+    private fun ragWithModels(
+        root: Path,
+        chat: OpenAiStreamingChatModel,
+        models: MutableList<String> = mutableListOf(),
+    ): GraphRAG {
+        val embedding = mockk<EmbeddingModel>()
+        every { embedding.embed(any<String>()) } returns Response.from(Embedding(floatArrayOf(1.0f, 0.0f)))
+        return GraphRAG(
+            root,
+            root.resolve("input"),
+            root.resolve("output"),
+            root.resolve("update_output"),
+            defaultChatModelName = "fixture-chat",
+            defaultEmbeddingModelName = "fixture-embedding",
+            queryEmbeddingModelFactory = { name ->
+                models += name
+                embedding
+            },
+            streamingModelFactory = { chat },
+        )
+    }
+
+    @Test
     fun driftStreamsOnlySynthesis() =
         runBlocking {
             val engine =

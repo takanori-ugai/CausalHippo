@@ -310,14 +310,9 @@ class QueryIndexLoader(
         val covariates = mergeCovariates(updatedPartials)
         val stats = updatedPartials.mapNotNull { it.stats }
 
-        val textEmbeddings =
-            mergeUnique(updatedPartials.map { it.textEmbeddings }) { it.chunkId }.ifEmpty {
-                updatedPartials.mapNotNull { it.vectorPayload?.textEmbeddings }.flatten()
-            }
+        val textEmbeddings = mergeUnique(updatedPartials.map { it.vectorPayload?.textEmbeddings ?: it.textEmbeddings }) { it.chunkId }
         val entityEmbeddings =
-            mergeUnique(updatedPartials.map { it.entityEmbeddings }) { it.entityId }.ifEmpty {
-                updatedPartials.mapNotNull { it.vectorPayload?.entityEmbeddings }.flatten()
-            }
+            mergeUnique(updatedPartials.map { it.vectorPayload?.entityEmbeddings ?: it.entityEmbeddings }) { it.entityId }
 
         val mergedPayload =
             Payload(

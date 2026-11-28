@@ -35,6 +35,9 @@ private const val SNAPSHOT_INPUT = ".graphrag-input"
 private const val QUERY_ONLY_MARKER = ".graphrag-query-only"
 private const val EMBEDDING_MODEL_FILE = ".graphrag-embedding-model"
 
+private fun queryApiKey(): String =
+    System.getenv("OPENAI_API_KEY") ?: error("OPENAI_API_KEY environment variable is required for GraphRAG queries and vector operations.")
+
 private fun defaultGraphRagWorkingDir(): Path =
     Path.of(
         "./GraphRAG_cache_" +
@@ -60,16 +63,42 @@ data class QueryParam(
     val includeAnswer: Boolean = true,
 )
 
-class GraphRAG(
-    private val rootDir: Path = defaultGraphRagWorkingDir(),
-    private val inputDir: Path = rootDir.resolve("input"),
-    private val outputDir: Path = rootDir.resolve("output"),
-    private val updateOutputDir: Path = rootDir.resolve("update_output"),
-    private val defaultChatModelName: String = "gpt-4o-mini",
-    private val defaultEmbeddingModelName: String = "text-embedding-3-small",
+class GraphRAG internal constructor(
+    private val rootDir: Path,
+    private val inputDir: Path,
+    private val outputDir: Path,
+    private val updateOutputDir: Path,
+    private val defaultChatModelName: String,
+    private val defaultEmbeddingModelName: String,
+    private val queryEmbeddingModelFactory: (String) -> EmbeddingModel,
+    private val streamingModelFactory: (String) -> OpenAiStreamingChatModel,
 ) : CommonRag<QueryParam, QueryResult>,
     CommonVectorStorage<Any?>,
     AutoCloseable {
+    constructor(
+        rootDir: Path = defaultGraphRagWorkingDir(),
+        inputDir: Path = rootDir.resolve("input"),
+        outputDir: Path = rootDir.resolve("output"),
+        updateOutputDir: Path = rootDir.resolve("update_output"),
+        defaultChatModelName: String = "gpt-4o-mini",
+        defaultEmbeddingModelName: String = "text-embedding-3-small",
+    ) : this(
+        rootDir,
+        inputDir,
+        outputDir,
+        updateOutputDir,
+        defaultChatModelName,
+        defaultEmbeddingModelName,
+        queryEmbeddingModelFactory = { modelName -> defaultEmbeddingModel(queryApiKey(), modelName) },
+        streamingModelFactory = { modelName ->
+            OpenAiStreamingChatModel
+                .builder()
+                .apiKey(queryApiKey())
+                .modelName(modelName)
+                .build()
+        },
+    )
+
     private val logger = KotlinLogging.logger("GraphRAG")
     private val callbacks = NoopWorkflowCallbacks()
     private val indexMutex = Mutex()
@@ -353,7 +382,6 @@ class GraphRAG(
                 loadIndexDataOrThrow("Failed to load GraphRAG index from '$outputDir'. Run upsert() first.") to
                     resolveEmbeddingModel(param.embeddingModelName)
             }
-        val apiKey = System.getenv("OPENAI_API_KEY") ?: error("OPENAI_API_KEY environment variable is required for GraphRAG query.")
         val callbackCollector = CollectingQueryCallbacks()
         val callbackList: List<QueryCallbacks> = listOf(callbackCollector)
         val filteredReports =
@@ -363,14 +391,9 @@ class GraphRAG(
                 level = param.communityLevel,
             )
 
-        fun buildStreamingModel(modelName: String?): OpenAiStreamingChatModel =
-            OpenAiStreamingChatModel
-                .builder()
-                .apiKey(apiKey)
-                .modelName(modelName ?: defaultChatModelName)
-                .build()
+        fun buildStreamingModel(modelName: String?): OpenAiStreamingChatModel = streamingModelFactory(modelName ?: defaultChatModelName)
 
-        val queryEmbeddingModel = defaultEmbeddingModel(apiKey, indexedEmbeddingModel)
+        val queryEmbeddingModel = queryEmbeddingModelFactory(indexedEmbeddingModel)
         val localVectorStore = indexData.vectorStore
 
         fun createLocalEngine(callbacks: List<QueryCallbacks>): LocalQueryEngine =
@@ -462,7 +485,7 @@ class GraphRAG(
             "global" -> {
                 val engine = createGlobalEngine(callbackList)
                 if (!param.includeAnswer) return engine.retrieveContext(query, param.conversationHistory)
-                if (param.streaming && param.includeAnswer) {
+                if (param.streaming) {
                     val streamed = StringBuilder()
                     engine
                         .streamSearch(
@@ -527,7 +550,7 @@ class GraphRAG(
                         responseType = param.responseType,
                         maxIterations = param.maxIterations,
                     )
-                if (param.streaming && param.includeAnswer) {
+                if (param.streaming) {
                     val streamed = StringBuilder()
                     engine
                         .streamSearch(
@@ -614,9 +637,7 @@ class GraphRAG(
     private suspend fun ensureVectorStorageBackend(): GraphRAGVectorStorage {
         vectorStorageBackend?.let { return it }
         val indexData = loadIndexDataOrThrow("Failed to load GraphRAG vector index from '$outputDir'. Run upsert() first.")
-        val apiKey =
-            System.getenv("OPENAI_API_KEY") ?: error("OPENAI_API_KEY environment variable is required for GraphRAG vector operations.")
-        val embeddingModel = defaultEmbeddingModel(apiKey, resolveEmbeddingModel(null))
+        val embeddingModel = queryEmbeddingModelFactory(resolveEmbeddingModel(null))
         return createVectorStorageBackend(indexData, embeddingModel).also { vectorStorageBackend = it }
     }
 
