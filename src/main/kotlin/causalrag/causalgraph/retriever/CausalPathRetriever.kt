@@ -21,8 +21,6 @@ class CausalPathRetriever(
 ) {
     private val graph: DirectedGraph
         get() = builder.getGraph()
-    private val nodeEmbeddings: Map<String, DoubleArray>
-        get() = builder.nodeEmbeddings
     private val nodeText = builder.nodeText
     private val encoder: EmbeddingModel? = builder.getEncoder()
 
@@ -38,6 +36,13 @@ class CausalPathRetriever(
         query: String,
         topK: Int = 5,
         threshold: Double = 0.5,
+    ): List<Pair<String, Double>> = retrieveNodes(query, topK, threshold, builder.nodeEmbeddings)
+
+    private fun retrieveNodes(
+        query: String,
+        topK: Int,
+        threshold: Double,
+        nodeEmbeddings: Map<String, DoubleArray>,
     ): List<Pair<String, Double>> {
         if (encoder == null || nodeEmbeddings.isEmpty()) {
             logger.warn { "Encoder or node embeddings not available" }
@@ -77,86 +82,9 @@ class CausalPathRetriever(
         maxHops: Int = 2,
         includeSimilar: Boolean = true,
     ): List<String> {
-        val topNodes = retrieveNodes(query, topK = topK)
-        val pathNodes = mutableSetOf<String>()
-        val seedNodes = topNodes.map { it.first }
-
-        for (nodeId in seedNodes) {
-            pathNodes.add(nodeId)
-            pathNodes.addAll(getDescendants(nodeId, maxHops))
-            pathNodes.addAll(getAncestors(nodeId, maxHops))
-        }
-
-        if (includeSimilar && seedNodes.isNotEmpty() && encoder != null) {
-            try {
-                val seedEmbeddings = seedNodes.mapNotNull { nodeEmbeddings[it] }
-                if (seedEmbeddings.isNotEmpty()) {
-                    val avgEmb = averageEmbedding(seedEmbeddings)
-                    for ((nodeId, emb) in nodeEmbeddings) {
-                        if (nodeId !in pathNodes) {
-                            val sim = cosineSimilarity(avgEmb, emb)
-                            if (sim > similarNodeThreshold) {
-                                pathNodes.add(nodeId)
-                            }
-                        }
-                    }
-                }
-            } catch (ex: RuntimeException) {
-                logger.error(ex) { "Error including similar nodes" }
-            }
-        }
-
-        return pathNodes.toList()
-    }
-
-    private fun averageEmbedding(vectors: List<DoubleArray>): DoubleArray {
-        val size = vectors.firstOrNull()?.size ?: 0
-        val avg = DoubleArray(size)
-        for (vec in vectors) {
-            for (i in vec.indices) {
-                avg[i] += vec[i]
-            }
-        }
-        for (i in avg.indices) {
-            avg[i] /= vectors.size.toDouble()
-        }
-        return avg
-    }
-
-    private fun getDescendants(
-        node: String,
-        maxHops: Int,
-    ): Set<String> {
-        val descendants = mutableSetOf<String>()
-        var current = setOf(node)
-        repeat(maxHops) {
-            val next = mutableSetOf<String>()
-            for (n in current) {
-                next.addAll(graph.successors(n))
-            }
-            descendants.addAll(next)
-            current = next
-            if (current.isEmpty()) return@repeat
-        }
-        return descendants
-    }
-
-    private fun getAncestors(
-        node: String,
-        maxHops: Int,
-    ): Set<String> {
-        val ancestors = mutableSetOf<String>()
-        var current = setOf(node)
-        repeat(maxHops) {
-            val next = mutableSetOf<String>()
-            for (n in current) {
-                next.addAll(graph.predecessors(n))
-            }
-            ancestors.addAll(next)
-            current = next
-            if (current.isEmpty()) return@repeat
-        }
-        return ancestors
+        val embeddings = builder.nodeEmbeddings
+        val seeds = retrieveNodes(query, topK, 0.5, embeddings).map { it.first }
+        return expandPathNodes(graph, seeds, maxHops, if (includeSimilar) embeddings else emptyMap(), similarNodeThreshold)
     }
 
     /**
@@ -175,32 +103,9 @@ class CausalPathRetriever(
         maxPathLength: Int = 4,
     ): List<List<String>> {
         val relevantNodes = retrievePathNodes(query, topK = 5, maxHops = 1)
-        if (relevantNodes.size < 2) return emptyList()
-
-        val paths = mutableListOf<Pair<List<String>, List<String>>>()
-        val maxTotal = maxPaths * 3
-        for (i in relevantNodes.indices) {
-            for (j in i + 1 until relevantNodes.size) {
-                if (paths.size >= maxTotal) break
-                val src = relevantNodes[i]
-                val tgt = relevantNodes[j]
-                if (src == tgt) continue
-                for ((start, end) in listOf(src to tgt, tgt to src)) {
-                    if (paths.size >= maxTotal) break
-                    val found = graph.findPaths(start, end, maxPathLength, limit = maxTotal - paths.size)
-                    for (path in found) {
-                        if (path.size >= minPathLength) {
-                            val textPath = path.map { nodeText[it] ?: it }
-                            paths.add(path to textPath)
-                            if (paths.size >= maxTotal) break
-                        }
-                    }
-                }
-            }
-        }
-
-        val sorted = paths.sortedBy { it.first.size }
-        return sorted.take(maxPaths).map { it.second }
+        return graph
+            .shortestRelevantPaths(relevantNodes, maxPaths, minPathLength, maxPathLength)
+            .map { path -> path.map { nodeText[it] ?: it } }
     }
 
     /**
@@ -234,4 +139,35 @@ class CausalPathRetriever(
         val nodes = retrievePathNodes(query)
         return graph.subgraph(nodes.toSet())
     }
+}
+
+/** Expands causes and effects separately, then admits nodes similar to the mean seed embedding. */
+internal fun expandPathNodes(
+    graph: DirectedGraph,
+    seeds: List<String>,
+    maxHops: Int,
+    embeddings: Map<String, DoubleArray>,
+    similarThreshold: Double = 0.8,
+): List<String> {
+    val nodes = linkedSetOf<String>()
+    for (seed in seeds) {
+        nodes.add(seed)
+        for (neighbors in listOf(graph::successors, graph::predecessors)) {
+            var frontier = setOf(seed)
+            val seen = mutableSetOf(seed)
+            for (hop in 0 until maxHops) {
+                frontier = frontier.flatMap(neighbors).filterTo(mutableSetOf()) { seen.add(it) }
+                if (frontier.isEmpty()) break
+                nodes.addAll(frontier)
+            }
+        }
+    }
+    val vectors = seeds.mapNotNull(embeddings::get)
+    if (vectors.isNotEmpty()) {
+        val mean = DoubleArray(vectors.first().size) { i -> vectors.sumOf { it[i] } / vectors.size }
+        for ((node, vector) in embeddings) {
+            if (node !in nodes && cosineSimilarity(mean, vector) > similarThreshold) nodes.add(node)
+        }
+    }
+    return nodes.toList()
 }

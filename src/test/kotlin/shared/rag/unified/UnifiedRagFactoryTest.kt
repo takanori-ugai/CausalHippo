@@ -358,9 +358,11 @@ class UnifiedRagFactoryTest {
 
             handle.rag.upsert(listOf("Alpha causes Beta.", "Beta causes Gamma."))
 
+            // With the offline token encoder each named endpoint clears the 0.5 seed threshold.
+            val query = "Alpha Gamma"
             val contextOnly =
                 handle.rag.query(
-                    "How does Alpha relate to Gamma?",
+                    query,
                     UnifiedQuery(
                         mode = UnifiedMode.CAUSAL,
                         includeAnswer = false,
@@ -378,7 +380,7 @@ class UnifiedRagFactoryTest {
 
             val restored =
                 handle.rag.query(
-                    "How does Alpha relate to Gamma?",
+                    query,
                     UnifiedQuery(
                         mode = UnifiedMode.CAUSAL,
                         includeAnswer = false,

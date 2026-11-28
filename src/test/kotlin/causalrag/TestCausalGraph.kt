@@ -141,6 +141,24 @@ class TestCausalGraph {
         assertTrue(hasClimatePath, "Should find paths starting with climate change")
     }
 
+    @Test
+    fun shortestPathsAreSelectedAcrossAllRelevantPairs() {
+        val graph = DirectedGraph()
+        for (via in listOf("one", "two", "three")) {
+            graph.addEdge("a", via, 1.0)
+            graph.addEdge(via, "b", 1.0)
+        }
+        graph.addEdge("c", "a", 1.0)
+        graph.addEdge("b", "a", 1.0)
+        val endpoints = listOf("a", "b", "c")
+        assertEquals(listOf(listOf("b", "a")), graph.shortestRelevantPaths(endpoints, maxPaths = 1))
+        assertEquals(
+            listOf(listOf("a", "one", "b"), listOf("a", "two", "b")),
+            graph.shortestRelevantPaths(endpoints, maxPaths = 2, minNodes = 3, maxHops = 2),
+        )
+        assertTrue(graph.shortestRelevantPaths(endpoints, maxPaths = 0).isEmpty())
+    }
+
     /**
      * Verifies that relevant nodes are returned for a query.
      */
