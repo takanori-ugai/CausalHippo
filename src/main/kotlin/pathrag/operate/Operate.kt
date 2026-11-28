@@ -5,6 +5,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.sync.withPermit
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.SerialName
@@ -117,6 +119,7 @@ suspend fun extractEntities(
     entityVdb: BaseVectorStorage,
     relationshipsVdb: BaseVectorStorage,
     globalConfig: Map<String, Any?>,
+    repairExistingVectors: Boolean = false,
     beforeGraphWrite: suspend () -> Unit = {},
 ): BaseGraphStorage {
     logger.info { "Extracting entities for ${chunks.size} chunks via LLM." }
@@ -362,17 +365,39 @@ suspend fun extractEntities(
                 }.awaitAll()
         }
 
-    if (allEntitiesData.isEmpty() && allRelationshipsData.isEmpty()) {
-        logger.warn { "Didn't extract any entities and relationships, maybe your LLM is not working" }
-        return knowledgeGraphInst
-    }
+    fun belongsToRetry(row: Map<String, Any?>): Boolean =
+        splitBySep(row["source_id"]?.toString().orEmpty(), Prompts.GRAPH_FIELD_SEP).any { it in chunks }
 
-    if (allEntitiesData.isEmpty()) logger.warn { "Didn't extract any entities" }
-    if (allRelationshipsData.isEmpty()) logger.warn { "Didn't extract any relationships" }
-
-    if (allEntitiesData.isNotEmpty()) {
-        val toStore =
+    val entitiesToIndex =
+        if (repairExistingVectors) {
+            val updated = allEntitiesData.mapNotNull { it["entity_name"] }.toSet()
+            allEntitiesData +
+                knowledgeGraphInst.nodes().filterNot { it in updated }.mapNotNull { name ->
+                    knowledgeGraphInst.getNode(name)?.takeIf(::belongsToRetry)?.let {
+                        mapOf(
+                            "entity_name" to name,
+                            "description" to it["description"]?.toString().orEmpty(),
+                            "source_id" to it["source_id"]?.toString().orEmpty(),
+                        )
+                    }
+                }
+        } else {
             allEntitiesData
+        }
+    val relationshipsToIndex =
+        if (repairExistingVectors) {
+            val updated = allRelationshipsData.map { it["src_id"] to it["tgt_id"] }.toSet()
+            allRelationshipsData +
+                knowledgeGraphInst.edges().filterNot { it in updated }.mapNotNull { (src, tgt) ->
+                    knowledgeGraphInst.getEdge(src, tgt)?.takeIf(::belongsToRetry)?.plus(mapOf("src_id" to src, "tgt_id" to tgt))
+                }
+        } else {
+            allRelationshipsData
+        }
+
+    if (entitiesToIndex.isNotEmpty()) {
+        val toStore =
+            entitiesToIndex
                 .mapNotNull { ent ->
                     val entityName = ent["entity_name"] ?: return@mapNotNull null
                     val id = computeMdHashId(entityName, prefix = "ent-")
@@ -386,9 +411,9 @@ suspend fun extractEntities(
         entityVdb.upsert(toStore)
     }
 
-    if (allRelationshipsData.isNotEmpty()) {
+    if (relationshipsToIndex.isNotEmpty()) {
         val toStore =
-            allRelationshipsData
+            relationshipsToIndex
                 .mapNotNull { edge ->
                     val src = edge["src_id"]?.toString() ?: return@mapNotNull null
                     val tgt = edge["tgt_id"]?.toString() ?: return@mapNotNull null
@@ -620,37 +645,43 @@ suspend fun kgQuery(
         hashingKv: Any?,
     ) -> String,
     hashingKv: ResponseCache? = null,
+    contextLock: Mutex? = null,
 ): String =
     withContext(Dispatchers.Default) {
         val (llKeywords, hlKeywords) = extractKeywords(llmModel, query, globalConfig)
         val mode = queryParam.mode.lowercase()
-        val sections =
-            when (mode) {
-                "local" -> {
-                    listOf(getNodeData(llKeywords, knowledgeGraphInst, entitiesVdb, textChunksDb, queryParam))
-                }
 
-                "global" -> {
-                    listOf(getEdgeData(hlKeywords, knowledgeGraphInst, relationshipsVdb, textChunksDb, queryParam))
-                }
+        suspend fun buildContext(): Pair<String, Int> {
+            val sections =
+                when (mode) {
+                    "local" -> {
+                        listOf(getNodeData(llKeywords, knowledgeGraphInst, entitiesVdb, textChunksDb, queryParam))
+                    }
 
-                "hybrid" -> {
-                    listOf(
-                        getEdgeData(hlKeywords, knowledgeGraphInst, relationshipsVdb, textChunksDb, queryParam),
-                        getNodeData(llKeywords, knowledgeGraphInst, entitiesVdb, textChunksDb, queryParam),
-                    )
-                }
+                    "global" -> {
+                        listOf(getEdgeData(hlKeywords, knowledgeGraphInst, relationshipsVdb, textChunksDb, queryParam))
+                    }
 
-                else -> {
-                    throw IllegalArgumentException("Unknown query mode: ${queryParam.mode}. Supported modes: local, global, hybrid")
+                    "hybrid" -> {
+                        listOf(
+                            getEdgeData(hlKeywords, knowledgeGraphInst, relationshipsVdb, textChunksDb, queryParam),
+                            getNodeData(llKeywords, knowledgeGraphInst, entitiesVdb, textChunksDb, queryParam),
+                        )
+                    }
+
+                    else -> {
+                        throw IllegalArgumentException("Unknown query mode: ${queryParam.mode}. Supported modes: local, global, hybrid")
+                    }
                 }
-            }
-        val context =
-            if (mode == "hybrid") {
-                renderWithinBudget(sections, queryParam.maxTokenForTextUnit)
-            } else {
-                sections.single().render()
-            }
+            val context =
+                if (mode == "hybrid") {
+                    renderWithinBudget(sections, queryParam.maxTokenForTextUnit)
+                } else {
+                    sections.single().render()
+                }
+            return context to if (queryParam.onlyNeedContext) 0 else knowledgeGraphInst.nodes().size
+        }
+        val (context, nodeCount) = contextLock?.withLock { buildContext() } ?: buildContext()
         if (queryParam.onlyNeedContext) return@withContext context
 
         val requestPrompt =
@@ -658,7 +689,7 @@ suspend fun kgQuery(
                 Prompts.RAG_RESPONSE,
                 mapOf("context_data" to context, "response_type" to queryParam.responseType),
             )
-        val systemPrompt = "PathRAG (Kotlin) | nodes=${knowledgeGraphInst.nodes().size} | mode=$mode\n$requestPrompt"
+        val systemPrompt = "PathRAG (Kotlin) | nodes=$nodeCount | mode=$mode\n$requestPrompt"
         if (queryParam.onlyNeedPrompt) return@withContext systemPrompt
 
         val responseCache = hashingKv.takeUnless { queryParam.stream }
@@ -676,8 +707,20 @@ private data class ContextTable(
     val title: String,
     val headers: List<String>,
     val rows: List<List<String>> = emptyList(),
+    val sourceIds: List<String> = emptyList(),
 ) {
-    fun render(rowCount: Int = rows.size): String = "-----$title-----\n```csv\n${toCsv(headers, rows.take(rowCount))}\n```"
+    private val serializedRows = rows.map(::serializeCsvRow)
+    private val header = serializeCsvRow(headers)
+
+    fun render(indices: Iterable<Int> = rows.indices): String =
+        buildString {
+            append("-----$title-----\n```csv\n")
+            append(header)
+            for (index in indices) append('\n').append(serializedRows[index])
+            append("\n```")
+        }
+
+    fun rowTokens(index: Int): Int = Tokenizer.count("\n${serializedRows[index]}")
 }
 
 private data class ContextSection(
@@ -691,41 +734,55 @@ private fun renderWithinBudget(
     sections: List<ContextSection>,
     maxTokens: Int,
 ): String {
-    val fullContext = sections.joinToString("\n") { it.render() }
-    if (Tokenizer.count(fullContext) <= maxTokens) return fullContext
-
     val tables = sections.flatMap { it.tables }
-    val rowCounts = IntArray(tables.size)
-    val tableOrder = tables.indices.sortedBy { if (tables[it].title == "Sources") 0 else 1 }
+    val seenSources = mutableSetOf<String>()
+    val candidates =
+        tables.map { table ->
+            table.rows.indices.filter { table.sourceIds.isEmpty() || seenSources.add(table.sourceIds[it]) }
+        }
 
-    fun render(): String {
+    fun render(selection: List<List<Int>>): String {
         var index = 0
         return sections.joinToString("\n") { section ->
             "-----${section.name}-information-----\n" +
-                section.tables.joinToString("\n") { table -> table.render(rowCounts[index++]) }
+                section.tables.joinToString("\n") { table -> table.render(selection[index++]) }
         }
     }
 
-    var context = render()
-    if (Tokenizer.count(context) > maxTokens) return ""
-    val exhausted = BooleanArray(tables.size)
-    while (true) {
-        var added = false
-        for (index in tableOrder) {
-            if (exhausted[index] || rowCounts[index] >= tables[index].rows.size) continue
-            rowCounts[index] += 1
-            val candidate = render()
-            if (Tokenizer.count(candidate) <= maxTokens) {
-                context = candidate
-                added = true
-            } else {
-                rowCounts[index] -= 1
-                exhausted[index] = true
-            }
+    val full = render(candidates)
+    if (Tokenizer.count(full) <= maxTokens) return full
+
+    val selected = tables.map { mutableListOf<Int>() }
+    var remaining = maxTokens - Tokenizer.count(render(selected))
+    if (remaining < 0) return ""
+    val order = tables.indices.sortedBy { if (tables[it].sourceIds.isNotEmpty()) 0 else 1 }
+    val positions = IntArray(tables.size)
+    val additions = mutableListOf<Int>()
+    while (remaining > 0) {
+        var hasCandidate = false
+        for (index in order) {
+            val row = candidates[index].getOrNull(positions[index]++) ?: continue
+            hasCandidate = true
+            val cost = tables[index].rowTokens(row)
+            if (cost > remaining) continue
+            selected[index].add(row)
+            additions.add(index)
+            remaining -= cost
         }
-        if (!added) return context
+        if (!hasCandidate) break
     }
+
+    // Token counts can change where CSV rows meet. Check the complete context before returning it.
+    var context = render(selected)
+    while (Tokenizer.count(context) > maxTokens && additions.isNotEmpty()) {
+        selected[additions.removeLast()].removeLast()
+        context = render(selected)
+    }
+    return context
 }
+
+private fun firstSourceId(vararg values: Any?): String =
+    values.firstNotNullOfOrNull { it?.toString()?.takeIf(String::isNotBlank) }.orEmpty()
 
 private suspend fun getNodeData(
     keywords: String,
@@ -747,7 +804,7 @@ private suspend fun getNodeData(
                     "entity_type" to (node?.get("entity_type") ?: "UNKNOWN"),
                     "description" to (desc ?: ""),
                     "rank" to degree,
-                    "source_id" to (node?.get("source_id") ?: res["source_id"] ?: res["full_doc_id"] ?: ""),
+                    "source_id" to firstSourceId(node?.get("source_id"), res["source_id"], res["full_doc_id"]),
                 )
             } else {
                 null
@@ -784,6 +841,7 @@ private suspend fun getNodeData(
             textUnits.mapIndexed { idx, t ->
                 listOf(idx.toString(), t["content"].toString())
             },
+            sourceIds = textUnits.map { it.getValue("_chunk_id").toString() },
         )
 
     return ContextSection("local", listOf(entities, relations, sources))
@@ -805,7 +863,7 @@ private suspend fun findMostRelatedTextUnitFromEntities(
         }
     val uniqueIds = ids.distinct()
     val chunks = textChunksDb.getByIds(uniqueIds)
-    val valid = chunks.mapNotNull { it }.take(queryParam.topK)
+    val valid = uniqueIds.zip(chunks).mapNotNull { (id, chunk) -> chunk?.plus("_chunk_id" to id) }.take(queryParam.topK)
     return truncateByToken(valid, queryParam.maxTokenForTextUnit)
 }
 
@@ -1048,13 +1106,7 @@ private fun truncateByToken(
     return list.take(keptContents.size)
 }
 
-private fun toCsv(
-    headers: List<String>,
-    rows: List<List<String>>,
-): String {
-    val allRows = listOf(headers) + rows
-    return allRows.joinToString("\n") { row -> row.joinToString(",") { escapeCsvField(it) } }
-}
+private fun serializeCsvRow(row: List<String>): String = row.joinToString(",") { escapeCsvField(it) }
 
 private fun escapeCsvField(value: String): String {
     val needsQuotes = value.contains(',') || value.contains('\n') || value.contains('"')
@@ -1117,20 +1169,26 @@ private suspend fun getEdgeData(
 ): ContextSection {
     val results = relationshipsVdb.query(keywords, topK = queryParam.topK)
     val edges =
-        results.mapNotNull { res ->
-            val src = res["src_id"]?.toString()
-            val tgt = res["tgt_id"]?.toString()
-            if (src != null && tgt != null) {
-                val edge = knowledgeGraphInst.getEdge(src, tgt)
-                if (edge != null) {
-                    edge + mapOf("src_id" to src, "tgt_id" to tgt)
+        results
+            .mapNotNull { res ->
+                val src = res["src_id"]?.toString()
+                val tgt = res["tgt_id"]?.toString()
+                if (src != null && tgt != null) {
+                    val edge = knowledgeGraphInst.getEdge(src, tgt)
+                    if (edge != null) {
+                        edge +
+                            mapOf(
+                                "src_id" to src,
+                                "tgt_id" to tgt,
+                                "source_id" to firstSourceId(edge["source_id"], res["source_id"], res["full_doc_id"]),
+                            )
+                    } else {
+                        null
+                    }
                 } else {
                     null
                 }
-            } else {
-                null
-            }
-        }
+            }.distinctBy { it["src_id"] to it["tgt_id"] }
 
     val entityIds =
         edges
@@ -1195,6 +1253,7 @@ private suspend fun getEdgeData(
             textUnits.mapIndexed { idx, t ->
                 listOf(idx.toString(), t["content"].toString())
             },
+            sourceIds = textUnits.map { it.getValue("_chunk_id").toString() },
         )
 
     return ContextSection("global", listOf(entities, relations, sources))
@@ -1216,6 +1275,6 @@ private suspend fun findRelatedTextUnitFromRelationships(
         }
     val unique = ids.distinct()
     val chunks = textChunksDb.getByIds(unique)
-    val valid = chunks.mapNotNull { it }.take(queryParam.topK)
+    val valid = unique.zip(chunks).mapNotNull { (id, chunk) -> chunk?.plus("_chunk_id" to id) }.take(queryParam.topK)
     return truncateByToken(valid, queryParam.maxTokenForTextUnit)
 }

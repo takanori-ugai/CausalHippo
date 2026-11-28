@@ -10,6 +10,7 @@ import pathrag.utils.EmbeddingFunc
 import pathrag.utils.computeMdHashId
 import pathrag.utils.computePagerankLocal
 import pathrag.utils.cosineSimilarity
+import pathrag.utils.legacyRelationshipVectorIds
 import pathrag.utils.relationshipVectorId
 import java.util.concurrent.ConcurrentHashMap
 import kotlin.math.abs
@@ -175,9 +176,13 @@ class NanoVectorDBStorage(
             embeddings.forEachIndexed { index, vector ->
                 val (entry, content) = validPairs[index]
                 val key = entry.key
-                val value = entry.value
-                val meta = value.filterKeys { metaFields.contains(it) }
-                entries[key] = StoredVector(vector, content, meta)
+                entries[key] = StoredVector(vector, content, vectorMetadata(entry, metaFields))
+                orderedRelationshipEndpoints(entry)?.let { (src, tgt) ->
+                    for (legacyId in legacyRelationshipVectorIds(src, tgt)) {
+                        val legacy = entries[legacyId]
+                        if (legacy?.meta?.get("src_id") == src && legacy.meta["tgt_id"] == tgt) entries.remove(legacyId)
+                    }
+                }
             }
         }
     }

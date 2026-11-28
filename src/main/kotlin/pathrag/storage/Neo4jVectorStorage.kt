@@ -13,6 +13,7 @@ import org.neo4j.driver.Values
 import pathrag.base.BaseVectorStorage
 import pathrag.utils.EmbeddingFunc
 import pathrag.utils.computeMdHashId
+import pathrag.utils.legacyRelationshipVectorIds
 import pathrag.utils.relationshipVectorId
 
 /**
@@ -156,13 +157,19 @@ class Neo4jVectorStorage(
         write { tx ->
             embeddings.forEachIndexed { idx, vector ->
                 val (entry, content) = valid[idx]
-                val meta = entry.value.filterKeys { metaFields.contains(it) }
+                val meta = vectorMetadata(entry, metaFields)
                 tx.run(
                     "MERGE (v:$nodeLabel {id:\$id}) " +
                         "SET v.content = \$content, v.embedding = \$embedding " +
                         "SET v += \$meta",
                     Values.parameters("id", entry.key, "content", content, "embedding", vector.toList(), "meta", meta),
                 )
+                orderedRelationshipEndpoints(entry)?.let { (src, tgt) ->
+                    tx.run(
+                        "MATCH (v:$nodeLabel {src_id:\$src, tgt_id:\$tgt}) WHERE v.id IN \$ids DETACH DELETE v",
+                        Values.parameters("ids", legacyRelationshipVectorIds(src, tgt), "src", src, "tgt", tgt),
+                    )
+                }
             }
         }
     }

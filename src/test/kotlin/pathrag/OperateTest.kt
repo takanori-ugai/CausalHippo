@@ -199,9 +199,9 @@ class OperateTest {
     fun kgQuery_hybridBoundsCompleteContextAndInvalidatesAnswerWhenItChanges() {
         runBlocking {
             val graph = FakeGraphStorage()
-            graph.upsertNode("NODE", mapOf("description" to "initial", "source_id" to "chunk"))
+            graph.upsertNode("NODE", mapOf("description" to "initial", "source_id" to " "))
             graph.upsertEdge("NODE", "END", mapOf("description" to "linked", "source_id" to "chunk"))
-            val entities = FakeVectorStorage("entities", listOf(mapOf("entity_name" to "NODE")))
+            val entities = FakeVectorStorage("entities", listOf(mapOf("entity_name" to "NODE", "source_id" to "chunk")))
             val relations = FakeVectorStorage("rels", listOf(mapOf("src_id" to "NODE", "tgt_id" to "END")))
             val kv = FakeKVStorage("chunks", mapOf("chunk" to mapOf("content" to "word ".repeat(250))))
             val cache = ResponseCache()
@@ -218,6 +218,9 @@ class OperateTest {
                 }, cache)
 
             val options = QueryParam(mode = "hybrid", topK = 5)
+            val evidence = "word ".repeat(250)
+            assertEquals(1, run(options.copy(onlyNeedContext = true)).split(evidence).size - 1)
+            assertTrue(evidence in run(options.copy(mode = "local", onlyNeedContext = true)))
             val first = run(options)
             assertEquals(first, run(options))
             assertEquals(1, answers)
