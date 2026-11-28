@@ -158,6 +158,79 @@ class IndexIntegrityTest {
         }
 
     @Test
+    fun rejectsInvalidSnapshotPathsAndStillAcceptsALegacyWorkingDirectory() =
+        withRag { config, _ ->
+            val rag = HippoRAG(config)
+            rag.upsert(first)
+            val snapshot = Path.of(config.saveDir, "legacy-source")
+            rag.saveGraph(snapshot.toString())
+            for (path in listOf("", config.saveDir, snapshot.resolve("missing").toString())) {
+                assertFails { rag.loadGraph(path) }
+            }
+            assertFails { rag.saveGraph("") }
+            assertFails { rag.saveGraph(config.saveDir) }
+            rag.upsert(second)
+            rag.loadGraph(snapshot.resolve("working_dir").toString())
+
+            assertEquals(listOf(first), rag.query("query", QueryParam("dpr", includeAnswer = false)).docs)
+            assertTrue(Files.notExists(Path.of(config.saveDir, "openie_results_ner_${config.llmName}.json")))
+        }
+
+    @Test
+    fun rejectsMisalignedAndInvalidEmbeddingRowsWithoutReplacingIndex() =
+        withRag { config, _ ->
+            val rag = HippoRAG(config)
+            rag.upsert(listOf(first, second))
+            val snapshot = Path.of(config.saveDir, "invalid-embeddings")
+            rag.saveGraph(snapshot.toString())
+            val file = snapshot.resolve("working_dir/chunk_embeddings/vdb_chunk.json")
+            val store = Json.parseToJsonElement(Files.readString(file)) as JsonObject
+            val ids = store.getValue("hashIds") as JsonArray
+            val rows = store.getValue("embeddings") as JsonArray
+            val invalid =
+                listOf(
+                    ("texts" to JsonArray(emptyList())) to "Misaligned embedding store",
+                    ("embeddings" to JsonArray(emptyList())) to "Misaligned embedding store",
+                    ("hashIds" to JsonArray(List(ids.size) { ids.first() })) to "Invalid embedding store",
+                    ("embeddings" to JsonArray(listOf(JsonArray(emptyList())) + rows.drop(1))) to "Invalid embedding store",
+                    ("embeddings" to JsonArray(rows.take(1) + listOf(JsonArray(listOf(JsonPrimitive(1.0)))))) to "Invalid embedding store",
+                )
+            val before = rag.inspectGraph()
+            for ((field, expected) in invalid) {
+                Files.writeString(file, JsonObject(store + field).toString())
+                val error = assertFails { rag.loadGraph(snapshot.toString()) }
+                assertTrue(error.message.orEmpty().contains(expected), error.message)
+                assertEquals(before, rag.inspectGraph())
+            }
+            assertEquals(setOf(first, second), rag.query("query", QueryParam("dpr", includeAnswer = false)).docs.toSet())
+        }
+
+    @Test
+    fun rejectsSnapshotWhenGraphLosesItsFactStore() =
+        withRag { config, _ ->
+            val rag = HippoRAG(config)
+            rag.upsert(first)
+            val snapshot = Path.of(config.saveDir, "missing-facts")
+            rag.saveGraph(snapshot.toString())
+            Files.delete(snapshot.resolve("working_dir/fact_embeddings/vdb_fact.json"))
+            val error = assertFails { rag.loadGraph(snapshot.toString()) }
+            assertTrue(error.message.orEmpty().contains("graph and embedding stores are inconsistent"))
+            assertEquals(listOf(first), rag.query("query", QueryParam("dpr", includeAnswer = false)).docs)
+        }
+
+    @Test
+    fun forcingOpenieRebuildPreservesTheCommittedPassages() =
+        withRag { config, _ ->
+            HippoRag(config).index(listOf(first))
+            val restarted = HippoRag(config.copy(forceOpenieFromScratch = true))
+            restarted.index(listOf(second))
+            val before = HippoRAG(restarted).query("query", QueryParam("dpr", includeAnswer = false)).docs
+            assertEquals(setOf(first, second), before.toSet())
+            restarted.delete(listOf(first))
+            assertEquals(listOf(second), HippoRAG(restarted).query("query", QueryParam("dpr", includeAnswer = false)).docs)
+        }
+
+    @Test
     fun rejectsGraphSnapshotsWithUnnamedVerticesOrDanglingEdges() =
         withRag { config, _ ->
             val rag = HippoRAG(config)
@@ -275,6 +348,10 @@ class IndexIntegrityTest {
             assertEquals(1, response.context.size)
             assertEquals(1, response.references.size)
             assertEquals(2, adapter.query("query", query.copy(includeAnswer = false)).context.size)
+            val referencesOnly =
+                runBlocking { adapter.aquery("query", query.copy(includeAnswer = false, includeContext = false, includeReferences = true)) }
+            assertTrue(referencesOnly.context.isEmpty())
+            assertEquals(2, referencesOnly.references.size)
         }
 
     @Test
