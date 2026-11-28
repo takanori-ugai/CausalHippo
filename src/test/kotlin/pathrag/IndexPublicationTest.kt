@@ -29,6 +29,27 @@ class IndexPublicationTest {
         """{"entities":[],"relationships":[{"src_id":"ALPHA","tgt_id":"BETA","description":"related","keywords":"link","weight":1}]}"""
 
     @Test
+    fun unifiedContextTraversesPublishedGraphAndHonorsRetrievalMode() =
+        exercise { directory ->
+            InMemoryPersistenceBackend().open(emptyMap()).use { session ->
+                PathRAG(
+                    workingDir = directory,
+                    persistenceSession = session,
+                    useUnifiedSpiForRetrievalAndIndex = true,
+                    lowLevelKeywords = listOf("ALPHA", "BETA"),
+                    highLevelKeywords = listOf("link"),
+                ).use { rag ->
+                    rag.ainsert(document)
+                    val local = rag.aquery("query", QueryParam(mode = "local", onlyNeedContext = true))
+                    assertTrue("through edge(" in local && document in local)
+                    val global = rag.aquery("query", QueryParam(mode = "global", onlyNeedContext = true))
+                    assertTrue("high-level relationship information" in global && document in global)
+                    assertFalse("through edge(" in global)
+                }
+            }
+        }
+
+    @Test
     fun failedChunkEmbeddingDoesNotPublishGraphEvidence() =
         exercise { directory ->
             PathRAG(workingDir = directory).use { rag ->

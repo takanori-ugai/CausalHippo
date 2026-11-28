@@ -242,6 +242,57 @@ class OperateTest {
     }
 
     @Test
+    fun localSourcesPreferOutgoingNeighborSupportAndKeepMultipleChunksPerHit() =
+        runBlocking {
+            val graph = FakeGraphStorage()
+            graph.upsertNode("A", mapOf("source_id" to "weak<SEP>strong"))
+            graph.upsertNode("B", mapOf("source_id" to "strong"))
+            graph.upsertNode("C", mapOf("source_id" to "weak"))
+            graph.upsertEdge("A", "B", emptyMap())
+            graph.upsertEdge("C", "A", emptyMap())
+            val context =
+                kgQuery(
+                    "query",
+                    graph,
+                    FakeVectorStorage("entities", listOf(mapOf("entity_name" to "A"))),
+                    FakeVectorStorage("relations", emptyList()),
+                    FakeKVStorage(
+                        "chunks",
+                        mapOf("weak" to mapOf("content" to "weak evidence"), "strong" to mapOf("content" to "strong evidence")),
+                    ),
+                    QueryParam(mode = "local", onlyNeedContext = true, topK = 1),
+                    mapOf("fixed_low_level_keywords" to listOf("A")),
+                    { _, _, _, _, _, _, _ -> error("unexpected model call") },
+                )
+            assertTrue(context.indexOf("strong evidence") in 0 until context.indexOf("weak evidence"))
+        }
+
+    @Test
+    fun globalSourcesFollowDegreeThenWeightAndOnlyUseRetainedEdges() =
+        runBlocking {
+            val graph = FakeGraphStorage()
+            for (node in listOf("A", "B", "C", "X", "Y")) graph.upsertNode(node, mapOf("description" to "name"))
+            graph.upsertEdge("X", "Y", mapOf("description" to "low", "weight" to 99, "source_id" to "low"))
+            graph.upsertEdge("A", "B", mapOf("description" to "mid", "weight" to 1, "source_id" to "mid"))
+            graph.upsertEdge("A", "C", mapOf("description" to "high", "weight" to 2, "source_id" to "high"))
+            val hits = graph.edges().map { (s, t) -> mapOf("src_id" to s, "tgt_id" to t) }
+            val context =
+                kgQuery(
+                    "query",
+                    graph,
+                    FakeVectorStorage("entities", emptyList()),
+                    FakeVectorStorage("rels", hits),
+                    FakeKVStorage("chunks", listOf("low", "mid", "high").associateWith { mapOf("content" to "$it evidence") }),
+                    QueryParam(mode = "global", onlyNeedContext = true, maxTokenForGlobalContext = 1, maxTokenForLocalContext = 1),
+                    mapOf("fixed_high_level_keywords" to listOf("edge")),
+                    { _, _, _, _, _, _, _ -> error("unexpected model call") },
+                )
+            assertTrue("high evidence" in context)
+            assertFalse("low evidence" in context || "mid evidence" in context)
+            assertEquals(1, context.lineSequence().count { ",name," in it })
+        }
+
+    @Test
     fun kgQuery_retainsDistinctRoutesThroughTheSameNodes() {
         runBlocking {
             val graph = FakeGraphStorage()
@@ -249,17 +300,19 @@ class OperateTest {
             for ((from, to) in listOf("A" to "B", "A" to "C", "B" to "C", "B" to "D", "C" to "D")) {
                 graph.upsertEdge(from, to, mapOf("description" to "$from-$to"))
             }
-            val context =
+
+            suspend fun run(param: QueryParam): String =
                 kgQuery(
                     "question",
                     graph,
                     FakeVectorStorage("entities", listOf(mapOf("entity_name" to "A"), mapOf("entity_name" to "D"))),
                     FakeVectorStorage("relations", emptyList()),
                     FakeKVStorage("chunks", emptyMap()),
-                    QueryParam(mode = "local", onlyNeedContext = true),
+                    param,
                     mapOf("fixed_low_level_keywords" to listOf("A", "D")),
                     { _, _, _, _, _, _, _ -> error("unexpected model call") },
                 )
+            val context = run(QueryParam(mode = "local", onlyNeedContext = true))
             val routeRows = context.lineSequence().filter { it.contains("through edge(") }.toList()
             // The two shorter routes score higher and should appear closest to the question.
             assertEquals(listOf(true, true, false, false), routeRows.map { it.contains("edge(B-C)") })
@@ -267,6 +320,13 @@ class OperateTest {
             assertEquals(2, threeEdgeRoutes.size)
             assertTrue(threeEdgeRoutes.any { it.contains("edge(A-B)") && it.contains("edge(C-D)") })
             assertTrue(threeEdgeRoutes.any { it.contains("edge(A-C)") && it.contains("edge(B-D)") })
+
+            val hybrid = QueryParam(mode = "hybrid", onlyNeedContext = true)
+            val budget = Tokenizer.count(run(hybrid)) - Tokenizer.count(threeEdgeRoutes.first()) / 2
+            val trimmed = run(hybrid.copy(maxTokenForTextUnit = budget))
+            val retained = trimmed.lineSequence().filter { it.contains("through edge(") }.toList()
+            assertTrue(Tokenizer.count(trimmed) <= budget)
+            assertEquals(routeRows.takeLast(3), retained)
         }
     }
 

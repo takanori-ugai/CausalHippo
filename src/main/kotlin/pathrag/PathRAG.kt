@@ -16,7 +16,9 @@ import pathrag.llm.ollamaComplete
 import pathrag.llm.openAiComplete
 import pathrag.operate.chunkingByTokenSize
 import pathrag.operate.extractEntities
+import pathrag.operate.extractKeywords
 import pathrag.operate.kgQuery
+import pathrag.operate.renderGraphContext
 import pathrag.storage.JsonKVStorage
 import pathrag.storage.MongoGraphStorage
 import pathrag.storage.MongoKVStorage
@@ -28,9 +30,11 @@ import pathrag.storage.Neo4jVectorStorage
 import pathrag.storage.NetworkXStorage
 import pathrag.utils.ResponseCache
 import pathrag.utils.computeMdHashId
+import pathrag.utils.cosineSimilarity
 import pathrag.utils.entityVectorData
 import pathrag.utils.relationshipVectorData
 import pathrag.utils.relationshipVectorId
+import shared.chunking.truncateTextByTokenSize
 import shared.config.CommonRagConfigLoader
 import shared.rag.CommonRag
 import shared.rag.spi.persistence.GraphEdgeRecord
@@ -666,10 +670,7 @@ class PathRAG(
         param: QueryParam,
     ): String {
         if (unifiedSpiEnabled && param.onlyNeedContext) {
-            return indexMutex.withLock {
-                ensureUnifiedSpiIndexInitialized()
-                retrieveContextFromUnifiedSpi(query, param.topK.coerceAtLeast(1)).joinToString("\n\n")
-            }
+            return retrieveContextFromUnifiedSpi(query, param)
         }
         return kgQuery(
             query,
@@ -1412,39 +1413,83 @@ class PathRAG(
 
     private suspend fun retrieveContextFromUnifiedSpi(
         query: String,
-        topK: Int,
-    ): List<String> {
-        val session = unifiedSpiSession ?: return emptyList()
-        val chunkSnapshot = session.kv(unifiedSpiChunksNamespace).snapshot()
+        param: QueryParam,
+    ): String {
+        val session = unifiedSpiSession ?: return ""
+        val (snapshot, vectors, chunks) =
+            indexMutex.withLock {
+                ensureUnifiedSpiIndexInitialized()
+                val graph = session.graph(unifiedSpiGraphNamespace).snapshot()
+                val sources = session.kv(unifiedSpiChunksNamespace).snapshot()
+                if (graph.nodes.isEmpty() && graph.edges.isEmpty()) {
+                    return retrieveUngraphedContext(query, param, session, sources)
+                }
+                Triple(graph, session.vector(unifiedSpiVectorNamespace).snapshot().records, sources)
+            }
+        val graph = NetworkXStorage("query", emptyMap(), null)
+        for (node in snapshot.nodes) graph.upsertNode(node.id, node.data)
+        for (edge in snapshot.edges) graph.upsertEdge(edge.source, edge.target, edge.data)
+        val (low, high) = extractKeywords(llmModelFunc, query, globalConfig())
+        val embeddings = mutableMapOf<String, DoubleArray>()
+
+        suspend fun hits(
+            kind: String,
+            keywords: String,
+        ): List<Map<String, Any?>> {
+            val candidates = vectors.filter { it.metadata["kind"] == kind }
+            if (candidates.isEmpty()) return emptyList()
+            val text = keywords.ifBlank { query }
+            val embedding = embeddings.getOrPut(text) { embeddingFunc(listOf(text)).first() }
+            return candidates
+                .filter { it.vector.size == embedding.size }
+                .map { cosineSimilarity(embedding, it.vector.toDoubleArray()) to it.metadata }
+                .sortedByDescending { it.first }
+                .take(param.topK.coerceAtLeast(1))
+                .map { it.second }
+        }
+        return renderGraphContext(param, graph, { hits("entity", low) }, { hits("relation", high) }) { ids ->
+            ids.map { id -> (chunks.entries[id] as? Map<*, *>)?.get("content")?.let { mapOf("content" to it) } }
+        }
+    }
+
+    private suspend fun retrieveUngraphedContext(
+        query: String,
+        param: QueryParam,
+        session: PersistenceSession,
+        chunkSnapshot: KvSnapshot,
+    ): String {
+        val topK = param.topK.coerceAtLeast(1)
         val lexicalCandidates =
             chunkSnapshot.entries.values
                 .mapNotNull { value ->
                     val row = value as? Map<*, *> ?: return@mapNotNull null
                     row["content"]?.toString()?.trim()?.takeIf { it.isNotBlank() }
                 }
-        if (lexicalCandidates.isNotEmpty()) {
-            return lexicalCandidates
-                .map { candidate -> candidate to lexicalMatchScore(query, candidate) }
-                .sortedByDescending { it.second }
-                .take(topK.coerceAtLeast(1))
-                .map { it.first }
-        }
-
-        val queryEmbedding = embedTexts(listOf(query)).firstOrNull()?.toList() ?: return emptyList()
-        return try {
-            session
-                .vector(unifiedSpiVectorNamespace, dimensions = queryEmbedding.size, metric = "cosine")
-                .query(queryEmbedding, topK = topK.coerceAtLeast(1))
-                .mapNotNull { record ->
-                    record.metadata["content"]
-                        ?.toString()
-                        ?.trim()
-                        ?.takeIf { it.isNotBlank() }
+        val selected =
+            if (lexicalCandidates.isNotEmpty()) {
+                lexicalCandidates
+                    .map { candidate -> candidate to lexicalMatchScore(query, candidate) }
+                    .sortedByDescending { it.second }
+                    .take(topK)
+                    .map { it.first }
+            } else {
+                val queryEmbedding = embedTexts(listOf(query)).firstOrNull()?.toList() ?: return ""
+                try {
+                    session
+                        .vector(unifiedSpiVectorNamespace, dimensions = queryEmbedding.size, metric = "cosine")
+                        .query(queryEmbedding, topK = topK)
+                        .mapNotNull { record ->
+                            record.metadata["content"]
+                                ?.toString()
+                                ?.trim()
+                                ?.takeIf { it.isNotBlank() }
+                        }
+                } catch (ex: RuntimeException) {
+                    logger.warn(ex) { "Unified SPI vector retrieval failed for PathRAG." }
+                    emptyList()
                 }
-        } catch (ex: RuntimeException) {
-            logger.warn(ex) { "Unified SPI vector retrieval failed for PathRAG." }
-            emptyList()
-        }
+            }
+        return truncateTextByTokenSize(selected.joinToString("\n\n"), param.maxTokenForTextUnit)
     }
 
     private suspend fun embedTexts(texts: List<String>): List<DoubleArray> {
