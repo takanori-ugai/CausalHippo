@@ -2,11 +2,13 @@ package com.youtu.graphrag.shared.retriever
 
 import org.apache.lucene.analysis.core.KeywordAnalyzer
 import org.apache.lucene.document.Document
+import org.apache.lucene.document.IntPoint
 import org.apache.lucene.document.KnnFloatVectorField
 import org.apache.lucene.document.StoredField
 import org.apache.lucene.index.DirectoryReader
 import org.apache.lucene.index.IndexWriter
 import org.apache.lucene.index.IndexWriterConfig
+import org.apache.lucene.index.VectorSimilarityFunction
 import org.apache.lucene.search.IndexSearcher
 import org.apache.lucene.search.KnnFloatVectorQuery
 import org.apache.lucene.store.ByteBuffersDirectory
@@ -27,13 +29,15 @@ class LuceneAnnIndex<T> private constructor(
     override fun search(
         query: String,
         limit: Int,
+        allowedOrdinals: Set<Int>?,
     ): List<VectorSearchHit<T>> {
-        if (items.isEmpty() || limit <= 0) {
+        if (items.isEmpty() || limit <= 0 || allowedOrdinals?.isEmpty() == true) {
             return emptyList()
         }
 
-        val queryVector = embedder.embed(query)
-        val knnQuery = KnnFloatVectorQuery(FIELD_VECTOR, queryVector, limit)
+        val queryVector = unitVector(embedder.embed(query))
+        val filter = allowedOrdinals?.let { IntPoint.newSetQuery(FIELD_ORDINAL, it) }
+        val knnQuery = KnnFloatVectorQuery(FIELD_VECTOR, queryVector, limit, filter)
         val topDocs = searcher.search(knnQuery, limit)
         val storedFields = reader.storedFields()
         return topDocs.scoreDocs.mapNotNull { scoreDoc ->
@@ -65,8 +69,9 @@ class LuceneAnnIndex<T> private constructor(
                     val vector = vectorSelector?.invoke(item) ?: embedder.embed(textSelector(item))
                     val document =
                         Document().apply {
-                            add(KnnFloatVectorField(FIELD_VECTOR, vector))
+                            add(KnnFloatVectorField(FIELD_VECTOR, unitVector(vector), VectorSimilarityFunction.DOT_PRODUCT))
                             add(StoredField(FIELD_ORDINAL, ordinal))
+                            add(IntPoint(FIELD_ORDINAL, ordinal))
                         }
                     writer.addDocument(document)
                 }

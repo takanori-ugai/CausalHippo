@@ -126,6 +126,31 @@ class FastTreeCommTest {
     }
 
     @Test
+    fun `fast mode reproduces reference partitions for two topics in one connected cycle`() {
+        val nodes = ('A'..'H').map { GraphNode("entity", mapOf("name" to it.toString())) }
+        val cycle =
+            nodes.mapIndexed { i, node ->
+                val relation = if (i < 4) "plays jazz piano music with" else "explores planets in space with"
+                GraphRelationship(node, relation, nodes[(i + 1) % nodes.size])
+            }
+
+        // Python FastTreeComm, revision 3979d08, with the same MiniLM encoder.
+        fun partitions(
+            threshold: Double,
+            structuralWeight: Double = 0.0,
+        ): Set<Any?> =
+            FastTreeComm()
+                .detectCommunities(cycle, TreeCommOptions(structWeight = structuralWeight, mergeThreshold = threshold))
+                .map { it["nodes"] }
+                .toSet()
+
+        assertEquals(setOf(listOf("A", "B", "C", "D"), listOf("E", "F", "G", "H")), partitions(0.5))
+        val fineGroups = setOf(listOf("A", "B"), listOf("C", "D"), listOf("E", "F"), listOf("G", "H"))
+        assertEquals(fineGroups, partitions(1.0))
+        assertEquals(fineGroups, partitions(0.5, structuralWeight = 1.0))
+    }
+
+    @Test
     fun `treeComm options reject invalid ranges`() {
         assertFailsWith<IllegalArgumentException> { TreeCommOptions(structWeight = -0.1) }
         assertFailsWith<IllegalArgumentException> { TreeCommOptions(mergeThreshold = 1.1) }

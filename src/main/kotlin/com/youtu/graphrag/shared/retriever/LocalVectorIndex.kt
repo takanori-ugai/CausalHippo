@@ -20,6 +20,7 @@ interface SemanticVectorIndex<T> {
     fun search(
         query: String,
         limit: Int,
+        allowedOrdinals: Set<Int>? = null,
     ): List<VectorSearchHit<T>>
 }
 
@@ -47,8 +48,7 @@ class HashTextEmbedder(
             vector[bucket] += sign
         }
 
-        normalizeInPlace(vector)
-        return vector
+        return unitVector(vector)
     }
 
     private fun positiveMod(
@@ -58,16 +58,12 @@ class HashTextEmbedder(
         val mod = value % divisor
         return if (mod < 0) mod + divisor else mod
     }
+}
 
-    private fun normalizeInPlace(vector: FloatArray) {
-        val norm = sqrt(vector.fold(0.0) { acc, value -> acc + value * value })
-        if (norm <= 1e-12) {
-            return
-        }
-        for (index in vector.indices) {
-            vector[index] = (vector[index] / norm).toFloat()
-        }
-    }
+internal fun unitVector(vector: FloatArray): FloatArray {
+    val norm = sqrt(vector.sumOf { value -> value.toDouble() * value })
+    if (norm == 0.0) return vector
+    return FloatArray(vector.size) { index -> (vector[index] / norm).toFloat() }
 }
 
 class LocalVectorIndex<T> private constructor(
@@ -79,14 +75,15 @@ class LocalVectorIndex<T> private constructor(
     override fun search(
         query: String,
         limit: Int,
+        allowedOrdinals: Set<Int>?,
     ): List<VectorSearchHit<T>> {
         if (entries.isEmpty() || limit <= 0) {
             return emptyList()
         }
 
-        val queryVector = embedder.embed(query)
+        val queryVector = unitVector(embedder.embed(query))
         val scored =
-            entries.map { entry ->
+            entries.asSequence().filter { allowedOrdinals == null || it.ordinal in allowedOrdinals }.map { entry ->
                 VectorSearchHit(
                     item = entry.item,
                     score = vectorCosineSimilarity(queryVector, entry.vector),
@@ -99,6 +96,7 @@ class LocalVectorIndex<T> private constructor(
                     .thenBy { pair -> pair.second },
             ).take(limit)
             .map { pair -> pair.first }
+            .toList()
     }
 
     companion object {
@@ -112,7 +110,7 @@ class LocalVectorIndex<T> private constructor(
                 items.mapIndexed { index, item ->
                     IndexedVector(
                         item = item,
-                        vector = vectorSelector?.invoke(item) ?: embedder.embed(textSelector(item)),
+                        vector = unitVector(vectorSelector?.invoke(item) ?: embedder.embed(textSelector(item))),
                         ordinal = index,
                     )
                 }

@@ -20,7 +20,7 @@ data class TreeCommConfig(
     val maxTotalCommunities: Int = 100,
     val enableSummary: Boolean = false,
     val mergeThreshold: Double = 0.5,
-    val maxIterations: Int = 4,
+    val maxIterations: Int = 1,
     val summaryMaxWords: Int = 32,
 )
 

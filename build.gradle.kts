@@ -64,6 +64,7 @@ dependencies {
     implementation("io.github.oshai:kotlin-logging-jvm:8.0.7")
     implementation("com.github.haifengl:smile-core:4.4.2")
     implementation("gg.jte:jte-kotlin:3.2.4")
+    implementation("org.apache.commons:commons-math3:3.6.1")
     implementation("org.apache.commons:commons-csv:1.14.1")
     implementation("org.apache.pdfbox:pdfbox:3.0.8")
     implementation("org.apache.poi:poi-ooxml:6.0.0")
@@ -73,6 +74,7 @@ dependencies {
 
     // LangChain4j dependencies
     implementation("dev.langchain4j:langchain4j:1.23.0")
+    implementation("dev.langchain4j:langchain4j-embeddings-all-minilm-l6-v2:1.23.0-beta33")
     implementation("dev.langchain4j:langchain4j-open-ai:1.22.0")
     implementation("dev.langchain4j:langchain4j-open-ai-official:1.23.0-beta33")
     implementation("dev.langchain4j:langchain4j-google-ai-gemini:1.22.0")

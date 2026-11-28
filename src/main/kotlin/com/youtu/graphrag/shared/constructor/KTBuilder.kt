@@ -412,7 +412,7 @@ class KTBuilder(
             relationships.filter { relationship ->
                 relationship.startNode.label == "entity" && relationship.endNode.label == "entity"
             }
-        if (entityRelationships.isEmpty()) {
+        if (entityByName.isEmpty()) {
             return
         }
 
@@ -431,8 +431,9 @@ class KTBuilder(
         val communities =
             FastTreeComm(llmClient)
                 .detectCommunities(
-                    relationships = entityRelationships,
+                    relationships = if (treeCommOptions.enableFastMode) relationships else entityRelationships,
                     options = treeCommOptions,
+                    entityNames = entityByName.keys,
                 )
 
         communities.forEachIndexed { index, community ->

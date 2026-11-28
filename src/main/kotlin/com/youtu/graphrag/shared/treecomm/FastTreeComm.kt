@@ -15,7 +15,7 @@ data class TreeCommOptions(
     val maxTotalCommunities: Int = 100,
     val enableSummary: Boolean = false,
     val mergeThreshold: Double = 0.5,
-    val maxIterations: Int = 4,
+    val maxIterations: Int = 1,
     val summaryMaxWords: Int = 32,
 ) {
     init {
@@ -33,6 +33,7 @@ class FastTreeComm(
     fun detectCommunities(
         relationships: List<GraphRelationship>,
         options: TreeCommOptions = TreeCommOptions(),
+        entityNames: Set<String>? = null,
     ): List<Map<String, Any>> {
         if (relationships.isEmpty()) {
             return emptyList()
@@ -61,13 +62,27 @@ class FastTreeComm(
             return emptyList()
         }
 
-        val connectedComponents = connectedComponents(nodeById.keys, adjacency)
-        val communities =
+        val memberNames = nodeById.keys.filter { entityNames == null || it in entityNames }
+        if (memberNames.isEmpty()) return emptyList()
+        val detector =
             if (options.enableFastMode) {
-                connectedComponents
+                val outgoing = mutableMapOf<String, MutableMap<String, String>>()
+                for (edge in relationships) {
+                    val source = nodeId(edge.startNode)
+                    val target = nodeId(edge.endNode)
+                    if (source.isBlank() || target.isBlank()) continue
+                    outgoing.getOrPut(source) { linkedMapOf() }.putIfAbsent(target, "$source ${edge.relation} $target")
+                }
+                TripleCommunityDetector(memberNames, outgoing, adjacency.mapValues { it.value.values.sum() }, options)
+            } else {
+                null
+            }
+        val communities =
+            if (detector != null) {
+                detector.detect()
             } else {
                 hierarchicalCommunities(
-                    connectedComponents = connectedComponents,
+                    connectedComponents = connectedComponents(nodeById.keys, adjacency),
                     adjacency = adjacency,
                     options = options,
                 )
@@ -88,14 +103,14 @@ class FastTreeComm(
                     sourceId in memberSet && targetId in memberSet
                 }
 
-            val keywords = extractRepresentativeMembers(members, adjacency, options)
+            val keywords = detector?.keywords(members) ?: extractRepresentativeMembers(members, adjacency, options)
             val summary = generateSummary(members, keywords, options)
             buildMap {
                 put("community_id", "community_${index + 1}")
                 put("name", "Community_${index + 1}")
                 put("node_count", members.size)
                 put("edge_count", edgeCount)
-                put("nodes", members)
+                put("nodes", members.sorted())
                 put("keywords", keywords)
                 if (summary.isNotBlank()) {
                     put("summary", summary)

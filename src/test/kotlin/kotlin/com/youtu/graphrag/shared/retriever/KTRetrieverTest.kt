@@ -1216,6 +1216,32 @@ class KTRetrieverTest {
         assertTrue(triples.single().toString().contains("links_to"))
     }
 
+    @Test
+    fun `semantic search applies exact schema types before the candidate limit`() {
+        val root = Files.createTempDirectory("youtu-schema-search")
+        val config = createTestConfig(root)
+        config.overrideConfig(
+            mapOf(
+                "retrieval" to
+                    mapOf(
+                        "faiss" to mapOf("search_k" to 1),
+                        "strategy" to mapOf("enabled" to listOf("semantic_triple")),
+                    ),
+            ),
+        )
+        val graph = root.resolve("output/graphs/sample_new.json")
+        writeGraph(
+            graph,
+            listOf(
+                relationship("Person", "personnel", "hires", "Staff", "team", "c1"),
+                relationship("Ada", "person", "studies", "Physics", "topic", "c2"),
+            ),
+        )
+        val retriever = createRetriever("sample", config, graph.toString(), root, topK = 1)
+        val (result, _) = retriever.processRetrievalResults("Person hires Staff personnel team", mapOf("nodes" to listOf("person")))
+        assertTrue((result["triples"] as List<*>).single().toString().contains("studies"))
+    }
+
     private fun createRetriever(
         datasetName: String,
         config: ConfigManager,

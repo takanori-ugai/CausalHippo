@@ -740,19 +740,17 @@ class KTRetriever private constructor(
         record: TripleRecord,
         nodeFilters: Set<String>,
     ): Boolean {
-        val candidates =
-            listOf(
-                record.sourceLabel,
-                record.targetLabel,
-                record.source,
-                record.target,
-                record.sourceProperties["schema_type"].orEmpty(),
-                record.targetProperties["schema_type"].orEmpty(),
-            ).map { value -> value.lowercase() }
-
-        return nodeFilters.any { filter ->
-            candidates.any { candidate -> candidate.contains(filter) }
+        fun matches(
+            label: String,
+            properties: Map<String, String>,
+        ): Boolean {
+            val type = properties["schema_type"].orEmpty().trim().lowercase(Locale.ROOT)
+            if (type.isNotEmpty()) return type in nodeFilters
+            val legacyLabel = label.lowercase(Locale.ROOT)
+            return legacyLabel == "entity" || legacyLabel in nodeFilters
         }
+
+        return matches(record.sourceLabel, record.sourceProperties) || matches(record.targetLabel, record.targetProperties)
     }
 
     private fun matchesAttributeFilter(
@@ -824,12 +822,15 @@ class KTRetriever private constructor(
         searchLimit: Int,
         allowedTriples: List<TripleRecord>,
     ): Map<TripleRecord, Double> {
-        val allowed = allowedTriples.toSet()
+        val eligibleOrdinals =
+            allowedTriples
+                .asSequence()
+                .filterNot { it.relation.lowercase(Locale.ROOT) in EXCLUDED_OUTPUT_RELATIONS }
+                .mapTo(mutableSetOf()) { tripleOrdinalByRecord.getValue(it) }
+        val filter = eligibleOrdinals.takeUnless { it.size == tripleRecords.size }
         return tripleVectorIndex
-            ?.search(question, searchLimit)
+            ?.search(question, searchLimit, filter)
             .orEmpty()
-            .asSequence()
-            .filter { hit -> hit.item in allowed }
             .associate { hit -> hit.item to hit.score }
     }
 

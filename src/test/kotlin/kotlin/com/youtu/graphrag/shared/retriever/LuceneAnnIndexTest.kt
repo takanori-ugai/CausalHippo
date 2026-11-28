@@ -29,6 +29,29 @@ class LuceneAnnIndexTest {
     }
 
     @Test
+    fun `both indexes rank non-unit vectors by direction within the eligible set`() {
+        val embedder =
+            object : TextEmbedder {
+                override val dimensions = 2
+                override val modelTag = "test"
+
+                override fun embed(text: String) = floatArrayOf(2f, 0f)
+            }
+        val items = listOf("aligned", "angled", "excluded")
+        val vectors = listOf(floatArrayOf(100f, 0f), floatArrayOf(2f, 1f), floatArrayOf(2f, 0f))
+        val vectorFor: (String) -> FloatArray = { vectors[items.indexOf(it)] }
+        val indexes =
+            listOf(
+                LocalVectorIndex.build(items, embedder, { it }, vectorFor),
+                LuceneAnnIndex.build(items, embedder, { it }, vectorFor),
+            )
+        for (index in indexes) {
+            assertEquals(listOf("aligned", "angled"), index.search("query", 2, setOf(0, 1)).map { it.item })
+            assertEquals("angled", index.search("query", 1, setOf(1)).single().item)
+        }
+    }
+
+    @Test
     fun `lucene ann index honors result limit`() {
         val items =
             listOf(
