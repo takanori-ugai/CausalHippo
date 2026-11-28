@@ -3,6 +3,7 @@ import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 plugins {
     kotlin("jvm") version "2.4.10"
     application
+    jacoco
     id("com.gradleup.shadow") version "9.6.1"
     kotlin("plugin.serialization") version "2.4.21"
     id("org.jlleitschuh.gradle.ktlint") version "14.2.0"
@@ -106,6 +107,14 @@ dependencies {
     implementation("nl.cwts:networkanalysis:$networkAnalysisVersion")
     implementation("org.jetbrains.kotlinx:multik-default:0.3.1")
     implementation("org.apache.opennlp:opennlp-tools:3.0.0")
+}
+
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+    reports {
+        xml.required = true
+        xml.outputLocation = layout.buildDirectory.file("reports/jacoco/test/jacocoTestReport.xml")
+    }
 }
 
 tasks {
