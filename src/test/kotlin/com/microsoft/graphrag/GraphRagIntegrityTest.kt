@@ -12,11 +12,15 @@ import com.microsoft.graphrag.index.defaultPipeline
 import com.microsoft.graphrag.query.BasicQueryEngine
 import com.microsoft.graphrag.query.DriftSearchEngine
 import com.microsoft.graphrag.query.GlobalSearchEngine
+import com.microsoft.graphrag.query.LocalQueryEngine
 import com.microsoft.graphrag.query.QueryCallbacks
 import com.microsoft.graphrag.query.QueryResult
+import dev.langchain4j.data.embedding.Embedding
 import dev.langchain4j.data.message.ChatMessage
 import dev.langchain4j.model.chat.response.StreamingChatResponseHandler
+import dev.langchain4j.model.embedding.EmbeddingModel
 import dev.langchain4j.model.openai.OpenAiStreamingChatModel
+import dev.langchain4j.model.output.Response
 import io.mockk.Called
 import io.mockk.coEvery
 import io.mockk.every
@@ -188,6 +192,78 @@ class GraphRagIntegrityTest {
             assertEquals(1, contexts.size)
             assertTrue("usable evidence" in contexts.single())
             assertTrue(countTokensWithJTokKit(contexts.single()) <= 60)
+        }
+
+    @Test
+    fun globalContextOnlyPacksMultipleBatchesAndIncludesConversationOnce() =
+        runBlocking {
+            val chat = mockk<OpenAiStreamingChatModel>()
+            val first = "alpha ".repeat(22).trim()
+            val second = "beta ".repeat(22).trim()
+            val history = "Earlier question"
+            val engine = GlobalSearchEngine(chat, listOf(CommunityReport(1, first), CommunityReport(2, second)), maxContextTokens = 58)
+
+            val result = engine.retrieveContext("question", listOf(history))
+            assertEquals("", result.answer)
+            assertEquals(0, result.llmCalls)
+            assertEquals(2, result.contextText.split("-----Reports-----").size - 1)
+            assertEquals(1, result.contextText.split(history).size - 1)
+            assertEquals(
+                setOf(first, second),
+                result.contextRecords
+                    .getValue("reports")
+                    .map { it.getValue("summary") }
+                    .toSet(),
+            )
+            assertEquals(listOf(history), result.contextRecords.getValue("conversation").map { it.getValue("content") })
+            verify { chat wasNot Called }
+        }
+
+    @Test
+    fun localContextOnlyReturnsEvidenceWithoutCallingChat() =
+        withPipeline { root ->
+            runBlocking {
+                val chat = mockk<OpenAiStreamingChatModel>()
+                val embedding = mockk<EmbeddingModel>()
+                every { embedding.embed(any<String>()) } returns Response.from(Embedding(floatArrayOf(1.0f, 0.0f)))
+                val source =
+                    com.microsoft.graphrag.index
+                        .TextUnit("unit", "chunk", "usable local evidence", "source")
+                val engine =
+                    LocalQueryEngine(
+                        streamingModel = chat,
+                        embeddingModel = embedding,
+                        vectorStore = LocalVectorStore(root.resolve("vectors.json")),
+                        textUnits = listOf(source),
+                        textEmbeddings = listOf(TextEmbedding("chunk", listOf(1.0, 0.0))),
+                        entities = emptyList(),
+                        entitySummaries = emptyList(),
+                        relationships = emptyList(),
+                        claims = emptyList(),
+                        covariates = emptyMap(),
+                        communities = emptyList(),
+                        communityReports = emptyList(),
+                    )
+                val result = engine.answer("question", "text", includeAnswer = false)
+                assertEquals("", result.answer)
+                assertEquals(0, result.llmCalls)
+                assertTrue("usable local evidence" in result.contextText)
+                verify { chat wasNot Called }
+            }
+        }
+
+    @Test
+    fun dropClearsCachedIndexAndPermitsRebuildingFromNewDocuments() =
+        withPipeline { root ->
+            val rag = GraphRAG(root)
+            rag.upsert("Old corpus")
+            rag.inspectGraph()
+            rag.drop()
+            val inspection = rag.inspectGraph()
+            assertEquals(emptyList<Any>(), inspection["nodes"])
+            assertTrue(Files.notExists(root.resolve("output/corpus.txt")))
+            rag.upsert("New corpus")
+            assertEquals("New corpus", Files.readString(root.resolve("output/corpus.txt")))
         }
 
     @Test
