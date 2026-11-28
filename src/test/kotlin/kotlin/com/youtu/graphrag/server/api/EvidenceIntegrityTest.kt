@@ -26,8 +26,10 @@ class EvidenceIntegrityTest {
             assertFailsWith<IOException> {
                 DatasetArtifacts.publish(graph, "new graph".encodeToByteArray(), chunks, "new chunk".encodeToByteArray())
             }
-            assertEquals("old graph", Files.readString(graph.resolve("marker")))
-            assertEquals("old chunk", Files.readString(chunks))
+            DatasetArtifacts.read(graph) {
+                assertEquals("old graph", Files.readString(graph.resolve("marker")))
+                assertEquals("old chunk", Files.readString(chunks))
+            }
         } finally {
             root.toFile().deleteRecursively()
         }
@@ -179,6 +181,12 @@ class EvidenceIntegrityTest {
         assertEquals(listOf("short evidence"), prompt.chunks)
         assertEquals(listOf("A relates to B"), prompt.triples)
         assertTrue(countTokensWithJTokKit(prompt.text) <= 30)
+    }
+
+    @Test
+    fun `retrieved triples skip blank entries and retain the display score`() {
+        val entries = toTripleEntries(listOf("  ", " (A, relates_to, B) [score: 0.900] "))
+        assertEquals(listOf(TripleEntry("(A, relates_to, B)", "(A, relates_to, B) [score: 0.900]")), entries)
     }
 
     @Test
