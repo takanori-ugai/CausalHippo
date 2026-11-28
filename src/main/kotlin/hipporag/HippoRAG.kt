@@ -100,7 +100,13 @@ class HippoRAG(
                 val snapshot = Files.createDirectory(staging.resolve("snapshot"))
                 copyDirectory(working, snapshot.resolve("working_dir"))
                 validateSnapshot(snapshot.resolve("working_dir"))
-                if (Files.isRegularFile(openie)) Files.copy(openie, snapshot.resolve(openie.fileName))
+                val provenance = hippoRag.checkpointOpenie()
+                val targetOpenie = snapshot.resolve(openie.fileName)
+                if (provenance != null) {
+                    Files.writeString(targetOpenie, provenance)
+                } else if (Files.isRegularFile(openie)) {
+                    Files.copy(openie, targetOpenie)
+                }
                 publishSnapshot(staging, mapOf(target to snapshot))
             }
         }
@@ -127,7 +133,7 @@ class HippoRAG(
             withSnapshotStaging(working.parent) { staging ->
                 val stagedWorking = staging.resolve("working_dir")
                 copyDirectory(sourceWorking, stagedWorking)
-                validateSnapshot(stagedWorking)
+                validateSnapshot(stagedWorking, verifyEncoder = true)
                 val stagedOpenie =
                     source.resolve(openie.fileName).takeIf(Files::isRegularFile)?.let { sourceOpenie ->
                         val json = jsonWithDefaults { ignoreUnknownKeys = true }
@@ -149,11 +155,22 @@ class HippoRAG(
         require(!a.startsWith(b) && !b.startsWith(a)) { "HippoRAG snapshot overlaps the live index: $first" }
     }
 
-    private fun validateSnapshot(path: Path) {
+    private fun validateSnapshot(
+        path: Path,
+        verifyEncoder: Boolean = false,
+    ) {
         val graph = SimpleGraph.load(path.resolve("graph.json").toFile(), strict = true)
-        val chunks = EmbeddingStore.validateFile(path.resolve("chunk_embeddings/vdb_chunk.json").toFile())
-        val entities = EmbeddingStore.validateFile(path.resolve("entity_embeddings/vdb_entity.json").toFile())
-        val facts = EmbeddingStore.validateFile(path.resolve("fact_embeddings/vdb_fact.json").toFile())
+        val (chunks, chunkDimension) = EmbeddingStore.validateFile(path.resolve("chunk_embeddings/vdb_chunk.json").toFile())
+        val (entities, entityDimension) = EmbeddingStore.validateFile(path.resolve("entity_embeddings/vdb_entity.json").toFile())
+        val (facts, factDimension) = EmbeddingStore.validateFile(path.resolve("fact_embeddings/vdb_fact.json").toFile())
+        val dimensions = listOfNotNull(chunkDimension, entityDimension, factDimension).toSet()
+        require(dimensions.size <= 1) { "HippoRAG snapshot has inconsistent embedding dimensions: $path" }
+        if (verifyEncoder && dimensions.isNotEmpty()) {
+            val expected = hippoRag.checkpointEmbeddingDimension()
+            require(expected == null || dimensions.single() == expected) {
+                "HippoRAG snapshot embeddings are incompatible with the active encoder: $path"
+            }
+        }
         require(graph.vertexNames().toSet() == chunks + entities && (entities.isEmpty() || facts.isNotEmpty())) {
             "HippoRAG snapshot graph and embedding stores are inconsistent: $path"
         }
