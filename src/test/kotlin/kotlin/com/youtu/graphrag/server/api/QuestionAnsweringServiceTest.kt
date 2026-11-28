@@ -2,6 +2,7 @@ package com.youtu.graphrag.server.api
 
 import com.youtu.graphrag.shared.config.ConfigManager
 import com.youtu.graphrag.shared.llm.LlmClient
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.jsonObject
 import tools.jackson.databind.ObjectMapper
@@ -580,6 +581,29 @@ class QuestionAnsweringServiceTest {
             assertTrue(step.chunkContents.isEmpty())
         }
         assertTrue(response.reasoningSteps.any { it.type == "sub_question" && it.chunksCount > 0 })
+    }
+
+    @Test
+    fun `generation cancellation propagates without attempting fallback`() {
+        val root = createRootDir()
+        val config = createTestConfig(root)
+        writeCorpus(root, "cancel_ds", listOf(mapOf("title" to "A", "text" to "Evidence for this question.")))
+        GraphConstructionService(config = config, rootDir = root).constructGraph("cancel_ds")
+        var attempts = 0
+        val client =
+            object : LlmClient {
+                override fun complete(prompt: String): String = ""
+
+                override fun completeStrict(prompt: String): String {
+                    attempts += 1
+                    throw CancellationException("generation cancelled")
+                }
+            }
+
+        assertFailsWith<CancellationException> {
+            runBlocking { QuestionAnsweringService(config, root, client).answerQuestion("cancel_ds", "What is the evidence?") }
+        }
+        assertEquals(1, attempts)
     }
 
     private fun createMockLlmClient(): LlmClient =

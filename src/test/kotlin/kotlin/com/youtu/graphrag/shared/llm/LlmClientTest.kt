@@ -6,10 +6,13 @@ import dev.langchain4j.data.message.UserMessage
 import dev.langchain4j.model.chat.ChatModel
 import dev.langchain4j.model.chat.request.ChatRequest
 import dev.langchain4j.model.chat.response.ChatResponse
+import io.mockk.every
+import io.mockk.mockk
 import java.net.InetSocketAddress
 import java.util.concurrent.Executors
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
 
 class LlmClientTest {
@@ -32,6 +35,15 @@ class LlmClientTest {
         val output = client.complete("test prompt")
 
         assertEquals("{\"answer\":\"ok\"}", output)
+    }
+
+    @Test
+    fun `chat completion exposes failures to strict callers and returns empty text to best effort callers`() {
+        val model = mockk<ChatModel>()
+        every { model.chat(any<UserMessage>()) } throws IllegalStateException("provider unavailable")
+        val client = ChatModelLlmClient(model)
+        assertEquals("", client.complete("question"))
+        assertEquals("provider unavailable", assertFailsWith<IllegalStateException> { client.completeStrict("question") }.message)
     }
 
     @Test

@@ -87,12 +87,69 @@ class EvidenceIntegrityTest {
             val service = GraphConstructionService(ConfigManager(configFile.toString()), root)
             assertFailsWith<IllegalStateException> { service.loadGraphVisualization("sample") }
 
+            assertFailsWith<IOException> {
+                DatasetArtifacts.publish(
+                    graph,
+                    previousGraph,
+                    chunks,
+                    "another uncommitted chunk".encodeToByteArray(),
+                    move = { source, target ->
+                        if (target == graph) throw IOException("injected graph move failure")
+                        Files.move(source, target, ATOMIC_MOVE, REPLACE_EXISTING)
+                    },
+                )
+            }
+            assertEquals("uncommitted chunk", Files.readString(chunks))
+            assertFailsWith<IllegalStateException> { service.loadGraphVisualization("sample") }
+
             DatasetArtifacts.publish(graph, previousGraph, chunks, "repaired chunk".encodeToByteArray())
             assertEquals("repaired chunk", DatasetArtifacts.readPair(graph, chunks)?.second?.decodeToString())
             assertNotNull(service.loadGraphVisualization("sample"))
         } finally {
             root.toFile().deleteRecursively()
         }
+    }
+
+    @Test
+    fun `malformed graph visualization returns empty evidence`() {
+        val root = Files.createTempDirectory("youtu-invalid-graph-json")
+        try {
+            val configFile = root.resolve("config.yaml")
+            Files.writeString(configFile, "{}")
+            val graph = root.resolve("output/graphs/sample_new.json")
+            Files.createDirectories(graph.parent)
+            Files.writeString(graph, "invalid JSON")
+            val visualization =
+                assertNotNull(GraphConstructionService(ConfigManager(configFile.toString()), root).loadGraphVisualization("sample"))
+            assertEquals("[]", visualization["nodes"].toString())
+            assertEquals("[]", visualization["links"].toString())
+        } finally {
+            root.toFile().deleteRecursively()
+        }
+    }
+
+    @Test
+    fun `rejecting a nonpositive prompt budget preserves the original config`() {
+        val config = ConfigManager("config/base_config.json")
+        val previous = config.retrieval.maxPromptTokens
+        val error =
+            assertFailsWith<IllegalArgumentException> {
+                config.withOverrides(mapOf("retrieval" to mapOf("maxPromptTokens" to 0)))
+            }
+        assertTrue(error.message.orEmpty().contains("max_prompt_tokens"))
+        assertEquals(previous, config.retrieval.maxPromptTokens)
+    }
+
+    @Test
+    fun `bounded prompt keeps a later triple after chunks are exhausted`() {
+        val result =
+            assertNotNull(
+                buildBoundedPrompt(listOf("oversized ".repeat(100), "small triple"), listOf("short chunk"), 20) { triples, chunks ->
+                    (triples + chunks).joinToString("\n")
+                },
+            )
+        assertEquals(listOf("small triple"), result.triples)
+        assertEquals(listOf("short chunk"), result.chunks)
     }
 
     @Test
