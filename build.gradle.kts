@@ -89,6 +89,9 @@ dependencies {
     implementation("org.neo4j.driver:neo4j-java-driver:6.3.0")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:2.4.21")
     testImplementation("io.mockk:mockk:1.14.12")
+    testImplementation(platform("org.testcontainers:testcontainers-bom:1.21.4"))
+    testImplementation("org.testcontainers:mongodb")
+    testImplementation("org.testcontainers:neo4j")
 
     implementation("org.openjfx:javafx-base:$javafxVersion:$javafxPlatform")
     implementation("org.openjfx:javafx-graphics:$javafxVersion:$javafxPlatform")
