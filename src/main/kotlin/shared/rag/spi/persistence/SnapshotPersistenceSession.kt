@@ -12,7 +12,7 @@ import kotlin.math.sqrt
 internal abstract class SnapshotPersistenceSession(
     final override val backendId: String,
     final override val capabilities: PersistenceCapabilities,
-    private val manifestMetadata: Map<String, String> = emptyMap(),
+    final override val checkpointMetadata: Map<String, String> = emptyMap(),
 ) : PersistenceSession {
     private val objectMapper =
         JsonMapper
@@ -80,7 +80,7 @@ internal abstract class SnapshotPersistenceSession(
 
     override suspend fun checkpoint(path: String): PersistenceManifest {
         checkOpen()
-        val root = resolvePath(path)
+        val root = resolveCheckpointPath(path)
         resetDirectory(root)
 
         val graphEntries =
@@ -150,7 +150,7 @@ internal abstract class SnapshotPersistenceSession(
                 vector = vectorEntries,
                 kv = kvEntries,
                 artifacts = artifactEntries,
-                metadata = manifestMetadata,
+                metadata = checkpointMetadata,
             )
         writeJson(root.resolve("manifest.json"), manifest)
         return manifest
@@ -158,7 +158,7 @@ internal abstract class SnapshotPersistenceSession(
 
     override suspend fun restore(path: String) {
         checkOpen()
-        val root = resolvePath(path)
+        val root = resolveCheckpointPath(path)
         val manifestPath = root.resolve("manifest.json")
         require(Files.exists(manifestPath)) { "Persistence manifest not found: $manifestPath" }
 
@@ -198,8 +198,6 @@ internal abstract class SnapshotPersistenceSession(
         kvStates.clear()
         artifactStates.clear()
     }
-
-    protected open fun resolvePath(path: String): Path = Path.of(path).toAbsolutePath().normalize()
 
     private fun checkOpen() {
         check(!closed) { "PersistenceSession is closed." }
@@ -517,3 +515,6 @@ internal fun copyDirectory(
         }
     }
 }
+
+internal fun PersistenceSession.isolatedCheckpointSession(): PersistenceSession =
+    object : SnapshotPersistenceSession(backendId, capabilities, checkpointMetadata) {}

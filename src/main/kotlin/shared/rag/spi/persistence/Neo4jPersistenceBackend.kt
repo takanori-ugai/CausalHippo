@@ -39,7 +39,7 @@ class Neo4jPersistenceBackend : PersistenceBackendFactory {
             password = password,
             database = database,
             rootDir = rootDir,
-            metadata = config.metadataMap(),
+            checkpointMetadata = config.metadataMap(),
         )
     }
 }
@@ -50,7 +50,7 @@ private class Neo4jPersistenceSession(
     password: String,
     private val database: String?,
     private val rootDir: Path?,
-    private val metadata: Map<String, String>,
+    override val checkpointMetadata: Map<String, String>,
 ) : PersistenceSession {
     private val objectMapper =
         JsonMapper
@@ -99,7 +99,7 @@ private class Neo4jPersistenceSession(
 
     override suspend fun checkpoint(path: String): PersistenceManifest {
         checkOpen()
-        val root = resolvePath(path)
+        val root = resolveCheckpointPath(path)
         resetDirectory(root)
 
         val graphEntries =
@@ -169,7 +169,7 @@ private class Neo4jPersistenceSession(
                 vector = vectorEntries,
                 kv = kvEntries,
                 artifacts = artifactEntries,
-                metadata = metadata,
+                metadata = checkpointMetadata,
             )
         writeJson(root.resolve("manifest.json"), manifest)
         return manifest
@@ -177,7 +177,7 @@ private class Neo4jPersistenceSession(
 
     override suspend fun restore(path: String) {
         checkOpen()
-        val root = resolvePath(path)
+        val root = resolveCheckpointPath(path)
         val manifestPath = root.resolve("manifest.json")
         require(Files.exists(manifestPath)) { "Persistence manifest not found: $manifestPath" }
 
@@ -242,7 +242,7 @@ private class Neo4jPersistenceSession(
         return trimmed
     }
 
-    private fun resolvePath(path: String): Path {
+    override fun resolveCheckpointPath(path: String): Path {
         val raw = Path.of(path)
         return when {
             raw.isAbsolute -> raw.normalize()

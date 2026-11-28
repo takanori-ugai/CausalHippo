@@ -29,6 +29,26 @@ class RelationshipVectorContainerTest {
     }
 
     @Test
+    fun mongoGraphPreservesLegacyEdgesAndCollidingEndpointPairs() =
+        runBlocking {
+            MongoDBContainer(DockerImageName.parse("mongo:7.0")).use { mongo ->
+                mongo.start()
+                val config = mapOf("mongo_uri" to mongo.replicaSetUrl, "mongo_database" to "pathrag")
+                MongoClient.create(mongo.replicaSetUrl).use { client ->
+                    val collection = client.getDatabase("pathrag").getCollection<Document>("${namespace}_edges")
+                    collection.insertOne(Document("_id", computeMdHashId("ABC", prefix = "edge-")).append("src", "A").append("tgt", "BC"))
+                    MongoGraphStorage(namespace, config, embedding).use { graph ->
+                        graph.upsertEdge("AB", "C", mapOf("description" to "second"))
+                        graph.upsertEdge("A", "BC", mapOf("description" to "first"))
+                        assertEquals("first", graph.getEdge("A", "BC")?.get("description"))
+                        assertEquals("second", graph.getEdge("AB", "C")?.get("description"))
+                        assertEquals(2, graph.edges().size)
+                    }
+                }
+            }
+        }
+
+    @Test
     fun mongoReplacesAndDeletesOnlyTheRequestedRelationship() =
         runBlocking {
             MongoDBContainer(DockerImageName.parse("mongo:7.0")).use { mongo ->

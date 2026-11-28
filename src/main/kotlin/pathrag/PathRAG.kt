@@ -3,6 +3,7 @@ package pathrag
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
+import lightrag.utils.writeStorageFileAtomically
 import pathrag.base.AddonParams
 import pathrag.base.BaseGraphStorage
 import pathrag.base.BaseKVStorage
@@ -42,9 +43,11 @@ import shared.rag.spi.persistence.GraphEdgeRecord
 import shared.rag.spi.persistence.GraphNodeRecord
 import shared.rag.spi.persistence.GraphSnapshot
 import shared.rag.spi.persistence.KvSnapshot
+import shared.rag.spi.persistence.PersistenceManifest
 import shared.rag.spi.persistence.PersistenceSession
 import shared.rag.spi.persistence.VectorRecord
 import shared.rag.spi.persistence.VectorSnapshot
+import shared.rag.spi.persistence.isolatedCheckpointSession
 import tools.jackson.core.type.TypeReference
 import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.io.File
@@ -226,6 +229,8 @@ class PathRAG(
     private val unifiedSpiGraphNamespace = "${unifiedSpiNamespacePrefix}_graph"
     private val unifiedSpiVectorNamespace = "${unifiedSpiNamespacePrefix}_vector"
     private val unifiedSpiChunksNamespace = "${unifiedSpiNamespacePrefix}_chunks"
+    private val unifiedSpiDocumentsNamespace = "${unifiedSpiNamespacePrefix}_documents"
+    private val unifiedSpiExtractionNamespace = "${unifiedSpiNamespacePrefix}_extraction"
     private val unifiedSpiMetadataNamespace = "${unifiedSpiNamespacePrefix}_metadata"
     private val indexMutex = Mutex()
     private var unifiedSpiInitialized = false
@@ -326,9 +331,9 @@ class PathRAG(
     private val extracted: BaseKVStorage<Map<String, Any>> = createKvStorage("completed_extraction")
     private val textChunks: BaseKVStorage<Map<String, Any>> = createKvStorage("text_chunks")
     private var chunkEntityRelationGraph: BaseGraphStorage = createGraphStorage("chunk_entity_relation")
-    private val entitiesVdb: BaseVectorStorage = createVectorStorage("entities_vdb")
-    private val relationshipsVdb: BaseVectorStorage = createVectorStorage("relationships_vdb")
-    private val chunksVdb: BaseVectorStorage = createVectorStorage("chunks_vdb")
+    private var entitiesVdb: BaseVectorStorage = createVectorStorage("entities_vdb")
+    private var relationshipsVdb: BaseVectorStorage = createVectorStorage("relationships_vdb")
+    private var chunksVdb: BaseVectorStorage = createVectorStorage("chunks_vdb")
 
     init {
         if (unifiedSpiEnabled) {
@@ -903,25 +908,20 @@ class PathRAG(
 
     override suspend fun asaveGraph(path: String) = indexMutex.withLock { saveGraphSnapshot(path) }
 
-    @Suppress("TooGenericExceptionCaught")
     private suspend fun saveGraphSnapshot(path: String) {
         if (unifiedSpiEnabled) {
             saveUnifiedSpiCheckpoint(path)
             return
         }
-        val payload = buildGraphInspectionPayload()
-        val metadata = payload["metadata"] as? Map<*, *> ?: emptyMap<Any?, Any?>()
-        val nodeCount = metadata["nodeCount"] as? Int ?: 0
-        val edgeCount = metadata["edgeCount"] as? Int ?: 0
-        val output = File(path)
-        output.parentFile?.mkdirs()
-        try {
-            output.writeText(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(payload))
-            logger.info { "Saved graph snapshot to '$path' with $nodeCount nodes and $edgeCount edges." }
-        } catch (e: Exception) {
-            logger.error(e) { "Failed to save graph snapshot to '$path'." }
-            throw e
-        }
+        val payload =
+            buildGraphInspectionPayload() +
+                mapOf(
+                    "version" to 2,
+                    "chunks" to textChunks.checkpointRows(),
+                    "documents" to fullDocs.checkpointRows(),
+                    "extraction" to extracted.checkpointRows(),
+                )
+        writeStorageFileAtomically(File(path), objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(payload))
     }
 
     private suspend fun buildGraphInspectionPayload(): Map<String, Any?> {
@@ -956,7 +956,7 @@ class PathRAG(
 
     override suspend fun aloadGraph(path: String) = indexMutex.withLock { loadGraphSnapshot(path) }
 
-    @Suppress("TooGenericExceptionCaught", "UNCHECKED_CAST")
+    @Suppress("TooGenericExceptionCaught")
     private suspend fun loadGraphSnapshot(path: String) {
         if (unifiedSpiEnabled) {
             loadUnifiedSpiCheckpoint(path)
@@ -972,32 +972,8 @@ class PathRAG(
                 logger.error(e) { "Failed to parse graph snapshot from '$path'." }
                 throw e
             }
-        val nodesRaw = payload["nodes"] as? Map<*, *> ?: emptyMap<Any?, Any?>()
-        val edgesRaw = payload["edges"] as? List<*> ?: emptyList<Any?>()
-
-        dropLocalGraph()
-
-        nodesRaw.forEach { (rawNodeId, rawNodeData) ->
-            val nodeId = rawNodeId?.toString()?.trim().orEmpty()
-            if (nodeId.isBlank()) return@forEach
-            val nodeData = (rawNodeData as? Map<*, *>)?.entries?.associate { it.key.toString() to it.value } ?: emptyMap()
-            chunkEntityRelationGraph.upsertNode(nodeId, nodeData)
-            val vectorId = computeMdHashId(nodeId, prefix = "ent-")
-            entitiesVdb.upsert(mapOf(vectorId to entityVectorData(nodeId, nodeData)))
-        }
-
-        edgesRaw.forEach { rawEdge ->
-            val edge = rawEdge as? Map<*, *> ?: return@forEach
-            val source = edge["source"]?.toString()?.trim().orEmpty()
-            val target = edge["target"]?.toString()?.trim().orEmpty()
-            if (source.isBlank() || target.isBlank()) return@forEach
-            val edgeData = (edge["data"] as? Map<*, *>)?.entries?.associate { it.key.toString() to it.value } ?: emptyMap()
-            chunkEntityRelationGraph.upsertEdge(source, target, edgeData)
-            val relId = relationshipVectorId(source, target)
-            relationshipsVdb.upsert(mapOf(relId to relationshipVectorData(source, target, edgeData)))
-        }
-
-        logger.info { "Loaded graph snapshot from '$path' with ${nodesRaw.size} nodes and ${edgesRaw.size} edges." }
+        val checkpoint = parseGraphCheckpoint(payload)
+        restoreLocalIndex(checkpoint.graph, checkpoint.corpus)
     }
 
     /**
@@ -1108,7 +1084,7 @@ class PathRAG(
     private data class UnifiedPublication(
         val nodes: List<GraphNodeRecord>,
         val edges: List<GraphEdgeRecord>,
-        val chunks: Map<String, Map<String, Any>>,
+        val corpus: CorpusCheckpoint,
     )
 
     private suspend fun publishUnifiedIndex() {
@@ -1143,9 +1119,10 @@ class PathRAG(
                 graphSnapshot.nodes.isNotEmpty() ||
                     graphSnapshot.edges.isNotEmpty() ||
                     chunkSnapshot.entries.isNotEmpty() ||
-                    vectorSnapshot.records.isNotEmpty()
+                    vectorSnapshot.records.isNotEmpty() ||
+                    session.kv(unifiedSpiMetadataNamespace).get("updatedAt") != null
             if (hasSpiState) {
-                hydrateLocalIndexFromUnifiedSpi()
+                hydrateLocalIndexFromUnifiedSpi(session)
                 unifiedSpiInitialized = true
                 return
             }
@@ -1164,24 +1141,55 @@ class PathRAG(
     private suspend fun saveUnifiedSpiCheckpoint(path: String) {
         val session = unifiedSpiSession ?: return
         val checkpointPath = "$path.unified_spi"
-        if (capturePending || pendingPublication != null) flushPublication() else syncUnifiedSpiFromLocal()
-        session.checkpoint(checkpointPath)
+        ensureUnifiedSpiIndexInitialized()
+        session.isolatedCheckpointSession().use { isolated ->
+            copyCheckpointNamespaces(session, isolated)
+            isolated.checkpoint(session.resolveCheckpointPath(checkpointPath).toString())
+        }
     }
 
     private suspend fun loadUnifiedSpiCheckpoint(path: String) {
         val session = unifiedSpiSession ?: return
         val checkpointPath = "$path.unified_spi"
-        session.restore(checkpointPath)
-        hydrateLocalIndexFromUnifiedSpi()
+        session.isolatedCheckpointSession().use { isolated ->
+            val root = session.resolveCheckpointPath(checkpointPath)
+            val manifest =
+                objectMapper.readValue(
+                    root.resolve("manifest.json").toFile(),
+                    PersistenceManifest::class.java,
+                )
+            require(manifest.graph.any { it.namespace == unifiedSpiGraphNamespace }) { "Missing PathRAG graph namespace" }
+            isolated.restore(root.toString())
+            hydrateLocalIndexFromUnifiedSpi(isolated)
+            copyCheckpointNamespaces(isolated, session)
+        }
         unifiedSpiInitialized = true
         pendingPublication = null
         capturePending = false
+    }
+
+    private fun copyCheckpointNamespaces(
+        from: PersistenceSession,
+        to: PersistenceSession,
+    ) {
+        to.graph(unifiedSpiGraphNamespace).restore(from.graph(unifiedSpiGraphNamespace).snapshot())
+        to.vector(unifiedSpiVectorNamespace).restore(from.vector(unifiedSpiVectorNamespace).snapshot())
+        for (namespace in listOf(
+            unifiedSpiChunksNamespace,
+            unifiedSpiDocumentsNamespace,
+            unifiedSpiExtractionNamespace,
+            unifiedSpiMetadataNamespace,
+        )) {
+            to.kv(namespace).restore(from.kv(namespace).snapshot())
+        }
     }
 
     private fun clearUnifiedSpiState() {
         val session = unifiedSpiSession ?: return
         session.graph(unifiedSpiGraphNamespace).restore(GraphSnapshot())
         session.vector(unifiedSpiVectorNamespace).restore(VectorSnapshot(metric = "cosine"))
+        session.kv(unifiedSpiDocumentsNamespace).restore(KvSnapshot())
+        session.kv(unifiedSpiExtractionNamespace).restore(KvSnapshot())
         session.kv(unifiedSpiChunksNamespace).restore(KvSnapshot())
         session.kv(unifiedSpiMetadataNamespace).restore(KvSnapshot())
     }
@@ -1189,15 +1197,6 @@ class PathRAG(
     private suspend fun syncUnifiedSpiFromLocal() = writePublication(capturePublication())
 
     private suspend fun capturePublication(): UnifiedPublication {
-        val chunkIds = textChunks.allKeys()
-        val chunkRecords =
-            textChunks
-                .getByIds(chunkIds)
-                .mapIndexedNotNull { index, row ->
-                    val id = chunkIds.getOrNull(index) ?: return@mapIndexedNotNull null
-                    val payload = row ?: return@mapIndexedNotNull null
-                    id to payload
-                }.toMap()
         val nodeIds = chunkEntityRelationGraph.nodes()
         val edgePairs = chunkEntityRelationGraph.edges()
         val nodes =
@@ -1230,12 +1229,17 @@ class PathRAG(
         val committedNodes = nodes.filter { hasCommittedSources(it.data) }
         val committedIds = committedNodes.map { it.id }.toSet()
         val committedEdges = edges.filter { it.source in committedIds && it.target in committedIds && hasCommittedSources(it.data) }
-        return UnifiedPublication(committedNodes, committedEdges, chunkRecords)
+        return UnifiedPublication(
+            committedNodes,
+            committedEdges,
+            CorpusCheckpoint(textChunks.checkpointRows(), fullDocs.checkpointRows(), extracted.checkpointRows()),
+        )
     }
 
     private suspend fun writePublication(publication: UnifiedPublication) {
         val session = unifiedSpiSession ?: return
-        val (nodes, edges, chunkRecords) = publication
+        val (nodes, edges, corpus) = publication
+        val chunkRecords = corpus.chunks
         val vectorRecords = buildUnifiedSpiVectorRecords(nodes, edges, chunkRecords)
         session.graph(unifiedSpiGraphNamespace).restore(
             GraphSnapshot(
@@ -1257,6 +1261,8 @@ class PathRAG(
             ),
         )
 
+        session.kv(unifiedSpiDocumentsNamespace).restore(KvSnapshot(corpus.documents))
+        session.kv(unifiedSpiExtractionNamespace).restore(KvSnapshot(corpus.extraction))
         val dimensions = vectorRecords.firstOrNull()?.vector?.size
         session.vector(unifiedSpiVectorNamespace, dimensions = dimensions, metric = "cosine").restore(
             VectorSnapshot(
@@ -1329,64 +1335,54 @@ class PathRAG(
         return records
     }
 
-    private suspend fun hydrateLocalIndexFromUnifiedSpi() {
-        val session = unifiedSpiSession ?: return
+    private suspend fun hydrateLocalIndexFromUnifiedSpi(session: PersistenceSession) {
         val graphSnapshot = session.graph(unifiedSpiGraphNamespace).snapshot()
-        val chunkSnapshot = session.kv(unifiedSpiChunksNamespace).snapshot()
-
-        resetLocalStoragesWithoutSpi()
-
-        graphSnapshot.nodes.forEach { node ->
-            chunkEntityRelationGraph.upsertNode(node.id, node.data)
-        }
-        graphSnapshot.edges.forEach { edge ->
-            chunkEntityRelationGraph.upsertEdge(edge.source, edge.target, edge.data)
-        }
-
-        val chunkUpserts =
-            chunkSnapshot.entries
-                .mapNotNull { (key, value) ->
-                    val row = value as? Map<*, *> ?: return@mapNotNull null
-                    key to row.entries.mapNotNull { (k, v) -> v?.let { k.toString() to it } }.toMap()
-                }.toMap()
-        if (chunkUpserts.isNotEmpty()) {
-            textChunks.upsert(chunkUpserts)
-            chunksVdb.upsert(
-                chunkUpserts.mapValues { (_, payload) ->
-                    mapOf(
-                        "content" to payload["content"]?.toString().orEmpty(),
-                        "full_doc_id" to payload["full_doc_id"]?.toString().orEmpty(),
-                        "source_id" to payload["source_id"]?.toString().orEmpty(),
-                    )
-                },
+        val corpus =
+            CorpusCheckpoint(
+                checkpointRows(session.kv(unifiedSpiChunksNamespace).snapshot().entries),
+                checkpointRows(session.kv(unifiedSpiDocumentsNamespace).snapshot().entries),
+                checkpointRows(session.kv(unifiedSpiExtractionNamespace).snapshot().entries),
             )
-        }
+        restoreLocalIndex(graphSnapshot, corpus)
+    }
 
-        val entityUpserts =
-            graphSnapshot.nodes.associate { node ->
-                computeMdHashId(node.id, prefix = "ent-") to entityVectorData(node.id, node.data)
-            }
-        if (entityUpserts.isNotEmpty()) {
-            entitiesVdb.upsert(entityUpserts)
-        }
-
-        val relationUpserts =
+    private suspend fun restoreLocalIndex(
+        graphSnapshot: GraphSnapshot,
+        corpus: CorpusCheckpoint?,
+    ) {
+        val entityRows =
+            graphSnapshot.nodes.associate { node -> computeMdHashId(node.id, prefix = "ent-") to entityVectorData(node.id, node.data) }
+        val relationshipRows =
             graphSnapshot.edges.associate { edge ->
                 relationshipVectorId(edge.source, edge.target) to relationshipVectorData(edge.source, edge.target, edge.data)
             }
-        if (relationUpserts.isNotEmpty()) {
-            relationshipsVdb.upsert(relationUpserts)
-        }
-    }
 
-    private suspend fun resetLocalStoragesWithoutSpi() {
+        suspend fun rebuildVectors(
+            current: BaseVectorStorage,
+            rows: Map<String, Map<String, Any?>>,
+        ): BaseVectorStorage {
+            val target = if (current is NanoVectorDBStorage) createVectorStorage(current.namespace) else current.also { it.drop() }
+            target.upsert(rows)
+            return target
+        }
+
+        val newEntities = rebuildVectors(entitiesVdb, entityRows)
+        val newRelationships = rebuildVectors(relationshipsVdb, relationshipRows)
+        val newChunks = corpus?.let { rebuildVectors(chunksVdb, it.chunks) } ?: chunksVdb
         extracted.drop()
-        runCatching { textChunks.drop() }.onFailure { ex -> logger.warn(ex) { "Failed to reset text chunks storage" } }
-        runCatching { fullDocs.drop() }.onFailure { ex -> logger.warn(ex) { "Failed to reset full docs storage" } }
-        runCatching { chunkEntityRelationGraph.drop() }.onFailure { ex -> logger.warn(ex) { "Failed to reset graph storage" } }
-        runCatching { entitiesVdb.drop() }.onFailure { ex -> logger.warn(ex) { "Failed to reset entities vector storage" } }
-        runCatching { relationshipsVdb.drop() }.onFailure { ex -> logger.warn(ex) { "Failed to reset relation vector storage" } }
-        runCatching { chunksVdb.drop() }.onFailure { ex -> logger.warn(ex) { "Failed to reset chunks vector storage" } }
+        chunkEntityRelationGraph.drop()
+        graphSnapshot.nodes.forEach { node -> chunkEntityRelationGraph.upsertNode(node.id, node.data) }
+        graphSnapshot.edges.forEach { edge -> chunkEntityRelationGraph.upsertEdge(edge.source, edge.target, edge.data) }
+        if (corpus != null) {
+            textChunks.drop()
+            fullDocs.drop()
+            textChunks.upsert(corpus.chunks)
+            fullDocs.upsert(corpus.documents)
+        }
+        entitiesVdb = newEntities
+        relationshipsVdb = newRelationships
+        chunksVdb = newChunks
+        if (corpus != null) extracted.upsert(corpus.extraction)
     }
 
     private fun inspectGraphFromUnifiedSpi(): Map<String, Any?> {

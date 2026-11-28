@@ -226,20 +226,80 @@ class IndexPublicationTest {
         }
 
     @Test
-    fun localCheckpointReloadsGraphAndRelationshipVectors() =
+    fun checkpointsRecoverSourceTextAndExtractionStateOnColdStart() =
         exercise { directory ->
-            PathRAG(workingDir = directory).use { rag ->
+            for (useSpi in listOf(false, true)) {
+                val checkpoint = "$directory/checkpoint-$useSpi"
+
+                fun openRag(session: PersistenceSession) =
+                    PathRAG(
+                        workingDir = directory,
+                        persistenceSession = session,
+                        useUnifiedSpiForRetrievalAndIndex = useSpi,
+                        highLevelKeywords = listOf("link"),
+                    )
+                var calls = 0
+                coEvery { pathrag.llm.openAiComplete(any(), any(), any(), any(), any(), any(), any(), any(), any()) } answers {
+                    calls++
+                    extraction
+                }
+                val customText = "Previously supplied as a custom chunk."
+                InMemoryPersistenceBackend().open(emptyMap()).use { session ->
+                    session.kv("sibling").put("stage", "before")
+                    openRag(session).use { writer ->
+                        writer.ainsert(document)
+                        writer.ainsertCustomKg(PathRAG.CustomKgPayload(chunks = listOf(PathRAG.CustomKgChunk(customText))))
+                        writer.asaveGraph(checkpoint)
+                    }
+                }
+                InMemoryPersistenceBackend().open(emptyMap()).use { session ->
+                    session.kv("sibling").put("stage", "after")
+                    openRag(session).use { reader ->
+                        reader.aloadGraph(checkpoint)
+                        assertEquals("after", session.kv("sibling").get("stage"))
+                        assertTrue(reader.graph().hasEdge("ALPHA", "BETA"))
+                        assertTrue(document in reader.aquery("link", QueryParam(mode = "global", onlyNeedContext = true)))
+                        val before = calls
+                        reader.ainsert(document)
+                        assertEquals(before, calls)
+                        reader.ainsert(customText)
+                        assertTrue(calls > before)
+                    }
+                }
+            }
+        }
+
+    @Test
+    fun legacyGraphLoadRetainsTextAndMalformedCheckpointPreservesIndex() =
+        exercise { directory ->
+            PathRAG(workingDir = directory, highLevelKeywords = listOf("link")).use { rag ->
                 rag.ainsert(document)
-                val checkpoint = "$directory/local-graph.json"
-                rag.asaveGraph(checkpoint)
+                val checkpoint = java.io.File(directory, "legacy.json")
+                val mapper =
+                    tools.jackson.module.kotlin
+                        .jacksonObjectMapper()
+                checkpoint.writeText(mapper.writeValueAsString(rag.ainspectGraph()))
                 rag.adropGraph()
-                assertFalse(rag.graph().hasEdge("ALPHA", "BETA"))
-                withTimeout(5_000) { rag.aloadGraph(checkpoint) }
-                assertTrue(rag.graph().hasEdge("ALPHA", "BETA"))
-                coEvery { pathrag.llm.openAiComplete(any(), any(), any(), any(), any(), any(), any(), any(), any()) } returns
-                    """{"high_level_keywords":["link"],"low_level_keywords":[]}"""
-                val context = rag.aquery("link", QueryParam(mode = "global", onlyNeedContext = true))
-                assertTrue(document in context)
+                rag.aloadGraph(checkpoint.path)
+                checkpoint.writeText("""{"version":2,"nodes":{},"edges":[]}""")
+                assertFailsWith<IllegalArgumentException> { rag.aloadGraph(checkpoint.path) }
+                assertTrue(document in rag.aquery("link", QueryParam(mode = "global", onlyNeedContext = true)))
+            }
+        }
+
+    @Test
+    fun failedVectorRebuildKeepsPreviousInMemoryIndex() =
+        exercise { directory ->
+            val checkpoint = "$directory/new.json"
+            PathRAG(workingDir = directory).use { writer ->
+                writer.ainsert(document)
+                writer.asaveGraph(checkpoint)
+            }
+            PathRAG(workingDir = directory).use { reader ->
+                reader.aupsertEntity("existing", "previous evidence")
+                coEvery { pathrag.llm.openAiEmbedding(match { document in it }, any()) } throws IllegalStateException("embedding offline")
+                assertFailsWith<IllegalStateException> { reader.aloadGraph(checkpoint) }
+                assertEquals(listOf("EXISTING"), reader.graph().nodes())
             }
         }
 
