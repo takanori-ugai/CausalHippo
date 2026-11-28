@@ -13,6 +13,7 @@ import io.ktor.server.routing.routing
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import lightrag.core.LightRAG
+import lightrag.operate.relationKey
 import lightrag.utils.computeMd5
 
 private val logger = KotlinLogging.logger {}
@@ -304,7 +305,7 @@ fun Application.configureGraphRoutes(rag: LightRAG) {
                     updated["tgt_id"] = request.targetId
                     graph.upsertEdge(request.sourceId, request.targetId, updated)
 
-                    val key = listOf(request.sourceId, request.targetId).sorted().joinToString("#")
+                    val key = listOf(request.sourceId, request.targetId).sorted().let { (source, target) -> relationKey(source, target) }
                     rag.storageManager.fullRelations.upsert(mapOf(key to updated))
 
                     val description = updated["description"] ?: ""
@@ -411,7 +412,11 @@ fun Application.configureGraphRoutes(rag: LightRAG) {
                     data["tgt_id"] = request.targetEntity
                     graph.upsertEdge(request.sourceEntity, request.targetEntity, data)
 
-                    val key = listOf(request.sourceEntity, request.targetEntity).sorted().joinToString("#")
+                    val key =
+                        listOf(
+                            request.sourceEntity,
+                            request.targetEntity,
+                        ).sorted().let { (source, target) -> relationKey(source, target) }
                     rag.storageManager.fullRelations.upsert(mapOf(key to data))
 
                     val description = data["description"] ?: ""

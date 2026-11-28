@@ -14,6 +14,7 @@ import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import lightrag.core.types.BaseGraphStorage
 import lightrag.core.types.KnowledgeGraph
+import lightrag.utils.writeStorageFileAtomically
 import java.io.File
 
 private val logger = KotlinLogging.logger {}
@@ -100,9 +101,9 @@ class InMemoryGraphStorage(
                     ),
                 )
             val content = json.encodeToString(payload)
-            file.writeText(content)
+            writeStorageFileAtomically(file, content)
             logger.debug { "Persisted graph '$namespace' with ${nodes.size} nodes to ${file.absolutePath}" }
-        }.onFailure { logger.error(it) { "Error saving graph storage to ${file.absolutePath}" } }
+        }.getOrThrow()
     }
 
     /**

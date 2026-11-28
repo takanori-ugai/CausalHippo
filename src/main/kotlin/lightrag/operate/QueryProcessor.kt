@@ -156,17 +156,16 @@ class QueryProcessor(
         if (earlyResult != null) return earlyResult
 
         val (hlKeywords, llKeywords) = getKeywordsFromQuery(query, queryParam)
-        val keywordResult = applyKeywordsToQueryParam(query, queryParam, hlKeywords, llKeywords)
-        if (keywordResult != null) return keywordResult
+        val effectiveParam = withKeywords(query, queryParam, hlKeywords, llKeywords)
 
-        val contextResult = getContextStrForQuery(query, queryParam, chunksVdb)
-        val sysPrompt = buildSystemPrompt(systemPrompt, queryParam, contextResult.contextStr)
-        if (queryParam.onlyNeedContext) return QueryResult(content = contextResult.contextStr, rawData = contextResult.rawData)
-        if (queryParam.onlyNeedPrompt) return QueryResult(content = "$sysPrompt\n\n---\n\n$query", rawData = contextResult.rawData)
+        val contextResult = getContextStrForQuery(query, effectiveParam, chunksVdb)
+        val sysPrompt = buildSystemPrompt(systemPrompt, effectiveParam, contextResult.contextStr)
+        if (effectiveParam.onlyNeedContext) return QueryResult(content = contextResult.contextStr, rawData = contextResult.rawData)
+        if (effectiveParam.onlyNeedPrompt) return QueryResult(content = "$sysPrompt\n\n---\n\n$query", rawData = contextResult.rawData)
 
-        val cacheKeys = buildCacheKeys(queryParam, query)
+        val cacheKeys = buildCacheKeys(effectiveParam, query, sysPrompt)
         val cached =
-            if (queryParam.stream) {
+            if (effectiveParam.stream) {
                 null
             } else {
                 readCachedResponse(cacheKeys.argsHash, contextResult.rawData)
@@ -174,10 +173,10 @@ class QueryProcessor(
         if (cached != null) return cached
 
         val response =
-            if (queryParam.stream) {
+            if (effectiveParam.stream) {
                 handleStreamingResponse(query, sysPrompt)
             } else {
-                handleNonStreamingResponse(query, queryParam, sysPrompt, cacheKeys)
+                handleNonStreamingResponse(query, effectiveParam, sysPrompt, cacheKeys)
             }
         return response?.copy(rawData = contextResult.rawData) ?: response
     }
@@ -189,26 +188,21 @@ class QueryProcessor(
             null
         }
 
-    private fun applyKeywordsToQueryParam(
+    private fun withKeywords(
         query: String,
         queryParam: QueryParam,
-        hlKeywords: List<String>,
-        llKeywords: List<String>,
-    ): QueryResult? {
-        queryParam.hlKeywords = hlKeywords
-        queryParam.llKeywords = llKeywords
-
-        if (llKeywords.isEmpty() && queryParam.mode in listOf("local", "hybrid", "mix")) {
-            logger.warn { "low_level_keywords is empty" }
-        }
-        if (hlKeywords.isEmpty() && queryParam.mode in listOf("global", "hybrid", "mix")) {
-            logger.warn { "high_level_keywords is empty" }
-        }
-        if (hlKeywords.isEmpty() && llKeywords.isEmpty()) {
+        highLevel: List<String>,
+        lowLevel: List<String>,
+    ): QueryParam {
+        if (highLevel.isEmpty() && lowLevel.isEmpty()) {
             logger.warn { "Both keyword lists are empty; falling back to original query text" }
-            queryParam.llKeywords = listOf(query)
+            return if (queryParam.mode == "global") {
+                queryParam.copy(hlKeywords = listOf(query))
+            } else {
+                queryParam.copy(llKeywords = listOf(query))
+            }
         }
-        return null
+        return queryParam.copy(hlKeywords = highLevel, llKeywords = lowLevel)
     }
 
     private fun buildSystemPrompt(
@@ -233,6 +227,7 @@ class QueryProcessor(
     private fun buildCacheKeys(
         queryParam: QueryParam,
         query: String,
+        systemPrompt: String,
     ): CacheKeys {
         val hlKeywordsStr = queryParam.hlKeywords.joinToString(", ")
         val llKeywordsStr = queryParam.llKeywords.joinToString(", ")
@@ -250,6 +245,7 @@ class QueryProcessor(
                 llKeywordsStr,
                 queryParam.userPrompt ?: "",
                 queryParam.enableRerank.toString(),
+                systemPrompt,
             ).joinToString("|")
         val argsHash = "kg_query_cache_${computeMd5(cacheSeed)}"
         return CacheKeys(argsHash, hlKeywordsStr, llKeywordsStr)
@@ -431,11 +427,12 @@ class QueryProcessor(
 
         val entityChunks = findRelatedTextUnitFromEntities(entities)
         val relationChunks = findRelatedTextUnitFromRelations(relations, entityChunks)
-        var allChunks = (entityChunks + relationChunks).distinctBy { it["id"] }
-        if (allChunks.isEmpty() && searchResult.vectorChunks.isNotEmpty()) {
-            allChunks = searchResult.vectorChunks
-        }
-        allChunks = hardTruncateChunksByContextBudget(allChunks, queryParam.maxTotalTokens)
+        val sources = listOf(searchResult.vectorChunks, entityChunks, relationChunks)
+        val chunks =
+            (0 until sources.maxOf { it.size })
+                .flatMap { index -> sources.mapNotNull { it.getOrNull(index) } }
+                .distinctBy { it["id"] ?: it["chunk_id"] ?: it["content"] }
+        val allChunks = hardTruncateChunksByContextBudget(chunks, queryParam.maxTotalTokens)
 
         val entitiesStr = buildEntitiesStr(entities)
         val relationsStr = buildRelationsStr(relations, queryParam.topK)

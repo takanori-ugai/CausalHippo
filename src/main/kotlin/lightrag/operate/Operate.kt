@@ -3,6 +3,8 @@ package lightrag.operate
 import dev.langchain4j.model.chat.ChatModel
 import dev.langchain4j.service.AiServices
 import io.github.oshai.kotlinlogging.KotlinLogging
+import kotlinx.coroutines.CancellationException
+import kotlinx.serialization.Serializable
 import lightrag.core.Constants
 import lightrag.core.types.BaseGraphStorage
 import lightrag.core.types.BaseKVStorage
@@ -33,6 +35,7 @@ data class ChunkingResult(
  * @property description A description of the entity.
  * @property sourceId The ID of the source document.
  */
+@Serializable
 data class EntityExtractionResult(
     val entityName: String,
     val entityType: String,
@@ -49,6 +52,7 @@ data class EntityExtractionResult(
  * @property weight The weight of the relation.
  * @property sourceId The ID of the source document.
  */
+@Serializable
 data class RelationExtractionResult(
     val srcId: String,
     val tgtId: String,
@@ -180,11 +184,8 @@ suspend fun extractEntities(
     chunks: Map<String, Map<String, Any>>,
     globalConfig: Map<String, Any?>,
 ): Pair<Map<String, List<EntityExtractionResult>>, Map<String, List<RelationExtractionResult>>> {
-    val model = globalConfig["llm_model_func"] as? ChatModel
-    if (model == null) {
-        logger.error { "No ChatModel provided for entity extraction" }
-        return emptyMap<String, List<EntityExtractionResult>>() to emptyMap()
-    }
+    if (chunks.isEmpty()) return emptyMap<String, List<EntityExtractionResult>>() to emptyMap()
+    val model = checkNotNull(globalConfig["llm_model_func"] as? ChatModel) { "No ChatModel provided for entity extraction" }
 
     val nodes = mutableMapOf<String, MutableList<EntityExtractionResult>>()
     val edges = mutableMapOf<String, MutableList<RelationExtractionResult>>()
@@ -209,12 +210,10 @@ suspend fun extractEntities(
             chunkEdges.forEach { (key, list) ->
                 edges.computeIfAbsent(key) { mutableListOf() }.addAll(list)
             }
-        } catch (e: IllegalStateException) {
-            logger.error(e) { "Illegal state while extracting entities for chunk $chunkKey" }
-        } catch (e: IllegalArgumentException) {
-            logger.error(e) { "Invalid input while extracting entities for chunk $chunkKey" }
-        } catch (e: Exception) {
-            logger.error(e) { "Unexpected error while extracting entities for chunk $chunkKey" }
+        } catch (error: CancellationException) {
+            throw error
+        } catch (error: RuntimeException) {
+            throw IllegalStateException("LightRAG extraction failed for chunk $chunkKey", error)
         }
     }
 
@@ -241,12 +240,15 @@ fun processExtractionResult(
     }
 
     result.relations.forEach { relation ->
+        val source = minOf(relation.source, relation.target)
+        val target = maxOf(relation.source, relation.target)
+        if (source == target) return@forEach
         edges
-            .computeIfAbsent(relation.key()) { mutableListOf() }
+            .computeIfAbsent(relationKey(source, target)) { mutableListOf() }
             .add(
                 RelationExtractionResult(
-                    relation.source,
-                    relation.target,
+                    source,
+                    target,
                     relation.description,
                     relation.keywords,
                     1.0,
@@ -284,11 +286,28 @@ suspend fun mergeNodesAndEdges(
 
     // 2. Process Edges
     for ((key, edgeList) in edges) {
-        upsertEdgeAndVectors(key, edgeList, knowledgeGraphInst, relationshipsVdb, fullRelations)
+        upsertEdgeAndVectors(key, edgeList, knowledgeGraphInst, entitiesVdb, relationshipsVdb, fullEntities, fullRelations)
     }
 }
 
-private fun ExtractedRelation.key(): String = "$source#$target"
+internal fun relationKey(
+    source: String,
+    target: String,
+): String =
+    if ('#' in source || '#' in target) {
+        "${source.length}#$source#$target"
+    } else {
+        "$source#$target"
+    }
+
+private fun mergeGraphField(
+    existing: String?,
+    values: List<String>,
+): String =
+    (existing.orEmpty().split(Constants.GRAPH_FIELD_SEP) + values)
+        .filter { it.isNotBlank() }
+        .distinct()
+        .joinToString(Constants.GRAPH_FIELD_SEP)
 
 private suspend fun upsertNodeAndVectors(
     name: String,
@@ -297,21 +316,23 @@ private suspend fun upsertNodeAndVectors(
     entitiesVdb: BaseVectorStorage,
     fullEntities: BaseKVStorage?,
 ) {
-    // Simple merge: take the longest description and majority type.
-    val longestDesc = entityList.maxByOrNull { it.description.length }?.description.orEmpty()
-    val majorityType =
-        entityList
-            .groupingBy { it.entityType }
+    val existing = knowledgeGraphInst.getNode(name)
+    val description = mergeGraphField(existing?.get("description"), entityList.map { it.description })
+    val types = entityList.map { it.entityType }.filterNot { it.equals("UNKNOWN", ignoreCase = true) }
+    val entityType =
+        types
+            .groupingBy { it }
             .eachCount()
             .maxByOrNull { it.value }
-            ?.key ?: "Unknown"
-    val sourceIds = entityList.joinToString(Constants.GRAPH_FIELD_SEP) { it.sourceId }
+            ?.key
+            ?: existing?.get("entity_type") ?: "UNKNOWN"
+    val sourceIds = mergeGraphField(existing?.get("source_id"), entityList.map { it.sourceId })
 
     val nodeData =
         mapOf(
             "entity_id" to name,
-            "entity_type" to majorityType,
-            "description" to longestDesc,
+            "entity_type" to entityType,
+            "description" to description,
             "source_id" to sourceIds,
         )
 
@@ -319,7 +340,7 @@ private suspend fun upsertNodeAndVectors(
     fullEntities?.upsert(mapOf(name to nodeData))
 
     // Update VDB
-    val entityContent = "$name\n$longestDesc"
+    val entityContent = "$name\n$description"
     val vdbData =
         mapOf(
             computeMd5(name) to
@@ -335,32 +356,45 @@ private suspend fun upsertEdgeAndVectors(
     key: String,
     edgeList: List<RelationExtractionResult>,
     knowledgeGraphInst: BaseGraphStorage,
+    entitiesVdb: BaseVectorStorage,
     relationshipsVdb: BaseVectorStorage,
+    fullEntities: BaseKVStorage?,
     fullRelations: BaseKVStorage?,
 ) {
     val first = edgeList.firstOrNull() ?: return
     val src = first.srcId
     val tgt = first.tgtId
-    val longestDesc = edgeList.maxByOrNull { it.description.length }?.description.orEmpty()
-    val allKeywords = edgeList.joinToString(", ") { it.keywords }
-    val weight = edgeList.sumOf { it.weight }
-    val sourceIds = edgeList.joinToString(Constants.GRAPH_FIELD_SEP) { it.sourceId }
+    val existing = knowledgeGraphInst.getEdge(src, tgt)
+    val oldSources = existing?.get("source_id")
+    val oldSourceIds = oldSources.orEmpty().split(Constants.GRAPH_FIELD_SEP).toSet()
+    val description = mergeGraphField(existing?.get("description"), edgeList.map { it.description })
+    val allKeywords = mergeGraphField(existing?.get("keywords"), edgeList.map { it.keywords })
+    val weight =
+        (existing?.get("weight")?.toDoubleOrNull() ?: 0.0) +
+            edgeList.filterNot { it.sourceId in oldSourceIds }.distinctBy { it.sourceId }.sumOf { it.weight }
+    val sourceIds = mergeGraphField(oldSources, edgeList.map { it.sourceId })
 
     val edgeData =
         mapOf(
             "weight" to weight.toString(),
-            "description" to longestDesc,
+            "description" to description,
             "keywords" to allKeywords,
             "source_id" to sourceIds,
             "src_id" to src,
             "tgt_id" to tgt,
         )
 
+    for (endpoint in listOf(src, tgt)) {
+        if (knowledgeGraphInst.getNode(endpoint) == null) {
+            val placeholder = EntityExtractionResult(endpoint, "UNKNOWN", description, sourceIds)
+            upsertNodeAndVectors(endpoint, listOf(placeholder), knowledgeGraphInst, entitiesVdb, fullEntities)
+        }
+    }
     knowledgeGraphInst.upsertEdge(src, tgt, edgeData)
     fullRelations?.upsert(mapOf(key to edgeData))
 
     // Update VDB
-    val relContent = "$allKeywords\t$src\n$tgt\n$longestDesc"
+    val relContent = "$allKeywords\t$src\n$tgt\n$description"
     val vdbData =
         mapOf(
             computeMd5(key) to
@@ -371,4 +405,9 @@ private suspend fun upsertEdgeAndVectors(
                 ),
         )
     relationshipsVdb.upsert(vdbData)
+    val reverseKey = relationKey(tgt, src)
+    if (reverseKey != key) {
+        relationshipsVdb.delete(listOf(computeMd5(reverseKey)))
+        fullRelations?.delete(listOf(reverseKey))
+    }
 }
