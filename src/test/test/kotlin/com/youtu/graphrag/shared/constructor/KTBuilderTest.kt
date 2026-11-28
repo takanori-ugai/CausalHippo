@@ -13,10 +13,37 @@ import kotlin.io.path.readText
 import kotlin.io.path.writeText
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
 
 class KTBuilderTest {
     private val mapper = jacksonObjectMapper()
+
+    @Test
+    fun `failed extraction publishes no graph and the same builder can retry`() {
+        val root = Files.createTempDirectory("youtu-graphrag-ktbuilder-retry")
+        val schemaPath = root.resolve("schema.json").also { it.writeText("{}") }
+        val corpusPath = root.resolve("corpus.json")
+        mapper.writeValue(corpusPath.toFile(), listOf(mapOf("title" to "Doc", "text" to "Alice works at Acme.")))
+        val responses =
+            ArrayDeque(listOf("", """{"triples":[["Alice","works_at","Acme"]],"attributes":{},"entity_types":{}}"""))
+        val builder =
+            KTBuilder(
+                datasetName = "retry_ds",
+                schemaPath = schemaPath.pathString,
+                mode = "noagent",
+                config = createTestConfig(root = root, mode = "noagent"),
+                rootDir = root,
+                llmClient =
+                    object : LlmClient {
+                        override fun complete(prompt: String): String = responses.removeFirst()
+                    },
+            )
+
+        assertFailsWith<IllegalStateException> { builder.buildKnowledgeGraph(corpusPath.pathString) }
+        assertTrue(!root.resolve("output/graphs/retry_ds_new.json").exists())
+        assertTrue(builder.buildKnowledgeGraph(corpusPath.pathString).any { it.relation == "works_at" })
+    }
 
     @Test
     fun `buildKnowledgeGraph maps llm extraction payload into graph relationships`() {

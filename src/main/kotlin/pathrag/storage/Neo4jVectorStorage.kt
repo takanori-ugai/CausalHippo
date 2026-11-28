@@ -149,9 +149,6 @@ class Neo4jVectorStorage(
                 logger.error(e) { "Failed to embed content for Neo4jVectorStorage ($namespace)" }
                 throw e
             }
-        check(embeddings.size == valid.size) {
-            "Embedding count mismatch for '$namespace': expected ${valid.size}, got ${embeddings.size}"
-        }
         runCatching { ensureVectorIndex(embeddings.firstOrNull()?.size ?: 0) }
             .onFailure { ex ->
                 logger.warn(ex) { "Unable to ensure vector index for Neo4jVectorStorage ($namespace); continuing without index." }

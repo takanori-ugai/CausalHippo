@@ -411,7 +411,6 @@ class PathRAG(
         val newChunks = chunkMap.filterKeys { it in newChunkIds }
         try {
             if (newChunks.isNotEmpty()) {
-                chunksVdb.upsert(newChunks)
                 chunkEntityRelationGraph =
                     extractEntities(
                         newChunks,
@@ -419,6 +418,7 @@ class PathRAG(
                         entitiesVdb,
                         relationshipsVdb,
                         globalConfig(),
+                        beforeGraphWrite = { chunksVdb.upsert(newChunks) },
                     )
                 textChunks.upsert(newChunks)
             }

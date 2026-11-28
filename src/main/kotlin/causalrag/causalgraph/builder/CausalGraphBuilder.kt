@@ -18,9 +18,12 @@ import shared.chunking.DEFAULT_INGEST_CHUNK_OVERLAP_TOKEN_SIZE
 import shared.chunking.DEFAULT_INGEST_CHUNK_TOKEN_SIZE
 import shared.chunking.DEFAULT_TIKTOKEN_MODEL
 import shared.chunking.chunkByTokenSizeWithOverlap
+import shared.rag.IndexingFailure
+import shared.rag.IndexingReport
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
+import kotlin.coroutines.cancellation.CancellationException
 import kotlin.math.max
 
 private val logger = KotlinLogging.logger {}
@@ -118,20 +121,25 @@ class CausalTripleExtractor(
      * @param text Source text.
      * @return Deduplicated causal triples.
      */
-    fun extract(text: String): List<CausalTriple> =
+    fun extract(text: String): List<CausalTriple> = extract(text) { _, _ -> }
+
+    internal fun extract(
+        text: String,
+        onFailure: (Int, String) -> Unit,
+    ): List<CausalTriple> =
         when (method) {
             "rule" -> {
                 deduplicateTriples(ruleBasedExtraction(text))
             }
 
             "llm" -> {
-                llmBasedExtraction(text)
+                llmBasedExtraction(text, onFailure)
             }
 
             else -> {
                 val ruleTriples = deduplicateTriples(ruleBasedExtraction(text))
                 if (llmInterface != null) {
-                    val llmTriples = llmBasedExtraction(text)
+                    val llmTriples = llmBasedExtraction(text, onFailure)
                     val existing = ruleTriples.map { it.cause.lowercase() + "|" + it.effect.lowercase() }.toSet()
                     val combined = ruleTriples.toMutableList()
                     for (triple in llmTriples) {
@@ -183,7 +191,10 @@ class CausalTripleExtractor(
         return triples
     }
 
-    private fun llmBasedExtraction(text: String): List<CausalTriple> {
+    private fun llmBasedExtraction(
+        text: String,
+        onFailure: (Int, String) -> Unit,
+    ): List<CausalTriple> {
         if (llmInterface == null) {
             logger.warn { "LLM interface not provided, cannot perform LLM-based extraction" }
             return emptyList()
@@ -196,7 +207,7 @@ class CausalTripleExtractor(
                 model = DEFAULT_TIKTOKEN_MODEL,
             ).map { it.content }
         val allTriples = mutableListOf<CausalTriple>()
-        for (chunk in chunks) {
+        for ((chunkIndex, chunk) in chunks.withIndex()) {
             val prompt = createCausalExtractionPrompt(chunk)
             try {
                 val response =
@@ -207,8 +218,11 @@ class CausalTripleExtractor(
                         jsonArrayMode = true,
                     )
                 allTriples.addAll(parseLlmResponse(response))
+            } catch (ex: CancellationException) {
+                throw ex
             } catch (ex: Exception) {
                 logger.error(ex) { "Error during LLM extraction" }
+                onFailure(chunkIndex, ex.message ?: ex.javaClass.simpleName)
             }
         }
         return deduplicateTriples(allTriples)
@@ -265,10 +279,7 @@ CAUSAL RELATIONSHIPS:"""
         val jsonStr = response.trim()
         val startIdx = jsonStr.indexOf('[')
         val endIdx = jsonStr.lastIndexOf(']')
-        if (startIdx == -1 || endIdx == -1 || endIdx <= startIdx) {
-            logger.warn { "No valid JSON array found in response" }
-            return emptyList()
-        }
+        check(startIdx >= 0 && endIdx > startIdx) { "Missing causal extraction JSON array" }
         val arrayText = jsonStr.substring(startIdx, endIdx + 1)
         return try {
             parseJsonTriples(json, arrayText)
@@ -278,8 +289,7 @@ CAUSAL RELATIONSHIPS:"""
             try {
                 parseJsonTriples(json, fixed)
             } catch (nested: RuntimeException) {
-                logger.error(nested) { "Failed to parse LLM response after fix-ups" }
-                emptyList()
+                throw IllegalStateException("Invalid causal extraction JSON after fix-ups", nested)
             }
         }
     }
@@ -504,6 +514,9 @@ class CausalGraphBuilder(
         return text
     }
 
+    var lastIndexingReport: IndexingReport = IndexingReport()
+        private set
+
     /**
      * Extracts triples from documents and adds them to the graph in batches.
      *
@@ -516,17 +529,27 @@ class CausalGraphBuilder(
         batchSize: Int = 5,
     ): Int {
         val initialEdges = graph.numberOfEdges()
+        lastIndexingReport = IndexingReport()
+        val failures = mutableListOf<IndexingFailure>()
         val docBatches = docs.chunked(batchSize)
         var batchCount = 0
         for (batch in docBatches) {
             batchCount += 1
             val batchTriples = mutableListOf<CausalTriple>()
-            for (doc in batch) {
+            for ((offset, doc) in batch.withIndex()) {
                 if (doc.isBlank() || doc.trim().length < 10) continue
+                val documentIndex = (batchCount - 1) * batchSize + offset
                 try {
-                    batchTriples.addAll(extractor.extract(doc))
+                    batchTriples.addAll(
+                        extractor.extract(doc) { chunkIndex, reason ->
+                            failures.add(IndexingFailure("causal", "$documentIndex:$chunkIndex", reason))
+                        },
+                    )
+                } catch (ex: CancellationException) {
+                    throw ex
                 } catch (ex: RuntimeException) {
                     logger.error(ex) { "Error extracting triples from document" }
+                    failures.add(IndexingFailure("causal", "$documentIndex", ex.message ?: ex.javaClass.simpleName))
                 }
             }
             addTriples(batchTriples)
@@ -534,6 +557,7 @@ class CausalGraphBuilder(
                 logger.info { "Processed batch $batchCount/${docBatches.size}: found ${batchTriples.size} causal relationships" }
             }
         }
+        lastIndexingReport = IndexingReport(failures.toList())
         val newEdges = graph.numberOfEdges() - initialEdges
         logger.info { "Indexing complete: ${docs.size} documents processed" }
         logger.info { "Graph now has ${graph.numberOfNodes()} nodes and ${graph.numberOfEdges()} edges" }
@@ -551,6 +575,7 @@ class CausalGraphBuilder(
      * Clears all indexed graph state, node metadata, and cached embeddings.
      */
     fun clear() {
+        lastIndexingReport = IndexingReport()
         graph.clear()
         _nodeText.clear()
         nodeVariants.clear()

@@ -1,9 +1,16 @@
 package lightrag.services
 
 import io.github.oshai.kotlinlogging.KotlinLogging
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.withContext
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
 import lightrag.core.types.DocProcessingStatus
 import lightrag.core.types.DocStatus
 import lightrag.operate.ChunkingResult
+import lightrag.operate.EntityExtractionResult
+import lightrag.operate.RelationExtractionResult
 import lightrag.operate.chunkingByTokenSize
 import lightrag.operate.extractEntities
 import lightrag.operate.mergeNodesAndEdges
@@ -27,63 +34,147 @@ class DocumentProcessor(
         private const val DEFAULT_CHUNK_OVERLAP_TOKEN_SIZE = 100
     }
 
-    /**
-     * Processes all pending documents by chunking them, storing chunks, and updating the graph/vector stores.
-     */
+    @Serializable
+    private data class ExtractionSnapshot(
+        val chunkIds: Set<String>,
+        val nodes: Map<String, List<EntityExtractionResult>>,
+        val edges: Map<String, List<RelationExtractionResult>>,
+    )
+
+    private data class PreparedDocument(
+        val id: String,
+        val source: Map<String, Any>,
+        val chunks: Map<String, Map<String, Any>>,
+        val extraction: ExtractionSnapshot,
+    )
+
     suspend fun pipelineProcessEnqueueDocuments() {
         val pendingDocs = storageManager.docStatusStorage.getDocsByStatus(DocStatus.PENDING)
-        if (pendingDocs.isEmpty()) return
-
-        val chunkTokenSize = globalConfig["chunk_token_size"] as? Int ?: DEFAULT_CHUNK_TOKEN_SIZE
-        val chunkOverlapTokenSize =
-            globalConfig["chunk_overlap_token_size"] as? Int ?: DEFAULT_CHUNK_OVERLAP_TOKEN_SIZE
-
-        pendingDocs.forEach { (docId, status) ->
-            processDocument(docId, status, chunkTokenSize, chunkOverlapTokenSize)
+        for ((docId, status) in pendingDocs) {
+            try {
+                updateStatus(docId, DocStatus.PROCESSING)
+                writeDocument(prepareDocument(docId, status))
+                updateStatus(docId, DocStatus.PROCESSED)
+            } catch (error: CancellationException) {
+                throw error
+            } catch (error: RuntimeException) {
+                logger.error(error) { "LightRAG indexing failed for document $docId" }
+                updateStatus(docId, DocStatus.FAILED, error.message ?: error.javaClass.simpleName)
+            }
         }
     }
 
-    private suspend fun processDocument(
+    /**
+     * Rebuilds derived data from documents that will remain indexed.
+     * Resolve all source contents and extractions before touching the current index.
+     */
+    suspend fun rebuildDerivedStorage(
+        documents: Map<String, DocProcessingStatus>,
+        afterPublish: suspend () -> Unit = {},
+    ) {
+        val prepared = documents.map { (id, status) -> prepareDocument(id, status) }
+        // The staging stores are in memory and never initialized, persisted, or dropped on disk.
+        val staging =
+            StorageManager(
+                workingDir = ".",
+                embeddingModel = storageManager.chunksVdb.embeddingFunc,
+                globalConfig = emptyMap(),
+            )
+        for (document in prepared) {
+            writeDerivedDocument(document, staging)
+        }
+        val knownChunks = prepared.flatMap { it.chunks.keys }.toSet()
+        val replacement = DerivedIndex.capture(staging, knownChunks)
+        val previous = DerivedIndex.capture(storageManager, knownChunks + existingDocumentChunkIds())
+        try {
+            replacement.restore(storageManager)
+            storageManager.persist()
+            afterPublish()
+        } catch (error: Exception) {
+            withContext(NonCancellable) {
+                runCatching { previous.restore(storageManager, continueOnFailure = true) }
+                    .exceptionOrNull()
+                    ?.let(error::addSuppressed)
+                runCatching { storageManager.persist() }.exceptionOrNull()?.let(error::addSuppressed)
+            }
+            throw error
+        }
+    }
+
+    private suspend fun existingDocumentChunkIds(): Set<String> {
+        val chunkSize = globalConfig["chunk_token_size"] as? Int ?: DEFAULT_CHUNK_TOKEN_SIZE
+        val overlap = globalConfig["chunk_overlap_token_size"] as? Int ?: DEFAULT_CHUNK_OVERLAP_TOKEN_SIZE
+        val documentIds = DocStatus.entries.flatMap { storageManager.docStatusStorage.getDocsByStatus(it).keys }.toSet()
+        return documentIds
+            .flatMap { id ->
+                val content = storageManager.fullDocs.getById(id)?.get("content") as? String ?: return@flatMap emptyList()
+                chunkDocument(content, chunkSize, overlap).map { computeMd5(it.content) }
+            }.toSet()
+    }
+
+    private suspend fun prepareDocument(
         docId: String,
         status: DocProcessingStatus,
-        chunkTokenSize: Int,
-        chunkOverlapTokenSize: Int,
-    ) {
+    ): PreparedDocument {
+        val doc = checkNotNull(storageManager.fullDocs.getById(docId)) { "Document $docId is missing" }
+        val content = checkNotNull(doc["content"] as? String) { "Document $docId has no content" }
+        val chunkTokenSize = globalConfig["chunk_token_size"] as? Int ?: DEFAULT_CHUNK_TOKEN_SIZE
+        val chunkOverlapTokenSize = globalConfig["chunk_overlap_token_size"] as? Int ?: DEFAULT_CHUNK_OVERLAP_TOKEN_SIZE
+        val chunks = buildChunksData(chunkDocument(content, chunkTokenSize, chunkOverlapTokenSize), docId, status.filePath)
+        val cachedExtraction =
+            (doc["graph_extraction"] as? String)
+                ?.let { Json.decodeFromString<ExtractionSnapshot>(it) }
+                ?.takeIf { it.chunkIds == chunks.keys }
+        val extraction =
+            cachedExtraction ?: run {
+                val (nodes, edges) = extractEntities(chunks, globalConfig)
+                ExtractionSnapshot(chunks.keys, nodes, edges)
+            }
+        return PreparedDocument(docId, doc, chunks, extraction)
+    }
+
+    private suspend fun writeDocument(document: PreparedDocument) {
+        storageManager.fullDocs.upsert(
+            mapOf(document.id to (document.source + ("graph_extraction" to Json.encodeToString(document.extraction)))),
+        )
+        val previous = DerivedIndex.capture(storageManager, document.chunks.keys)
         try {
-            storageManager.docStatusStorage.upsert(mapOf(docId to mapOf("status" to DocStatus.PROCESSING.value)))
-            val content = fetchContentOrFail(docId) ?: return
-            val chunks = chunkDocument(content, chunkTokenSize, chunkOverlapTokenSize)
-            val chunksData = buildChunksData(chunks, docId, status.filePath)
-            persistChunks(chunksData, status)
-            mergeExtractedEntities(chunksData)
-            storageManager.docStatusStorage.upsert(mapOf(docId to mapOf("status" to DocStatus.PROCESSED.value)))
-        } catch (e: IllegalStateException) {
-            handleProcessingError(docId, e)
-        } catch (e: IllegalArgumentException) {
-            handleProcessingError(docId, e)
+            writeDerivedDocument(document, storageManager)
+        } catch (error: Exception) {
+            withContext(NonCancellable) {
+                runCatching { previous.restore(storageManager, continueOnFailure = true) }.exceptionOrNull()?.let(error::addSuppressed)
+            }
+            throw error
         }
     }
 
-    private suspend fun fetchContentOrFail(docId: String): String? {
-        val docData = storageManager.fullDocs.getById(docId)
-        val content = docData?.get("content") as? String
-        if (content != null) return content
-
-        val msg = "Doc content missing for $docId"
-        logger.warn { msg }
-        storageManager.docStatusStorage.upsert(
-            mapOf(
-                docId to
-                    mapOf(
-                        "status" to DocStatus.FAILED.value,
-                        "error_msg" to msg,
-                    ),
-            ),
+    private suspend fun writeDerivedDocument(
+        document: PreparedDocument,
+        stores: StorageManager,
+    ) {
+        stores.chunksVdb.upsert(document.chunks)
+        val chunkVectors = stores.chunksVdb.getVectorsByIds(document.chunks.keys.toList())
+        check(document.chunks.keys.all { !chunkVectors[it].isNullOrEmpty() }) { "Incomplete document chunk embeddings" }
+        stores.textChunks.upsert(document.chunks)
+        mergeNodesAndEdges(
+            nodes = document.extraction.nodes,
+            edges = document.extraction.edges,
+            knowledgeGraphInst = stores.chunkEntityRelationGraph,
+            entitiesVdb = stores.entitiesVdb,
+            relationshipsVdb = stores.relationshipsVdb,
+            fullEntities = stores.fullEntities,
+            fullRelations = stores.fullRelations,
         )
-        // Clean up the orphaned status so we don't retry endlessly.
-        storageManager.docStatusStorage.delete(listOf(docId))
-        storageManager.fullDocs.delete(listOf(docId))
-        return null
+    }
+
+    private suspend fun updateStatus(
+        docId: String,
+        status: DocStatus,
+        error: String = "",
+    ) {
+        storageManager.docStatusStorage.upsert(
+            mapOf(docId to mapOf("status" to status.value, "error_msg" to error)),
+        )
     }
 
     private fun chunkDocument(
@@ -120,51 +211,5 @@ class DocumentProcessor(
                 )
         }
         return chunksData
-    }
-
-    private suspend fun persistChunks(
-        chunksData: Map<String, Map<String, Any>>,
-        status: DocProcessingStatus,
-    ) {
-        storageManager.textChunks.upsert(chunksData)
-        val chunksVdbData =
-            chunksData.mapValues { (_, v) ->
-                mapOf(
-                    "content" to v["content"]!!,
-                    "full_doc_id" to v["full_doc_id"]!!,
-                    "file_path" to status.filePath.ifBlank { "unknown_source" },
-                )
-            }
-        storageManager.chunksVdb.upsert(chunksVdbData)
-    }
-
-    private suspend fun mergeExtractedEntities(chunksData: Map<String, Map<String, Any>>) {
-        val (nodes, edges) = extractEntities(chunksData, globalConfig)
-
-        mergeNodesAndEdges(
-            nodes = nodes,
-            edges = edges,
-            knowledgeGraphInst = storageManager.chunkEntityRelationGraph,
-            entitiesVdb = storageManager.entitiesVdb,
-            relationshipsVdb = storageManager.relationshipsVdb,
-            fullEntities = storageManager.fullEntities,
-            fullRelations = storageManager.fullRelations,
-        )
-    }
-
-    private suspend fun handleProcessingError(
-        docId: String,
-        e: Exception,
-    ) {
-        e.printStackTrace()
-        storageManager.docStatusStorage.upsert(
-            mapOf(
-                docId to
-                    mapOf(
-                        "status" to DocStatus.FAILED.value,
-                        "error_msg" to (e.message ?: "Unknown error"),
-                    ),
-            ),
-        )
     }
 }

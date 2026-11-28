@@ -1011,7 +1011,7 @@ private class IndexBuilder(
         val cacheNpzPath = resolveCacheFile(tripleCacheNpzFileName)
         val cachedByKey =
             if (config.retrieval.enableCaching) {
-                loadEmbeddingCache(cachePath, cacheNpzPath)
+                loadEmbeddingCache(cachePath)
             } else {
                 mutableMapOf()
             }
@@ -1059,7 +1059,7 @@ private class IndexBuilder(
         val cacheNpzPath = resolveCacheFile(chunkCacheNpzFileName)
         val cachedByKey =
             if (config.retrieval.enableCaching) {
-                loadEmbeddingCache(cachePath, cacheNpzPath)
+                loadEmbeddingCache(cachePath)
             } else {
                 mutableMapOf()
             }
@@ -1094,23 +1094,8 @@ private class IndexBuilder(
         return vectorsByChunk
     }
 
-    fun loadEmbeddingCache(
-        cachePath: Path,
-        cacheNpzPath: Path,
-    ): MutableMap<String, FloatArray> {
-        if (cacheNpzPath.exists()) {
-            val npzVectors =
-                runCatching {
-                    NpzEmbeddingCache.read(cacheNpzPath, expectedDimensions = embedder.dimensions)
-                }.getOrElse { error ->
-                    logger.warn(error) { "Failed to load NPZ embedding cache from $cacheNpzPath. Falling back to JSON cache." }
-                    emptyMap()
-                }
-            if (npzVectors.isNotEmpty()) {
-                return npzVectors.toMutableMap()
-            }
-        }
-
+    fun loadEmbeddingCache(cachePath: Path): MutableMap<String, FloatArray> {
+        // NPZ exports have no model metadata. Only the tagged JSON is reusable as a cache.
         if (!cachePath.exists()) {
             return linkedMapOf()
         }

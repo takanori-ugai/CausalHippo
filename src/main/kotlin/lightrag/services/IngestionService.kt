@@ -1,6 +1,10 @@
 package lightrag.services
 
 import io.github.oshai.kotlinlogging.KotlinLogging
+import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
+import kotlinx.coroutines.withContext
 import lightrag.core.types.DocStatus
 import lightrag.utils.generateTrackId
 import java.time.Instant
@@ -16,6 +20,7 @@ class IngestionService(
     private val tokenizer: (String) -> List<Int>,
     private val decoder: (List<Int>) -> String,
 ) {
+    private val indexMutex = Mutex()
     private val documentProcessor =
         DocumentProcessor(
             storageManager = storageManager,
@@ -51,12 +56,14 @@ class IngestionService(
     suspend fun insert(
         input: List<String>,
         fileSources: List<String>? = null,
-    ): String {
-        val trackId = generateTrackId("insert")
-        pipelineEnqueueDocuments(input, trackId, fileSources)
-        documentProcessor.pipelineProcessEnqueueDocuments()
-        return trackId
-    }
+    ): String =
+        indexMutex.withLock {
+            val trackId = generateTrackId("insert")
+            pipelineEnqueueDocuments(input, trackId, fileSources)
+            documentProcessor.pipelineProcessEnqueueDocuments()
+            storageManager.persist()
+            trackId
+        }
 
     private suspend fun pipelineEnqueueDocuments(
         input: List<String>,
@@ -102,29 +109,29 @@ class IngestionService(
         trackId: String,
         filePaths: List<String>?,
     ) {
-        val existingDocIds = uniqueContent.keys - uniqueNewDocIds
-        if (filePaths == null || existingDocIds.isEmpty()) return
+        for (docId in uniqueContent.keys - uniqueNewDocIds) {
+            val (content, path) = uniqueContent.getValue(docId)
+            val existing = storageManager.fullDocs.getById(docId).orEmpty()
+            val status = storageManager.docStatusStorage.getById(docId)
+            val currentState = status?.get("status")
+            val needsRetry = currentState == DocStatus.FAILED.value || currentState == DocStatus.PROCESSING.value
+            val effectivePath = if (filePaths == null) status?.get("file_path") as? String ?: path else path
+            val pathChanged = filePaths != null && path != status?.get("file_path")
+            if (!needsRetry && !pathChanged && existing["content"] == content) continue
 
-        val updates = mutableMapOf<String, Map<String, Any>>()
-        existingDocIds.forEach { docId ->
-            val (_, path) = uniqueContent[docId] ?: return@forEach
-            updates[docId] =
+            storageManager.fullDocs.upsert(mapOf(docId to (existing + mapOf("content" to content, "file_path" to effectivePath))))
+            storageManager.docStatusStorage.upsert(
                 mapOf(
-                    "status" to DocStatus.PENDING.value,
-                    "track_id" to trackId,
-                    "file_path" to path,
-                    "updated_at" to Instant.now().toString(),
-                )
+                    docId to
+                        mapOf(
+                            "status" to DocStatus.PENDING.value,
+                            "track_id" to trackId,
+                            "file_path" to effectivePath,
+                            "updated_at" to Instant.now().toString(),
+                        ),
+                ),
+            )
         }
-        if (updates.isEmpty()) return
-
-        storageManager.docStatusStorage.upsert(updates)
-        storageManager.fullDocs.upsert(
-            updates.mapValues { (docId, _) ->
-                val (_, path) = uniqueContent[docId]!!
-                mapOf("file_path" to path)
-            },
-        )
     }
 
     private fun buildNewDocs(
@@ -167,37 +174,17 @@ class IngestionService(
     /**
      * Rebuilds the derived storage if it is empty.
      */
-    suspend fun rebuildDerivedStorageIfEmpty() {
-        val processedDocs = storageManager.docStatusStorage.getDocsByStatus(DocStatus.PROCESSED)
-        val graphEmpty = storageManager.chunkEntityRelationGraph.getAllNodes().isEmpty()
-        val chunksEmpty = storageManager.textChunks.isEmpty()
+    suspend fun rebuildDerivedStorageIfEmpty() =
+        indexMutex.withLock {
+            val processedDocs = storageManager.docStatusStorage.getDocsByStatus(DocStatus.PROCESSED)
+            val graphEmpty = storageManager.chunkEntityRelationGraph.getAllNodes().isEmpty()
+            val chunksEmpty = storageManager.textChunks.isEmpty()
 
-        if (processedDocs.isEmpty() || (!graphEmpty && !chunksEmpty)) {
-            return
-        }
-
-        logger.warn { "Derived stores empty but processed docs exist. Rebuilding graph/vector/kvs from persisted full_docs." }
-
-        // Clear derived stores
-        storageManager.chunkEntityRelationGraph.drop()
-        storageManager.chunksVdb.drop()
-        storageManager.entitiesVdb.drop()
-        storageManager.relationshipsVdb.drop()
-        storageManager.fullEntities.drop()
-        storageManager.fullRelations.drop()
-        storageManager.textChunks.drop()
-
-        // Mark processed docs back to pending and re-run pipeline
-        val resetStatuses =
-            processedDocs.keys.associateWith {
-                mapOf(
-                    "status" to DocStatus.PENDING.value,
-                    "updated_at" to Instant.now().toString(),
-                )
+            if (processedDocs.isNotEmpty() && (graphEmpty || chunksEmpty)) {
+                logger.warn { "Rebuilding derived stores from processed documents" }
+                documentProcessor.rebuildDerivedStorage(processedDocs)
             }
-        storageManager.docStatusStorage.upsert(resetStatuses)
-        documentProcessor.pipelineProcessEnqueueDocuments()
-    }
+        }
 
     /**
      * Gets the processing status of the documents.
@@ -210,8 +197,30 @@ class IngestionService(
      * @param docId The ID of the document to delete.
      * @return A map of the status.
      */
-    suspend fun deleteByDocId(docId: String): Map<String, String> {
-        storageManager.docStatusStorage.delete(listOf(docId))
-        return mapOf("status" to "success", "doc_id" to docId)
-    }
+    suspend fun deleteByDocId(docId: String): Map<String, String> =
+        indexMutex.withLock {
+            val doc = storageManager.fullDocs.getById(docId)
+            val status = storageManager.docStatusStorage.getById(docId)
+            if (doc == null && status == null) {
+                return@withLock mapOf("status" to "not_found", "doc_id" to docId)
+            }
+
+            val retained = storageManager.docStatusStorage.getDocsByStatus(DocStatus.PROCESSED) - docId
+            documentProcessor.rebuildDerivedStorage(retained) {
+                try {
+                    storageManager.fullDocs.delete(listOf(docId))
+                    storageManager.docStatusStorage.delete(listOf(docId))
+                    storageManager.persist()
+                } catch (error: Exception) {
+                    withContext(NonCancellable) {
+                        runCatching {
+                            if (doc != null) storageManager.fullDocs.upsert(mapOf(docId to doc))
+                            if (status != null) storageManager.docStatusStorage.upsert(mapOf(docId to status))
+                        }.exceptionOrNull()?.let(error::addSuppressed)
+                    }
+                    throw error
+                }
+            }
+            mapOf("status" to "success", "doc_id" to docId)
+        }
 }

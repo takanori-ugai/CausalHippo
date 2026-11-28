@@ -38,6 +38,8 @@ import hipporag.utils.textProcessing
 import io.github.oshai.kotlinlogging.KotlinLogging
 import shared.chunking.DEFAULT_TIKTOKEN_MODEL
 import shared.chunking.chunkByTokenSizeWithOverlap
+import shared.rag.IndexingFailure
+import shared.rag.IndexingReport
 import java.io.File
 import java.util.Locale
 import kotlin.math.min
@@ -246,10 +248,14 @@ class HippoRag(
         logger.info { "Offline OpenIE complete. Run online indexing for future retrieval." }
     }
 
+    var lastIndexingReport: IndexingReport = IndexingReport()
+        private set
+
     /**
      * Indexes documents into the graph and embedding stores.
      */
     fun index(docs: List<String>) {
+        lastIndexingReport = IndexingReport()
         logger.info { "Indexing Documents" }
         logger.info { "Performing OpenIE" }
 
@@ -273,16 +279,19 @@ class HippoRag(
 
         val (allOpenieInfo, chunkKeysToProcess) = loadExistingOpenie(chunkToRows.keys.toList())
         val newOpenieRows = chunkToRows.filterKeys { it in chunkKeysToProcess }
+        val retryingFailedChunks = allOpenieInfo.any { it.idx in newOpenieRows }
 
         if (chunkKeysToProcess.isNotEmpty()) {
             val (newNerResults, newTripleResults) = openie.batchOpenie(newOpenieRows)
             mergeOpenieResults(allOpenieInfo, newOpenieRows, newNerResults, newTripleResults)
         }
 
-        if (globalConfig.saveOpenie) {
-            saveOpenieResults(allOpenieInfo)
-        }
-
+        lastIndexingReport =
+            IndexingReport(
+                allOpenieInfo.flatMap { doc ->
+                    doc.extractionErrors.map { reason -> IndexingFailure("openie", doc.idx, reason) }
+                },
+            )
         val (nerResults, tripleResults) = reformatOpenieResults(allOpenieInfo)
 
         check(chunkToRows.size == nerResults.size && chunkToRows.size == tripleResults.size) {
@@ -296,19 +305,26 @@ class HippoRag(
             }
 
         val (entityNodes, chunkTripleEntities) = extractEntityNodes(chunkTriples)
-        val facts = flattenFacts(chunkTriples)
+        val facts = flattenFacts(chunkTriples).map { it.toString() }
 
         logger.info { "Encoding Entities" }
         entityEmbeddingStore.insertStrings(entityNodes)
 
         logger.info { "Encoding Facts" }
-        factEmbeddingStore.insertStrings(facts.map { it.toString() })
+        factEmbeddingStore.insertStrings(facts)
 
         logger.info { "Constructing Graph" }
 
         nodeToNodeStats = mutableMapOf()
         entNodeToChunkIds = mutableMapOf()
 
+        // Existing passage nodes may now have different evidence after a retry.
+        if (retryingFailedChunks) {
+            removeSupersededEmbeddings(entityEmbeddingStore, entityNodes.toSet())
+            removeSupersededEmbeddings(factEmbeddingStore, facts.toSet())
+            readyToRetrieve = false
+            graph.deleteVertices(graph.vertexNames())
+        }
         addFactEdges(chunkIds, chunkTriples)
         val numNewChunks = addPassageEdges(chunkIds, chunkTripleEntities)
 
@@ -317,6 +333,10 @@ class HippoRag(
             addSynonymyEdges()
             augmentGraph()
             saveIgraph()
+            readyToRetrieve = false
+        }
+        if (globalConfig.saveOpenie) {
+            saveOpenieResults(allOpenieInfo)
         }
     }
 
@@ -684,6 +704,14 @@ class HippoRag(
         }
     }
 
+    private fun removeSupersededEmbeddings(
+        store: EmbeddingStore,
+        retained: Set<String>,
+    ) {
+        val obsolete = store.getAllIdToRows().filterValues { it.content !in retained }.keys
+        store.delete(obsolete)
+    }
+
     private fun addPassageEdges(
         chunkIds: List<String>,
         chunkTripleEntities: List<List<String>>,
@@ -790,7 +818,7 @@ class HippoRag(
                     }
                 }
 
-                val existingKeys = scopedExisting.map { it.idx }.toSet()
+                val existingKeys = scopedExisting.filter { it.extractionErrors.isEmpty() }.map { it.idx }.toSet()
 
                 for (chunkKey in chunkKeys) {
                     if (chunkKey !in existingKeys) {
@@ -813,6 +841,7 @@ class HippoRag(
         nerResultsDict: Map<String, NerRawOutput>,
         tripleResultsDict: Map<String, TripleRawOutput>,
     ) {
+        allOpenieInfo.removeAll { it.idx in chunksToSave }
         for ((chunkKey, row) in chunksToSave) {
             val passage = row.content
             val nerOutput = nerResultsDict[chunkKey]
@@ -826,10 +855,25 @@ class HippoRag(
                     passage = passage,
                     extractedEntities = nerOutput?.uniqueEntities ?: emptyList(),
                     extractedTriples = tripleOutput?.triples ?: emptyList(),
+                    extractionErrors =
+                        listOfNotNull(
+                            openieError("NER", nerOutput?.metadata),
+                            openieError("Triple extraction", tripleOutput?.metadata),
+                        ),
                 )
             allOpenieInfo.add(chunkOpenieInfo)
         }
     }
+
+    private fun openieError(
+        operation: String,
+        metadata: Map<String, Any?>?,
+    ): String? =
+        if (metadata == null) {
+            "$operation result is missing"
+        } else {
+            metadata["error"]?.let { "$operation failed: $it" }
+        }
 
     private fun retrieveInternal(
         queries: List<String>,

@@ -12,6 +12,7 @@ import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.jsonArray
 import shared.config.CommonRagConfigLoader
 import shared.rag.CommonRag
+import shared.rag.IndexingReport
 import tools.jackson.core.type.TypeReference
 import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.nio.file.Files
@@ -93,6 +94,9 @@ class CausalHippoRAG(
             )
         }
     }
+
+    val lastIndexingReport: IndexingReport
+        get() = pipeline.lastIndexingReport
 
     override fun upsert(data: String) = runBlocking { aupsert(data) }
 

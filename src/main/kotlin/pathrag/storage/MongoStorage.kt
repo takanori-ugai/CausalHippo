@@ -263,9 +263,6 @@ class MongoVectorStorage(
         val validPairs = items.zip(contents).filter { it.second.isNotBlank() }
         if (validPairs.isEmpty()) return
         val embeddings = embeddingFunc(validPairs.map { it.second })
-        check(embeddings.size == validPairs.size) {
-            "Embedding count mismatch for '$namespace': expected ${validPairs.size}, got ${embeddings.size}"
-        }
         val opts = ReplaceOptions().upsert(true)
         val writes =
             validPairs.mapIndexedNotNull { idx, pair ->

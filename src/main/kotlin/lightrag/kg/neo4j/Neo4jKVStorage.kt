@@ -135,6 +135,8 @@ class Neo4jKVStorage(
      * @param id The ID of the item to get.
      * @return A map representing the item.
      */
+    override suspend fun keys(): Set<String> = data.keys.toSet()
+
     override suspend fun getById(id: String): Map<String, Any>? = data[id]
 
     /**

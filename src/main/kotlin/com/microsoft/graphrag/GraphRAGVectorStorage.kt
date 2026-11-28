@@ -89,10 +89,7 @@ class GraphRAGVectorStorage(
                         content?.takeIf { it.isNotBlank() }?.let { embed(it) }
                     }
 
-            if (vector.isNullOrEmpty()) {
-                logger.warn { "Skipping vector upsert row '$id': no usable vector or embeddable text." }
-                return@forEach
-            }
+            check(!vector.isNullOrEmpty()) { "No usable vector or embeddable text for GraphRAG row '$id'" }
 
             val isEntity = kind == "entity" || row.containsKey("entity_id")
             if (isEntity) {

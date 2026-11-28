@@ -21,6 +21,7 @@ import shared.chunking.chunkByTokenSizeWithOverlap
 import shared.chunking.hardTruncateStringsByTokenBudget
 import shared.config.CaualRagConfig
 import shared.config.CommonRagConfigLoader
+import shared.rag.IndexingReport
 import java.nio.file.Files
 import java.nio.file.Path
 
@@ -102,16 +103,21 @@ class CausalHippoPipeline(
         )
     internal val reranker: CausalPathReranker = CausalPathReranker(graphRetriever)
 
+    var lastIndexingReport: IndexingReport = IndexingReport()
+        private set
+
     /**
      * Indexes documents into both HippoRAG and the causal graph.
      */
     fun index(documents: List<String>) {
+        lastIndexingReport = IndexingReport()
         val prepared = chunkDocumentsForIngest(documents)
         if (prepared.isEmpty()) return
         hippoRag.index(prepared)
         graphBuilder.indexDocuments(prepared)
         bm25Retriever.indexDocuments(prepared)
         indexedDocs = prepared
+        lastIndexingReport = IndexingReport(graphBuilder.lastIndexingReport.failures + hippoRag.lastIndexingReport.failures)
     }
 
     /**
@@ -120,6 +126,7 @@ class CausalHippoPipeline(
      * This preserves heavyweight clients while preventing cross-sample index contamination.
      */
     fun reindex(documents: List<String>) {
+        lastIndexingReport = IndexingReport()
         val prepared = chunkDocumentsForIngest(documents)
         hybridRetriever.clearCache()
         if (indexedDocs.isNotEmpty()) {
@@ -135,6 +142,7 @@ class CausalHippoPipeline(
             graphBuilder.indexDocuments(prepared)
             bm25Retriever.indexDocuments(prepared)
             indexedDocs = prepared
+            lastIndexingReport = IndexingReport(graphBuilder.lastIndexingReport.failures + hippoRag.lastIndexingReport.failures)
         } catch (e: Exception) {
             // Best-effort rollback to preserve per-sample index isolation after partial failures.
             runCatching { hippoRag.delete(prepared) }

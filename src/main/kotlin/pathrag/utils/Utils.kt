@@ -52,7 +52,7 @@ data class EmbeddingFunc(
      *
      * @param inputs The list of input strings to embed; result order corresponds to this list.
      * @return A list of `DoubleArray` where each array is the embedding vector for the corresponding input.
-     * @throws IllegalStateException If any returned embedding does not have length equal to `embeddingDim`.
+     * @throws IllegalStateException If the number or dimensions of returned embeddings differ from the request.
      */
     suspend operator fun invoke(inputs: List<String>): List<DoubleArray> {
         val exec: suspend () -> List<DoubleArray> = { func(inputs) }
@@ -63,6 +63,7 @@ data class EmbeddingFunc(
             } else {
                 lock.withPermit { exec() }
             }
+        check(vectors.size == inputs.size) { "Expected ${inputs.size} embeddings, received ${vectors.size}" }
         vectors.forEachIndexed { idx, vec ->
             if (vec.size != embeddingDim) {
                 val message = "Embedding dimension mismatch at index $idx: expected $embeddingDim, got ${vec.size}"

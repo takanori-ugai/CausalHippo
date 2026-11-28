@@ -171,9 +171,6 @@ class NanoVectorDBStorage(
                 logger.error(e) { "Embedding generation failed during upsert in namespace '$namespace'." }
                 throw e
             }
-        check(embeddings.size == validPairs.size) {
-            "Embedding count mismatch for '$namespace': expected ${validPairs.size}, got ${embeddings.size}"
-        }
         mutex.withLock {
             embeddings.forEachIndexed { index, vector ->
                 val (entry, content) = validPairs[index]
