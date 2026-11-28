@@ -99,6 +99,8 @@ class GraphRAG internal constructor(
         },
     )
 
+    constructor() : this(rootDir = defaultGraphRagWorkingDir())
+
     private val logger = KotlinLogging.logger("GraphRAG")
     private val callbacks = NoopWorkflowCallbacks()
     private val indexMutex = Mutex()
