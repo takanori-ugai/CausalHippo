@@ -16,7 +16,6 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import lightrag.core.CacheData
-import lightrag.core.Constants
 import lightrag.core.QueryParam
 import lightrag.core.QueryParamCache
 import lightrag.core.QueryResult
@@ -156,13 +155,19 @@ class QueryProcessor(
         if (earlyResult != null) return earlyResult
 
         val (hlKeywords, llKeywords) = getKeywordsFromQuery(query, queryParam)
-        val effectiveParam = withKeywords(query, queryParam, hlKeywords, llKeywords)
+        val effectiveParam =
+            withKeywords(query, queryParam, hlKeywords, llKeywords)
+                ?: return QueryResult(
+                    content = if (queryParam.onlyNeedContext) "" else Prompts.FAIL_RESPONSE,
+                    rawData = retainedData(emptyList(), emptyList(), emptyList()),
+                )
 
         val contextResult = getContextStrForQuery(query, effectiveParam, chunksVdb)
         val sysPrompt = buildSystemPrompt(systemPrompt, effectiveParam, contextResult.contextStr)
         if (effectiveParam.onlyNeedContext) return QueryResult(content = contextResult.contextStr, rawData = contextResult.rawData)
         if (effectiveParam.onlyNeedPrompt) return QueryResult(content = "$sysPrompt\n\n---\n\n$query", rawData = contextResult.rawData)
 
+        if (contextResult.contextStr.isEmpty()) return QueryResult(content = Prompts.FAIL_RESPONSE, rawData = contextResult.rawData)
         val cacheKeys = buildCacheKeys(effectiveParam, query, sysPrompt)
         val cached =
             if (effectiveParam.stream) {
@@ -193,16 +198,14 @@ class QueryProcessor(
         queryParam: QueryParam,
         highLevel: List<String>,
         lowLevel: List<String>,
-    ): QueryParam {
-        if (highLevel.isEmpty() && lowLevel.isEmpty()) {
-            logger.warn { "Both keyword lists are empty; falling back to original query text" }
-            return if (queryParam.mode == "global") {
-                queryParam.copy(hlKeywords = listOf(query))
-            } else {
-                queryParam.copy(llKeywords = listOf(query))
-            }
+    ): QueryParam? {
+        val high = highLevel.map(String::trim).filter(String::isNotEmpty)
+        val low = lowLevel.map(String::trim).filter(String::isNotEmpty)
+        if (high.isEmpty() && low.isEmpty()) {
+            if (query.codePointCount(0, query.length) >= 50) return null
+            return queryParam.copy(hlKeywords = emptyList(), llKeywords = listOf(query))
         }
-        return queryParam.copy(hlKeywords = highLevel, llKeywords = lowLevel)
+        return queryParam.copy(hlKeywords = high, llKeywords = low)
     }
 
     private fun buildSystemPrompt(
@@ -437,7 +440,7 @@ class QueryProcessor(
 
         if (countTokensWithJTokKit(render(), model) > queryParam.maxTotalTokens) {
             val emptyRows = emptyList<Map<String, Any>>()
-            return ContextResult("", mapOf("entities" to emptyRows, "relations" to emptyRows, "chunks" to emptyRows))
+            return ContextResult("", retainedData(emptyRows, emptyRows, emptyRows))
         }
         val entities =
             fittingPrefix(searchResult.finalEntities) { rows ->
@@ -447,27 +450,50 @@ class QueryProcessor(
             }
         val entitiesStr = buildEntitiesStr(entities)
         val relations =
-            fittingPrefix(searchResult.finalRelations.take(queryParam.topK)) { rows ->
+            fittingPrefix(searchResult.finalRelations) { rows ->
                 val text = buildRelationsStr(rows)
                 countTokensWithJTokKit(text, model) <= queryParam.maxRelationTokens &&
                     countTokensWithJTokKit(render(entitiesStr, text), model) <= queryParam.maxTotalTokens
             }
         val relationsStr = buildRelationsStr(relations)
 
-        val entityChunks = findRelatedTextUnitFromEntities(entities)
-        val relationChunks = findRelatedTextUnitFromRelations(relations, entityChunks)
+        val selector = RelatedChunkSelector(query, chunksVdb, globalConfig)
+        val entityChunks = getTextChunksByIds(selector.select(entities))
+        val relationChunks = getTextChunksByIds(selector.select(relations, entityChunks.map { it.getValue("id").toString() }.toSet()))
         val sources = listOf(searchResult.vectorChunks, entityChunks, relationChunks)
         val chunks =
             (0 until sources.maxOf { it.size })
                 .flatMap { index -> sources.mapNotNull { it.getOrNull(index) } }
-                .distinctBy { it["id"] ?: it["chunk_id"] ?: it["content"] }
+                .filter { !it["content"]?.toString().isNullOrBlank() }
+                .distinctBy { it["chunk_id"] ?: it["id"] ?: it["content"] }
+                .let { if (queryParam.chunkTopK > 0) it.take(queryParam.chunkTopK) else it }
         val allChunks =
             fittingPrefix(chunks) { rows ->
                 countTokensWithJTokKit(render(entitiesStr, relationsStr, rows), model) <= queryParam.maxTotalTokens
             }
-        val contextContent = render(entitiesStr, relationsStr, allChunks)
-        val rawData = mapOf("entities" to entities, "relations" to relations, "chunks" to allChunks)
+        val contextContent =
+            if (entities.isEmpty() && relations.isEmpty() &&
+                allChunks.isEmpty()
+            ) {
+                ""
+            } else {
+                render(entitiesStr, relationsStr, allChunks)
+            }
+        val rawData = retainedData(entities, relations, allChunks)
         return ContextResult(contextStr = contextContent, rawData = rawData)
+    }
+
+    private fun retainedData(
+        entities: List<Map<String, Any>>,
+        relations: List<Map<String, Any>>,
+        chunks: List<Map<String, Any>>,
+    ): Map<String, Any> {
+        val records = mapOf("entities" to entities, "relations" to relations, "chunks" to chunks)
+        val references =
+            chunks.mapIndexed { index, chunk ->
+                mapOf("reference_id" to (index + 1).toString(), "file_path" to (chunk["file_path"] ?: "unknown_source"))
+            }
+        return records + ("data" to mapOf("context_records" to records, "references" to references))
     }
 
     private fun <T> fittingPrefix(
@@ -487,14 +513,16 @@ class QueryProcessor(
     private fun buildEntitiesStr(entities: List<Map<String, Any>>): String =
         entities.joinToString("\n") { entity ->
             val content = (entity["content"] ?: entity["description"] ?: "").toString()
-            """{ "entity_name": "${entity["entity_name"]}", "content": "${
+            """{ "entity_name": "${JsonUtils.escape(entity["entity_name"].toString())}", "content": "${
                 JsonUtils.escape(content)
             }" }"""
         }
 
     private fun buildRelationsStr(relations: List<Map<String, Any>>): String =
         relations.joinToString("\n") { relation ->
-            """{ "src_id": "${relation["src_id"]}", "tgt_id": "${relation["tgt_id"]}", "content": "${
+            """{ "src_id": "${JsonUtils.escape(
+                relation["src_id"].toString(),
+            )}", "tgt_id": "${JsonUtils.escape(relation["tgt_id"].toString())}", "content": "${
                 JsonUtils.escape((relation["description"] ?: "").toString())
             }" }"""
         }
@@ -538,7 +566,7 @@ class QueryProcessor(
 
             val localSearch =
                 async {
-                    if (queryParam.mode in listOf("local", "hybrid", "mix") && queryParam.llKeywords.isNotEmpty()) {
+                    if ((queryParam.mode != "global" || queryParam.hlKeywords.isEmpty()) && queryParam.llKeywords.isNotEmpty()) {
                         val (nodeDatas, useRelations) =
                             getNodeData(
                                 queryParam.llKeywords.joinToString(", "),
@@ -551,7 +579,7 @@ class QueryProcessor(
 
             val globalSearch =
                 async {
-                    if (queryParam.mode in listOf("global", "hybrid", "mix") && queryParam.hlKeywords.isNotEmpty()) {
+                    if ((queryParam.mode != "local" || queryParam.llKeywords.isEmpty()) && queryParam.hlKeywords.isNotEmpty()) {
                         val (edgeDatas, useEntities) =
                             getEdgeData(
                                 queryParam.hlKeywords.joinToString(", "),
@@ -673,14 +701,10 @@ class QueryProcessor(
         val nodeNames = nodeDatas.mapNotNull { it["entity_name"] as? String }
         val batchEdgesDict = knowledgeGraphInst.getNodesEdgesBatch(nodeNames)
 
-        val allEdges = mutableSetOf<Pair<String, String>>()
-        for (nodeName in nodeNames) {
-            val thisEdges = batchEdgesDict[nodeName] ?: emptyList()
-            for (edge in thisEdges) {
-                val sortedEdge = if (edge.first < edge.second) edge else edge.second to edge.first
-                allEdges.add(sortedEdge)
+        val allEdges =
+            nodeNames.flatMap { batchEdgesDict[it].orEmpty() }.distinctBy { (src, tgt) ->
+                minOf(src, tgt) to maxOf(src, tgt)
             }
-        }
 
         val edgePairs = allEdges.map { mapOf("src" to it.first, "tgt" to it.second) }
         val edgeDataDict = knowledgeGraphInst.getEdgesBatch(edgePairs)
@@ -693,8 +717,8 @@ class QueryProcessor(
                 val weight = edgeProps["weight"]?.toDoubleOrNull() ?: 1.0
                 val combined = mutableMapOf<String, Any>()
                 combined["src_tgt"] = pair
-                combined["rank"] = edgeDegreesDict[pair] ?: 0
                 combined.putAll(edgeProps)
+                combined["rank"] = edgeDegreesDict[pair] ?: 0
                 combined["src_id"] = pair.first
                 combined["tgt_id"] = pair.second
                 combined["weight"] = weight
@@ -731,84 +755,6 @@ class QueryProcessor(
             }
         }
         return nodeDatas
-    }
-
-    private suspend fun findRelatedTextUnitFromEntities(nodeDatas: List<Map<String, Any>>): List<Map<String, Any>> {
-        logger.debug { "Finding text chunks from ${nodeDatas.size} entities" }
-        if (nodeDatas.isEmpty()) {
-            return emptyList()
-        }
-
-        val entitiesWithChunks =
-            nodeDatas.mapNotNull {
-                (it["source_id"] as? String)?.let { sourceId ->
-                    val chunks = sourceId.split(Constants.GRAPH_FIELD_SEP).filter { it.isNotEmpty() }
-                    if (chunks.isNotEmpty()) {
-                        mapOf(
-                            "entity_name" to it["entity_name"],
-                            "chunks" to chunks,
-                            "entity_data" to it,
-                        )
-                    } else {
-                        null
-                    }
-                }
-            }
-
-        if (entitiesWithChunks.isEmpty()) {
-            logger.warn { "No entities with text chunks found" }
-            return emptyList()
-        }
-
-        val allChunkIds =
-            entitiesWithChunks
-                .flatMap { entry ->
-                    (entry["chunks"] as? List<*>)?.mapNotNull { it as? String } ?: emptyList()
-                }.distinct()
-
-        return getTextChunksByIds(allChunkIds)
-    }
-
-    private suspend fun findRelatedTextUnitFromRelations(
-        edgeDatas: List<Map<String, Any>>,
-        entityChunks: List<Map<String, Any>> = emptyList(),
-    ): List<Map<String, Any>> {
-        logger.debug { "Finding text chunks from ${edgeDatas.size} relations" }
-        if (edgeDatas.isEmpty()) {
-            return emptyList()
-        }
-
-        val entityChunkIds = entityChunks.mapNotNull { it["id"] as? String }.toSet()
-
-        val relationsWithChunks =
-            edgeDatas.mapNotNull {
-                (it["source_id"] as? String)?.let { sourceId ->
-                    val chunks =
-                        sourceId.split(Constants.GRAPH_FIELD_SEP).filter { it.isNotEmpty() && !entityChunkIds.contains(it) }
-                    if (chunks.isNotEmpty()) {
-                        mapOf(
-                            "relation_key" to (it["src_id"] as String to it["tgt_id"] as String),
-                            "chunks" to chunks,
-                            "relation_data" to it,
-                        )
-                    } else {
-                        null
-                    }
-                }
-            }
-
-        if (relationsWithChunks.isEmpty()) {
-            logger.info { "Find no additional relations-related chunks from ${edgeDatas.size} relations" }
-            return emptyList()
-        }
-
-        val allChunkIds =
-            relationsWithChunks
-                .flatMap { entry ->
-                    (entry["chunks"] as? List<*>)?.mapNotNull { it as? String } ?: emptyList()
-                }.distinct()
-
-        return getTextChunksByIds(allChunkIds)
     }
 
     /**

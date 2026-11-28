@@ -103,6 +103,14 @@ class LightRAG(
     private val unifiedSpiMetadataNamespace = "${unifiedSpiNamespacePrefix}_metadata"
     private var unifiedSpiInitialized = false
     private var unifiedSpiPublicationPending = false
+
+    private data class PublishedIndex(
+        val graph: GraphSnapshot,
+        val chunks: KvSnapshot,
+        val vectors: VectorSnapshot,
+    )
+
+    private var publishedReadView: Pair<PublishedIndex, StorageManager>? = null
     private var importedGraphWithoutChunkProvenance = false
 
     init {
@@ -198,9 +206,33 @@ class LightRAG(
         param: QueryParam,
     ): QueryResult? =
         indexMutex.withLock {
-            if (unifiedSpiEnabled) {
+            if (unifiedSpiEnabled && param.mode in setOf("local", "global", "hybrid", "mix", "naive")) {
                 ensureUnifiedSpiIndexInitializedInternal()
-                if (param.onlyNeedContext) {
+                val session = checkNotNull(unifiedSpiSession)
+                val graph = session.graph(unifiedSpiGraphNamespace).snapshot()
+                if (param.mode != "naive" && (!param.onlyNeedContext || graph.nodes.isNotEmpty() || graph.edges.isNotEmpty())) {
+                    val index =
+                        PublishedIndex(
+                            graph,
+                            session.kv(unifiedSpiChunksNamespace).snapshot(),
+                            session.vector(unifiedSpiVectorNamespace).snapshot(),
+                        )
+                    val stores =
+                        publishedReadView?.takeIf { it.first == index }?.second ?: run {
+                            val view =
+                                StorageManager(
+                                    ".",
+                                    storageManager.chunksVdb.embeddingFunc,
+                                    addonConfig = AddonConfig(cosineBetterThreshold = storageManager.entitiesVdb.cosineBetterThanThreshold),
+                                    globalConfig = storageManager.chunksVdb.globalConfig,
+                                )
+                            populatePublishedIndex(view, index.graph, index.chunks, index.vectors)
+                            publishedReadView = index to view
+                            view
+                        }
+                    return@withLock queryService.queryPublishedGraph(stores, query, param)
+                }
+                if (param.onlyNeedContext && graph.nodes.isEmpty() && graph.edges.isEmpty()) {
                     val contextItems = retrieveContextFromUnifiedSpi(query, param.chunkTopK.coerceAtLeast(1))
                     return@withLock QueryResult(
                         content = contextItems.joinToString(separator = "\n\n"),
@@ -413,6 +445,7 @@ class LightRAG(
     }
 
     private fun clearUnifiedSpiState() {
+        publishedReadView = null
         val session = unifiedSpiSession ?: return
         session.graph(unifiedSpiGraphNamespace).restore(GraphSnapshot())
         session.vector(unifiedSpiVectorNamespace).restore(VectorSnapshot(metric = "cosine"))
@@ -461,7 +494,7 @@ class LightRAG(
             ),
         )
 
-        val chunkIds = collectChunkIds(graphNodes, graphEdges)
+        val chunkIds = storageManager.textChunks.keys().orEmpty() + collectChunkIds(graphNodes, graphEdges)
         val chunkEntries =
             buildMap<String, Any?> {
                 for (chunkId in chunkIds) {
@@ -510,16 +543,25 @@ class LightRAG(
         importedGraphWithoutChunkProvenance =
             chunkSnapshot.entries.isEmpty() && (graphSnapshot.nodes.isNotEmpty() || graphSnapshot.edges.isNotEmpty())
 
+        populatePublishedIndex(storageManager, graphSnapshot, chunkSnapshot, vectorSnapshot)
+    }
+
+    private suspend fun populatePublishedIndex(
+        stores: StorageManager,
+        graphSnapshot: GraphSnapshot,
+        chunkSnapshot: KvSnapshot,
+        vectorSnapshot: VectorSnapshot,
+    ) {
         graphSnapshot.nodes.forEach { node ->
             val nodeData = nodeStorageData(asStringMap(node.data), node.id)
-            storageManager.chunkEntityRelationGraph.upsertNode(node.id, nodeData)
-            storageManager.fullEntities.upsert(mapOf(node.id to nodeData.mapValues { it.value as Any }))
+            stores.chunkEntityRelationGraph.upsertNode(node.id, nodeData)
+            stores.fullEntities.upsert(mapOf(node.id to nodeData.mapValues { it.value as Any }))
         }
         graphSnapshot.edges.forEach { edge ->
             val edgeData = edgeStorageData(asStringMap(edge.data), edge.source, edge.target)
-            storageManager.chunkEntityRelationGraph.upsertEdge(edge.source, edge.target, edgeData)
+            stores.chunkEntityRelationGraph.upsertEdge(edge.source, edge.target, edgeData)
             val edgeKey = relationKey(edge.source, edge.target)
-            storageManager.fullRelations.upsert(mapOf(edgeKey to edgeData.mapValues { it.value as Any }))
+            stores.fullRelations.upsert(mapOf(edgeKey to edgeData.mapValues { it.value as Any }))
         }
 
         val chunkUpserts =
@@ -533,7 +575,7 @@ class LightRAG(
                     }
                 }.toMap()
         if (chunkUpserts.isNotEmpty()) {
-            storageManager.textChunks.upsert(chunkUpserts)
+            stores.textChunks.upsert(chunkUpserts)
         }
 
         val entityVectors =
@@ -543,7 +585,7 @@ class LightRAG(
                     val entityName =
                         record.metadata["entity_name"]?.toString()?.takeIf { it.isNotBlank() } ?: return@mapNotNull null
                     val content = record.metadata["content"]?.toString() ?: "$entityName\n"
-                    record.id to
+                    computeMd5(entityName) to
                         mapOf(
                             "content" to content,
                             "entity_name" to entityName,
@@ -551,7 +593,7 @@ class LightRAG(
                         )
                 }.toMap()
         if (entityVectors.isNotEmpty()) {
-            storageManager.entitiesVdb.upsert(entityVectors)
+            stores.entitiesVdb.upsert(entityVectors)
         }
 
         val relationVectors =
@@ -561,7 +603,7 @@ class LightRAG(
                     val src = record.metadata["src_id"]?.toString()?.takeIf { it.isNotBlank() } ?: return@mapNotNull null
                     val tgt = record.metadata["tgt_id"]?.toString()?.takeIf { it.isNotBlank() } ?: return@mapNotNull null
                     val content = record.metadata["content"]?.toString() ?: "$src\n$tgt\n"
-                    record.id to
+                    computeMd5(relationKey(minOf(src, tgt), maxOf(src, tgt))) to
                         mapOf(
                             "content" to content,
                             "src_id" to src,
@@ -570,7 +612,7 @@ class LightRAG(
                         )
                 }.toMap()
         if (relationVectors.isNotEmpty()) {
-            storageManager.relationshipsVdb.upsert(relationVectors)
+            stores.relationshipsVdb.upsert(relationVectors)
         }
 
         val chunkVectors =
@@ -601,7 +643,7 @@ class LightRAG(
                 }
             }
         if (resolvedChunkVectors.isNotEmpty()) {
-            storageManager.chunksVdb.upsert(resolvedChunkVectors)
+            stores.chunksVdb.upsert(resolvedChunkVectors)
         }
     }
 
@@ -724,7 +766,7 @@ class LightRAG(
             val vector = embedForSpi(content) ?: return@forEach
             records +=
                 VectorRecord(
-                    id = "relation:${edge.source}#${edge.target}",
+                    id = "relation:${relationKey(edge.source, edge.target)}",
                     vector = vector,
                     metadata =
                         mapOf(

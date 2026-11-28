@@ -143,7 +143,7 @@ class LightRagUnifiedAdapter(
         val contextList = asStringList(data["context"])
         if (contextList.isNotEmpty()) return textContextItems(contextList)
 
-        val contextText = data["context"]?.toString()?.trim().orEmpty()
+        val contextText = (data["context"] as? String)?.trim().orEmpty()
         if (contextText.isNotBlank()) return textContextItems(listOf(contextText))
 
         val records = asStringMap(data["context_records"])
@@ -166,7 +166,7 @@ class LightRagUnifiedAdapter(
                         )
                 }
             }
-            if (rows.isNotEmpty()) return rows
+            return rows
         }
 
         return result.content?.let { textContextItems(listOf(it)) } ?: emptyList()
@@ -174,8 +174,8 @@ class LightRagUnifiedAdapter(
 
     private fun Map<String, String>.toReferenceItem(): ReferenceItem =
         ReferenceItem(
-            id = this["id"],
-            title = this["title"],
+            id = this["id"] ?: this["reference_id"],
+            title = this["title"] ?: this["file_path"],
             url = this["url"],
             snippet = this["content"] ?: this["snippet"] ?: this.toString(),
             metadata = this,

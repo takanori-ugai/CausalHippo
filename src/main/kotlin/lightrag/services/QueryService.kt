@@ -24,17 +24,25 @@ class QueryService(
     private val decoder: (List<Int>) -> String,
     private val streamingChatModel: StreamingChatModel? = null,
 ) {
-    private val queryProcessor =
+    private val queryProcessor = processorFor(storageManager)
+
+    private fun processorFor(stores: StorageManager) =
         QueryProcessor(
-            knowledgeGraphInst = storageManager.chunkEntityRelationGraph,
-            entitiesVdb = storageManager.entitiesVdb,
-            relationshipsVdb = storageManager.relationshipsVdb,
-            textChunksDb = storageManager.textChunks,
+            knowledgeGraphInst = stores.chunkEntityRelationGraph,
+            entitiesVdb = stores.entitiesVdb,
+            relationshipsVdb = stores.relationshipsVdb,
+            textChunksDb = stores.textChunks,
             chatModel = chatModel,
             streamingChatModel = streamingChatModel,
             hashingKv = hashingKv,
             globalConfig = globalConfig,
         )
+
+    internal suspend fun queryPublishedGraph(
+        stores: StorageManager,
+        query: String,
+        param: QueryParam,
+    ): QueryResult? = processorFor(stores).kgQuery(query, param, chunksVdb = stores.chunksVdb)
 
     /**
      * Queries the LightRAG system.
