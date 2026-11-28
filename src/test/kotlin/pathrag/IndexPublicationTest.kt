@@ -45,6 +45,23 @@ class IndexPublicationTest {
                     val global = rag.aquery("query", QueryParam(mode = "global", onlyNeedContext = true))
                     assertTrue("high-level relationship information" in global && document in global)
                     assertFalse("through edge(" in global)
+                    for ((low, high) in listOf("ALPHA" to "", "" to "link")) {
+                        PathRAG(
+                            workingDir = directory,
+                            persistenceSession = session,
+                            useUnifiedSpiForRetrievalAndIndex = true,
+                            lowLevelKeywords = listOf(low),
+                            highLevelKeywords = listOf(high),
+                        ).use { reader ->
+                            val options = QueryParam(onlyNeedContext = true)
+                            val expectedMode = if (low.isBlank()) "global" else "local"
+                            val missingMode = if (low.isBlank()) "local" else "global"
+                            val expected = reader.aquery("query", options.copy(mode = expectedMode))
+                            assertTrue(document in expected)
+                            assertEquals(expected, reader.aquery("query", options.copy(mode = "hybrid")))
+                            assertEquals("", reader.aquery("query", options.copy(mode = missingMode)))
+                        }
+                    }
                 }
             }
         }
@@ -80,7 +97,12 @@ class IndexPublicationTest {
                             }
                         }
                     }
-                PathRAG(workingDir = directory, persistenceSession = session, useUnifiedSpiForRetrievalAndIndex = true).use { rag ->
+                PathRAG(
+                    workingDir = directory,
+                    highLevelKeywords = listOf("link"),
+                    persistenceSession = session,
+                    useUnifiedSpiForRetrievalAndIndex = true,
+                ).use { rag ->
                     assertFailsWith<IllegalStateException> { rag.ainsert(document) }
                     rag.ainsert(document)
                     assertTrue(backed.graph("pathrag_graph").edges().isNotEmpty())

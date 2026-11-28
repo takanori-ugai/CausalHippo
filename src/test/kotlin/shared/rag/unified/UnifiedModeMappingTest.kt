@@ -73,6 +73,7 @@ class UnifiedModeMappingTest {
                 "q",
                 UnifiedQuery(
                     mode = UnifiedMode.GLOBAL,
+                    maxContextTokens = 80,
                     includeAnswer = false,
                     includeContext = true,
                 ),
@@ -83,6 +84,7 @@ class UnifiedModeMappingTest {
                     "q",
                     withArg<PathQueryParam> { param ->
                         assertEquals("global", param.mode)
+                        assertEquals(80, param.maxContextTokens)
                     },
                 )
             }

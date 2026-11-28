@@ -121,6 +121,7 @@ class PathRagUnifiedAdapter(
             onlyNeedPrompt = false,
             responseType = query.stringExtra("responseType", "Multiple Paragraphs") ?: "Multiple Paragraphs",
             stream = false,
+            maxContextTokens = query.maxContextTokens,
             topK = query.coercedTopK(),
             maxTokenForTextUnit = query.intExtra("maxTokenForTextUnit", defaultMax),
             maxTokenForGlobalContext = query.intExtra("maxTokenForGlobalContext", defaultMax),
