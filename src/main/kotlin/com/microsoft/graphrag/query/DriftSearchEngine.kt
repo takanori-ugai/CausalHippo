@@ -416,11 +416,9 @@ class DriftSearchEngine(
     }
 
     /**
-     * Streams a DRIFT-style search that first emits completed local action answers and then streams the
-     * reduce-phase response.
+     * Streams the final reduce-phase response from a DRIFT search.
      *
-     * Runs planning synchronously, emits each non-blank completed action answer, then starts a streaming reduce
-     * prompt and emits partial tokens as they arrive. The flow closes when the reduce response completes and
+     * Completes planning, then starts a streaming reduce prompt and emits partial tokens as they arrive. The flow closes when the reduce response completes and
      * will close with an error if the streaming model reports an error.
      *
      * @param question The user's question to answer.
@@ -436,10 +434,6 @@ class DriftSearchEngine(
         callbacks.forEach { it.onContext(planner.contextRecords) }
 
         return callbackFlow {
-            planner.state.completedResults().forEach { res ->
-                if (res.answer.isNotBlank()) trySend(res.answer)
-            }
-
             val contextText = planner.contextText
             val prompt =
                 reduceSystemPrompt

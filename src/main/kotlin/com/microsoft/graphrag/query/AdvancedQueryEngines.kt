@@ -101,6 +101,7 @@ class LocalQueryEngine(
         responseType: String,
         conversationHistory: List<String> = emptyList(),
         driftQuery: String? = null,
+        includeAnswer: Boolean = true,
     ): QueryResult {
         val contextResult =
             contextBuilder.buildContext(
@@ -120,6 +121,15 @@ class LocalQueryEngine(
                 returnCandidateContext = true,
                 contextCallbacks = callbacks.map { cb -> { res -> cb.onContext(res.contextRecords.toMutableContextRecords()) } },
             )
+        if (!includeAnswer) {
+            callbacks.forEach { it.onContext(contextResult.contextRecords) }
+            return QueryResult(
+                answer = "",
+                context = contextResult.contextChunks,
+                contextRecords = contextResult.contextRecords.toImmutableContextRecords(),
+                contextText = contextResult.contextText,
+            )
+        }
         val promptBase = buildPrompt(responseType, contextResult.contextText, driftQuery)
         val promptWithJson =
             if (modelParams.jsonResponse) {

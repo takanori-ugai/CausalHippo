@@ -96,6 +96,7 @@ class BasicQueryEngine(
     suspend fun answer(
         question: String,
         responseType: String,
+        includeAnswer: Boolean = true,
     ): QueryResult {
         val contextResult =
             contextBuilder.buildContext(
@@ -104,6 +105,14 @@ class BasicQueryEngine(
                 maxContextTokens = maxContextTokens,
             )
         callbacks.forEach { it.onContext(contextResult.contextRecords) }
+        if (!includeAnswer) {
+            return QueryResult(
+                answer = "",
+                context = contextResult.contextChunks,
+                contextRecords = contextResult.contextRecords.toImmutableContextRecords(),
+                contextText = contextResult.contextText,
+            )
+        }
         val prompt = buildPrompt(responseType, contextResult.contextText)
         val promptTokens = encoding.countTokens(prompt)
         val answerText = generate(prompt, question)

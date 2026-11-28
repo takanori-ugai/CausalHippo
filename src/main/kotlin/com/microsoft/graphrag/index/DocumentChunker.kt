@@ -24,7 +24,10 @@ class DocumentChunker(
      * @param inputDir Directory containing input documents.
      * @return List of document chunks across all files.
      */
-    fun loadAndChunk(inputDir: Path): List<DocumentChunk> {
+    fun loadAndChunk(
+        inputDir: Path,
+        sourceInputDir: Path = inputDir,
+    ): List<DocumentChunk> {
         if (!Files.exists(inputDir)) {
             return emptyList()
         }
@@ -32,7 +35,7 @@ class DocumentChunker(
         Files.walk(inputDir).use { stream ->
             stream.filter { Files.isRegularFile(it) }.forEach { path ->
                 val content = Files.readString(path)
-                chunks += chunkText(content, path.toString())
+                chunks += chunkText(content, sourceInputDir.resolve(inputDir.relativize(path)).toString())
             }
         }
         return chunks
