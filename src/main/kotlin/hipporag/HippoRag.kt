@@ -41,6 +41,8 @@ import shared.chunking.chunkByTokenSizeWithOverlap
 import shared.rag.IndexingFailure
 import shared.rag.IndexingReport
 import java.io.File
+import java.nio.file.Files
+import java.nio.file.StandardCopyOption
 import java.util.Locale
 import kotlin.math.min
 
@@ -88,7 +90,7 @@ class HippoRag(
 
     private val llmModel: BaseLLM
     private val openie: OpenIEBase
-    private val graph: SimpleGraph
+    private var graph: SimpleGraph
 
     private val embeddingModel: BaseEmbeddingModel?
     private val chunkEmbeddingStore: EmbeddingStore
@@ -98,6 +100,7 @@ class HippoRag(
     private val promptTemplateManager: PromptTemplateManager
 
     private val openieResultsPath: String
+    private var unsavedOpenie: List<OpenieDoc>? = null
     private val rerankFilter: DSPyFilter
 
     private var readyToRetrieve: Boolean = false
@@ -218,6 +221,7 @@ class HippoRag(
     /**
      * Runs offline OpenIE extraction over [docs] and persists results for later indexing.
      */
+    @Synchronized
     fun preOpenie(docs: List<String>) {
         logger.info { "Indexing Documents" }
         logger.info { "Performing OpenIE Offline" }
@@ -254,8 +258,8 @@ class HippoRag(
     /**
      * Indexes documents into the graph and embedding stores.
      */
+    @Synchronized
     fun index(docs: List<String>) {
-        lastIndexingReport = IndexingReport()
         logger.info { "Indexing Documents" }
         logger.info { "Performing OpenIE" }
 
@@ -274,6 +278,11 @@ class HippoRag(
         }
 
         val ingestChunks = chunkDocsForIngest(cleanedDocs)
+        updateIndex { indexChunks(ingestChunks) }
+    }
+
+    private fun indexChunks(ingestChunks: List<String>) {
+        lastIndexingReport = IndexingReport()
         chunkEmbeddingStore.insertStrings(ingestChunks)
         val chunkToRows = chunkEmbeddingStore.getAllIdToRows()
 
@@ -319,7 +328,16 @@ class HippoRag(
         entNodeToChunkIds = mutableMapOf()
 
         // Existing passage nodes may now have different evidence after a retry.
-        if (retryingFailedChunks) {
+        val existingPassages = graph.vertexNames().toSet()
+        val existingEdges = graph.edgeKeys()
+        val missingPassageEdges =
+            chunkIds.zip(chunkTripleEntities).any { (chunk, entities) ->
+                chunk in existingPassages &&
+                    entities.any { entity ->
+                        (chunk to computeMdHashId(entity, prefix = "entity-")) !in existingEdges
+                    }
+            }
+        if (retryingFailedChunks || missingPassageEdges) {
             removeSupersededEmbeddings(entityEmbeddingStore, entityNodes.toSet())
             removeSupersededEmbeddings(factEmbeddingStore, facts.toSet())
             readyToRetrieve = false
@@ -337,13 +355,18 @@ class HippoRag(
         }
         if (globalConfig.saveOpenie) {
             saveOpenieResults(allOpenieInfo)
+        } else {
+            unsavedOpenie = allOpenieInfo.toList()
         }
     }
 
     /**
      * Deletes documents and related graph nodes from the index.
      */
-    fun delete(docsToDelete: List<String>) {
+    @Synchronized
+    fun delete(docsToDelete: List<String>) = updateIndex { deleteDocuments(docsToDelete) }
+
+    private fun deleteDocuments(docsToDelete: List<String>) {
         if (!readyToRetrieve) {
             prepareRetrievalObjects()
         }
@@ -354,7 +377,12 @@ class HippoRag(
 
         val chunkIdsToDelete = actualDocsToDelete.mapNotNull { chunkEmbeddingStore.textToHashId[it] }.toSet()
 
-        val (allOpenieInfo, _) = loadExistingOpenie(emptyList())
+        if (chunkIdsToDelete.isEmpty()) return
+
+        val (allOpenieInfo, _) = loadExistingOpenie(chunkEmbeddingStore.getAllIds(), useProvenance = true)
+        check(allOpenieInfo.map { it.idx }.toSet().containsAll(chunkEmbeddingStore.getAllIds())) {
+            "Cannot delete documents without OpenIE provenance for the active index"
+        }
         val triplesToDelete = mutableListOf<List<List<String>>>()
         val allOpenieInfoWithDeletes = mutableListOf<OpenieDoc>()
 
@@ -402,7 +430,15 @@ class HippoRag(
         logger.info { "Deleting ${tripleIdsToDelete.size} Triples" }
         logger.info { "Deleting ${filteredEntIdsToDelete.size} Entities" }
 
-        saveOpenieResults(allOpenieInfoWithDeletes)
+        if (globalConfig.saveOpenie) {
+            if (allOpenieInfoWithDeletes.isEmpty()) {
+                Files.deleteIfExists(File(openieResultsPath).toPath())
+            } else {
+                saveOpenieResults(allOpenieInfoWithDeletes)
+            }
+        } else {
+            unsavedOpenie = allOpenieInfoWithDeletes
+        }
 
         entityEmbeddingStore.delete(filteredEntIdsToDelete)
         factEmbeddingStore.delete(tripleIdsToDelete)
@@ -622,9 +658,8 @@ class HippoRag(
     fun qa(queries: List<QuerySolution>): Triple<List<QuerySolution>, List<String>, List<Map<String, Any?>>> {
         val allQaMessages = mutableListOf<List<Message>>()
 
-        for (querySolution in queries) {
-            val retrievedPassages = querySolution.docs.take(globalConfig.qaTopK)
-
+        val answerContexts = queries.map { it.docs.take(globalConfig.qaTopK) }
+        for ((querySolution, retrievedPassages) in queries.zip(answerContexts)) {
             val promptUser =
                 buildString {
                     for (passage in retrievedPassages) {
@@ -667,7 +702,7 @@ class HippoRag(
             queries.mapIndexed { idx, querySolution ->
                 val responseContent = allResponseMessage[idx]
                 val predAns = responseContent.substringAfter("Answer:", responseContent).trim()
-                querySolution.copy(answer = predAns)
+                querySolution.copy(answer = predAns, answerContext = answerContexts[idx])
             }
 
         return Triple(querySolutions, allResponseMessage, allMetadata)
@@ -681,25 +716,64 @@ class HippoRag(
         logger.info { "Adding OpenIE triples to graph." }
 
         chunkIds.zip(chunkTriples).forEach { (chunkKey, triples) ->
-            val entitiesInChunk = mutableSetOf<String>()
-            if (chunkKey !in currentGraphNodes) {
-                for (triple in triples) {
-                    if (triple.size < 3) continue
-                    val nodeKey = computeMdHashId(triple[0], prefix = "entity-")
-                    val node2Key = computeMdHashId(triple[2], prefix = "entity-")
+            for (triple in triples) {
+                if (triple.size < 3) continue
+                val source = computeMdHashId(triple[0], prefix = "entity-")
+                val target = computeMdHashId(triple[2], prefix = "entity-")
 
-                    nodeToNodeStats[nodeKey to node2Key] = (nodeToNodeStats[nodeKey to node2Key] ?: 0.0) + 1.0
-                    nodeToNodeStats[node2Key to nodeKey] = (nodeToNodeStats[node2Key to nodeKey] ?: 0.0) + 1.0
-
-                    entitiesInChunk.add(nodeKey)
-                    entitiesInChunk.add(node2Key)
+                entNodeToChunkIds?.getOrPut(source) { mutableSetOf() }?.add(chunkKey)
+                entNodeToChunkIds?.getOrPut(target) { mutableSetOf() }?.add(chunkKey)
+                if (chunkKey !in currentGraphNodes) {
+                    nodeToNodeStats[source to target] = (nodeToNodeStats[source to target] ?: 0.0) + 1.0
+                    nodeToNodeStats[target to source] = (nodeToNodeStats[target to source] ?: 0.0) + 1.0
                 }
+            }
+        }
+    }
 
-                for (node in entitiesInChunk) {
-                    val existing = entNodeToChunkIds?.get(node) ?: mutableSetOf()
-                    existing.add(chunkKey)
-                    entNodeToChunkIds?.set(node, existing)
+    private fun updateIndex(update: () -> Unit) {
+        val stores = listOf(chunkEmbeddingStore, entityEmbeddingStore, factEmbeddingStore)
+        val restoreStores = stores.map { it.backup() }
+        val savedGraph = graph.copy()
+        val savedReport = lastIndexingReport
+        val savedOpenie = unsavedOpenie
+        var rollbackFailed = false
+        val files = stores.map { it.storageFile } + File(workingDir, "graph.json") + File(openieResultsPath)
+        val backupDir = Files.createTempDirectory(File(workingDir).absoluteFile.parentFile.toPath(), ".index-backup-")
+        try {
+            val backups =
+                files.mapIndexed { index, file ->
+                    val backup = backupDir.resolve(index.toString())
+                    if (file.exists()) Files.copy(file.toPath(), backup) else null
                 }
+            try {
+                update()
+            } catch (failure: Exception) {
+                restoreStores.forEach { it() }
+                graph = savedGraph
+                lastIndexingReport = savedReport
+                unsavedOpenie = savedOpenie
+                entNodeToChunkIds = null
+                readyToRetrieve = false
+                files.zip(backups).forEach { (file, backup) ->
+                    try {
+                        if (backup == null) {
+                            Files.deleteIfExists(file.toPath())
+                        } else {
+                            Files.move(backup, file.toPath(), StandardCopyOption.REPLACE_EXISTING)
+                        }
+                    } catch (rollbackFailure: Exception) {
+                        rollbackFailed = true
+                        failure.addSuppressed(rollbackFailure)
+                    }
+                }
+                throw failure
+            }
+        } finally {
+            if (rollbackFailed) {
+                logger.error { "HippoRAG rollback incomplete; backups retained at $backupDir" }
+            } else if (!backupDir.toFile().deleteRecursively()) {
+                logger.warn { "Could not clean up $backupDir" }
             }
         }
     }
@@ -782,16 +856,26 @@ class HippoRag(
         }
     }
 
-    private fun loadExistingOpenie(chunkKeys: List<String>): Pair<MutableList<OpenieDoc>, Set<String>> {
+    private fun loadExistingOpenie(
+        chunkKeys: List<String>,
+        useProvenance: Boolean = false,
+    ): Pair<MutableList<OpenieDoc>, Set<String>> {
         val chunkKeysToSave = mutableSetOf<String>()
 
         val openieFile = File(openieResultsPath)
+        val savedOpenie =
+            if (useProvenance || !globalConfig.forceOpenieFromScratch) {
+                unsavedOpenie ?: openieFile.takeIf(File::exists)?.let {
+                    val json = jsonWithDefaults { ignoreUnknownKeys = true }
+                    json.decodeFromString(OpenieResults.serializer(), it.readText()).docs
+                }
+            } else {
+                null
+            }
         val allOpenieInfo =
-            if (!globalConfig.forceOpenieFromScratch && openieFile.exists()) {
-                val json = jsonWithDefaults { ignoreUnknownKeys = true }
-                val openieResults = json.decodeFromString(OpenieResults.serializer(), openieFile.readText())
+            if (savedOpenie != null) {
                 val renamed =
-                    openieResults.docs.map { doc ->
+                    savedOpenie.map { doc ->
                         doc.copy(idx = computeMdHashId(doc.passage, prefix = "chunk-"))
                     }
 
@@ -875,6 +959,7 @@ class HippoRag(
             metadata["error"]?.let { "$operation failed: $it" }
         }
 
+    @Synchronized
     private fun retrieveInternal(
         queries: List<String>,
         numToRetrieve: Int?,
@@ -1134,7 +1219,7 @@ class HippoRag(
         passageEmbeddings = chunkEmbeddingStore.getEmbeddings(passageNodeKeys)
         factEmbeddings = factEmbeddingStore.getEmbeddings(factNodeKeys)
 
-        val (allOpenieInfo, _) = loadExistingOpenie(emptyList())
+        val (allOpenieInfo, _) = loadExistingOpenie(passageNodeKeys, useProvenance = true)
 
         procTriplesToDocs = mutableMapOf()
         for (doc in allOpenieInfo) {

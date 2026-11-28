@@ -49,7 +49,7 @@ class HippoRagUnifiedAdapter(
         query: String,
         param: UnifiedQuery,
     ): UnifiedResponse {
-        if (!param.includeAnswer && !param.includeContext) {
+        if (!param.includeAnswer && !param.includeContext && !param.includeReferences) {
             return UnifiedResponse(
                 metadata =
                     buildMetadata(
@@ -83,10 +83,10 @@ class HippoRagUnifiedAdapter(
         modeUsed: String,
         unsupported: List<String>,
     ): UnifiedResponse {
-        val selectedDocs = if (query.includeContext) docs else emptyList()
+        val selectedDocs = if (query.includeAnswer) answerContext ?: docs else docs
         return UnifiedResponse(
             answer = answer?.takeIf { query.includeAnswer && it.isNotBlank() },
-            context = textContextItems(selectedDocs),
+            context = if (query.includeContext) textContextItems(selectedDocs) else emptyList(),
             references = if (query.includeReferences) textReferences(selectedDocs) else emptyList(),
             metadata =
                 buildMetadata(
