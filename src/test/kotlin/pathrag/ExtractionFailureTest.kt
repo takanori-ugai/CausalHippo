@@ -14,7 +14,8 @@ class ExtractionFailureTest {
     @Test
     fun `retries malformed extraction and accepts valid empty results`() {
         runBlocking {
-            val outputs = ArrayDeque(listOf("malformed", """{"entities":[],"relationships":[]}"""))
+            val empty = """{"entities":[],"relationships":[]}"""
+            val outputs = ArrayDeque(listOf("malformed", empty, empty))
             extract(outputs)
             assertTrue(outputs.isEmpty())
         }

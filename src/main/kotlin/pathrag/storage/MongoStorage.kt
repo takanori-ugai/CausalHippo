@@ -480,8 +480,7 @@ class MongoGraphStorage(
     /**
      * Insert or replace an edge document linking two nodes using the provided edge data.
      *
-     * The stored document will include a computed `_id` (MD hash of `sourceNodeId + targetNodeId` with prefix `"edge-"`),
-     * and will always contain `src` and `tgt` fields set to the provided node IDs.
+     * New edges use both ordered endpoints as their key. Existing edges retain their original MongoDB ID.
      *
      * @param sourceNodeId The source node identifier for the edge.
      * @param targetNodeId The target node identifier for the edge.
@@ -493,17 +492,17 @@ class MongoGraphStorage(
         targetNodeId: String,
         edgeData: Map<String, Any?>,
     ) {
+        val endpoints = org.bson.Document("src", sourceNodeId).append("tgt", targetNodeId)
         val doc =
             org.bson
                 .Document(edgeData)
-                .append("_id", computeMdHashId(sourceNodeId + targetNodeId, prefix = "edge-"))
-                .append("src", sourceNodeId)
-                .append("tgt", targetNodeId)
-        edgeCollection.replaceOne(
-            Filters.and(Filters.eq("src", sourceNodeId), Filters.eq("tgt", targetNodeId)),
-            doc,
-            ReplaceOptions().upsert(true),
-        )
+                .apply { remove("_id") }
+                .apply { putAll(endpoints) }
+        val legacyId = computeMdHashId(sourceNodeId + targetNodeId, prefix = "edge-")
+        val legacy = Filters.and(Filters.eq("_id", legacyId), endpoints)
+        if (edgeCollection.replaceOne(legacy, doc).matchedCount == 0L) {
+            edgeCollection.replaceOne(Filters.eq("_id", endpoints), doc.append("_id", endpoints), ReplaceOptions().upsert(true))
+        }
     }
 
     /**

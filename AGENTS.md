@@ -22,7 +22,8 @@
 
 ## CausalRAG
 
-- Python reference implementation: [takanori-ugai/CausalRAG](https://github.com/takanori-ugai/CausalRAG)
+- Implementation cited by the paper: [Pwnb/CausalRAG](https://github.com/Pwnb/CausalRAG)
+- Python implementation used for comparison (fork of `hippoley/CausalRAG`): [takanori-ugai/CausalRAG](https://github.com/takanori-ugai/CausalRAG)
 - Paper: [CausalRAG: Integrating Causal Graphs into Retrieval-Augmented Generation (arXiv:2503.19878)](https://arxiv.org/abs/2503.19878)
 
 ## CausalHippo

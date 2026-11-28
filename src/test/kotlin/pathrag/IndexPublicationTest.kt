@@ -29,6 +29,65 @@ class IndexPublicationTest {
         """{"entities":[],"relationships":[{"src_id":"ALPHA","tgt_id":"BETA","description":"related","keywords":"link","weight":1}]}"""
 
     @Test
+    fun unifiedContextTraversesPublishedGraphAndHonorsRetrievalMode() =
+        exercise { directory ->
+            InMemoryPersistenceBackend().open(emptyMap()).use { session ->
+                PathRAG(
+                    workingDir = directory,
+                    persistenceSession = session,
+                    useUnifiedSpiForRetrievalAndIndex = true,
+                    lowLevelKeywords = listOf("ALPHA", "BETA"),
+                    highLevelKeywords = listOf("link"),
+                ).use { rag ->
+                    rag.ainsert(document)
+                    val local = rag.aquery("query", QueryParam(mode = "local", onlyNeedContext = true))
+                    assertTrue("through edge(" in local && document in local)
+                    val global = rag.aquery("query", QueryParam(mode = "global", onlyNeedContext = true))
+                    assertTrue("high-level relationship information" in global && document in global)
+                    assertFalse("through edge(" in global)
+                    for ((low, high) in listOf("ALPHA" to "", "" to "link")) {
+                        PathRAG(
+                            workingDir = directory,
+                            persistenceSession = session,
+                            useUnifiedSpiForRetrievalAndIndex = true,
+                            lowLevelKeywords = listOf(low),
+                            highLevelKeywords = listOf(high),
+                        ).use { reader ->
+                            val options = QueryParam(onlyNeedContext = true)
+                            val expectedMode = if (low.isBlank()) "global" else "local"
+                            val missingMode = if (low.isBlank()) "local" else "global"
+                            val expected = reader.aquery("query", options.copy(mode = expectedMode))
+                            assertTrue(document in expected)
+                            assertEquals(expected, reader.aquery("query", options.copy(mode = "hybrid")))
+                            assertEquals("", reader.aquery("query", options.copy(mode = missingMode)))
+                        }
+                    }
+                }
+            }
+        }
+
+    @Test
+    fun unifiedChunkContextIsTheEvidenceInThePreviewAndActualAnswerPrompt() =
+        exercise { directory ->
+            InMemoryPersistenceBackend().open(emptyMap()).use { session ->
+                PathRAG(workingDir = directory, persistenceSession = session, useUnifiedSpiForRetrievalAndIndex = true).use { rag ->
+                    session.kv("pathrag_chunks").put("external", mapOf("content" to "A passage containing {{response_type}}."))
+                    val question = "What does {{context_data}} mean?"
+                    val options = QueryParam(mode = "global", responseType = "One sentence", maxTokenForGlobalContext = 1)
+                    val evidence = rag.aquery(question, options.copy(onlyNeedContext = true))
+                    val preview = rag.aquery(question, options.copy(onlyNeedPrompt = true))
+                    assertEquals("A passage containing {{response_type}}.", evidence)
+                    assertTrue(preview.trimEnd().endsWith(evidence))
+                    assertTrue("One sentence" in preview)
+                    coEvery {
+                        pathrag.llm.openAiComplete(any(), question, preview, any(), false, false, null, any(), any())
+                    } returns "Supported answer."
+                    assertEquals("Supported answer.", rag.aquery(question, options))
+                }
+            }
+        }
+
+    @Test
     fun failedChunkEmbeddingDoesNotPublishGraphEvidence() =
         exercise { directory ->
             PathRAG(workingDir = directory).use { rag ->
@@ -59,7 +118,12 @@ class IndexPublicationTest {
                             }
                         }
                     }
-                PathRAG(workingDir = directory, persistenceSession = session, useUnifiedSpiForRetrievalAndIndex = true).use { rag ->
+                PathRAG(
+                    workingDir = directory,
+                    highLevelKeywords = listOf("link"),
+                    persistenceSession = session,
+                    useUnifiedSpiForRetrievalAndIndex = true,
+                ).use { rag ->
                     assertFailsWith<IllegalStateException> { rag.ainsert(document) }
                     rag.ainsert(document)
                     assertTrue(backed.graph("pathrag_graph").edges().isNotEmpty())
@@ -110,7 +174,7 @@ class IndexPublicationTest {
         exercise { directory ->
             PathRAG(workingDir = directory).use { rag ->
                 var fail = true
-                coEvery { pathrag.llm.openAiEmbedding(match { "relatedlink" in it }, any()) } answers {
+                coEvery { pathrag.llm.openAiEmbedding(match { "linkALPHABETArelated" in it }, any()) } answers {
                     check(!fail) { "injected relationship embedding failure" }
                     firstArg<List<String>>().map { DoubleArray(1536) { 0.02 } }
                 }
@@ -147,9 +211,14 @@ class IndexPublicationTest {
             val secondDocument = "Evidence for Gamma and Delta."
             InMemoryPersistenceBackend().open(emptyMap()).use { session ->
                 var failUnified = true
+                var alphaRelationBatches = 0
                 coEvery { pathrag.llm.openAiEmbedding(any(), any()) } answers {
                     val texts = firstArg<List<String>>()
-                    check(texts.none { it == "secondlink" || (failUnified && it.startsWith("link ALPHA BETA ")) })
+                    if ("linkALPHABETArelated" in texts) {
+                        alphaRelationBatches++
+                        check(!failUnified || alphaRelationBatches == 1)
+                    }
+                    check("linkGAMMADELTAsecond" !in texts)
                     texts.map { DoubleArray(1536) { 0.02 } }
                 }
                 PathRAG(workingDir = directory, persistenceSession = session, useUnifiedSpiForRetrievalAndIndex = true).use { rag ->
@@ -200,20 +269,80 @@ class IndexPublicationTest {
         }
 
     @Test
-    fun localCheckpointReloadsGraphAndRelationshipVectors() =
+    fun checkpointsRecoverSourceTextAndExtractionStateOnColdStart() =
         exercise { directory ->
-            PathRAG(workingDir = directory).use { rag ->
+            for (useSpi in listOf(false, true)) {
+                val checkpoint = "$directory/checkpoint-$useSpi"
+
+                fun openRag(session: PersistenceSession) =
+                    PathRAG(
+                        workingDir = directory,
+                        persistenceSession = session,
+                        useUnifiedSpiForRetrievalAndIndex = useSpi,
+                        highLevelKeywords = listOf("link"),
+                    )
+                var calls = 0
+                coEvery { pathrag.llm.openAiComplete(any(), any(), any(), any(), any(), any(), any(), any(), any()) } answers {
+                    calls++
+                    extraction
+                }
+                val customText = "Previously supplied as a custom chunk."
+                InMemoryPersistenceBackend().open(emptyMap()).use { session ->
+                    session.kv("sibling").put("stage", "before")
+                    openRag(session).use { writer ->
+                        writer.ainsert(document)
+                        writer.ainsertCustomKg(PathRAG.CustomKgPayload(chunks = listOf(PathRAG.CustomKgChunk(customText))))
+                        writer.asaveGraph(checkpoint)
+                    }
+                }
+                InMemoryPersistenceBackend().open(emptyMap()).use { session ->
+                    session.kv("sibling").put("stage", "after")
+                    openRag(session).use { reader ->
+                        reader.aloadGraph(checkpoint)
+                        assertEquals("after", session.kv("sibling").get("stage"))
+                        assertTrue(reader.graph().hasEdge("ALPHA", "BETA"))
+                        assertTrue(document in reader.aquery("link", QueryParam(mode = "global", onlyNeedContext = true)))
+                        val before = calls
+                        reader.ainsert(document)
+                        assertEquals(before, calls)
+                        reader.ainsert(customText)
+                        assertTrue(calls > before)
+                    }
+                }
+            }
+        }
+
+    @Test
+    fun legacyGraphLoadRetainsTextAndMalformedCheckpointPreservesIndex() =
+        exercise { directory ->
+            PathRAG(workingDir = directory, highLevelKeywords = listOf("link")).use { rag ->
                 rag.ainsert(document)
-                val checkpoint = "$directory/local-graph.json"
-                rag.asaveGraph(checkpoint)
+                val checkpoint = java.io.File(directory, "legacy.json")
+                val mapper =
+                    tools.jackson.module.kotlin
+                        .jacksonObjectMapper()
+                checkpoint.writeText(mapper.writeValueAsString(rag.ainspectGraph()))
                 rag.adropGraph()
-                assertFalse(rag.graph().hasEdge("ALPHA", "BETA"))
-                withTimeout(5_000) { rag.aloadGraph(checkpoint) }
-                assertTrue(rag.graph().hasEdge("ALPHA", "BETA"))
-                coEvery { pathrag.llm.openAiComplete(any(), any(), any(), any(), any(), any(), any(), any(), any()) } returns
-                    """{"high_level_keywords":["link"],"low_level_keywords":[]}"""
-                val context = rag.aquery("link", QueryParam(mode = "global", onlyNeedContext = true))
-                assertTrue(document in context)
+                rag.aloadGraph(checkpoint.path)
+                checkpoint.writeText("""{"version":2,"nodes":{},"edges":[]}""")
+                assertFailsWith<IllegalArgumentException> { rag.aloadGraph(checkpoint.path) }
+                assertTrue(document in rag.aquery("link", QueryParam(mode = "global", onlyNeedContext = true)))
+            }
+        }
+
+    @Test
+    fun failedVectorRebuildKeepsPreviousInMemoryIndex() =
+        exercise { directory ->
+            val checkpoint = "$directory/new.json"
+            PathRAG(workingDir = directory).use { writer ->
+                writer.ainsert(document)
+                writer.asaveGraph(checkpoint)
+            }
+            PathRAG(workingDir = directory).use { reader ->
+                reader.aupsertEntity("existing", "previous evidence")
+                coEvery { pathrag.llm.openAiEmbedding(match { document in it }, any()) } throws IllegalStateException("embedding offline")
+                assertFailsWith<IllegalStateException> { reader.aloadGraph(checkpoint) }
+                assertEquals(listOf("EXISTING"), reader.graph().nodes())
             }
         }
 
@@ -221,8 +350,11 @@ class IndexPublicationTest {
     fun clearingCancelsPendingPublication() =
         exercise { directory ->
             InMemoryPersistenceBackend().open(emptyMap()).use { session ->
-                coEvery { pathrag.llm.openAiEmbedding(match { batch -> batch.any { it.startsWith("link ALPHA BETA ") } }, any()) } throws
-                    IllegalStateException("injected unified embedding failure")
+                var alphaRelationBatches = 0
+                coEvery { pathrag.llm.openAiEmbedding(match { "linkALPHABETArelated" in it }, any()) } answers {
+                    check(++alphaRelationBatches == 1) { "injected unified embedding failure" }
+                    firstArg<List<String>>().map { DoubleArray(1536) { 0.02 } }
+                }
                 PathRAG(workingDir = directory, persistenceSession = session, useUnifiedSpiForRetrievalAndIndex = true).use { rag ->
                     assertFailsWith<IllegalStateException> { rag.ainsert(document) }
                     rag.aclear()

@@ -10,6 +10,8 @@ import pathrag.base.QueryParam
 import pathrag.operate.chunkingByTokenSize
 import pathrag.operate.extractEntities
 import pathrag.operate.kgQuery
+import pathrag.operate.scorePathFlows
+import pathrag.prompt.Prompts
 import pathrag.utils.ResponseCache
 import pathrag.utils.Tokenizer
 import kotlin.test.Test
@@ -90,8 +92,11 @@ private class FakeVectorStorage(
         topK: Int,
     ): List<Map<String, Any?>> = results.take(topK)
 
+    val stored = mutableMapOf<String, Map<String, Any?>>()
+
     override suspend fun upsert(data: Map<String, Map<String, Any?>>) {
         writeError?.let { throw it }
+        stored.putAll(data)
     }
 }
 
@@ -148,7 +153,7 @@ class OperateTest {
                     textChunksDb = kv,
                     queryParam = QueryParam(mode = "local", onlyNeedContext = true, topK = 5),
                     globalConfig = emptyMap(),
-                    llmModel = { prompt, system, _, _, _, _, _ -> "llm-$prompt-$system" },
+                    llmModel = { _, _, _, _, _, _, _ -> """{"low_level_keywords":["NODE"]}""" },
                 )
             assertTrue(context.contains("local-information"))
             assertTrue(context.contains("NODE"))
@@ -196,6 +201,115 @@ class OperateTest {
     }
 
     @Test
+    fun hybridPromptKeepsSourcesIntactAndEndsWithTheStrongestPath() =
+        runBlocking {
+            val graph = FakeGraphStorage()
+            graph.upsertNode("A", mapOf("source_id" to "shared<SEP>local"))
+            graph.upsertNode("B", emptyMap())
+            graph.upsertEdge("A", "B", mapOf("description" to "direct evidence", "source_id" to "shared<SEP>global"))
+            val literal = "One, \"two\".\n```\n````\n{{response_type}}"
+            val chunks =
+                FakeKVStorage(
+                    "chunks",
+                    mapOf(
+                        "shared" to mapOf("content" to literal),
+                        "global" to mapOf("content" to "first\rsecond"),
+                        "local" to mapOf("content" to "local evidence"),
+                    ),
+                )
+            var delivered = ""
+
+            suspend fun run(param: QueryParam): String =
+                kgQuery(
+                    "What connects A and B?",
+                    graph,
+                    FakeVectorStorage("entities", listOf(mapOf("entity_name" to "A"), mapOf("entity_name" to "B"))),
+                    FakeVectorStorage("relations", listOf(mapOf("src_id" to "A", "tgt_id" to "B"))),
+                    chunks,
+                    param,
+                    mapOf("fixed_low_level_keywords" to listOf("A", "B"), "fixed_high_level_keywords" to listOf("link")),
+                    { question, system, _, _, _, _, _ ->
+                        assertEquals("What connects A and B?", question)
+                        delivered = requireNotNull(system)
+                        "answer"
+                    },
+                )
+            val options = QueryParam(mode = "hybrid")
+            val context = run(options.copy(onlyNeedContext = true))
+            assertEquals(1, context.split("-----Sources-----").size - 1)
+            assertTrue("-----Sources-----\n`````csv\nid,content\n0,\"One, \"\"two\"\".\n```\n````\n{{response_type}}\"" in context)
+            assertTrue("1,\"first\rsecond\"\n2,local evidence\n`````" in context)
+            assertTrue(context.substringAfterLast("-----low-level relationship information-----").contains("through edge(direct evidence)"))
+            val prompt = run(options.copy(onlyNeedPrompt = true))
+            assertTrue(prompt.trimEnd().endsWith(context))
+            assertEquals("answer", run(options))
+            assertEquals(prompt, delivered)
+        }
+
+    @Test
+    fun eachModeUsesItsOwnKeywordsAndHonorsTheWholeContextLimit() =
+        runBlocking {
+            val graph = FakeGraphStorage()
+            graph.upsertNode("LOCAL", mapOf("description" to "long ".repeat(300), "source_id" to "local"))
+            graph.upsertNode("X", mapOf("description" to "long ".repeat(300)))
+            graph.upsertEdge("X", "Y", mapOf("description" to "global link", "source_id" to "global"))
+            val entities = FakeVectorStorage("entities", listOf(mapOf("entity_name" to "LOCAL")))
+            val relations = FakeVectorStorage("relations", listOf(mapOf("src_id" to "X", "tgt_id" to "Y")))
+            val chunks = FakeKVStorage("chunks", listOf("local", "global").associateWith { mapOf("content" to "$it passage") })
+
+            suspend fun context(
+                mode: String,
+                low: String,
+                high: String,
+                limit: Int? = null,
+            ): String =
+                kgQuery(
+                    "question",
+                    graph,
+                    entities,
+                    relations,
+                    chunks,
+                    QueryParam(mode = mode, onlyNeedContext = true, maxContextTokens = limit),
+                    mapOf("fixed_low_level_keywords" to listOf(low), "fixed_high_level_keywords" to listOf(high)),
+                    { _, _, _, _, _, _, _ -> error("Unexpected model call") },
+                )
+
+            for (mode in listOf("local", "global", "hybrid")) {
+                val text = context(mode, "entity", "relation", 65)
+                assertTrue(Tokenizer.count(text) <= 65, mode)
+                assertEquals(mode != "global", "local passage" in text, mode)
+                assertEquals(mode != "local", "global passage" in text, mode)
+                assertEquals("", context(mode, "entity", "relation", 1))
+            }
+            assertEquals("", context("local", "", "relation"))
+            assertEquals("", context("global", "entity", ""))
+            assertEquals(context("local", "entity", ""), context("hybrid", "entity", ""))
+            assertEquals(context("global", "", "relation"), context("hybrid", "", "relation"))
+        }
+
+    @Test
+    fun smallHybridBudgetKeepsEvidenceWithoutChargingForEmptyTables() =
+        runBlocking {
+            val graph = FakeGraphStorage()
+            graph.upsertNode("A", mapOf("source_id" to "source", "description" to "large ".repeat(200)))
+            val param = QueryParam(mode = "hybrid", onlyNeedContext = true, maxTokenForTextUnit = 50)
+            val context =
+                kgQuery(
+                    "query",
+                    graph,
+                    FakeVectorStorage("entities", listOf(mapOf("entity_name" to "A"))),
+                    FakeVectorStorage("relations", emptyList()),
+                    FakeKVStorage("chunks", mapOf("source" to mapOf("content" to "small evidence"))),
+                    param,
+                    mapOf("fixed_low_level_keywords" to listOf("A")),
+                    { _, _, _, _, _, _, _ -> error("unexpected model call") },
+                )
+            assertTrue("small evidence" in context)
+            assertFalse("csv\nid,entity" in context)
+            assertTrue(Tokenizer.count(context) <= param.maxTokenForTextUnit)
+        }
+
+    @Test
     fun kgQuery_hybridBoundsCompleteContextAndInvalidatesAnswerWhenItChanges() {
         runBlocking {
             val graph = FakeGraphStorage()
@@ -238,6 +352,57 @@ class OperateTest {
     }
 
     @Test
+    fun localSourcesPreferOutgoingNeighborSupportAndKeepMultipleChunksPerHit() =
+        runBlocking {
+            val graph = FakeGraphStorage()
+            graph.upsertNode("A", mapOf("source_id" to "weak<SEP>strong"))
+            graph.upsertNode("B", mapOf("source_id" to "strong"))
+            graph.upsertNode("C", mapOf("source_id" to "weak"))
+            graph.upsertEdge("A", "B", emptyMap())
+            graph.upsertEdge("C", "A", emptyMap())
+            val context =
+                kgQuery(
+                    "query",
+                    graph,
+                    FakeVectorStorage("entities", listOf(mapOf("entity_name" to "A"))),
+                    FakeVectorStorage("relations", emptyList()),
+                    FakeKVStorage(
+                        "chunks",
+                        mapOf("weak" to mapOf("content" to "weak evidence"), "strong" to mapOf("content" to "strong evidence")),
+                    ),
+                    QueryParam(mode = "local", onlyNeedContext = true, topK = 1),
+                    mapOf("fixed_low_level_keywords" to listOf("A")),
+                    { _, _, _, _, _, _, _ -> error("unexpected model call") },
+                )
+            assertTrue(context.indexOf("strong evidence") in 0 until context.indexOf("weak evidence"))
+        }
+
+    @Test
+    fun globalSourcesFollowDegreeThenWeightAndOnlyUseRetainedEdges() =
+        runBlocking {
+            val graph = FakeGraphStorage()
+            for (node in listOf("A", "B", "C", "X", "Y")) graph.upsertNode(node, mapOf("description" to "name"))
+            graph.upsertEdge("X", "Y", mapOf("description" to "low", "weight" to 99, "source_id" to "low"))
+            graph.upsertEdge("A", "B", mapOf("description" to "mid", "weight" to 1, "source_id" to "mid"))
+            graph.upsertEdge("A", "C", mapOf("description" to "high", "weight" to 2, "source_id" to "high"))
+            val hits = graph.edges().map { (s, t) -> mapOf("src_id" to s, "tgt_id" to t) }
+            val context =
+                kgQuery(
+                    "query",
+                    graph,
+                    FakeVectorStorage("entities", emptyList()),
+                    FakeVectorStorage("rels", hits),
+                    FakeKVStorage("chunks", listOf("low", "mid", "high").associateWith { mapOf("content" to "$it evidence") }),
+                    QueryParam(mode = "global", onlyNeedContext = true, maxTokenForGlobalContext = 1, maxTokenForLocalContext = 1),
+                    mapOf("fixed_high_level_keywords" to listOf("edge")),
+                    { _, _, _, _, _, _, _ -> error("unexpected model call") },
+                )
+            assertTrue("high evidence" in context)
+            assertFalse("low evidence" in context || "mid evidence" in context)
+            assertEquals(1, context.lineSequence().count { ",name," in it })
+        }
+
+    @Test
     fun kgQuery_retainsDistinctRoutesThroughTheSameNodes() {
         runBlocking {
             val graph = FakeGraphStorage()
@@ -245,23 +410,86 @@ class OperateTest {
             for ((from, to) in listOf("A" to "B", "A" to "C", "B" to "C", "B" to "D", "C" to "D")) {
                 graph.upsertEdge(from, to, mapOf("description" to "$from-$to"))
             }
-            val context =
+
+            suspend fun run(param: QueryParam): String =
                 kgQuery(
                     "question",
                     graph,
                     FakeVectorStorage("entities", listOf(mapOf("entity_name" to "A"), mapOf("entity_name" to "D"))),
                     FakeVectorStorage("relations", emptyList()),
                     FakeKVStorage("chunks", emptyMap()),
-                    QueryParam(mode = "local", onlyNeedContext = true),
+                    param,
                     mapOf("fixed_low_level_keywords" to listOf("A", "D")),
                     { _, _, _, _, _, _, _ -> error("unexpected model call") },
                 )
+            val context = run(QueryParam(mode = "local", onlyNeedContext = true))
+            val routeRows = context.lineSequence().filter { it.contains("through edge(") }.toList()
+            // The two shorter routes score higher and should appear closest to the question.
+            assertEquals(listOf(true, true, false, false), routeRows.map { it.contains("edge(B-C)") })
             val threeEdgeRoutes = context.lineSequence().filter { it.contains("edge(B-C)") }.toList()
             assertEquals(2, threeEdgeRoutes.size)
             assertTrue(threeEdgeRoutes.any { it.contains("edge(A-B)") && it.contains("edge(C-D)") })
             assertTrue(threeEdgeRoutes.any { it.contains("edge(A-C)") && it.contains("edge(B-D)") })
+
+            val hybrid = QueryParam(mode = "hybrid", onlyNeedContext = true)
+            val budget = Tokenizer.count(run(hybrid)) - Tokenizer.count(threeEdgeRoutes.first()) / 2
+            val trimmed = run(hybrid.copy(maxTokenForTextUnit = budget))
+            val retained = trimmed.lineSequence().filter { it.contains("through edge(") }.toList()
+            assertTrue(Tokenizer.count(trimmed) <= budget)
+            assertEquals(routeRows.takeLast(3), retained)
         }
     }
+
+    @Test
+    fun overlappingRoutesDoNotPropagateThirdHopFlowAgain() {
+        val routes = listOf(listOf("S", "A", "D", "T"), listOf("S", "A", "T"), listOf("S", "C", "A", "T"))
+        for (ordered in listOf(routes, routes.reversed())) {
+            val scores = scorePathFlows("S", "T", ordered).toMap()
+            // S-A and S-C each get 0.5. C-A gets 0.4. A-D and A-T each get 0.2 + 0.16.
+            // Only 0.2 reached A-D on hop two, so D-T receives zero.
+            assertEquals(0.86 / 3, scores.getValue(routes[0]), 1e-12)
+            assertEquals(0.43, scores.getValue(routes[1]), 1e-12)
+            assertEquals(0.42, scores.getValue(routes[2]), 1e-12)
+        }
+    }
+
+    @Test
+    fun equalScoresRetainTheSameFifteenUsableRoutesInEitherStorageOrder() =
+        runBlocking {
+            val labels = (0..16).map { "bridge" + it.toString().padStart(2, '0') }
+            for (order in listOf(labels, labels.reversed())) {
+                val graph = FakeGraphStorage()
+                graph.upsertNode("A", emptyMap())
+                graph.upsertNode("Z", emptyMap())
+                for (label in order) {
+                    graph.upsertNode(label, emptyMap())
+                    graph.upsertEdge("A", label, if (label == labels.first()) emptyMap() else mapOf("description" to label))
+                    graph.upsertEdge(label, "Z", mapOf("description" to label))
+                }
+                val context =
+                    kgQuery(
+                        "query",
+                        graph,
+                        FakeVectorStorage("entities", listOf(mapOf("entity_name" to "A"), mapOf("entity_name" to "Z"))),
+                        FakeVectorStorage("relations", emptyList()),
+                        FakeKVStorage("chunks", emptyMap()),
+                        QueryParam(mode = "local", onlyNeedContext = true),
+                        mapOf("fixed_low_level_keywords" to listOf("A", "Z")),
+                        { _, _, _, _, _, _, _ -> error("unexpected model call") },
+                    )
+                val kept =
+                    context
+                        .lineSequence()
+                        .filter { "through edge(" in it }
+                        .map {
+                            it
+                                .substringAfter(
+                                    "through edge(",
+                                ).substringBefore(")")
+                        }.toList()
+                assertEquals(labels.drop(1).take(15).reversed(), kept)
+            }
+        }
 
     @Test
     fun extractEntities_propagatesVectorWriteFailureAndRetryKeepsEdgeWeight() {
@@ -269,11 +497,12 @@ class OperateTest {
             val graph = FakeGraphStorage()
             val llm: suspend (String, String?, List<Map<String, String>>, Boolean, Boolean, Int?, Any?) -> String =
                 { _, _, _, _, _, _, _ ->
-                    """{"entities":[{"entity_name":"ALPHA","entity_type":"THING","description":"A"}],
+                    """{"entities":[{"entity_name":" ALPHA ","entity_type":"THING","description":"A"},
+                        {"entity_name":"alpha","entity_type":"THING","description":"other"}],
                         "relationships":[{"src_id":"ALPHA","tgt_id":"BETA","description":"link","keywords":"k","weight":1.0}]}"""
                 }
             val chunks = mapOf("chunk" to mapOf("content" to "Alpha and Beta"))
-            val config = mapOf("llm_model_func" to llm)
+            val config = mapOf("llm_model_func" to llm, "entity_extract_max_gleaning" to 0)
             val entities = FakeVectorStorage("entities", emptyList())
             assertFailsWith<IllegalStateException> {
                 extractEntities(
@@ -284,7 +513,10 @@ class OperateTest {
                     config,
                 )
             }
-            extractEntities(chunks, graph, entities, FakeVectorStorage("relations", emptyList()), config)
+            val relations = FakeVectorStorage("relations", emptyList())
+            extractEntities(chunks, graph, entities, relations, config)
+            assertEquals("ALPHAA${Prompts.GRAPH_FIELD_SEP}other", entities.stored.values.single()["content"])
+            assertEquals("kALPHABETAlink", relations.stored.values.single()["content"])
             assertEquals(1.0, graph.getEdge("ALPHA", "BETA")?.get("weight"))
         }
     }

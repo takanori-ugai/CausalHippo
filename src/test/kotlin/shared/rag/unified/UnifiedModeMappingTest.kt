@@ -73,6 +73,7 @@ class UnifiedModeMappingTest {
                 "q",
                 UnifiedQuery(
                     mode = UnifiedMode.GLOBAL,
+                    maxContextTokens = 80,
                     includeAnswer = false,
                     includeContext = true,
                 ),
@@ -83,9 +84,22 @@ class UnifiedModeMappingTest {
                     "q",
                     withArg<PathQueryParam> { param ->
                         assertEquals("global", param.mode)
+                        assertEquals(80, param.maxContextTokens)
                     },
                 )
             }
+        }
+
+    @Test
+    fun `path adapter generates from the context it returns`() =
+        runBlocking {
+            val delegate = mockk<PathRAG>()
+            coEvery { delegate.aquery("q", any()) } returns "retrieved evidence"
+            coEvery { delegate.answerFromContext("q", any(), "retrieved evidence") } returns "answer"
+            val result = PathRagUnifiedAdapter(delegate).aquery("q", UnifiedQuery(includeAnswer = true, includeContext = true))
+            assertEquals("answer", result.answer)
+            assertEquals("retrieved evidence", result.context.single().text)
+            coVerify(exactly = 1) { delegate.aquery("q", any()) }
         }
 
     @Test

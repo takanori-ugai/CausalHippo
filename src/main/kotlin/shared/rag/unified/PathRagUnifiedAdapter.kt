@@ -71,13 +71,10 @@ class PathRagUnifiedAdapter(
             }
 
         val answerText =
-            if (param.includeAnswer) {
-                delegate.aquery(
-                    query,
-                    pathParamBase.copy(onlyNeedContext = false),
-                )
-            } else {
-                null
+            when {
+                !param.includeAnswer -> null
+                contextText != null -> delegate.answerFromContext(query, pathParamBase, contextText)
+                else -> delegate.aquery(query, pathParamBase)
             }
 
         val contextItems =
@@ -124,6 +121,7 @@ class PathRagUnifiedAdapter(
             onlyNeedPrompt = false,
             responseType = query.stringExtra("responseType", "Multiple Paragraphs") ?: "Multiple Paragraphs",
             stream = false,
+            maxContextTokens = query.maxContextTokens,
             topK = query.coercedTopK(),
             maxTokenForTextUnit = query.intExtra("maxTokenForTextUnit", defaultMax),
             maxTokenForGlobalContext = query.intExtra("maxTokenForGlobalContext", defaultMax),

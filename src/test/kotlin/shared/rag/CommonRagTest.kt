@@ -6,6 +6,7 @@ import io.mockk.unmockkAll
 import kotlinx.coroutines.runBlocking
 import pathrag.PathRAG
 import pathrag.base.QueryParam
+import pathrag.prompt.Prompts
 import java.io.File
 import kotlin.test.AfterTest
 import kotlin.test.Test
@@ -115,6 +116,10 @@ class CommonRagTest {
             when {
                 keywordExtraction -> {
                     """{"high_level_keywords":["alpha"],"low_level_keywords":["beta"]}"""
+                }
+
+                prompt == Prompts.ENTITY_CONTINUE_JSON -> {
+                    """{"entities":[],"relationships":[]}"""
                 }
 
                 prompt.contains("Entity_types:") -> {

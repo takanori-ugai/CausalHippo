@@ -492,6 +492,33 @@ private data class Quadruple<A, B, C, D>(
     val fourth: D,
 )
 
+internal fun entityVectorData(
+    name: String,
+    data: Map<String, Any?>,
+): Map<String, String> =
+    mapOf(
+        "entity_name" to name,
+        "content" to (name + data["description"]?.toString().orEmpty()),
+        "source_id" to data["source_id"]?.toString().orEmpty(),
+    )
+
+internal fun relationshipVectorData(
+    source: String,
+    target: String,
+    data: Map<String, Any?>,
+): Map<String, String> {
+    val description = data["description"]?.toString().orEmpty()
+    val keywords = data["keywords"]?.toString().orEmpty()
+    return mapOf(
+        "src_id" to source,
+        "tgt_id" to target,
+        "content" to (keywords + source + target + description),
+        "description" to description,
+        "keywords" to keywords,
+        "source_id" to data["source_id"]?.toString().orEmpty(),
+    )
+}
+
 /** Unambiguous ID for an ordered relationship. */
 internal fun relationshipVectorId(
     source: String,

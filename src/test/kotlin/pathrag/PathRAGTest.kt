@@ -11,6 +11,7 @@ import io.mockk.verify
 import kotlinx.coroutines.runBlocking
 import org.neo4j.driver.GraphDatabase
 import pathrag.base.QueryParam
+import pathrag.prompt.Prompts
 import pathrag.utils.computeMdHashId
 import java.io.File
 import kotlin.test.AfterTest
@@ -67,7 +68,7 @@ class PathRAGTest {
     @Test
     fun insertCustomKgPopulatesGraph() =
         runBlocking {
-            PathRAG(chunkTokenSize = 32, chunkOverlapTokenSize = 8).use { rag ->
+            PathRAG(lowLevelKeywords = listOf("NODEA"), highLevelKeywords = listOf("related")).use { rag ->
                 val payload =
                     PathRAG.CustomKgPayload(
                         chunks = listOf(PathRAG.CustomKgChunk(content = "Entity text", sourceId = "s1")),
@@ -94,8 +95,14 @@ class PathRAGTest {
                     )
                 rag.ainsertCustomKg(payload)
                 val graph = rag.graph()
-                assertTrue(graph.hasNode("NODEA"))
-                assertTrue(graph.hasEdge("NODEA", "NODEB"))
+                val chunkId = computeMdHashId("Entity text", prefix = "chunk-")
+                assertEquals(chunkId, graph.getNode("NODEA")?.get("source_id"))
+                assertEquals("UNKNOWN", graph.getNode("NODEB")?.get("entity_type"))
+                assertEquals(chunkId, graph.getEdge("NODEA", "NODEB")?.get("source_id"))
+                val context = rag.aquery("NODEA", QueryParam(mode = "local", onlyNeedContext = true))
+                assertTrue("Entity text" in context)
+                val global = rag.aquery("related", QueryParam(mode = "global", onlyNeedContext = true))
+                assertTrue("related" in global && "Entity text" in global)
                 rag.dropGraph()
             }
         }
@@ -116,7 +123,9 @@ class PathRAGTest {
                     any(),
                     any(),
                 )
-            } returns "LLM-ANSWER"
+            } answers {
+                if (it.invocation.args[4] == true) """{"low_level_keywords":["Alpha"],"high_level_keywords":["link"]}""" else "LLM-ANSWER"
+            }
 
             PathRAG(chunkTokenSize = 16, chunkOverlapTokenSize = 4).use { rag ->
                 rag.aupsertEntity("Alpha", "desc", "TYPE", "src")
@@ -341,8 +350,7 @@ class PathRAGTest {
                         QueryParam(mode = "hybrid", onlyNeedContext = true, topK = 5),
                     )
 
-                assertTrue(context.contains("local-information"))
-                assertTrue(context.contains("global-information"))
+                assertEquals("", context)
 
                 coVerify(exactly = 1) {
                     pathrag.llm.openAiComplete(
@@ -367,6 +375,9 @@ class PathRAGTest {
             val extraction =
                 """{"entities":[],"relationships":[{"src_id":"ALPHA","tgt_id":"BETA","description":"link","keywords":"k","weight":1.0}]}"""
             coEvery { pathrag.llm.openAiComplete(any(), any(), any(), any(), any(), any(), any(), any(), any()) } returns extraction
+            coEvery {
+                pathrag.llm.openAiComplete(any(), Prompts.ENTITY_CONTINUE_JSON, any(), any(), any(), any(), any(), any(), any())
+            } returns """{"entities":[{"entity_name":"Gamma","entity_type":"THING","description":"gleaned"}],"relationships":[]}"""
             coEvery { pathrag.llm.openAiEmbedding(any(), any()) } answers {
                 firstArg<List<String>>().map { DoubleArray(1536) { 0.02 } }
             }
@@ -374,7 +385,8 @@ class PathRAGTest {
             PathRAG(chunkTokenSize = 32, chunkOverlapTokenSize = 8).use { rag ->
                 rag.ainsert("Alpha and Beta are related.")
                 rag.ainsert("Alpha and Beta are related.")
-                coVerify(exactly = 1) {
+                assertTrue(rag.graph().hasNode("GAMMA"))
+                coVerify(exactly = 2) {
                     pathrag.llm.openAiComplete(any(), any(), any(), any(), any(), any(), any(), any(), any())
                 }
                 assertEquals(1.0, rag.graph().getEdge("ALPHA", "BETA")?.get("weight"))
@@ -419,6 +431,8 @@ class PathRAGTest {
                       ]
                     }
                     """.trimIndent()
+                } else if (prompt == Prompts.ENTITY_CONTINUE_JSON) {
+                    """{"entities":[],"relationships":[]}"""
                 } else {
                     """{"high_level_keywords":["alpha"],"low_level_keywords":["beta"]}"""
                 }
@@ -481,6 +495,8 @@ class PathRAGTest {
                       ]
                     }
                     """.trimIndent()
+                } else if (p == Prompts.ENTITY_CONTINUE_JSON) {
+                    """{"entities":[],"relationships":[]}"""
                 } else {
                     """{"high_level_keywords":["alpha"],"low_level_keywords":["beta"]}"""
                 }
@@ -553,7 +569,7 @@ class PathRAGTest {
                         "Tell me about Alpha",
                         QueryParam(mode = "local", onlyNeedContext = true, topK = 3),
                     )
-                assertTrue(context.contains("local-information"), "Context was: $context")
+                assertEquals("", context)
             }
         }
 
@@ -636,7 +652,7 @@ class PathRAGTest {
                     val memResult = mem.query("Tell me about Alpha", param)
                     val neoResult = neoRag.query("Tell me about Alpha", param)
                     assertEquals(memResult, neoResult)
-                    assertEquals("ANSWER", memResult)
+                    assertEquals(Prompts.FAIL_RESPONSE, memResult)
                 }
             }
         }
