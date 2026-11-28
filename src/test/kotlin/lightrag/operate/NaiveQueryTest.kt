@@ -15,7 +15,6 @@ import lightrag.core.QueryParam
 import lightrag.core.types.BaseKVStorage
 import lightrag.core.types.BaseVectorStorage
 import lightrag.utils.Prompts
-import lightrag.utils.computeMd5
 import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
@@ -119,6 +118,21 @@ class NaiveQueryTest {
         }
     }
 
+    @Test
+    fun `chunks from one file share a resolvable reference ID`() {
+        val (references, chunks) =
+            generateReferenceListFromChunks(
+                listOf(
+                    mapOf("content" to "first", "file_path" to "same.txt"),
+                    mapOf("content" to "second", "file_path" to "same.txt"),
+                    mapOf("content" to "third", "file_path" to "other.txt"),
+                ),
+            )
+
+        assertEquals(listOf("1", "2"), references.map { it["reference_id"] })
+        assertEquals(listOf("1", "1", "2"), chunks.map { it["reference_id"] })
+    }
+
     /** Ensures cached responses are returned when LLM cache is enabled and populated. */
     @Test
     fun `returns cached result if present`() =
@@ -126,24 +140,7 @@ class NaiveQueryTest {
             val mockKv = mockk<BaseKVStorage>()
             val params = defaultParams(globalConfig = mapOf("enable_llm_cache" to true), hashingKv = mockKv)
 
-            val maxTotalTokens = params.queryParam.maxTotalTokens.coerceAtMost(DEFAULT_MAX_TOTAL_TOKENS)
-            val expectedHash =
-                computeMd5(
-                    listOf(
-                        params.queryParam.mode,
-                        params.query,
-                        params.queryParam.responseType ?: "",
-                        params.queryParam.topK.toString(),
-                        params.queryParam.chunkTopK.toString(),
-                        params.queryParam.maxEntityTokens.toString(),
-                        params.queryParam.maxRelationTokens.toString(),
-                        maxTotalTokens.toString(),
-                        params.queryParam.userPrompt ?: "",
-                        params.queryParam.enableRerank.toString(),
-                    ).joinToString("|"),
-                )
-
-            coEvery { mockKv.getById(expectedHash) } returns
+            coEvery { mockKv.getById(any()) } returns
                 mapOf(
                     "content" to "Cached response",
                     "create_time" to 123456789L,

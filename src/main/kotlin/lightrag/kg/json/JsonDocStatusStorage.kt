@@ -11,6 +11,7 @@ import kotlinx.serialization.json.Json
 import lightrag.core.types.DocProcessingStatus
 import lightrag.core.types.DocStatus
 import lightrag.core.types.DocStatusStorage
+import lightrag.utils.writeStorageFileAtomically
 import java.io.File
 import kotlin.math.min
 
@@ -72,12 +73,14 @@ class JsonDocStatusStorage(
         mutex.withLock {
             try {
                 val content = json.encodeToString(docs)
-                file.writeText(content)
+                writeStorageFileAtomically(file, content)
                 logger.debug { "Saved ${docs.size} docs status to ${file.absolutePath}" }
             } catch (e: java.io.IOException) {
                 logger.error(e) { "I/O error saving DocStatus storage to ${file.absolutePath}" }
+                throw e
             } catch (e: SerializationException) {
                 logger.error(e) { "Serialization error saving DocStatus storage to ${file.absolutePath}" }
+                throw e
             }
         }
     }

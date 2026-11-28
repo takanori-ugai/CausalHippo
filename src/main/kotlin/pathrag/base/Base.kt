@@ -12,7 +12,7 @@ import shared.rag.CommonVectorStorage
  * @property responseType target length/format hint for the LLM.
  * @property stream whether to stream responses when supported.
  * @property topK number of results to retrieve from vector stores.
- * @property maxTokenForTextUnit token cap for text units in context.
+ * @property maxTokenForTextUnit token cap for text units, and for the complete rendered context in hybrid mode.
  * @property maxTokenForGlobalContext token cap for global context.
  * @property maxTokenForLocalContext token cap for local context.
  */

@@ -361,6 +361,7 @@ class ResponseCache(
         return null
     }
 
+    @Synchronized
     private fun persist() {
         val path = cachePath ?: return
         val payload =
@@ -490,3 +491,18 @@ private data class Quadruple<A, B, C, D>(
     val third: C,
     val fourth: D,
 )
+
+/** Unambiguous ID for an ordered relationship. */
+internal fun relationshipVectorId(
+    source: String,
+    target: String,
+): String = computeMdHashId("${source.length}:$source$target", prefix = "rel-v2-")
+
+internal fun legacyRelationshipVectorIds(
+    source: String,
+    target: String,
+): List<String> =
+    listOf(
+        computeMdHashId(source + target, prefix = "rel-"),
+        computeMdHashId("${source.length}:$source$target", prefix = "rel-"),
+    )

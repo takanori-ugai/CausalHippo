@@ -19,6 +19,7 @@ import kotlinx.serialization.json.doubleOrNull
 import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.longOrNull
 import lightrag.core.types.BaseVectorStorage
+import lightrag.utils.writeStorageFileAtomically
 import java.io.File
 import java.io.IOException
 
@@ -109,12 +110,14 @@ private class InMemoryVectorStorageDelegate(
                     },
                 )
             val content = json.encodeToString(jsonObject)
-            file.writeText(content)
+            writeStorageFileAtomically(file, content)
             logger.debug { "[$namespace/$workspace] Persisted ${vectors.size} vectors to ${file.absolutePath}" }
         } catch (e: IOException) {
             logger.error(e) { "I/O error saving vector storage to ${file.absolutePath}" }
+            throw e
         } catch (e: SerializationException) {
             logger.error(e) { "Serialization error saving vector storage to ${file.absolutePath}" }
+            throw e
         }
     }
 
@@ -200,17 +203,13 @@ private class InMemoryVectorStorageDelegate(
             val content = meta["content"] as? String
             val vector =
                 when {
-                    content != null -> embedText(embeddingFunc, content, logger)
                     meta["vector"] != null -> (meta["vector"] as? List<*>)?.mapNotNull { (it as? Number)?.toFloat() } ?: emptyList()
+                    content != null -> embedText(embeddingFunc, content, logger)
                     else -> emptyList()
                 }
 
-            if (vector.isNotEmpty()) {
-                vectors[id] = vector
-            } else if (!vectors.containsKey(id)) {
-                logger.warn { "Upsert skipped for '$id' due to missing content or vector." }
-                return@forEach
-            }
+            check(vector.isNotEmpty()) { "Missing embedding for '$id' in '$namespace'" }
+            vectors[id] = vector
 
             val mapped = mapToMetadata(meta)
             metadata[id] = mapped
@@ -255,6 +254,8 @@ private fun embedText(
     try {
         val response = embeddingModel.embed(text)
         response.content().vector().toList()
+    } catch (e: java.util.concurrent.CancellationException) {
+        throw e
     } catch (e: IllegalStateException) {
         logger.error(e) { "Illegal state embedding text: '$text'" }
         emptyList()
