@@ -163,7 +163,7 @@ class CausalHippoPipeline(
             stagedHippo.indexPreparedChunks(prepared)
             val allPassages = stagedHippo.indexedPassages()
             check(allPassages.toSet() == oldPassages + prepared) { "HippoRAG did not index the complete corpus" }
-            val causalInputs = if (hasCausalGraph) allPassages.filterNot { it in oldPassages } else allPassages
+            val causalInputs = allPassages.filterNot(graph::hasCompletedPassage)
             graph.indexDocuments(causalInputs)
             check(graph.save(staged.causalGraph.toString())) { "Could not stage causal graph" }
             val report = IndexingReport(graph.lastIndexingReport.failures + stagedHippo.lastIndexingReport.failures)

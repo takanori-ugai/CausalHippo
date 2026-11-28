@@ -3,6 +3,7 @@ package causalhippo
 import causalrag.causalgraph.builder.CausalGraphBuilder
 import hipporag.config.BaseConfig
 import hipporag.graph.SimpleGraph
+import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.double
 import kotlinx.serialization.json.jsonArray
@@ -11,7 +12,9 @@ import kotlinx.serialization.json.jsonPrimitive
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardCopyOption
+import java.security.MessageDigest
 import java.util.Comparator
+import java.util.HexFormat
 
 internal class HybridIndexFiles(
     val config: BaseConfig,
@@ -54,6 +57,7 @@ internal class HybridIndexFiles(
             validateHippo(hippo)
             copyOptional(openie, snapshot.resolve(openie.fileName))
             check(graph.save(snapshot.resolve("causal_graph.json").toString())) { "Could not save causal graph" }
+            Files.writeString(snapshot.resolve("manifest.json"), Json.encodeToString(snapshotDigests(snapshot)))
             replaceFiles(temp, mapOf(target to snapshot))
         }
     }
@@ -63,6 +67,11 @@ internal class HybridIndexFiles(
         staged: HybridIndexFiles,
     ) {
         val source = checkedPath(rawSource)
+        val manifest = source.resolve("manifest.json")
+        if (Files.isRegularFile(manifest)) {
+            val expected = Json.decodeFromString<Map<String, String>>(Files.readString(manifest))
+            require(expected == snapshotDigests(source)) { "CausalHippo snapshot artifacts do not match the manifest: $source" }
+        }
         val nested = source.resolve("hippo_working_dir")
         val hippo = if (Files.isDirectory(nested)) nested else source
         require(Files.isDirectory(hippo)) { "Snapshot not found: $source" }
@@ -78,6 +87,27 @@ internal class HybridIndexFiles(
                 .jsonArray
         }
     }
+
+    private fun snapshotDigests(snapshot: Path): Map<String, String> =
+        Files.walk(snapshot).use { files ->
+            files
+                .filter { Files.isRegularFile(it) && it != snapshot.resolve("manifest.json") }
+                .sorted()
+                .toList()
+                .associate { path ->
+                    val digest = MessageDigest.getInstance("SHA-256")
+                    Files.newInputStream(path).use { stream ->
+                        val buffer = ByteArray(8192)
+                        while (true) {
+                            val count = stream.read(buffer)
+                            if (count == -1) break
+                            digest.update(buffer, 0, count)
+                        }
+                    }
+                    snapshot.relativize(path).toString().replace(java.io.File.separatorChar, '/') to
+                        HexFormat.of().formatHex(digest.digest())
+                }
+        }
 
     private fun checkedPath(path: Path): Path {
         val canonical = path.toFile().canonicalFile.toPath()

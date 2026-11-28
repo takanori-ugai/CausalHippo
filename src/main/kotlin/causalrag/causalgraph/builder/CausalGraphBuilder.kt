@@ -23,6 +23,8 @@ import shared.rag.IndexingReport
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
+import java.security.MessageDigest
+import java.util.HexFormat
 import kotlin.coroutines.cancellation.CancellationException
 import kotlin.math.max
 
@@ -514,6 +516,13 @@ class CausalGraphBuilder(
         return text
     }
 
+    internal val completedPassages = mutableSetOf<String>()
+
+    internal fun hasCompletedPassage(text: String): Boolean = passageIdentity(text) in completedPassages
+
+    private fun passageIdentity(text: String): String =
+        HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(text.encodeToByteArray()))
+
     var lastIndexingReport: IndexingReport = IndexingReport()
         private set
 
@@ -536,8 +545,13 @@ class CausalGraphBuilder(
         for (batch in docBatches) {
             batchCount += 1
             val batchTriples = mutableListOf<CausalTriple>()
+            val completed = mutableListOf<String>()
             for ((offset, doc) in batch.withIndex()) {
-                if (doc.isBlank() || doc.trim().length < 10) continue
+                if (doc.isBlank() || doc.trim().length < 10) {
+                    completed += passageIdentity(doc)
+                    continue
+                }
+                val failureCount = failures.size
                 val documentIndex = (batchCount - 1) * batchSize + offset
                 try {
                     batchTriples.addAll(
@@ -551,8 +565,10 @@ class CausalGraphBuilder(
                     logger.error(ex) { "Error extracting triples from document" }
                     failures.add(IndexingFailure("causal", "$documentIndex", ex.message ?: ex.javaClass.simpleName))
                 }
+                if (failures.size == failureCount) completed += passageIdentity(doc)
             }
             addTriples(batchTriples)
+            completedPassages.addAll(completed)
             if (batchCount % 5 == 0 || batchCount == docBatches.size) {
                 logger.info { "Processed batch $batchCount/${docBatches.size}: found ${batchTriples.size} causal relationships" }
             }
@@ -575,6 +591,7 @@ class CausalGraphBuilder(
      * Clears all indexed graph state, node metadata, and cached embeddings.
      */
     fun clear() {
+        completedPassages.clear()
         lastIndexingReport = IndexingReport()
         graph.clear()
         _nodeText.clear()
@@ -658,6 +675,7 @@ class CausalGraphBuilder(
             val root =
                 buildJsonObject {
                     put("nodes", nodeJson)
+                    putJsonArray("completedPassages") { completedPassages.sorted().forEach { add(JsonPrimitive(it)) } }
                     put("variants", variantsJson)
                     put("edges", edgesJsonArray)
                     if (_nodeEmbeddings.isNotEmpty()) {
@@ -699,6 +717,8 @@ class CausalGraphBuilder(
             val json = Json { ignoreUnknownKeys = true }
             val root = json.parseToJsonElement(Files.readString(path)) as? JsonObject ?: return false
             val nodesObj = root["nodes"] as? JsonObject ?: JsonObject(emptyMap())
+            completedPassages.clear()
+            (root["completedPassages"] as? JsonArray)?.forEach { (it as? JsonPrimitive)?.content?.let(completedPassages::add) }
             val verticesArray = root["vertices"] as? JsonArray ?: JsonArray(emptyList())
             val variantsObj = root["variants"] as? JsonObject ?: JsonObject(emptyMap())
             val edgesArray = root["edges"] as? JsonArray ?: JsonArray(emptyList())

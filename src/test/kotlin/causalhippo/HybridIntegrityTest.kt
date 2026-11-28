@@ -104,6 +104,27 @@ class HybridIntegrityTest {
         }
 
     @Test
+    fun rejectsCausalGraphFromAnotherSnapshot() =
+        fixture { config, hippo, _ ->
+            val rag = CausalHippoRAG(configPath = config, hippoConfig = hippo)
+            rag.upsert(first)
+            val firstSnapshot = Path.of(hippo.saveDir).resolveSibling("snapshot-a")
+            rag.saveGraph(firstSnapshot.toString())
+            rag.upsert(second)
+            val secondSnapshot = firstSnapshot.resolveSibling("snapshot-b")
+            rag.saveGraph(secondSnapshot.toString())
+            val previous = rag.inspectGraph()
+            Files.copy(
+                secondSnapshot.resolve("causal_graph.json"),
+                firstSnapshot.resolve("causal_graph.json"),
+                java.nio.file.StandardCopyOption.REPLACE_EXISTING,
+            )
+            val failure = assertFails { rag.loadGraph(firstSnapshot.toString()) }
+            assertTrue(failure.message.orEmpty().contains("manifest"))
+            assertEquals(previous, rag.inspectGraph())
+        }
+
+    @Test
     fun restoredCorpusCanBeReplacedAfterRestart() =
         fixture { config, hippo, _ ->
             val rag = CausalHippoRAG(configPath = config, hippoConfig = hippo)
@@ -117,6 +138,26 @@ class HybridIntegrityTest {
             assertTrue(restarted.bm25Retriever.retrieve("rainfall", 3).isNotEmpty())
             restarted.reindex(listOf(third))
             assertEquals(listOf(third), restarted.hippoRag.indexedPassages())
+        }
+
+    @Test
+    fun reportedCausalExtractionFailureCanBeRetried() =
+        fixture { config, hippo, _ ->
+            val pipeline = CausalHippoPipeline(configPath = config, hippoConfig = hippo)
+            pipeline.index(listOf(first))
+            mockkConstructor(CausalGraphBuilder::class)
+            try {
+                every { anyConstructed<CausalGraphBuilder>().lastIndexingReport } returns
+                    shared.rag.IndexingReport(listOf(shared.rag.IndexingFailure("causal", "0", "temporary failure")))
+                every { anyConstructed<CausalGraphBuilder>().indexDocuments(match { second in it }, any()) } returns 0
+                pipeline.index(listOf(second))
+                assertTrue(pipeline.lastIndexingReport.failures.isNotEmpty())
+            } finally {
+                unmockkConstructor(CausalGraphBuilder::class)
+            }
+            pipeline.index(listOf(second))
+            assertTrue(pipeline.graphBuilder.hasCompletedPassage(second))
+            assertEquals(setOf(first, second), pipeline.hippoRag.indexedPassages().toSet())
         }
 
     @Test
