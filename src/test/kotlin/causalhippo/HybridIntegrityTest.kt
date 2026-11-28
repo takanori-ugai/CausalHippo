@@ -5,6 +5,7 @@ import causalrag.generator.llm.LLMInterface
 import causalrag.generator.promptbuilder.PromptBuilder
 import hipporag.config.BaseConfig
 import hipporag.embeddingmodel.BaseEmbeddingModel
+import hipporag.embeddingmodel.EmbeddingModelFactory
 import hipporag.embeddingmodel.getEmbeddingModel
 import hipporag.llm.getLlm
 import hipporag.utils.LlmResult
@@ -122,6 +123,41 @@ class HybridIntegrityTest {
             val failure = assertFails { rag.loadGraph(firstSnapshot.toString()) }
             assertTrue(failure.message.orEmpty().contains("manifest"))
             assertEquals(previous, rag.inspectGraph())
+        }
+
+    @Test
+    fun failedSnapshotInitializationRestoresBothIndexes() =
+        fixture { config, hippo, _ ->
+            val rag = CausalHippoRAG(configPath = config, hippoConfig = hippo)
+            rag.upsert(first)
+            val snapshot = Path.of(hippo.saveDir).resolveSibling("rollback")
+            rag.saveGraph(snapshot.toString())
+            rag.upsert(second)
+            val before = rag.inspectGraph()
+            val originalFactory = getEmbeddingModel()
+            val failingFactory = mockk<EmbeddingModelFactory>()
+            every { failingFactory.create(any(), any()) } throws IllegalStateException("injected initialization failure")
+            every { getEmbeddingModel() } returns failingFactory
+
+            val error = assertFails { rag.loadGraph(snapshot.toString()) }
+            assertEquals("injected initialization failure", error.message)
+            assertEquals(before, rag.inspectGraph())
+            every { getEmbeddingModel() } returns originalFactory
+            assertEquals(before, CausalHippoRAG(configPath = config, hippoConfig = hippo).inspectGraph())
+        }
+
+    @Test
+    fun freshEmptySnapshotCanReplaceACommittedIndex() =
+        fixture { config, hippo, _ ->
+            val rag = CausalHippoRAG(configPath = config, hippoConfig = hippo)
+            val snapshot = Path.of(hippo.saveDir).resolveSibling("empty")
+            rag.saveGraph(snapshot.toString())
+            assertTrue(Files.isRegularFile(snapshot.resolve("hippo_working_dir/graph.json")))
+            rag.upsert(first)
+            rag.loadGraph(snapshot.toString())
+            val result = rag.query("rainfall", CausalHippoQueryParam(onlyNeedCausalPaths = true))
+            assertTrue(result.causalPaths.isEmpty())
+            assertTrue(result.context.isEmpty())
         }
 
     @Test
