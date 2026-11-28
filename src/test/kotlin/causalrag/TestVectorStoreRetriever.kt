@@ -1,12 +1,14 @@
 package causalrag
 
 import causalrag.retriever.VectorStoreRetriever
+import causalrag.utils.EmbeddingModel
 import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
@@ -100,5 +102,35 @@ class TestVectorStoreRetriever {
 
         assertFalse(loaded)
         assertTrue(reader.getPassages().isEmpty())
+    }
+
+    @Test
+    fun testRejectsDifferentEmbeddingModelWithSameDimension() {
+        val cache = tempDir.resolve("different-model")
+        val writer = VectorStoreRetriever(embeddingModel = "first-model", dimension = 64)
+        writer.indexCorpus(listOf("foreign evidence"))
+        assertTrue(writer.saveIndex(cache.toString()))
+
+        val reader = VectorStoreRetriever(embeddingModel = "second-model", dimension = 64)
+        reader.indexCorpus(listOf("local evidence"))
+        assertFalse(reader.loadIndex(cache.toString()))
+        assertEquals(listOf("local evidence"), reader.getPassages())
+    }
+
+    @Test
+    fun testFailedEmbeddingBatchKeepsPreviousIndex() {
+        val encoder =
+            object : EmbeddingModel {
+                override fun encode(text: String): DoubleArray {
+                    check(text != "failure") { "Injected embedding error" }
+                    return doubleArrayOf(1.0)
+                }
+            }
+        val retriever = VectorStoreRetriever(dimension = 1, batchSize = 1, embeddingModelOverride = encoder)
+        retriever.indexCorpus(listOf("existing"))
+
+        assertFailsWith<IllegalStateException> { retriever.indexCorpus(listOf("new", "failure")) }
+        assertEquals(listOf("existing"), retriever.getPassages())
+        assertEquals(listOf("existing"), retriever.search("query"))
     }
 }

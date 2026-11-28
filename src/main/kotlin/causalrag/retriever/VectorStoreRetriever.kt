@@ -16,6 +16,7 @@ import kotlinx.serialization.json.put
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
+import java.util.UUID
 
 private val logger = KotlinLogging.logger {}
 private const val DEFAULT_LOCAL_EMBEDDING_MODEL = "all-MiniLM-L6-v2"
@@ -66,6 +67,13 @@ class VectorStoreRetriever(
                 SimpleHashEmbedding(expectedVectorDimension ?: DEFAULT_HASH_DIMENSION)
             }
         }
+    private val embeddingProvider =
+        when {
+            embeddingModelOverride != null -> embeddingModelOverride.javaClass.name
+            !embeddingApiKey.isNullOrBlank() -> "openai"
+            else -> "hash"
+        }
+    internal val embeddingIdentity = "$embeddingProvider:$resolvedEmbeddingModel"
     private val vectors = mutableListOf<DoubleArray>()
     private val passages = mutableListOf<String>()
     private val metadata = mutableListOf<Map<String, Any>>()
@@ -136,23 +144,53 @@ class VectorStoreRetriever(
                     "retaining passages to keep hits aligned with vectors."
             }
         }
-        passages.clear()
-        passages.addAll(texts)
-        this.metadata.clear()
-        this.metadata.addAll(normalizedMetadata)
-
-        vectors.clear()
-        for (i in texts.indices step batchSize) {
-            val batch = texts.subList(i, minOf(i + batchSize, texts.size))
-            val batchVectors = encoder.encodeAll(batch)
-            vectors.addAll(batchVectors)
-        }
+        restoreState(IndexState(texts, normalizedMetadata, embed(texts)))
 
         if (cacheDir != null) {
             cacheVectors(cacheDir, normalizedIds, normalizedMetadata)
         }
 
         logger.info { "Indexed ${texts.size} passages" }
+    }
+
+    internal data class IndexState(
+        val passages: List<String>,
+        val metadata: List<Map<String, Any>>,
+        val vectors: List<DoubleArray>,
+    )
+
+    internal fun snapshotState(): IndexState = IndexState(passages.toList(), metadata.toList(), vectors.toList())
+
+    internal fun restoreState(state: IndexState) {
+        clearIndex()
+        passages.addAll(state.passages)
+        metadata.addAll(state.metadata)
+        vectors.addAll(state.vectors)
+    }
+
+    internal fun appendCorpus(texts: List<String>) {
+        val newVectors = embed(texts)
+        val start = passages.size
+        passages.addAll(texts)
+        vectors.addAll(newVectors)
+        metadata.addAll(
+            texts.indices.map { offset ->
+                mapOf("id" to UUID.randomUUID().toString(), "position" to start + offset)
+            },
+        )
+    }
+
+    private fun embed(texts: List<String>): List<DoubleArray> {
+        val model = checkNotNull(encoder)
+        val encoded =
+            texts.chunked(batchSize).flatMap { batch ->
+                model.encodeAll(batch).also { check(it.size == batch.size) { "Embedding batch size mismatch" } }
+            }
+        val dimension = expectedVectorDimension ?: encoded.firstOrNull()?.size
+        check(encoded.all { it.isNotEmpty() && it.size == dimension && it.all(Double::isFinite) }) {
+            "Invalid passage embeddings"
+        }
+        return encoded
     }
 
     /**
@@ -287,6 +325,7 @@ class VectorStoreRetriever(
                     put("passages", buildJsonArray { passages.forEach { add(JsonPrimitive(it)) } })
                     put("backend", JsonPrimitive(backend))
                     put("embedding_model", JsonPrimitive(resolvedEmbeddingModel))
+                    put("embedding_provider", JsonPrimitive(embeddingProvider))
                     put("vector_dimension", JsonPrimitive(vectors.firstOrNull()?.size ?: 0))
                 }
             Files.writeString(Path.of(dir, "vectors.json"), json.encodeToString(JsonElement.serializer(), vectorsJson))
@@ -319,62 +358,46 @@ class VectorStoreRetriever(
             val vectorsJson = json.parseToJsonElement(Files.readString(vectorsPath)) as? JsonArray
             val metaJson = json.parseToJsonElement(Files.readString(metaPath)) as? JsonObject
             if (vectorsJson == null || metaJson == null) return false
-            clearIndex()
-            for (vecElement in vectorsJson) {
-                if (vecElement is JsonArray) {
-                    vectors.add(
-                        vecElement
-                            .mapNotNull { (it as? JsonPrimitive)?.content?.toDoubleOrNull() }
-                            .toDoubleArray(),
-                    )
-                }
-            }
-            val passagesJson = metaJson["passages"] as? JsonArray ?: JsonArray(emptyList())
-            for (p in passagesJson) {
-                passages.add((p as? JsonPrimitive)?.content.orEmpty())
-            }
-            val metaArray = metaJson["metadata"] as? JsonArray ?: JsonArray(emptyList())
-            for (m in metaArray) {
-                if (m is JsonObject) {
-                    metadata.add(jsonObjectToMap(m))
-                }
-            }
-            val vectorSizes = vectors.map { it.size }.toSet()
-            if (vectorSizes.size > 1) {
-                logger.error { "Cached index is inconsistent: vectors contain multiple dimensions $vectorSizes" }
-                clearIndex()
+            val cachedModel = (metaJson["embedding_model"] as? JsonPrimitive)?.content
+            if (cachedModel != null && cachedModel != resolvedEmbeddingModel) {
+                logger.error { "Cached embedding model $cachedModel does not match $resolvedEmbeddingModel" }
                 return false
             }
-            val actualVectorDimension = vectorSizes.firstOrNull() ?: 0
-            val cachedVectorDimension = (metaJson["vector_dimension"] as? JsonPrimitive)?.content?.toIntOrNull()
-            if (cachedVectorDimension != null && cachedVectorDimension != actualVectorDimension) {
-                logger.error {
-                    "Cached index is inconsistent: metadata dimension=$cachedVectorDimension, actual=$actualVectorDimension"
+            val cachedProvider = (metaJson["embedding_provider"] as? JsonPrimitive)?.content
+            if (cachedProvider != null && cachedProvider != embeddingProvider) return false
+
+            val loadedVectors =
+                vectorsJson.map { row ->
+                    (row as JsonArray).map { (it as JsonPrimitive).content.toDouble() }.toDoubleArray()
                 }
-                clearIndex()
+            val loadedPassages =
+                (metaJson["passages"] as? JsonArray).orEmpty().map { (it as JsonPrimitive).content }
+            val actualDimension = loadedVectors.firstOrNull()?.size ?: 0
+            val cachedDimension = (metaJson["vector_dimension"] as? JsonPrimitive)?.content?.toIntOrNull()
+            if (loadedVectors.size != loadedPassages.size ||
+                loadedVectors.any { it.isEmpty() || it.size != actualDimension || !it.all(Double::isFinite) } ||
+                (cachedDimension != null && cachedDimension != actualDimension) ||
+                (loadedVectors.isNotEmpty() && expectedVectorDimension != null && actualDimension != expectedVectorDimension)
+            ) {
+                logger.error { "Cached vector index has inconsistent passages or dimensions" }
                 return false
             }
-            if (passages.size != vectors.size) {
-                logger.error { "Cached index is inconsistent: vectors=${vectors.size}, passages=${passages.size}" }
-                clearIndex()
-                return false
-            }
-            if (expectedVectorDimension != null && actualVectorDimension != expectedVectorDimension) {
-                logger.error {
-                    "Cached index dimension ($actualVectorDimension) does not match retriever expectation ($expectedVectorDimension)"
+            val metadataRows = metaJson["metadata"] as? JsonArray
+            val ids = metaJson["ids"] as? JsonArray
+            val loadedMetadata =
+                loadedPassages.indices.map { position ->
+                    val row = (metadataRows?.getOrNull(position) as? JsonObject)?.let(::jsonObjectToMap).orEmpty()
+                    val id = (ids?.getOrNull(position) as? JsonPrimitive)?.content ?: position.toString()
+                    mapOf("id" to id, "position" to position) + row
                 }
-                clearIndex()
-                return false
-            }
+            restoreState(IndexState(loadedPassages, loadedMetadata, loadedVectors))
             logger.info { "Loaded ${vectors.size} vectors from cache" }
             true
         } catch (ex: IOException) {
             logger.error(ex) { "Error loading cached vectors" }
-            clearIndex()
             false
         } catch (ex: RuntimeException) {
             logger.error(ex) { "Error loading cached vectors" }
-            clearIndex()
             false
         }
     }
@@ -470,7 +493,7 @@ class VectorStoreRetriever(
         for ((k, v) in obj) {
             when (v) {
                 is JsonPrimitive -> {
-                    result[k] = v.content.toBooleanStrictOrNull() ?: v.content.toDoubleOrNull() ?: v.content
+                    result[k] = if (v.isString) v.content else v.content.toBooleanStrictOrNull() ?: v.content.toDoubleOrNull() ?: v.content
                 }
 
                 else -> {

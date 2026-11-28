@@ -428,7 +428,7 @@ class CausalGraphBuilder(
     ingestChunkTokenSize: Int = DEFAULT_INGEST_CHUNK_TOKEN_SIZE,
     ingestChunkOverlapTokenSize: Int = DEFAULT_INGEST_CHUNK_OVERLAP_TOKEN_SIZE,
 ) {
-    private val graph = DirectedGraph()
+    private var graph = DirectedGraph()
     private val _nodeText: MutableMap<String, String> = mutableMapOf()
 
     /**
@@ -570,6 +570,34 @@ class CausalGraphBuilder(
      * @return Snapshot of the current graph state.
      */
     fun getGraph(): DirectedGraph = graph.copy()
+
+    internal data class IndexState(
+        val graph: DirectedGraph,
+        val labels: Map<String, String>,
+        val variants: Map<String, List<String>>,
+        val embeddings: Map<String, DoubleArray>,
+        val report: IndexingReport,
+    )
+
+    internal fun snapshotState(): IndexState =
+        IndexState(
+            graph.copy(),
+            _nodeText.toMap(),
+            nodeVariants.mapValues { it.value.toList() },
+            _nodeEmbeddings.toMap(),
+            lastIndexingReport,
+        )
+
+    internal fun restoreState(state: IndexState) {
+        graph = state.graph
+        _nodeText.clear()
+        _nodeText.putAll(state.labels)
+        nodeVariants.clear()
+        state.variants.forEach { (id, variants) -> nodeVariants[id] = variants.toMutableList() }
+        _nodeEmbeddings.clear()
+        _nodeEmbeddings.putAll(state.embeddings)
+        lastIndexingReport = state.report
+    }
 
     /**
      * Clears all indexed graph state, node metadata, and cached embeddings.

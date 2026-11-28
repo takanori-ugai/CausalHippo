@@ -5,10 +5,11 @@ import causalrag.causalgraph.builder.CausalTriple
 import causalrag.causalgraph.graph.DirectedGraph
 import causalrag.causalgraph.retriever.CausalPathRetriever
 import causalrag.generator.llm.LLMInterface
-import causalrag.generator.promptbuilder.buildPrompt
+import causalrag.generator.promptbuilder.PromptBuilder
 import causalrag.reranker.CausalPathReranker
 import causalrag.retriever.Bm25Retriever
 import causalrag.retriever.HybridRetriever
+import causalrag.retriever.SemanticRetriever
 import causalrag.retriever.VectorStoreRetriever
 import causalrag.utils.cosineSimilarity
 import io.github.oshai.kotlinlogging.KotlinLogging
@@ -19,7 +20,6 @@ import shared.chunking.DEFAULT_INGEST_CHUNK_TOKEN_SIZE
 import shared.chunking.DEFAULT_PROMPT_CONTEXT_TOKEN_BUDGET
 import shared.chunking.DEFAULT_TIKTOKEN_MODEL
 import shared.chunking.chunkByTokenSizeWithOverlap
-import shared.chunking.hardTruncateStringsByTokenBudget
 import shared.config.CaualRagConfig
 import shared.config.CommonRagConfigLoader
 import shared.rag.CommonRag
@@ -110,6 +110,7 @@ class CausalRAG(
         )
     internal val evaluatorLlmInterface: LLMInterface
         get() = llm
+    private val indexLock = Any()
     private val graphBuilder: CausalGraphBuilder =
         CausalGraphBuilder(
             modelName = effectiveEmbeddingModel,
@@ -130,7 +131,17 @@ class CausalRAG(
     private val graphRetriever: CausalPathRetriever = CausalPathRetriever(graphBuilder)
     private val hybridRetriever: HybridRetriever =
         HybridRetriever(
-            semanticRetriever = vectorRetriever,
+            semanticRetriever =
+                if (unifiedSpiEnabled) {
+                    object : SemanticRetriever {
+                        override fun searchWithScores(
+                            query: String,
+                            topK: Int,
+                        ): List<Pair<String, Double>> = retrieveContextFromUnifiedSpi(query, topK)
+                    }
+                } else {
+                    vectorRetriever
+                },
             graphRetriever,
             semanticWeight = 0.4,
             causalWeight = 0.5,
@@ -147,11 +158,13 @@ class CausalRAG(
     init {
         if (unifiedSpiEnabled) {
             ensureUnifiedSpiIndexInitialized()
+        } else {
+            refreshBm25()
         }
     }
 
     val lastIndexingReport: IndexingReport
-        get() = graphBuilder.lastIndexingReport
+        get() = synchronized(indexLock) { graphBuilder.lastIndexingReport }
 
     override fun upsert(data: String) = runBlocking { aupsert(data) }
 
@@ -165,8 +178,10 @@ class CausalRAG(
             logger.warn { "No valid documents provided for CausalRAG upsert." }
             return
         }
-        indexDocuments(documents)
-        hybridRetriever.clearCache()
+        updateIndex {
+            indexDocuments(documents, replace = false)
+            if (unifiedSpiEnabled) syncUnifiedSpiFromLocal()
+        }
     }
 
     fun reindex(data: String) = runBlocking { areindex(data) }
@@ -177,51 +192,45 @@ class CausalRAG(
 
     suspend fun areindex(data: Collection<String>) {
         val documents = normalizeDocuments(data)
-        hybridRetriever.clearCache()
-        graphBuilder.clear()
-        vectorRetriever.clear()
-        bm25Retriever.clear()
-        if (documents.isEmpty()) {
-            if (unifiedSpiEnabled) clearUnifiedSpiState()
-            logger.warn { "No valid documents provided for CausalRAG reindex." }
-            return
+        updateIndex {
+            graphBuilder.clear()
+            vectorRetriever.clear()
+            if (documents.isNotEmpty()) indexDocuments(documents, replace = true)
+            if (unifiedSpiEnabled) syncUnifiedSpiFromLocal()
         }
-        indexDocuments(documents)
-        hybridRetriever.clearCache()
     }
 
     override fun drop() = runBlocking { adrop() }
 
     override suspend fun adrop() {
-        hybridRetriever.clearCache()
-        graphBuilder.clear()
-        vectorRetriever.clear()
-        bm25Retriever.clear()
-        if (unifiedSpiEnabled) clearUnifiedSpiState()
+        updateIndex {
+            graphBuilder.clear()
+            vectorRetriever.clear()
+            if (unifiedSpiEnabled) clearUnifiedSpiState()
+        }
     }
 
     override fun inspectGraph(): Map<String, Any?> = runBlocking { ainspectGraph() }
 
     override suspend fun ainspectGraph(): Map<String, Any?> =
-        if (unifiedSpiEnabled) {
-            inspectGraphFromUnifiedSpi()
-        } else {
-            inspectGraphFromLocal()
+        synchronized(indexLock) {
+            if (unifiedSpiEnabled) inspectGraphFromUnifiedSpi() else inspectGraphFromLocal()
         }
 
     override fun saveGraph(path: String) = runBlocking { asaveGraph(path) }
 
     override suspend fun asaveGraph(path: String) {
         require(path.isNotBlank()) { "path must not be blank" }
-        check(save(path)) { "Failed to save CausalRAG graph data to '$path'." }
+        synchronized(indexLock) { check(save(path)) { "Failed to save CausalRAG graph data to '$path'." } }
     }
 
     override fun loadGraph(path: String) = runBlocking { aloadGraph(path) }
 
     override suspend fun aloadGraph(path: String) {
         require(path.isNotBlank()) { "path must not be blank" }
-        check(load(path)) { "Failed to load CausalRAG graph data from '$path'." }
-        hybridRetriever.clearCache()
+        updateIndex {
+            check(load(path)) { "Failed to load CausalRAG graph data from '$path'." }
+        }
     }
 
     override fun query(
@@ -233,137 +242,82 @@ class CausalRAG(
         query: String,
         param: QueryParam,
     ): CausalRagRunResult {
-        val topK = param.topK.coerceAtLeast(1)
-        val maxPaths = param.maxPaths.coerceAtLeast(1)
-
-        if (param.onlyNeedContext || param.onlyNeedCausalPaths) {
-            val context =
-                if (param.onlyNeedContext) {
-                    retrieveContext(query, topK = topK)
-                } else {
-                    emptyList()
-                }
-            val causalPaths =
-                if (param.onlyNeedCausalPaths) {
-                    retrieveCausalPaths(query, maxPaths = maxPaths)
-                } else {
-                    emptyList()
-                }
-            return CausalRagRunResult(answer = "", context = context, causalPaths = causalPaths)
+        val contextOnly = param.onlyNeedContext || param.onlyNeedCausalPaths
+        if (param.onlyNeedCausalPaths && !param.onlyNeedContext) {
+            return CausalRagRunResult("", emptyList(), retrieveCausalPaths(query, param.maxPaths))
         }
-
-        val result = runWithContext(query, topK = topK)
-        return if (maxPaths == 3) {
-            result
-        } else {
-            result.copy(causalPaths = retrieveCausalPaths(query, maxPaths = maxPaths))
-        }
+        val evidence = preparePrompt(query, param.topK, param.maxPaths, summarize = !contextOnly)
+        val answer =
+            if (contextOnly) "" else llm.generate(evidence.text, jsonMode = requiresJsonResponseFormat(effectiveTemplateStyle))
+        val paths = if (contextOnly && !param.onlyNeedCausalPaths) emptyList() else evidence.paths
+        return CausalRagRunResult(answer, evidence.passages, paths)
     }
 
     override suspend fun query(
         query: String,
         topK: Int,
-    ): List<Map<String, Any?>> = vectorStorageBackend.query(query, topK)
+    ): List<Map<String, Any?>> = synchronized(indexLock) { vectorStorageBackend.search(query, topK) }
 
-    override suspend fun upsert(data: Map<String, Map<String, Any?>>) {
-        vectorStorageBackend.upsert(data)
-        bm25Retriever.clear()
-        val passages = vectorRetriever.getPassages()
-        if (passages.isNotEmpty()) {
-            bm25Retriever.indexDocuments(passages)
+    override suspend fun upsert(data: Map<String, Map<String, Any?>>) =
+        mutateVectors {
+            vectorStorageBackend.upsertEntries(data)
         }
-        if (unifiedSpiEnabled) syncUnifiedSpiFromLocal()
-        hybridRetriever.clearCache()
-    }
 
-    override suspend fun deleteEntity(entityName: String) {
-        vectorStorageBackend.deleteEntity(entityName)
-        bm25Retriever.clear()
-        val passages = vectorRetriever.getPassages()
-        if (passages.isNotEmpty()) {
-            bm25Retriever.indexDocuments(passages)
+    override suspend fun deleteEntity(entityName: String) =
+        mutateVectors {
+            vectorStorageBackend.removeEntity(entityName)
         }
-        if (unifiedSpiEnabled) syncUnifiedSpiFromLocal()
-        hybridRetriever.clearCache()
-    }
 
-    override suspend fun deleteEntityRelation(entityName: String) {
-        vectorStorageBackend.deleteEntityRelation(entityName)
-        bm25Retriever.clear()
-        val passages = vectorRetriever.getPassages()
-        if (passages.isNotEmpty()) {
-            bm25Retriever.indexDocuments(passages)
+    override suspend fun deleteEntityRelation(entityName: String) =
+        mutateVectors {
+            vectorStorageBackend.removeEntityRelation(entityName)
         }
-        if (unifiedSpiEnabled) syncUnifiedSpiFromLocal()
-        hybridRetriever.clearCache()
+
+    private fun mutateVectors(mutate: () -> Unit) {
+        updateIndex {
+            mutate()
+            if (unifiedSpiEnabled) syncUnifiedSpiFromLocal()
+        }
     }
 
     fun run(
         query: String,
         topK: Int = 5,
-    ): String = runWithContext(query, topK = topK).answer
+    ): String = runBlocking { aquery(query, QueryParam(topK = topK)).answer }
 
     fun retrieveContext(
         query: String,
         topK: Int = 5,
-    ): List<String> =
-        if (unifiedSpiEnabled) {
-            retrieveContextFromUnifiedSpi(query, topK)
-        } else {
-            hybridRetriever.retrieve(query, topK = topK)
-        }
+    ): List<String> = preparePrompt(query, topK, maxPaths = 3, summarize = false).passages
 
     fun retrieveCausalPaths(
         query: String,
         maxPaths: Int = 3,
     ): List<List<String>> =
-        if (unifiedSpiEnabled) {
-            retrieveCausalPathsFromUnifiedSpi(query, maxPaths)
-        } else {
-            graphRetriever.retrievePaths(query, maxPaths = maxPaths)
-        }
-
-    private fun runWithContext(
-        query: String,
-        topK: Int = 5,
-    ): CausalRagRunResult {
-        val topPassages =
+        synchronized(indexLock) {
             if (unifiedSpiEnabled) {
-                retrieveContextFromUnifiedSpi(query, topK = topK)
+                retrieveCausalPathsFromUnifiedSpi(query, maxPaths.coerceAtLeast(1))
             } else {
-                val candidates = hybridRetriever.retrieve(query, topK = topK)
-                val reranked = reranker.rerank(query, candidates)
-                reranked.map { it.first }.take(topK)
+                graphRetriever.retrievePaths(query, maxPaths = maxPaths.coerceAtLeast(1))
             }
-        val rerankedPassages =
-            hardTruncateStringsByTokenBudget(
-                items = topPassages,
-                maxTokenSize = effectivePromptContextTokenBudget,
-                model = DEFAULT_TIKTOKEN_MODEL,
-                includePartialLastItem = false,
-            )
-
-        val causalNodes = retrievePathNodes(query)
-        val causalPaths = retrieveCausalPaths(query, maxPaths = 3)
-        val prompt =
-            buildPrompt(
-                query,
-                rerankedPassages,
-                causalPaths = causalPaths,
-                causalNodes = causalNodes,
-                templateStyle = effectiveTemplateStyle,
-                llmInterface = llm,
-            )
-        val answer = llm.generate(prompt, jsonMode = requiresJsonResponseFormat(effectiveTemplateStyle))
-        return CausalRagRunResult(answer, rerankedPassages, causalPaths)
-    }
-
-    private fun retrievePathNodes(query: String): List<String> =
-        if (unifiedSpiEnabled) {
-            retrievePathNodesFromUnifiedSpi(query)
-        } else {
-            graphRetriever.retrievePathNodes(query)
         }
+
+    private fun preparePrompt(
+        query: String,
+        topK: Int,
+        maxPaths: Int,
+        summarize: Boolean,
+    ): PromptBuilder.BudgetedPrompt {
+        val safeTopK = topK.coerceAtLeast(1)
+        val (passages, paths) =
+            synchronized(indexLock) {
+                val candidates = hybridRetriever.retrieve(query, topK = safeTopK)
+                val ranked = reranker.rerank(query, candidates).map { it.first }.take(safeTopK)
+                ranked to retrieveCausalPaths(query, maxPaths)
+            }
+        return PromptBuilder(templateStyle = effectiveTemplateStyle, llmInterface = llm)
+            .buildBudgetedPrompt(query, passages, paths, effectivePromptContextTokenBudget, summarize)
+    }
 
     private fun loadConfig(configPath: String): CaualRagConfig {
         val path = Path.of(configPath)
@@ -381,12 +335,56 @@ class CausalRAG(
         }
     }
 
-    private fun indexDocuments(documents: List<String>) {
+    private fun indexDocuments(
+        documents: List<String>,
+        replace: Boolean,
+    ) {
         val prepared = chunkDocumentsForIngest(documents)
-        graphBuilder.indexDocuments(prepared)
-        vectorRetriever.indexCorpus(prepared)
-        bm25Retriever.indexDocuments(prepared)
-        if (unifiedSpiEnabled) syncUnifiedSpiFromLocal()
+        val newPassages = if (replace) prepared else prepared.distinct() - vectorRetriever.getPassages().toSet()
+        if (newPassages.isEmpty()) return
+        if (replace) vectorRetriever.indexCorpus(newPassages) else vectorRetriever.appendCorpus(newPassages)
+        graphBuilder.indexDocuments(newPassages)
+    }
+
+    private fun refreshBm25() {
+        bm25Retriever.clear()
+        val passages = vectorRetriever.getPassages()
+        if (passages.isNotEmpty()) bm25Retriever.indexDocuments(passages)
+    }
+
+    private fun updateIndex(update: () -> Unit) {
+        synchronized(indexLock) {
+            val graph = graphBuilder.snapshotState()
+            val vectors = vectorRetriever.snapshotState()
+            val session = unifiedSpiSession?.takeIf { unifiedSpiEnabled }
+            val graphStore = session?.graph(unifiedSpiGraphNamespace)
+            val vectorStore = session?.vector(unifiedSpiVectorNamespace)
+            val kvStore = session?.kv(unifiedSpiMetadataNamespace)
+            val persistedGraph = graphStore?.snapshot()
+            val persistedVectors = vectorStore?.snapshot()
+            val persistedMetadata = kvStore?.snapshot()
+            try {
+                update()
+                refreshBm25()
+                hybridRetriever.clearCache()
+            } catch (failure: Exception) {
+                graphBuilder.restoreState(graph)
+                vectorRetriever.restoreState(vectors)
+                for (rollback in listOf<() -> Unit>(
+                    { refreshBm25() },
+                    { if (persistedGraph != null) graphStore.restore(persistedGraph) },
+                    { if (persistedVectors != null) vectorStore.restore(persistedVectors) },
+                    { if (persistedMetadata != null) kvStore.restore(persistedMetadata) },
+                )) {
+                    try {
+                        rollback()
+                    } catch (rollbackFailure: Exception) {
+                        if (rollbackFailure !== failure) failure.addSuppressed(rollbackFailure)
+                    }
+                }
+                throw failure
+            }
+        }
     }
 
     private fun chunkDocumentsForIngest(documents: List<String>): List<String> =
@@ -429,7 +427,6 @@ class CausalRAG(
     private fun saveUnifiedSpiCheckpoint(dir: String): Boolean {
         val session = unifiedSpiSession ?: return false
         return try {
-            syncUnifiedSpiFromLocal()
             runBlocking { session.checkpoint(dir) }
             true
         } catch (ex: IOException) {
@@ -453,14 +450,6 @@ class CausalRAG(
             val path = Path.of(dir)
             val graphLoaded = graphBuilder.load(path.resolve("graph.json").toString())
             val vectorsLoaded = vectorRetriever.loadIndex(path.resolve("vector_cache").toString())
-            if (vectorsLoaded) {
-                val passages = vectorRetriever.getPassages()
-                if (passages.isNotEmpty()) {
-                    bm25Retriever.indexDocuments(passages)
-                } else {
-                    logger.warn { "Vector index loaded but no passages found to rebuild BM25 index." }
-                }
-            }
             graphLoaded && vectorsLoaded
         } catch (ex: IOException) {
             logger.error(ex) { "Failed to load pipeline data from $dir" }
@@ -663,6 +652,7 @@ class CausalRAG(
                 "recordCount" to records.size,
                 "nodeCount" to graphSnapshot.nodes.size,
                 "edgeCount" to graphSnapshot.edges.size,
+                "embeddingIdentity" to vectorRetriever.embeddingIdentity,
             ),
         )
     }
@@ -706,23 +696,28 @@ class CausalRAG(
             }
         val ids = records.map { it.id }
 
-        vectorRetriever.indexCorpus(
-            texts = passages,
-            metadata = metadata,
-            ids = ids,
-        )
-        bm25Retriever.clear()
-        if (passages.isNotEmpty()) {
-            bm25Retriever.indexDocuments(passages)
+        val identity = session.kv(unifiedSpiMetadataNamespace).snapshot().entries["embeddingIdentity"]
+        if (identity == null) {
+            vectorRetriever.indexCorpus(passages, metadata.mapIndexed { index, row -> row + ("id" to ids[index]) }, ids)
+            syncUnifiedSpiFromLocal()
+        } else {
+            check(identity == vectorRetriever.embeddingIdentity) { "Unified CausalRAG index uses a different embedding model or provider" }
+            vectorRetriever.restoreState(
+                VectorStoreRetriever.IndexState(
+                    passages,
+                    metadata.mapIndexed { index, row -> row + ("id" to ids[index]) },
+                    records.map { it.vector.toDoubleArray() },
+                ),
+            )
         }
+        refreshBm25()
         hybridRetriever.clearCache()
     }
 
     private fun retrieveContextFromUnifiedSpi(
         query: String,
         topK: Int,
-    ): List<String> {
-        ensureUnifiedSpiIndexInitialized()
+    ): List<Pair<String, Double>> {
         val session = unifiedSpiSession ?: return emptyList()
         val queryEmbedding = vectorRetriever.encodeForQuery(query) ?: return emptyList()
         return try {
@@ -730,9 +725,8 @@ class CausalRAG(
                 .vector(unifiedSpiVectorNamespace, dimensions = queryEmbedding.size, metric = "cosine")
                 .query(queryEmbedding.toList(), topK = topK.coerceAtLeast(1))
                 .map { record ->
-                    record.metadata["passage"]?.toString()
-                        ?: record.metadata["content"]?.toString()
-                        ?: record.id
+                    val passage = record.metadata["passage"]?.toString() ?: record.metadata["content"]?.toString() ?: record.id
+                    passage to cosineSimilarity(queryEmbedding, record.vector.toDoubleArray())
                 }
         } catch (ex: RuntimeException) {
             logger.error(ex) { "Unified SPI vector retrieval failed; returning empty context." }
@@ -745,7 +739,6 @@ class CausalRAG(
         topK: Int = 5,
         maxHops: Int = 2,
     ): List<String> {
-        ensureUnifiedSpiIndexInitialized()
         val session = unifiedSpiSession ?: return emptyList()
         val snapshot = session.graph(unifiedSpiGraphNamespace).snapshot()
         val (graph, nodeText) = graphFromSnapshot(snapshot)
@@ -784,7 +777,6 @@ class CausalRAG(
         query: String,
         maxPaths: Int,
     ): List<List<String>> {
-        ensureUnifiedSpiIndexInitialized()
         val session = unifiedSpiSession ?: return emptyList()
         val snapshot = session.graph(unifiedSpiGraphNamespace).snapshot()
         val (graph, nodeText) = graphFromSnapshot(snapshot)
