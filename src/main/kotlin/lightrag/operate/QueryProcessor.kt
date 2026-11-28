@@ -28,7 +28,7 @@ import lightrag.utils.JsonUtils
 import lightrag.utils.Prompts
 import lightrag.utils.computeMd5
 import shared.chunking.DEFAULT_TIKTOKEN_MODEL
-import shared.chunking.hardTruncateStringsByTokenBudget
+import shared.chunking.countTokensWithJTokKit
 
 private val logger = KotlinLogging.logger {}
 
@@ -422,8 +422,37 @@ class QueryProcessor(
         chunksVdb: BaseVectorStorage?,
     ): ContextResult {
         val searchResult = performKgSearch(query, queryParam, chunksVdb)
-        val entities = searchResult.finalEntities
-        val relations = searchResult.finalRelations
+        val model = (globalConfig["tiktoken_model"] as? String)?.ifBlank { DEFAULT_TIKTOKEN_MODEL } ?: DEFAULT_TIKTOKEN_MODEL
+
+        fun render(
+            entities: String = "",
+            relations: String = "",
+            chunks: List<Map<String, Any>> = emptyList(),
+        ): String =
+            Prompts.KG_QUERY_CONTEXT
+                .replace("{entities_str}", entities)
+                .replace("{relations_str}", relations)
+                .replace("{text_chunks_str}", buildTextChunksStr(chunks))
+                .replace("{reference_list_str}", buildReferenceListStr(chunks))
+
+        if (countTokensWithJTokKit(render(), model) > queryParam.maxTotalTokens) {
+            val emptyRows = emptyList<Map<String, Any>>()
+            return ContextResult("", mapOf("entities" to emptyRows, "relations" to emptyRows, "chunks" to emptyRows))
+        }
+        val entities =
+            fittingPrefix(searchResult.finalEntities) { rows ->
+                val text = buildEntitiesStr(rows)
+                countTokensWithJTokKit(text, model) <= queryParam.maxEntityTokens &&
+                    countTokensWithJTokKit(render(entities = text), model) <= queryParam.maxTotalTokens
+            }
+        val entitiesStr = buildEntitiesStr(entities)
+        val relations =
+            fittingPrefix(searchResult.finalRelations.take(queryParam.topK)) { rows ->
+                val text = buildRelationsStr(rows)
+                countTokensWithJTokKit(text, model) <= queryParam.maxRelationTokens &&
+                    countTokensWithJTokKit(render(entitiesStr, text), model) <= queryParam.maxTotalTokens
+            }
+        val relationsStr = buildRelationsStr(relations)
 
         val entityChunks = findRelatedTextUnitFromEntities(entities)
         val relationChunks = findRelatedTextUnitFromRelations(relations, entityChunks)
@@ -432,38 +461,27 @@ class QueryProcessor(
             (0 until sources.maxOf { it.size })
                 .flatMap { index -> sources.mapNotNull { it.getOrNull(index) } }
                 .distinctBy { it["id"] ?: it["chunk_id"] ?: it["content"] }
-        val allChunks = hardTruncateChunksByContextBudget(chunks, queryParam.maxTotalTokens)
-
-        val entitiesStr = buildEntitiesStr(entities)
-        val relationsStr = buildRelationsStr(relations, queryParam.topK)
-        val textChunksStr = buildTextChunksStr(allChunks)
-        val referenceListStr = buildReferenceListStr(allChunks)
-
-        val contextContent =
-            Prompts.KG_QUERY_CONTEXT
-                .replace("{entities_str}", entitiesStr)
-                .replace("{relations_str}", relationsStr)
-                .replace("{text_chunks_str}", textChunksStr)
-                .replace("{reference_list_str}", referenceListStr)
-
+        val allChunks =
+            fittingPrefix(chunks) { rows ->
+                countTokensWithJTokKit(render(entitiesStr, relationsStr, rows), model) <= queryParam.maxTotalTokens
+            }
+        val contextContent = render(entitiesStr, relationsStr, allChunks)
         val rawData = mapOf("entities" to entities, "relations" to relations, "chunks" to allChunks)
         return ContextResult(contextStr = contextContent, rawData = rawData)
     }
 
-    private fun hardTruncateChunksByContextBudget(
-        chunks: List<Map<String, Any>>,
-        maxTokens: Int,
-    ): List<Map<String, Any>> {
-        if (chunks.isEmpty() || maxTokens <= 0) return emptyList()
-        val tokenModel = (globalConfig["tiktoken_model"] as? String)?.ifBlank { DEFAULT_TIKTOKEN_MODEL } ?: DEFAULT_TIKTOKEN_MODEL
-        val keptContents =
-            hardTruncateStringsByTokenBudget(
-                items = chunks.map { it["content"]?.toString().orEmpty() },
-                maxTokenSize = maxTokens,
-                model = tokenModel,
-                includePartialLastItem = false,
-            )
-        return chunks.take(keptContents.size)
+    private fun <T> fittingPrefix(
+        rows: List<T>,
+        fits: (List<T>) -> Boolean,
+    ): List<T> {
+        if (rows.isEmpty() || fits(rows)) return rows
+        var low = 0
+        var high = rows.lastIndex
+        while (low < high) {
+            val mid = low + (high - low + 1) / 2
+            if (fits(rows.subList(0, mid))) low = mid else high = mid - 1
+        }
+        return rows.subList(0, low)
     }
 
     private fun buildEntitiesStr(entities: List<Map<String, Any>>): String =
@@ -474,11 +492,8 @@ class QueryProcessor(
             }" }"""
         }
 
-    private fun buildRelationsStr(
-        relations: List<Map<String, Any>>,
-        topK: Int,
-    ): String =
-        relations.take(topK).joinToString("\n") { relation ->
+    private fun buildRelationsStr(relations: List<Map<String, Any>>): String =
+        relations.joinToString("\n") { relation ->
             """{ "src_id": "${relation["src_id"]}", "tgt_id": "${relation["tgt_id"]}", "content": "${
                 JsonUtils.escape((relation["description"] ?: "").toString())
             }" }"""
@@ -497,6 +512,17 @@ class QueryProcessor(
                 val filePath = chunk["file_path"] ?: "unknown_source"
                 "[${index + 1}] $filePath"
             }.joinToString("\n")
+
+    private fun <T> interleave(
+        local: List<T>,
+        global: List<T>,
+    ): List<T> =
+        buildList {
+            for (index in 0 until maxOf(local.size, global.size)) {
+                local.getOrNull(index)?.let { add(it) }
+                global.getOrNull(index)?.let { add(it) }
+            }
+        }
 
     private suspend fun performKgSearch(
         query: String,
@@ -545,8 +571,13 @@ class QueryProcessor(
 
             awaitAll(localSearch, globalSearch, vectorSearch)
 
-            val finalEntities = (localEntities + globalEntities).distinctBy { it["entity_name"] }
-            val finalRelations = (localRelations + globalRelations).distinctBy { it["src_id"] to it["tgt_id"] }
+            val finalEntities = interleave(localEntities, globalEntities).distinctBy { it["entity_name"] }
+            val finalRelations =
+                interleave(localRelations, globalRelations).distinctBy {
+                    val src = it.getValue("src_id").toString()
+                    val tgt = it.getValue("tgt_id").toString()
+                    if (src <= tgt) src to tgt else tgt to src
+                }
 
             PerformKgSearchResult(finalEntities, finalRelations, vectorChunks)
         }
@@ -616,7 +647,7 @@ class QueryProcessor(
                 val srcId = it["src_id"] as? String
                 val tgtId = it["tgt_id"] as? String
                 if (srcId != null && tgtId != null) {
-                    val pair = if (srcId < tgtId) srcId to tgtId else tgtId to srcId
+                    val pair = srcId to tgtId
                     edgeDataDict[pair]?.let {
                         val mutableEdgeProps = it.toMutableMap()
                         if (!mutableEdgeProps.containsKey("weight")) {
@@ -664,6 +695,8 @@ class QueryProcessor(
                 combined["src_tgt"] = pair
                 combined["rank"] = edgeDegreesDict[pair] ?: 0
                 combined.putAll(edgeProps)
+                combined["src_id"] = pair.first
+                combined["tgt_id"] = pair.second
                 combined["weight"] = weight
                 allEdgesData.add(combined)
             }

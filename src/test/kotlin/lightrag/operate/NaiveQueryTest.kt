@@ -7,6 +7,7 @@ import dev.langchain4j.model.chat.StreamingChatModel
 import dev.langchain4j.model.chat.response.ChatResponse
 import dev.langchain4j.model.chat.response.StreamingChatResponseHandler
 import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.slot
@@ -96,8 +97,10 @@ class NaiveQueryTest {
     @Test
     fun `returns context only when onlyNeedContext is true`() {
         runBlocking {
-            val params = defaultParams(onlyNeedContext = true)
+            val base = defaultParams(onlyNeedContext = true)
+            val params = base.copy(queryParam = base.queryParam.copy(topK = 1, chunkTopK = 4))
             val result = naiveQuery(params)
+            coVerify { params.chunksVdb.query(params.query, 4) }
             assertNotNull(result)
             assertNotNull(result.content)
             assertTrue(result.content.contains("ref1") || result.content.contains("AI is Artificial Intelligence"))

@@ -77,7 +77,7 @@ private suspend fun getVectorContext(
     // Not used in naive, so omitting for now
 ): List<Map<String, Any?>> {
     try {
-        val searchTopK = queryParam.chunkTopK.coerceAtMost(queryParam.topK)
+        val searchTopK = if (queryParam.chunkTopK == 0) queryParam.topK else queryParam.chunkTopK
         val cosineThreshold = chunksVdb.cosineBetterThanThreshold // Assuming this exists
 
         val results = chunksVdb.query(query, searchTopK)

@@ -44,6 +44,32 @@ class QueryProcessorTest {
     }
 
     @Test
+    fun `hybrid retains ranked local and global relationships and their evidence`() {
+        runBlocking {
+            coEvery { entities.query("term", any()) } returns listOf(mapOf("entity_name" to "A"))
+            coEvery { graph.getNodesBatch(listOf("A")) } returns mapOf("A" to emptyMap())
+            val local = listOf("A" to "B", "A" to "C")
+            coEvery { graph.getNodesEdgesBatch(listOf("A")) } returns mapOf("A" to local)
+            coEvery { relations.query("theme", any()) } returns
+                listOf(mapOf("src_id" to "Y", "tgt_id" to "X"), mapOf("src_id" to "B", "tgt_id" to "A"))
+            coEvery { graph.getEdgesBatch(any()) } returns
+                (local + listOf("Y" to "X", "B" to "A")).associateWith { (_, target) -> mapOf("source_id" to target) }
+            coEvery { textChunks.getById(any()) } answers { mapOf("content" to firstArg<String>()) }
+            val params = QueryParam(mode = "hybrid", onlyNeedContext = true, llKeywords = listOf("term"), hlKeywords = listOf("theme"))
+            val data = assertNotNull(processor.kgQuery("question", params)?.rawData)
+            val edges = (data["relations"] as List<*>).map { it as Map<*, *> }
+            assertEquals(listOf("A" to "B", "Y" to "X", "A" to "C"), edges.map { it["src_id"] to it["tgt_id"] })
+            assertEquals(listOf("B", "X", "C"), (data["chunks"] as List<*>).map { (it as Map<*, *>)["id"] })
+
+            val limited = assertNotNull(processor.kgQuery("question", params.copy(maxRelationTokens = 1))?.rawData)
+            assertEquals(emptyList<Any>(), limited["relations"])
+            assertEquals(emptyList<Any>(), limited["chunks"])
+            val tiny = assertNotNull(processor.kgQuery("question", params.copy(maxTotalTokens = 1)))
+            assertEquals("", tiny.content)
+        }
+    }
+
+    @Test
     fun `reusing query params does not retain generated fallback keywords`() {
         runBlocking {
             every { chat.supportedCapabilities() } returns emptySet()
