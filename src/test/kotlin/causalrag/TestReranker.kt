@@ -350,5 +350,9 @@ class TestReranker {
 
         assertEquals(1, retriever.retrieve("evidence", topK = 1).size)
         assertEquals(5, retriever.retrieve("evidence", topK = 5).size)
+        assertTrue(retriever.getExplanation("evidence", "evidence 4").contains("Semantic relevance score"))
+        assertTrue(retriever.getExplanation("another query", "evidence 4").contains("No detailed scoring information"))
+        retriever.clearCache()
+        assertTrue(retriever.getExplanation("evidence", "evidence 4").contains("No detailed scoring information"))
     }
 }

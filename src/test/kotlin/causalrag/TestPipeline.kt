@@ -1,6 +1,7 @@
 package causalrag
 
 import causalrag.generator.llm.LLMInterface
+import causalrag.retriever.VectorStoreRetriever
 import io.mockk.every
 import io.mockk.mockkConstructor
 import io.mockk.unmockkConstructor
@@ -13,6 +14,7 @@ import kotlinx.serialization.json.JsonPrimitive
 import shared.rag.spi.persistence.InMemoryPersistenceBackend
 import shared.rag.spi.persistence.PersistenceSession
 import shared.rag.spi.persistence.VectorIndexStore
+import shared.rag.spi.persistence.VectorRecord
 import shared.rag.spi.persistence.VectorSnapshot
 import java.nio.file.Files
 import java.nio.file.Path
@@ -189,6 +191,92 @@ class TestPipeline {
                     CausalRAG(configPath = configPath.toString(), persistenceSession = backing, useUnifiedSpiForRetrievalAndIndex = true)
                 assertEquals(testDocs.take(2).toSet(), restarted.retrieveContext("coastal flooding", 10).toSet())
             }
+        }
+
+    @Test
+    fun bootstrapReembedsLegacySpiRecordsAndRejectsAnIncompatibleIdentity() =
+        runBlocking {
+            InMemoryPersistenceBackend().open(emptyMap()).use { session ->
+                val metadata = session.kv("causalrag_metadata")
+                val encoder = VectorStoreRetriever("text-embedding-3-small", embeddingApiKey = "")
+                val dimension = assertNotNull(encoder.encodeForQuery(testDocs.first())).size
+                val legacy = List(dimension) { 0.0 }
+                session.vector("causalrag_vector", dimensions = dimension).upsert(
+                    VectorRecord("legacy", legacy, mapOf("content" to testDocs.first())),
+                )
+                val rag =
+                    CausalRAG(configPath = configPath.toString(), persistenceSession = session, useUnifiedSpiForRetrievalAndIndex = true)
+                val migrated =
+                    session
+                        .vector("causalrag_vector")
+                        .snapshot()
+                        .records
+                        .single()
+                assertEquals("legacy", migrated.id)
+                assertEquals(dimension, migrated.vector.size)
+                assertTrue(migrated.vector != legacy)
+                assertTrue(metadata.get("embeddingIdentity") is String)
+                assertEquals(listOf(testDocs.first()), rag.retrieveContext("climate change", 10))
+
+                metadata.put("embeddingIdentity", "different-provider-and-model")
+                assertFailsWith<IllegalStateException> {
+                    CausalRAG(configPath = configPath.toString(), persistenceSession = session, useUnifiedSpiForRetrievalAndIndex = true)
+                }
+                assertEquals(
+                    migrated,
+                    session
+                        .vector("causalrag_vector")
+                        .snapshot()
+                        .records
+                        .single(),
+                )
+            }
+        }
+
+    @Test
+    fun usesBm25EvidenceWhenUnifiedVectorSearchFails() =
+        runBlocking {
+            InMemoryPersistenceBackend().open(emptyMap()).use { backing ->
+                val session =
+                    object : PersistenceSession by backing {
+                        override fun vector(
+                            namespace: String,
+                            dimensions: Int?,
+                            metric: String,
+                        ): VectorIndexStore {
+                            val store = backing.vector(namespace, dimensions, metric)
+                            return object : VectorIndexStore by store {
+                                override fun query(
+                                    vector: List<Double>,
+                                    topK: Int,
+                                ): List<VectorRecord> = error("injected vector query failure")
+                            }
+                        }
+                    }
+                val rag =
+                    CausalRAG(configPath = configPath.toString(), persistenceSession = session, useUnifiedSpiForRetrievalAndIndex = true)
+                rag.aupsert(testDocs.first())
+                assertEquals(listOf(testDocs.first()), rag.retrieveContext("climate change", 10))
+            }
+        }
+
+    @Test
+    fun directVectorStoragePreservesMetadataAndDeletesMatchingRows() =
+        runBlocking {
+            val retriever = VectorStoreRetriever("text-embedding-3-small", embeddingApiKey = "")
+            val store: shared.rag.CommonVectorStorage<Any?> = CausalRAGVectorStorage(retriever)
+            store.upsert(
+                mapOf(
+                    "entity" to mapOf("content" to testDocs[0], "entity_id" to "climate"),
+                    "edge" to mapOf("content" to testDocs[1], "target_id" to "coast"),
+                    "other" to mapOf("content" to testDocs[2]),
+                ),
+            )
+            store.upsert(mapOf("other" to mapOf("source" to "report")))
+            assertEquals("report", store.query("coastal flooding", 3).single { it["id"] == "other" }["source"])
+            store.deleteEntity("climate")
+            store.deleteEntityRelation("coast")
+            assertEquals(listOf("other"), store.query("coastal flooding", 3).map { it["id"] })
         }
 
     @Test
