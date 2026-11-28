@@ -98,9 +98,9 @@ class YoutuRagUnifiedAdapter(
         if (!target.exists()) target.createDirectories()
         require(target.isDirectory()) { "saveGraph path must be a directory: $target" }
 
-        DatasetArtifacts.read(graph) {
-            copyIfExists(graph, target.resolve(graph.fileName))
-            copyIfExists(chunks, target.resolve(chunks.fileName))
+        DatasetArtifacts.readPair(graph, chunks)?.let { (graphBytes, chunkBytes) ->
+            // A graph without a chunk artifact is published with empty chunks, as in loadGraph.
+            DatasetArtifacts.publish(target.resolve(graph.fileName), graphBytes, target.resolve(chunks.fileName), chunkBytes)
         }
         copyIfExists(corpus, target.resolve(corpus.fileName))
         if (unifiedSpiEnabled) {
@@ -122,12 +122,7 @@ class YoutuRagUnifiedAdapter(
         val selectedDataset = datasetName
         val sourceGraph = source.resolve("${selectedDataset}_new.json")
         val sourceChunks = source.resolve("$selectedDataset.txt")
-        if (sourceGraph.exists()) {
-            val (graphBytes, chunkBytes) =
-                DatasetArtifacts.read(sourceGraph) {
-                    Files.readAllBytes(sourceGraph) to
-                        if (sourceChunks.exists()) Files.readAllBytes(sourceChunks) else byteArrayOf()
-                }
+        DatasetArtifacts.readPair(sourceGraph, sourceChunks)?.let { (graphBytes, chunkBytes) ->
             DatasetArtifacts.publish(graphPath(selectedDataset), graphBytes, chunksPath(selectedDataset), chunkBytes)
         }
         copyIfExists(source.resolve("corpus.json"), corpusPath(selectedDataset))
@@ -272,10 +267,8 @@ class YoutuRagUnifiedAdapter(
         if (graphPayload != null) {
             val graph = graphPath(selectedDataset)
             val chunks = chunksPath(selectedDataset)
-            DatasetArtifacts.read(graph) {
-                if (force || !graph.exists() || !chunks.exists()) {
-                    DatasetArtifacts.publish(graph, graphPayload.encodeToByteArray(), chunks, chunksPayload.orEmpty().encodeToByteArray())
-                }
+            DatasetArtifacts.publish(graph, graphPayload.encodeToByteArray(), chunks, chunksPayload.orEmpty().encodeToByteArray()) {
+                force || !graph.exists() || !chunks.exists()
             }
         }
         if (force || !corpusPath(selectedDataset).exists()) {

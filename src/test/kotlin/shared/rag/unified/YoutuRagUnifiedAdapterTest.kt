@@ -8,10 +8,12 @@ import io.mockk.mockkObject
 import io.mockk.unmockkObject
 import kotlinx.coroutines.runBlocking
 import shared.rag.spi.persistence.InMemoryPersistenceBackend
+import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
@@ -162,13 +164,16 @@ class YoutuRagUnifiedAdapterTest {
                 assertTrue(Files.isRegularFile(readerRoot.resolve("data/uploaded/sample/corpus.json")))
 
                 val checkpoint = root.resolve("checkpoint")
+                session.kv("checkpoint-probe").put("marker", "before checkpoint")
                 reader.saveGraph(checkpoint.toString())
+                session.kv("checkpoint-probe").put("marker", "after checkpoint")
                 assertEquals(graph, Files.readString(checkpoint.resolve("sample_new.json")))
                 assertEquals(chunks, Files.readString(checkpoint.resolve("sample.txt")))
                 assertTrue(Files.exists(root.resolve("checkpoint.unified_spi/manifest.json")))
                 reader.drop()
                 assertTrue(files.snapshot().entries.isEmpty())
                 reader.loadGraph(checkpoint.toString())
+                assertEquals("before checkpoint", session.kv("checkpoint-probe").get("marker"))
                 assertEquals(graph, session.kv("youturag_sample_files").get("graph_json"))
                 assertEquals(
                     1,
@@ -200,6 +205,34 @@ class YoutuRagUnifiedAdapterTest {
 
             assertEquals("", Files.readString(localChunks))
             assertEquals("[]", Files.readString(root.resolve("output/graphs/sample_new.json")))
+        } finally {
+            root.toFile().deleteRecursively()
+        }
+    }
+
+    @Test
+    fun `snapshot publication preserves earlier chunks when graph replacement fails`() {
+        val root = Files.createTempDirectory("youtu-snapshot-publish")
+        try {
+            val config = ConfigManager(writeMinimalYoutuConfig(root).toString())
+            val adapter = YoutuRagUnifiedAdapter(config, datasetName = "sample", rootDir = root)
+            val source = Files.createDirectory(root.resolve("source"))
+            Files.writeString(source.resolve("sample_new.json"), "[]")
+            adapter.loadGraph(source.toString())
+
+            val destination = Files.createDirectory(root.resolve("destination"))
+            val previous = Files.createDirectory(destination.resolve("sample_new.json"))
+            Files.writeString(previous.resolve("marker"), "previous graph")
+            val destinationChunks = destination.resolve("sample.txt")
+            Files.writeString(destinationChunks, "previous chunks")
+            assertFailsWith<IOException> { adapter.saveGraph(destination.toString()) }
+            assertEquals("previous chunks", Files.readString(destinationChunks))
+
+            previous.toFile().deleteRecursively()
+            Files.delete(root.resolve("output/chunks/sample.txt"))
+            adapter.saveGraph(destination.toString())
+            assertEquals("[]", Files.readString(destination.resolve("sample_new.json")))
+            assertEquals("", Files.readString(destinationChunks))
         } finally {
             root.toFile().deleteRecursively()
         }

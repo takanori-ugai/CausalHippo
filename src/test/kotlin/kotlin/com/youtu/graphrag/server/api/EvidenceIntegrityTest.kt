@@ -5,6 +5,8 @@ import com.youtu.graphrag.shared.graph.DatasetArtifacts
 import shared.chunking.countTokensWithJTokKit
 import java.io.IOException
 import java.nio.file.Files
+import java.nio.file.StandardCopyOption.ATOMIC_MOVE
+import java.nio.file.StandardCopyOption.REPLACE_EXISTING
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
@@ -51,6 +53,46 @@ class EvidenceIntegrityTest {
     fun `a question that exceeds the budget on its own produces no prompt`() {
         val result = buildBoundedPrompt(emptyList(), emptyList(), 5) { _, _ -> "long question ".repeat(30) }
         kotlin.test.assertNull(result)
+    }
+
+    @Test
+    fun `failed rollback blocks artifact reads until replacement succeeds`() {
+        val root = Files.createTempDirectory("youtu-artifact-blocked")
+        try {
+            val graph = root.resolve("output/graphs/sample_new.json")
+            val chunks = root.resolve("output/chunks/sample.txt")
+            val previousGraph = "[]".encodeToByteArray()
+            DatasetArtifacts.publish(graph, previousGraph, chunks, "old chunk".encodeToByteArray())
+            var moves = 0
+
+            val failure =
+                assertFailsWith<IOException> {
+                    DatasetArtifacts.publish(
+                        graph,
+                        previousGraph,
+                        chunks,
+                        "uncommitted chunk".encodeToByteArray(),
+                        move = { source, target ->
+                            if (++moves > 1) throw IOException("injected move failure")
+                            Files.move(source, target, ATOMIC_MOVE, REPLACE_EXISTING)
+                        },
+                    )
+                }
+            assertEquals(1, failure.suppressed.size)
+            assertEquals("uncommitted chunk", Files.readString(chunks))
+            assertFailsWith<IllegalStateException> { DatasetArtifacts.readPair(graph, chunks) }
+
+            val configFile = root.resolve("config.yaml")
+            Files.writeString(configFile, "{}")
+            val service = GraphConstructionService(ConfigManager(configFile.toString()), root)
+            assertFailsWith<IllegalStateException> { service.loadGraphVisualization("sample") }
+
+            DatasetArtifacts.publish(graph, previousGraph, chunks, "repaired chunk".encodeToByteArray())
+            assertEquals("repaired chunk", DatasetArtifacts.readPair(graph, chunks)?.second?.decodeToString())
+            assertNotNull(service.loadGraphVisualization("sample"))
+        } finally {
+            root.toFile().deleteRecursively()
+        }
     }
 
     @Test
