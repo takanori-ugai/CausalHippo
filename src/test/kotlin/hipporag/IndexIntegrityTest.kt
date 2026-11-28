@@ -11,9 +11,11 @@ import io.mockk.every
 import io.mockk.mockk
 import io.mockk.mockkStatic
 import io.mockk.unmockkStatic
+import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
 import shared.rag.unified.HippoRagUnifiedAdapter
 import shared.rag.unified.UnifiedMode
 import shared.rag.unified.UnifiedQuery
@@ -153,6 +155,72 @@ class IndexIntegrityTest {
             val error = assertFails { rag.loadGraph(snapshot.toString()) }
             assertTrue(error.message.orEmpty().contains("inconsistent embedding dimensions"))
             assertEquals(listOf(first), rag.query("query", QueryParam("dpr", includeAnswer = false)).docs)
+        }
+
+    @Test
+    fun rejectsGraphSnapshotsWithUnnamedVerticesOrDanglingEdges() =
+        withRag { config, _ ->
+            val rag = HippoRAG(config)
+            rag.upsert(first)
+            val snapshot = Path.of(config.saveDir, "invalid-graph")
+            rag.saveGraph(snapshot.toString())
+            val file = snapshot.resolve("working_dir/graph.json")
+            val graph = Json.parseToJsonElement(Files.readString(file)) as JsonObject
+            val vertices = graph.getValue("vertices") as JsonArray
+            val edges = graph.getValue("edges") as JsonArray
+            val unnamed = JsonArray(listOf(JsonObject(emptyMap())) + vertices.drop(1))
+            val dangling = JsonArray(listOf(JsonObject((edges.first() as JsonObject) + ("target" to JsonPrimitive(999)))) + edges.drop(1))
+
+            Files.writeString(file, JsonObject(graph + ("vertices" to unnamed)).toString())
+            assertTrue(assertFails { rag.loadGraph(snapshot.toString()) }.message.orEmpty().contains("unnamed vertices"))
+            Files.writeString(file, JsonObject(graph + ("edges" to dangling)).toString())
+            assertTrue(assertFails { rag.loadGraph(snapshot.toString()) }.message.orEmpty().contains("invalid edges"))
+            assertEquals(listOf(first), rag.query("query", QueryParam("dpr", includeAnswer = false)).docs)
+        }
+
+    @Test
+    fun deletingWithoutProvenancePreservesCommittedEvidence() =
+        withRag { config, _ ->
+            HippoRag(config).index(listOf(first, second))
+            Files.delete(Path.of(config.saveDir, "openie_results_ner_${config.llmName}.json"))
+            val restarted = HippoRag(config)
+            val rag = HippoRAG(restarted)
+            val before = rag.inspectGraph()
+            val error = assertFails { restarted.delete(listOf(first)) }
+            assertTrue(error.message.orEmpty().contains("without OpenIE provenance"))
+            assertEquals(before, rag.inspectGraph())
+            assertEquals(setOf(first, second), rag.query("query", QueryParam("dpr", includeAnswer = false)).docs.toSet())
+        }
+
+    @Test
+    fun dropClearsPersistentIndexAndAllowsRebuilding() =
+        withRag { config, _ ->
+            val rag = HippoRAG(config)
+            rag.upsert(first)
+            assertTrue(assertFails { rag.query("query", QueryParam("unsupported")) }.message.orEmpty().contains("Unsupported"))
+            rag.drop()
+            assertTrue(rag.query("query", QueryParam("dpr", includeAnswer = false)).docs.isEmpty())
+            assertTrue(Files.notExists(Path.of(config.saveDir, "openie_results_ner_${config.llmName}.json")))
+            rag.upsert(second)
+            val result = rag.query("query", QueryParam("hippo", includeAnswer = true))
+            assertEquals(listOf(second), result.answerContext)
+            assertEquals("Alpha", result.answer)
+        }
+
+    @Test
+    fun metadataOnlyAsyncQueryDoesNotRequireAnIndex() =
+        withRag { config, _ ->
+            val adapter = HippoRagUnifiedAdapter(HippoRAG(config))
+            val response =
+                runBlocking {
+                    adapter.aquery(
+                        "query",
+                        UnifiedQuery(mode = UnifiedMode.DPR, includeAnswer = false, includeContext = false, includeReferences = false),
+                    )
+                }
+            assertTrue(response.context.isEmpty())
+            assertTrue(response.references.isEmpty())
+            assertEquals("dpr", response.metadata["modeUsed"])
         }
 
     @Test
