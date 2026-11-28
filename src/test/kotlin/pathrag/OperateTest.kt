@@ -256,6 +256,9 @@ class OperateTest {
                     mapOf("fixed_low_level_keywords" to listOf("A", "D")),
                     { _, _, _, _, _, _, _ -> error("unexpected model call") },
                 )
+            val routeRows = context.lineSequence().filter { it.contains("through edge(") }.toList()
+            // The two shorter routes score higher and should appear closest to the question.
+            assertEquals(listOf(true, true, false, false), routeRows.map { it.contains("edge(B-C)") })
             val threeEdgeRoutes = context.lineSequence().filter { it.contains("edge(B-C)") }.toList()
             assertEquals(2, threeEdgeRoutes.size)
             assertTrue(threeEdgeRoutes.any { it.contains("edge(A-B)") && it.contains("edge(C-D)") })
