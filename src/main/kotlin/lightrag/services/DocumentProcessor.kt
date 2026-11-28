@@ -164,6 +164,8 @@ class DocumentProcessor(
             relationshipsVdb = stores.relationshipsVdb,
             fullEntities = stores.fullEntities,
             fullRelations = stores.fullRelations,
+            globalConfig = globalConfig,
+            chunkFilePaths = document.chunks.mapValues { (_, chunk) -> chunk.getValue("file_path").toString() },
         )
     }
 
