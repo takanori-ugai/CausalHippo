@@ -146,6 +146,7 @@ class TestVectorStoreRetriever {
             listOf(
                 "[[1.0, 0.0]]" to """{"passages":["other"],"embedding_provider":"foreign"}""",
                 "[[1.0, 0.0]]" to """{"passages":["other"],"vector_dimension":3}""",
+                "[[1.0, 0.0, 0.0]]" to """{"passages":["other"]}""",
                 "[[1.0, 0.0]]" to """{}""",
                 "[[]]" to """{"passages":["other"]}""",
                 "[[1.0, 0.0], [1.0]]" to """{"passages":["one","two"]}""",
@@ -163,17 +164,49 @@ class TestVectorStoreRetriever {
     fun legacyCacheWithoutMetadataRowsOrIdsRestoresWithStableDefaults() {
         val cache = Files.createDirectory(tempDir.resolve("legacy-cache"))
         Files.writeString(cache.resolve("vectors.json"), "[[1.0,0.0],[0.0,1.0]]")
-        Files.writeString(cache.resolve("metadata.json"), """{"passages":["one","two"],"metadata":[{"verified":true,"weight":1.5}]}""")
+        Files.writeString(
+            cache.resolve("metadata.json"),
+            """{"passages":["one","two"],"metadata":[{"verified":true,"weight":1.5,"source":"archive"},null]}""",
+        )
         val reader = VectorStoreRetriever(dimension = 2)
         assertTrue(reader.loadCached(cache.toString()))
         assertEquals(listOf("one", "two"), reader.getPassages())
-        assertEquals(mapOf("id" to "0", "position" to 0, "verified" to true, "weight" to 1.5), reader.getMetadata().first())
+        assertEquals(
+            mapOf("id" to "0", "position" to 0, "verified" to true, "weight" to 1.5, "source" to "archive"),
+            reader.getMetadata().first(),
+        )
         assertEquals(mapOf("id" to "1", "position" to 1), reader.getMetadata().last())
 
         Files.writeString(cache.resolve("vectors.json"), "[]")
         Files.writeString(cache.resolve("metadata.json"), """{"passages":[]}""")
         assertTrue(reader.loadCached(cache.toString()))
         assertTrue(reader.getPassages().isEmpty())
+    }
+
+    @Test
+    fun configuredOpenAIIdentityIsRecordedWithoutMakingAnEmbeddingRequest() {
+        val index = VectorStoreRetriever(embeddingModel = "text-embedding-3-small", embeddingApiKey = "unused-test-key")
+        assertEquals("openai:text-embedding-3-small", index.embeddingIdentity)
+    }
+
+    @Test
+    fun acceptsConsistentCustomVectorsWithoutAKnownModelDimension() {
+        val encoder =
+            object : EmbeddingModel {
+                override fun encode(text: String): DoubleArray = doubleArrayOf(1.0, 0.0, 0.5)
+            }
+        val index =
+            VectorStoreRetriever(
+                embeddingModel = "custom-test-model",
+                embeddingApiKey = "unused-test-key",
+                embeddingModelOverride = encoder,
+            )
+        index.indexCorpus(listOf("custom passage"))
+        index.appendCorpus(emptyList())
+        assertTrue(index.saveIndex(tempDir.toString()))
+        index.indexCorpus(listOf("temporary passage"))
+        assertTrue(index.loadCached(tempDir.toString()))
+        assertEquals(listOf("custom passage"), index.getPassages())
     }
 
     @Test

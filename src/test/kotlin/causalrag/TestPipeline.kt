@@ -124,10 +124,24 @@ class TestPipeline {
     }
 
     @Test
+    fun failedSnapshotSaveKeepsTheIndexedEvidence() {
+        val rag = CausalRAG(configPath = configPath.toString())
+        rag.upsert(testDocs.first())
+        val occupied = Files.writeString(tempDir.resolve("occupied"), "original")
+        val failure = assertFailsWith<IllegalStateException> { rag.saveGraph(occupied.toString()) }
+        assertTrue(failure.message.orEmpty().contains("Failed to save"))
+        assertEquals("original", Files.readString(occupied))
+        assertEquals(listOf(testDocs.first()), rag.retrieveContext("climate change"))
+    }
+
+    @Test
     fun testRepeatedUpsertPreservesPreviouslyIndexedPassages() {
         val rag = CausalRAG(configPath = configPath.toString())
         testDocs.forEach(rag::upsert)
+        val before = rag.inspectGraph()
+        rag.upsert(testDocs)
 
+        assertEquals(before, rag.inspectGraph())
         assertEquals(testDocs.toSet(), rag.retrieveContext("coastal flooding", topK = 10).toSet())
     }
 
@@ -280,6 +294,43 @@ class TestPipeline {
                         .snapshot()
                         .records
                         .single(),
+                )
+            }
+        }
+
+    @Test
+    fun vectorMutationsPublishOnlyWhenUnifiedPersistenceIsEnabled() =
+        runBlocking {
+            InMemoryPersistenceBackend().open(emptyMap()).use { session ->
+                val local = CausalRAG(configPath = configPath.toString(), persistenceSession = session)
+                val unified =
+                    CausalRAG(configPath = configPath.toString(), persistenceSession = session, useUnifiedSpiForRetrievalAndIndex = true)
+                local.upsert(mapOf("local" to mapOf("content" to testDocs[0])))
+                val store = session.vector("causalrag_vector")
+                assertTrue(store.snapshot().records.isEmpty())
+                unified.upsert(mapOf("shared" to mapOf("content" to testDocs[1], "entity_name" to "coast")))
+                assertEquals(listOf("shared"), store.snapshot().records.map { it.id })
+                unified.deleteEntity("coast")
+                assertTrue(store.snapshot().records.isEmpty())
+                assertEquals(listOf(testDocs[0]), local.retrieveContext("climate change", 5))
+            }
+        }
+
+    @Test
+    fun retrievesUnifiedEvidenceFromLegacyContentAndRecordIds() =
+        runBlocking {
+            InMemoryPersistenceBackend().open(emptyMap()).use { session ->
+                val rag =
+                    CausalRAG(configPath = configPath.toString(), persistenceSession = session, useUnifiedSpiForRetrievalAndIndex = true)
+                val query = "legacy climate evidence"
+                val encoder = VectorStoreRetriever("text-embedding-3-small", embeddingApiKey = "")
+                val vector = assertNotNull(encoder.encodeForQuery(query)).toList()
+                val store = session.vector("causalrag_vector", dimensions = vector.size, metric = "cosine")
+                store.upsert(VectorRecord("content-only", vector, mapOf("content" to "Historical climate report.")))
+                store.upsert(VectorRecord("Climate bulletin.", vector))
+                assertEquals(
+                    setOf("Historical climate report.", "Climate bulletin."),
+                    rag.retrieveContext(query, topK = 5).toSet(),
                 )
             }
         }

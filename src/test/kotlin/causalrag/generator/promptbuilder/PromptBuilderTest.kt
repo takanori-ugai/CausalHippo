@@ -119,6 +119,35 @@ class PromptBuilderTest {
     }
 
     @Test
+    fun retainsUnsummarizedEvidenceWhenTheSummaryWouldExceedTheBudget() {
+        val llm = io.mockk.mockk<causalrag.generator.llm.LLMInterface>()
+        io.mockk.every { llm.generate(any(), any(), any(), any(), any(), any()) } returns "oversized summary ".repeat(1_000)
+        val builder = PromptBuilder(templateStyle = "detailed", llmInterface = llm)
+        val baseline = builder.buildBudgetedPrompt(query, passages, causalPaths, 1_000, summarize = false)
+        val withSummary = builder.buildBudgetedPrompt(query, passages, causalPaths, 1_000, summarize = true)
+        assertEquals(baseline, withSummary)
+        io.mockk.verify(exactly = 1) { llm.generate(any(), any(), any(), any(), any(), any()) }
+    }
+
+    @Test
+    fun summaryRequestWithoutPathsDoesNotCallTheModel() {
+        val llm = io.mockk.mockk<causalrag.generator.llm.LLMInterface>()
+        val builder = PromptBuilder(templateStyle = "detailed", llmInterface = llm)
+        val result = builder.buildBudgetedPrompt(query, passages, emptyList(), 1_000, summarize = true)
+        assertEquals(passages, result.passages)
+        io.mockk.verify(exactly = 0) { llm.generate(any(), any(), any(), any(), any(), any()) }
+    }
+
+    @Test
+    fun summaryRequestWithoutAModelKeepsOriginalEvidence() {
+        val builder = PromptBuilder(templateStyle = "detailed")
+        assertEquals(
+            builder.buildBudgetedPrompt(query, passages, causalPaths, 1_000, summarize = false),
+            builder.buildBudgetedPrompt(query, passages, causalPaths, 1_000, summarize = true),
+        )
+    }
+
+    @Test
     fun budgetCountsTheRenderedPromptAndKeepsShorterEvidence() {
         val builder = PromptBuilder(templateStyle = "detailed")
         val short = passages.last()
