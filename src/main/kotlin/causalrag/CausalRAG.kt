@@ -158,9 +158,8 @@ class CausalRAG(
     init {
         if (unifiedSpiEnabled) {
             ensureUnifiedSpiIndexInitialized()
-        } else {
-            refreshBm25()
         }
+        refreshBm25()
     }
 
     val lastIndexingReport: IndexingReport
@@ -341,9 +340,11 @@ class CausalRAG(
     ) {
         val prepared = chunkDocumentsForIngest(documents)
         val newPassages = if (replace) prepared else prepared.distinct() - vectorRetriever.getPassages().toSet()
-        if (newPassages.isEmpty()) return
-        if (replace) vectorRetriever.indexCorpus(newPassages) else vectorRetriever.appendCorpus(newPassages)
-        graphBuilder.indexDocuments(newPassages)
+        if (newPassages.isNotEmpty()) {
+            if (replace) vectorRetriever.indexCorpus(newPassages) else vectorRetriever.appendCorpus(newPassages)
+        }
+        val pending = prepared.distinct().filterNot(graphBuilder::hasCompletedPassage)
+        if (pending.isNotEmpty()) graphBuilder.indexDocuments(pending)
     }
 
     private fun refreshBm25() {
@@ -372,9 +373,18 @@ class CausalRAG(
                 vectorRetriever.restoreState(vectors)
                 for (rollback in listOf<() -> Unit>(
                     { refreshBm25() },
-                    { if (persistedGraph != null) graphStore.restore(persistedGraph) },
-                    { if (persistedVectors != null) vectorStore.restore(persistedVectors) },
-                    { if (persistedMetadata != null) kvStore.restore(persistedMetadata) },
+                    { if (persistedGraph != null) session.graph(unifiedSpiGraphNamespace).restore(persistedGraph) },
+                    {
+                        if (persistedVectors != null) {
+                            session
+                                .vector(
+                                    unifiedSpiVectorNamespace,
+                                    persistedVectors.dimensions,
+                                    persistedVectors.metric,
+                                ).restore(persistedVectors)
+                        }
+                    },
+                    { if (persistedMetadata != null) session.kv(unifiedSpiMetadataNamespace).restore(persistedMetadata) },
                 )) {
                     try {
                         rollback()
@@ -653,6 +663,7 @@ class CausalRAG(
                 "nodeCount" to graphSnapshot.nodes.size,
                 "edgeCount" to graphSnapshot.edges.size,
                 "embeddingIdentity" to vectorRetriever.embeddingIdentity,
+                "completedPassages" to graphBuilder.completedPassages.toList(),
             ),
         )
     }
@@ -661,6 +672,9 @@ class CausalRAG(
         val session = unifiedSpiSession ?: return
         val graphSnapshot = session.graph(unifiedSpiGraphNamespace).snapshot()
         graphBuilder.clear()
+        val metadataSnapshot = session.kv(unifiedSpiMetadataNamespace).snapshot()
+        val complete = metadataSnapshot.entries["completedPassages"] as? List<*>
+        graphBuilder.completedPassages.addAll(complete.orEmpty().filterIsInstance<String>())
         if (graphSnapshot.edges.isNotEmpty()) {
             val nodeLabels = graphSnapshot.nodes.associate { node -> node.id to (node.data["text"]?.toString() ?: node.id) }
             val triples =
@@ -696,7 +710,7 @@ class CausalRAG(
             }
         val ids = records.map { it.id }
 
-        val identity = session.kv(unifiedSpiMetadataNamespace).snapshot().entries["embeddingIdentity"]
+        val identity = metadataSnapshot.entries["embeddingIdentity"]
         if (identity == null) {
             vectorRetriever.indexCorpus(passages, metadata.mapIndexed { index, row -> row + ("id" to ids[index]) }, ids)
             syncUnifiedSpiFromLocal()

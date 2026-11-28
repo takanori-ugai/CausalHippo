@@ -73,6 +73,29 @@ class PromptBuilderTest {
     }
 
     @Test
+    fun summaryRequestsStayWithinBudget() {
+        val directory =
+            java.nio.file.Files
+                .createTempDirectory("short-causal-template")
+        try {
+            java.nio.file.Files
+                .writeString(directory.resolve("causal_prompt.jte"), "@param String query\n\${query}")
+            val model = io.mockk.mockk<causalrag.generator.llm.LLMInterface>(relaxed = true)
+            val builder = PromptBuilder(templateStyle = "basic", llmInterface = model, templatesDir = directory.toString())
+            val baseline = builder.buildBudgetedPrompt(query, emptyList(), causalPaths, 100, summarize = false)
+            val budget = countTokensWithJTokKit(baseline.text)
+            val result = builder.buildBudgetedPrompt(query, emptyList(), causalPaths, budget, summarize = true)
+            assertEquals(causalPaths, result.paths)
+            assertEquals(baseline.text, result.text)
+            io.mockk.verify(exactly = 0) {
+                model.generate(any(), any(), any(), any(), any(), any())
+            }
+        } finally {
+            directory.toFile().deleteRecursively()
+        }
+    }
+
+    @Test
     fun budgetCountsTheRenderedPromptAndKeepsShorterEvidence() {
         val builder = PromptBuilder(templateStyle = "detailed")
         val short = passages.last()

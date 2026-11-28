@@ -86,7 +86,7 @@ class PromptBuilder(
         }
 
         if (summarize && selectedPaths.isNotEmpty() && llmInterface != null) {
-            val summaries = generateCausalSummaries(selectedPaths, query)
+            val summaries = generateCausalSummaries(selectedPaths, query, budget)
             val candidate = render(selectedPassages, selectedPaths, summaries)
             if (countTokensWithJTokKit(candidate) <= budget) prompt = candidate
         }
@@ -140,6 +140,7 @@ class PromptBuilder(
     private fun generateCausalSummaries(
         causalPaths: List<List<String>>,
         query: String,
+        budget: Int = Int.MAX_VALUE,
     ): List<String> {
         if (llmInterface == null) return emptyList()
         val maxPathsToSummarize = 5
@@ -152,6 +153,7 @@ Causal paths:
 $allPathsText
 
 Provide a concise summary (1-2 sentences) that captures the key causal mechanisms:"""
+            if (countTokensWithJTokKit(overviewPrompt) > budget) return emptyList()
             val overview = llmInterface.generate(overviewPrompt, temperature = 1.0, maxTokens = 150)
             val summaries = mutableListOf<String>()
             summaries.add(overview.trim())
@@ -165,6 +167,7 @@ Provide a concise summary (1-2 sentences) that captures the key causal mechanism
 Causal path: $pathText
 
 Write a concise explanation using simple natural language that maintains all the causal relationships:"""
+                    if (countTokensWithJTokKit(summaryPrompt) > budget) return emptyList()
                     summaries.add(llmInterface.generate(summaryPrompt, temperature = 0.3, maxTokens = 100).trim())
                 }
             }

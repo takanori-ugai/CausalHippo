@@ -4,6 +4,7 @@ import causalrag.generator.llm.LLMInterface
 import io.mockk.every
 import io.mockk.mockkConstructor
 import io.mockk.unmockkConstructor
+import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonNull
@@ -123,6 +124,22 @@ class TestPipeline {
 
         assertEquals(testDocs.toSet(), rag.retrieveContext("coastal flooding", topK = 10).toSet())
     }
+
+    @Test
+    fun vectorOnlyUpsertDoesNotSuppressSubsequentGraphExtraction() =
+        runBlocking {
+            val rag = CausalRAG(configPath = configPath.toString())
+            val passage = testDocs.first()
+            rag.upsert(mapOf("first" to mapOf("content" to passage)))
+            assertEquals(0, (rag.inspectGraph()["metadata"] as Map<*, *>)["edgeCount"])
+
+            rag.aupsert(passage)
+            val indexed = rag.inspectGraph()
+            assertTrue(((indexed["metadata"] as Map<*, *>)["edgeCount"] as Int) > 0)
+            assertEquals(listOf(passage), rag.retrieveContext("climate change"))
+            rag.aupsert(passage)
+            assertEquals(indexed, rag.inspectGraph())
+        }
 
     @Test
     fun testCorruptSnapshotPreservesLiveIndex() {
