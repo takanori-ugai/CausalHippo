@@ -193,6 +193,7 @@ class QuestionAnsweringService(
             }
         val initialAnswer = generateAnswer(initialPrompt?.text).orEmpty()
         var finalAnswer = initialAnswer
+        var answerEvidence = initialPrompt
 
         reasoningSteps.add(
             ReasoningStep(
@@ -225,6 +226,7 @@ class QuestionAnsweringService(
                 val triplesSnapshotBefore = tripleEntriesByRaw.values.toList()
                 val chunksSnapshotBefore = chunkById.values.toList()
 
+                var stepPrompt: BoundedPrompt? = null
                 val stepElapsedMs =
                     measureTimeMillis {
                         val previousThoughts = thoughts.joinToString(" | ").ifBlank { "None" }
@@ -249,6 +251,7 @@ class QuestionAnsweringService(
                                     promptSource = ircotPromptSource,
                                 )
                             }
+                        stepPrompt = ircotPrompt
                         thought = generateAnswer(ircotPrompt?.text).orEmpty()
                     }
 
@@ -285,6 +288,7 @@ class QuestionAnsweringService(
 
                 extractFinalAnswer(thought)?.let { answer ->
                     finalAnswer = answer
+                    answerEvidence = stepPrompt
                     break
                 }
 
@@ -318,10 +322,11 @@ class QuestionAnsweringService(
             ) { triples, chunks ->
                 ktRetriever.generatePrompt(question, buildFinalKnowledgeContext(triples, chunks))
             }
-        val finalTriples = finalPrompt?.triples.orEmpty().map(::tripleIdentity)
-        val finalChunks = finalPrompt?.chunks.orEmpty()
         val generated = generateAnswer(finalPrompt?.text)
         val responseAnswer = generated ?: finalAnswer
+        val evidence = if (generated != null) finalPrompt else answerEvidence.takeIf { finalAnswer.isNotBlank() } ?: finalPrompt
+        val finalTriples = evidence?.triples.orEmpty().map(::tripleIdentity)
+        val finalChunks = evidence?.chunks.orEmpty()
         val answerStatus =
             when {
                 generated != null -> "generated"

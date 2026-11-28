@@ -527,6 +527,28 @@ class QuestionAnsweringServiceTest {
         assertEquals(2, attempts)
     }
 
+    @Test
+    fun `initial answer remains available when final generation fails`() {
+        val root = createRootDir()
+        val config = createTestConfig(root)
+        config.overrideConfig(mapOf("triggers" to mapOf("mode" to "noagent")))
+        writeCorpus(root, "fallback_ds", listOf(mapOf("title" to "A", "text" to "Evidence for this question.")))
+        GraphConstructionService(config = config, rootDir = root).constructGraph("fallback_ds")
+
+        var attempts = 0
+        val client =
+            object : LlmClient {
+                override fun complete(prompt: String): String = ""
+
+                override fun completeStrict(prompt: String): String =
+                    if (++attempts == 1) "Initial grounded answer" else error("provider unavailable")
+            }
+        val response = runBlocking { QuestionAnsweringService(config, root, client).answerQuestion("fallback_ds", "What is the evidence?") }
+        assertEquals("fallback", response.answerStatus)
+        assertEquals("Initial grounded answer", response.answer)
+        assertTrue(response.retrievedChunks.isNotEmpty())
+    }
+
     private fun createMockLlmClient(): LlmClient =
         object : LlmClient {
             override fun complete(prompt: String): String =
