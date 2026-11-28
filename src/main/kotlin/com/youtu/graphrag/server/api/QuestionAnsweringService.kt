@@ -188,7 +188,8 @@ class QuestionAnsweringService(
         val initialChunks = chunkById.values.toList()
         val initialPrompt =
             buildBoundedPrompt(initialTriplesFormatted, initialChunks, config.retrieval.maxPromptTokens) { triples, chunks ->
-                ktRetriever.generatePrompt(question, ktRetriever.buildKnowledgeContext(triples, chunks, tripleLimit = triples.size, chunkLimit = chunks.size))
+                val context = ktRetriever.buildKnowledgeContext(triples, chunks, tripleLimit = triples.size, chunkLimit = chunks.size)
+                ktRetriever.generatePrompt(question, context)
             }
         val initialAnswer = generateAnswer(initialPrompt?.text).orEmpty()
         var finalAnswer = initialAnswer
@@ -236,7 +237,13 @@ class QuestionAnsweringService(
                                 ktRetriever.generateIrcotPrompt(
                                     currentQuery = currentQuery,
                                     originalQuestion = question,
-                                    context = ktRetriever.buildKnowledgeContext(triples, chunks, tripleLimit = triples.size, chunkLimit = chunks.size),
+                                    context =
+                                        ktRetriever.buildKnowledgeContext(
+                                            triples,
+                                            chunks,
+                                            tripleLimit = triples.size,
+                                            chunkLimit = chunks.size,
+                                        ),
                                     previousThoughts = previousThoughts,
                                     step = stepIndex,
                                     promptSource = ircotPromptSource,
