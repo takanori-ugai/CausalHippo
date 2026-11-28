@@ -67,6 +67,27 @@ class IndexPublicationTest {
         }
 
     @Test
+    fun unifiedChunkContextIsTheEvidenceInThePreviewAndActualAnswerPrompt() =
+        exercise { directory ->
+            InMemoryPersistenceBackend().open(emptyMap()).use { session ->
+                PathRAG(workingDir = directory, persistenceSession = session, useUnifiedSpiForRetrievalAndIndex = true).use { rag ->
+                    session.kv("pathrag_chunks").put("external", mapOf("content" to "A passage containing {{response_type}}."))
+                    val question = "What does {{context_data}} mean?"
+                    val options = QueryParam(mode = "global", responseType = "One sentence", maxTokenForGlobalContext = 1)
+                    val evidence = rag.aquery(question, options.copy(onlyNeedContext = true))
+                    val preview = rag.aquery(question, options.copy(onlyNeedPrompt = true))
+                    assertEquals("A passage containing {{response_type}}.", evidence)
+                    assertTrue(preview.trimEnd().endsWith(evidence))
+                    assertTrue("One sentence" in preview)
+                    coEvery {
+                        pathrag.llm.openAiComplete(any(), question, preview, any(), false, false, null, any(), any())
+                    } returns "Supported answer."
+                    assertEquals("Supported answer.", rag.aquery(question, options))
+                }
+            }
+        }
+
+    @Test
     fun failedChunkEmbeddingDoesNotPublishGraphEvidence() =
         exercise { directory ->
             PathRAG(workingDir = directory).use { rag ->

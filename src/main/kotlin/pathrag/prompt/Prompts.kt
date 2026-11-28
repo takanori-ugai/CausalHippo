@@ -36,14 +36,12 @@ object Prompts {
      */
     const val RAG_RESPONSE = """---Role---
 
-You are a helpful assistant responding to questions about data in the tables provided.
+Answer the user's question using the retrieved evidence below.
 
 
 ---Goal---
 
-Generate a response of the target length and format that responds to the user's question, summarizing all information in the input data tables appropriate for the response length and format, and incorporating any relevant general knowledge.
-If you don't know the answer, just say so. Do not make anything up.
-Do not include information where the supporting evidence for it is not provided.
+Use the relevant entities, relationships, and source passages to support your answer. When relational paths are provided, follow their connections when explaining how entities are related. If the evidence is insufficient, say what it supports and what remains unknown.
 
 ---Target response length and format---
 
@@ -51,7 +49,7 @@ Do not include information where the supporting evidence for it is not provided.
 
 Add sections and commentary to the response as appropriate for the length and format. Style the response in markdown.
 
----Data tables---
+---Retrieved evidence---
 
 {{context_data}}
 """
