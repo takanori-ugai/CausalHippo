@@ -2,6 +2,8 @@ package shared.rag.spi.persistence
 
 import com.mongodb.client.model.Filters
 import com.mongodb.client.model.ReplaceOptions
+import com.mongodb.client.model.UpdateOptions
+import com.mongodb.client.model.Updates
 import com.mongodb.kotlin.client.coroutine.MongoClient
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
@@ -352,8 +354,17 @@ private class MongoGraphStore(
         require(source.isNotBlank()) { "edge source must not be blank" }
         require(target.isNotBlank()) { "edge target must not be blank" }
         runBlocking {
-            upsertNode(source, emptyMap())
-            upsertNode(target, emptyMap())
+            for (id in setOf(source, target)) {
+                nodesCollection.updateOne(
+                    Filters.eq("_id", "$namespace:$id"),
+                    Updates.combine(
+                        Updates.setOnInsert("namespace", namespace),
+                        Updates.setOnInsert("id", id),
+                        Updates.setOnInsert("data_json", "{}"),
+                    ),
+                    UpdateOptions().upsert(true),
+                )
+            }
             val edgeId = "$namespace:$source:$target"
             val document =
                 Document("_id", edgeId)
