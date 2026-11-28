@@ -7,6 +7,7 @@ import hipporag.embeddingmodel.getEmbeddingModel
 import hipporag.llm.BaseLLM
 import hipporag.llm.getLlm
 import hipporag.utils.LlmResult
+import hipporag.utils.retrieveKnn
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.mockkStatic
@@ -419,6 +420,57 @@ class IndexIntegrityTest {
             graph.toFile().deleteRecursively()
             Files.move(graphBackup, graph)
             assertEquals(listOf(first), HippoRAG(config).query("query", QueryParam("dpr", includeAnswer = false)).docs)
+        }
+
+    @Test
+    fun synonymNeighborsAreSortedByCosineIncludingZeroVectors() {
+        val (ids, scores) =
+            retrieveKnn(
+                listOf("query"),
+                listOf("weak", "opposite", "zero", "strong"),
+                arrayOf(doubleArrayOf(2.0, 0.0)),
+                arrayOf(doubleArrayOf(3.0, 4.0), doubleArrayOf(-1.0, 0.0), doubleArrayOf(0.0, 0.0), doubleArrayOf(7.0, 0.0)),
+                3,
+            ).getValue("query")
+        assertEquals(listOf("strong", "weak", "zero"), ids)
+        assertEquals(listOf(1.0, 0.6, 0.0), scores)
+    }
+
+    @Test
+    fun incrementalAndDeletedGraphMatchFreshBuilds() =
+        withRag { config, _ ->
+            val rag = HippoRag(config)
+            rag.index(listOf(first))
+            val firstGraph = HippoRAG(rag).inspectGraph()
+            rag.index(listOf(second))
+            val batch = HippoRag(config.copy(saveDir = Path.of(config.saveDir, "batch").toString()))
+            batch.index(listOf(first, second))
+            assertEquals(HippoRAG(batch).inspectGraph()["edges"], HippoRAG(rag).inspectGraph()["edges"])
+            rag.delete(listOf(second))
+            assertEquals(firstGraph["edges"], HippoRAG(rag).inspectGraph()["edges"])
+        }
+
+    @Test
+    fun passageReceivesRankFromRecognizedEntityEvenInDirectedStorage() =
+        withRag { config, _ ->
+            val rag = HippoRag(config.copy(isDirectedGraph = true, passageNodeWeight = 0.0))
+            rag.index(listOf(first))
+            val llm = getLlm(config)
+            every { llm.infer(any()) } returns LlmResult("""{"fact":[["alpha","connects","beta"]]}""", emptyMap())
+            val result = rag.retrieve(listOf("query")).first.single()
+            val score = result.docScores!!.single()
+            assertTrue(score > 0.0 && score < 1.0)
+        }
+
+    @Test
+    fun rejectedFactsUseDensePassageScores() =
+        withRag { config, _ ->
+            val rag = HippoRag(config)
+            rag.index(listOf(first, second))
+            val dense = rag.retrieveDpr(listOf("query")).first.single()
+            val graph = rag.retrieve(listOf("query")).first.single()
+            assertEquals(dense.docs, graph.docs)
+            assertTrue(dense.docScores!!.contentEquals(graph.docScores!!))
         }
 
     @Test

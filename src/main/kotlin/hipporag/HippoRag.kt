@@ -137,8 +137,6 @@ class HippoRag(
     private var passageEmbeddings: Array<DoubleArray> = emptyArray()
     private var factEmbeddings: Array<DoubleArray> = emptyArray()
 
-    private var procTriplesToDocs: MutableMap<String, MutableSet<String>> = mutableMapOf()
-
     init {
         val configDump = globalConfig.toMap().entries.joinToString(",\n  ") { (k, v) -> "$k = $v" }
         logger.debug { "HippoRAG init with config:\n  $configDump\n" }
@@ -308,7 +306,6 @@ class HippoRag(
 
         val (allOpenieInfo, chunkKeysToProcess) = loadExistingOpenie(chunkToRows.keys.toList())
         val newOpenieRows = chunkToRows.filterKeys { it in chunkKeysToProcess }
-        val retryingFailedChunks = allOpenieInfo.any { it.idx in newOpenieRows }
 
         if (chunkKeysToProcess.isNotEmpty()) {
             val (newNerResults, newTripleResults) = openie.batchOpenie(newOpenieRows)
@@ -344,8 +341,6 @@ class HippoRag(
 
         logger.info { "Constructing Graph" }
 
-        nodeToNodeStats = mutableMapOf()
-
         // Existing passage nodes may now have different evidence after a retry.
         val existingPassages = graph.vertexNames().toSet()
         val existingEdges = graph.edgeKeys()
@@ -356,27 +351,34 @@ class HippoRag(
                         (chunk to computeMdHashId(entity, prefix = "entity-")) !in existingEdges
                     }
             }
-        if (retryingFailedChunks || missingPassageEdges) {
+        val refreshing = missingPassageEdges || chunkKeysToProcess.any { it in existingPassages }
+        if (refreshing) {
             removeSupersededEmbeddings(entityEmbeddingStore, entityNodes.toSet())
             removeSupersededEmbeddings(factEmbeddingStore, facts.toSet())
-            readyToRetrieve = false
-            graph.deleteVertices(graph.vertexNames())
         }
-        addFactEdges(chunkIds, chunkTriples)
-        val numNewChunks = addPassageEdges(chunkIds, chunkTripleEntities)
-
-        if (numNewChunks > 0) {
-            logger.info { "Found $numNewChunks new chunks to save into graph." }
-            addSynonymyEdges()
-            augmentGraph()
-            saveIgraph()
-            readyToRetrieve = false
+        if (refreshing || chunkIds.any { it !in existingPassages }) {
+            rebuildGraph(chunkIds, chunkTriples, chunkTripleEntities)
         }
         if (globalConfig.saveOpenie) {
             saveOpenieResults(allOpenieInfo)
         } else {
             unsavedOpenie = allOpenieInfo.toList()
         }
+    }
+
+    private fun rebuildGraph(
+        chunkIds: List<String>,
+        chunkTriples: List<List<List<String>>>,
+        chunkEntities: List<List<String>>,
+    ) {
+        graph = SimpleGraph(directed = globalConfig.isDirectedGraph)
+        nodeToNodeStats = mutableMapOf()
+        addFactEdges(chunkIds, chunkTriples)
+        addPassageEdges(chunkIds, chunkEntities)
+        addSynonymyEdges()
+        augmentGraph()
+        saveIgraph()
+        readyToRetrieve = false
     }
 
     /**
@@ -402,71 +404,26 @@ class HippoRag(
         check(allOpenieInfo.map { it.idx }.toSet().containsAll(chunkEmbeddingStore.getAllIds())) {
             "Cannot delete documents without OpenIE provenance for the active index"
         }
-        val triplesToDelete = mutableListOf<List<List<String>>>()
-        val allOpenieInfoWithDeletes = mutableListOf<OpenieDoc>()
-
-        for (openieDoc in allOpenieInfo) {
-            if (openieDoc.idx in chunkIdsToDelete) {
-                triplesToDelete.add(openieDoc.extractedTriples)
-            } else {
-                allOpenieInfoWithDeletes.add(openieDoc)
-            }
-        }
-
-        val flattenedTriplesToDelete = flattenFacts(triplesToDelete)
-
-        val trueTriplesToDelete = mutableListOf<List<String>>()
-        for (triple in flattenedTriplesToDelete) {
-            val procTriple = textProcessing(triple)
-            val docIds = procTriplesToDocs[procTriple.toString()] ?: emptySet()
-            val nonDeletedDocs = docIds.subtract(chunkIdsToDelete)
-            if (nonDeletedDocs.isEmpty()) {
-                trueTriplesToDelete.add(triple)
-            }
-        }
-
-        val processedTrueTriplesToDelete = trueTriplesToDelete.map { textProcessing(it) }
-        val (entitiesToDelete, _) = extractEntityNodes(listOf(processedTrueTriplesToDelete))
-        val processedTrueTriplesFlat = flattenFacts(listOf(processedTrueTriplesToDelete))
-
-        val tripleIdsToDelete =
-            processedTrueTriplesFlat
-                .mapNotNull { factEmbeddingStore.textToHashId[it.toString()] }
-                .toSet()
-
-        val entIdsToDelete = entitiesToDelete.mapNotNull { entityEmbeddingStore.textToHashId[it] }
-        val filteredEntIdsToDelete = mutableListOf<String>()
-
-        for (entNode in entIdsToDelete) {
-            val docIds = entNodeToChunkIds?.get(entNode) ?: emptySet()
-            val nonDeletedDocs = docIds.subtract(chunkIdsToDelete)
-            if (nonDeletedDocs.isEmpty()) {
-                filteredEntIdsToDelete.add(entNode)
-            }
-        }
-
-        logger.info { "Deleting ${chunkIdsToDelete.size} Chunks" }
-        logger.info { "Deleting ${tripleIdsToDelete.size} Triples" }
-        logger.info { "Deleting ${filteredEntIdsToDelete.size} Entities" }
+        val remainingDocs = allOpenieInfo.filterNot { it.idx in chunkIdsToDelete }
+        val (_, tripleResults) = reformatOpenieResults(remainingDocs)
+        val remainingIds = remainingDocs.map { it.idx }
+        val remainingTriples = remainingIds.map { id -> tripleResults.getValue(id).triples.map(::textProcessing) }
+        val (entities, chunkEntities) = extractEntityNodes(remainingTriples)
 
         if (globalConfig.saveOpenie) {
-            if (allOpenieInfoWithDeletes.isEmpty()) {
+            if (remainingDocs.isEmpty()) {
                 Files.deleteIfExists(File(openieResultsPath).toPath())
             } else {
-                saveOpenieResults(allOpenieInfoWithDeletes)
+                saveOpenieResults(remainingDocs)
             }
         } else {
-            unsavedOpenie = allOpenieInfoWithDeletes
+            unsavedOpenie = remainingDocs
         }
 
-        entityEmbeddingStore.delete(filteredEntIdsToDelete)
-        factEmbeddingStore.delete(tripleIdsToDelete)
+        removeSupersededEmbeddings(entityEmbeddingStore, entities.toSet())
+        removeSupersededEmbeddings(factEmbeddingStore, flattenFacts(remainingTriples).map { it.toString() }.toSet())
         chunkEmbeddingStore.delete(chunkIdsToDelete)
-
-        graph.deleteVertices((filteredEntIdsToDelete + chunkIdsToDelete).toList())
-        saveIgraph()
-
-        readyToRetrieve = false
+        rebuildGraph(remainingIds, remainingTriples, chunkEntities)
     }
 
     /**
@@ -804,29 +761,19 @@ class HippoRag(
         retained: Set<String>,
     ) {
         val obsolete = store.getAllIdToRows().filterValues { it.content !in retained }.keys
-        store.delete(obsolete)
+        if (obsolete.isNotEmpty()) store.delete(obsolete)
     }
 
     private fun addPassageEdges(
         chunkIds: List<String>,
         chunkTripleEntities: List<List<String>>,
-    ): Int {
-        val currentGraphNodes = graph.vertexNames().toSet()
-        var numNewChunks = 0
-
-        logger.info { "Connecting passage nodes to phrase nodes." }
-
+    ) {
         chunkIds.forEachIndexed { idx, chunkKey ->
-            if (chunkKey !in currentGraphNodes) {
-                for (chunkEnt in chunkTripleEntities[idx]) {
-                    val nodeKey = computeMdHashId(chunkEnt, prefix = "entity-")
-                    nodeToNodeStats[chunkKey to nodeKey] = 1.0
-                }
-                numNewChunks += 1
+            for (entity in chunkTripleEntities[idx]) {
+                val nodeKey = computeMdHashId(entity, prefix = "entity-")
+                nodeToNodeStats[chunkKey to nodeKey] = 1.0
             }
         }
-
-        return numNewChunks
     }
 
     private fun addSynonymyEdges() {
@@ -848,11 +795,7 @@ class HippoRag(
                 k = globalConfig.synonymyEdgeTopK,
             )
 
-        var numSynonymTriple = 0
-        val synonymCandidates = mutableListOf<Pair<String, List<Pair<String, Double>>>>()
-
         for (nodeKey in queryNodeKey2KnnNodeKeys.keys) {
-            val synonyms = mutableListOf<Pair<String, Double>>()
             val entity = entityIdToRow.getValue(nodeKey).content
 
             if (entity.replace(Regex("[^A-Za-z0-9]"), "").length > 2) {
@@ -865,15 +808,11 @@ class HippoRag(
 
                     if (nn != nodeKey && nnPhrase.isNotEmpty()) {
                         val simEdge = nodeKey to nn
-                        synonyms.add(nn to score)
-                        numSynonymTriple += 1
                         nodeToNodeStats[simEdge] = score
                         numNns += 1
                     }
                 }
             }
-
-            synonymCandidates.add(nodeKey to synonyms)
         }
     }
 
@@ -1242,20 +1181,6 @@ class HippoRag(
 
         val (allOpenieInfo, _) = loadExistingOpenie(passageNodeKeys, useProvenance = true)
 
-        procTriplesToDocs = mutableMapOf()
-        for (doc in allOpenieInfo) {
-            val triples = flattenFacts(listOf(doc.extractedTriples))
-            for (triple in triples) {
-                if (triple.size == 3) {
-                    val procTriple = textProcessing(triple)
-                    val key = procTriple.toString()
-                    val existing = procTriplesToDocs[key] ?: mutableSetOf()
-                    existing.add(doc.idx)
-                    procTriplesToDocs[key] = existing
-                }
-            }
-        }
-
         if (entNodeToChunkIds == null) {
             val (nerResults, tripleResults) = reformatOpenieResults(allOpenieInfo)
 
@@ -1609,7 +1534,7 @@ class HippoRag(
         damping: Double = 0.5,
     ): Pair<List<Int>, DoubleArray> {
         val cleanedReset = resetProb.map { if (it.isNaN() || it < 0.0) 0.0 else it }.toDoubleArray()
-        val pagerankScores = graph.personalizedPageRank(cleanedReset, damping)
+        val pagerankScores = graph.personalizedPageRank(cleanedReset, damping, followDirection = false)
 
         val docScores = passageNodeIdxs.map { pagerankScores[it] }.toDoubleArray()
         val sortedDocIds = argsortDesc(docScores)

@@ -130,6 +130,7 @@ class SimpleGraph(
     fun personalizedPageRank(
         reset: DoubleArray,
         damping: Double,
+        followDirection: Boolean = directed,
     ): DoubleArray {
         val n = vertices.size
         if (n == 0) return DoubleArray(0)
@@ -141,7 +142,7 @@ class SimpleGraph(
         val adjacency = Array(n) { mutableListOf<Pair<Int, Double>>() }
         for (edge in edges) {
             adjacency[edge.source].add(edge.target to edge.weight)
-            if (!directed) {
+            if (!followDirection || !directed) {
                 adjacency[edge.target].add(edge.source to edge.weight)
             }
         }

@@ -54,7 +54,7 @@ class DSPyFilter(
      * @param candidateFactIndices Original indices of the candidate facts.
      * @param lenAfterRerank Maximum number of results to return after reranking.
      * @return Triple of (filtered indices, filtered facts, metadata map with model response or error).
-     *         Falls back to original order if LLM inference fails.
+     *         Returns no recognized facts if LLM inference fails, allowing dense passage retrieval.
      */
     fun rerank(
         query: String,
@@ -100,17 +100,18 @@ class DSPyFilter(
                 mapOf("model_response" to result.response),
             )
         }.getOrElse { e ->
-            logger.warn(e) { "DSPy rerank failed, falling back to original order." }
+            logger.warn(e) { "DSPy rerank failed, using dense passage retrieval." }
             Triple(
-                candidateFactIndices.take(lenAfterRerank),
-                candidateFacts.take(lenAfterRerank),
+                emptyList(),
+                emptyList(),
                 mapOf("error" to e.message.orEmpty()),
             )
         }
     }
 
     private fun parseFacts(response: String): List<List<String>> {
-        val jsonObj = extractJsonObjectWithKey(response, "fact", json) ?: return emptyList()
+        val answer = response.substringAfter("[[ ## fact_after_filter ## ]]", response).substringBefore("[[ ## completed ## ]]")
+        val jsonObj = extractJsonObjectWithKey(answer, "fact", json) ?: return emptyList()
         val factArray = jsonObj["fact"]?.jsonArray ?: return emptyList()
         val result = mutableListOf<List<String>>()
         for (factEl in factArray) {
@@ -119,7 +120,7 @@ class DSPyFilter(
                 triple
                     .mapNotNull { runCatching { it.jsonPrimitive.contentOrNull?.trim() }.getOrNull() }
                     .filter { it.isNotEmpty() }
-            if (tripleList.isNotEmpty()) {
+            if (tripleList.size == 3) {
                 result.add(tripleList)
             }
         }
@@ -141,10 +142,6 @@ class DSPyFilter(
         candidateFacts: List<List<String>>,
         candidateFactIndices: List<Int>,
     ): Pair<List<Int>, List<List<String>>> {
-        if (filteredFacts.isEmpty()) {
-            return candidateFactIndices to candidateFacts
-        }
-
         val indices = mutableListOf<Int>()
         val facts = mutableListOf<List<String>>()
         val matched = mutableSetOf<Int>()
@@ -164,10 +161,6 @@ class DSPyFilter(
                 indices.add(candidateFactIndices[idx])
                 facts.add(candidateFacts[idx])
             }
-        }
-
-        if (indices.isEmpty()) {
-            return candidateFactIndices to candidateFacts
         }
 
         return indices to facts
