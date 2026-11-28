@@ -10,6 +10,10 @@ import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonNull
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
+import shared.rag.spi.persistence.InMemoryPersistenceBackend
+import shared.rag.spi.persistence.PersistenceSession
+import shared.rag.spi.persistence.VectorIndexStore
+import shared.rag.spi.persistence.VectorSnapshot
 import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.test.AfterTest
@@ -139,6 +143,74 @@ class TestPipeline {
             assertEquals(listOf(passage), rag.retrieveContext("climate change"))
             rag.aupsert(passage)
             assertEquals(indexed, rag.inspectGraph())
+        }
+
+    @Test
+    fun failedSpiPublicationRestoresGraphVectorsAndMetadataBeforeRetry() =
+        runBlocking {
+            InMemoryPersistenceBackend().open(emptyMap()).use { backing ->
+                var failNextRestore = false
+                val session =
+                    object : PersistenceSession by backing {
+                        override fun vector(
+                            namespace: String,
+                            dimensions: Int?,
+                            metric: String,
+                        ): VectorIndexStore {
+                            val store = backing.vector(namespace, dimensions, metric)
+                            return object : VectorIndexStore by store {
+                                override fun restore(snapshot: VectorSnapshot) {
+                                    if (failNextRestore) {
+                                        failNextRestore = false
+                                        error("injected SPI vector publication failure")
+                                    }
+                                    store.restore(snapshot)
+                                }
+                            }
+                        }
+                    }
+                val rag =
+                    CausalRAG(configPath = configPath.toString(), persistenceSession = session, useUnifiedSpiForRetrievalAndIndex = true)
+                rag.aupsert(testDocs.first())
+                val graph = backing.graph("causalrag_graph").snapshot()
+                val vectors = backing.vector("causalrag_vector").snapshot()
+                val metadata = backing.kv("causalrag_metadata").snapshot()
+                failNextRestore = true
+
+                assertFailsWith<IllegalStateException> { rag.aupsert(testDocs[1]) }
+                assertEquals(graph, backing.graph("causalrag_graph").snapshot())
+                assertEquals(vectors, backing.vector("causalrag_vector").snapshot())
+                assertEquals(metadata, backing.kv("causalrag_metadata").snapshot())
+                assertEquals(listOf(testDocs.first()), rag.retrieveContext("climate change", 10))
+
+                rag.aupsert(testDocs[1])
+                assertEquals(testDocs.take(2).toSet(), rag.retrieveContext("coastal flooding", 10).toSet())
+                val restarted =
+                    CausalRAG(configPath = configPath.toString(), persistenceSession = backing, useUnifiedSpiForRetrievalAndIndex = true)
+                assertEquals(testDocs.take(2).toSet(), restarted.retrieveContext("coastal flooding", 10).toSet())
+            }
+        }
+
+    @Test
+    fun vectorDeletionsRefreshRetrievalAndReplacementClearsPriorPassages() =
+        runBlocking {
+            val rag = CausalRAG(configPath = configPath.toString())
+            rag.upsert(
+                mapOf(
+                    "entity" to mapOf("content" to testDocs[0], "entity_name" to "climate"),
+                    "relation" to mapOf("content" to testDocs[1], "src_id" to "climate", "tgt_id" to "coast"),
+                    "keep" to mapOf("content" to testDocs[2]),
+                ),
+            )
+            assertEquals(3, rag.query("coastal flooding", 5).size)
+            rag.deleteEntity("climate")
+            rag.deleteEntityRelation("climate")
+            assertEquals(listOf(testDocs[2]), rag.retrieveContext("coastal flooding", 5))
+
+            rag.areindex(listOf(testDocs.first()))
+            assertEquals(listOf(testDocs.first()), rag.retrieveContext("coastal flooding", 5))
+            rag.adrop()
+            assertTrue(rag.retrieveContext("coastal flooding", 5).isEmpty())
         }
 
     @Test
