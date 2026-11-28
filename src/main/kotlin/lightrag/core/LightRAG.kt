@@ -232,7 +232,7 @@ class LightRAG(
                         }
                     return@withLock queryService.queryPublishedGraph(stores, query, param)
                 }
-                if (param.onlyNeedContext && graph.nodes.isEmpty() && graph.edges.isEmpty()) {
+                if (param.onlyNeedContext && (param.mode == "naive" || (graph.nodes.isEmpty() && graph.edges.isEmpty()))) {
                     val contextItems = retrieveContextFromUnifiedSpi(query, param.chunkTopK.coerceAtLeast(1))
                     return@withLock QueryResult(
                         content = contextItems.joinToString(separator = "\n\n"),

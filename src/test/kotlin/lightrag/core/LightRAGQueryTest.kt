@@ -45,6 +45,23 @@ class LightRAGQueryTest {
                 session.vector("lightrag_vector", 2).upsert(
                     VectorRecord("entity:Alice", listOf(1.0, 0.0), mapOf("kind" to "entity", "entity_name" to "Alice")),
                 )
+                graph.upsertNode("Bob", mapOf("description" to "other endpoint"))
+                graph.upsertEdge("Alice", "Bob", mapOf("description" to "published relation"))
+                session.vector("lightrag_vector", 2).upsert(
+                    listOf(
+                        VectorRecord("edge", listOf(1.0, 0.0), mapOf("kind" to "relation", "src_id" to "Alice", "tgt_id" to "Bob")),
+                        VectorRecord(
+                            "chunk:c",
+                            listOf(1.0, 0.0),
+                            mapOf("kind" to "chunk", "chunk_id" to "c", "content" to "linked evidence"),
+                        ),
+                    ),
+                )
+                val naive = rag.aquery("question", QueryParam(mode = "naive", onlyNeedContext = true, chunkTopK = 1))
+                assertEquals("question", naive?.content)
+                val global = rag.aquery("question", QueryParam(mode = "global", onlyNeedContext = true, hlKeywords = listOf("topic")))
+                assertTrue(global?.content.orEmpty().contains("published relation"))
+                assertTrue(global?.content.orEmpty().contains("other endpoint"))
                 val param = QueryParam(mode = "local", llKeywords = listOf("term"), onlyNeedContext = true)
                 val context = rag.aquery("question", param)?.content.orEmpty()
                 assertTrue(context.contains("linked evidence"))

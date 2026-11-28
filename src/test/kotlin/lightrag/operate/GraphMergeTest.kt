@@ -16,11 +16,32 @@ import lightrag.core.types.BaseVectorStorage
 import lightrag.kg.memory.InMemoryGraphStorage
 import lightrag.utils.computeMd5
 import org.junit.Test
+import shared.chunking.countTokensWithJTokKit
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
 class GraphMergeTest {
+    @Test
+    fun `oversized descriptions are reduced in bounded groups and retries reuse the merged evidence`() {
+        val prompts = mutableListOf<String>()
+        val model = mockk<ChatModel>()
+        every { model.chat(capture(prompts)) } answers { "summary " + prompts.size }
+        val merger = DescriptionMerger(mapOf("llm_model_func" to model, "force_llm_summary_on_merge" to 2, "summary_context_size" to 40))
+        val fragments = (1..5).map { id -> "source$id " + "long evidence ".repeat(80) }
+        val merged = merger.merge("Entity", "A", null, fragments)
+        assertEquals(4, prompts.size)
+        val records = Regex("""\{"Description":"[^"]*"}""")
+        prompts.forEach { prompt ->
+            val inputs = records.findAll(prompt).map { it.value }.toList()
+            assertEquals(2, inputs.size)
+            assertTrue(countTokensWithJTokKit(inputs.joinToString("\n")) <= 40)
+        }
+        assertEquals("summary 4", merged["description"])
+        assertEquals(merged, merger.merge("Entity", "A", merged, fragments))
+        assertEquals(4, prompts.size)
+    }
+
     @Test
     fun `summaries index combined evidence once and preserve chunk provenance`() =
         runBlocking {
